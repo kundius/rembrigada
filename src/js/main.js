@@ -34,7 +34,6 @@
 // })
 
 const slideshow = document.querySelector('.js-slideshow')
-
 if (slideshow) {
   const dot_count = slideshow.querySelectorAll('.js_slide').length
   const el_index = slideshow.querySelector('.js_index')
@@ -83,6 +82,23 @@ if (slideshow) {
     infinite: 1
   })
 }
+
+const objectsSlider = document.querySelector('.js-objects-slider')
+if (objectsSlider) {
+  let count = 3
+  if (window.matchMedia("(max-width: 959px)").matches) {
+    count = 2
+  }
+  if (window.matchMedia("(max-width: 639px)").matches) {
+    count = 1
+  }
+  lory(objectsSlider, {
+    enableMouseEvents: true,
+    infinite: count,
+    slidesToScroll: count
+  })
+}
+
 
 // MicroModal.init({
 //   disableScroll: false,

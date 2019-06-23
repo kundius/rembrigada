@@ -3,14 +3,27 @@
 Template Name: Главная
 */
 
-// $services = new WP_Query(array(
-//     'post_type' => 'page',
-//     'post_parent' => 11
-// ));
-// $news = new WP_Query(array(
-//     'posts_per_page' => 3,
-//     'cat' => 2
-// ));
+$services = new WP_Query(array(
+    'post_type' => 'page',
+    'post_parent' => 11,
+    'order' => 'ASC',
+    'orderby' => 'menu_order',
+	'meta_query'	=> array(
+		array(
+			'key'	 	=> 'show_at_home',
+			'value'	  	=> '1',
+			'compare' 	=> '=',
+		)
+	)
+));
+$projects = new WP_Query(array(
+    'post_type' => 'project',
+    'posts_per_page' => 12,
+	'tax_query' => [[
+        'taxonomy' => 'project_category',
+        'terms'    => [3]
+    ]]
+));
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,13 +34,11 @@ Template Name: Главная
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
 
-            <!-- Якорь -->
             <div id="anchor"></div>
             
-            <!-- Прокрутка вверх страницы -->
             <a href="https://x-landing.ru/remont/index.html#anchor" class="scroll-up"></a>
-            <main>
 
+            <main>
                 <?php if ($slideshow = get_field('slideshow')): ?>
                 <div class="slideshow js-slideshow">
                     <div class="slideshow-frame js_frame">
@@ -71,135 +82,65 @@ Template Name: Главная
                         <button class="slideshow-nav__next js_next"></button>
                     </div>
                     <ul class="slideshow-dots js_dots"></ul>
+                    <a href="#content" class="slideshow__down"></a>
                 </div>
                 <?php endif; ?>
 
-                <!-- <section class="header-slider">
-                    <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
-                        <div class="swiper-wrapper" style="transform: translate3d(-2547px, 0px, 0px); transition-duration: 0ms;">
-                            <div class="swiper-slide swiper-slide-prev" style="width: 2547px;">
-                                <img src="./index_files/header-slide-img.jpg" alt="" data-pagespeed-url-hash="1073663304" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                <div class="slide-desc container">
-                                    <p class="price">от 1 500 руб. за м<span>2</span></p>
-                                    <h2>Ремонт “под ключ”</h2>
-                                    <h3>Квартир в Казани</h3>
-                                    <a href="https://x-landing.ru/remont/index.html#">
-                                        <p>Подробнее</p>
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active" style="width: 2547px;">
-                                <img src="./index_files/header-slide-img.jpg" alt="" data-pagespeed-url-hash="1073663304" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                <div class="slide-desc container">
-                                    <p class="price">от 1 500 руб. за м<span>2</span></p>
-                                    <h2>Ремонт “под ключ”</h2>
-                                    <h3>Квартир в Казани</h3>
-                                    <a href="https://x-landing.ru/remont/index.html#">
-                                        <p>Подробнее</p>
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-next" style="width: 2547px;">
-                                <img src="./index_files/header-slide-img.jpg" alt="" data-pagespeed-url-hash="1073663304" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                <div class="slide-desc container">
-                                    <p class="price">от 1 500 руб. за м<span>2</span></p>
-                                    <h2>Ремонт “под ключ”</h2>
-                                    <h3>Квартир в Казани</h3>
-                                    <a href="https://x-landing.ru/remont/index.html#">
-                                        <p>Подробнее</p>
-                                        <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
-                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
-                            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false"></div>
-                            <div class="slide-number">
-                                <p><span>01</span>3</p>
-                            </div>
-                        </div>
-                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-                </section> -->
-
-                <!-- Скрол вниз -->
-                <section class="down-the-page">
-                    <a href="https://x-landing.ru/remont/index.html#two-section">
-                        <div class="arrow-down"></div>
-                    </a>
+                <section class="site-desc-container" id="content">
+                    <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+                    <div class="site-desc">
+                        <h1><?php the_title(); ?></h1>
+                        <hr class="section-hr">
+                        <?php the_content(); ?>
+                    </div>
+                    <?php endwhile; endif; ?>
                 </section>
 
-                <!-- Описание компании -->
-                <section class="site-desc-container" id="two-section">
-                    <div class="site-desc">
-                        <h2>Качественный ремонт квартир, коттеджей, домов и коммерческой недвижимости</h2>
-                        <hr class="section-hr">
-                        <p>Многие компании готовы вам обещать «качественный» ремонт  квартир за 5 копеек. Только потом оказывается, что либо 5 копеек трансформировались в 5 рублей, либо ремонт надо начинать сначала уже через месяц-другой.</p>
-                        <p>За плохим ремонтом — это не к нам.</p>
-                        <p>К нам — за действительно качественным ремонтом квартир Казани, за оптимальными ценами, за гарантиями и за умением слышать и слушать.</p>        
-                    </div>
-                    </section>
-                <!-- Ремонт по типу недвижимости -->
+                <?php if ($services->have_posts()): ?>
                 <section class="type-of-repair">
                     <div class="container">
-                        <div class="repair-of-apartments">
-                            <h2>Ремонт квартир</h2>
-                            <!-- Фото ремонта и стоимость -->
+                        <?php while($services->have_posts()): $services->the_post(); ?>
+                        <div class="type-of-repair-item">
+                            <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
                             <div class="repair-img-label">
-                                <img class="repair-img" src="./index_files/repair-of-apartments.jpg" alt="" data-pagespeed-url-hash="1470099960" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                                <a href="<?php the_permalink() ?>" class="news-item__image">
+                                    <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 364))): ?>
+                                    <img class="repair-img" src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                    <?php else: ?>
+                                    <img class="repair-img" src="https://via.placeholder.com/468x364" alt="">
+                                    <?php endif; ?>
+                                </a>
+                                <?php if ($price = get_field('price', get_the_ID())): ?>
                                 <div class="label">
-                                    <p>от <span>1 500</span> р/м<sup>2</sup></p>
+                                    <p>
+                                        <?php echo $price['prefix'] ?>
+                                        <span><?php echo $price['amount'] ?></span>
+                                        <?php echo $price['unit'] ?>    
+                                    </p>
                                 </div>
+                                <?php endif; ?>
                             </div>
-                            <!-- Список видов ремонта -->
+                            <?php
+                                $children = new WP_Query(array(
+                                    'post_type' => 'page',
+                                    'order' => 'ASC',
+                                    'orderby' => 'menu_order',
+                                    'post_parent' => get_the_ID()
+                                ));
+                            ?>
+                            <?php if ($children->have_posts()): ?>
                             <div class="repair-list">
-                                <a href="https://x-landing.ru/remont/index.html#">1 - комнатная квартира</a>
-                                <a href="https://x-landing.ru/remont/index.html#">2<span>х</span> - комнатная квартира</a>
-                                <a href="https://x-landing.ru/remont/index.html#">3<span>х</span> - комнатная квартира</a>
-                                <a href="https://x-landing.ru/remont/index.html#">4<span>х</span> - комнатная квартира</a>
-                                <a href="https://x-landing.ru/remont/index.html#">В новостройке</a>
+                                <?php while($children->have_posts()): $children->the_post(); ?>
+                                    <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                                <?php endwhile; ?>
                             </div>
+                            <?php endif; ?>
                         </div>
-                        <div class="repair-of-houses">
-                            <h2>Ремонт домов</h2>
-                            <!-- Фото ремонта и стоимость -->
-                            <div class="repair-img-label">
-                                <img class="repair-img" src="./index_files/repair-of-houses.jpg" alt="" data-pagespeed-url-hash="3907290630" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                <div class="label">
-                                    <p>от <span>1 300</span> р/м<sup>2</sup></p>
-                                </div>
-                            </div>
-                            <!-- Список видов ремонта -->
-                            <div class="repair-list">
-                                <a href="https://x-landing.ru/remont/index.html#">Загородных домов</a>
-                                <a href="https://x-landing.ru/remont/index.html#">Коттеджей</a>
-                                <a href="https://x-landing.ru/remont/index.html#">Таунхаусов</a>
-                            </div>
-                        </div>
-                        <div class="repair-of-commercial-real-estate">
-                            <h2>Ремонт коммерческой недвижимости</h2>
-                            <!-- Фото ремонта и стоимость -->
-                            <div class="repair-img-label">
-                                <img class="repair-img" src="./index_files/repair-of-commercial-real-estate.jpg" alt="" data-pagespeed-url-hash="3013899275" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                <div class="label">
-                                    <p>от <span>1 000</span> р/м<sup>2</sup></p>
-                                </div>
-                            </div>
-                            <!-- Список видов ремонта -->
-                            <div class="repair-list">
-                                <a href="https://x-landing.ru/remont/index.html#">офисы</a>
-                                <a href="https://x-landing.ru/remont/index.html#">бары и рестораны</a>
-                                <a href="https://x-landing.ru/remont/index.html#">склады и помещения</a>
-                                <a href="https://x-landing.ru/remont/index.html#">4<span>х</span> - комнатная квартира</a>
-                                <a href="https://x-landing.ru/remont/index.html#">прочие объекты</a>
-                            </div>
-                        </div>
+                        <?php endwhile; ?>
                     </div>
                 </section>
-                <!-- Все детали -->
+                <?php endif; wp_reset_query(); ?>
+
                 <section class="all-details">
                     <div class="container">
                         <p>Нам доверяют потому что</p>
@@ -232,126 +173,52 @@ Template Name: Главная
                         </div>
                     </div>
                 </section>
-                <!-- Выполненные объекты -->
+
+                <?php if ($projects->have_posts()): ?>
                 <section class="completed-objects">
                     <div class="container">
-                        <p class="section-title">Выполненные объекты</p>
+                        <div class="completed-objects__title">Выполненные объекты</div>
+                        
                         <hr class="section-hr">
-                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
-                            <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1526px, 0px, 0px);"><div class="swiper-slide project2 swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects2.jpg" alt="" data-pagespeed-url-hash="2662903041" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project2-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div><div class="swiper-slide project3 swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects3.jpg" alt="" data-pagespeed-url-hash="2957402962" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project3-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div><div class="swiper-slide project4 swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="3" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects1.jpg" alt="" data-pagespeed-url-hash="2368403120" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project4-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide project1 swiper-slide-active" data-swiper-slide-index="0" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects1.jpg" alt="" data-pagespeed-url-hash="2368403120" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project1-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide project2 swiper-slide-next" data-swiper-slide-index="1" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects2.jpg" alt="" data-pagespeed-url-hash="2662903041" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project2-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide project3" data-swiper-slide-index="2" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects3.jpg" alt="" data-pagespeed-url-hash="2957402962" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project3-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide project4 swiper-slide-duplicate-prev" data-swiper-slide-index="3" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects1.jpg" alt="" data-pagespeed-url-hash="2368403120" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project4-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div>
-                            <div class="swiper-slide project1 swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects1.jpg" alt="" data-pagespeed-url-hash="2368403120" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project1-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div><div class="swiper-slide project2 swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects2.jpg" alt="" data-pagespeed-url-hash="2662903041" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project2-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div><div class="swiper-slide project3 swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 468.667px; margin-right: 40px;">
-                                    <img src="./index_files/completed-objects3.jpg" alt="" data-pagespeed-url-hash="2957402962" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
-                                    <!-- Содержимое слайдера -->
-                                    <div class="slide-desc container project3-desc">
-                                        <h2>Название проекта, например ремонт ванной, укладка плитки и тд</h2>
-                                        <hr>
-                                        <p>1-2 строчки о задачах, выполняемых работах, не больше</p>
-                                        <!-- Кнопка "Подробнее" -->
-                                        <a href="https://x-landing.ru/remont/index.html#"><p>Подробнее</p></a>
-                                    </div>
-                                </div></div>
-                            <!-- Arrows -->
-                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
-                            <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
-                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-                        <!-- Кнопка "Больше работ" -->
-                        <a href="https://x-landing.ru/remont/index.html#" class="more-btn"><p>Больше работ</p><span></span></a>
+
+                        <div class="objects-slider js-objects-slider">
+                            <div class="objects-slider-frame js_frame">
+                                <ul class="objects-slider-slides js_slides">
+                                    <?php while($projects->have_posts()): $projects->the_post(); ?>
+                                    <li class="objects-slider-slide js_slide">
+                                        <a href="<?php the_permalink() ?>" class="project-item">
+                                            <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 500))): ?>
+                                            <img class="project-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                            <?php else: ?>
+                                            <img class="project-item__image" src="https://via.placeholder.com/468x500" alt="">
+                                            <?php endif; ?>
+                                            <span class="project-item__info">
+                                                <span class="project-item__title"><span><?php the_title() ?></span></span>
+                                                <span class="project-item__hr"></span>
+                                                <?php if (has_excerpt()): ?>
+                                                <span class="project-item__desc"><?php the_excerpt() ?></span>
+                                                <?php endif; ?>
+                                                <span class="project-item__more"><span>Подробнее</span></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <?php endwhile; ?>
+                                </ul>
+                            </div>
+
+                            <div class="objects-slider-nav">
+                                <button class="js_prev objects-slider-prev"></button>
+                                <button class="js_next objects-slider-next"></button>
+                            </div>
+                        </div>
+                        
+                        <div class="completed-objects__more">
+                            <a href="https://x-landing.ru/remont/index.html#" class="btn-arrow">Больше работ</a>
+                        </div>
                     </div>
                 </section>
+                <?php endif; wp_reset_query(); ?>
+
                 <!-- Экран "Схема работы" -->
                 <section class="scheme-of-work">
                     <div class="container">

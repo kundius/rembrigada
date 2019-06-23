@@ -8,8 +8,9 @@ add_action('after_setup_theme', function() {
 	) );
 });
 
-add_theme_support( 'post-thumbnails', array( 'post' ) );
-add_theme_support( 'post-thumbnails', array( 'page' ) );
+add_theme_support('post-thumbnails', array('post', 'page', 'project'));
+add_image_size('w468h364', 468, 364, true);
+add_image_size('w468h500', 468, 500, true);
 
 function icon($name, $scale = 1) {
 	$width = $scale * 20;
@@ -51,3 +52,53 @@ add_shortcode('services', function($atts) {
 	<?php endif; wp_reset_query();
 });
 
+add_action('init', function() {
+	register_taxonomy('project_category', '', array(
+		'label'                 => '',
+		'labels'                => array(
+			'name'              => 'Категории',
+			'singular_name'     => 'Категория',
+			'search_items'      => 'Искать категории',
+			'all_items'         => 'Все категории',
+			'view_item '        => 'Смотреть категорию',
+			'parent_item'       => 'Родительская категория',
+			'parent_item_colon' => 'Родительская категория:',
+			'edit_item'         => 'Редактировать категорию',
+			'update_item'       => 'Изменить категорию',
+			'add_new_item'      => 'Добавить новую категорию',
+			'new_item_name'     => 'Название новой категории',
+			'menu_name'         => 'Категории'
+		),
+		'description'           => '',
+		'public'                => true,
+		'hierarchical'          => true,
+		'meta_box_cb'           => 'post_categories_meta_box'
+	));
+});
+
+add_action('init', function() {
+	register_post_type('project', array(
+		'labels'             => array(
+			'name'               => 'Проекты',
+			'singular_name'      => 'Проект',
+			'add_new'            => 'Добавить новый',
+			'add_new_item'       => 'Добавить новый проект',
+			'edit_item'          => 'Редактировать преокт',
+			'new_item'           => 'Новый проект',
+			'view_item'          => 'Посмотреть проект',
+			'search_items'       => 'Найти проект',
+			'not_found'          => 'Проектов не найдено',
+			'not_found_in_trash' => 'В корзине проектов не найдено',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Проекты'
+		),
+		'public'             => true,
+		'menu_icon'			 => 'dashicons-portfolio',
+		'menu_position'      => 21,
+		'supports'           => array('title', 'editor', 'thumbnail', 'excerpt')
+	));
+});
+
+add_action('init', function() {
+	register_taxonomy_for_object_type('project_category', 'project');
+});

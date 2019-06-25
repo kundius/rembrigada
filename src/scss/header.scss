@@ -1,12 +1,11 @@
 @import 'variables.scss';
 
 .header {
-    position: fixed;
-    top: 0;
     width: 100%;
     margin: 0 auto;
     background-color: #1c1e21;
     z-index: 150;
+    position: relative;
     @media (max-width: $breakpoint-xsmall-max) {
         position: relative;
     }

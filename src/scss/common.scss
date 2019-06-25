@@ -156,6 +156,67 @@ img {
     }
 }
 
+.page-headline {
+    background: #e8e8e8;
+    padding-bottom: 36px;
+}
+
+.breadcrumbs {
+    color: #636363;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18.69px;
+    padding: 10px 0;
+    a {
+        color: #868686;
+        text-decoration: underline;
+        &:hover {
+            color: #636363;
+        }
+    }
+}
+
+.breadcrumbs__separator {
+    margin: 0 8px;
+    display: inline-block;
+    width: 7px;
+    height: 6px;
+    position: relative;
+    &::before {
+        content: '';
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 2.5px;
+        background: #9b9b9b;
+    }
+    &::after {
+        content: '';
+        height: 0;
+        width: 0;
+        border-left: 3px solid #9b9b9b;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+.page-headline__title {
+    color: #ffffff;
+    font-family: "Next Art", sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.56px;
+    line-height: 1;
+    span {
+        background-color: rgba(28, 30, 33, 0.5);
+        padding: 0 5px;
+    }
+}
 
 /* Якорь */
 #anchor {
@@ -289,54 +350,6 @@ img {
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
-}
-
-main {
-    margin-top: 108px;
-    scroll-behavior: auto;
-}
-
-/* Путь страницы */
-.page-path .container {
-    display: flex;
-    font-size: 11px;
-    padding: 8px 0;
-}
-
-.page-path .container a {
-    display: flex;
-    color: #868686;
-    text-decoration: none;
-    border-bottom: 1px solid #868686;
-}
-
-.page-path .container .page-path-arrow {
-    display: block;
-    height: 100%;
-    padding: 0 8px;
-}
-
-.page-path .container p {
-    color: #636363;
-}
-
-/* Название страницы */
-.page-title {
-    padding: 35px 0;
-    background-color: #e8e8e8;
-}
-
-.page-title h1 {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding: 0 15px 0 5px;
-    color: #fff;
-    font-size: 60px;
-    text-transform: uppercase;
-    font-family: "Next Art", sans-serif;
-    font-weight: bold;
-    background-color: #828384;
 }
 
 .section-title {
@@ -1196,16 +1209,6 @@ main {
 
 /* 768px - 992px */
 @media screen and (max-width: $breakpoint-small-max) {
-    .page-path {
-        display: block;
-    }
-    .page-title {
-        padding: 20px 0;
-    }
-    .page-title h1 {
-        font-size: 28px;
-        margin-left: 40px;
-    }
     .section-title {
         font-size: 16px;
         padding-bottom: 15px;

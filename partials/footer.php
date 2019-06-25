@@ -27,6 +27,9 @@
             <div class="footer__policy">
                 <a href="#">Политика конфиденциальности и обработки персональных данных</a>
             </div>
+            <div class="footer__hr1"></div>
+            <div class="footer__hr2"></div>
+            <div class="footer__hr3"></div>
         </div>
     </div>
 </footer>

@@ -11,6 +11,7 @@ add_action('after_setup_theme', function() {
 add_theme_support('post-thumbnails', array('post', 'page', 'project'));
 add_image_size('w468h364', 468, 364, true);
 add_image_size('w468h500', 468, 500, true);
+add_image_size('w560h308', 560, 308, false);
 
 function icon($name, $scale = 1) {
 	$width = $scale * 20;
@@ -96,6 +97,26 @@ add_action('init', function() {
 		'menu_icon'			 => 'dashicons-portfolio',
 		'menu_position'      => 21,
 		'supports'           => array('title', 'editor', 'thumbnail', 'excerpt')
+	));
+	register_post_type('review', array(
+		'labels'             => array(
+			'name'               => 'Отзывы',
+			'singular_name'      => 'Отзыв',
+			'add_new'            => 'Добавить новый',
+			'add_new_item'       => 'Добавить новый отзыв',
+			'edit_item'          => 'Редактировать преокт',
+			'new_item'           => 'Новый отзыв',
+			'view_item'          => 'Посмотреть отзыв',
+			'search_items'       => 'Найти отзыв',
+			'not_found'          => 'Отзывов не найдено',
+			'not_found_in_trash' => 'В корзине отзывов не найдено',
+			'parent_item_colon'  => '',
+			'menu_name'          => 'Отзывы'
+		),
+		'public'             => true,
+		'menu_icon'			 => 'dashicons-format-status',
+		'menu_position'      => 22,
+		'supports'           => array('title', 'editor', 'excerpt')
 	));
 });
 

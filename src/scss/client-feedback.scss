@@ -1,0 +1,194 @@
+.client-feedback {
+    padding-top: 87px;
+    padding-bottom: 85px;
+    @media (max-width: $breakpoint-small-max) {
+        padding-top: 34px;
+        padding-bottom: 22px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding-top: 49px;
+        padding-bottom: 41px;
+    }
+}
+
+.client-feedback__title {
+    color: #000000;
+    font-family: "Next Art", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    &::after {
+        content: '';
+        display: block;
+        width: 111px;
+        height: 3px;
+        background-color: #000000;
+        margin: 16px auto 0;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 16px;
+        &::after {
+            width: 58px;
+            height: 2px;
+            margin-top: 14px;
+        }
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 18px;
+        &::after {
+            width: 64px;
+            height: 3px;
+            margin-top: 21px;
+        }
+    }
+}
+
+.client-feedback__more {
+    text-align: center;
+    margin-top: 57px;
+    @media (max-width: $breakpoint-small-max) {
+        margin-top: 32px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-top: 37px;
+    }
+}
+
+.client-feedback-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -32px;
+    margin-top: 13px;
+    @media (max-width: $breakpoint-small-max) {
+        margin-left: -17px;
+        margin-top: 0;
+    }
+}
+
+.client-feedback-grid__item {
+    width: 50%;
+    padding-left: 32px;
+    margin-top: 47px;
+    @media (max-width: $breakpoint-small-max) {
+        padding-left: 17px;
+        margin-top: 29px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+    }
+}
+
+.client-feedback-item {
+}
+
+.client-feedback-item__video {
+    display: block;
+    padding-bottom: 70%;
+    position: relative;
+    iframe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.client-feedback-item__image {
+    display: flex;
+    justify-content: center;
+    background: #ededed;
+    img {
+        display: block;
+    }
+}
+
+.client-feedback-item__info {
+    margin-top: 26px;
+    padding-left: 52px;
+    position: relative;
+    @media (max-width: $breakpoint-small-max) {
+        padding-left: 28px;
+        margin-top: 13px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-top: 18px;
+        padding-left: 24px;
+    }
+}
+
+.client-feedback-item__icon {
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    color: #ed3947;
+    svg {
+        width: 33px;
+        height: 30px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        left: 1px;
+        top: 3px;
+        svg {
+            width: 19px;
+            height: 17px;
+        }
+    }
+}
+
+.client-feedback-item__address {
+    color: #ed3947;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 14px;
+    }
+}
+
+.client-feedback-item__desc {
+    margin-top: 15px;
+    color: #000;
+    font-size: 14px;
+    line-height: 1.35;
+    @media (max-width: $breakpoint-small-max) {
+        line-height: 1;
+    }
+}
+
+.client-feedback-item__more {
+    display: inline-block;
+    color: #297780;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    border-bottom: 1px dashed currentColor;
+    padding: 0;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    margin-top: 19px;
+    &:hover {
+        color: #20a8ff;
+    }
+    &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 8px;
+        width: 5px;
+        height: 5px;
+        position: relative;
+        top: -1px;
+        transform: rotate(-45deg);
+        border-right: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        margin-top: 14px;
+    }
+}

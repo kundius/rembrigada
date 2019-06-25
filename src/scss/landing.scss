@@ -346,13 +346,13 @@
 /* Ремонт по типу недвижимости */
 .type-of-repair {
     background-color: #fdfaff;
+    padding-bottom: 114px;
 }
 
 .type-of-repair .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 80px;
 }
 
 .type-of-repair-item {
@@ -394,6 +394,11 @@
     position: relative;
 }
 
+.repair-img-label a,
+.repair-img-label a img {
+    display: block;
+}
+
 .repair-img-label .label {
     position: absolute;
     top: 9px;
@@ -426,34 +431,34 @@
 
 /* Список видов ремонта */
 .type-of-repair .repair-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
-    margin-left: 157px;
+    flex-flow: column;
+    align-self: flex-end;
     padding-top: 20px;
 }
 
 .type-of-repair .repair-list a {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    height: 34px;
+    padding-left: 0.556em;
+    padding-right: 0.556em;
     color: #333333;
     text-decoration: none;
     text-transform: uppercase;
-    line-height: 34px;
+    line-height: 1.889em;
+    position: relative;
+    align-items: flex-start;
+    font-size: 18px;
 }
 
 .type-of-repair .repair-list a::before {
-    display: block;
     content: '';
-    width: 12px;
-    height: 12px;
-    margin: auto 15px auto 8px;
+    display: block;
+    margin-right: 0.834em;
+    width: 0.667em;
+    height: 0.667em;
+    min-width: 0.667em;
+    min-height: 0.667em;
+    margin-top: 0.6em;
     background-color: #ed3947;
 }
 
@@ -468,10 +473,11 @@
     background-image: url(../img/all-details-bg.jpg);
     background-position: center;
     color: #fff;
+    background-size: cover;
 }
 
 .all-details .container {
-    width: 850px;
+    width: 900px;
 }
 
 .all-details p {
@@ -548,6 +554,13 @@
     padding: 92px 0 67px;
     background-color: #1c1e22;
     color: #fff;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding-top: 42px;
+        padding-bottom: 20px;
+        .container {
+            padding: 0;
+        }
+    }
 }
 
 .completed-objects__title {
@@ -559,6 +572,10 @@
     letter-spacing: 1.2px;
     text-align: center;
     margin-bottom: 21px;
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 18px;
+        margin-bottom: 17px;
+    }
 }
 
 .completed-objects__more {
@@ -571,6 +588,10 @@
     user-select: none;
     margin: 37px 0 40px;
     position: relative;
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 .objects-slider-frame {
@@ -601,15 +622,15 @@
     }
     @media (max-width: $breakpoint-medium-max) {
         margin-right: 16px;
-        width: calc(100vw / 3 - (64px / 3)); // 112px отступ контейнера + оступ между элементами + ширина скролла страницы
+        width: calc(100vw / 3 - (64px / 3)); // 64px отступ контейнера + оступ между элементами + ширина скролла страницы
     }
     @media (max-width: $breakpoint-small-max) {
         margin-right: 16px;
-        width: calc(100vw / 2 - (48px / 2)); // 112px отступ контейнера + оступ между элементами + ширина скролла страницы
+        width: calc(100vw / 2 - (48px / 2)); // 48px отступ контейнера + оступ между элементами + ширина скролла страницы
     }
     @media (max-width: $breakpoint-xsmall-max) {
         margin-right: 16px;
-        width: calc(100vw - 20px); // 112px отступ контейнера + оступ между элементами + ширина скролла страницы
+        width: 100vw;
     }
 }
 
@@ -618,6 +639,13 @@
     right: 0;
     top: -91px;
     display: flex;
+    @media (max-width: $breakpoint-xsmall-max) {
+        position: relative;
+        margin: 0 auto 22px;
+        width: 64px;
+        top: initial;
+        right: initial;
+    }
 }
 
 .objects-slider-prev,
@@ -724,6 +752,16 @@
         opacity: 0;
         transition: all .5s ease;
     }
+    @media (max-width: $breakpoint-medium-max) {
+        padding: 25px;
+        &::before {
+            left: -10px;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-width: 15px;
+        }
+    }
 }
 
 .project-item__title {
@@ -741,6 +779,9 @@
     span {
         background: rgba(0, 0, 0, .5);
     }
+    @media (max-width: $breakpoint-medium-max) {
+        font-size: 18px;
+    }
 }
 
 .project-item__hr {
@@ -751,6 +792,9 @@
     background-color: #ffffff;
     opacity: 0;
     transition: opacity .3s ease;
+    @media (max-width: $breakpoint-medium-max) {
+        margin-top: 10px;
+    }
 }
 
 .project-item__desc {
@@ -764,6 +808,10 @@
     line-height: 1.2;
     opacity: 0;
     transition: opacity .3s ease;
+    @media (max-width: $breakpoint-medium-max) {
+        font-size: 14px;
+        margin-top: 15px;
+    }
 }
 
 .project-item__more {
@@ -803,6 +851,11 @@
             left: 0;
             right: 0;
         }
+    }
+    @media (max-width: $breakpoint-medium-max) {
+        font-size: 14px;
+        line-height: 30px;
+        margin-top: 30px;
     }
 }
 
@@ -943,172 +996,6 @@
     padding-bottom: 0;
 }
 
-/* Экран "Отзывы клиентов" */
-.client-feedback {
-    padding: 80px 0 85px;
-}
-
-.client-feedback {
-    width: 1160px;
-}
-
-.client-feedback .section-title {
-    letter-spacing: 0;
-    padding-bottom: 18px;
-}
-
-.client-feedback hr {
-    background-color: #333333;
-}
-
-.client-feedback .video-feedback-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding-top: 60px;
-}
-
-.client-feedback .video-feedback-item iframe {
-    width: 565px;
-    height: 395px;
-}
-
-.client-feedback .text-feedback-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    padding-top: 45px;
-}
-
-.client-feedback .text-feedback-item {
-    width: 565px;
-}
-
-.client-feedback .text-feedback-item img {
-    width: 100%;
-    height: 365px;
-    -o-object-fit: cover;
-       object-fit: cover;
-}
-
-.client-feedback .text-feedback-item .text-feedback {
-    position: relative;
-    padding: 25px 0 0 50px;
-}
-
-.client-feedback .text-feedback-item .text-feedback::before {
-    position: absolute;
-    left: 0;
-    display: block;
-    width: 33px;
-    height: 29px;
-    content: '';
-    background-image: url(../img/quote.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.client-feedback .text-feedback-item .text-feedback h4 {
-    padding-bottom: 20px;
-    color: #ed3947;
-    font-size: 16.18px;
-    font-weight: bold;
-}
-
-.client-feedback .text-feedback-item .text-feedback p {
-    padding-bottom: 20px;
-    width: 440px;
-    font-size: 14.16px;
-    line-height: 18.2px;
-}
-
-.client-feedback .text-feedback-item .text-feedback a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    text-decoration: none;
-    color: #297780;
-    font-size: 14.16px;
-    line-height: 18.2px;
-    border-bottom: 1px dotted #297780;
-}
-
-.client-feedback .text-feedback-item .text-feedback a::after {
-    display: block;
-    padding-left: 5px;
-    content: '\203A';
-}
-
-.client-feedback .text-feedback-item .text-feedback a:hover {
-    color: #20a8ff;
-    border-bottom: 1px dotted #20a8ff;
-}
-
-.client-feedback .more-btn {
-    margin-top: 55px;
-}
-
-.client-feedback .more-btn p {
-    width: 182px;
-
-    padding-left: 40px;
-    border: 2px solid #bcbcbc;
-    border-right: 1px solid #bcbcbc;
-    color: #000;
-}
-
-.client-feedback .more-btn:hover p,
-.client-feedback .more-btn:hover span {
-    background-color: #d7d7d7;
-}
-
-.client-feedback .more-btn:active p,
-.client-feedback .more-btn:active span {
-    background-color: #adadad;
-    color: #fff;
-}
-
-.client-feedback .more-btn span {
-    width: 52px;
-    border: 2px solid #bcbcbc;
-    border-left: 1px solid #bcbcbc;
-}
-
-.client-feedback .more-btn span::before,
-.client-feedback .more-btn span::after {
-    left: 15px;
-    width: 16px;
-    height: 2px;
-    background-color: #000;
-    top: calc(50% - 1px);
-}
-
-.client-feedback .more-btn span:active,
-.client-feedback .more-btn span:active {
-    background-color: #fff;
-}
-
-.client-feedback .more-btn span::before {
-    -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
-}
-
-.client-feedback .more-btn span::after {
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg);
-}
-
 /* Экран "Дополнительные услуги" */
 .complementary-services {
     padding: 90px 0 105px;
@@ -1125,12 +1012,8 @@
 }
 
 .complementary-services .complementary-services-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     width: 1160px;
     margin: 0 auto;
     padding-top: 60px;
@@ -1143,15 +1026,9 @@
 
 .complementary-services .complementary-services-item .services-img {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 125px;
 }
@@ -1181,15 +1058,9 @@
 }
 
 .complementary-services .complementary-services-item p {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
     height: 40px;
     margin-top: 15px;
     text-align: center;
@@ -1199,7 +1070,6 @@
 }
 
 .complementary-services .complementary-services-item:hover p {
-    margin-top: 13px;
     background-color: #ed3947;
     border-radius: 20px;
 }
@@ -1413,9 +1283,6 @@
     .type-of-repair-item {
         width: 405px;
     }
-    .type-of-repair .repair-list {
-        margin-left: 60px;
-    }
     .about-company .container {
         padding-left: 600px;
     }
@@ -1444,16 +1311,6 @@
     }
     .about-company {
         padding: 120px 0 110px;
-    }
-    .client-feedback .video-feedback-item iframe {
-        width: 420px;
-        height: 260px;
-    }
-    .client-feedback .text-feedback-item {
-        width: 420px;
-    }
-    .client-feedback .text-feedback-item .text-feedback p {
-        width: auto;
     }
     .complementary-services {
         padding: 70px 0 85px;
@@ -1654,28 +1511,14 @@
     .type-of-repair {
         padding-bottom: 55px;
     }
-    .type-of-repair .repair-list {
-        margin-left: 50px;
-    }
     .type-of-repair .repair-list a {
-        height: 17px;
         font-size: 12px;
-        line-height: 15.36px;
-    }
-    .type-of-repair .repair-list a span {
-        text-transform: none;
-    }
-    .type-of-repair .repair-list a::before {
-        width: 6px;
-        height: 6px;
-        margin: auto 5px auto 5px;
     }
     .all-details {
         padding: 50px 0 65px;
     }
     .all-details .container {
-        width: 670px;
-        padding-left: 60px;
+        width: 600px;
     }
     .all-details p {
         font-size: 12.29px;
@@ -1805,54 +1648,6 @@
         line-height: 16px;
         padding-bottom: 15px;
     }
-    .client-feedback {
-        padding: 35px 0 20px; 
-    }
-    .client-feedback .video-feedback-list {
-        padding-top: 23px;
-    }
-    .client-feedback .video-feedback-item iframe {
-        width: 320px;
-        height: 225px;
-    }
-    .client-feedback .text-feedback-list {
-        padding-top: 30px;
-    }
-    .client-feedback .text-feedback-item {
-        width: 320px;
-    }
-    .client-feedback .text-feedback-item img {
-        height: 180px;
-    }
-    .client-feedback .text-feedback-item .text-feedback::before {
-        width: 18px;
-    }
-    .client-feedback .text-feedback-item .text-feedback {
-        padding: 16px 0 0 28px;
-    }
-    .client-feedback .text-feedback-item .text-feedback h4,
-    .client-feedback .text-feedback-item .text-feedback p {
-        font-size: 14px;
-        padding-bottom: 15px;
-    }
-    .client-feedback .text-feedback-item .text-feedback p {
-        line-height: 14.16px;
-    }
-    .client-feedback .text-feedback-item .text-feedback a {
-        font-size: 14.16px;
-    }
-    .client-feedback .more-btn {
-        margin-top: 25px;
-    }
-    .client-feedback .more-btn p {
-        padding-left: 32px;
-    }
-    .client-feedback .more-btn span {
-        width: 40px;
-    }
-    .client-feedback .more-btn span::before, .client-feedback .more-btn span::after {
-        left: 10px;
-    }
     .complementary-services {
         padding: 40px 0;
     }
@@ -1937,27 +1732,11 @@
     .site-desc p {
         padding: 0 0 12px;
     }
-    .type-of-repair .container {
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    }
     .repair-of-commercial-real-estate {
         margin: 20px auto 0;
     }
-    .all-details .container {
-        width: 540px;
-    }
     .about-company .container {
         padding-left: 280px;
-    }
-    .client-feedback .video-feedback-item:nth-child(2),
-    .client-feedback .text-feedback-item:nth-child(2) {
-        display: none;
-    }
-    .client-feedback .video-feedback-item iframe,
-    .client-feedback .text-feedback-item img {
-        width: 100%;
-        height: 285px;
     }
     .complementary-services .complementary-services-list {
         -ms-flex-wrap: wrap;
@@ -2002,8 +1781,7 @@
         margin: 0 auto;
         padding-bottom: 25px;
     }
-    .free-consultation.container,
-    .client-feedback.container {
+    .free-consultation.container {
         width: 540px !important;
     }
 }
@@ -2100,7 +1878,6 @@
         padding-top: 0;
         position: absolute;
         top: 135px;
-        margin-left: 65px;
     }
     .type-of-repair .repair-list a {
         font-size: 14px;
@@ -2108,17 +1885,13 @@
     .type-of-repair .repair-list a::before {
         width: 10px;
         height: 10px;
-        margin: auto 9px auto 5px;
+        top: 5px;
     }
     .repair-of-commercial-real-estate {
         margin: 0;
     }
     .all-details {
         padding: 70px 0 40px;
-    }
-    .all-details .container {
-        width: 90%;
-        padding-left: 0;
     }
     .all-details p {
         font-size: 18px;
@@ -2151,7 +1924,7 @@
     .all-details .details-item {
         padding-bottom: 36px;
     }
-    .free-consultation.container, .client-feedback.container {
+    .free-consultation.container {
         width: 90% !important;
     }
     .free-consultation {
@@ -2211,18 +1984,6 @@
     .about-company p {
         font-size: 16px;
         line-height: 18px;
-    }
-    .client-feedback {
-        padding: 45px 0 40px;
-    }
-    .client-feedback .video-feedback-item iframe {
-        height: 215px;
-    }
-    .client-feedback .text-feedback-item img {
-        height: 170px;
-    }
-    .client-feedback .more-btn {
-        margin-top: 30px;
     }
     .complementary-services .complementary-services-list {
         padding: 35px 20px 0;

@@ -12,6 +12,7 @@ add_theme_support('post-thumbnails', array('post', 'page', 'project'));
 add_image_size('w468h364', 468, 364, true);
 add_image_size('w468h500', 468, 500, true);
 add_image_size('w560h308', 560, 308, false);
+add_image_size('w400h400', 400, 400, true);
 
 function icon($name, $scale = 1) {
 	$width = $scale * 20;

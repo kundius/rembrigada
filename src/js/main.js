@@ -33,6 +33,16 @@
 //   el.innerHTML = '<span>' + words.join('</span><span>') + '</span>'
 // })
 
+document.querySelectorAll('.wp-block-table').forEach(function(el) {
+  const wrapper = document.createElement('div')
+  const container = document.createElement('div')
+  el.parentNode.insertBefore(wrapper, el)
+  container.appendChild(el)
+  wrapper.appendChild(container)
+  wrapper.classList.add('wp-block-table-wrapper')
+  container.classList.add('wp-block-table-container')
+})
+
 const slideshow = document.querySelector('.js-slideshow')
 if (slideshow) {
   const dot_count = slideshow.querySelectorAll('.js_slide').length
@@ -184,4 +194,19 @@ document.querySelectorAll('.header-toggle').forEach(function(handler) {
     e.preventDefault()
     toggle()
   })
+})
+
+document.querySelectorAll('.js-img-to-svg').forEach(function(img) {
+  const xhttp = new XMLHttpRequest()
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const div = document.createElement('div')
+      div.innerHTML = this.responseText
+      const svg = div.querySelector('svg')
+      img.parentNode.insertBefore(svg, img.nextSibling)
+      img.parentNode.removeChild(img)
+    }
+  }
+  xhttp.open('GET', img.src, true)
+  xhttp.send()
 })

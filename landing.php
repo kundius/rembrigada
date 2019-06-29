@@ -234,27 +234,27 @@ $reviews = new WP_Query(array(
                     <hr class="section-hr">
                     <div class="scheme-of-work-list">
                         <div class="scheme-of-work-item">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/smartphone.png" alt="" data-pagespeed-url-hash="1075662114" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/smartphone.png" alt=""  >
                             <p>1. Звонок или заявка</p>
                         </div>
                         <div class="scheme-of-work-item">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/measuring-tape.png" alt="" data-pagespeed-url-hash="3087095749" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/measuring-tape.png" alt=""  >
                             <p>2. Выезд замерщика</p>
                         </div>
                         <div class="scheme-of-work-item">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/calculator.png" alt="" data-pagespeed-url-hash="1422314343" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/calculator.png" alt=""  >
                             <p>3. Расчет сметы</p>
                         </div>
                         <div class="scheme-of-work-item">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/contract.png" alt="" data-pagespeed-url-hash="65157367" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/contract.png" alt=""  >
                             <p>4. Подписание договора</p>
                         </div>
                         <div class="scheme-of-work-item">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/paint-roller.png" alt="" data-pagespeed-url-hash="645180590" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/paint-roller.png" alt=""  >
                             <p>5. Ремонтные работы</p>
                         </div>
                         <div class="scheme-of-work-item">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/agreement.png" alt="" data-pagespeed-url-hash="1376562455" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/agreement.png" alt=""  >
                             <p>6. Готовый результат</p>
                         </div>
                     </div>
@@ -263,7 +263,7 @@ $reviews = new WP_Query(array(
             
             <section class="free-consultation container">
                 <div class="consultation-img">
-                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/consultation-img.jpg" alt="" data-pagespeed-url-hash="322018112" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/consultation-img.jpg" alt=""  >
                 </div>
                 <div class="free-consultation-desc">
                     <h3>Заказать <br> бесплатную консультацию</h3>
@@ -336,7 +336,7 @@ $reviews = new WP_Query(array(
                             <span class="additional-services-item__image">
                                 <span>
                                     <?php if ($image = get_the_post_thumbnail_url(get_the_ID())): ?>
-                                    <img src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                    <img src="<?php echo $image ?>" alt="<?php the_title() ?>" class="js-img-to-svg">
                                     <?php else: ?>
                                     <img src="https://via.placeholder.com/100x100" alt="">
                                     <?php endif; ?>
@@ -355,7 +355,7 @@ $reviews = new WP_Query(array(
             <!-- Поп-ап "Заказать обратный звонок" -->
             <div class="pop-up-callback">
                 <div class="pop-up-callback-img">
-                    <img src="./index_files/pop-up-callback-img.jpg" alt="" data-pagespeed-url-hash="3142889274" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    <img src="./index_files/pop-up-callback-img.jpg" alt=""  >
                 </div>
                 <div class="pop-up-callback-order">
                     <h3>Заказать <br> Обратный звонок</h3>
@@ -374,7 +374,7 @@ $reviews = new WP_Query(array(
             <!-- Поп-ап "Заявка отправлена -->
             <div class="pop-up-callback-send">
                 <div class="pop-up-callback-send-our-work">
-                    <img src="./index_files/our-work-send.jpg" alt="" data-pagespeed-url-hash="3225574192" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    <img src="./index_files/our-work-send.jpg" alt=""  >
                     <a href="#"><p>Наши работы</p></a>
                 </div>
                 <div class="pop-up-callback-send-ok">
@@ -382,15 +382,15 @@ $reviews = new WP_Query(array(
                     <p>Наш специалист свяжется с Вами в течении 15 минут, а пока вы можете ознакомиться с видами ремонта, которые мы делаем и как мы его делаем.</p>
                     <div class="pop-up-callback-category-list">
                         <a href="#" class="pop-up-callback-category-item">
-                            <img src="./index_files/apartments.png" alt="" data-pagespeed-url-hash="195874146" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="./index_files/apartments.png" alt=""  >
                             <h4>Ремонт квартир</h4>
                         </a>
                         <a href="#" class="pop-up-callback-category-item">
-                            <img src="./index_files/house.png" alt="" data-pagespeed-url-hash="3849573793" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="./index_files/house.png" alt=""  >
                             <h4>Ремонт домов</h4>
                         </a>
                         <a href="#" class="pop-up-callback-category-item">
-                            <img src="./index_files/commerce-apartments.png" alt="" data-pagespeed-url-hash="1255214204" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                            <img src="./index_files/commerce-apartments.png" alt=""  >
                             <h4><span>Ремонт коммерческой недвижимости</span><span>Ремонт коммерч. недвиж-ти</span></h4>
                         </a>
                     </div>

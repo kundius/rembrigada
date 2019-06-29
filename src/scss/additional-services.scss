@@ -91,6 +91,10 @@
         display: block;
         padding-bottom: 100%;
     }
+    svg {
+        fill: rgb(255, 255, 255);
+    }
+    svg,
     img {
         position: absolute;
         left: 50%;
@@ -98,8 +102,8 @@
         transform: translate(-50%, -50%);
         width: auto;
         height: auto;
-        max-height: 80%;
-        max-width: 80%;
+        max-height: 60%;
+        max-width: 60%;
     }
     &::after {
         content: '';

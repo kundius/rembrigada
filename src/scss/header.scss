@@ -107,7 +107,7 @@
     position: absolute;
     background-color: #cfcfd0;
     height: 4px;
-    width: 27px;
+    width: 26px;
     transform: translate(-50%, -50%);
     &::before,
     &::after {
@@ -115,7 +115,7 @@
         content: '';
         position: absolute;
         left: 50%;
-        width: 27px;
+        width: 26px;
         height: 4px;
         background-color: #cfcfd0;
         transform: translate(-50%, -50%)

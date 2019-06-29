@@ -2,6 +2,8 @@
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
 
+add_post_type_support( 'page', 'excerpt' );
+
 add_action('after_setup_theme', function() {
 	register_nav_menus( array(
 		'mainmenu' => 'Основное меню'
@@ -29,6 +31,29 @@ if (function_exists('acf_add_options_page')) {
 		'redirect'		=> false
 	));
 }
+
+add_shortcode('repairs', function($atts) {
+	$repairs = get_field('repairs', 'options');
+
+	$output = '';
+	if ($repairs):
+		$output .= '<div class="repairs">';
+		foreach($repairs as $repair):
+			$output .= '<div class="repairs-item">';
+			$output .= '<div class="repairs-item__image" title="Кликните, чтобы прочитать более подробную информацию">';
+			$output .= '<div class="repairs-item__image-inner">';
+			$output .= '<img src="' . $repair['image']['url'] . '" alt="">';
+			$output .= '</div>';
+			$output .= '</div>';
+			$output .= '<div class="repairs-item__title" title="Кликните, чтобы прочитать более подробную информацию">';
+			$output .= '<div class="repairs-item__title-inner"><span>' . $repair['name'] . '</span></div>';
+			$output .= '</div>';
+			$output .= '</div>';
+		endforeach;
+		$output .= '</div>';
+	endif;
+	return $output;
+});
 
 add_shortcode('services', function($atts) {
 	$services = new WP_Query(array(

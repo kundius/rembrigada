@@ -214,3 +214,25 @@ add_action('init', function() {
 add_action('init', function() {
 	register_taxonomy_for_object_type('project_category', 'project');
 });
+
+function be_register_blocks() {
+    if( ! function_exists('acf_register_block') )
+        return;
+    acf_register_block( array(
+        'name' => 'list-reasons',
+        'title' => 'Список причин',
+        'render_template' => 'partials/blocks/list-reasons.php',
+        'category' => 'formatting',
+        'icon' => 'editor-ul',
+        'mode' => 'edit'
+    ));
+    acf_register_block( array(
+        'name' => 'list-questions',
+        'title' => 'Список вопрос-ответ',
+        'render_template' => 'partials/blocks/list-questions.php',
+        'category' => 'formatting',
+        'icon' => 'editor-ul',
+        'mode' => 'edit'
+    ));
+}
+add_action('acf/init', 'be_register_blocks' );

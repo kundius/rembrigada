@@ -10,6 +10,12 @@
     }
 }
 
+.services-object-scheme + .section-contacts {
+    @media (max-width: $breakpoint-xsmall-max) {
+        background: #ed3947;
+    }
+}
+
 .section-contacts-grid {
     display: flex;
     flex-wrap: wrap;

@@ -55,6 +55,71 @@ add_shortcode('repairs', function($atts) {
 	return $output;
 });
 
+add_shortcode('service-info', function($atts) {
+	$longtitle = get_field('longtitle');
+	if (empty($longtitle)) {
+		$longtitle = get_the_title();
+	}
+	$price = get_field('price');
+	$image = get_the_post_thumbnail_url(get_the_ID(), array(400, 400));
+	$services = new WP_Query(array(
+		'post_type' => 'page',
+		'post_parent' => get_the_ID(),
+		'order' => 'ASC',
+		'orderby' => 'menu_order'
+	));
+
+	$output = '<div class="services-section-info">';
+	$output .= '<div class="services-section-info__headline">';
+	$output .= '<div class="services-section-info__title">' . $longtitle . '</div>';
+	if ($price) {
+		$output .= '<div class="services-section-info__price">' . $price['prefix'] . '<span>' . $price['amount'] . '</span>' . $price['unit'] . '</div>';
+	}
+	$output .= '</div>';
+	$output .= '<div class="services-section-info__grid">';
+	$output .= '<div class="services-section-info__cell">';
+	if ($image) {
+		$output .= '<div class="services-section-info__image">';
+		$output .= '<img src="' . $image . '">';
+		$output .= '</div>';
+	}
+	$output .= '</div>';
+	$output .= '<div class="services-section-info__cell">';
+	if (has_excerpt()) {
+		$output .= '<div class="services-section-info__desc">' . get_the_excerpt() . '</div>';
+	}
+	if ($services->have_posts()) {
+		$output .= '<div class="services-section-info__list">';
+		while($services->have_posts()): $services->the_post();
+			$output .= '<a href="' . get_the_permalink() . '" class="services-section-info__item">' . get_the_title() . '</a>';
+		endwhile;
+		$output .= '</div>';
+	}
+	wp_reset_query();
+	$output .= '</div>';
+	$output .= '</div>';
+	$output .= '<form action="#" class="services-section-info__form">';
+	$output .= '<div>';
+	$output .= '<input type="email" name="your-email" value="" class="form-input" placeholder="E-mail" />';
+	$output .= '</div>';
+	$output .= '<div>';
+	$output .= '<input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон">';
+	$output .= '</div>';
+	$output .= '<div>';
+	$output .= '<button type="submit" class="form-submit-holey"><span></span><span>Отправить</span></button>';
+	$output .= '</div>';
+	$output .= '<div>';
+	$output .= '<label class="services-section-info__form-rules">';
+	$output .= '<input type="checkbox" name="rules" value="1" class="form-checkbox" />';
+	$output .= '<span></span>';
+	$output .= 'Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>';
+	$output .= '</label>';
+	$output .= '</div>';
+	$output .= '</form>';
+	$output .= '</div>';
+	return $output;
+});
+
 add_shortcode('services', function($atts) {
 	$services = new WP_Query(array(
 		'post_type' => 'page',

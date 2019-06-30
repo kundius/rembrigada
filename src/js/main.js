@@ -33,6 +33,8 @@
 //   el.innerHTML = '<span>' + words.join('</span><span>') + '</span>'
 // })
 
+const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+
 document.querySelectorAll('.wp-block-table').forEach(function(el) {
   const wrapper = document.createElement('div')
   const container = document.createElement('div')
@@ -209,4 +211,70 @@ document.querySelectorAll('.js-img-to-svg').forEach(function(img) {
   }
   xhttp.open('GET', img.src, true)
   xhttp.send()
+})
+
+const repairDetails = []
+document.querySelectorAll('.js-repair-item').forEach(function(item) {
+  let maxWidth = 1150
+  let opened = false
+  const $title = item.querySelector('.js-repair-title')
+  const $toggles = item.querySelectorAll('.js-repair-toggle')
+  const $more = item.querySelector('.js-repair-more')
+  const $details = document.querySelector(item.dataset.details)
+  const $close = $details.querySelector('.js-repair-close')
+  const $arrow = $details.querySelector('.js-repair-arrow')
+
+  const close = () => {
+    opened = false
+    $details.style.display = 'none'
+  }
+
+  const open = () => {
+    repairDetails.forEach(row => row.close())
+    updatePosition()
+    opened = true
+    $details.style.display = 'block'
+  }
+
+  const toggle = () => {
+    if (opened) {
+      close()
+    } else {
+      open()
+    }
+  }
+
+  const updatePosition = () => {
+    const itemBounds = item.getBoundingClientRect()
+    let left = 10
+    let right = 10
+    let top = itemBounds.bottom + 30
+    if (window.innerWidth > maxWidth) {
+      left = (window.innerWidth - maxWidth) / 2 - 20
+      right = left
+    }
+    $details.style.left = left + 'px'
+    $details.style.right = right + 'px'
+    $details.style.top = top + 'px'
+
+    setTimeout(() => {
+      const titleBounds = $title.getBoundingClientRect()
+      const detailsBounds = $details.getBoundingClientRect()
+      $arrow.style.left = ((titleBounds.left + titleBounds.width / 2) - detailsBounds.left) + 'px'
+    }, 100)
+  }
+
+  repairDetails.push({
+    close,
+    open,
+    toggle,
+    updatePosition
+  })
+  
+  $close.addEventListener('click', close)
+  $toggles.forEach(el => el.addEventListener('click', toggle))
+})
+
+window.addEventListener('scroll', () => {
+  repairDetails.forEach(row => row.updatePosition())
 })

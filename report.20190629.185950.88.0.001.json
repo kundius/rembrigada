@@ -3,10 +3,10 @@
   "header": {
     "event": "Allocation failed - JavaScript heap out of memory",
     "trigger": "FatalError",
-    "filename": "report.20190629.032124.45.0.001.json",
-    "dumpEventTime": "2019-06-29T03:21:24Z",
-    "dumpEventTimeStamp": "1561767684902",
-    "processId": 45,
+    "filename": "report.20190629.185950.88.0.001.json",
+    "dumpEventTime": "2019-06-29T18:59:50Z",
+    "dumpEventTimeStamp": "1561823990630",
+    "processId": 88,
     "cwd": "/mnt/c/Users/kundi/Sites/rembrigada/wp-content/themes/rembrigada",
     "commandLine": [
       "node",
@@ -100,10 +100,10 @@
     }
   ],
   "javascriptHeap": {
-    "totalMemory": 2149470208,
-    "totalCommittedMemory": 2147725560,
-    "usedMemory": 2135234112,
-    "availableMemory": 50736416,
+    "totalMemory": 2151268352,
+    "totalCommittedMemory": 2148893856,
+    "usedMemory": 2136674368,
+    "availableMemory": 51563752,
     "memoryLimit": 2197815296,
     "heapSpaces": {
       "read_only_space": {
@@ -115,37 +115,37 @@
       },
       "new_space": {
         "memorySize": 2097152,
-        "committedMemory": 1306112,
+        "committedMemory": 1298936,
         "capacity": 1047952,
-        "used": 256936,
-        "available": 791016
+        "used": 249792,
+        "available": 798160
       },
       "old_space": {
-        "memorySize": 2018107392,
-        "committedMemory": 2017783872,
-        "capacity": 2009195072,
-        "used": 2009134976,
-        "available": 60096
+        "memorySize": 2020728832,
+        "committedMemory": 2019737360,
+        "capacity": 2013628992,
+        "used": 2010950560,
+        "available": 2678432
       },
       "code_space": {
-        "memorySize": 3309568,
-        "committedMemory": 3172160,
-        "capacity": 2457632,
-        "used": 2457632,
+        "memorySize": 2785280,
+        "committedMemory": 2693152,
+        "capacity": 2406272,
+        "used": 2406272,
         "available": 0
       },
       "map_space": {
         "memorySize": 3674112,
         "committedMemory": 3673696,
-        "capacity": 1667040,
-        "used": 1667040,
+        "capacity": 1642240,
+        "used": 1642240,
         "available": 0
       },
       "large_object_space": {
-        "memorySize": 121708544,
-        "committedMemory": 121708544,
-        "capacity": 121682360,
-        "used": 121682360,
+        "memorySize": 121409536,
+        "committedMemory": 121409536,
+        "capacity": 121390336,
+        "used": 121390336,
         "available": 0
       },
       "code_large_object_space": {
@@ -165,13 +165,13 @@
     }
   },
   "resourceUsage": {
-    "userCpuSeconds": 634.578,
-    "kernelCpuSeconds": 585.734,
-    "cpuConsumptionPercent": 11.0176,
-    "maxRss": 4567396352,
+    "userCpuSeconds": 1272.2,
+    "kernelCpuSeconds": 533.922,
+    "cpuConsumptionPercent": 8.64713,
+    "maxRss": 4062064640,
     "pageFaults": {
       "IORequired": 0,
-      "IONotRequired": 4721735
+      "IONotRequired": 9533784
     },
     "fsActivity": {
       "reads": 0,
@@ -179,9 +179,9 @@
     }
   },
   "uvthreadResourceUsage": {
-    "userCpuSeconds": 403.469,
-    "kernelCpuSeconds": 61.5781,
-    "cpuConsumptionPercent": 4.19869,
+    "userCpuSeconds": 778.781,
+    "kernelCpuSeconds": 98.9062,
+    "cpuConsumptionPercent": 4.20208,
     "fsActivity": {
       "reads": 0,
       "writes": 0

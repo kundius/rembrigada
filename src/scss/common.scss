@@ -869,6 +869,307 @@ img {
     }
 }
 
+.repair-details {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+    position: fixed;
+    padding-left: 32px;
+    padding-top: 63px;
+    padding-right: 32px;
+    padding-bottom: 47px;
+    z-index: 20;
+    display: none;
+    @media (min-width: $breakpoint-small) {
+    }
+    @media (max-width: $breakpoint-small-max) {
+        padding: 28px 26px 47px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding: 57px 12px 32px;
+    }
+}
+
+.repair-details__arrow {
+    position: absolute;
+    left: 50%;
+    height: 25px;
+    width: 50px;
+    top: -25px;
+    transform: translateX(-50%);
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: -1px;
+        transform: translateX(-50%);
+        border-width: 0 26px 26px;
+        border-style: solid;
+        border-color: transparent transparent rgba(0, 0, 0, 0.35);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        border-width: 0 25px 25px;
+        border-style: solid;
+        border-color: transparent transparent #fff;
+    }
+}
+
+.repair-details__close {
+    position: absolute;
+    border: none;
+    top: 42px;
+    right: 42px;
+    padding: 0;
+    width: 68px;
+    height: 68px;
+    background-color: rgba(0, 0, 0, 0.349);
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(0, 0, 0);
+        &::before {
+            background-color: #cccccc;
+        }
+        &::after {
+            background-color: #cccccc;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 50%;
+        height: 5px;
+        background-color: #cacaca;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 50%;
+        height: 5px;
+        background-color: #cacaca;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    @media (max-width: $breakpoint-small-max) {
+        top: 12px;
+        right: 12px;
+        width: 48px;
+        height: 48px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        top: 3px;
+        right: 3px;
+        width: 40px;
+        height: 40px;
+        &::before {
+            height: 3px;
+        }
+        &::after {
+            height: 3px;
+        }
+    }
+}
+
+.repair-details__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -20px;
+}
+
+.repair-details__cell {
+    padding-left: 20px;
+    &:nth-child(1) {
+        width: 40%;
+    }
+    &:nth-child(2) {
+        width: 60%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        &:nth-child(1) {
+            width: 100%;
+        }
+        &:nth-child(2) {
+            width: 100%;
+        }
+    }
+}
+
+.repair-details-price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    span {
+        font-size: 22px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        justify-content: space-between;
+    }
+}
+
+.repair-details-price__label {
+    color: #b6b6b6;
+    font-size: 14px;
+    line-height: 1;
+    min-width: 165px;
+    max-width: 165px;
+    font-weight: normal;
+    padding-right: 10px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 13px;
+        max-width: 125px;
+        min-width: 125px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        min-width: 165px;
+        max-width: 165px;
+    }
+}
+
+.repair-details-price__value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #363941;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 16px;
+    }
+}
+
+.repair-details-deadlines {
+    display: flex;
+    @media (max-width: $breakpoint-xsmall-max) {
+        border-bottom: 1px solid #dddddd;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.repair-details-deadlines__label {
+    color: #b6b6b6;
+    font-size: 14px;
+    line-height: 1;
+    min-width: 165px;
+    max-width: 165px;
+    font-weight: normal;
+    padding-right: 10px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 13px;
+        max-width: 125px;
+        min-width: 125px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        min-width: 165px;
+        max-width: 165px;
+    }
+}
+
+.repair-details-deadlines__list {
+
+}
+
+.repair-details-deadline {
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 23px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        flex-wrap: wrap;
+    }
+}
+
+.repair-details-deadline__time {
+    font-size: 22px;
+    color: #363941;
+    font-weight: bold;
+    width: 125px;
+    text-align: center;
+    line-height: 35px;
+    background-color: #f2f2f2;
+    margin-right: 10px;
+    span {
+        font-size: 18px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 18px;
+        margin-right: 0;
+        line-height: 28px;
+        width: 100%;
+        span {
+            font-size: 12px;
+        }
+    }
+}
+
+.repair-details-deadline__area {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    color: #8f8f8f;
+    @media (max-width: $breakpoint-small-max) {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.repair-details-text {
+}
+
+.repair-details-text__label {
+    color: #b6b6b6;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: normal;
+    margin-bottom: 60px;
+    @media (max-width: $breakpoint-small-max) {
+        margin-bottom: 52px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-bottom: 20px;
+    }
+}
+
+.repair-details-text__value {
+    color: #696969;
+    font-size: 18px;
+    line-height: 1.45;
+    ul {
+        padding: 0;
+        margin: 21px 0;
+        li {
+            position: relative;
+            padding-left: 30px;
+            list-style: none;
+            line-height: 1;
+            margin: 8px 0px;
+            &::before {
+                content: '';
+                height: 3px;
+                width: 8px;
+                border-left: 3px solid #bcbcbc;
+                border-bottom: 3px solid #bcbcbc;
+                position: absolute;
+                left: 7px;
+                top: 6px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 16px;
+    }
+}
+
+
 /* Якорь */
 #anchor {
     position: absolute;

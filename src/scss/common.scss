@@ -779,7 +779,8 @@ img {
         @media (max-width: $breakpoint-xsmall-max) {
             font-size: 17px;
             min-height: 150px;
-            padding: 20px 58px;
+            padding: 15px 30px;
+            margin: 42px 0;
             &::before {
                 width: 117px;
                 height: 117px;

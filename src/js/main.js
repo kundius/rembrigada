@@ -1,3 +1,7 @@
+import MicroModal  from 'micromodal'
+import svg4everybody from 'svg4everybody'
+import { tns } from 'tiny-slider/src/tiny-slider.module.js'
+
 const forEach = (list, cb) => {
   if (!list) return;
 
@@ -50,12 +54,15 @@ forEach(document.querySelectorAll('.wp-block-table'), function(el) {
   const navContainer = wrapper.querySelector('.js_nav')
   const prevButton = wrapper.querySelector('.js_prev')
   const nextButton = wrapper.querySelector('.js_next')
+  const prevMButton = wrapper.querySelector('.js_m_prev')
+  const nextMButton = wrapper.querySelector('.js_m_next')
   const navPrevButton = wrapper.querySelector('.js_nav_prev')
   const navNextButton = wrapper.querySelector('.js_nav_next')
+  const el_index = wrapper.querySelector('.js_index')
   const slider = tns({
     container,
-    prevButton,
-    nextButton,
+    prevButton: window.matchMedia('(max-width: 639px)').matches ? prevMButton : prevButton,
+    nextButton: window.matchMedia('(max-width: 639px)').matches ? nextMButton : nextButton,
     navContainer,
     items: 1
   })
@@ -64,13 +71,19 @@ forEach(document.querySelectorAll('.wp-block-table'), function(el) {
     prevButton: navPrevButton,
     nextButton: navNextButton,
     nav: false,
-    axis: 'vertical',
-    gutter: 4,
+    axis: window.matchMedia('(max-width: 959px)').matches ? 'horizontal' : 'vertical',
+    gutter: window.matchMedia('(max-width: 959px)').matches ? 10 : 10,
     items: 4,
     loop: false
   })
   slider.events.on('transitionStart', (e) => {
     sliderNav.goTo(e.displayIndex - 1)
+
+    if (e.displayIndex < 10) {
+      el_index.innerHTML = '0' + e.displayIndex
+    } else {
+      el_index.innerHTML = e.displayIndex
+    }
   })
 }());
 
@@ -101,27 +114,6 @@ forEach(document.querySelectorAll('.wp-block-table'), function(el) {
     nav: false
   })
 }());
-
-
-// MicroModal.init({
-//   disableScroll: false,
-//   awaitCloseAnimation: true
-// })
-
-// const menuContainer = document.querySelector('.js-menu-container')
-// if (menuContainer) {
-//   document.querySelectorAll('.js-menu-toggle').forEach(function(el) {
-//     el.addEventListener('click', function(e) {
-//       if (menuContainer.classList.contains('mainmenu_visible')) {
-//         menuContainer.classList.remove('mainmenu_visible')
-//       } else {
-//         menuContainer.classList.add('mainmenu_visible')
-//       }
-//     })
-//   })
-// }
-
-// svg4everybody()
 
 forEach(document.querySelectorAll('.navigation-list'), function(menu) {
   forEach(document.querySelectorAll('.menu-item-has-children'), function(item) {
@@ -282,3 +274,10 @@ forEach(document.querySelectorAll('.js-section-offset'), function(section) {
     }
   }
 })
+
+MicroModal.init({
+  disableScroll: false,
+  awaitCloseAnimation: true
+})
+
+svg4everybody()

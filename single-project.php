@@ -29,26 +29,49 @@
                         </div>
                         <div class="project-meta__date">
                             <?php icon('date', .75) ?>
-                            Опубликовано: <?php the_modified_date() ?>
+                            <span>Опубликовано: </span><?php the_modified_date() ?>
                         </div>
                         <div class="project-meta__arrows">
-                            <button class="js_prev">js_prev</button>
-                            <button class="js_next">js_next</button>
+                            <button class="js_prev"></button>
+                            <button class="js_next"></button>
                         </div>
                     </div>
                     <div class="project-layout">
                         <div class="project-layout__left">
                             <?php if ($gallery = get_field('gallery')): ?>
+                                <!-- <pre><?php print_r($gallery) ?></pre> -->
                             <div class="project-gallery-layout">
                                 <div class="project-gallery-layout__left">
-                                    <div class="project-gallery-slides js_slides">
-                                        <?php foreach ($gallery as $item): ?>
-                                        <div class="project-gallery-item">
-                                            <div class="project-gallery-item__inner">
-                                                <img src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
+                                    <div class="project-gallery-slides">
+                                        <div class="js_slides">
+                                            <?php foreach ($gallery as $item): ?>
+                                            <div class="project-gallery-item">
+                                                <div class="project-gallery-item__inner">
+                                                    <img src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
+                                                    <button data-micromodal-trigger="project-<?php echo $item['id'] ?>" class="project-gallery-item__view">
+                                                        <?php icon('loupe') ?>
+                                                    </button>
+                                                </div>
+                                                <div class="modal micromodal-slide" id="project-<?php echo $item['id'] ?>" aria-hidden="true">
+                                                    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                                                        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="Обратный звонок">
+                                                            <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
+                                                            111
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
+                                            <?php endforeach; ?>
                                         </div>
-                                        <?php endforeach; ?>
+                                        <div class="project-gallery-controls">
+                                            <button class="project-gallery-controls__previous js_m_prev"></button>
+                                            <div class="project-gallery-controls__text">
+                                                <span class="js_index">01</span>
+                                                <span>/</span>
+                                                <span><?php echo count($gallery) ?></span>
+                                            </div>
+                                            <button class="project-gallery-controls__next js_m_next"></button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="project-gallery-layout__right">
@@ -74,44 +97,49 @@
                                     <?php echo $address ?>
                                 </div>
                                 <?php endif; ?>
-                                <?php if ($area = get_field('area')): ?>
-                                <div class="project-details__area">
-                                    <div class="project-details__area-label">Площадь</div>
-                                    <div class="project-details__area-value">
-                                        <?php echo $area ?> м<sup>2</sup>
+                                <div class="project-details__info">
+                                    <?php if ($area = get_field('area')): ?>
+                                    <div class="project-details__area">
+                                        <div class="project-details__area-label">Площадь</div>
+                                        <div class="project-details__area-value">
+                                            <?php echo $area ?> <span>м<sup>2</sup></span>
+                                        </div>
                                     </div>
+                                    <?php endif; ?>
+                                    <?php if ($customer = get_field('customer')): ?>
+                                    <div class="project-details__customer">
+                                        <div class="project-details__customer-label">
+                                            <?php icon('user', .75) ?> Клиент
+                                        </div>
+                                        <div class="project-details__customer-value">
+                                            <?php echo $customer ?>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
                                 </div>
-                                <?php endif; ?>
-                                <?php if ($customer = get_field('customer')): ?>
-                                <div class="project-details__customer">
-                                    <div class="project-details__customer-label">
-                                        <?php icon('user', .75) ?> Клиент
-                                    </div>
-                                    <div class="project-details__customer-value">
-                                        <?php echo $customer ?>
-                                    </div>
-                                </div>
-                                <?php endif; ?>
                                 <div class="project-details__estimate">
                                     <?php if ($price_works = get_field('price_works')): ?>
-                                    <div class="project-estimate">
-                                        <div class="project-estimate__label">Цена за работы:</div>
-                                        <div class="project-estimate__value"><?php echo $price_works ?></div>
+                                    <div class="project-details__estimate-item">
+                                        <div class="project-details__estimate-label">Цена за работы:</div>
+                                        <div class="project-details__estimate-value"><?php echo $price_works ?></div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if ($price_material = get_field('price_material')): ?>
-                                    <div class="project-estimate">
-                                        <div class="project-estimate__label">Цена материала:</div>
-                                        <div class="project-estimate__value"><?php echo $price_material ?></div>
+                                    <div class="project-details__estimate-item">
+                                        <div class="project-details__estimate-label">Цена материала:</div>
+                                        <div class="project-details__estimate-value"><?php echo $price_material ?></div>
                                     </div>
                                     <?php endif; ?>
                                     <?php if ($time_works = get_field('time_works')): ?>
-                                    <div class="project-estimate">
-                                        <div class="project-estimate__label">Сроки работы:</div>
-                                        <div class="project-estimate__value"><?php echo $time_works ?></div>
+                                    <div class="project-details__estimate-item">
+                                        <div class="project-details__estimate-label">Сроки работы:</div>
+                                        <div class="project-details__estimate-value"><?php echo $time_works ?></div>
                                     </div>
                                     <?php endif; ?>
                                 </div>
+                                <!-- <div class="project-details__more">
+                                    <button class="btn-more">Смотреть отзыв</button>
+                                </div> -->
                             </div>
                         </div>
                     </div>

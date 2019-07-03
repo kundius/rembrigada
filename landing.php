@@ -50,36 +50,34 @@ $reviews = new WP_Query(array(
 
             <?php if ($slideshow = get_field('slideshow')): ?>
             <div class="slideshow js-slideshow">
-                <div class="slideshow-frame js_frame">
-                    <ul class="slideshow-slides js_slides">
-                        <?php foreach ($slideshow as $slide): ?>
-                        <li class="slideshow-slide js_slide" style="background-image:url('<?php echo $slide['image']['url'] ?>')">
-                            <div class="slideshow-slide__container container">
-                                <div class="slideshow-slide__info">
-                                    <?php if ($slide['price']): ?>
-                                        <div class="slideshow-slide__price"><?php echo $slide['price'] ?></div>
-                                    <?php endif; ?>
-                                    <?php if ($slide['title']): ?>
-                                        <div class="slideshow-slide__title">
-                                            <span><?php echo $slide['title'] ?></span>
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if ($slide['subtitle']): ?>
-                                        <div class="slideshow-slide__subtitle">
-                                            <span><?php echo $slide['subtitle'] ?></span>
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if ($slide['url']): ?>
-                                        <a href="<?php echo $slide['url'] ?>" class="slideshow-slide__url">
-                                            <p>Подробнее</p>
-                                            <span></span>
-                                        </a>
-                                    <?php endif; ?>
-                                </div>
+                <div class="slideshow-slides js_slides">
+                    <?php foreach ($slideshow as $slide): ?>
+                    <div class="slideshow-slide" style="background-image:url('<?php echo $slide['image']['url'] ?>')">
+                        <div class="slideshow-slide__container container">
+                            <div class="slideshow-slide__info">
+                                <?php if ($slide['price']): ?>
+                                    <div class="slideshow-slide__price"><?php echo $slide['price'] ?></div>
+                                <?php endif; ?>
+                                <?php if ($slide['title']): ?>
+                                    <div class="slideshow-slide__title">
+                                        <span><?php echo $slide['title'] ?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($slide['subtitle']): ?>
+                                    <div class="slideshow-slide__subtitle">
+                                        <span><?php echo $slide['subtitle'] ?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($slide['url']): ?>
+                                    <a href="<?php echo $slide['url'] ?>" class="slideshow-slide__url">
+                                        <p>Подробнее</p>
+                                        <span></span>
+                                    </a>
+                                <?php endif; ?>
                             </div>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="slideshow-nav">
                     <button class="slideshow-nav__previous js_prev"></button>
@@ -90,7 +88,6 @@ $reviews = new WP_Query(array(
                     </div>
                     <button class="slideshow-nav__next js_next"></button>
                 </div>
-                <ul class="slideshow-dots js_dots"></ul>
                 <a href="#content" class="slideshow__down"></a>
             </div>
             <?php endif; ?>
@@ -196,33 +193,31 @@ $reviews = new WP_Query(array(
                             <button class="js_next objects-slider-next"></button>
                         </div>
 
-                        <div class="objects-slider-frame js_frame">
-                            <ul class="objects-slider-slides js_slides">
-                                <?php while($projects->have_posts()): $projects->the_post(); ?>
-                                <li class="objects-slider-slide js_slide">
-                                    <a href="<?php the_permalink() ?>" class="project-item">
-                                        <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 500))): ?>
-                                        <img class="project-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>">
-                                        <?php else: ?>
-                                        <img class="project-item__image" src="https://via.placeholder.com/468x500" alt="">
+                        <div class="objects-slider-slides js_slides">
+                            <?php while($projects->have_posts()): $projects->the_post(); ?>
+                            <div class="objects-slider-slide">
+                                <a href="<?php the_permalink() ?>" class="project-item">
+                                    <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 500))): ?>
+                                    <img class="project-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                    <?php else: ?>
+                                    <img class="project-item__image" src="https://via.placeholder.com/468x500" alt="">
+                                    <?php endif; ?>
+                                    <span class="project-item__info">
+                                        <span class="project-item__title"><span><?php the_title() ?></span></span>
+                                        <span class="project-item__hr"></span>
+                                        <?php if (has_excerpt()): ?>
+                                        <span class="project-item__desc"><?php the_excerpt() ?></span>
                                         <?php endif; ?>
-                                        <span class="project-item__info">
-                                            <span class="project-item__title"><span><?php the_title() ?></span></span>
-                                            <span class="project-item__hr"></span>
-                                            <?php if (has_excerpt()): ?>
-                                            <span class="project-item__desc"><?php the_excerpt() ?></span>
-                                            <?php endif; ?>
-                                            <span class="project-item__more"><span>Подробнее</span></span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <?php endwhile; ?>
-                            </ul>
+                                        <span class="project-item__more"><span>Подробнее</span></span>
+                                    </span>
+                                </a>
+                            </div>
+                            <?php endwhile; ?>
                         </div>
                     </div>
                     
                     <div class="completed-objects__more">
-                        <a href="#" class="btn-arrow">Больше работ</a>
+                        <a href="<?php echo get_category_link(3) ?>" class="btn-arrow">Больше работ</a>
                     </div>
                 </div>
             </section>

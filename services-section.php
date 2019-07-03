@@ -170,46 +170,6 @@ $services = new WP_Query(array(
                             </div>
                             <?php endforeach; ?>
                         </div>
-
-                        <div class="services-calculation">
-                            <div class="services-calculation__desc">
-                                Готовы двигаться дальше? Тогда пришло время посмотреть, как мы делали косметический ремонт, и рассчитать предварительную стоимость вашего ремонта →
-                            </div>
-                            <div class="services-calculation__grid">
-                                <div class="services-calculation__cell">
-                                    <div class="services-calculation__image">
-                                        <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/our-work-send.jpg" alt="">
-                                        <a href="<?php the_permalink(15) ?>" class="services-calculation__works">
-                                            <span>Наши работы</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="services-calculation__cell">
-                                    <form action="#" class="services-calculation-form">
-                                        <div class="services-calculation-form__title">Рассчитать предварительную стоимость</div>
-                                        <div class="services-calculation-form__desc">Заполните форму, и наш специалист свяжется с Вами в течении 15 минут</div>
-                                        <div class="services-calculation-form__fields">
-                                            <div class="services-calculation-form__row">
-                                                <input type="email" name="your-email" value="" class="form-input" placeholder="E-mail*" />
-                                            </div>
-                                            <div class="services-calculation-form__row">
-                                                <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон">
-                                            </div>
-                                            <div class="services-calculation-form__row">
-                                                <label class="services-calculation-form__rules">
-                                                    <input type="checkbox" name="rules" value="1" class="form-checkbox" />
-                                                    <span></span>
-                                                    Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
-                                                </label>
-                                            </div>
-                                            <div class="services-calculation-form__row">
-                                                <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             <?php endif; ?>
@@ -218,9 +178,47 @@ $services = new WP_Query(array(
                 <p>Извините, ничего не найдено.</p>
             <?php endif; ?>
 
-            <section class="section-contacts">
+            <section class="section-contacts js-section-offset">
                 <div class="container container_alt">
-                    <div class="services-calculation-placeholder"></div>
+                    <div class="services-calculation js-section-offset-inner">
+                        <div class="services-calculation__desc">
+                            Готовы двигаться дальше? Тогда пришло время посмотреть, как мы делали косметический ремонт, и рассчитать предварительную стоимость вашего ремонта →
+                        </div>
+                        <div class="services-calculation__grid">
+                            <div class="services-calculation__cell">
+                                <div class="services-calculation__image">
+                                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/our-work-send.jpg" alt="">
+                                    <a href="<?php the_permalink(15) ?>" class="services-calculation__works">
+                                        <span>Наши работы</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="services-calculation__cell">
+                                <form action="#" class="services-calculation-form">
+                                    <div class="services-calculation-form__title">Рассчитать предварительную стоимость</div>
+                                    <div class="services-calculation-form__desc">Заполните форму, и наш специалист свяжется с Вами в течении 15 минут</div>
+                                    <div class="services-calculation-form__fields">
+                                        <div class="services-calculation-form__row">
+                                            <input type="email" name="your-email" value="" class="form-input" placeholder="E-mail*" />
+                                        </div>
+                                        <div class="services-calculation-form__row">
+                                            <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон">
+                                        </div>
+                                        <div class="services-calculation-form__row">
+                                            <label class="services-calculation-form__rules">
+                                                <input type="checkbox" name="rules" value="1" class="form-checkbox" />
+                                                <span></span>
+                                                Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
+                                            </label>
+                                        </div>
+                                        <div class="services-calculation-form__row">
+                                            <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     <div class="section-contacts-grid">
                         <div class="section-contacts__item">
                             <div class="contacts">

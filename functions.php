@@ -11,8 +11,11 @@ add_action('after_setup_theme', function() {
 });
 
 add_theme_support('post-thumbnails', array('post', 'page', 'project'));
+add_image_size('w150h100', 150, 100, true);
 add_image_size('w468h364', 468, 364, true);
 add_image_size('w468h500', 468, 500, true);
+add_image_size('w800h600', 800, 600, true);
+add_image_size('w800h480', 800, 480, true);
 add_image_size('w560h308', 560, 308, false);
 add_image_size('w400h400', 400, 400, true);
 
@@ -187,6 +190,7 @@ add_action('init', function() {
 		'public'             => true,
 		'menu_icon'			 => 'dashicons-portfolio',
 		'menu_position'      => 21,
+		'taxonomies' 		 => ['post_tag'],
 		'supports'           => array('title', 'editor', 'thumbnail', 'excerpt')
 	));
 	register_post_type('review', array(

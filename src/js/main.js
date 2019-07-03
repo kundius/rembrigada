@@ -1,41 +1,14 @@
-// import svg4everybody from 'svg4everybody'
-// import MicroModal  from 'micromodal'
+const forEach = (list, cb) => {
+  if (!list) return;
 
-// document.querySelectorAll('.js-form').forEach(function(form) {
-//   form.addEventListener('submit', function(e) {
-//     e.preventDefault()
-
-//     const request = new XMLHttpRequest()
-//     request.open('POST', form.action, true)
-//     request.addEventListener('readystatechange', function() {
-//       if (this.readyState != 4) return
-
-//       const response = JSON.parse(request.response)
-//       let message = form.querySelector('.form__error')
-//       if (!message) {
-//         message = document.createElement('div')
-//         message.classList.add('form__error')
-//         message.style.display = 'none'
-//         form.appendChild(message)
-//       }
-
-//       if (response.status == 'validation_failed' || response.status == 'mail_failed') {
-//         message.innerHTML = response.message
-//         message.style.display = 'block'
-//       }
-//     })
-//     request.send(new FormData(form))
-//   })
-// })
-
-// document.querySelectorAll('.js-split-words').forEach(function(el) {
-//   const words = el.innerHTML.split(' ')
-//   el.innerHTML = '<span>' + words.join('</span><span>') + '</span>'
-// })
+  for (let i = 0; i < list.length; ++i) {
+    cb(list[i])
+  }
+}
 
 const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
 
-document.querySelectorAll('.wp-block-table').forEach(function(el) {
+forEach(document.querySelectorAll('.wp-block-table'), function(el) {
   const wrapper = document.createElement('div')
   const container = document.createElement('div')
   el.parentNode.insertBefore(wrapper, el)
@@ -45,71 +18,89 @@ document.querySelectorAll('.wp-block-table').forEach(function(el) {
   container.classList.add('wp-block-table-container')
 })
 
-const slideshow = document.querySelector('.js-slideshow')
-if (slideshow) {
-  const dot_count = slideshow.querySelectorAll('.js_slide').length
-  const el_index = slideshow.querySelector('.js_index')
-  const dot_container = slideshow.querySelector('.js_dots')
-  const dot_list_item = document.createElement('li')
+;(function () {
+  const wrapper = document.querySelector('.js-slideshow')
+  if (!wrapper) return
 
-  function handleDotEvent (e) {
-    if (e.type === 'before.lory.init') {
-      for (let i = 0, len = dot_count; i < len; i++) {
-        dot_container.appendChild(dot_list_item.cloneNode())
-      }
-      dot_container.childNodes[0].classList.add('active')
-    }
-    if (e.type === 'after.lory.init') {
-      for (let i = 0, len = dot_count; i < len; i++) {
-        dot_container.childNodes[i].addEventListener('click', function(e) {
-          dot_navigation_slider.slideTo(Array.prototype.indexOf.call(dot_container.childNodes, e.target))
-        })
-      }
-    }
-    if (e.type === 'after.lory.slide') {
-      for (let i = 0, len = dot_container.childNodes.length; i < len; i++) {
-        dot_container.childNodes[i].classList.remove('active')
-      }
-      dot_container.childNodes[e.detail.currentSlide - 1].classList.add('active')
-
-      if (e.detail.currentSlide < 10) {
-        el_index.innerHTML = '0' + e.detail.currentSlide
-      } else {
-        el_index.innerHTML = e.detail.currentSlide
-      }
-    }
-    if (e.type === 'on.lory.resize') {
-        for (let i = 0, len = dot_container.childNodes.length; i < len; i++) {
-            dot_container.childNodes[i].classList.remove('active')
-        }
-        dot_container.childNodes[0].classList.add('active')
-    }
-  }
-  slideshow.addEventListener('before.lory.init', handleDotEvent)
-  slideshow.addEventListener('after.lory.init', handleDotEvent)
-  slideshow.addEventListener('after.lory.slide', handleDotEvent)
-
-  const dot_navigation_slider = lory(slideshow, {
-    enableMouseEvents: true,
-    infinite: 1
+  const container = wrapper.querySelector('.js_slides')
+  const prevButton = wrapper.querySelector('.js_prev')
+  const nextButton = wrapper.querySelector('.js_next')
+  const navContainer = wrapper.querySelector('.js_dots')
+  const el_index = wrapper.querySelector('.js_index')
+  const slider = tns({
+    container,
+    prevButton,
+    nextButton,
+    navPosition: 'bottom'
   })
-}
-
-const objectsSlider = document.querySelector('.js-objects-slider')
-if (objectsSlider) {
-  let count = 3
-  if (window.matchMedia("(max-width: 959px)").matches) {
-    count = 2
-  }
-  if (window.matchMedia("(max-width: 639px)").matches) {
-    count = 1
-  }
-  lory(objectsSlider, {
-    enableMouseEvents: true,
-    infinite: count,
-    slidesToScroll: count
+  slider.events.on('transitionStart', (e) => {
+    if (e.displayIndex < 10) {
+      el_index.innerHTML = '0' + e.displayIndex
+    } else {
+      el_index.innerHTML = e.displayIndex
+    }
   })
-}
+}());
+
+;(function () {
+  const wrapper = document.querySelector('.js-project-details')
+  if (!wrapper) return
+
+  const container = wrapper.querySelector('.js_slides')
+  const navContainer = wrapper.querySelector('.js_nav')
+  const prevButton = wrapper.querySelector('.js_prev')
+  const nextButton = wrapper.querySelector('.js_next')
+  const navPrevButton = wrapper.querySelector('.js_nav_prev')
+  const navNextButton = wrapper.querySelector('.js_nav_next')
+  const slider = tns({
+    container,
+    prevButton,
+    nextButton,
+    navContainer,
+    items: 1
+  })
+  const sliderNav = tns({
+    container: navContainer,
+    prevButton: navPrevButton,
+    nextButton: navNextButton,
+    nav: false,
+    axis: 'vertical',
+    gutter: 4,
+    items: 4,
+    loop: false
+  })
+  slider.events.on('transitionStart', (e) => {
+    sliderNav.goTo(e.displayIndex - 1)
+  })
+}());
+
+;(function () {
+  const wrapper = document.querySelector('.js-objects-slider')
+  if (!wrapper) return
+
+  const container = wrapper.querySelector('.js_slides')
+  const prevButton = wrapper.querySelector('.js_prev')
+  const nextButton = wrapper.querySelector('.js_next')
+  const slider = tns({
+    items: 1,
+    slideBy: 'page',
+    gutter: 10,
+    responsive: {
+      640: {
+        gutter: 20,
+        items: 2
+      },
+      960: {
+        gutter: 40,
+        items: 3
+      }
+    },
+    container,
+    prevButton,
+    nextButton,
+    nav: false
+  })
+}());
 
 
 // MicroModal.init({
@@ -132,8 +123,8 @@ if (objectsSlider) {
 
 // svg4everybody()
 
-document.querySelectorAll('.navigation-list').forEach(function(menu) {
-  document.querySelectorAll('.menu-item-has-children').forEach(function(item) {
+forEach(document.querySelectorAll('.navigation-list'), function(menu) {
+  forEach(document.querySelectorAll('.menu-item-has-children'), function(item) {
     let timer = null
     const close = () => {
       item.classList.remove('menu-item-opened')
@@ -172,7 +163,7 @@ document.querySelectorAll('.navigation-list').forEach(function(menu) {
   })
 })
 
-document.querySelectorAll('.header-toggle').forEach(function(handler) {
+forEach(document.querySelectorAll('.header-toggle'), function(handler) {
   const header = document.querySelector('.header')
   const navigation = document.querySelector('.navigation')
   const close = () => {
@@ -198,7 +189,7 @@ document.querySelectorAll('.header-toggle').forEach(function(handler) {
   })
 })
 
-document.querySelectorAll('.js-img-to-svg').forEach(function(img) {
+forEach(document.querySelectorAll('.js-img-to-svg'), function(img) {
   const xhttp = new XMLHttpRequest()
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -213,68 +204,81 @@ document.querySelectorAll('.js-img-to-svg').forEach(function(img) {
   xhttp.send()
 })
 
-const repairDetails = []
-document.querySelectorAll('.js-repair-item').forEach(function(item) {
-  let maxWidth = 1150
-  let opened = false
-  const $title = item.querySelector('.js-repair-title')
-  const $toggles = item.querySelectorAll('.js-repair-toggle')
-  const $more = item.querySelector('.js-repair-more')
-  const $details = document.querySelector(item.dataset.details)
-  const $close = $details.querySelector('.js-repair-close')
-  const $arrow = $details.querySelector('.js-repair-arrow')
+;(function () {
+  const repairDetails = []
+  forEach(document.querySelectorAll('.js-repair-item'), function(item) {
+    let maxWidth = 1150
+    let opened = false
+    const $title = item.querySelector('.js-repair-title')
+    const $toggles = item.querySelectorAll('.js-repair-toggle')
+    const $more = item.querySelector('.js-repair-more')
+    const $details = document.querySelector(item.dataset.details)
+    const $close = $details.querySelector('.js-repair-close')
+    const $arrow = $details.querySelector('.js-repair-arrow')
 
-  const close = () => {
-    opened = false
-    $details.style.display = 'none'
-  }
-
-  const open = () => {
-    repairDetails.forEach(row => row.close())
-    updatePosition()
-    opened = true
-    $details.style.display = 'block'
-  }
-
-  const toggle = () => {
-    if (opened) {
-      close()
-    } else {
-      open()
+    const close = () => {
+      opened = false
+      $details.style.display = 'none'
     }
-  }
 
-  const updatePosition = () => {
-    const itemBounds = item.getBoundingClientRect()
-    let left = 10
-    let right = 10
-    let top = itemBounds.bottom + 30
-    if (window.innerWidth > maxWidth) {
-      left = (window.innerWidth - maxWidth) / 2 - 20
-      right = left
+    const open = () => {
+      forEach(repairDetails, row => row.close())
+      updatePosition()
+      opened = true
+      $details.style.display = 'block'
     }
-    $details.style.left = left + 'px'
-    $details.style.right = right + 'px'
-    $details.style.top = top + 'px'
 
-    setTimeout(() => {
-      const titleBounds = $title.getBoundingClientRect()
-      const detailsBounds = $details.getBoundingClientRect()
-      $arrow.style.left = ((titleBounds.left + titleBounds.width / 2) - detailsBounds.left) + 'px'
-    }, 100)
-  }
+    const toggle = () => {
+      if (opened) {
+        close()
+      } else {
+        open()
+      }
+    }
 
-  repairDetails.push({
-    close,
-    open,
-    toggle,
-    updatePosition
+    const updatePosition = () => {
+      const itemBounds = item.getBoundingClientRect()
+      let left = 10
+      let right = 10
+      let top = itemBounds.bottom + 30
+      if (window.innerWidth > maxWidth) {
+        left = (window.innerWidth - maxWidth) / 2 - 20
+        right = left
+      }
+      $details.style.left = left + 'px'
+      $details.style.right = right + 'px'
+      $details.style.top = top + 'px'
+
+      setTimeout(() => {
+        const titleBounds = $title.getBoundingClientRect()
+        const detailsBounds = $details.getBoundingClientRect()
+        $arrow.style.left = ((titleBounds.left + titleBounds.width / 2) - detailsBounds.left) + 'px'
+      }, 100)
+    }
+
+    repairDetails.push({
+      close,
+      open,
+      toggle,
+      updatePosition
+    })
+    
+    $close.addEventListener('click', close)
+    forEach($toggles, el => el.addEventListener('click', toggle))
   })
-  
-  $close.addEventListener('click', close)
-  $toggles.forEach(el => el.addEventListener('click', toggle))
-})
 
-window.addEventListener('scroll', () => {
-  repairDetails.forEach(row => row.updatePosition())
+  window.addEventListener('scroll', () => {
+    forEach(repairDetails, row => row.updatePosition())
+  })
+}());
+
+forEach(document.querySelectorAll('.js-section-offset'), function(section) {
+  const inner = section.querySelector('.js-section-offset-inner')
+  if (inner) {
+    const diff = section.offsetTop - inner.offsetTop
+    if (diff > 0) {
+      let bottom = parseInt(window.getComputedStyle(section.previousElementSibling).getPropertyValue('padding-bottom'))
+      section.previousElementSibling.style.paddingBottom = bottom + diff + 'px'
+    }
+  }
 })

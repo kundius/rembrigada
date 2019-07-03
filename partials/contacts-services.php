@@ -1,6 +1,6 @@
-<section class="section-contacts">
+<section class="section-contacts js-section-offset">
     <div class="container container_alt">
-        <div class="section-contacts-call">
+        <div class="section-contacts-call js-section-offset-inner">
             <div class="section-contacts-call__title">Заказать Обратный звонок</div>
             <div class="section-contacts-call__desc">Заполните форму, и наш специалист свяжется с Вами в течении 15 минут</div>
             <form action="#" class="section-contacts-call__form">

@@ -26,19 +26,12 @@
 
     .navigation-list > .menu-item {
         position: relative;
-        margin: 0 9px;
-        &:first-child {
-            margin-left: 0;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
     }
 
     .navigation-list > .menu-item > a {
         display: block;
         margin: 0 10px;
-        padding: 16px 0 14px;
+        padding: 7px 9px 5px;
         color: #fff;
         text-transform: uppercase;
         text-decoration: none;
@@ -64,9 +57,13 @@
         top: -2px;
         width: 0;
         height: 0;
-        border-top: 10px solid #fff;
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
+        border-top: 7px solid #fff;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+
+    .navigation-list > .menu-item.current-menu-item > a {
+        background-color: #4f555d;
     }
 
     // .navigation-list > .menu-item.menu-item-opened.menu-item-has-children > a > .menu-toggle {

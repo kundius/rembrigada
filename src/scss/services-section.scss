@@ -248,13 +248,14 @@
 .services-section-results {
     background: url('../img/results-bg.jpg') repeat;
     padding-top: 94px;
+    padding-bottom: 41px;
     @media (max-width: $breakpoint-small-max) {
         padding-top: 38px;
         padding-bottom: 16px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         padding-top: 59px;
-        margin-bottom: 26px;
+        padding-bottom: 44px;
     }
 }
 
@@ -461,24 +462,18 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
     padding: 52px 135px 60px;
-    margin-top: 41px;
-    margin-bottom: -206px;
+    margin-top: -519px;
+    margin-bottom: 49px;
     position: relative;
     @media (max-width: $breakpoint-small-max) {
         padding: 38px 40px 64px;
-        margin-top: 2px;
-        margin-bottom: 0;
+        margin-top: 0;
+        margin-bottom: 35px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         padding: 41px 12px 15px;
-        margin-top: 46px;
-    }
-}
-
-.services-calculation-placeholder {
-    min-height: 210px;
-    @media (max-width: $breakpoint-small-max) {
-        display: none;
+        margin-top: 0;
+        margin-bottom: 26px;
     }
 }
 

@@ -10,9 +10,22 @@
     }
 }
 
-.services-object-scheme + .section-contacts {
+.scheme-of-work + .section-contacts {
     @media (max-width: $breakpoint-xsmall-max) {
         background: #ed3947;
+    }
+}
+
+.services-section-results + .section-contacts {
+    @media (max-width: $breakpoint-xsmall-max) {
+        background: url(../img/results-bg.jpg) repeat;
+    }
+}
+
+.projects-cats-section + .section-contacts {
+    @media (max-width: $breakpoint-xsmall-max) {
+        background: #d8d8d8;
+        padding-top: 37px;
     }
 }
 

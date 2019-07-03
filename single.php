@@ -88,39 +88,40 @@
                 $also_query = null;
                 $tags = wp_get_post_tags($post->ID);
                 if ($tags) {
-                    $tag_ids = array();
+                    $tag_ids = [];
                     foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-                    $args=array(
+                    $also_query = new wp_query([
                         'tag__in' => $tag_ids,       
-                        'orderby'=>rand,                
-                        'caller_get_posts'=>1,            
-                        'post__not_in' => array($post->ID),
-                        'showposts'=>5                      
-                    );
-                    $also_query = new wp_query($args);
+                        'orderby'=> 'rand',                
+                        'caller_get_posts'=> 1,            
+                        'post__not_in' => [$post->ID],
+                        'showposts'=> 5   
+                    ]);
                 }
             ?>
 
-            <?php if ($also_query->have_posts()): ?>
+            <?php if ($also_query && $also_query->have_posts()): ?>
             <section class="interested-news">
                 <div class="container container_alt">
                     <div class="interested-news__title">Вам может быть интересно:</div>
-                    <div class="interested-news-list">
+                    <div class="interested-news__grid">
                         <?php while($also_query->have_posts()): $also_query->the_post(); ?>
-                        <div class="interested-news-item">
-                            <div class="interested-news-item__date"><?php the_modified_date(); ?></div>
-                            <a href="<?php the_permalink() ?>" class="interested-news-item__title">
-                                <h4><?php the_title() ?></h4>
-                                <hr>
-                            </a>
-                            <div class="interested-news-item__desc">
-                            <?php the_excerpt() ?>
+                        <div class="interested-news__cell">
+                            <div class="interested-news-item">
+                                <div class="interested-news-item__date"><?php the_modified_date(); ?></div>
+                                <a href="<?php the_permalink() ?>" class="interested-news-item__title">
+                                    <h4><?php the_title() ?></h4>
+                                    <hr>
+                                </a>
+                                <div class="interested-news-item__desc">
+                                <?php the_excerpt() ?>
+                                </div>
+                                <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), 'medium')): ?>
+                                <a href="<?php the_permalink() ?>">
+                                    <img class="interested-news-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                </a>
+                                <?php endif; ?>
                             </div>
-                            <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), 'medium')): ?>
-                            <a href="<?php the_permalink() ?>">
-                                <img class="interested-news-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>">
-                            </a>
-                            <?php endif; ?>
                         </div>
                         <?php endwhile; ?>
                     </div>

@@ -1,15 +1,3 @@
-.services-object-scheme {
-	.scheme-of-work {
-	    padding: 70px 0 210px;
-	    @media (max-width: $breakpoint-small-max) {
-	    	padding: 70px 0 142px;
-	    }
-	    @media (max-width: $breakpoint-xsmall-max) {
-	    	padding: 70px 0;
-	    }
-	}
-}
-
 .technique {
     background: #363941;
     padding-top: 92px;
@@ -93,6 +81,7 @@
     }
     @media (max-width: $breakpoint-xsmall-max) {
     	margin-top: 31px;
+    	flex-wrap: wrap;
     }
 }
 

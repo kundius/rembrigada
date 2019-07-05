@@ -281,3 +281,64 @@ MicroModal.init({
 })
 
 svg4everybody()
+
+document.querySelectorAll('.js-form').forEach(function(form) {
+  let controls = form.querySelectorAll('span.wpcf7-form-control-wrap')
+  let messages = []
+  form.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+    forEach(controls, el => {
+      el.classList.remove('_validation-error')
+    })
+
+    forEach(messages, message => {
+      message.parentNode.removeChild(message)
+    })
+    messages = []
+
+    const request = new XMLHttpRequest()
+    request.open('POST', form.action, true)
+    request.addEventListener('readystatechange', function() {
+      if (this.readyState != 4) return
+
+      const response = JSON.parse(request.response)
+
+      if (response.status == 'mail_sent') {
+        form.reset()
+        form.classList.add('_validation-mail_sent')
+        setTimeout(() => {
+          form.classList.remove('_validation-mail_sent')
+        }, 2000)
+      }
+
+      let invalid = []
+      if (response.status == 'acceptance_missing') {
+          invalid.push({
+            into: 'span.wpcf7-form-control-wrap.rules',
+            message: response.message
+          })
+      }
+      if (response.status == 'mail_failed') {
+          invalid.push({
+            into: 'span.wpcf7-form-control-wrap.submit',
+            message: response.message
+          })
+      }
+      if (response.status == 'validation_failed') {
+        invalid = [...invalid, ...response.invalidFields]
+      }
+
+      forEach(invalid, field => {
+        const el = form.querySelector(field.into)
+        el.classList.add('_validation-error')
+        const message = document.createElement('span')
+        message.classList.add('form-error')
+        message.innerHTML = field.message
+        el.appendChild(message)
+        messages.push(message)
+      })
+    })
+    request.send(new FormData(form))
+  })
+})

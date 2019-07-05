@@ -208,7 +208,12 @@
 }
 
 .form-checkbox {
-    display: none;
+    position: absolute;
+    visibility: hidden;
+    width: 18px;
+    height: 18px;
+    display: block;
+    opacity: 0;
     & + span {
         display: inline-block;
         width: 18px;
@@ -230,6 +235,11 @@
         transform: translate(-50%, -50%) rotate(-45deg);
         margin-top: -1px;
     }
+    ._validation-error & + span {
+        color: #f00;
+        background-color: #fed8de;
+        border-color: #fc3b5a;
+    }
 }
 
 .form-input {
@@ -245,6 +255,11 @@
     padding: 0 20px;
     width: 100%;
     display: block;
+    ._validation-error & {
+        color: #f00;
+        background-color: #fed8de;
+        border-color: #fc3b5a;
+    }
 }
 
 .form-textarea {
@@ -260,6 +275,11 @@
     padding: 15px 20px;
     width: 100%;
     display: block;
+    ._validation-error & {
+        color: #f00;
+        background-color: #fed8de;
+        border-color: #fc3b5a;
+    }
 }
 
 .form-submit {
@@ -423,6 +443,37 @@
                 background: #f9152e;
             }
         }
+    }
+}
+
+.wpcf7-form-control-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.form-error {
+    border-radius: 2px;
+    padding: 16px 20px;
+    background-color: #f9152e;
+    letter-spacing: -0.005em;
+    font-size: 14px;
+    line-height: 1;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 5px);
+    width: 200px;
+    z-index: 120;
+    &::after {
+        content: '';
+        right: 10px;
+        top: -10px;
+        position: absolute;
+        border-top: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #f9152e;
     }
 }
 

@@ -315,53 +315,6 @@ $reviews = new WP_Query(array(
             <?php endif; wp_reset_query(); ?>
 
             <?php get_template_part('partials/contacts'); ?>
-            
-            <!-- Поп-ап "Заказать обратный звонок" -->
-            <div class="pop-up-callback">
-                <div class="pop-up-callback-img">
-                    <img src="./index_files/pop-up-callback-img.jpg" alt=""  >
-                </div>
-                <div class="pop-up-callback-order">
-                    <h3>Заказать <br> Обратный звонок</h3>
-                    <p>Заполните форму, и наш специалист свяжется <br> с Вами в течении 15 минут</p>
-                    <div class="pop-up-callback-input">
-                        <input type="text" name="name" id="name" placeholder="Имя">
-                        <input type="email" name="email" id="email" placeholder="E-mail">
-                        <input type="tel" name="tel" id="tel" placeholder="Телефон*" required="">
-                    </div>
-                    <input type="checkbox" name="pop-up-agreements" id="pop-up-agreements">
-                    <label for="pop-up-agreements" class="pop-up-agreements-label"><span><div class="checked"></div></span>Прочитал(-а) <a href="#">Пользовательское соглашение</a> и соглашаюсь с <a href="#">Политикой обработки персональных данных</a></label>
-                    <a href="#" class="more-btn"><p>Отправить</p><span></span></a>
-                </div>
-                <div class="close-pop-up"></div>
-            </div>
-            <!-- Поп-ап "Заявка отправлена -->
-            <div class="pop-up-callback-send">
-                <div class="pop-up-callback-send-our-work">
-                    <img src="./index_files/our-work-send.jpg" alt=""  >
-                    <a href="#"><p>Наши работы</p></a>
-                </div>
-                <div class="pop-up-callback-send-ok">
-                    <h3>Ваша заявка успешно отправлена</h3>
-                    <p>Наш специалист свяжется с Вами в течении 15 минут, а пока вы можете ознакомиться с видами ремонта, которые мы делаем и как мы его делаем.</p>
-                    <div class="pop-up-callback-category-list">
-                        <a href="#" class="pop-up-callback-category-item">
-                            <img src="./index_files/apartments.png" alt=""  >
-                            <h4>Ремонт квартир</h4>
-                        </a>
-                        <a href="#" class="pop-up-callback-category-item">
-                            <img src="./index_files/house.png" alt=""  >
-                            <h4>Ремонт домов</h4>
-                        </a>
-                        <a href="#" class="pop-up-callback-category-item">
-                            <img src="./index_files/commerce-apartments.png" alt=""  >
-                            <h4><span>Ремонт коммерческой недвижимости</span><span>Ремонт коммерч. недвиж-ти</span></h4>
-                        </a>
-                    </div>
-                </div>
-                <div class="close-pop-up"></div>
-            </div>
-
             <?php get_template_part('partials/footer'); ?>
         </div>
     </body>

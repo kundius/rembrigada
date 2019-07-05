@@ -1,3 +1,27 @@
+<?php
+function get_prev_id($list, $id) {
+    foreach ($list as $key => $value) {
+        if ($value['id'] == $id) {
+            if ($key == 0) {
+                return $list[count($list) - 1]['id'];
+            } else {
+                return $list[$key - 1]['id'];
+            }
+        }
+    }
+}
+function get_next_id($list, $id) {
+    foreach ($list as $key => $value) {
+        if ($value['id'] == $id) {
+            if ($key == count($list) - 1) {
+                return $list[0]['id'];
+            } else {
+                return $list[$key + 1]['id'];
+            }
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,14 +56,15 @@
                             <span>Опубликовано: </span><?php the_modified_date() ?>
                         </div>
                         <div class="project-meta__arrows">
-                            <button class="js_prev"></button>
-                            <button class="js_next"></button>
+                            <div class="slide-nav">
+                                <button class="slide-nav__button slide-nav__button_prev js_prev"></button>
+                                <button class="slide-nav__button slide-nav__button_next js_next"></button>
+                            </div>
                         </div>
                     </div>
                     <div class="project-layout">
                         <div class="project-layout__left">
                             <?php if ($gallery = get_field('gallery')): ?>
-                                <!-- <pre><?php print_r($gallery) ?></pre> -->
                             <div class="project-gallery-layout">
                                 <div class="project-gallery-layout__left">
                                     <div class="project-gallery-slides">
@@ -51,14 +76,6 @@
                                                     <button data-micromodal-trigger="project-<?php echo $item['id'] ?>" class="project-gallery-item__view">
                                                         <?php icon('loupe') ?>
                                                     </button>
-                                                </div>
-                                                <div class="modal micromodal-slide" id="project-<?php echo $item['id'] ?>" aria-hidden="true">
-                                                    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                                        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="Обратный звонок">
-                                                            <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
-                                                            111
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <?php endforeach; ?>
@@ -73,6 +90,42 @@
                                             <button class="project-gallery-controls__next js_m_next"></button>
                                         </div>
                                     </div>
+                                    <?php foreach ($gallery as $item): ?>
+                                    <div class="modal" id="project-<?php echo $item['id'] ?>" aria-hidden="true">
+                                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                                            <div class="modal__container modal__container_large" role="dialog" aria-modal="true" aria-labelledby="Проект">
+                                                <div class="project-modal-layout">
+                                                    <div class="project-modal-layout__left">
+                                                        <div class="project-modal-details__title">
+                                                            <?php the_title() ?>
+                                                        </div>
+                                                        <?php get_template_part('partials/project/details') ?>
+                                                    </div>
+                                                    <div class="project-modal-layout__middle">
+                                                        <div class="project-modal__image">
+                                                            <img src="<?php echo $item['url'] ?>" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="project-modal-layout__right">
+                                                        <div class="project-modal__nav">
+                                                            <div class="slide-nav">
+                                                                <button class="slide-nav__button slide-nav__button_prev" data-micromodal-trigger="project-<?php echo get_prev_id($gallery, $item['id']) ?>" data-micromodal-close></button>
+                                                                <button class="slide-nav__button slide-nav__button_next" data-micromodal-trigger="project-<?php echo get_next_id($gallery, $item['id']) ?>" data-micromodal-close></button>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="project-modal__title"><?php echo $item['title'] ?></div>
+                                                            <?php if ($item['description']): ?>
+                                                            <div class="project-modal__desc"><?php echo $item['description'] ?></div>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
+                                        </div>
+                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
                                 <div class="project-gallery-layout__right">
                                     <div class="project-gallery-nav">
@@ -91,56 +144,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="project-layout__right">
-                            <div class="project-details">
-                                <?php if ($address = get_field('address')): ?>
-                                <div class="project-details__address">
-                                    <?php echo $address ?>
-                                </div>
-                                <?php endif; ?>
-                                <div class="project-details__info">
-                                    <?php if ($area = get_field('area')): ?>
-                                    <div class="project-details__area">
-                                        <div class="project-details__area-label">Площадь</div>
-                                        <div class="project-details__area-value">
-                                            <?php echo $area ?> <span>м<sup>2</sup></span>
-                                        </div>
-                                    </div>
-                                    <?php endif; ?>
-                                    <?php if ($customer = get_field('customer')): ?>
-                                    <div class="project-details__customer">
-                                        <div class="project-details__customer-label">
-                                            <?php icon('user', .75) ?> Клиент
-                                        </div>
-                                        <div class="project-details__customer-value">
-                                            <?php echo $customer ?>
-                                        </div>
-                                    </div>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="project-details__estimate">
-                                    <?php if ($price_works = get_field('price_works')): ?>
-                                    <div class="project-details__estimate-item">
-                                        <div class="project-details__estimate-label">Цена за работы:</div>
-                                        <div class="project-details__estimate-value"><?php echo $price_works ?></div>
-                                    </div>
-                                    <?php endif; ?>
-                                    <?php if ($price_material = get_field('price_material')): ?>
-                                    <div class="project-details__estimate-item">
-                                        <div class="project-details__estimate-label">Цена материала:</div>
-                                        <div class="project-details__estimate-value"><?php echo $price_material ?></div>
-                                    </div>
-                                    <?php endif; ?>
-                                    <?php if ($time_works = get_field('time_works')): ?>
-                                    <div class="project-details__estimate-item">
-                                        <div class="project-details__estimate-label">Сроки работы:</div>
-                                        <div class="project-details__estimate-value"><?php echo $time_works ?></div>
-                                    </div>
-                                    <?php endif; ?>
-                                </div>
-                                <!-- <div class="project-details__more">
-                                    <button class="btn-more">Смотреть отзыв</button>
-                                </div> -->
-                            </div>
+                            <?php get_template_part('partials/project/details') ?>
                         </div>
                     </div>
                 </div>

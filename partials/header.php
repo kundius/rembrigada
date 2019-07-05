@@ -10,7 +10,9 @@
 
         <nav class="navigation">
             <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" alt="<?php echo get_bloginfo('description') ?>"></a>
-            <button class="navigation__callback"><?php icon('phone') ?></button>
+            <button class="navigation__callback" data-micromodal-trigger="callback">
+                <?php icon('phone') ?>
+            </button>
 
             <?php wp_nav_menu([
                 'theme_location' => 'mainmenu',
@@ -26,7 +28,7 @@
 
         <div class="header-callback">
             <a href="tel:+88432601100" class="header-callback__phone">8 (843) 260-11-00</a>
-            <button class="header-callback__button">
+            <button class="header-callback__button" data-micromodal-trigger="callback">
                 <?php icon('phone') ?>
                 <span>Заказать обратный звонок</span>
             </button>

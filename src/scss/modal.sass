@@ -1,10 +1,19 @@
-.modal
-  display: none
-  padding: 40px
-  color: #000000
+@import 'variables.scss'
 
-.modal.is-open
-  display: block
+.modal_callback
+  .modal__container
+    width: 1078px
+    padding: 8% 5% 5% // 130px 175px 70px 80px
+    border-radius: 0
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35)
+    @media (max-width: $breakpoint-xsmall-max)
+      padding: 15px 16px 50px
+  .modal__overlay
+    background: rgba(0,0,0,0)
+
+.modal
+  padding: 10px
+  color: #000000
 
 .modal__overlay
   position: fixed
@@ -19,47 +28,58 @@
   z-index: 1010
 
 .modal__container
-  background-color: #fff
-  padding: 30px
-  max-width: 500px
-  max-height: 100vh
-  border-radius: 4px
+  border-radius: 8px
+  background-color: rgb(255, 255, 255)
+  box-shadow: 0px 0px 16px 0px rgba(34, 37, 40, 0.2)
+  padding: 100px 50px
+  width: 1155px
+  max-width: calc(100% - 20px)
+  max-height: calc(100vh - 20px)
   overflow-y: auto
   box-sizing: border-box
-
-.modal__title
-  line-height: 1.2
-  font-family: 'Kelson'
-  font-weight: bold
-  font-size: 24px
-  margin-bottom: 20px
+  position: relative
+  &_large
+    width: auto
+    max-width: 1668px
+  @media (max-width: $breakpoint-small-max)
+    padding: 40px
 
 .modal__close
   position: absolute
   top: 0
-  right: 0px
-  width: 40px
-  height: 40px
+  right: 0
+  width: 68px
+  height: 68px
   cursor: pointer
   transition: all 200ms ease-out
-  background: #fbc01e
+  background: rgba(0, 0, 0, 0.302)
+  color: rgba(255, 255, 255, 0.4)
   border: none
+  .modal__container &
+    right: 40px
+    top: 40px
+    @media (max-width: $breakpoint-small-max)
+      right: 8px
+      top: 8px
+      width: 48px
+      height: 48px
   &:hover
-    background: #ef7500
+    background: rgba(0, 0, 0, 0.6)
+    color: rgba(255, 255, 255, 0.6)
   &::before
     content: ''
-    width: 70%
-    height: 2px
-    background-color: #ffffff
+    width: 50%
+    height: 4px
+    background-color: currentColor
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%) rotate(-45deg)
   &::after
     content: ''
-    width: 70%
-    height: 2px
-    background-color: #ffffff
+    width: 50%
+    height: 4px
+    background-color: currentColor
     position: absolute
     top: 50%
     left: 50%
@@ -89,24 +109,24 @@
   to
     transform: translateY(-10%)
 
-.micromodal-slide
+.modal
   display: none
 
-.micromodal-slide.is-open
+.modal.is-open
   display: block
 
-.micromodal-slide[aria-hidden="false"] .modal__overlay
+.modal[aria-hidden="false"] .modal__overlay
   animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1)
 
-.micromodal-slide[aria-hidden="false"] .modal__container
+.modal[aria-hidden="false"] .modal__container
   animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1)
 
-.micromodal-slide[aria-hidden="true"] .modal__overlay
+.modal[aria-hidden="true"] .modal__overlay
   animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1)
 
-.micromodal-slide[aria-hidden="true"] .modal__container
+.modal[aria-hidden="true"] .modal__container
   animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1)
 
-.micromodal-slide .modal__container,
-.micromodal-slide .modal__overlay
+.modal .modal__container,
+.modal .modal__overlay
   will-change: transform

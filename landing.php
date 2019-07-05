@@ -44,10 +44,6 @@ $reviews = new WP_Query(array(
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
 
-            <div id="anchor"></div>
-            
-            <a href="#anchor" class="scroll-up"></a>
-
             <?php if ($slideshow = get_field('slideshow')): ?>
             <div class="slideshow js-slideshow">
                 <div class="slideshow-slides js_slides">
@@ -88,7 +84,7 @@ $reviews = new WP_Query(array(
                     </div>
                     <button class="slideshow-nav__next js_next"></button>
                 </div>
-                <a href="#content" class="slideshow__down"></a>
+                <button data-target="#content" class="slideshow__down js-scroll"></button>
             </div>
             <?php endif; ?>
 
@@ -234,7 +230,7 @@ $reviews = new WP_Query(array(
                     <hr>
                     <p>Помните!</p>
                     <p>Цена хорошего ремонта намного ниже, чем цена плохого. Потому что при <br> плохом ремонте вы сначала заплатите за него, а потом за исправление его <br> последствий.</p>
-                    <a href="#" class="more-btn"><p>Узнать больше</p><span></span></a>
+                    <a class="more-btn" data-micromodal-trigger="callback"><p>Узнать больше</p><span></span></a>
                 </div>
             </section>
             

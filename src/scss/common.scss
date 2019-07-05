@@ -46,6 +46,16 @@ img {
     }
 }
 
+.tns-inner {
+    overflow: hidden;
+}
+
+.tns-item {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+}
+
 .btn-arrow {
     display: inline-block;
     text-decoration: none;
@@ -751,6 +761,12 @@ img {
             margin-top: 20px;
             margin-bottom: 34px;
         }
+        .alignleft,
+        .alignright {
+            @media (max-width: $breakpoint-xsmall-max) {
+                float: none;
+            }
+        }
     }
 
     ol {
@@ -800,6 +816,7 @@ img {
         padding: 0;
         margin: 50px 0;
         line-height: 1.111;
+        overflow: hidden;
         li {
             position: relative;
             padding-left: 60px;
@@ -1081,6 +1098,7 @@ img {
         border: 20px solid #ededed;
         transition: border-color .3s ease;
         cursor: pointer;
+        display: block;
         &:hover {
             border-color: #c6c6c6;
         }
@@ -1092,6 +1110,7 @@ img {
     .repairs-item__image-inner {
         padding-bottom: 100%;
         position: relative;
+        display: block;
         img {
             position: absolute;
             left: 50%;
@@ -1102,10 +1121,11 @@ img {
         }
     }
 
-    .repairs-item__title {
+    a.repairs-item__title {
         display: flex;
         justify-content: center;
         margin-top: 30px;
+        text-decoration: none;
         @media (max-width: $breakpoint-small-max) {
             margin-top: 10px;
         }
@@ -1123,6 +1143,7 @@ img {
         line-height: 42px;
         position: relative;
         cursor: pointer;
+        display: block;
         > span {
             position: relative;
             z-index: 20;
@@ -1173,11 +1194,13 @@ img {
 
     .repairs-item__image {
         min-width: 103px;
+        display: block;
     }
 
     .repairs-item__image-inner {
         padding-bottom: 100%;
         position: relative;
+        display: block;
         img {
             position: absolute;
             left: 50%;
@@ -1196,6 +1219,8 @@ img {
         line-height: 1;
         text-transform: uppercase;
         letter-spacing: 0.78px;
+        display: block;
+        text-decoration: none;
     }
 
     .repairs-item__title-inner {
@@ -1509,6 +1534,7 @@ img {
     position: relative;
     display: block;
     overflow: hidden;
+    // font-size: 18px;
     &:hover {
         .project-item__info {
             background: rgba(0, 0, 0, .4);
@@ -1546,28 +1572,28 @@ img {
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    padding: 45px;
+    padding: 2.5em; // 45px
     transition: background .5s ease;
     &::before {
         content: '';
         position: absolute;
         z-index: 10;
-        left: -20px;
-        top: -20px;
-        right: -20px;
-        bottom: -20px;
-        border: 25px solid #d9d9d9;
+        left: -1.11em; //20px
+        top: -1.11em; //20px
+        right: -1.11em; //20px
+        bottom: -1.11em; //20px
+        border: 1.389em solid #d9d9d9; //25px
         opacity: 0;
         transition: all .5s ease;
     }
     @media (max-width: $breakpoint-medium-max) {
-        padding: 25px;
+        padding: 1.389em; //25px
         &::before {
-            left: -10px;
-            top: -10px;
-            right: -10px;
-            bottom: -10px;
-            border-width: 15px;
+            left: -0.555em; // 10px
+            top: -0.555em; // 10px
+            right: -0.555em; // 10px
+            bottom: -0.555em; // 10px
+            border-width: 0.833em; // 15px
         }
     }
 }
@@ -1577,10 +1603,10 @@ img {
     z-index: 20;
     color: #ffffff;
     font-family: "Next Art", sans-serif;
-    font-size: 24px;
+    font-size: 1.333em; // 24px
     font-weight: 700;
     line-height: 1.08;
-    letter-spacing: 1.2px;
+    letter-spacing: 0.06em; // 1.2px
     text-align: center;
     opacity: 0;
     transition: opacity .3s ease;
@@ -1588,52 +1614,52 @@ img {
         background: rgba(0, 0, 0, .5);
     }
     @media (max-width: $breakpoint-medium-max) {
-        font-size: 18px;
+        font-size: 1em; // 18px
     }
 }
 
 .project-item__hr {
     display: block;
-    margin: 21px auto 0;
-    width: 112px;
+    margin: 1.167em auto 0; //21px
+    width: 6.222em; //112px
     height: 1px;
     background-color: #ffffff;
     opacity: 0;
     transition: opacity .3s ease;
     @media (max-width: $breakpoint-medium-max) {
-        margin-top: 10px;
+        margin-top: 0.555em; //10px
     }
 }
 
 .project-item__desc {
     position: relative;
     z-index: 20;
-    margin-top: 34px;
+    margin-top: 1.889em; //34px
     color: #fff;
-    font-size: 18px;
-    letter-spacing: .9px;
+    font-size: 1em;
+    letter-spacing: 0.05em; //.9px
     text-align: center;
     line-height: 1.2;
     opacity: 0;
     transition: opacity .3s ease;
     @media (max-width: $breakpoint-medium-max) {
-        font-size: 14px;
-        margin-top: 15px;
+        font-size: 0.778em; //14px
+        margin-top: 1.07em; //15px
     }
 }
 
 .project-item__more {
     position: relative;
     z-index: 20;
-    margin-top: 48px;
+    margin-top: 2.4em; //48px
     color: #ffffff;
     font-family: "Next Art", sans-serif;
-    font-size: 20px;
+    font-size: 1.111em; //20px
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.96px;
+    letter-spacing: 0.05em;
     padding: 0 10px;
-    line-height: 42px;
+    line-height: 2.1em; //42px
     position: relative;
     opacity: 0;
     transition: opacity .3s ease;
@@ -1645,10 +1671,10 @@ img {
         content: '';
         position: absolute;
         z-index: 10;
-        left: 16px;
+        left: 0.8em; //16px
         top: 0;
         bottom: 0;
-        right: 16px;
+        right: 0.8em; //16px
         background: rgba(237,57,71,1);
         transition: .3s ease;
         transition-property: left, right;
@@ -1661,9 +1687,9 @@ img {
         }
     }
     @media (max-width: $breakpoint-medium-max) {
-        font-size: 14px;
-        line-height: 30px;
-        margin-top: 30px;
+        font-size: 0.7em; //14px
+        line-height: 2.14em; //30px
+        margin-top: 2.14em; //30px
     }
 }
 
@@ -2208,6 +2234,20 @@ img {
 
 }
 
+.callback__success {
+    display: none;
+    ._validation-mail_sent & {
+        display: block;
+    }
+}
+
+.callback__form {
+    display: block;
+    ._validation-mail_sent & {
+        display: none;
+    }
+}
+
 .callback__grid {
     display: flex;
     flex-wrap: wrap;
@@ -2358,14 +2398,14 @@ img {
 }
 
 .callback-form__rules {
+    margin-top: 19px;
+    margin-bottom: 34px;
     font-size: 12px;
     line-height: 1.2;
     color: #9d9d9d;
     position: relative;
     padding-left: 30px;
     display: block;
-    margin-top: 19px;
-    margin-bottom: 34px;
     a {
         text-decoration: underline;
         color: #767676;
@@ -2438,5 +2478,82 @@ img {
     @media (max-width: $breakpoint-xsmall-max) {
        font-size: 10px;
        min-height: 30px;
+    }
+}
+
+.scrollup {
+  border-radius: 50%;
+  background-color: rgba(204, 204, 204, 0.8);
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  cursor: pointer;
+  z-index: 120;
+  color: #fff;
+  opacity: 0;
+  transition: .3s ease;
+  transition-property: background-color, opacity;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    margin-top: 5px;
+  }
+  &:hover {
+    background-color: rgba(161, 161, 161, 0.8);
+  }
+}
+
+.page-menu {
+    padding: 15px 0;
+    border-bottom: 1px solid #e8e8e8;
+    overflow: auto;
+}
+
+.page-menu-list {
+    padding: 0;
+    margin: 0 0 0 -10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    white-space: nowrap;
+    .menu-item {
+        color: #333;
+        letter-spacing: 0.045em;
+        font-weight: bold;
+        font-family: $font-alt;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-left: 10px;
+        line-height: 1.5;
+        @media (max-width: $breakpoint-small-max) {
+           font-size: 16px;
+        }
+        @media (max-width: $breakpoint-xsmall-max) {
+           font-size: 12px;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 8px;
+            &:hover {
+                background-color: #e8e8e8;
+            }
+        }
+        &.current-menu-item a {
+            color: #e8e8e8;
+            background-color: #363941;
+        }
     }
 }

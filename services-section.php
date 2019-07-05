@@ -194,12 +194,14 @@ $services = new WP_Query(array(
                                 </div>
                             </div>
                             <div class="services-calculation__cell">
-                                <form action="#" class="services-calculation-form">
+                                <form action="/wp-json/contact-form-7/v1/contact-forms/380/feedback" method="post" class="services-calculation-form js-form">
                                     <div class="services-calculation-form__title">Рассчитать предварительную стоимость</div>
                                     <div class="services-calculation-form__desc">Заполните форму, и наш специалист свяжется с Вами в течении 15 минут</div>
                                     <div class="services-calculation-form__fields">
                                         <div class="services-calculation-form__row">
-                                            <input type="email" name="your-email" value="" class="form-input" placeholder="E-mail*" />
+                                            <span class="wpcf7-form-control-wrap your-email">
+                                                <input type="email" name="your-email" value="" class="form-input" placeholder="E-mail*" />
+                                            </span>
                                         </div>
                                         <div class="services-calculation-form__row">
                                             <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон">
@@ -212,6 +214,7 @@ $services = new WP_Query(array(
                                             </label>
                                         </div>
                                         <div class="services-calculation-form__row">
+                                            <input type="hidden" name="referrer" value="<?php the_title() ?>">
                                             <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
                                         </div>
                                     </div>

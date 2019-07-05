@@ -1,16 +1,25 @@
 import MicroModal  from 'micromodal'
 import svg4everybody from 'svg4everybody'
+import forEach from 'lodash/forEach'
+import throttle from 'lodash/throttle'
 import { tns } from 'tiny-slider/src/tiny-slider.module.js'
-
-const forEach = (list, cb) => {
-  if (!list) return;
-
-  for (let i = 0; i < list.length; ++i) {
-    cb(list[i])
-  }
-}
+import AWN from 'awesome-notifications/dist/index.js'
+import 'awesome-notifications/dist/style.css'
 
 const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+
+let notifier = new AWN({
+  icons: {
+    enabled: false
+  }
+})
+
+MicroModal.init({
+  disableScroll: false,
+  awaitCloseAnimation: true
+})
+
+svg4everybody()
 
 forEach(document.querySelectorAll('.wp-block-table'), function(el) {
   const wrapper = document.createElement('div')
@@ -22,10 +31,7 @@ forEach(document.querySelectorAll('.wp-block-table'), function(el) {
   container.classList.add('wp-block-table-container')
 })
 
-;(function () {
-  const wrapper = document.querySelector('.js-slideshow')
-  if (!wrapper) return
-
+forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
   const container = wrapper.querySelector('.js_slides')
   const prevButton = wrapper.querySelector('.js_prev')
   const nextButton = wrapper.querySelector('.js_next')
@@ -44,12 +50,9 @@ forEach(document.querySelectorAll('.wp-block-table'), function(el) {
       el_index.innerHTML = e.displayIndex
     }
   })
-}());
+})
 
-;(function () {
-  const wrapper = document.querySelector('.js-project-details')
-  if (!wrapper) return
-
+forEach(document.querySelectorAll('.js-project-details'), function(wrapper) {
   const container = wrapper.querySelector('.js_slides')
   const navContainer = wrapper.querySelector('.js_nav')
   const prevButton = wrapper.querySelector('.js_prev')
@@ -85,12 +88,9 @@ forEach(document.querySelectorAll('.wp-block-table'), function(el) {
       el_index.innerHTML = e.displayIndex
     }
   })
-}());
+})
 
-;(function () {
-  const wrapper = document.querySelector('.js-objects-slider')
-  if (!wrapper) return
-
+forEach(document.querySelectorAll('.js-objects-slider'), function(wrapper) {
   const container = wrapper.querySelector('.js_slides')
   const prevButton = wrapper.querySelector('.js_prev')
   const nextButton = wrapper.querySelector('.js_next')
@@ -113,7 +113,21 @@ forEach(document.querySelectorAll('.wp-block-table'), function(el) {
     nextButton,
     nav: false
   })
-}());
+})
+
+forEach(document.querySelectorAll('.js-repair-slider'), function(wrapper) {
+  const container = wrapper.querySelector('.js_slides')
+  const prevButton = wrapper.querySelector('.js_prev')
+  const nextButton = wrapper.querySelector('.js_next')
+  const slider = tns({
+    items: 1,
+    slideBy: 'page',
+    container,
+    prevButton,
+    nextButton,
+    nav: false
+  })
+})
 
 forEach(document.querySelectorAll('.navigation-list'), function(menu) {
   forEach(document.querySelectorAll('.menu-item-has-children'), function(item) {
@@ -275,12 +289,34 @@ forEach(document.querySelectorAll('.js-section-offset'), function(section) {
   }
 })
 
-MicroModal.init({
-  disableScroll: false,
-  awaitCloseAnimation: true
+forEach(document.querySelectorAll('.js-scroll'), function(el) {
+  let top = 0
+  let left = 0
+  if (el.dataset.target) {
+    let target = document.querySelector(el.dataset.target)
+    if (target) {
+      top = target.offsetTop
+    }
+  }
+  el.addEventListener('click', () => {
+    window.scroll({
+      top, 
+      left, 
+      behavior: 'smooth'
+    })
+  })
 })
 
-svg4everybody()
+forEach(document.querySelectorAll('.scrollup'), function(el) {
+  const scrollHandler = e => {
+    if (window.scrollY > 200) {
+      el.style.opacity = 1
+    } else {
+      el.style.opacity = 0
+    }
+  }
+  window.addEventListener('scroll', throttle(scrollHandler, 100))
+})
 
 document.querySelectorAll('.js-form').forEach(function(form) {
   let controls = form.querySelectorAll('span.wpcf7-form-control-wrap')
@@ -288,12 +324,12 @@ document.querySelectorAll('.js-form').forEach(function(form) {
   form.addEventListener('submit', function(e) {
     e.preventDefault()
 
-    forEach(controls, el => {
-      el.classList.remove('_validation-error')
-    })
+    forEach(controls, el => el.classList.remove('_validation-error'))
 
     forEach(messages, message => {
-      message.parentNode.removeChild(message)
+      if (message.parentNode) {
+        message.parentNode.removeChild(message)
+      }
     })
     messages = []
 
@@ -307,37 +343,37 @@ document.querySelectorAll('.js-form').forEach(function(form) {
       if (response.status == 'mail_sent') {
         form.reset()
         form.classList.add('_validation-mail_sent')
+        notifier.success(response.message)
         setTimeout(() => {
           form.classList.remove('_validation-mail_sent')
-        }, 2000)
+        }, 5000)
       }
 
-      let invalid = []
       if (response.status == 'acceptance_missing') {
-          invalid.push({
-            into: 'span.wpcf7-form-control-wrap.rules',
-            message: response.message
-          })
-      }
-      if (response.status == 'mail_failed') {
-          invalid.push({
-            into: 'span.wpcf7-form-control-wrap.submit',
-            message: response.message
-          })
-      }
-      if (response.status == 'validation_failed') {
-        invalid = [...invalid, ...response.invalidFields]
+        notifier.warning(response.message)
       }
 
-      forEach(invalid, field => {
-        const el = form.querySelector(field.into)
-        el.classList.add('_validation-error')
-        const message = document.createElement('span')
-        message.classList.add('form-error')
-        message.innerHTML = field.message
-        el.appendChild(message)
-        messages.push(message)
-      })
+      if (response.status == 'mail_failed') {
+        notifier.alert(response.message)
+      }
+
+      if (response.status == 'validation_failed') {
+        forEach(response.invalidFields, field => {
+          const el = form.querySelector(field.into)
+          el.classList.add('_validation-error')
+          const message = document.createElement('span')
+          message.classList.add('form-error')
+          message.innerHTML = field.message
+          el.appendChild(message)
+          messages.push(message)
+          const close = document.createElement('span')
+          close.classList.add('form-error__close')
+          message.appendChild(close)
+          close.addEventListener('click', () => {
+            message.parentNode.removeChild(message)
+          })
+        })
+      }
     })
     request.send(new FormData(form))
   })

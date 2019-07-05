@@ -6,26 +6,33 @@
     <body>
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
-
-            <div class="section-main">
+            
+            <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
                 <div class="container">
-                    <div class="layout">
-                        <div class="layout__sidebar">
-                            <?php get_sidebar() ?>
-                        </div>
-                        <div class="layout__content">
-                            <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
-                                <h1><?php the_title(); ?></h1>
-                                <?php the_content(); ?>
-                            <?php endwhile; else: ?>
-                                <p>Извините, ничего не найдено.</p>
-                            <?php endif; ?>
-                        </div>
-                    </div>
+                    <?php bcn_display() ?>
                 </div>
             </div>
 
-            <?php get_template_part('partials/footer'); ?>
+            <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+            <section class="page-headline">
+                <div class="container">
+                    <h1 class="page-headline__title"><span><?php the_title() ?></span></h1>
+                </div>
+            </section>
+
+            <div class="services-content">
+                <div class="container container_tiny">
+                    <div class="content">
+                        <?php the_content() ?>
+                    </div>
+                </div>
+            </div>
+            <?php endwhile; else: ?>
+                <p>Извините, ничего не найдено.</p>
+            <?php endif; ?>
+
+            <?php get_template_part('partials/contacts', 'services') ?>
+            <?php get_template_part('partials/footer') ?>
         </div>
     </body>
 </html>

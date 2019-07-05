@@ -5,9 +5,8 @@ add_filter( 'wpcf7_load_css', '__return_false' );
 add_post_type_support( 'page', 'excerpt' );
 
 add_action('after_setup_theme', function() {
-	register_nav_menus( array(
-		'mainmenu' => 'Основное меню'
-	) );
+	register_nav_menus(['mainmenu' => 'Основное меню']);
+	register_nav_menus(['aboutmenu' => 'Меню о компании']);
 });
 
 add_theme_support('post-thumbnails', array('post', 'page', 'project'));
@@ -36,25 +35,32 @@ if (function_exists('acf_add_options_page')) {
 }
 
 add_shortcode('repairs', function($atts) {
-	$repairs = get_field('repairs', 'options');
+	// $repairs = get_field('repairs', 'options');
+	$repairs = new WP_Query(array(
+	    'post_type' => 'page',
+	    'post_parent' => 403,
+	    'order' => 'ASC',
+	    'orderby' => 'menu_order'
+	));
 
 	$output = '';
-	if ($repairs):
+	if ($repairs->have_posts()):
 		$output .= '<div class="repairs">';
-		foreach($repairs as $repair):
+		while($repairs->have_posts()): $repairs->the_post();
+			$image = get_the_post_thumbnail_url(get_the_ID(), array(400, 400));
 			$output .= '<div class="repairs-item">';
-			$output .= '<div class="repairs-item__image" title="Кликните, чтобы прочитать более подробную информацию">';
-			$output .= '<div class="repairs-item__image-inner">';
-			$output .= '<img src="' . $repair['image']['url'] . '" alt="">';
+			$output .= '<a href="' . get_the_permalink() . '" class="repairs-item__image" title="Кликните, чтобы прочитать более подробную информацию">';
+			$output .= '<span class="repairs-item__image-inner">';
+			$output .= '<img src="' . $image . '" alt="">';
+			$output .= '</span>';
+			$output .= '</a>';
+			$output .= '<a href="' . get_the_permalink() . '" class="repairs-item__title" title="Кликните, чтобы прочитать более подробную информацию">';
+			$output .= '<span class="repairs-item__title-inner"><span>' . get_the_title() . '</span></span>';
+			$output .= '</a>';
 			$output .= '</div>';
-			$output .= '</div>';
-			$output .= '<div class="repairs-item__title" title="Кликните, чтобы прочитать более подробную информацию">';
-			$output .= '<div class="repairs-item__title-inner"><span>' . $repair['name'] . '</span></div>';
-			$output .= '</div>';
-			$output .= '</div>';
-		endforeach;
+		endwhile;
 		$output .= '</div>';
-	endif;
+	endif; wp_reset_query();
 	return $output;
 });
 
@@ -101,21 +107,22 @@ add_shortcode('service-info', function($atts) {
 	wp_reset_query();
 	$output .= '</div>';
 	$output .= '</div>';
-	$output .= '<form action="#" class="services-section-info__form">';
+	$output .= '<form action="/wp-json/contact-form-7/v1/contact-forms/380/feedback" method="post" class="services-section-info__form js-form">';
 	$output .= '<div>';
-	$output .= '<input type="email" name="your-email" value="" class="form-input" placeholder="E-mail" />';
+	$output .= '<span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" class="form-input" placeholder="E-mail*" /></span>';
 	$output .= '</div>';
 	$output .= '<div>';
 	$output .= '<input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон">';
 	$output .= '</div>';
 	$output .= '<div>';
+	$output .= '<input type="hidden" name="referrer" value="' . $longtitle . '">';
 	$output .= '<button type="submit" class="form-submit-holey"><span></span><span>Отправить</span></button>';
 	$output .= '</div>';
 	$output .= '<div>';
 	$output .= '<label class="services-section-info__form-rules">';
 	$output .= '<input type="checkbox" name="rules" value="1" class="form-checkbox" />';
 	$output .= '<span></span>';
-	$output .= 'Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>';
+	$output .= 'Прочитал(-а) <a href="' . get_permalink(231) . '" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="' . get_permalink(3) . '" target="_blank">Политикой обработки персональных данных</a>';
 	$output .= '</label>';
 	$output .= '</div>';
 	$output .= '</form>';

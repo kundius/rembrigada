@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="section-contacts__item">
-                <form action="http://rembrigada116.domenart-studio.ru/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="contacts-form js-form">
+                <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="contacts-form js-form">
                     <div class="contacts-form__row">
                         <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />
                     </div>
@@ -37,18 +37,15 @@
                         <textarea name="message" class="form-textarea" placeholder="Текст сообщения" style="height: 100%;"></textarea>
                     </div>
                     <div class="contacts-form__row">
-                        <span class="wpcf7-form-control-wrap rules">
-                            <label class="contacts-form__rules">
-                                <input type="checkbox" name="rules" value="1" class="form-checkbox" />
-                                <span></span>
-                                Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
-                            </label>
-                        </span>
+                        <label class="contacts-form__rules">
+                            <input type="checkbox" name="rules" value="1" class="form-checkbox" />
+                            <span></span>
+                            Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
+                        </label>
                     </div>
                     <div class="contacts-form__row">
-                        <span class="wpcf7-form-control-wrap submit">
-                            <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
-                        </span>
+                        <input type="hidden" name="referrer" value="<?php the_title() ?>">
+                        <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
                     </div>
                 </form>
             </div>

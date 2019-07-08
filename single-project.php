@@ -44,6 +44,24 @@ function get_next_id($list, $id) {
                 </div>
             </section>
 
+            <?php if ($review = get_field('review')): ?>
+            <div class="modal modal_review" id="review-<?php echo $review->ID ?>" aria-hidden="true">
+                <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="Текст отзыва">
+                        <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
+                        <div class="reviews-item__title"><?php echo $review->post_title ?></div>
+                        <div class="reviews-item__address"><?php the_field('address', $review->ID) ?></div>
+                        <div class="reviews-item__info">
+                            <div class="reviews-item__icon"><?php icon('quotes') ?></div>
+                            <div class="reviews-item__desc">
+                                <?php echo $review->post_content ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+    
             <div class="js-project-details">
                 <div class="container container_alt">
                     <div class="project-meta">

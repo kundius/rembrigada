@@ -5,8 +5,11 @@ add_filter( 'wpcf7_load_css', '__return_false' );
 add_post_type_support( 'page', 'excerpt' );
 
 add_action('after_setup_theme', function() {
-	register_nav_menus(['mainmenu' => 'Основное меню']);
-	register_nav_menus(['aboutmenu' => 'Меню о компании']);
+	register_nav_menus([
+		'mainmenu' => 'Основное меню',
+		'aboutmenu' => 'Меню о компании',
+		'sitemap' => 'Карта сайта'
+	]);
 });
 
 add_theme_support('post-thumbnails', array('post', 'page', 'project'));
@@ -33,6 +36,113 @@ if (function_exists('acf_add_options_page')) {
 		'redirect'		=> false
 	));
 }
+
+
+class Sitemap_Walker extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+		$object = $item->object;
+		$type = $item->type;
+		$title = $item->title;
+		$permalink = $item->url;
+		$custom_hildren = '';
+
+		if ($type == 'taxonomy' && $object == 'category') {
+			$posts = new WP_Query([
+			    'post_type' => 'post',
+				'tax_query' => [[
+			        'taxonomy' => 'category',
+			        'terms'    => [$item->object_id]
+			    ]]
+			]);
+			if ($posts->have_posts()) {
+				$item->classes[] = 'menu-item-has-children';
+				$custom_hildren .= '<ul>';
+				while ($posts->have_posts()) {
+					$posts->the_post();
+					$custom_hildren .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+				}
+				$custom_hildren .= '</ul>';
+			}
+			wp_reset_query();
+		}
+
+		if ($type == 'post_type' && $object == 'page') {
+			$pages = new WP_Query([
+			    'post_type' => 'page',
+			    'post_parent' => $item->object_id
+			]);
+			if ($pages->have_posts()) {
+				$custom_hildren .= '<ul>';
+				while ($pages->have_posts()) {
+					$pages->the_post();
+					$subpages = new WP_Query([
+					    'post_type' => 'page',
+					    'post_parent' => get_the_ID()
+					]);
+					$cls = '';
+					if ($subpages->have_posts()) {
+						$cls .= 'menu-item-has-children';
+					}
+					$custom_hildren .= '<li class="' . $cls . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
+					if ($subpages->have_posts()) {
+						$custom_hildren .= '<ul>';
+						while ($subpages->have_posts()) {
+							$subpages->the_post();
+							$custom_hildren .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+						}
+						$custom_hildren .= '</ul>';
+					}
+					wp_reset_query();
+					$custom_hildren .= '</li>';
+				}
+				$custom_hildren .= '</ul>';
+			}
+			wp_reset_query();
+		}
+
+		$output .= "<li class='" .  implode(" ", $item->classes) . "'>";
+		if ($permalink && $permalink != '#') {
+			$output .= '<a href="' . $permalink . '">';
+		} else {
+			$output .= '<span>';
+		}
+		$output .= $title;
+		if ($permalink && $permalink != '#') {
+			$output .= '</a>';
+		} else {
+			$output .= '</span>';
+		}
+		
+		if ($custom_hildren) {
+			$output .= $custom_hildren;
+		}
+	}
+}
+
+add_shortcode('sitemap', function($atts) {
+	if (!has_nav_menu('sitemap')) return;
+
+	$output = '';
+
+	$output .= wp_nav_menu([
+		'theme_location' => 'sitemap',
+		'menu_class' => 'sitemap',
+		'walker' => new Sitemap_Walker()
+	]);
+
+	$output .= '<div class="sitemap-rules">';
+	$output .= '<div class="sitemap-rules__grid">';
+	$output .= '<div class="sitemap-rules__cell">';
+	$output .= '<a href="' . get_the_permalink(231) . '">Пользовательское соглашение</a>';
+	$output .= '</div>';
+	$output .= '<div class="sitemap-rules__cell">';
+	$output .= '<a href="' . get_the_permalink(3) . '">Политика конфиденциальности и обработка персональных данных</a>';
+	$output .= '</div>';
+	$output .= '</div>';
+	$output .= '</div>';
+
+	return $output;
+});
 
 add_shortcode('repairs', function($atts) {
 	// $repairs = get_field('repairs', 'options');

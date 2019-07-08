@@ -1,3 +1,4 @@
+<div class="header-placeholder"></div>
 <header class="header">
     <div class="container">
         <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" alt="<?php echo get_bloginfo('description') ?>"></a>
@@ -21,13 +22,13 @@
             ]); ?>
 
             <div class="navigation__contacts">
-                <a href="tel:+88432601100">8 (843) 260-11-00</a>
+                <a href="tel:<?php the_field('phone', 'options') ?>"><?php the_field('phone', 'options') ?></a>
                 <p>Ежедневно с 9:00 до 20:00</p>
             </div>
         </nav>
 
         <div class="header-callback">
-            <a href="tel:+88432601100" class="header-callback__phone">8 (843) 260-11-00</a>
+            <a href="tel:<?php the_field('phone', 'options') ?>" class="header-callback__phone"><?php the_field('phone', 'options') ?></a>
             <button class="header-callback__button" data-micromodal-trigger="callback">
                 <?php icon('phone') ?>
                 <span>Заказать обратный звонок</span>

@@ -1,0 +1,262 @@
+@import 'variables.scss';
+
+.p-contacts-section {
+	display: flex;
+	background-color: #4a4c54;
+    @media (max-width: $breakpoint-xsmall-max) {
+		flex-wrap: wrap;
+		position: relative;
+    }
+}
+
+.p-contacts-section__content {
+	min-width: 50%;
+	padding-left: calc(50% - #{$container-width-alt/2});
+	padding-right: 38px;
+    padding-bottom: 40px;
+    padding-top: 44px;
+    @media (max-width: $container-width-alt + 20px) {
+        padding-left: 10px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+    	padding-right: 65px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		padding-right: 10px;
+		width: 100%;
+		padding-top: 24px;
+	    padding-bottom: 0;
+    }
+}
+
+.p-contacts-section__map {
+	min-width: 50%;
+	position: relative;
+	> ymaps {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100% !important;
+		height: 100% !important;
+	}
+    @media (max-width: $breakpoint-xsmall-max) {
+		height: 787px;
+		width: 100%;
+    }
+}
+
+.p-contacts {
+    color: #f6f7fb;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            margin: 10px 0;
+        }
+    }
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+    p {
+        margin: 21px 0;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @media (max-width: $breakpoint-small-max) {
+    	font-size: 14px;
+        p {
+            margin: 16px 0;
+        }
+    }
+    // @media (max-width: $breakpoint-xsmall-max) {
+    //     font-size: 14px;
+    //     margin-top: 31px;
+    //     padding-bottom: 28px;
+    //     p {
+    //         margin-top: 18px;
+    //     }
+    // }
+}
+
+@media (min-width: $breakpoint-medium) {
+	.p-contacts__grid {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.p-contacts__cell {
+		width: 50%;
+	}
+}
+
+@media (max-width: $breakpoint-small-max) {
+	.p-contacts__cell {
+		margin: 16px 0;
+	}
+}
+
+.p-contacts-time {
+    color: #8792a4;
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    margin-top: 35px;
+    border-bottom: 1px solid rgba(199, 199, 199, .2);
+    border-top: 1px solid rgba(199, 199, 199, .2);
+    padding-bottom: 32px;
+    padding-top: 36px;
+    a {
+        color: inherit;
+    }
+    svg {
+        vertical-align: middle;
+        margin-right: 7px;
+        position: relative;
+        top: -2px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 14px;
+		padding-bottom: 16px;
+		padding-top: 16px;
+	    margin-top: 28px;
+        svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		font-size: 14px;
+		padding-bottom: 18px;
+		padding-top: 18px;
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+.p-contacts-form {
+    margin-top: 36px;
+    padding-top: 28px;
+    @media (max-width: $breakpoint-small-max) {
+		margin-top: 29px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		position: absolute;
+		left: 8px;
+		right: 8px;
+		bottom: 12px;
+		background-color: #fff;
+		z-index: 20;
+	    box-shadow: 0px 0px 16px 0px rgba(34, 37, 40, 0.2);
+	    padding: 10px;
+    }
+}
+
+.p-contacts-form__title {
+    color: #ffffff;
+    font-family: "Next Art", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 5.94px;
+    margin-bottom: 24px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 26px;
+        letter-spacing: 0.5px;
+        margin-bottom: 13px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        color: #333;
+        font-size: 24px;
+		letter-spacing: 0.2px;
+		margin-bottom: 17px;
+    }
+}
+
+.p-contacts-form__grid {
+    display: grid;
+    grid-row-gap: 22px;
+    grid-column-gap: 12px;
+    flex-grow: 1;
+    align-self: flex-end;
+    @media (max-width: $breakpoint-small-max) {
+        grid-row-gap: 4px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        grid-row-gap: 12px;
+        background-color: #5d6270;
+        padding: 29px 10px 26px;
+    }
+}
+
+.p-contacts-form__row {
+    @media (min-width: $breakpoint-medium) {
+        &:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        &:nth-child(2) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+        &:nth-child(3) {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+        &:nth-child(4) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 4;
+        }
+        &:nth-child(5) {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+            display: flex;
+            align-items: center;
+        }
+        &:nth-child(6) {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+        }
+    }
+}
+
+.p-contacts-form__rules {
+    position: relative;
+    color: #7c8596;
+    font-size: 12px;
+    line-height: 1.25;
+    padding-left: 28px;
+    display: block;
+    cursor: pointer;
+    margin-left: 4px;
+    @media (min-width: $breakpoint-small) and (max-width: $breakpoint-small-max) {
+	    margin-top: 8px;
+	    margin-bottom: 11px;
+	    line-height: 1;
+    }
+    a {
+        color: inherit;
+        text-decoration: underline;
+        &:hover {
+            color: #000000;
+        }
+    }
+    .form-checkbox {
+        & + span {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}

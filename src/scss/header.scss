@@ -1,14 +1,23 @@
 @import 'variables.scss';
 
+.header-placeholder {
+    height: 108px;
+    @media (max-width: $breakpoint-large-max) {
+        height: 68px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        height: 56px;
+    }
+}
+
 .header {
     width: 100%;
     margin: 0 auto;
     background-color: #1c1e21;
     z-index: 150;
-    position: relative;
-    @media (max-width: $breakpoint-xsmall-max) {
-        position: relative;
-    }
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 .header__logo {
@@ -37,7 +46,7 @@
     align-items: center;
     justify-content: space-between;
     height: 108px;
-    background-color: #1c1e21;
+    // background-color: #1c1e21;
     @media (max-width: $breakpoint-medium-max) {
         width: calc(100% - 40px);
         height: 68px;
@@ -61,7 +70,6 @@
         display: block;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        position: fixed;
         width: 56px;
         height: 56px;
         background-color: #030303;

@@ -29,6 +29,12 @@
     }
 }
 
+.project-meta__arrows {
+    @media (max-width: $breakpoint-xsmall-max) {
+        display: none;
+    }
+}
+
 .project-meta__category {
  
 }

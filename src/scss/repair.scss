@@ -3,26 +3,63 @@
 	flex-wrap: wrap;
 	margin-left: -60px;
 	margin-top: 60px;
+    @media (max-width: $breakpoint-small-max) {
+        margin-left: -16px;
+        margin-top: 26px;
+    }
 }
 
 .repair-main__thumbnail {
 	width: 30%;
 	padding-left: 60px;
+    @media (max-width: $breakpoint-small-max) {
+        width: 33%;
+        padding-left: 16px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+        order: 1;
+    }
 }
 
 .repair-main__description {
 	width: 70%;
 	padding-left: 60px;
+    @media (max-width: $breakpoint-small-max) {
+        width: 67%;
+        padding-left: 16px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+        order: 3;
+    }
 }
 
 .repair-main__estimate {
 	padding-left: 60px;
 	width: 100%;
 	margin-top: 66px;
+    @media (max-width: $breakpoint-small-max) {
+        padding-left: 16px;
+        margin-top: 42px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+        order: 2;
+        margin-top: 18px;
+        margin-bottom: 23px;
+    }
 }
 
 .repair-thumbnail {
 	border: 18px solid #ededed;
+    @media (max-width: $breakpoint-small-max) {
+        border-width: 12px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        max-width: 200px;
+        margin: 0 auto;
+    }
 }
 
 .repair-thumbnail__inner {
@@ -55,6 +92,15 @@
 	white-space: nowrap;
 	background-color: #363941;
 	margin-top: 30px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 14px;
+		line-height: 30px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 18px;
+		line-height: 35px;
+		margin-top: 14px;
+    }
 }
 
 .repair-description {
@@ -70,6 +116,17 @@
 			margin-bottom: 0;
 		}
 	}
+    @media (max-width: $breakpoint-small-max) {
+        border-width: 16px;
+        line-height: 1;
+        p {
+        	margin: 18px 0;
+        }
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 16px;
+        line-height: 1.125;
+    }
 }
 
 .repair-estimate {
@@ -79,11 +136,23 @@
 	border-top: 1px solid #dddddd;
 	border-bottom: 1px solid #dddddd;
 	padding: 25px  30px 23px;
+    @media (max-width: $breakpoint-small-max) {
+        padding: 18px 0;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        flex-wrap: wrap;
+        margin: 0 -10px;
+        padding: 12px 10px;
+    }
 }
 
 .repair-estimate-price {
 	display: flex;
 	align-items: center;
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
 
 .repair-estimate-price__label {
@@ -91,6 +160,13 @@
 	font-size: 14px;
 	line-height: 1;
 	margin-right: 30px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 13px;
+        margin-right: 15px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 14px;
+    }
 }
 
 .repair-estimate-price__value {
@@ -99,24 +175,55 @@
 	line-height: 35px;
 	font-weight: bold;
 	color: #363941;
+	white-space: nowrap;
 	span {
 		font-size: 18px;
 	}
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 18px;
+        span {
+        	font-size: 14px;
+        }
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 20px;
+        span {
+        	font-size: 16px;
+        }
+    }
 }
 
 .repair-estimate-terms {
 	display: flex;
 	align-items: center;
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 6px;
+    }
 }
 
 .repair-estimate-terms__label {
 	color: #b6b6b6;
 	font-size: 14px;
 	line-height: 1;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 13px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 14px;
+    }
 }
 
 .repair-estimate-term {
 	margin-left: 65px;
+    @media (max-width: $breakpoint-small-max) {
+        margin-left: 6px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-top: 10px;
+    }
 }
 
 .repair-estimate-term__time {
@@ -136,6 +243,21 @@
 		font-size: 14px;
 		margin-left: 4px;
 	}
+    @media (max-width: $breakpoint-small-max) {
+		min-width: 104px;
+		font-size: 18px;
+		padding: 5px 2px 5px;
+        span {
+        	font-size: 12px;
+        }
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 20px;
+		min-width: 125px;
+        span {
+        	font-size: 14px;
+        }
+    }
 }
 
 .repair-estimate-term__area {
@@ -145,6 +267,9 @@
 	text-align: center;
 	font-weight: bold;
 	line-height: 1;
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 12px;
+    }
 }
 
 .repair-services {
@@ -152,13 +277,21 @@
 	margin-left: -90px;
 	flex-wrap: wrap;
 	margin-top: 32px;
+    @media (max-width: $breakpoint-small-max) {
+		margin-left: -24px;
+		margin-top: 14px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		margin-left: 0;
+		margin-top: 28px;
+    }
 }
 
 .repair-services__column {
 	position: relative;
 	padding-left: 90px;
 	width: 33.33%;
-	&:before {
+	&::before {
 		content: '';
 		height: 100%;
 		width: 1px;
@@ -170,6 +303,22 @@
 	&:nth-child(3n+1)::before {
 		display: none;
 	}
+    @media (max-width: $breakpoint-small-max) {
+		padding-left: 24px;
+		&::before {
+			left: 12px;
+		}
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+        border-top: 1px solid #ddd;
+        padding-left: 0;
+        padding-top: 15px;
+        padding-bottom: 22px;
+		&::before {
+			display: none;
+		}
+    }
 }
 
 .repair-services__title {
@@ -183,25 +332,39 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	a {
-		display: inline-block;
-		text-decoration: none;
-		color: inherit;
-		padding-bottom: 13px;
-		position: relative;
-		&::after {
-			content: '';
-			width: 68px;
-			height: 3px;
-			left: 50%;
-			bottom: 0;
-			transform: translateX(-50%);
-			position: absolute;
-		}
-		&:hover::after {
-			background-color: #f9152e;
-		}
+    @media (max-width: $breakpoint-small-max) {
+		justify-content: flex-start;
+		text-align: left;
+		font-size: 16px;
+		min-height: 42px;
+    }
+}
+
+.repair-services__title a {
+	display: inline-block;
+	text-decoration: none;
+	color: inherit;
+	padding-bottom: 13px;
+	position: relative;
+	&::after {
+		content: '';
+		width: 68px;
+		height: 3px;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%);
+		position: absolute;
 	}
+	&:hover::after {
+		background-color: #f9152e;
+	}
+    @media (max-width: $breakpoint-small-max) {
+		padding-bottom: 10px;
+		&::after {
+			left: 0;
+			transform: none;
+		}
+    }
 }
 
 .repair-subservices {
@@ -229,6 +392,26 @@
 			background-color: #ed3947;
 		}
 	}
+    @media (max-width: $breakpoint-small-max) {
+    	a {
+	    	font-size: 14px;
+			padding: 5px 5px 5px 20px;
+			margin: 4px 0;
+			&::before {
+				width: 6px;
+				height: 6px;
+				left: 6px;
+				top: 9px;
+			}
+    	}
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+	    margin-top: 14px;
+	    margin-left: 20px;
+	    a {
+	    	margin: 0;
+	    }
+    }
 }
 
 .repair-projects-section {
@@ -243,11 +426,34 @@
 	padding-top: 96px;
 	padding-bottom: 113px;
 	margin-top: 22px;
+    @media (max-width: $breakpoint-small-max) {
+    	margin-top: 14px;
+    	padding-left: 45px;
+    	padding-top: 55px;
+    	padding-right: 40px;
+    	padding-bottom: 88px;
+		grid-column-gap: 98px;
+		grid-row-gap: 48px;
+    	grid-template-columns: 44.7% 1fr;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin: 0 -10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 39px;
+        padding-bottom: 48px;
+    	grid-template-columns: 1fr;
+    	grid-row-gap: 16px;
+    }
 }
 
 .repair-projects-section__slider {
 	grid-row: 1 / 3;
 	grid-column: 1 / 2;
+    @media (max-width: $breakpoint-xsmall-max) {
+		grid-row: 2 / 3;
+		grid-column: 1 / 2;
+    }
 }
 
 .repair-projects-section__title {
@@ -272,6 +478,18 @@
 		bottom: 0;
 		left: 0;
 	}
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 21px;
+		padding-top: 40px;
+		padding-bottom: 15px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		grid-row: 1 / 2;
+		grid-column: 1 / 2;
+		padding-top: 0;
+		padding-bottom: 19px;
+		font-size: 18px;
+    }
 }
 
 .repair-projects-section__text {
@@ -297,6 +515,18 @@
 			color: #fefefe;
 		}
 	}
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 16px;
+		line-height: 1.125;
+		p {
+			margin: 18px 0;
+		}
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		grid-row: 3 / 4;
+		grid-column: 1 / 2;
+		padding-top: 31px;
+    }
 }
 
 .repair-slider {
@@ -316,12 +546,31 @@
 	.tns-liveregion {
 		display: none;
 	}
+    @media (max-width: $breakpoint-small-max) {
+		&::before {
+			border-width: 12px;
+			transform: translate(34px, 33px);
+		}
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		&::before {
+			transform: translate(69px, 29px);
+		}
+    }
 }
 
 .repair-slider__nav {
 	position: absolute;
 	bottom: -55px;
 	right: -32px;
+    @media (max-width: $breakpoint-small-max) {
+	    bottom: -42px;
+	    right: -19px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		right: -7px;
+		bottom: -39px;
+    }
 }
 
 .repair-slider__slides {
@@ -333,6 +582,14 @@
 	background-size: cover;
 	padding-top: 90px;
 	padding-bottom: 114px;
+    @media (max-width: $breakpoint-small-max) {
+		padding-top: 44px;
+		padding-bottom: 28px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding-top: 51px;
+        padding-bottom: 72px;
+    }
 }
 
 .repair-cost-section__title {
@@ -340,6 +597,12 @@
 	font-size: 48px;
 	line-height: 1;
 	font-weight: bold;
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 30px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 26px;
+    }
 }
 
 .repair-cost-section__desc {
@@ -348,12 +611,27 @@
 	line-height: 1;
 	letter-spacing: 0.01em;
     margin-top: 38px;
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 14px;
+		margin-top: 13px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+	    font-size: 18px;
+	    line-height: 1.15;
+	    margin-top: 19px;
+    }
 }
 
 .repair-cost-section__list {
 	display: flex;
 	flex-wrap: wrap;
-    margin-top: 71px;
+  //   margin-top: 71px;
+  //   @media (max-width: $breakpoint-small-max) {
+		// margin-top: 47px;
+  //   }
+  //   @media (max-width: $breakpoint-xsmall-max) {
+	 //    margin-top: 32px;
+  //   }
 }
 
 .repair-cost-section__item {
@@ -391,25 +669,105 @@
 			top: 50%;
 		}
 	}
-	&:nth-child(1) {
+	&:nth-child(4n-3) {
 	    padding-left: 108px;
 	    margin-left: -30px;
 	    width: 38%;
+	    margin-top: 71px;
 	}
-	&:nth-child(2) {
+	&:nth-child(4n-2) {
 	    padding-left: 77px;
 	    width: 40%;
 	    margin-left: 70px;
+	    margin-top: 71px;
 		span::after {
 			display: none;
 		}
 	}
-	&:nth-child(3) {
+	&:nth-child(4n-1) {
 	    padding-left: 98px;
 	    margin-top: 73px;
 	    width: 35%;
 	    margin-left: 2px;
 	}
+	&:nth-child(4n) {
+	    padding-left: 98px;
+	    margin-top: 73px;
+	    width: 35%;
+	    margin-left: 82px;
+		span::after {
+			display: none;
+		}
+	}
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 14px;
+		line-height: 1;
+		span {
+			width: 30px;
+			height: 30px;
+			top: 4px;
+			&::before {
+				width: 7px;
+				height: 7px;
+			}
+			&::after {
+				width: 110px;
+			}
+		}
+		&:nth-child(4n-3) {
+		    padding-left: 57px;
+		    margin-left: 0;
+		    margin-top: 47px;
+		}
+		&:nth-child(4n-2) {
+		    padding-left: 43px;
+		    margin-left: 4px;
+		    margin-top: 60px;
+		}
+		&:nth-child(4n-1) {
+		    padding-left: 44px;
+		    margin-top: 43px;
+		    margin-left: 50px;
+		}
+		&:nth-child(4n) {
+		    padding-left: 44px;
+		    margin-top: 63px;
+		    margin-left: 50px;
+		}
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 16px;
+        span {
+			width: 36px;
+			height: 36px;
+			top: 1px;
+			left: 2px;
+        }
+		&:nth-child(4n-3) {
+		    padding-left: 46px;
+		    margin-left: 0;
+		    width: 100%;
+		    margin-top: 32px;
+		}
+		&:nth-child(4n-2) {
+		    padding-left: 46px;
+		    margin-left: 0px;
+		    margin-top: 39px;
+		    width: 100%;
+		}
+		&:nth-child(4n-1) {
+			padding-left: 46px;
+			margin-top: 49px;
+			margin-left: 0;
+			width: 100%;
+		}
+		&:nth-child(4n) {
+			padding-left: 46px;
+			margin-top: 49px;
+			margin-left: 0;
+			width: 100%;
+		}
+    }
 }
 
 .repair-cost-section__signature {
@@ -420,12 +778,33 @@
     margin-top: 74px;
     margin-left: 41%;
     width: 45%;
+    @media (max-width: $breakpoint-small-max) {
+	    font-size: 22px;
+	    line-height: 1.2;
+	    margin-top: 7px;
+	    margin-left: 44.5%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+	    font-size: 20px;
+	    line-height: 1.1;
+	    margin-left: 30%;
+	    margin-top: 82px;
+	    width: 70%;
+    }
 }
 
 .repair-stages-section {
     background: #363941;
     padding-top: 92px;
     padding-bottom: 98px;
+    @media (max-width: $breakpoint-small-max) {
+		padding-top: 31px;
+		padding-bottom: 36px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		padding-top: 56px;
+		padding-bottom: 73px;
+    }
 }
 
 .repair-stages-section__title {
@@ -434,6 +813,7 @@
     color: #fff;
     font-weight: 700;
     position: relative;
+    line-height: 1;
     padding-bottom: 21px;
     text-transform: uppercase;
     &::after {
@@ -446,11 +826,23 @@
 	    left: 50%;
 	    transform: translateX(-50%);
 	}
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 18px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		line-height: 1.2;
+    }
 }
 
 .repair-stages-section__list {
 	max-width: 880px;
 	margin: 73px auto 0;
+    @media (max-width: $breakpoint-small-max) {
+	    margin: 33px auto 0;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		margin-top: 45px;
+    }
 }
 
 .repair-stages-section__grid {
@@ -459,31 +851,42 @@
     margin-top: -25px;
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: $breakpoint-small-max) {
+	    margin-top: -20px;
+    }
 }
 
 .repair-stages-section__cell {
 	padding-left: 100px;
 	padding-top: 25px;
 	width: 50%;
+    @media (max-width: $breakpoint-small-max) {
+	    padding-top: 20px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+        padding-top: 18px;
+    }
 }
 
 .repair-stages-section__item {
     font-size: 18px;
     color: #98a0b7;
     position: relative;
-    padding-left: 54px;
     line-height: 1;
+    display: flex;
+    align-items: center;
 	&::before {
 	    counter-increment: number;
 	    content: counter(number);
-	    position: absolute;
+	    display: block;
 	    width: 33px;
 	    height: 33px;
+	    min-width: 33px;
+	    min-height: 33px;
 	    box-sizing: border-box;
 	    background-color: transparent;
 	    border: 4px solid #ed3947;
-	    top: 2px;
-	    left: 0;
 	    color: #b5bfda;
 	    font-family: Next Art,sans-serif;
 	    font-size: 20px;
@@ -491,5 +894,15 @@
 	    line-height: 1;
 	    padding-left: 12px;
 	    padding-top: 6px;
+        align-self: self-start;
+        margin-right: 20px;
 	}
+    @media (max-width: $breakpoint-small-max) {
+		font-size: 16px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+		&::before {
+			margin-right: 15px;
+		}
+    }
 }

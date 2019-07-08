@@ -208,6 +208,35 @@
     }
 }
 
+.contacts-form__rules {
+    position: relative;
+    color: #404040;
+    font-size: 12px;
+    line-height: 1.25;
+    padding-left: 28px;
+    display: block;
+    cursor: pointer;
+    margin-left: 4px;
+    @media (min-width: $breakpoint-small) and (max-width: $breakpoint-small-max) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    a {
+        color: inherit;
+        text-decoration: underline;
+        &:hover {
+            color: #000000;
+        }
+    }
+    .form-checkbox {
+        & + span {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
 .form-checkbox {
     position: absolute;
     visibility: hidden;
@@ -508,36 +537,6 @@
     }
     &:hover {
         background-color: rgba(0,0,0,.2);
-    }
-}
-
-.contacts-form__rules {
-    position: relative;
-    color: #404040;
-    font-size: 12px;
-    text-decoration: underline;
-    line-height: 1.25;
-    padding-left: 28px;
-    display: block;
-    cursor: pointer;
-    margin-left: 4px;
-    @media (min-width: $breakpoint-small) and (max-width: $breakpoint-small-max) {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    a {
-        color: inherit;
-        text-decoration: underline;
-        &:hover {
-            color: #000000;
-        }
-    }
-    .form-checkbox {
-        & + span {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
     }
 }
 

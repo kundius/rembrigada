@@ -290,12 +290,13 @@ forEach(document.querySelectorAll('.js-section-offset'), function(section) {
 })
 
 forEach(document.querySelectorAll('.js-scroll'), function(el) {
+  const header = document.querySelector('.header')
   let top = 0
   let left = 0
   if (el.dataset.target) {
     let target = document.querySelector(el.dataset.target)
     if (target) {
-      top = target.offsetTop
+      top = target.offsetTop - header.offsetHeight
     }
   }
   el.addEventListener('click', () => {

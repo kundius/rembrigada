@@ -5,18 +5,15 @@
                 <div class="contacts">
                     <div class="contacts__title">Контакты</div>
                     <div class="contacts__text">
-                        <p>Казань, ул. Четаева, 27</p>
+                        <p><?php the_field('address', 'options') ?></p>
+                        <p><?php the_field('phones', 'options') ?></p>
                         <p>
-                            Тел:  +7 (843) 260-11-00<br>
-                            Тел:  +7 (987) 230‑17-34
-                        </p>
-                        <p>
-                            <a href="mailto:rembrigada116@yandex.ru">Rembrigada116@yandex.ru</a>
+                            <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
                         </p>
                     </div>
                     <div class="contacts__time">
                         <?php icon('clock', 1.25) ?>
-                        Пн-пт 9:00 – 21:00;&#8195;сб 9:00 – 19:00
+                        <?php the_field('schedule', 'options') ?>
                     </div>
                 </div>
             </div>

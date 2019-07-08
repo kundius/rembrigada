@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-grid">
             <div class="footer__copyright">
-                © 2019, Rembrigada116.ru - Ремонт квартир <br> и коттеджей в Казани. Все права защищены.
+                <?php the_field('copyright', 'options') ?>
             </div>
             <div class="footer-social">
                 <a href="#" class="footer-social__vk"><?php icon('vk', 1.25) ?></a>
@@ -11,20 +11,19 @@
                 <a href="#" class="footer-social__youtube"><?php icon('youtube', 1.25) ?></a>
             </div>
             <div class="footer__requisites">
-                ИНН 163300422218<br>
-                ОГРНИП 313169008600154
+                <?php the_field('requisites', 'options') ?>
             </div>
             <div class="footer__counters">
-                <img src="https://via.placeholder.com/90x32" alt="">
+                <?php the_field('counters', 'options') ?>
             </div>
             <div class="footer__sitemap">
-                <a href="#">Карта сайта</a>
+                <a href="<?php the_permalink(452) ?>">Карта сайта</a>
             </div>
             <div class="footer__agreement">
-                <a href="#">Пользовательское соглашение</a>
+                <a href="<?php the_permalink(231) ?>">Пользовательское соглашение</a>
             </div>
             <div class="footer__policy">
-                <a href="#">Политика конфиденциальности и обработки персональных данных</a>
+                <a href="<?php the_permalink(3) ?>">Политика конфиденциальности и обработки персональных данных</a>
             </div>
             <div class="footer__hr1"></div>
             <div class="footer__hr2"></div>

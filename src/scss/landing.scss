@@ -1394,8 +1394,9 @@
     }
     .repair-img-label .label {
         top: 20px;
-        right: 7px;
+        left: 12px;
         height: 33px;
+        right: auto;
     }
     .repair-img-label .label p {
         font-size: 11.63px;
@@ -1407,6 +1408,7 @@
         padding-top: 0;
         position: absolute;
         top: 135px;
+        left: 10px;
     }
     .type-of-repair .repair-list a {
         font-size: 14px;

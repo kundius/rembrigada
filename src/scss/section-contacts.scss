@@ -2,6 +2,20 @@
     padding: 45px 0;
     background: url(../img/map-bg.jpg) no-repeat 50%;
     background-size: auto 100%;
+    position: relative;
+    > ymaps {
+		position: absolute;
+		left: 0;
+        top: 0;
+        z-index: 10;
+		width: 100% !important;
+        height: 100% !important;
+        filter: grayscale(100%);
+    }
+    .container {
+        position: relative;
+        z-index: 20;
+    }
     @media (max-width: $breakpoint-small-max) {
         padding: 13px 0 25px;
     }

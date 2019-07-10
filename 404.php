@@ -1,3 +1,9 @@
+<?php
+$referer = '/';
+if (!empty($_SERVER['HTTP_REFERER'])) {
+    $referer = $_SERVER['HTTP_REFERER'];
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,9 +18,10 @@
                     <div class="page-not-found-desc">
                         <h2>Cтраница не найдена</h2>
                         <p>Возможно, она была удалена или вы где-то ошиблись. Позвоните нам или вернитесь назад, чтобы поискать в другом месте</p>
-                        <a href="#" class="prev-page">Вернуться</a>
+                        <a href="<?php echo $referer ?>" class="prev-page">Вернуться</a>
                     </div>
                 </section>
+                <?php get_template_part('partials/footer') ?>
             </div>
         </div>
     </body>

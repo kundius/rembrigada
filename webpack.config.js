@@ -18,6 +18,7 @@ module.exports = {
         PATHS.source + 'img/houses.svg',
         PATHS.source + 'img/apartments.svg',
         PATHS.source + 'img/logo.png',
+        PATHS.source + 'img/creator.png',
         PATHS.source + 'img/consultation-img.jpg',
         PATHS.source + 'img/smartphone.png',
         PATHS.source + 'img/measuring-tape.png',

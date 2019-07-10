@@ -281,11 +281,11 @@ forEach(document.querySelectorAll('.js-img-to-svg'), function(img) {
 forEach(document.querySelectorAll('.js-section-offset'), function(section) {
   const inner = section.querySelector('.js-section-offset-inner')
   if (inner) {
-    console.log(section.offsetTop, inner.offsetTop)
-    const diff = section.offsetTop - inner.offsetTop
+    const innerRect = inner.getBoundingClientRect()
+    const sectionRect = section.getBoundingClientRect()
+    const diff = sectionRect.top - innerRect.top
     if (diff > 0) {
       let bottom = parseInt(window.getComputedStyle(section.previousElementSibling).getPropertyValue('padding-bottom'))
-      console.log(bottom)
       section.previousElementSibling.style.paddingBottom = bottom + diff + 'px'
     }
   }

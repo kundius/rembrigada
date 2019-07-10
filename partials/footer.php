@@ -73,6 +73,7 @@
                                         </label>
                                     </div>
                                     <div class="callback-form__row">
+                                        <input type="hidden" name="referrer" value="<?php the_title() ?>">
                                         <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
                                     </div>
                                 </div>

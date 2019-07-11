@@ -72,6 +72,7 @@ class Sitemap_Walker extends Walker_Nav_Menu {
 			    'post_parent' => $item->object_id
 			]);
 			if ($pages->have_posts()) {
+				$item->classes[] = 'menu-item-has-children';
 				$custom_hildren .= '<ul>';
 				while ($pages->have_posts()) {
 					$pages->the_post();

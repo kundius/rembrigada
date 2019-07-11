@@ -5,10 +5,10 @@
                 <?php the_field('copyright', 'options') ?>
             </div>
             <div class="footer-social">
-                <a href="#" class="footer-social__vk"><?php icon('vk', 1.25) ?></a>
-                <a href="#" class="footer-social__inst"><?php icon('instagram', 1.25) ?></a>
-                <a href="#" class="footer-social__ok"><?php icon('ok', 1.25) ?></a>
-                <a href="#" class="footer-social__youtube"><?php icon('youtube', 1.25) ?></a>
+                <a href="https://vk.com/rembrigada_116" class="footer-social__vk" target="_blank"><?php icon('vk', 1.25) ?></a>
+                <a href="https://www.instagram.com/rembrigada116/" class="footer-social__inst" target="_blank"><?php icon('instagram', 1.25) ?></a>
+                <!--<a href="#" class="footer-social__ok" target="_blank"><?php icon('ok', 1.25) ?></a>-->
+                <a href="https://www.youtube.com/channel/UCtBVuN9WYMvtfWkdrc2XBBA" class="footer-social__youtube" target="_blank"><?php icon('youtube', 1.25) ?></a>
             </div>
             <div class="footer__requisites">
                 <?php the_field('requisites', 'options') ?>

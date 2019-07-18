@@ -5,7 +5,6 @@
 <meta name="yandex-verification" content="9c85ccaf464b2a6a" />
 <meta name="yandex-verification" content="418bf1cb2f3eeb38" />
 <meta name="cmsmagazine" content="ef9002bde22164e1bb8ca1b1793cf47b" />
-<title><?php wp_title() ?></title>
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ?>" type="text/css" />
 <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>

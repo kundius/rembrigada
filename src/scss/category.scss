@@ -90,6 +90,7 @@
     margin: 20px 0 50px;
     text-decoration: none;
     color: #000;
+    display: block;
 }
 
 .news-item-meta .author::after,
@@ -199,7 +200,6 @@ background-image: url(../img/rubrika.png);
     }
     .news-item__title {
         margin-bottom: 25px;
-        display: block;
     }
     .news-item__title h3 {
         font-size: 18px;

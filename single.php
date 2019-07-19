@@ -85,6 +85,7 @@
             </section>
 
             <?php
+            print_r(get_field('related'));
                 $also_query = null;
                 $tags = wp_get_post_tags($post->ID);
                 if ($tags) {

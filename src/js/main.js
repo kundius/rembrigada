@@ -19,6 +19,10 @@ MicroModal.init({
   awaitCloseAnimation: true
 })
 
+forEach(document.querySelectorAll('a[href="#callback"]'), el => {
+  el.addEventListener('click', () => MicroModal.show('callback'))
+})
+
 svg4everybody()
 
 forEach(document.querySelectorAll('.wp-block-table'), function(el) {

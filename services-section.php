@@ -188,7 +188,7 @@ $services = new WP_Query(array(
                             <div class="services-calculation__cell">
                                 <div class="services-calculation__image">
                                     <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/our-work-send.jpg" alt="">
-                                    <a href="<?php the_permalink(15) ?>" class="services-calculation__works">
+                                    <a href="<?php echo get_category_link(3) ?>" class="services-calculation__works">
                                         <span>Наши работы</span>
                                     </a>
                                 </div>

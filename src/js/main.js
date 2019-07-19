@@ -21,7 +21,6 @@ MicroModal.init({
 
 forEach(document.querySelectorAll('a[href="#callback"]'), el => {
   el.addEventListener('click', (e) => {
-    alert('dd777')
     e.preventDefault()
     MicroModal.show('callback')
   })

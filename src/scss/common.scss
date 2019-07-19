@@ -617,6 +617,13 @@ img {
         overflow: auto;
     }
 
+    .wp-block-button {
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
     h2 {
         color: #333333;
         font-family: "Next Art", sans-serif;

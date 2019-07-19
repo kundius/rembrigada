@@ -85,19 +85,28 @@
             </section>
 
             <?php
-            print_r(get_field('related'));
                 $also_query = null;
-                $tags = wp_get_post_tags($post->ID);
-                if ($tags) {
-                    $tag_ids = [];
-                    foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+                if ($related = get_field('related')) {
                     $also_query = new wp_query([
-                        'tag__in' => $tag_ids,       
                         'orderby'=> 'rand',                
                         'caller_get_posts'=> 1,            
+                        'post__in' => $related,
                         'post__not_in' => [$post->ID],
                         'showposts'=> 5   
                     ]);
+                } else {
+                    $tags = wp_get_post_tags($post->ID);
+                    if ($tags) {
+                        $tag_ids = [];
+                        foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+                        $also_query = new wp_query([
+                            'tag__in' => $tag_ids,       
+                            'orderby'=> 'rand',                
+                            'caller_get_posts'=> 1,            
+                            'post__not_in' => [$post->ID],
+                            'showposts'=> 5   
+                        ]);
+                    }
                 }
             ?>
 

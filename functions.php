@@ -27,8 +27,8 @@ add_image_size('w800h480', 800, 480, true);
 add_image_size('w560h308', 560, 308, false);
 add_image_size('w400h400', 400, 400, true);
 
-function srcset($image) {
-	$sizes = ['thumbnail', 'medium', 'large', 'w150h100', 'w560h308', 'w468h364', 'w560h308', 'w468h500', 'w800h600', 'w800h480'];
+function srcset($image, $sizes) {
+	$sizes = !empty($sizes) ? $sizes : ['thumbnail', 'medium', 'large', 'w150h100', 'w560h308', 'w468h364', 'w560h308', 'w468h500', 'w800h600', 'w800h480'];
 	$output = [];
 	foreach ($sizes as $size) {
 		$output[] = $image['sizes'][$size] . ' ' . $image['sizes'][$size . '-width'] . 'w';

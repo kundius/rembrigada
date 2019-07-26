@@ -2,7 +2,7 @@
 
 .header-placeholder {
     height: 108px;
-    @media (max-width: $breakpoint-large-max) {
+    @media (max-width: $breakpoint-medium-max) {
         height: 68px;
     }
     @media (max-width: $breakpoint-xsmall-max) {

@@ -83,7 +83,9 @@ $categories = get_categories([
                                     <span class="project-item__title"><span><?php the_title() ?></span></span>
                                     <span class="project-item__hr"></span>
                                     <?php if (has_excerpt()): ?>
-                                    <span class="project-item__desc"><?php the_excerpt() ?></span>
+                                    <span class="project-item__desc">
+                                        <?php echo sanitize_text_field(get_the_excerpt()) ?>
+                                    </span>
                                     <?php endif; ?>
                                     <span class="project-item__more"><span>Подробнее</span></span>
                                 </span>

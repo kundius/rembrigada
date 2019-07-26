@@ -139,7 +139,9 @@ $services = new WP_Query(array(
                                             <span class="project-item__title"><span><?php echo $project->post_title ?></span></span>
                                             <span class="project-item__hr"></span>
                                             <?php if ($project->post_excerpt): ?>
-                                            <span class="project-item__desc"><?php echo $project->post_excerpt ?></span>
+                                            <span class="project-item__desc">
+                                                <?php echo sanitize_text_field($project->post_excerpt) ?>
+                                            </span>
                                             <?php endif; ?>
                                             <span class="project-item__more"><span>Подробнее</span></span>
                                         </span>

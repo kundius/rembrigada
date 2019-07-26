@@ -29,10 +29,10 @@
 
         <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>" class="header-callback">
             <span class="header-callback__phone"><?php the_field('phone', 'options') ?></span>
-            <button class="header-callback__button js-header-callback" data-micromodal-trigger="callback">
+            <span class="header-callback__button js-header-callback" data-micromodal-trigger="callback">
                 <?php icon('phone') ?>
                 <span>Заказать обратный звонок</span>
-            </button>
+            </span>
         </a>
     </div>
 </header>

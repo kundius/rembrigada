@@ -53,12 +53,14 @@
   &_large
     width: auto
     max-width: 1668px
+    @media (max-width: $breakpoint-xsmall-max)
+      padding: 10px
+      min-height: 100%
   @media (max-width: $breakpoint-small-max)
     padding: 40px
   @media (max-width: $breakpoint-xsmall-max)
     padding: 10px
     border-radius: 0
-    min-height: 100%
 
 .modal__close
   position: absolute

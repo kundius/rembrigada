@@ -156,6 +156,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    text-decoration: none;
     @media (max-width: $breakpoint-medium-max) {
         flex-flow: row;
         position: absolute;

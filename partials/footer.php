@@ -50,7 +50,7 @@
                         <div class="callback__cell">
                             <div class="callback-form">
                                 <div class="callback-form__title">Заказать<br> Обратный звонок</div>
-                                <div class="callback-form__desc">Заполните форму, и наш специалист свяжется с Вами в течении 15 минут</div>
+                                <div class="callback-form__desc">Заполните форму, и наш специалист свяжется с Вами в течение 15 минут</div>
                                 <div class="callback-form__fields">
                                     <div class="callback-form__row">
                                         <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />

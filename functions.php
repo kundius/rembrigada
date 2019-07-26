@@ -2,11 +2,19 @@
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
 
-add_filter('style_loader_tag', 'sj_remove_type_attr', 10, 2);
-add_filter('script_loader_tag', 'sj_remove_type_attr', 10, 2);
-function sj_remove_type_attr ($tag) {
-	return preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
-}
+// add_filter('style_loader_tag', 'sj_remove_type_attr', 10, 2);
+// add_filter('script_loader_tag', 'sj_remove_type_attr', 10, 2);
+// function sj_remove_type_attr ($tag) {
+// 	return preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
+// }
+
+add_action( 'template_redirect', function(){
+    ob_start( function( $buffer ){
+        $buffer = str_replace( array( 'type="text/javascript"', "type='text/javascript'" ), '', $buffer );
+        $buffer = str_replace( array( 'type="text/css"', "type='text/css'" ), '', $buffer );
+        return $buffer;
+    });
+});
 
 add_post_type_support( 'page', 'excerpt' );
 

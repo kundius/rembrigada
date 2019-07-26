@@ -182,7 +182,7 @@ $services = new WP_Query(array(
                 <div class="container container_alt">
                     <div class="services-calculation js-section-offset-inner">
                         <div class="services-calculation__desc">
-                            Готовы двигаться дальше? Тогда пришло время посмотреть, как мы делали ремонт, и рассчитать предварительную стоимость вашего ремонта →
+                            Готовы двигаться дальше? Тогда пришло время посмотреть, как мы делаем ремонт, и рассчитать предварительную стоимость вашего ремонта →
                         </div>
                         <div class="services-calculation__grid">
                             <div class="services-calculation__cell">

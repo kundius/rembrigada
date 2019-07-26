@@ -16,12 +16,6 @@ $services = new WP_Query(array(
 		)
 	)
 ));
-$complementary = new WP_Query(array(
-    'post_type' => 'page',
-    'post_parent' => 38,
-    'order' => 'ASC',
-    'orderby' => 'menu_order'
-));
 $projects = new WP_Query(array(
     'post_type' => 'project',
     'posts_per_page' => 12,
@@ -303,29 +297,29 @@ $reviews = new WP_Query(array(
             </section>
             <?php endif; wp_reset_query(); ?>
 
-            <?php if ($complementary->have_posts()): ?>
+            <?php if ($complementary = get_field('complementary', 11)): ?>
             <section class="additional-services">
                 <div class="container container_alt">
                     <h3 class="additional-services__title">Дополнительные услуги</h3>
                     <div class="additional-services__list">
-                        <?php while($complementary->have_posts()): $complementary->the_post(); ?>
-                        <a href="<?php the_permalink() ?>" class="additional-services-item">
+                        <?php foreach($complementary as $item): ?>
+                        <a href="<?php echo $item['link'] ?>" class="additional-services-item">
                             <span class="additional-services-item__image">
                                 <span>
-                                    <?php if ($image = get_the_post_thumbnail_url(get_the_ID())): ?>
-                                    <img src="<?php echo $image ?>" alt="<?php the_title() ?>" class="js-img-to-svg">
+                                    <?php if ($image = $item['image']): ?>
+                                    <img src="<?php echo $image['url'] ?>" alt="<?php echo $item['title'] ?>" class="js-img-to-svg">
                                     <?php else: ?>
                                     <img src="https://via.placeholder.com/100x100" alt="">
                                     <?php endif; ?>
                                 </span>
                             </span>
-                            <span class="additional-services-item__name"><?php the_title() ?></span>
+                            <span class="additional-services-item__name"><?php echo $item['title'] ?></span>
                         </a>
-                        <?php endwhile; ?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </section>
-            <?php endif; wp_reset_query(); ?>
+            <?php endif; ?>
 
             <?php get_template_part('partials/contacts'); ?>
             <?php get_template_part('partials/footer'); ?>

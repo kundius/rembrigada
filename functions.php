@@ -27,6 +27,14 @@ add_image_size('w800h480', 800, 480, true);
 add_image_size('w560h308', 560, 308, false);
 add_image_size('w400h400', 400, 400, true);
 
+function srcset($image) {
+	$output = '';
+	foreach ($image['sizes'] as $size) {
+
+	}
+	return $output;
+}
+
 function icon($name, $scale = 1) {
 	$width = $scale * 20;
 	$height = $scale * 20;

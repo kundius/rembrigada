@@ -179,7 +179,7 @@ $reviews = new WP_Query(array(
             <?php if ($projects->have_posts()): ?>
             <section class="completed-objects">
                 <div class="container">
-                    <div class="completed-objects__title">Выполненные объекты</div>
+                    <h3 class="completed-objects__title">Выполненные объекты</h3>
                     
                     <hr class="section-hr">
 
@@ -249,7 +249,7 @@ $reviews = new WP_Query(array(
             <?php if ($reviews->have_posts()): ?>
             <section class="client-feedback">
                 <div class="container container_alt">
-                    <div class="client-feedback__title">Отзывы наших клиентов</div>
+                    <h3 class="client-feedback__title">Отзывы наших клиентов</h3>
                     <div class="client-feedback-grid">
                         <?php while($reviews->have_posts()): $reviews->the_post(); ?>
                         <div class="client-feedback-grid__item">
@@ -306,7 +306,7 @@ $reviews = new WP_Query(array(
             <?php if ($complementary->have_posts()): ?>
             <section class="additional-services">
                 <div class="container container_alt">
-                    <div class="additional-services__title">Дополнительные услуги</div>
+                    <h3 class="additional-services__title">Дополнительные услуги</h3>
                     <div class="additional-services__list">
                         <?php while($complementary->have_posts()): $complementary->the_post(); ?>
                         <a href="<?php the_permalink() ?>" class="additional-services-item">

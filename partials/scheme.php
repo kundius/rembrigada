@@ -1,6 +1,6 @@
 <section class="scheme-of-work">
     <div class="container container_alt">
-        <p class="scheme-of-work__title">Схема работы</p>
+        <h3 class="scheme-of-work__title">Схема работы</h3>
         <hr class="section-hr">
         <div class="scheme-of-work-list">
             <div class="scheme-of-work-item">

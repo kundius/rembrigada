@@ -43,12 +43,8 @@ $reviews = new WP_Query(array(
                 <div class="slideshow-slides js_slides">
                     <?php foreach ($slideshow as $slide): ?>
                     <div class="slideshow-slide">
-                        <?php print_r($slide['image']); ?>
                         <img
                             class="slideshow-slide__image js-image-cover"
-                            srcset="elva-fairy-320w.jpg 320w,
-                            elva-fairy-480w.jpg 480w,
-                            elva-fairy-800w.jpg 800w"
                             src="<?php echo $slide['image']['url'] ?>"
                             alt="<?php echo $slide['title'] ?>"
                         />

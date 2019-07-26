@@ -45,7 +45,7 @@ $reviews = new WP_Query(array(
                     <div class="slideshow-slide">
                         <img
                             class="slideshow-slide__image js-image-cover"
-                            srcset="<?php echo srcset($image) ?>"
+                            srcset="<?php echo srcset($slide['image']) ?>"
                             src="<?php echo $slide['image']['url'] ?>"
                             alt="<?php echo $slide['title'] ?>"
                         />

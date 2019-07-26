@@ -43,7 +43,7 @@
     align-items: center;
 }
 
-.services-item__title {
+a.services-item__title {
     color: #333333;
     font-family: "Next Art", sans-serif;
     font-size: 36px;
@@ -267,7 +267,7 @@
     }
 }
 
-.services-item-child__name {
+a.services-item-child__name {
     color: #333333;
     font-size: 24px;
     font-weight: 400;
@@ -312,7 +312,7 @@
     }
 }
 
-.services-item-child__more {
+a.services-item-child__more {
     color: #297780;
     font-size: 16px;
     line-height: 1;

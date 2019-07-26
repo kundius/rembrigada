@@ -30,7 +30,6 @@ add_image_size('w400h400', 400, 400, true);
 function srcset($image) {
 	$sizes = ['thumbnail', 'medium', 'large', 'w150h100', 'w560h308', 'w468h364', 'w560h308', 'w468h500', 'w800h600', 'w800h480'];
 	$output = [];
-	print_r($image['sizes']);
 	foreach ($sizes as $size) {
 		$output[] = $image['sizes'][$sise] . ' ' . $image['sizes'][$size . '-width'] . 'w';
 	}

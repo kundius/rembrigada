@@ -33,6 +33,7 @@ function srcset($image) {
 	foreach ($sizes as $size) {
 		$output[] = $image['sizes'][$size] . ' ' . $image['sizes'][$size . '-width'] . 'w';
 	}
+	$output[] = $image['url'] . ' ' . $image['width'] . 'w';
 	return implode(', ', $output);
 }
 

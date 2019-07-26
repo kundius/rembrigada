@@ -5,7 +5,7 @@ if (!empty($_SERVER['HTTP_REFERER'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <?php get_template_part('partials/head'); ?>
     </head>

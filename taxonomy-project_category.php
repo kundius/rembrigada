@@ -1,14 +1,5 @@
 <?php
 $term = get_term_by('slug', get_query_var('project_category'), 'project_category');
-// $projects = new WP_Query(array(
-//     'post_type' => 'project',
-//     'posts_per_page' => 1,
-//     'tax_query' => [[
-//         'taxonomy' => 'project_category',
-//         'terms' => $term->term_id,
-//         'include_children' => false
-//     ]]
-// ));
 $categories = get_categories([
     'taxonomy' => 'project_category',
     'hide_empty' => false,
@@ -16,7 +7,7 @@ $categories = get_categories([
 ]);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <?php get_template_part('partials/head'); ?>
     </head>

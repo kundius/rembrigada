@@ -23,7 +23,7 @@ function get_next_id($list, $id) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <?php get_template_part('partials/head'); ?>
     </head>

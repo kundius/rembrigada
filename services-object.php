@@ -4,7 +4,7 @@ Template Name: Услуги - Объект
 */
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <?php get_template_part('partials/head'); ?>
     </head>

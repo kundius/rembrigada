@@ -4,6 +4,17 @@
 
 .services {
     margin: 166px 0;
+    .content & {
+        margin-left: -149px;
+        margin-right: -149px;
+        @media (max-width: $breakpoint-medium-max) {
+            margin-left: 0;
+            margin-right: -98px;
+        }
+        @media (max-width: $breakpoint-small-max) {
+            margin-right: 0;
+        }
+    }
     @media (max-width: $breakpoint-small-max) {
         margin: 40px 0;
     }

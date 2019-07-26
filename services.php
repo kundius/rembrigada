@@ -9,12 +9,12 @@ $services = new WP_Query(array(
     'orderby' => 'menu_order',
     'post__not_in' => [38]
 ));
-$complementary = new WP_Query(array(
-    'post_type' => 'page',
-    'post_parent' => 38,
-    'order' => 'ASC',
-    'orderby' => 'menu_order'
-));
+// $complementary = new WP_Query(array(
+//     'post_type' => 'page',
+//     'post_parent' => 38,
+//     'order' => 'ASC',
+//     'orderby' => 'menu_order'
+// ));
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -103,29 +103,29 @@ $complementary = new WP_Query(array(
             </section>
             <?php endif; wp_reset_query(); ?>
 
-            <?php if ($complementary->have_posts()): ?>
+            <?php if ($complementary = get_field('complementary')): ?>
             <section class="services-others">
                 <div class="container container_alt">
                     <div class="services-others__title">Дополнительные услуги</div>
                     <div class="services-others__list">
-                        <?php while($complementary->have_posts()): $complementary->the_post(); ?>
-                        <a href="<?php the_permalink() ?>" class="services-others-item">
+                        <?php foreach($complementary as $item): ?>
+                        <a href="<?php echo $item['link'] ?>" class="services-others-item">
                             <span class="services-others-item__image">
                                 <span>
-                                    <?php if ($image = get_the_post_thumbnail_url(get_the_ID())): ?>
-                                    <img src="<?php echo $image ?>" alt="<?php the_title() ?>" class="js-img-to-svg">
+                                    <?php if ($image = $item['image']): ?>
+                                    <img src="<?php echo $image['url'] ?>" alt="<?php echo $item['title'] ?>" class="js-img-to-svg">
                                     <?php else: ?>
                                     <img src="https://via.placeholder.com/100x100" alt="">
                                     <?php endif; ?>
                                 </span>
                             </span>
-                            <span class="services-others-item__name"><?php the_title() ?></span>
+                            <span class="services-others-item__name"><?php echo $item['title'] ?></span>
                         </a>
-                        <?php endwhile; ?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </section>
-            <?php endif; wp_reset_query(); ?>
+            <?php endif; ?>
 
             <?php endwhile; else: ?>
                 <p>Извините, ничего не найдено.</p>

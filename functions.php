@@ -6,8 +6,8 @@ add_filter('style_loader_tag', 'sj_remove_type_attr', 10, 2);
 add_filter('script_loader_tag', 'sj_remove_type_attr', 10, 2);
 function sj_remove_type_attr ($tag) {
 	$output = $tag;
-	$output = preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $tag);
-	$output = preg_replace("/charset=['\"]text\/utf\-8['\"]/", '', $tag);
+	$output = preg_replace("/type=['\"]text\/(javascript|css)['\"]/", '', $output);
+	$output = preg_replace("/charset=['\"]text\/utf\-8['\"]/", '', $output);
 	return $output;
 }
 

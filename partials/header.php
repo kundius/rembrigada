@@ -22,12 +22,12 @@
             ]); ?>
 
             <div class="navigation__contacts">
-                <a href="tel:<?php the_field('phone', 'options') ?>"><?php the_field('phone', 'options') ?></a>
+                <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>"><?php the_field('phone', 'options') ?></a>
                 <p>Ежедневно с 9:00 до 20:00</p>
             </div>
         </nav>
 
-        <a href="tel:<?php the_field('phone', 'options') ?>" class="header-callback">
+        <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>" class="header-callback">
             <span class="header-callback__phone"><?php the_field('phone', 'options') ?></span>
             <button class="header-callback__button js-header-callback" data-micromodal-trigger="callback">
                 <?php icon('phone') ?>

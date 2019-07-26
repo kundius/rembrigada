@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "dev": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "deploy": "webpack --mode=production && git add . && git commit -m deploy && git push"
   },
   "author": "",
   "license": "ISC",

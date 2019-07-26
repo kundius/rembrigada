@@ -182,13 +182,13 @@ $services = new WP_Query(array(
                 <div class="container container_alt">
                     <div class="services-calculation js-section-offset-inner">
                         <div class="services-calculation__desc">
-                            Готовы двигаться дальше? Тогда пришло время посмотреть, как мы делали косметический ремонт, и рассчитать предварительную стоимость вашего ремонта →
+                            Готовы двигаться дальше? Тогда пришло время посмотреть, как мы делали ремонт, и рассчитать предварительную стоимость вашего ремонта →
                         </div>
                         <div class="services-calculation__grid">
                             <div class="services-calculation__cell">
                                 <div class="services-calculation__image">
                                     <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/our-work-send.jpg" alt="">
-                                    <a href="<?php echo get_category_link(3) ?>" class="services-calculation__works">
+                                    <a href="<?php echo get_category_link(3) ?>" class="services-calculation__works" target="_blank">
                                         <span>Наши работы</span>
                                     </a>
                                 </div>
@@ -196,7 +196,7 @@ $services = new WP_Query(array(
                             <div class="services-calculation__cell">
                                 <form action="/wp-json/contact-form-7/v1/contact-forms/380/feedback" method="post" class="services-calculation-form js-form">
                                     <div class="services-calculation-form__title">Рассчитать предварительную стоимость</div>
-                                    <div class="services-calculation-form__desc">Заполните форму, и наш специалист свяжется с Вами в течении 15 минут</div>
+                                    <div class="services-calculation-form__desc">Заполните форму, и наш специалист свяжется с Вами в течение 15 минут</div>
                                     <div class="services-calculation-form__fields">
                                         <div class="services-calculation-form__row">
                                             <span class="wpcf7-form-control-wrap your-email">
@@ -270,6 +270,7 @@ $services = new WP_Query(array(
                         </div>
                     </div>
                 </div>
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3fd55e7ae5de7ab5fde09516821ffdbb169f60b6d0a2fb8f43b6c532684a4fb4&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
             </section>
 
             <?php get_template_part('partials/footer'); ?>

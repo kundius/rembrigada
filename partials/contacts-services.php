@@ -29,7 +29,7 @@
         <div class="section-contacts-grid">
             <div class="section-contacts__item">
                 <div class="contacts">
-                    <div class="contacts__title">Контакты</div>
+                    <h3 class="contacts__title">Контакты</h3>
                     <div class="contacts__text">
                         <p><?php the_field('address', 'options') ?></p>
                         <p><?php the_field('phones', 'options') ?></p>

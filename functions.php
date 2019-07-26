@@ -252,7 +252,8 @@ add_shortcode('services', function($atts) {
 	    'post_type' => 'page',
 	    'post_parent' => get_the_ID(),
 	    'order' => 'ASC',
-	    'orderby' => 'menu_order'
+	    'orderby' => 'menu_order',
+	    'post__not_in' => [38]
 	));
 
 	$output = '';

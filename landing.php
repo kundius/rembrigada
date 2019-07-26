@@ -274,7 +274,7 @@ $reviews = new WP_Query(array(
                                     <button data-micromodal-trigger="review-<?php echo get_the_ID() ?>" class="client-feedback-item__more">читать отзыв полностью</button>
                                     <div class="modal modal_review" id="review-<?php echo get_the_ID() ?>" aria-hidden="true">
                                         <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="Текст отзыва">
+                                            <div class="modal__container" role="dialog" aria-modal="true">
                                                 <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
                                                 <div class="reviews-item__title"><?php the_title() ?></div>
                                                 <div class="reviews-item__address"><?php the_field('address') ?></div>

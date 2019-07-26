@@ -72,7 +72,7 @@ $reviews = new WP_Query(array(
                     </div>
                     <div class="modal modal_review" id="review-<?php echo get_the_ID() ?>" aria-hidden="true">
                         <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="Текст отзыва">
+                            <div class="modal__container" role="dialog" aria-modal="true">
                                 <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
                                 <div class="reviews-item__title"><?php the_title() ?></div>
                                 <div class="reviews-item__address"><?php the_field('address') ?></div>
@@ -88,7 +88,7 @@ $reviews = new WP_Query(array(
                     <?php if ($image = get_field('image', get_the_ID())): ?>
                     <div class="modal" id="review-image-<?php echo get_the_ID() ?>" aria-hidden="true">
                         <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="Фото отзыва" style="text-align: center">
+                            <div class="modal__container" role="dialog" aria-modal="true" style="text-align: center">
                                 <img src="<?php echo $image['url'] ?>" alt="<?php the_title() ?>">
                             </div>
                             <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>

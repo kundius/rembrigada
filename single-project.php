@@ -47,7 +47,7 @@ function get_next_id($list, $id) {
             <?php if ($review = get_field('review')): ?>
             <div class="modal modal_review" id="review-<?php echo $review->ID ?>" aria-hidden="true">
                 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="Текст отзыва">
+                    <div class="modal__container" role="dialog" aria-modal="true">
                         <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
                         <div class="reviews-item__title"><?php echo $review->post_title ?></div>
                         <div class="reviews-item__address"><?php the_field('address', $review->ID) ?></div>
@@ -111,7 +111,7 @@ function get_next_id($list, $id) {
                                     <?php foreach ($gallery as $item): ?>
                                     <div class="modal" id="project-<?php echo $item['id'] ?>" aria-hidden="true">
                                         <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                            <div class="modal__container modal__container_large" role="dialog" aria-modal="true" aria-labelledby="Проект">
+                                            <div class="modal__container modal__container_large" role="dialog" aria-modal="true">
                                                 <div class="project-modal-layout">
                                                     <div class="project-modal-layout__left">
                                                         <div class="project-modal-details__title">

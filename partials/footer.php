@@ -37,7 +37,7 @@
 
 <div class="modal modal_callback" id="callback" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-        <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="Обратный звонок">
+        <div class="modal__container" role="dialog" aria-modal="true">
             <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
             <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="callback js-form">
                 <div class="callback__form">

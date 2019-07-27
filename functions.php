@@ -36,13 +36,14 @@ function srcset($image, $wh) {
 	}
 	$srcset[] = $image['url'] . ' ' . $image['width'] . 'w';
 
-	$sizes = [];
-	foreach ($wh as $size) {
-		$sizes[] = '(max-width: ' . $image['sizes'][$size . '-width'] . 'px) ' . $image['sizes'][$size . '-width'] . 'px';
-	}
-	$sizes[] = $image['width'] . 'w';
+	// $sizes = [];
+	// foreach ($wh as $size) {
+	// 	$sizes[] = '(max-width: ' . $image['sizes'][$size . '-width'] . 'px) ' . $image['sizes'][$size . '-width'] . 'px';
+	// }
+	// $sizes[] = $image['width'] . 'w';
+	// return 'srcset="' . implode(', ', $srcset) . '" sizes="' . implode(', ', $sizes) . '"';
 
-	return 'srcset="' . implode(', ', $srcset) . '" sizes="' . implode(', ', $sizes) . '"';
+	return 'srcset="' . implode(', ', $srcset) . '"';
 }
 
 function icon($name, $scale = 1) {

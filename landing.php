@@ -45,7 +45,7 @@ $reviews = new WP_Query(array(
                     <div class="slideshow-slide">
                         <img
                             class="slideshow-slide__image js-image-cover"
-                            srcset="<?php echo srcset($slide['image'], ['w468h364', 'w800h600']) ?>"
+                            <?php echo srcset($slide['image'], ['w468h364', 'w800h600']) ?>
                             src="<?php echo $slide['image']['url'] ?>"
                             alt="<?php echo esc_html($slide['title']) ?>"
                         />
@@ -147,7 +147,7 @@ $reviews = new WP_Query(array(
                 <?php if ($image = get_field('details_image')): ?>
                 <img
                     class="all-details__image js-image-cover"
-                    srcset="<?php echo srcset($image, ['w468h364', 'w800h600']) ?>"
+                    <?php echo srcset($image, ['w468h364', 'w800h600']) ?>
                     src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"
                 />
@@ -232,7 +232,7 @@ $reviews = new WP_Query(array(
                 <?php if ($image = get_field('about_image')): ?>
                 <img
                     class="about-company__image js-image-cover"
-                    srcset="<?php echo srcset($image, ['w468h364', 'w800h600']) ?>"
+                    <?php echo srcset($image, ['w468h364', 'w800h600']) ?>
                     src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"
                 />

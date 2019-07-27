@@ -27,14 +27,22 @@ add_image_size('w800h480', 800, 480, true);
 add_image_size('w560h308', 560, 308, false);
 add_image_size('w400h400', 400, 400, true);
 
-function srcset($image, $sizes) {
-	$sizes = !empty($sizes) ? $sizes : ['thumbnail', 'medium', 'large', 'w150h100', 'w560h308', 'w468h364', 'w560h308', 'w468h500', 'w800h600', 'w800h480'];
-	$output = [];
-	foreach ($sizes as $size) {
-		$output[] = $image['sizes'][$size] . ' ' . $image['sizes'][$size . '-width'] . 'w';
+function srcset($image, $wh) {
+	$wh = !empty($wh) ? $wh : ['thumbnail', 'medium', 'large', 'w150h100', 'w560h308', 'w468h364', 'w560h308', 'w468h500', 'w800h600', 'w800h480'];
+
+	$srcset = [];
+	foreach ($wh as $size) {
+		$srcset[] = $image['sizes'][$size] . ' ' . $image['sizes'][$size . '-width'] . 'w';
 	}
-	$output[] = $image['url'] . ' ' . $image['width'] . 'w';
-	return implode(', ', $output);
+	$srcset[] = $image['url'] . ' ' . $image['width'] . 'w';
+
+	$sizes = [];
+	foreach ($wh as $size) {
+		$sizes[] = '(max-width: ' . $image['sizes'][$size . '-width'] . 'px) ' . $image['sizes'][$size . '-width'] . 'px';
+	}
+	$sizes[] = $image['width'] . 'w';
+
+	return 'srcset="' . implode(', ', $srcset) . '" sizes="' . implode(', ', $sizes) . '"';
 }
 
 function icon($name, $scale = 1) {

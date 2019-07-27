@@ -470,14 +470,28 @@
 .all-details {
     padding: 95px 0 100px;
     background-color: #a8a5a9;
-    background-image: url(../img/all-details-bg.jpg);
-    background-position: center;
+    // background-image: url(../img/all-details-bg.jpg);
+    // background-position: center;
+    // background-size: cover;
     color: #fff;
-    background-size: cover;
+    position: relative;
+}
+
+.all-details__image {
+    position: absolute;
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .all-details .container {
     width: 900px;
+    position: relative;
+    z-index: 20;
 }
 
 .all-details p {
@@ -787,15 +801,29 @@
 
 /* Экран "О компании" */
 .about-company {
+    position: relative;
     padding: 160px 0 150px;
     background-color: #f6f7fb;
-    background-image: url(../img/about-company.jpg);
-    background-position: center;
-    background-size: cover;
+    // background-image: url(../img/about-company.jpg);
+    // background-position: center;
+    // background-size: cover;
+}
+
+.all-details__image {
+    position: absolute;
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-company .container {
     padding-left: 775px;
+    position: relative;
+    z-index: 20;
 }
     
 .about-company h3 {

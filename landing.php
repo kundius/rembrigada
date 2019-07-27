@@ -144,35 +144,27 @@ $reviews = new WP_Query(array(
             <?php endif; wp_reset_query(); ?>
 
             <section class="all-details">
+                <?php if ($image = get_field('details_image')): ?>
+                <img
+                    class="all-details__image js-image-cover"
+                    srcset="<?php echo srcset($image, ['w468h364', 'w800h600']) ?>"
+                    src="<?php echo $image['url'] ?>"
+                    alt="<?php echo $image['alt'] ?>"
+                />
+                <?php endif; ?>
                 <div class="container">
-                    <p>Нам доверяют потому что</p>
-                    <h3>При ремонте мы учитываем <br> все детали</h3>
+                    <p><?php the_field('details_desc') ?></p>
+                    <h3><?php the_field('details_title') ?></h3>
+                    <?php if ($list = get_field('details_list')): ?>
                     <div class="details-list">
+                        <?php foreach ($list as $item): ?>
                         <div class="details-item">
                             <span></span>
-                            <p>Даем до 3-х лет гарантии. <br> Распространяется на все <br> работы и фиксирована в <br> договоре.</p>
+                            <p><?php echo $item['text'] ?></p>
                         </div>
-                        <div class="details-item">
-                            <span></span>
-                            <p>Стоимость и строки не сдвигаются. <br> Они фиксированы в договоре - мы <br> платим штрафы, если просрочим.</p>
-                        </div>
-                        <div class="details-item">
-                            <span></span>
-                            <p>Контроль качества. <br> Каждый объект ведет прораб. <br> Фотоотчёт в любое время. <br> Сдача проводится независимым <br> специалистом.</p>
-                        </div>
-                        <div class="details-item">
-                            <span></span>
-                            <p>Наши мастера официально <br> оформлены в штат, имеют <br> минимальный опыт в отделке - <br> от 5 лет. Граждане России.</p>
-                        </div>
-                        <div class="details-item">
-                            <span></span>
-                            <p>Внимание к деталям при ремонте <br> Любые консультации во время <br> работы. Не конфликтуем с <br> соседями. Соблюдаем график. <br> Вывозим мусор после ремонта.</p>
-                        </div>
-                        <div class="details-item">
-                            <span></span>
-                            <p>Работаем с вашим и нашим <br> материалом. Снижение сметы <br> за счёт скидок от производителя. <br> Собственные склады в Казани. <br> Доставляем материал сами.</p>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
+                    <?php endif; ?>
                 </div>
             </section>
 
@@ -237,12 +229,18 @@ $reviews = new WP_Query(array(
             </section>
             
             <section class="about-company">
+                <?php if ($image = get_field('about_image')): ?>
+                <img
+                    class="about-company__image js-image-cover"
+                    srcset="<?php echo srcset($image, ['w468h364', 'w800h600']) ?>"
+                    src="<?php echo $image['url'] ?>"
+                    alt="<?php echo $image['alt'] ?>"
+                />
+                <?php endif; ?>
                 <div class="container">
-                    <h3>О компании Рембригада 116</h3>
+                    <h3><?php the_field('about_title') ?></h3>
                     <hr>
-                    <p>Важно. Очень важно доверять друг другу, даже если речь всего лишь о ремонте помещений. Ну а если это ремонт помещений в Казани, то доверять нужно стократ больше.</p>
-                    <p>Слишком много разных фирм по ремонту, слишком много обещаний сделать все качественно, не находите?</p>
-                    <p>Поэтому мы сейчас расскажем, что для нас значит действительно качественный ремонт помещений, а вы сделаете выводы.</p>
+                    <?php the_field('about_desc') ?>
                 </div>
             </section>
 

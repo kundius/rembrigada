@@ -4,9 +4,9 @@
             <div class="section-contacts__item">
                 <div class="contacts">
                     <h3 class="contacts__title">Контакты</h3>
-                    <div class="contacts__text">
-                        <p><?php the_field('address', 'options') ?></p>
-                        <p><?php the_field('phones', 'options') ?></p>
+                    <div class="contacts__text" itemscope itemtype="http://schema.org/Organization">
+                        <p itemprop="address"><?php the_field('address', 'options') ?></p>
+                        <p itemprop="telephone"><?php the_field('phones', 'options') ?></p>
                         <p>
                             <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
                         </p>

@@ -70,7 +70,7 @@
                             <p>Понравился проект?<br> Поделись с друзьями:</p>
                             <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
                             <script src="https://yastatic.net/share2/share.js"></script>
-                            <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,twitter,telegram"></div>
+                            <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir,pinterest,twitter,telegram" data-image="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large') ?>"></div>
                         </div>
                         <div class="article-foot__comments">
                             <?php icon('comments', 1.25) ?> <?php echo get_comments_number() ?>

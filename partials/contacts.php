@@ -5,6 +5,7 @@
                 <div class="contacts">
                     <h3 class="contacts__title">Контакты</h3>
                     <div class="contacts__text" itemscope itemtype="http://schema.org/Organization">
+                        <meta itemprop="name" content="Рембригада116" />
                         <p itemprop="address"><?php the_field('address', 'options') ?></p>
                         <p itemprop="telephone"><?php the_field('phones', 'options') ?></p>
                         <p>

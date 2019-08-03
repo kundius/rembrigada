@@ -40,8 +40,8 @@ function srcset($image, $wh) {
 	foreach ($wh as $size) {
 		$sizes[] = '(max-width: ' . $image['sizes'][$size . '-width'] . 'px) ' . $image['sizes'][$size . '-width'] . 'px';
 	}
-	$sizes[] = $image['width'] . 'w';
-	
+	$sizes[] = $image['width'] . 'px';
+
 	return 'srcset="' . implode(', ', $srcset) . '" sizes="' . implode(', ', $sizes) . '"';
 }
 

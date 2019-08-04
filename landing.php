@@ -107,9 +107,9 @@ $reviews = new WP_Query(array(
                         <div class="repair-img-label">
                             <a href="<?php the_permalink() ?>">
                                 <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 364))): ?>
-                                <img class="repair-img" src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                <img class="repair-img lazyload" data-src="<?php echo $image ?>" alt="<?php the_title() ?>">
                                 <?php else: ?>
-                                <img class="repair-img" src="https://via.placeholder.com/468x364" alt="">
+                                <img class="repair-img lazyload" data-src="https://via.placeholder.com/468x364" alt="">
                                 <?php endif; ?>
                             </a>
                             <?php if ($price = get_field('price', get_the_ID())): ?>
@@ -146,9 +146,9 @@ $reviews = new WP_Query(array(
             <section class="all-details">
                 <?php if ($image = get_field('details_image')): ?>
                 <img
-                    class="all-details__image js-image-cover"
-                    <?php echo srcset($image, ['w468h364', 'w800h600']) ?>
-                    src="<?php echo $image['url'] ?>"
+                    class="all-details__image js-image-cover lazyload"
+                    <?php echo srcset($image, ['w468h364', 'w800h600'], true) ?>
+                    data-src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"
                 />
                 <?php endif; ?>
@@ -186,9 +186,9 @@ $reviews = new WP_Query(array(
                             <div class="objects-slider-slide">
                                 <a href="<?php the_permalink() ?>" class="project-item">
                                     <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 500))): ?>
-                                    <img class="project-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                    <img class="project-item__image lazyload" data-src="<?php echo $image ?>" alt="<?php the_title() ?>">
                                     <?php else: ?>
-                                    <img class="project-item__image" src="https://via.placeholder.com/468x500" alt="">
+                                    <img class="project-item__image lazyload" data-src="https://via.placeholder.com/468x500" alt="">
                                     <?php endif; ?>
                                     <span class="project-item__info">
                                         <span class="project-item__title"><span><?php the_title() ?></span></span>
@@ -231,9 +231,9 @@ $reviews = new WP_Query(array(
             <section class="about-company">
                 <?php if ($image = get_field('about_image')): ?>
                 <img
-                    class="about-company__image js-image-cover"
+                    class="about-company__image js-image-cover lazyload"
                     <?php echo srcset($image, ['w468h364', 'w800h600']) ?>
-                    src="<?php echo $image['url'] ?>"
+                    data-src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"
                 />
                 <?php endif; ?>
@@ -259,9 +259,9 @@ $reviews = new WP_Query(array(
                                 <?php else: ?>
                                 <div class="client-feedback-item__image">
                                     <?php if ($image = get_field('image', get_the_ID())): ?>
-                                    <img src="<?php echo $image['sizes']['w560h308'] ?>" alt="<?php the_title() ?>">
+                                    <img class="lazyload" data-src="<?php echo $image['sizes']['w560h308'] ?>" alt="<?php the_title() ?>">
                                     <?php else: ?>
-                                    <img src="https://via.placeholder.com/560x308" alt="">
+                                    <img class="lazyload" data-src="https://via.placeholder.com/560x308" alt="">
                                     <?php endif; ?>
                                 </div>
                                 <div class="client-feedback-item__info">

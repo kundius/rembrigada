@@ -27,7 +27,8 @@ add_image_size('w800h480', 800, 480, true);
 add_image_size('w560h308', 560, 308, false);
 add_image_size('w400h400', 400, 400, true);
 
-function srcset($image, $wh) {
+function srcset($image, $wh, $data = false) {
+	$prefix = $data ? 'data-' : '';
 	$wh = !empty($wh) ? $wh : ['thumbnail', 'medium', 'large', 'w150h100', 'w560h308', 'w468h364', 'w560h308', 'w468h500', 'w800h600', 'w800h480'];
 
 	$srcset = [];
@@ -42,7 +43,7 @@ function srcset($image, $wh) {
 	}
 	$sizes[] = $image['width'] . 'px';
 
-	return 'srcset="' . implode(', ', $srcset) . '" sizes="' . implode(', ', $sizes) . '"';
+	return $prefix . 'srcset="' . implode(', ', $srcset) . '" ' . $prefix . 'sizes="' . implode(', ', $sizes) . '"';
 }
 
 function icon($name, $scale = 1) {

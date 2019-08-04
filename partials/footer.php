@@ -16,7 +16,7 @@
             <div class="footer__counters">
                 <?php the_field('counters', 'options') ?>
                 <a href="http://domenart-studio.ru/" target="_blank">
-                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/creator.png" alt="">
+                    <img data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/creator.png" alt="" class="lazyload">
                 </a>
             </div>
             <div class="footer__sitemap">
@@ -44,7 +44,7 @@
                     <div class="callback__grid">
                         <div class="callback__cell">
                             <div class="callback__image">
-                                <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/callback.jpg" alt="">
+                                <img class="lazyload" data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/callback.jpg" alt="">
                             </div>
                         </div>
                         <div class="callback__cell">
@@ -85,7 +85,7 @@
                     <div class="callback__grid">
                         <div class="callback__cell">
                             <div class="callback__image">
-                                <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/our-work-send.jpg" alt="">
+                                <img class="lazyload" data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/our-work-send.jpg" alt="">
                                 <a href="<?php the_permalink(15) ?>" class="callback__works">
                                     <span>Наши работы</span>
                                 </a>
@@ -98,7 +98,7 @@
                                 <div class="callback-items">
                                     <div class="callback-item">
                                         <div class="callback-item__image">
-                                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/apartments.svg" alt=""></div>
+                                            <div><img class="lazyload" data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/apartments.svg" alt=""></div>
                                         </div>
                                         <div class="callback-item__title">
                                             Ремонт квартир
@@ -106,7 +106,7 @@
                                     </div>
                                     <div class="callback-item">
                                         <div class="callback-item__image">
-                                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/houses.svg" alt=""></div>
+                                            <div><img class="lazyload" data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/houses.svg" alt=""></div>
                                         </div>
                                         <div class="callback-item__title">
                                             Ремонт домов
@@ -114,7 +114,7 @@
                                     </div>
                                     <div class="callback-item">
                                         <div class="callback-item__image">
-                                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/commercial.svg" alt=""></div>
+                                            <div><img class="lazyload" data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/commercial.svg" alt=""></div>
                                         </div>
                                         <div class="callback-item__title">
                                             Ремонт коммерческой недвижимости

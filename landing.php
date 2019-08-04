@@ -44,9 +44,9 @@ $reviews = new WP_Query(array(
                     <?php foreach ($slideshow as $slide): ?>
                     <div class="slideshow-slide">
                         <img
-                            class="slideshow-slide__image js-image-cover"
-                            <?php echo srcset($slide['image'], ['w468h364', 'w800h600']) ?>
-                            src="<?php echo $slide['image']['url'] ?>"
+                            class="slideshow-slide__image js-image-cover lazyload"
+                            <?php echo srcset($slide['image'], ['w468h364', 'w800h600'], true) ?>
+                            data-src="<?php echo $slide['image']['url'] ?>"
                             alt="<?php echo esc_html($slide['title']) ?>"
                         />
                         <div class="slideshow-slide__container container">

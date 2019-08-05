@@ -64,6 +64,7 @@ forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
   const navContainer = wrapper.querySelector('.js_dots')
   const el_index = wrapper.querySelector('.js_index')
   const slider = tns({
+    lazyload: true,
     container,
     prevButton,
     nextButton,

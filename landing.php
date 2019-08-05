@@ -144,8 +144,8 @@ $reviews = new WP_Query(array(
 
 <div class="preloader preloader_hide">
     <div class="preloader-logo">
-        <div class="preloader-logo__name">Домашний уют</div>
-        <div class="preloader-logo__desc">Магазин корпусной мебели</div>
+        <div class="preloader-logo__name">Rembrigada116</div>
+        <div class="preloader-logo__desc">Ремонт квартир в Казани</div>
     </div>
     <div class="preloader-line"></div>
 </div>

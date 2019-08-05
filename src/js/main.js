@@ -1,5 +1,6 @@
 import MicroModal  from 'micromodal'
 import svg4everybody from 'svg4everybody'
+import LazyLoad from 'vanilla-lazyload'
 import forEach from 'lodash/forEach'
 import throttle from 'lodash/throttle'
 import { tns } from 'tiny-slider/src/tiny-slider.module.js'
@@ -33,6 +34,10 @@ forEach(document.querySelectorAll('.js-header-callback'), el => {
       MicroModal.show('callback')
     }
   })
+})
+
+var lazyLoadInstance = new LazyLoad({
+  elements_selector: '.lazyload'
 })
 
 svg4everybody()

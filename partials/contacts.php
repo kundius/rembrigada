@@ -49,5 +49,6 @@
             </div>
         </div>
     </div>
-    <script async class="lazyload" data-src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3fd55e7ae5de7ab5fde09516821ffdbb169f60b6d0a2fb8f43b6c532684a4fb4&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    <iframe async class="lazyload" data-src="https://yandex.ru/map-widget/v1/-/CGu6uZ~n" width="100%" height="450" frameborder="1" allowfullscreen="true"></iframe>
+    <!-- <script async class="lazyload" data-src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3fd55e7ae5de7ab5fde09516821ffdbb169f60b6d0a2fb8f43b6c532684a4fb4&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script> -->
 </section>

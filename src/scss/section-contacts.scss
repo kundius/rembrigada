@@ -3,6 +3,7 @@
     // background: url(../img/map-bg.jpg) no-repeat 50%;
     // background-size: auto 100%;
     position: relative;
+    > iframe,
     > ymaps {
 		position: absolute;
 		left: 0;

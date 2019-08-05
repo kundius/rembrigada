@@ -88,7 +88,7 @@ $reviews = new WP_Query(array(
 }
 
 .preloader.preloader_hide {
-    opacity: 0;
+    display: none;
 }
 
 .preloader-logo {

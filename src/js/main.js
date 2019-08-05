@@ -68,7 +68,10 @@ forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
     container,
     prevButton,
     nextButton,
-    navPosition: 'bottom'
+    navPosition: 'bottom',
+    onInit: () => {
+      document.querySelector('.preloader').classList.add('preloader_hide')
+    }
   })
   slider.events.on('transitionStart', (e) => {
     if (e.displayIndex < 10) {

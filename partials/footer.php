@@ -7,6 +7,7 @@
             <div class="footer-social">
                 <a href="https://vk.com/rembrigada_116" class="footer-social__vk" target="_blank"><?php icon('vk', 1.25) ?></a>
                 <a href="https://www.instagram.com/rembrigada116/" class="footer-social__inst" target="_blank"><?php icon('instagram', 1.25) ?></a>
+                <a href="https://twitter.com/Rembrigada116" class="footer-social__twitter" target="_blank"><?php icon('twitter', 1.25) ?></a>
                 <!--<a href="#" class="footer-social__ok" target="_blank"><?php icon('ok', 1.25) ?></a>-->
                 <a href="https://www.youtube.com/channel/UCtBVuN9WYMvtfWkdrc2XBBA" class="footer-social__youtube" target="_blank"><?php icon('youtube', 1.25) ?></a>
             </div>
@@ -15,9 +16,9 @@
             </div>
             <div class="footer__counters">
                 <?php the_field('counters', 'options') ?>
-                <a href="http://domenart-studio.ru/" target="_blank">
+                <span target="_blank">
                     <img data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/creator.png" alt="" class="lazyload">
-                </a>
+                </span>
             </div>
             <div class="footer__sitemap">
                 <a href="<?php the_permalink(452) ?>">Карта сайта</a>

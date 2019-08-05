@@ -146,7 +146,7 @@ $reviews = new WP_Query(array(
             <section class="all-details">
                 <?php if ($image = get_field('details_image')): ?>
                 <img
-                    class="all-details__image js-image-cover lazyload"
+                    class="all-details__image js-image-cover lazylazyload"
                     <?php echo srcset($image, ['w468h364', 'w800h600'], true) ?>
                     data-src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"
@@ -231,7 +231,7 @@ $reviews = new WP_Query(array(
             <section class="about-company">
                 <?php if ($image = get_field('about_image')): ?>
                 <img
-                    class="about-company__image js-image-cover lazylazyload"
+                    class="about-company__image js-image-cover lazyload"
                     <?php echo srcset($image, ['w468h364', 'w800h600'], true) ?>
                     data-src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"

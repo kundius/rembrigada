@@ -79,11 +79,12 @@ $reviews = new WP_Query(array(
     top: 0;
     width: 100%;
     height: 100%;
-    background: #565652;
+    background: #333;
     z-index: 9999;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: opacity .3s ease;
 }
 
 .preloader.preloader_hide {
@@ -126,7 +127,7 @@ $reviews = new WP_Query(array(
     top: 0;
     height: 100%;
     width: 0;
-    background: #ecc12d;
+    background: #d52437;
     animation: preloaderLeft 2s infinite;
 }
 
@@ -137,12 +138,12 @@ $reviews = new WP_Query(array(
     top: 0;
     height: 100%;
     width: 0;
-    background: #ecc12d;
+    background: #d52437;
     animation: preloaderRight 2s infinite;
 }
 </style>
 
-<div class="preloader preloader_hide">
+<div class="preloader">
     <div class="preloader-logo">
         <div class="preloader-logo__name">Rembrigada116</div>
         <div class="preloader-logo__desc">Ремонт квартир в Казани</div>

@@ -107,9 +107,9 @@ $reviews = new WP_Query(array(
                         <div class="repair-img-label">
                             <a href="<?php the_permalink() ?>">
                                 <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 364))): ?>
-                                <img class="repair-img lazyload" data-src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                <img class="repair-img lazylazyload" data-src="<?php echo $image ?>" alt="<?php the_title() ?>">
                                 <?php else: ?>
-                                <img class="repair-img lazyload" data-src="https://via.placeholder.com/468x364" alt="">
+                                <img class="repair-img lazylazyload" data-src="https://via.placeholder.com/468x364" alt="">
                                 <?php endif; ?>
                             </a>
                             <?php if ($price = get_field('price', get_the_ID())): ?>
@@ -231,8 +231,8 @@ $reviews = new WP_Query(array(
             <section class="about-company">
                 <?php if ($image = get_field('about_image')): ?>
                 <img
-                    class="about-company__image js-image-cover lazyload"
-                    <?php echo srcset($image, ['w468h364', 'w800h600']) ?>
+                    class="about-company__image js-image-cover lazylazyload"
+                    <?php echo srcset($image, ['w468h364', 'w800h600'], true) ?>
                     data-src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"
                 />

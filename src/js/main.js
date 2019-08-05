@@ -40,6 +40,11 @@ var lazyLoadInstance = new LazyLoad({
   elements_selector: '.lazyload'
 })
 
+var lazylazyLoadInstance = new LazyLoad({
+  elements_selector: '.lazylazyload',
+  threshold: 50
+})
+
 svg4everybody()
 
 forEach(document.querySelectorAll('.wp-block-table'), function(el) {

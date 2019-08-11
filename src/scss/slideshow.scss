@@ -3,6 +3,7 @@
 .slideshow {
     position: relative;
     border-bottom: 84px solid #2f2f2f;
+    background: #1c1e21;
     @media (max-width: $breakpoint-medium-max) {
         border-bottom-width: 44px;
     }

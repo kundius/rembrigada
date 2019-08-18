@@ -1042,6 +1042,10 @@ a.services-section-info__item {
         margin-top: 45px;
         margin-bottom: 70px;
         position: relative;
+        .content & {
+            margin-left: -100px;
+            margin-right: -198px;
+        }
         @media (max-width: $breakpoint-small-max) {
             margin-top: 21px;
             margin-bottom: 21px;

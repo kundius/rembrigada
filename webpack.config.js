@@ -28,6 +28,7 @@ module.exports = {
         PATHS.source + 'img/agreement.png',
         PATHS.source + 'img/our-work-send.jpg',
         PATHS.source + 'img/callback.jpg',
+        PATHS.source + 'img/map-bg.jpg',
       ]
     },
 

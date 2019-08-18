@@ -1039,6 +1039,15 @@ a.services-section-info__item {
 
 @media (min-width: $breakpoint-small) {
     .services-section-repairs {
+    }
+
+    .services-section-repairs__list {
+        padding-bottom: 29px;
+        border-bottom: 1px solid #dddddd;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        position: relative;
         margin-top: 45px;
         margin-bottom: 70px;
         position: relative;
@@ -1056,17 +1065,6 @@ a.services-section-info__item {
         @media (max-width: $breakpoint-small-max) {
             margin-top: 21px;
             margin-bottom: 21px;
-        }
-    }
-
-    .services-section-repairs__list {
-        padding-bottom: 29px;
-        border-bottom: 1px solid #dddddd;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        position: relative;
-        @media (max-width: $breakpoint-small-max) {
             padding-bottom: 17px;
         }
     }

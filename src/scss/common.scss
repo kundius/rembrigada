@@ -2879,6 +2879,9 @@ ul.sitemap > li > ul > li > ul > li > a {
         padding: 20px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
+        margin-right: -10px;
+        margin-left: -10px;
+        padding: 10px;
         flex-wrap: wrap;
     }
 }

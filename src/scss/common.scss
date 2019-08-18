@@ -2912,10 +2912,14 @@ ul.sitemap > li > ul > li > ul > li > a {
 
 .content-price__contents {
     width: 80%;
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+    }
 }
 
 .content-price__content {
     display: none;
+    overflow: auto;
     &._active {
         display: block;
     }

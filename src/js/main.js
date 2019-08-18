@@ -413,6 +413,7 @@ document.querySelectorAll('.js-form').forEach(function(form) {
 })
 
 forEach(document.querySelectorAll('.content-price'), function(wrapper) {
+  const header = document.querySelector('.header')
   const tabs = wrapper.querySelectorAll('.content-price__tab')
   const contents = wrapper.querySelectorAll('.content-price__content')
   forEach(tabs, function(tab, index) {
@@ -421,6 +422,11 @@ forEach(document.querySelectorAll('.content-price'), function(wrapper) {
       forEach(tabs, el => el.classList.remove('_active'))
       contents[index].classList.add('_active')
       tab.classList.add('_active')
+      window.scroll({
+        top: contents[index].offsetTop - header.offsetHeight, 
+        left: 0, 
+        behavior: 'smooth'
+      })
     })
   })
   contents[0].classList.add('_active')

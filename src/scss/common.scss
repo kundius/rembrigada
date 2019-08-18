@@ -2873,11 +2873,23 @@ ul.sitemap > li > ul > li > ul > li > a {
             margin-right: 0;
         }
     }
+    @media (max-width: $breakpoint-small-max) {
+        margin-right: -56px;
+        margin-left: -56px;
+        padding: 20px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        flex-wrap: wrap;
+    }
 }
 
 .content-price__tabs {
     width: 25%;
     margin-right: 20px;
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-right: 0;
+        width: 100%;
+    }
 }
 
 .content-price__tab {
@@ -2905,10 +2917,13 @@ ul.sitemap > li > ul > li > ul > li > a {
         display: block;
     }
     table {
+        width: 100%;
         th {
             background: #4f555d;
             color: #fff;
-            font-weight: normal;
+            font-weight: 400;
+            white-space: nowrap;
+            padding: 0 5px;
         }
         td {
             padding: 10px;

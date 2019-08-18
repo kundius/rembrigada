@@ -411,3 +411,16 @@ document.querySelectorAll('.js-form').forEach(function(form) {
     request.send(new FormData(form))
   })
 })
+
+forEach(document.querySelectorAll('.content-price'), function(wrapper) {
+  const tabs = wrapper.querySelectorAll('.content-price__tab')
+  const contents = wrapper.querySelectorAll('.content-price__content')
+  forEach(tabs, function(tab, index) {
+    tab.addEventListener('click', () => {
+      forEach(contents, el => el.classList.remove('_active'))
+      forEach(tabs, el => el.classList.remove('_active'))
+      contents[index].classList.add('_active')
+      tab.classList.add('_active')
+    })
+  })
+})

@@ -2854,3 +2854,26 @@ ul.sitemap > li > ul > li > ul > li > a {
         }
     }
 }
+
+.content-price {
+    display: flex;
+}
+
+.content-price__tabs {
+    width: 20%;
+}
+
+.content-price__tab {
+
+}
+
+.content-price__cotents {
+    width: 80%;
+}
+
+.content-price__cotent {
+    display: none;
+    &._active {
+        display: block;
+    }
+}

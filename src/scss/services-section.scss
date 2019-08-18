@@ -1045,6 +1045,13 @@ a.services-section-info__item {
         .content & {
             margin-left: -100px;
             margin-right: -198px;
+            @media (max-width: $breakpoint-large-max) {
+                margin-left: 0;
+                margin-right: -98px;
+            }
+            @media (max-width: $breakpoint-medium-max) {
+                margin-right: 0;
+            }
         }
         @media (max-width: $breakpoint-small-max) {
             margin-top: 21px;

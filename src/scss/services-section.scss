@@ -1045,11 +1045,11 @@ a.services-section-info__item {
         .content & {
             margin-left: -100px;
             margin-right: -198px;
-            @media (max-width: $breakpoint-large-max) {
+            @media (max-width: $breakpoint-medium-max) {
                 margin-left: 0;
                 margin-right: -98px;
             }
-            @media (max-width: $breakpoint-medium-max) {
+            @media (max-width: $breakpoint-small-max) {
                 margin-right: 0;
             }
         }

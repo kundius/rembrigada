@@ -430,5 +430,5 @@ forEach(document.querySelectorAll('.content-price'), function(wrapper) {
     })
   })
   contents[0].classList.add('_active')
-  tab[0].classList.add('_active')
+  tabs[0].classList.add('_active')
 })

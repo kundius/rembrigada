@@ -7,10 +7,10 @@
             </div>
             <?php endforeach; ?>
         </div>
-        <div class="content-price__cotents">
+        <div class="content-price__contents">
             <?php foreach($list as $key => $row): ?>
-            <div class="content-price__cotent">
-                <?php echo $row['cotent'] ?>
+            <div class="content-price__content">
+                <?php echo $row['content'] ?>
             </div>
             <?php endforeach; ?>
         </div>

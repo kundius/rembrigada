@@ -423,4 +423,6 @@ forEach(document.querySelectorAll('.content-price'), function(wrapper) {
       tab.classList.add('_active')
     })
   })
+  contents[0].classList.add('_active')
+  tab[0].classList.add('_active')
 })

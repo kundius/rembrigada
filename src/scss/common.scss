@@ -2870,17 +2870,18 @@ ul.sitemap > li > ul > li > ul > li > a {
             margin-right: -98px;
         }
         @media (max-width: $breakpoint-small-max) {
-            margin-right: 0;
+            margin-right: -56px;
+            margin-left: -56px;
+        }
+        @media (max-width: $breakpoint-xsmall-max) {
+            margin-right: -10px;
+            margin-left: -10px;
         }
     }
     @media (max-width: $breakpoint-small-max) {
-        margin-right: -56px;
-        margin-left: -56px;
         padding: 20px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        margin-right: -10px;
-        margin-left: -10px;
         padding: 10px;
         flex-wrap: wrap;
     }

@@ -422,11 +422,13 @@ forEach(document.querySelectorAll('.content-price'), function(wrapper) {
       forEach(tabs, el => el.classList.remove('_active'))
       contents[index].classList.add('_active')
       tab.classList.add('_active')
-      window.scroll({
-        top: contents[index].offsetTop - header.offsetHeight, 
-        left: 0, 
-        behavior: 'smooth'
-      })
+      if (window.matchMedia('(max-width: 639px)').matches) {
+        window.scroll({
+          top: contents[index].offsetTop - header.offsetHeight, 
+          left: 0, 
+          behavior: 'smooth'
+        })
+      }
     })
   })
   contents[0].classList.add('_active')

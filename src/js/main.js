@@ -47,6 +47,10 @@ var lazylazyLoadInstance = new LazyLoad({
 
 svg4everybody()
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.preloader').classList.add('preloader_hide')
+})
+
 forEach(document.querySelectorAll('.wp-block-table'), function(el) {
   const wrapper = document.createElement('div')
   const container = document.createElement('div')
@@ -68,10 +72,7 @@ forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
     container,
     prevButton,
     nextButton,
-    navPosition: 'bottom',
-    onInit: () => {
-      document.querySelector('.preloader').classList.add('preloader_hide')
-    }
+    navPosition: 'bottom'
   })
   slider.events.on('transitionStart', (e) => {
     if (e.displayIndex < 10) {

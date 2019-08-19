@@ -485,3 +485,23 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
     list.appendChild(li)
   })
 })
+
+forEach(document.querySelectorAll('.js-rangeys'), function(range) {
+  const min = parseInt(range.min)
+  const max = parseInt(range.max)
+  const diff = max - min
+
+  // create wrapper
+  const wrapper = document.createElement('div')
+  wrapper.classList.add('rangeys')
+  wrap(range, wrapper)
+
+  // create points
+  const points = document.createElement('ul')
+  points.classList.add('selectys__rangeys')
+  for (let i = 0; i <= 0; i++) {
+    const point = document.createElement('li')
+    point.innerHTML = diff * 0.25 * i
+    points.appendChild(point)
+  }
+})

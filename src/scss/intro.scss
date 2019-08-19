@@ -11,18 +11,31 @@
 .intro__title {
   color: #fff;
   font-size: 60px;
-  font-family: $font-alt;
+  font-family: Next Art,sans-serif;
   line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  font-family: $font-alt;
   span {
     letter-spacing: .1em;
     padding: 0 10px;
     background-color: rgba(28, 30, 33, .5);
+    margin-bottom: 4px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   small {
     letter-spacing: .2em;
     font-size: 36px;
     padding: 0 10px;
     background-color: rgba(28, 30, 33, .5);
+    margin-bottom: 4px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -51,8 +64,8 @@
         left: 5px;
         top: 5px;
         transform: rotate(-45deg);
-        height: 4px;
-        width: 8px;
+        height: 7px;
+        width: 15px;
       }
     }
   }

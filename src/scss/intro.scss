@@ -134,10 +134,12 @@
 
 .intro-advantages {
   background-color: #2f2f2f;
+  padding: 20px 0;
 }
 
 .intro-advantages__list {
   margin-left: -40px;
+  display: flex;
 }
 
 .intro-advantages__cell {

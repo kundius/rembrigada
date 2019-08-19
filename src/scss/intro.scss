@@ -323,6 +323,7 @@
 
 .selectys {
   position: relative;
+  z-index: 20;
   select {
     display: none;
   }
@@ -355,9 +356,9 @@
   &::after {
     content: '';
     position: absolute;
-    border-style: solid transparent transparent;
+    border-style: solid;
     border-width: 7px 5px 0;
-    border-color: #ffffff;
+    border-color: #ffffff transparent transparent;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);

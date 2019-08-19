@@ -461,7 +461,11 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
   label.innerHTML = options[0].innerHTML
   wrapper.appendChild(label)
   label.addEventListener('click', () => {
-    wrapper.classList.add('_opened')
+    if (wrapper.classList.contains('_opened')) {
+      wrapper.classList.remove('_opened')
+    } else {
+      wrapper.classList.add('_opened')
+    }
   })
   
   // create list

@@ -356,10 +356,11 @@
 .intro-calc__price-value {
   line-height: 40px;
   padding: 0 10px;
-  margin: 150px;
+  flex-grow: 1;
   text-align: center;
   border-radius: 6px;
   background-color: rgba(0,0,0,.21);
+  color: #fff;
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 0.05em;

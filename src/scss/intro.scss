@@ -145,6 +145,7 @@
 .intro-advantages__list {
   margin-left: -40px;
   display: flex;
+  padding-left: 20px;
 }
 
 .intro-advantages__cell {
@@ -193,13 +194,16 @@
 }
 
 .intro__right {
-  max-width: 596px;
+  max-width: 646px;
+  width: 50%;
+  padding: 11px 25px;
 }
 
 .intro-calc {
   background-color: rgba(54, 57, 65, 0.902);
   width: 100%;
-  padding: 40px;
+  padding: 27px 40px;
+  box-shadow: 0 0 0 1px rgba(125, 125, 125, 0.4);
 }
 
 .intro-calc__title {
@@ -210,3 +214,115 @@
   color: #fff;
 }
 
+.intro-calc__layout {
+  display: flex;
+}
+
+.intro-calc__layout-left {
+  width: 47%;
+  margin-right: 11%;
+}
+
+.intro-calc__layout-right {
+  width: 42%;
+}
+
+.intro-calc__row-object {
+
+}
+
+.intro-calc__label {
+  color: #b1bfd7;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  font-family: $font-alt;
+  position: relative;
+  padding-left: 37px;
+  span {
+    text-transform: none;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 3px;
+    background-color: #ed3947;
+  }
+}
+
+.intro-calc__label-alt {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #9facc1;
+}
+
+.intro-calc__row-area {
+
+}
+
+.intro-calc__label {
+
+}
+
+.intro-calc__row-phone {
+
+}
+
+.intro-calc__phone {
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  padding: 0 14px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  color: #f6f7fb;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid #4f555d;
+  &::-moz-placeholder { color: #f6f7fb; }
+  &::-webkit-input-placeholder { color: #f6f7fb; }
+  &:-ms-input-placeholder { color: #f6f7fb; }
+  &::-ms-input-placeholder { color: #f6f7fb; }
+  &::placeholder { color: #f6f7fb; } 
+}
+
+.intro-calc__row-type {
+
+}
+
+.intro-calc__label {
+
+}
+
+.intro-calc__type {
+
+}
+
+.intro-calc__type {
+
+}
+
+.intro-calc__type {
+
+}
+
+.intro-calc__price {
+
+}
+
+.intro-calc__price-label {
+
+}
+
+.intro-calc__price-value {
+
+}
+
+.intro-calc__submit {
+
+}

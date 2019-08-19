@@ -106,6 +106,59 @@ $reviews = new WP_Query(array(
                                 <div class="intro-calc__title">
                                     Узнайте стоимость ремонта сейчас:
                                 </div>
+                                <div class="intro-calc__layout">
+                                    <div class="intro-calc__layout-left">
+                                        <div class="intro-calc__row-object">
+                                            <div class="intro-calc__label">Что ремонтируем?</div>
+                                            <select name="object">
+                                                <option value="">Квартира</option>
+                                                <option value="">Коттедж</option>
+                                                <option value="">Офис</option>
+                                                <option value="">Ванная "под ключ"</option>
+                                                <option value="">Кухня</option>
+                                            </select>
+                                        </div>
+                                        <div class="intro-calc__row-area">
+                                            <div class="intro-calc__label">Площадь <span>(м<sub>2</sub>)</span></div>
+                                            <input type="range" min="0" max="250" value="1" />
+                                        </div>
+                                        <div class="intro-calc__row-phone">
+                                            <div class="intro-calc__label-alt">Введите телефон</div>
+                                            <input class="intro-calc__phone" type="text" placeholder="+7" value="">
+                                        </div>
+                                    </div>
+                                    <div class="intro-calc__layout-right">
+                                        <div class="intro-calc__row-type">
+                                            <div class="intro-calc__label">Вид ремонта:</div>
+                                            <label class="intro-calc__type">
+                                                <input type="radio" name="type" value="Косметический" />
+                                                <span></span>
+                                                Косметический
+                                            </label>
+                                            <label class="intro-calc__type">
+                                                <input type="radio" name="type" value="Капитальный" />
+                                                <span></span>
+                                                Капитальный
+                                            </label>
+                                            <label class="intro-calc__type">
+                                                <input type="radio" name="type" value="Евроремонт" />
+                                                <span></span>
+                                                Евроремонт
+                                            </label>
+                                        </div>
+                                        <div class="intro-calc__price">
+                                            <div class="intro-calc__price-label">
+                                                Итого:
+                                            </div>
+                                            <div class="intro-calc__price-value">
+                                                <span>161 919</span> Р
+                                            </div>
+                                        </div>
+                                        <button class="intro-calc__submit btn-arrow">
+                                            Получить смету
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

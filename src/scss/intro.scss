@@ -9,7 +9,21 @@
 }
 
 .intro__title {
-
+  color: #fff;
+  font-size: 60px;
+  font-family: $font-alt;
+  line-height: 1;
+  span {
+    letter-spacing: .1em;
+    padding: 0 10px;
+    background-color: rgba(28, 30, 33, .5);
+  }
+  small {
+    letter-spacing: .2em;
+    font-size: 36px;
+    padding: 0 10px;
+    background-color: rgba(28, 30, 33, .5);
+  }
 }
 
 .intro__desc {
@@ -23,7 +37,7 @@
   border: none;
   cursor: pointer;
   span:nth-child(1) {
-    font-family: Next Art,sans-serif;
+    font-family: $font-alt;
     color: #fff;
     font-weight: 700;
     font-size: 18px;

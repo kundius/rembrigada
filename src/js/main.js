@@ -493,7 +493,7 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
 
   range.addEventListener('input', e => {
     const pos = parseInt(e.target.value) / max * 100
-    range.style.background = `linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) ${pos}%, rgba(125,129,135,1) ${pos}%, rgba(79,85,93,1) 100%)`
+    range.style.background = `linear-gradient(90deg, #ffffff 0%, #ffffff ${pos}%, #4f555d ${pos}%, #4f555d 100%)`
   })
 
   // create wrapper

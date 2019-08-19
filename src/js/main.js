@@ -460,20 +460,24 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
   label.classList.add('selectys__label')
   label.innerHTML = options[0].innerHTML
   wrapper.appendChild(label)
+  label.addEventListener('click', () => {
+    wrapper.classList.add('_opened')
+  })
   
   // create list
   const list = document.createElement('ul')
   list.classList.add('selectys__list')
   wrapper.appendChild(list)
-  forEach(options, option => {
+  forEach(options, (option, i) => {
     const li = document.createElement('li')
     li.innerHTML = option.innerHTML
-    list.appendChild(li)
+    if (i === 0) li.classList.add('_active')
     li.addEventListener('click', e => {
       forEach(list.children, child => child.classList.remove('_active'))
       li.classList.add('_active')
       select.value = option.value
       wrapper.classList.remove('_opened')
     })
+    list.appendChild(li)
   })
 })

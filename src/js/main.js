@@ -446,8 +446,9 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
   const options = select.querySelectorAll('option')
 
   // create wrapper
-  const wrapper = wrap(select, document.createElement('div'))
+  const wrapper = document.createElement('div')
   wrapper.classList.add('selectys')
+  wrap(select, wrapper)
   document.addEventListener('click', e => {
     if (!wrapper.contains(e.target) && isVisible(wrapper)) {
       wrapper.classList.remove('_opened')

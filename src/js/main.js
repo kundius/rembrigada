@@ -491,11 +491,13 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
   const min = parseInt(range.min)
   const max = parseInt(range.max)
   const diff = max - min
-
-  range.addEventListener('input', e => {
-    const pos = parseInt(e.target.value) / max * 100
+  const calc = () => {
+    const pos = parseInt(range.value) / max * 100
     range.style.background = `linear-gradient(90deg, #ffffff 0%, #ffffff ${pos}%, #4f555d ${pos}%, #4f555d 100%)`
-  })
+  }
+
+  calc()
+  range.addEventListener('input', calc)
 
   // create wrapper
   const wrapper = document.createElement('div')

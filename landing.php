@@ -120,7 +120,7 @@ $reviews = new WP_Query(array(
                                         </div>
                                         <div class="intro-calc__row-area">
                                             <div class="intro-calc__label">Площадь <span>(м<sub>2</sub>)</span></div>
-                                            <input class="js-rangeys" type="range" min="0" max="250" value="" />
+                                            <input class="js-rangeys" type="range" min="0" max="250" value="80" />
                                         </div>
                                         <div class="intro-calc__row-phone">
                                             <div class="intro-calc__label-alt">Введите телефон</div>

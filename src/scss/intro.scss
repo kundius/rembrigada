@@ -301,7 +301,41 @@
 }
 
 .intro-calc__type {
-
+  font-size: 16px;
+  color: #cbccd0;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin: 12px 0;
+  input {
+    display: none;
+  }
+  > span {
+    display: flex;
+    align-items: center;
+    > span {
+      width: 25px;
+      height: 25px;
+      margin-right: 14px;
+      border-radius: 50%;
+      border: 1px solid #9aa6bb;
+      background-color: #31333a;
+      position: relative;
+    }
+  }
+  input:checked + span {
+    color: #fff;
+    > span::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #919baf;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }
 
 .intro-calc__price {

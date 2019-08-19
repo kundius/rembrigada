@@ -92,12 +92,23 @@ $reviews = new WP_Query(array(
             <?php if ($intro = get_field('intro')): ?>
             <div class="intro">
                 <div class="container">
-                    <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
-                    <div class="intro__description"><?php echo $intro['description'] ?></div>
-                    <button data-micromodal-trigger="callback" class="intro__button">
-                        <span>Получить</span>
-                        <span></span>
-                    </button>
+                    <div class="intro__layout">
+                        <div class="intro__left">
+                            <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
+                            <div class="intro__description"><?php echo $intro['description'] ?></div>
+                            <button data-micromodal-trigger="callback" class="intro__button">
+                                <span>Получить</span>
+                                <span></span>
+                            </button>
+                        </div>
+                        <div class="intro__right">
+                            <div class="intro-calc">
+                                <div class="intro-calc__title">
+                                    Узнайте стоимость ремонта сейчас:
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <img
                     class="intro__image js-image-cover lazyload"

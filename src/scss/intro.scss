@@ -182,3 +182,31 @@
   line-height: 1.222;
 }
 
+.intro__layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.intro__left {
+
+}
+
+.intro__right {
+  max-width: 596px;
+}
+
+.intro-calc {
+  background-color: rgba(54, 57, 65, 0.902);
+  width: 100%;
+  padding: 40px;
+}
+
+.intro-calc__title {
+  font-size: 22px;
+  letter-spacing: 0.025em;
+  line-height: 1;
+  font-weight: bold;
+  color: #fff;
+}
+

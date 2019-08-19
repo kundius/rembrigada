@@ -26,8 +26,36 @@
   }
 }
 
-.intro__desc {
-
+.intro__description {
+  color: #fff;
+  text-shadow: 1px 0 1px #000;
+  p {
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: .025em;
+  }
+  ul {
+    font-size: 18px;
+    line-height: 1.333;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      position: relative;
+      padding-left: 42px;
+      &::before {
+        content: '';
+        border-left: 4px solid currentColor;
+        border-bottom: 4px solid currentColor;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        transform: rotate(-45deg);
+        height: 4px;
+        width: 8px;
+      }
+    }
+  }
 }
 
 .intro__button {

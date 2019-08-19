@@ -93,7 +93,7 @@ $reviews = new WP_Query(array(
             <div class="intro">
                 <div class="container">
                     <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
-                    <div class="intro__desc"><?php echo $intro['description'] ?></div>
+                    <div class="intro__description"><?php echo $intro['description'] ?></div>
                     <button data-micromodal-trigger="callback" class="intro__button">
                         <span>Получить</span>
                         <span></span>

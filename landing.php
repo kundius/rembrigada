@@ -94,10 +94,13 @@ $reviews = new WP_Query(array(
                 <div class="container">
                     <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
                     <div class="intro__desc"><?php echo $intro['description'] ?></div>
-                    <button data-micromodal-trigger="callback" class="intro__button">Получить</button>
+                    <button data-micromodal-trigger="callback" class="intro__button">
+                        <span>Получить</span>
+                        <span></span>
+                    </button>
                 </div>
                 <img
-                    class="intro__image js-image-cover tns-lazy-img"
+                    class="intro__image js-image-cover lazyload"
                     <?php echo srcset($intro['image'], ['w468h364', 'w800h600'], true) ?>
                     data-src="<?php echo $intro['image']['url'] ?>"
                     alt="<?php echo esc_html($intro['image']['alt']) ?>"

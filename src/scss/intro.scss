@@ -339,15 +339,30 @@
 }
 
 .intro-calc__price {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro-calc__price-label {
-
+  color: #b1bfd7;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  margin-right: 10px;
+  font-family: $font-alt;
 }
 
 .intro-calc__price-value {
-
+  line-height: 40px;
+  padding: 0 10px;
+  margin: 150px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: rgba(0,0,0,.21);
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
 }
 
 .intro-calc__submit {

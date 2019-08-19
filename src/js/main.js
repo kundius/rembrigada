@@ -443,8 +443,7 @@ forEach(document.querySelectorAll('.content-price'), function(wrapper) {
 })
 
 forEach(document.querySelectorAll('.js-selectys'), function(select) {
-  const options = select.querySelector('option')
-  const numberOfOptions = options.length
+  const options = select.querySelectorAll('option')
 
   // create wrapper
   const wrapper = wrap(select, document.createElement('div'))

@@ -7,6 +7,12 @@ import { tns } from 'tiny-slider/src/tiny-slider.module.js'
 import AWN from 'awesome-notifications/dist/index.js'
 import 'awesome-notifications/dist/style.css'
 
+const wrap = (toWrap, wrapper) => {
+  wrapper = wrapper || document.createElement('div')
+  toWrap.parentNode.appendChild(wrapper)
+  return wrapper.appendChild(toWrap)
+}
+
 const isVisible = el => !!el && !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
 
 let notifier = new AWN({
@@ -434,4 +440,40 @@ forEach(document.querySelectorAll('.content-price'), function(wrapper) {
   })
   contents[0].classList.add('_active')
   tabs[0].classList.add('_active')
+})
+
+forEach(document.querySelectorAll('.js-selectys'), function(select) {
+  const options = select.querySelector('option')
+  const numberOfOptions = options.length
+
+  // create wrapper
+  const wrapper = wrap(select, document.createElement('div'))
+  wrapper.classList.add('selectys')
+  document.addEventListener('click', e => {
+    if (!wrapper.contains(e.target) && isVisible(wrapper)) {
+      wrapper.classList.remove('_opened')
+    }
+  })
+
+  // create label
+  const label = document.createElement('div')
+  label.classList.add('selectys__label')
+  label.innerHTML = options[0].innerHTML
+  wrapper.appendChild(label)
+  
+  // create list
+  const list = document.createElement('ul')
+  list.classList.add('selectys__list')
+  wrapper.appendChild(list)
+  forEach(options, option => {
+    const li = document.createElement('li')
+    li.innerHTML = option.innerHTML
+    list.appendChild(li)
+    li.addEventListener('click', e => {
+      forEach(list.children, child => child.classList.remove('_active'))
+      li.classList.add('_active')
+      select.value = option.value
+      wrapper.classList.remove('_opened')
+    })
+  })
 })

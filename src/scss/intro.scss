@@ -284,6 +284,7 @@
   color: #f6f7fb;
   letter-spacing: 0.1em;
   border-bottom: 2px solid #4f555d;
+  background: transparent;
   &::-moz-placeholder { color: #f6f7fb; }
   &::-webkit-input-placeholder { color: #f6f7fb; }
   &:-ms-input-placeholder { color: #f6f7fb; }
@@ -296,14 +297,6 @@
 }
 
 .intro-calc__label {
-
-}
-
-.intro-calc__type {
-
-}
-
-.intro-calc__type {
 
 }
 
@@ -324,5 +317,6 @@
 }
 
 .intro-calc__submit {
-
+  margin: 0 -25px;
+  white-space: nowrap;
 }

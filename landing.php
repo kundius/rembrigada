@@ -110,7 +110,7 @@ $reviews = new WP_Query(array(
                                     <div class="intro-calc__layout-left">
                                         <div class="intro-calc__row-object">
                                             <div class="intro-calc__label">Что ремонтируем?</div>
-                                            <select name="object">
+                                            <select name="object" class="js-selectys">
                                                 <option value="">Квартира</option>
                                                 <option value="">Коттедж</option>
                                                 <option value="">Офис</option>

@@ -480,6 +480,7 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
       forEach(list.children, child => child.classList.remove('_active'))
       li.classList.add('_active')
       select.value = option.value
+      label.innerHTML = option.innerHTML
       wrapper.classList.remove('_opened')
     })
     list.appendChild(li)

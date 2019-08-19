@@ -111,7 +111,7 @@ $reviews = new WP_Query(array(
             <section class="site-desc-container" id="content">
                 <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
                 <div class="site-desc">
-                    <div><?php the_title(); ?></div>
+                    <div class="site-desc__title"><?php the_title(); ?></div>
                     <hr class="section-hr">
                     <?php the_content(); ?>
                 </div>

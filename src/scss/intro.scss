@@ -1,5 +1,11 @@
 .intro {
-
+  position: relative;
+  padding-bottom: 102px;
+  padding-top: 112px;
+  > .container {
+    position: relative;
+    z-index: 20;
+  }
 }
 
 .intro__title {
@@ -15,6 +21,7 @@
   background: transparent;
   padding: 0;
   border: none;
+  cursor: pointer;
   span:nth-child(1) {
     font-family: Next Art,sans-serif;
     color: #fff;
@@ -25,17 +32,19 @@
     padding: 0 45px;
     border-radius: 36px 0 0 36px;
     border: 4px solid #d52437;
+    border-right: 0;
   }
   span:nth-child(2) {
     width: 70px;
     min-width: 70px;
-    height: 65px;
+    height: 73px;
     min-height: 65px;
     display: block;
     background: #d52437;
     border-radius: 0 36px 36px 0;
     border: 4px solid #d52437;
     position: relative;
+    border-left: 0;
     &::after {
       content: '';
       position: absolute;
@@ -47,6 +56,7 @@
       display: block;
       border-right: 4px solid #fff;
       border-bottom: 4px solid #fff;
+      margin-left: -2px;
     }
   }
   &:hover {
@@ -57,5 +67,12 @@
 }
 
 .intro__image {
-
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
 }

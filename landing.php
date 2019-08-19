@@ -92,7 +92,9 @@ $reviews = new WP_Query(array(
             <?php if ($intro = get_field('intro')): ?>
             <div class="intro">
                 <div class="container">
-                    <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
+                    <h1 class="intro__title">
+                        <span><?php echo implode('</span><span>', explode('<br>', $intro['title'])) ?></span>
+                    </h1>
                     <div class="intro__desc"><?php echo $intro['description'] ?></div>
                     <button data-micromodal-trigger="callback" class="intro__button">
                         <span>Получить</span>
@@ -111,7 +113,7 @@ $reviews = new WP_Query(array(
             <section class="site-desc-container" id="content">
                 <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
                 <div class="site-desc">
-                    <h1><?php the_title(); ?></h1>
+                    <div><?php the_title(); ?></div>
                     <hr class="section-hr">
                     <?php the_content(); ?>
                 </div>

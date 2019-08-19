@@ -501,9 +501,8 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
   points.classList.add('selectys__rangeys')
   for (let i = 0; i < 5; i++) {
     const point = document.createElement('li')
-    point.innerHTML = diff * 0.25 * i
+    point.innerHTML = Math.round(diff * 0.25 * i)
     points.appendChild(point)
   }
-  console.log([points])
   wrapper.appendChild(points)
 })

@@ -1,0 +1,58 @@
+.intro {
+
+}
+
+.intro__title {
+
+}
+
+.intro__desc {
+
+}
+
+.intro__button {
+  display: flex;
+  border: 4px solid #d52437;
+  border-radius: 36px;
+  display: inline-block;
+  line-height: 65px;
+  padding-left: 45px;
+  padding-right: 115px;
+  font-family: Next Art,sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: .2em;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    display: block;
+    background: #d52437;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-right: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+  }
+  &:hover {
+    background: #d52437;
+  }
+}
+
+.intro__image {
+
+}

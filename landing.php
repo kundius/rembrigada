@@ -106,6 +106,24 @@ $reviews = new WP_Query(array(
                     alt="<?php echo esc_html($intro['image']['alt']) ?>"
                 />
             </div>
+            <div class="intro-advantages">
+                <div class="container">
+                    <div class="intro-advantages__list">
+                        <?php foreach ($intro['advantages'] as $advantage): ?>
+                        <div class="intro-advantages__cell">
+                            <div class="intro-advantage">
+                                <div class="intro-advantage__image">
+                                    <img data-src="<?php echo $advantage['image']['url'] ?>" class="lazyload" alt="">
+                                </div>
+                                <div class="intro-advantage__title">
+                                    <?php echo $advantage['title'] ?>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
             <?php endif; ?>
 
             <section class="site-desc-container" id="content">

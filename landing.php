@@ -114,7 +114,7 @@ $reviews = new WP_Query(array(
                                                 <option value="Квартира">Квартира</option>
                                                 <option value="Коттедж">Коттедж</option>
                                                 <option value="Офис">Офис</option>
-                                                <option value="Ванная">Ванная "под ключ"</option>
+                                                <option value="Ванная под ключ">Ванная "под ключ"</option>
                                                 <option value="Кухня">Кухня</option>
                                             </select>
                                         </div>

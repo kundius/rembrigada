@@ -489,7 +489,8 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
 })
 
 forEach(document.querySelectorAll('.js-rangeys'), function(range) {
-  const slider = rangeSlider.create(range, {
+  let handleValue = null
+  rangeSlider.create(range, {
     polyfill: true,
     root: document,
     rangeClass: 'rangeSlider',
@@ -500,18 +501,25 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
     startEvent: ['mousedown', 'touchstart', 'pointerdown'],
     moveEvent: ['mousemove', 'touchmove', 'pointermove'],
     endEvent: ['mouseup', 'touchend', 'pointerup'],
-    onInit: function (e) {
-        console.info('onInit', slider)
-         // rangeSlider__handle rangeSlider__handle__horizontal
+    onInit () {
+      if (!handleValue) {
+        const handle = range.parentNode.querySelector('.rangeSlider__handle')
+        handleValue = document.createElement('span')
+        handleValue.classList.add('rangeSlider__handle__value')
+        handle.appendChild(handleValue)
+      }
+      console.info('onInit', slider)
+       // rangeSlider__handle rangeSlider__handle__horizontal
     },
-    onSlideStart: function (position, value) {
-        console.info('onSlideStart', 'position: ' + position, 'value: ' + value);
+    onSlideStart (position, value) {
+      console.info('onSlideStart', 'position: ' + position, 'value: ' + value);
     },
-    onSlide: function (position, value) {
-        console.log('onSlide', 'position: ' + position, 'value: ' + value);
+    onSlide (position, value) {
+      handleValue.innerHTML = value
+      console.log('onSlide', 'position: ' + position, 'value: ' + value);
     },
-    onSlideEnd: function (position, value) {
-        console.warn('onSlideEnd', 'position: ' + position, 'value: ' + value);
+    onSlideEnd (position, value) {
+      console.warn('onSlideEnd', 'position: ' + position, 'value: ' + value);
     }
   })
   // const min = parseInt(range.min)

@@ -2,6 +2,7 @@
   position: relative;
   padding-bottom: 102px;
   padding-top: 112px;
+  background-color: #2f2f2f;
   > .container {
     position: relative;
     z-index: 20;
@@ -138,6 +139,13 @@
   height: 100%;
   object-fit: cover;
   z-index: 10;
+  @media (max-width: $breakpoint-medium-max) {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: auto;
+    height: 700px;
+  }
 }
 
 .intro-advantages {
@@ -149,11 +157,15 @@
   margin-left: -40px;
   display: flex;
   padding-left: 20px;
+  flex-wrap: wrap;
 }
 
 .intro-advantages__cell {
   padding-left: 40px;
   width: 25%;
+  @media (max-width: $breakpoint-medium-max) {
+    width: 50%;
+  }
 }
 
 .intro-advantage {

@@ -455,7 +455,7 @@
 }
 
 .rangeys {
-  overflow: hidden;
+  position: relative;
   input {
     -webkit-appearance: none;
     width: 100%;
@@ -494,6 +494,7 @@
   line-height: 1;
   position: relative;
   z-index: 10;
+  height: 10px;
   li {
     color: #a6b4ca;
     font-size: 10px;
@@ -531,7 +532,7 @@
 
 .rangeys__value {
   position: absolute;
-  top: 0;
+  top: -5px;
   left: 0;
   transform: translateX(-50%);
   font-size: 12px;

@@ -515,7 +515,7 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
     },
     onSlide (position, value) {
       if (handleValue) {
-        handleValue.innerHTML = position
+        handleValue.innerHTML = range.value
       }
       console.log('onSlide', 'position: ' + position, 'value: ' + value);
     },

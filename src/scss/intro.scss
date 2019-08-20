@@ -38,6 +38,9 @@
       margin-bottom: 0;
     }
   }
+  @media (max-width: $breakpoint-large-max) {
+    font-size: 48px;
+  }
 }
 
 .intro__description {
@@ -187,16 +190,25 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  @media (max-width: $breakpoint-medium-max) {
+    flex-wrap: wrap;
+  }
 }
 
 .intro__left {
-
+  @media (max-width: $breakpoint-medium-max) {
+    width: 100%;
+  }
 }
 
 .intro__right {
   max-width: 646px;
   width: 50%;
   padding: 11px 25px;
+  @media (max-width: $breakpoint-medium-max) {
+    width: 100%;
+    max-width: initial;
+  }
 }
 
 .intro-calc {

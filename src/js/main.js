@@ -485,6 +485,7 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
       forEach(list.children, child => child.classList.remove('_active'))
       li.classList.add('_active')
       select.value = option.value
+      select.dispatchEvent(new Event('change'))
       label.innerHTML = option.innerHTML
       wrapper.classList.remove('_opened')
     })

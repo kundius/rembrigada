@@ -472,15 +472,17 @@
   input::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
+    width: 1px;
+    height: 1px;
+    box-shadow: 0 0 0 10px #fff;
     border-radius: 50%;
     background: #ffffff;
     cursor: pointer;
   }
   input::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
+    width: 1px;
+    height: 1px;
+    box-shadow: 0 0 0 10px #fff;
     border-radius: 50%;
     background: #ffffff;
     cursor: pointer;

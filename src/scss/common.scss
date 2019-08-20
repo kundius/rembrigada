@@ -95,7 +95,7 @@ img {
         border-bottom: 2px solid currentColor;
     }
     &:hover {
-        background-color: rgba(237, 57, 72, .8);
+        background: rgba(237, 57, 72, .8);
     }
     @media (max-width: $breakpoint-xsmall-max) {
         font-size: 14px;

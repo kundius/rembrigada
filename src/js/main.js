@@ -563,7 +563,7 @@ forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
     }
   }
 
-  const price = form.querySelector('.js-intro-calc-price')
+  const priceEl = form.querySelector('.js-intro-calc-price')
   const rowType = form.querySelector('.intro-calc__row-type')
   const controls = form.querySelectorAll('input, select')
   const getObject = () => form.querySelector('[name="object"]').value
@@ -575,12 +575,12 @@ forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
     if (getObject() === 'bathroom') {
       rowType.style.display = 'none'
       const price = formatMoney(prices[getObject()] * getArea())
-      price.innerHTML = price
+      priceEl.innerHTML = price
       form.querySelector('[name="price"]').value = price
     } else {
       rowType.style.display = 'block'
       const price = formatMoney(prices[getObject()][getType()] * getArea())
-      price.innerHTML = price
+      priceEl.innerHTML = price
       form.querySelector('[name="price"]').value = price
     }
   }

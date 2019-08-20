@@ -102,7 +102,7 @@ $reviews = new WP_Query(array(
                             </button>
                         </div>
                         <div class="intro__right">
-                            <div class="intro-calc">
+                            <form class="intro-calc js-intro-calc">
                                 <div class="intro-calc__title">
                                     Узнайте стоимость ремонта сейчас:
                                 </div>
@@ -111,20 +111,20 @@ $reviews = new WP_Query(array(
                                         <div class="intro-calc__row-object">
                                             <div class="intro-calc__label">Что ремонтируем?</div>
                                             <select name="object" class="js-selectys">
-                                                <option value="Квартира">Квартира</option>
-                                                <option value="Коттедж">Коттедж</option>
-                                                <option value="Офис">Офис</option>
-                                                <option value="Ванная под ключ">Ванная "под ключ"</option>
-                                                <option value="Кухня">Кухня</option>
+                                                <option value="apartment">Квартира</option>
+                                                <option value="cottage">Коттедж</option>
+                                                <option value="office">Офис</option>
+                                                <option value="bathroom">Ванная "под ключ"</option>
+                                                <option value="kitchen">Кухня</option>
                                             </select>
                                         </div>
                                         <div class="intro-calc__row-area">
                                             <div class="intro-calc__label">Площадь <span>(м<sup>2</sup>)</span></div>
-                                            <input class="js-rangeys" type="range" min="0" max="250" value="80" />
+                                            <input class="js-rangeys" type="range" name="area" min="0" max="250" value="80" />
                                         </div>
                                         <div class="intro-calc__row-phone">
                                             <div class="intro-calc__label-alt">Введите телефон</div>
-                                            <input class="intro-calc__phone" type="text" placeholder="+7" value="">
+                                            <input class="intro-calc__phone" name="phone" type="text" placeholder="+7" value="">
                                         </div>
                                     </div>
                                     <div class="intro-calc__layout-right">
@@ -132,21 +132,21 @@ $reviews = new WP_Query(array(
                                             <div class="intro-calc__label">Вид ремонта:</div>
                                             <div class="intro-calc__types">
                                                 <label class="intro-calc__type">
-                                                    <input type="radio" name="type" value="Косметический" />
+                                                    <input type="radio" name="type" value="cosmetic" checked />
                                                     <span>
                                                         <span></span>
                                                         Косметический
                                                     </span>
                                                 </label>
                                                 <label class="intro-calc__type">
-                                                    <input type="radio" name="type" value="Капитальный" />
+                                                    <input type="radio" name="type" value="capital" />
                                                     <span>
                                                         <span></span>
                                                         Капитальный
                                                     </span>
                                                 </label>
                                                 <label class="intro-calc__type">
-                                                    <input type="radio" name="type" value="Евроремонт" />
+                                                    <input type="radio" name="type" value="european" />
                                                     <span>
                                                         <span></span>
                                                         Евроремонт
@@ -159,7 +159,7 @@ $reviews = new WP_Query(array(
                                                 Итого:
                                             </div>
                                             <div class="intro-calc__price-value">
-                                                <span>161 919</span> Р
+                                                <span class="js-intro-calc-price"></span> ₽
                                             </div>
                                         </div>
                                         <button class="intro-calc__submit btn-arrow">
@@ -167,7 +167,7 @@ $reviews = new WP_Query(array(
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

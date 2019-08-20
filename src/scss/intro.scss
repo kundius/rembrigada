@@ -261,11 +261,14 @@
 }
 
 .intro-calc__row-object {
-
+  position: relative;
+  z-index: 20;
 }
 
 .intro-calc__row-area {
   margin-top: 25px;
+  position: relative;
+  z-index: 10;
 }
 
 .intro-calc__row-type {

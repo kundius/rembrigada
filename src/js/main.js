@@ -8,6 +8,10 @@ import { tns } from 'tiny-slider/src/tiny-slider.module.js'
 import AWN from 'awesome-notifications/dist/index.js'
 import 'awesome-notifications/dist/style.css'
 
+const formatMoney = (num, thousand = ' ') => {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + thousand)
+}
+
 const wrap = (toWrap, wrapper) => {
   wrapper = wrapper || document.createElement('div')
   toWrap.parentNode.appendChild(wrapper)
@@ -531,4 +535,51 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
       }
     }
   })
+})
+
+forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
+  const prices = {
+    apartment: {
+      cosmetic: 2500,
+      capital: 4500,
+      european: 6000
+    },
+    cottage: {
+      cosmetic: 2500,
+      capital: 4500,
+      european: 6000
+    },
+    office: {
+      cosmetic: 1900,
+      capital: 3500,
+      european: 5000
+    },
+    bathroom: 19000,
+    kitchen: {
+      cosmetic: 3000,
+      capital: 5000,
+      european: 6500
+    }
+  }
+
+  const price = form.querySelector('.js-intro-calc-price')
+  const rowType = form.querySelector('.intro-calc__row-type')
+  const controls = form.querySelectorAll('input, select')
+  const getObject = () => form.querySelector('[name="object"]').value
+  const getArea = () => form.querySelector('[name="area"]').value
+  const getPhone = () => form.querySelector('[name="phone"]').value
+  const getType = () => form.querySelector('[name="type"]:checked').value
+
+  const calc = () => {
+    if (getObject() === 'bathroom') {
+      rowType.style.display = 'none'
+      price.innerHTML = formatMoney(prices[getObject()] * getArea())
+    } else {
+      rowType.style.display = 'block'
+      price.innerHTML = formatMoney(prices[getObject()][getType()] * getArea())
+    }
+  }
+
+  calc()
+  forEach(controls, control => control.addEventListener('change', calc))
 })

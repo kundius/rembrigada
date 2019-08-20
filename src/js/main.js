@@ -525,52 +525,10 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
       }
       slider.appendChild(points)
     },
-    onSlideStart (position, value) {
-      console.info('onSlideStart', 'position: ' + position, 'value: ' + value);
-    },
     onSlide (position, value) {
       if (handleValue) {
         handleValue.innerHTML = range.value
       }
-      console.log('onSlide', 'position: ' + position, 'value: ' + value);
-    },
-    onSlideEnd (position, value) {
-      console.warn('onSlideEnd', 'position: ' + position, 'value: ' + value);
     }
   })
-  // const min = parseInt(range.min)
-  // const max = parseInt(range.max)
-  // const diff = parseInt(range.max) - parseInt(range.min)
-
-  // // create wrapper
-  // const wrapper = document.createElement('div')
-  // wrapper.classList.add('rangeys')
-  // wrap(range, wrapper)
-
-  // // create value
-  // const value = document.createElement('div')
-  // value.classList.add('rangeys__value')
-  // wrapper.appendChild(value)
-
-  // // create points
-  // const points = document.createElement('ul')
-  // points.classList.add('rangeys__points')
-  // for (let i = 0; i < 5; i++) {
-  //   const point = document.createElement('li')
-  //   const span = document.createElement('span')
-  //   span.innerHTML = Math.round(diff * 0.25 * i)
-  //   point.appendChild(span)
-  //   points.appendChild(point)
-  // }
-  // wrapper.appendChild(points)
-
-  // const calc = () => {
-  //   const pos = parseInt(range.value) / max * 100
-  //   range.style.background = `linear-gradient(90deg, #ffffff 0%, #ffffff ${pos}%, #4f555d ${pos}%, #4f555d 100%)`
-  //   value.innerHTML = range.value
-  //   value.style.left = `${pos}%`
-  // }
-
-  // calc()
-  // range.addEventListener('input', calc)
 })

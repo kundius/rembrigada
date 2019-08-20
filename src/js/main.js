@@ -489,7 +489,7 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
 })
 
 forEach(document.querySelectorAll('.js-rangeys'), function(range) {
-  rangeSlider.create(range, {
+  const slider = rangeSlider.create(range, {
     polyfill: true,
     root: document,
     rangeClass: 'rangeSlider',
@@ -501,7 +501,7 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
     moveEvent: ['mousemove', 'touchmove', 'pointermove'],
     endEvent: ['mouseup', 'touchend', 'pointerup'],
     onInit: function (e) {
-        console.info('onInit', e)
+        console.info('onInit', slider)
          // rangeSlider__handle rangeSlider__handle__horizontal
     },
     onSlideStart: function (position, value) {

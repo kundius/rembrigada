@@ -130,27 +130,29 @@ $reviews = new WP_Query(array(
                                     <div class="intro-calc__layout-right">
                                         <div class="intro-calc__row-type">
                                             <div class="intro-calc__label">Вид ремонта:</div>
-                                            <label class="intro-calc__type">
-                                                <input type="radio" name="type" value="Косметический" />
-                                                <span>
-                                                    <span></span>
-                                                    Косметический
-                                                </span>
-                                            </label>
-                                            <label class="intro-calc__type">
-                                                <input type="radio" name="type" value="Капитальный" />
-                                                <span>
-                                                    <span></span>
-                                                    Капитальный
-                                                </span>
-                                            </label>
-                                            <label class="intro-calc__type">
-                                                <input type="radio" name="type" value="Евроремонт" />
-                                                <span>
-                                                    <span></span>
-                                                    Евроремонт
-                                                </span>
-                                            </label>
+                                            <div class="intro-calc__types">
+                                                <label class="intro-calc__type">
+                                                    <input type="radio" name="type" value="Косметический" />
+                                                    <span>
+                                                        <span></span>
+                                                        Косметический
+                                                    </span>
+                                                </label>
+                                                <label class="intro-calc__type">
+                                                    <input type="radio" name="type" value="Капитальный" />
+                                                    <span>
+                                                        <span></span>
+                                                        Капитальный
+                                                    </span>
+                                                </label>
+                                                <label class="intro-calc__type">
+                                                    <input type="radio" name="type" value="Евроремонт" />
+                                                    <span>
+                                                        <span></span>
+                                                        Евроремонт
+                                                    </span>
+                                                </label>
+                                            </div>
                                         </div>
                                         <div class="intro-calc__price">
                                             <div class="intro-calc__price-label">

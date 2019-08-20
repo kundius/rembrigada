@@ -212,6 +212,7 @@
   line-height: 1;
   font-weight: bold;
   color: #fff;
+  margin-bottom: 48px;
 }
 
 .intro-calc__layout {
@@ -225,10 +226,6 @@
 
 .intro-calc__layout-right {
   width: 42%;
-}
-
-.intro-calc__row-object {
-
 }
 
 .intro-calc__label {
@@ -259,18 +256,23 @@
   font-size: 12px;
   letter-spacing: 0.1em;
   color: #9facc1;
+  margin-bottom: 12px;
+}
+
+.intro-calc__row-object {
+
 }
 
 .intro-calc__row-area {
-
+  margin-top: 25px;
 }
 
-.intro-calc__label {
+.intro-calc__row-type {
 
 }
 
 .intro-calc__row-phone {
-
+  margin-top: 52px;
 }
 
 .intro-calc__phone {
@@ -292,12 +294,12 @@
   &::placeholder { color: #f6f7fb; } 
 }
 
-.intro-calc__row-type {
-
+.intro-calc__label {
+  margin-bottom: 12px;
 }
 
-.intro-calc__label {
-
+.intro-calc__types {
+  margin-top: 22px;
 }
 
 .intro-calc__type {
@@ -305,7 +307,7 @@
   color: #cbccd0;
   letter-spacing: 0.1em;
   line-height: 1;
-  margin: 12px 0;
+  margin-top: 12px;
   display: block;
   cursor: pointer;
   input {
@@ -344,6 +346,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 27px;
 }
 
 .intro-calc__price-label {
@@ -369,7 +372,7 @@
 }
 
 .intro-calc__submit {
-  margin: 0 -25px;
+  margin: 23px -25px 0;
   white-space: nowrap;
 }
 
@@ -385,7 +388,7 @@
   border: 2px solid transparent;
   border-bottom-color: #4f555d;
   background-color: rgba(0,0,0,.2);
-  line-height: 44px;
+  line-height: 42px;
   padding-left: 8px;
   padding-right: 8px;
   font-size: 16px;
@@ -458,6 +461,8 @@
     width: 100%;
     height: 3px;
     outline: none;
+    position: relative;
+    z-index: 20;
   }
   input:hover {
     opacity: 1;
@@ -480,18 +485,27 @@
   }
 }
 
-.selectys__rangeys {
+.rangeys__points {
   padding: 0;
   margin: 2px 0 0;
   list-style: none;
   display: flex;
   justify-content: space-between;
   line-height: 1;
+  position: relative;
+  z-index: 10;
   li {
     color: #a6b4ca;
     font-size: 10px;
     letter-spacing: 0.025em;
     position: relative;
+    position: relative;
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
     &::before {
       content: '';
       width: 2px;
@@ -513,4 +527,14 @@
       left: auto;
     }
   }
+}
+
+.rangeys__value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-50%);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #f6f7fb;
 }

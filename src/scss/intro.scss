@@ -11,6 +11,9 @@
     padding-bottom: 0;
     padding-top: 40px;
   }
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 24px;
+  }
 }
 
 .intro__title {
@@ -45,6 +48,18 @@
   }
   @media (max-width: $breakpoint-large-max) {
     font-size: 48px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 24px;
+    span {
+      margin-bottom: 2px;
+      padding: 0 3px 3px;
+    }
+    small {
+      margin-bottom: 2px;
+      padding: 3px;
+      font-size: 14px;
+    }
   }
 }
 
@@ -82,6 +97,26 @@
       }
     }
   }
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 23px;
+    margin-bottom: 17px;
+    p {
+      font-size: 18px;
+      line-height: 1;
+    }
+    ul {
+      margin: 11px 0;
+      li {
+        margin: 3px 0;
+        padding-left: 36px;
+        &::before {
+          left: 5px;
+          height: 5px;
+          width: 12px;
+        }
+      }
+    }
+  }
 }
 
 .intro__button {
@@ -106,7 +141,6 @@
     width: 73px;
     min-width: 73px;
     height: 73px;
-    min-height: 65px;
     display: block;
     background: #d52437;
     border-radius: 0 40px 40px 0;
@@ -130,6 +164,26 @@
   &:hover {
     span:nth-child(1) {
       background: #d52437;
+    }
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    span:nth-child(1) {
+      line-height: 40px;
+      padding: 0 16px;
+      font-size: 16px;
+      border-radius: 24px 0 0 24px;
+    }
+    span:nth-child(2) {
+      height: 48px;
+      width: 48px;
+      min-width: 48px;
+      &::after {
+        width: 8px;
+        height: 8px;
+        border-right-width: 3px;
+        border-bottom-width: 3px;
+        margin-left: -3px;
+      }
     }
   }
 }
@@ -171,6 +225,9 @@
   width: 25%;
   @media (max-width: $breakpoint-medium-max) {
     width: 50%;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
   }
 }
 
@@ -229,6 +286,9 @@
     padding: 0;
     margin-top: 40px;
   }
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 32px;
+  }
 }
 
 .intro-calc {
@@ -249,15 +309,23 @@
 
 .intro-calc__layout {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .intro-calc__layout-left {
   width: 47%;
   margin-right: 11%;
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+    margin-right: 0;
+  }
 }
 
 .intro-calc__layout-right {
   width: 42%;
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+  }
 }
 
 .intro-calc__label {

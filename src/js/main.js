@@ -581,5 +581,8 @@ forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
   }
 
   calc()
-  forEach(controls, control => control.addEventListener('change', calc))
+  forEach(controls, control => {
+    control.addEventListener('input', calc)
+    control.addEventListener('change', calc)
+  })
 })

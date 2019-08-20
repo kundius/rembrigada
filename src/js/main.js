@@ -574,12 +574,14 @@ forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
   const calc = () => {
     if (getObject() === 'bathroom') {
       rowType.style.display = 'none'
-      price.innerHTML = formatMoney(prices[getObject()] * getArea())
-      form.querySelector('[name="price"]').value = price.innerHTML
+      const price = formatMoney(prices[getObject()] * getArea())
+      price.innerHTML = price
+      form.querySelector('[name="price"]').value = price
     } else {
       rowType.style.display = 'block'
-      price.innerHTML = formatMoney(prices[getObject()][getType()] * getArea())
-      form.querySelector('[name="price"]').value = price.innerHTML
+      const price = formatMoney(prices[getObject()][getType()] * getArea())
+      price.innerHTML = price
+      form.querySelector('[name="price"]').value = price
     }
   }
 

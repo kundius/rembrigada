@@ -165,7 +165,7 @@ $reviews = new WP_Query(array(
                                                 <span class="js-intro-calc-price"></span> ₽
                                             </div>
                                         </div>
-                                        <button class="intro-calc__submit btn-arrow">
+                                        <button type="submit" class="intro-calc__submit btn-arrow">
                                             Получить смету
                                         </button>
                                     </div>

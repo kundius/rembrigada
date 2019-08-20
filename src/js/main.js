@@ -500,16 +500,9 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
     startEvent: ['mousedown', 'touchstart', 'pointerdown'],
     moveEvent: ['mousemove', 'touchmove', 'pointermove'],
     endEvent: ['mouseup', 'touchend', 'pointerup'],
-    vertical: false,
-    // min: null,
-    // max: null,
-    // step: null,
-    // value: null,
-    // buffer: null,
-    // stick: null,
-    borderRadius: 10,
-    onInit: function () {
-        console.info('onInit')
+    onInit: function (e) {
+        console.info('onInit', e)
+         // rangeSlider__handle rangeSlider__handle__horizontal
     },
     onSlideStart: function (position, value) {
         console.info('onSlideStart', 'position: ' + position, 'value: ' + value);

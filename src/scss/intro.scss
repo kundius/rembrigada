@@ -603,6 +603,17 @@
   bottom: 0;
 }
 
+.rangeSlider__handle__value {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: #f6f7fb;
+  line-height: 1;
+}
+
 .rangeSlider__buffer {
   position: absolute;
   top: 1px;

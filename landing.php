@@ -102,7 +102,8 @@ $reviews = new WP_Query(array(
                             </button>
                         </div>
                         <div class="intro__right">
-                            <form class="intro-calc js-intro-calc">
+                            <form action="/wp-json/contact-form-7/v1/contact-forms/1752/feedback" method="post" class="intro-calc js-intro-calc js-form">
+                                <input name="price" type="hidden" value="">
                                 <div class="intro-calc__title">
                                     Узнайте стоимость ремонта сейчас:
                                 </div>
@@ -124,7 +125,9 @@ $reviews = new WP_Query(array(
                                         </div>
                                         <div class="intro-calc__row-phone">
                                             <div class="intro-calc__label-alt">Введите телефон</div>
-                                            <input class="intro-calc__phone" name="phone" type="text" placeholder="+7" value="">
+                                            <span class="wpcf7-form-control-wrap your-phone">
+                                                <input class="intro-calc__phone" name="your-phone" type="text" placeholder="+7" value="">
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="intro-calc__layout-right">

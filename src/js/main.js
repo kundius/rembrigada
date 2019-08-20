@@ -568,16 +568,18 @@ forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
   const controls = form.querySelectorAll('input, select')
   const getObject = () => form.querySelector('[name="object"]').value
   const getArea = () => form.querySelector('[name="area"]').value
-  const getPhone = () => form.querySelector('[name="phone"]').value
+  const getPhone = () => form.querySelector('[name="your-phone"]').value
   const getType = () => form.querySelector('[name="type"]:checked').value
 
   const calc = () => {
     if (getObject() === 'bathroom') {
       rowType.style.display = 'none'
       price.innerHTML = formatMoney(prices[getObject()] * getArea())
+      form.querySelector('[name="price"]').value = price.innerHTML
     } else {
       rowType.style.display = 'block'
       price.innerHTML = formatMoney(prices[getObject()][getType()] * getArea())
+      form.querySelector('[name="price"]').value = price.innerHTML
     }
   }
 

@@ -505,6 +505,7 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
       if (!handleValue) {
         const handle = range.parentNode.querySelector('.rangeSlider__handle')
         handleValue = document.createElement('span')
+        handleValue.innerHTML = range.value
         handleValue.classList.add('rangeSlider__handle__value')
         handle.appendChild(handleValue)
       }
@@ -514,7 +515,7 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
     },
     onSlide (position, value) {
       if (handleValue) {
-        handleValue.innerHTML = value
+        handleValue.innerHTML = position
       }
       console.log('onSlide', 'position: ' + position, 'value: ' + value);
     },

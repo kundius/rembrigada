@@ -508,14 +508,14 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
         handleValue.classList.add('rangeSlider__handle__value')
         handle.appendChild(handleValue)
       }
-      console.info('onInit', slider)
-       // rangeSlider__handle rangeSlider__handle__horizontal
     },
     onSlideStart (position, value) {
       console.info('onSlideStart', 'position: ' + position, 'value: ' + value);
     },
     onSlide (position, value) {
-      handleValue.innerHTML = value
+      if (handleValue) {
+        handleValue.innerHTML = value
+      }
       console.log('onSlide', 'position: ' + position, 'value: ' + value);
     },
     onSlideEnd (position, value) {

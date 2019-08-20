@@ -502,6 +502,9 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
     moveEvent: ['mousemove', 'touchmove', 'pointermove'],
     endEvent: ['mouseup', 'touchend', 'pointerup'],
     onInit () {
+      const slider = range.parentNode.querySelector('.rangeSlider')
+
+      // create handle value
       if (!handleValue) {
         const handle = range.parentNode.querySelector('.rangeSlider__handle')
         handleValue = document.createElement('span')
@@ -509,6 +512,18 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
         handleValue.classList.add('rangeSlider__handle__value')
         handle.appendChild(handleValue)
       }
+
+      // create points
+      const points = document.createElement('ul')
+      points.classList.add('rangeSlider__points')
+      for (let i = 0; i < 5; i++) {
+        const point = document.createElement('li')
+        const span = document.createElement('span')
+        span.innerHTML = Math.round(diff * 0.25 * i)
+        point.appendChild(span)
+        points.appendChild(point)
+      }
+      slider.appendChild(points)
     },
     onSlideStart (position, value) {
       console.info('onSlideStart', 'position: ' + position, 'value: ' + value);

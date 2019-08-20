@@ -620,3 +620,47 @@
   height: 1px;
   background: #2c3e50;
 }
+
+.rangeSlider__points {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+  li {
+    color: #a6b4ca;
+    font-size: 10px;
+    letter-spacing: 0.025em;
+    position: relative;
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::before {
+      content: '';
+      width: 2px;
+      height: 5px;
+      position: absolute;
+      background-color: #4f555d;
+      top: 0;
+      left: 50%;
+      margin-left: -1px;
+      margin-top: -15px;
+    }
+    &:first-child::before {
+      left: 0;
+      margin-left: 0;
+    }
+    &:last-child::before {
+      right: 0;
+      margin-left: 0;
+      left: auto;
+    }
+  }
+}

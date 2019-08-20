@@ -455,95 +455,6 @@
   }
 }
 
-// .rangeys {
-//   position: relative;
-//   z-index: 10;
-//   input {
-//     -webkit-appearance: none;
-//     width: 100%;
-//     height: 3px;
-//     outline: none;
-//     position: relative;
-//     z-index: 20;
-//   }
-//   input:hover {
-//     opacity: 1;
-//   }
-//   input::-webkit-slider-thumb {
-//     -webkit-appearance: none;
-//     appearance: none;
-//     width: 1px;
-//     height: 1px;
-//     box-shadow: 0 0 0 10px #fff;
-//     border-radius: 50%;
-//     background: #ffffff;
-//     cursor: pointer;
-//   }
-//   input::-moz-range-thumb {
-//     width: 1px;
-//     height: 1px;
-//     box-shadow: 0 0 0 10px #fff;
-//     border-radius: 50%;
-//     background: #ffffff;
-//     cursor: pointer;
-//   }
-// }
-
-// .rangeys__points {
-//   padding: 0;
-//   margin: 2px 0 0;
-//   list-style: none;
-//   display: flex;
-//   justify-content: space-between;
-//   line-height: 1;
-//   position: relative;
-//   z-index: 10;
-//   height: 10px;
-//   li {
-//     color: #a6b4ca;
-//     font-size: 10px;
-//     letter-spacing: 0.025em;
-//     position: relative;
-//     position: relative;
-//     span {
-//       position: absolute;
-//       left: 50%;
-//       top: 50%;
-//       transform: translate(-50%, -50%);
-//     }
-//     &::before {
-//       content: '';
-//       width: 2px;
-//       height: 5px;
-//       position: absolute;
-//       background-color: #4f555d;
-//       top: 0;
-//       left: 50%;
-//       margin-left: -1px;
-//       margin-top: -15px;
-//     }
-//     &:first-child::before {
-//       left: 0;
-//       margin-left: 0;
-//     }
-//     &:last-child::before {
-//       right: 0;
-//       margin-left: 0;
-//       left: auto;
-//     }
-//   }
-// }
-
-// .rangeys__value {
-//   position: absolute;
-//   top: -5px;
-//   left: 0;
-//   transform: translateX(-50%);
-//   font-size: 12px;
-//   letter-spacing: 0.1em;
-//   color: #f6f7fb;
-// }
-
 .rangeSlider, .rangeSlider__fill {
   display: block;
 }
@@ -585,13 +496,13 @@
 }
 
 .rangeSlider__handle {
-    cursor: pointer;
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    background: #ffffff;
-    border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
 }
 
 .rangeSlider__handle__horizontal {

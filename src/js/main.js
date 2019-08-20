@@ -519,7 +519,7 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
       for (let i = 0; i < 5; i++) {
         const point = document.createElement('li')
         const span = document.createElement('span')
-        span.innerHTML = Math.round(diff * 0.25 * i)
+        span.innerHTML = Math.round(parseInt(range.max) - parseInt(range.min) * 0.25 * i)
         point.appendChild(span)
         points.appendChild(point)
       }
@@ -540,7 +540,7 @@ forEach(document.querySelectorAll('.js-rangeys'), function(range) {
   })
   // const min = parseInt(range.min)
   // const max = parseInt(range.max)
-  // const diff = max - min
+  // const diff = parseInt(range.max) - parseInt(range.min)
 
   // // create wrapper
   // const wrapper = document.createElement('div')

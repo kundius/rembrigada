@@ -272,7 +272,7 @@
 }
 
 .intro-calc__row-phone {
-  margin-top: 52px;
+  margin-top: 69px;
 }
 
 .intro-calc__phone {
@@ -467,6 +467,7 @@
 .rangeSlider__horizontal {
   height: 4px;
   width: 100%;
+  margin-top: 25px;
 }
 
 .rangeSlider__vertical {
@@ -503,6 +504,7 @@
   position: absolute;
   background: #ffffff;
   border-radius: 50%;
+  z-index: 20;
 }
 
 .rangeSlider__handle__horizontal {
@@ -536,7 +538,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  bottom: 0;
+  bottom: -12px;
   padding: 0;
   list-style: none;
   display: flex;
@@ -559,7 +561,7 @@
       height: 5px;
       position: absolute;
       background-color: #4f555d;
-      top: 0;
+      top: -6px;
       left: 50%;
       margin-left: -1px;
       margin-top: -15px;

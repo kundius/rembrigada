@@ -1,4 +1,5 @@
 import MicroModal  from 'micromodal'
+import rangeSlider  from 'rangeslider-pure'
 import svg4everybody from 'svg4everybody'
 import LazyLoad from 'vanilla-lazyload'
 import forEach from 'lodash/forEach'
@@ -488,39 +489,71 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
 })
 
 forEach(document.querySelectorAll('.js-rangeys'), function(range) {
-  const min = parseInt(range.min)
-  const max = parseInt(range.max)
-  const diff = max - min
+  rangeSlider.create(range, {
+    polyfill: true,
+    root: document,
+    rangeClass: 'rangeSlider',
+    disabledClass: 'rangeSlider--disabled',
+    fillClass: 'rangeSlider__fill',
+    bufferClass: 'rangeSlider__buffer',
+    handleClass: 'rangeSlider__handle',
+    startEvent: ['mousedown', 'touchstart', 'pointerdown'],
+    moveEvent: ['mousemove', 'touchmove', 'pointermove'],
+    endEvent: ['mouseup', 'touchend', 'pointerup'],
+    vertical: false,
+    // min: null,
+    // max: null,
+    // step: null,
+    // value: null,
+    // buffer: null,
+    // stick: null,
+    borderRadius: 10,
+    onInit: function () {
+        console.info('onInit')
+    },
+    onSlideStart: function (position, value) {
+        console.info('onSlideStart', 'position: ' + position, 'value: ' + value);
+    },
+    onSlide: function (position, value) {
+        console.log('onSlide', 'position: ' + position, 'value: ' + value);
+    },
+    onSlideEnd: function (position, value) {
+        console.warn('onSlideEnd', 'position: ' + position, 'value: ' + value);
+    }
+  })
+  // const min = parseInt(range.min)
+  // const max = parseInt(range.max)
+  // const diff = max - min
 
-  // create wrapper
-  const wrapper = document.createElement('div')
-  wrapper.classList.add('rangeys')
-  wrap(range, wrapper)
+  // // create wrapper
+  // const wrapper = document.createElement('div')
+  // wrapper.classList.add('rangeys')
+  // wrap(range, wrapper)
 
-  // create value
-  const value = document.createElement('div')
-  value.classList.add('rangeys__value')
-  wrapper.appendChild(value)
+  // // create value
+  // const value = document.createElement('div')
+  // value.classList.add('rangeys__value')
+  // wrapper.appendChild(value)
 
-  // create points
-  const points = document.createElement('ul')
-  points.classList.add('rangeys__points')
-  for (let i = 0; i < 5; i++) {
-    const point = document.createElement('li')
-    const span = document.createElement('span')
-    span.innerHTML = Math.round(diff * 0.25 * i)
-    point.appendChild(span)
-    points.appendChild(point)
-  }
-  wrapper.appendChild(points)
+  // // create points
+  // const points = document.createElement('ul')
+  // points.classList.add('rangeys__points')
+  // for (let i = 0; i < 5; i++) {
+  //   const point = document.createElement('li')
+  //   const span = document.createElement('span')
+  //   span.innerHTML = Math.round(diff * 0.25 * i)
+  //   point.appendChild(span)
+  //   points.appendChild(point)
+  // }
+  // wrapper.appendChild(points)
 
-  const calc = () => {
-    const pos = parseInt(range.value) / max * 100
-    range.style.background = `linear-gradient(90deg, #ffffff 0%, #ffffff ${pos}%, #4f555d ${pos}%, #4f555d 100%)`
-    value.innerHTML = range.value
-    value.style.left = `${pos}%`
-  }
+  // const calc = () => {
+  //   const pos = parseInt(range.value) / max * 100
+  //   range.style.background = `linear-gradient(90deg, #ffffff 0%, #ffffff ${pos}%, #4f555d ${pos}%, #4f555d 100%)`
+  //   value.innerHTML = range.value
+  //   value.style.left = `${pos}%`
+  // }
 
-  calc()
-  range.addEventListener('input', calc)
+  // calc()
+  // range.addEventListener('input', calc)
 })

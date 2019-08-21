@@ -219,6 +219,10 @@
   display: flex;
   padding-left: 20px;
   flex-wrap: wrap;
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-left: 0;
+    margin-top: -15px;
+  }
 }
 
 .intro-advantages__cell {
@@ -230,6 +234,9 @@
   }
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 15px;
   }
 }
 
@@ -251,6 +258,17 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    max-height: 60%;
+    width: auto;
+    max-width: 60%;
+    height: auto;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    border-width: 5px;
   }
 }
 
@@ -557,6 +575,7 @@
     width: 100%;
     border-width: 2px;
     line-height: 44px;
+    padding-right: 66px;
     &::before {
       right: 46px;
       width: 2px;

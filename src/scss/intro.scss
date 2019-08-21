@@ -323,28 +323,53 @@
 }
 
 .intro-calc__layout {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto;
   @media (max-width: $breakpoint-xsmall-max) {
     margin: 0 6px;
   }
 }
 
-.intro-calc__layout-left {
-  width: 47%;
-  margin-right: 11%;
-  @media (max-width: $breakpoint-xsmall-max) {
-    width: 100%;
-    margin-right: 0;
-  }
+.intro-calc__row-object {
+
 }
 
-.intro-calc__layout-right {
-  width: 42%;
-  @media (max-width: $breakpoint-xsmall-max) {
-    width: 100%;
-  }
+.intro-calc__row-area {
+
 }
+
+.intro-calc__row-type {
+
+}
+
+.intro-calc__row-price {
+
+}
+
+.intro-calc__row-phone {
+
+}
+
+.intro-calc__row-submit {
+
+}
+
+
+// .intro-calc__layout-left {
+//   width: 47%;
+//   margin-right: 11%;
+//   @media (max-width: $breakpoint-xsmall-max) {
+//     width: 100%;
+//     margin-right: 0;
+//   }
+// }
+
+// .intro-calc__layout-right {
+//   width: 42%;
+//   @media (max-width: $breakpoint-xsmall-max) {
+//     width: 100%;
+//   }
+// }
 
 .intro-calc__label {
   color: #b1bfd7;
@@ -377,24 +402,26 @@
   margin-bottom: 12px;
 }
 
-.intro-calc__row-object {
-  position: relative;
-  z-index: 20;
-}
+// .intro-calc__row-object {
+//   position: relative;
+//   z-index: 20;
+// }
 
-.intro-calc__row-area {
-  margin-top: 25px;
-  position: relative;
-  z-index: 10;
-}
+// .intro-calc__row-area {
+//   margin-top: 25px;
+//   position: relative;
+//   z-index: 10;
+// }
 
-.intro-calc__row-type {
+// .intro-calc__row-type {
+//   @media (max-width: $breakpoint-xsmall-max) {
+//     margin-top: 56px;
+//   }
+// }
 
-}
-
-.intro-calc__row-phone {
-  margin-top: 69px;
-}
+// .intro-calc__row-phone {
+//   margin-top: 69px;
+// }
 
 .intro-calc__phone {
   border-left: none;
@@ -422,6 +449,9 @@
 
 .intro-calc__types {
   margin-top: 22px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 16px;
+  }
 }
 
 .intro-calc__type {

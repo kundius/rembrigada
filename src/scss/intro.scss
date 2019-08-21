@@ -201,7 +201,10 @@
     top: 0;
     transform: translateX(-50%);
     width: auto;
-    height: 700px;
+    height: calc(100vh - 68px);
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    height: calc(100vh - 56px);
   }
 }
 
@@ -273,6 +276,9 @@
   @media (max-width: $breakpoint-medium-max) {
     width: 100%;
     min-height: calc(100vh - 68px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   @media (max-width: $breakpoint-xsmall-max) {
     min-height: calc(100vh - 56px);

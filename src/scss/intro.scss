@@ -335,6 +335,7 @@
 
 .intro-calc__row-object {
   float: left;
+  clear: left;
   width: 47%;
   // grid-column: 1 / 2;
   @media (max-width: $breakpoint-xsmall-max) {
@@ -345,6 +346,7 @@
 
 .intro-calc__row-area {
   float: left;
+  clear: left;
   width: 47%;
   // grid-row: 2 / span 2;
   // grid-column: 1 / 2;
@@ -357,6 +359,7 @@
 
 .intro-calc__row-type {
   float: right;
+  clear: right;
   width: 42%;
   // grid-row: 1 / span 2;
   // grid-column: 2 / 3;
@@ -368,6 +371,7 @@
 
 .intro-calc__row-price {
   float: right;
+  clear: right;
   width: 42%;
   // grid-column: 2 / 3;
   // margin-top: 20px;
@@ -379,6 +383,7 @@
 
 .intro-calc__row-phone {
   float: left;
+  clear: left;
   width: 47%;
   width: 42%;
   // grid-row: 3 / span 2;
@@ -392,6 +397,7 @@
 
 .intro-calc__row-submit {
   float: right;
+  clear: right;
   width: 42%;
   // grid-column: 2 / 3;
   // margin-top: 20px;

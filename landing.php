@@ -217,39 +217,41 @@ $reviews = new WP_Query(array(
                     <?php while($services->have_posts()): $services->the_post(); ?>
                     <div class="type-of-repair-item">
                         <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-                        <div class="repair-img-label">
-                            <a href="<?php the_permalink() ?>">
-                                <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 364))): ?>
-                                <img class="repair-img lazylazyload" data-src="<?php echo $image ?>" alt="<?php the_title() ?>">
-                                <?php else: ?>
-                                <img class="repair-img lazylazyload" data-src="https://via.placeholder.com/468x364" alt="">
+                        <div class="type-of-repair-item__inner">
+                            <div class="repair-img-label">
+                                <a href="<?php the_permalink() ?>">
+                                    <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 364))): ?>
+                                    <img class="repair-img lazylazyload" data-src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                    <?php else: ?>
+                                    <img class="repair-img lazylazyload" data-src="https://via.placeholder.com/468x364" alt="">
+                                    <?php endif; ?>
+                                </a>
+                                <?php if ($price = get_field('price', get_the_ID())): ?>
+                                <div class="label">
+                                    <p>
+                                        <?php echo $price['prefix'] ?>
+                                        <span><?php echo $price['amount'] ?></span>
+                                        <?php echo $price['unit'] ?>    
+                                    </p>
+                                </div>
                                 <?php endif; ?>
-                            </a>
-                            <?php if ($price = get_field('price', get_the_ID())): ?>
-                            <div class="label">
-                                <p>
-                                    <?php echo $price['prefix'] ?>
-                                    <span><?php echo $price['amount'] ?></span>
-                                    <?php echo $price['unit'] ?>    
-                                </p>
+                            </div>
+                            <?php
+                                $children = new WP_Query(array(
+                                    'post_type' => 'page',
+                                    'order' => 'ASC',
+                                    'orderby' => 'menu_order',
+                                    'post_parent' => get_the_ID()
+                                ));
+                            ?>
+                            <?php if ($children->have_posts()): ?>
+                            <div class="repair-list">
+                                <?php while($children->have_posts()): $children->the_post(); ?>
+                                    <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                                <?php endwhile; ?>
                             </div>
                             <?php endif; ?>
                         </div>
-                        <?php
-                            $children = new WP_Query(array(
-                                'post_type' => 'page',
-                                'order' => 'ASC',
-                                'orderby' => 'menu_order',
-                                'post_parent' => get_the_ID()
-                            ));
-                        ?>
-                        <?php if ($children->have_posts()): ?>
-                        <div class="repair-list">
-                            <?php while($children->have_posts()): $children->the_post(); ?>
-                                <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-                            <?php endwhile; ?>
-                        </div>
-                        <?php endif; ?>
                     </div>
                     <?php endwhile; ?>
                 </div>

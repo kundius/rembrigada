@@ -363,6 +363,11 @@
     transition: all ease .5s;
 }
 
+.type-of-repair-item__inner {
+    overflow: hidden;
+    position: relative;
+}
+
 .type-of-repair-item:hover {
     -webkit-box-shadow: 0 0 30px #dbdbdb;
             box-shadow: 0 0 30px #dbdbdb;
@@ -958,7 +963,6 @@
         width: 340px;
     }
     .type-of-repair h2 {
-        height: 50px;
         line-height: 30px;
     }
     .type-of-repair .repair-of-commercial-real-estate h2 {
@@ -1122,7 +1126,6 @@
         height: 26px;
     }
     .type-of-repair h2 {
-        height: 32px;
         font-size: 12px;
         padding-bottom: 10px;
         line-height: 22px;
@@ -1414,7 +1417,6 @@
     }
     .type-of-repair h2 {
         font-size: 15.51px;
-        height: 20px;
         padding-bottom: 0;
     }
     .type-of-repair .repair-of-commercial-real-estate h2 {
@@ -1423,6 +1425,12 @@
     }
     .type-of-repair img {
         opacity: 0.3;
+    }
+    .repair-img-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
     }
     .repair-img-label .label {
         top: 20px;
@@ -1437,10 +1445,11 @@
         font-size: 15.51px;
     }
     .type-of-repair .repair-list {
-        padding-top: 0;
-        position: absolute;
-        top: 135px;
-        left: 10px;
+        // padding-top: 0;
+        // position: absolute;
+        // top: 135px;
+        // left: 10px;
+        width: 100%;
     }
     .type-of-repair .repair-list a {
         font-size: 14px;

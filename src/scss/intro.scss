@@ -211,6 +211,9 @@
 .intro-advantages {
   background-color: #2f2f2f;
   padding: 20px 0;
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding: 47px 42px;
+  }
 }
 
 .intro-advantages__list {

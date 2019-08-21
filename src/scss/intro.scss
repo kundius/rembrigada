@@ -9,10 +9,7 @@
   }
   @media (max-width: $breakpoint-medium-max) {
     padding-bottom: 0;
-    padding-top: 40px;
-  }
-  @media (max-width: $breakpoint-xsmall-max) {
-    padding-top: 24px;
+    padding-top: 0;
   }
 }
 
@@ -50,15 +47,17 @@
     font-size: 48px;
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    font-size: 24px;
+    font-size: 29px;
     span {
       margin-bottom: 2px;
-      padding: 0 3px 3px;
+      padding: 0 3px 1px;
+      letter-spacing: 0.05em;
     }
     small {
       margin-bottom: 2px;
       padding: 3px;
-      font-size: 14px;
+      font-size: 16px;
+      letter-spacing: .3em;
     }
   }
 }
@@ -98,19 +97,19 @@
     }
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    margin-top: 23px;
-    margin-bottom: 17px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     p {
       font-size: 18px;
       line-height: 1;
+      font-weight: bold;
     }
     ul {
-      margin: 11px 0;
+      margin: 15px 0;
       li {
         margin: 3px 0;
-        padding-left: 36px;
         &::before {
-          left: 5px;
+          top: 6px;
           height: 5px;
           width: 12px;
         }
@@ -169,8 +168,8 @@
   @media (max-width: $breakpoint-xsmall-max) {
     span:nth-child(1) {
       line-height: 40px;
-      padding: 0 16px;
-      font-size: 16px;
+      padding: 0 20px;
+      font-size: 14px;
       border-radius: 24px 0 0 24px;
     }
     span:nth-child(2) {
@@ -273,6 +272,10 @@
 .intro__left {
   @media (max-width: $breakpoint-medium-max) {
     width: 100%;
+    min-height: calc(100vh - 68px);
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    min-height: calc(100vh - 56px);
   }
 }
 

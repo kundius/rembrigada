@@ -118,10 +118,6 @@ $reviews = new WP_Query(array(
                                             <option value="kitchen">Кухня</option>
                                         </select>
                                     </div>
-                                    <div class="intro-calc__row-area">
-                                        <div class="intro-calc__label">Площадь <span>(м<sup>2</sup>)</span></div>
-                                        <input class="js-rangeys" type="range" name="area" min="0" max="250" value="80" />
-                                    </div>
                                     <div class="intro-calc__row-type">
                                         <div class="intro-calc__label">Вид ремонта:</div>
                                         <div class="intro-calc__types">
@@ -147,6 +143,10 @@ $reviews = new WP_Query(array(
                                                 </span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="intro-calc__row-area">
+                                        <div class="intro-calc__label">Площадь <span>(м<sup>2</sup>)</span></div>
+                                        <input class="js-rangeys" type="range" name="area" min="0" max="250" value="80" />
                                     </div>
                                     <div class="intro-calc__row-price">
                                         <div class="intro-calc__price">

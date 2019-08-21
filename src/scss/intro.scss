@@ -325,6 +325,8 @@
 .intro-calc__layout {
   @media (max-width: $breakpoint-xsmall-max) {
     margin: 0 6px;
+    display: flex;
+    flex-direction: column;
   }
   &::after {
     content: '';
@@ -337,10 +339,12 @@
   float: left;
   clear: left;
   width: 47%;
-  // grid-column: 1 / 2;
+  position: relative;
+  z-index: 20;
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
     float: none;
+    order: 10;
   }
 }
 
@@ -349,12 +353,12 @@
   clear: left;
   width: 47%;
   margin-top: 25px;
-  // grid-row: 2 / span 2;
-  // grid-column: 1 / 2;
-  // margin-top: 30px;
+  position: relative;
+  z-index: 10;
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
     float: none;
+    order: 20;
   }
 }
 
@@ -362,11 +366,10 @@
   float: right;
   clear: right;
   width: 42%;
-  // grid-row: 1 / span 2;
-  // grid-column: 2 / 3;
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
     float: none;
+    order: 30;
   }
 }
 
@@ -378,6 +381,7 @@
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
     float: none;
+    order: 40;
   }
 }
 
@@ -385,11 +389,11 @@
   float: left;
   clear: left;
   width: 47%;
-  width: 42%;
   margin-top: 69px;
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
     float: none;
+    order: 50;
   }
 }
 
@@ -401,6 +405,7 @@
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
     float: none;
+    order: 60;
   }
 }
 

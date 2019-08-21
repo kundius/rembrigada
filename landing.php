@@ -123,12 +123,6 @@ $reviews = new WP_Query(array(
                                             <div class="intro-calc__label">Площадь <span>(м<sup>2</sup>)</span></div>
                                             <input class="js-rangeys" type="range" name="area" min="0" max="250" value="80" />
                                         </div>
-                                        <div class="intro-calc__row-phone">
-                                            <div class="intro-calc__label-alt">Введите телефон</div>
-                                            <span class="wpcf7-form-control-wrap your-phone">
-                                                <input class="intro-calc__phone" name="your-phone" type="text" placeholder="+7" value="">
-                                            </span>
-                                        </div>
                                     </div>
                                     <div class="intro-calc__layout-right">
                                         <div class="intro-calc__row-type">
@@ -157,6 +151,18 @@ $reviews = new WP_Query(array(
                                                 </label>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="intro-calc__layout">
+                                    <div class="intro-calc__layout-left">
+                                        <div class="intro-calc__row-phone">
+                                            <div class="intro-calc__label-alt">Введите телефон</div>
+                                            <span class="wpcf7-form-control-wrap your-phone">
+                                                <input class="intro-calc__phone" name="your-phone" type="text" placeholder="+7" value="">
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="intro-calc__layout-right">
                                         <div class="intro-calc__price">
                                             <div class="intro-calc__price-label">
                                                 Итого:
@@ -188,7 +194,7 @@ $reviews = new WP_Query(array(
                         <div class="intro-advantages__cell">
                             <div class="intro-advantage">
                                 <div class="intro-advantage__image">
-                                    <img data-src="<?php echo $advantage['image']['url'] ?>" class="lazyload" alt="">
+                                    <img src="<?php echo $advantage['image']['url'] ?>" alt="">
                                 </div>
                                 <div class="intro-advantage__title">
                                     <?php echo $advantage['title'] ?>

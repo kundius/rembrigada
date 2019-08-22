@@ -369,7 +369,7 @@ $reviews = new WP_Query(array(
                             <div class="client-feedback-item">
                                 <?php if (get_field('type', get_the_ID()) == 'video'): ?>
                                 <div class="client-feedback-item__video">
-                                    <iframe src="https://www.youtube.com/embed/<?php the_field('video') ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe src="https://www.youtube.com/embed/<?php the_field('video') ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                                 </div>
                                 <?php else: ?>
                                 <div class="client-feedback-item__image">

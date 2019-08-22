@@ -221,9 +221,9 @@ $reviews = new WP_Query(array(
                             <div class="repair-img-label">
                                 <a href="<?php the_permalink() ?>">
                                     <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 364))): ?>
-                                    <img class="repair-img lazylazyload" data-src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                    <img class="repair-img" src="<?php echo $image ?>" alt="<?php the_title() ?>" loading="lazy">
                                     <?php else: ?>
-                                    <img class="repair-img lazylazyload" data-src="https://via.placeholder.com/468x364" alt="">
+                                    <img class="repair-img" src="https://via.placeholder.com/468x364" alt="" loading="lazy">
                                     <?php endif; ?>
                                 </a>
                                 <?php if ($price = get_field('price', get_the_ID())): ?>
@@ -301,9 +301,9 @@ $reviews = new WP_Query(array(
                             <div class="objects-slider-slide">
                                 <a href="<?php the_permalink() ?>" class="project-item">
                                     <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 500))): ?>
-                                    <img class="project-item__image lazyload" data-src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                                    <img class="project-item__image " src="<?php echo $image ?>" alt="<?php the_title() ?>" loading="lazy">
                                     <?php else: ?>
-                                    <img class="project-item__image lazyload" data-src="https://via.placeholder.com/468x500" alt="">
+                                    <img class="project-item__image" src="https://via.placeholder.com/468x500" alt="" loading="lazy">
                                     <?php endif; ?>
                                     <span class="project-item__info">
                                         <span class="project-item__title"><span><?php the_title() ?></span></span>
@@ -332,7 +332,7 @@ $reviews = new WP_Query(array(
             
             <section class="free-consultation container">
                 <div class="consultation-img">
-                    <img class="lazyload" data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/consultation-img.jpg" alt="">
+                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/consultation-img.jpg" alt="" loading="lazy">
                 </div>
                 <div class="free-consultation-desc">
                     <h3>Заказать <br> бесплатную консультацию</h3>
@@ -374,9 +374,9 @@ $reviews = new WP_Query(array(
                                 <?php else: ?>
                                 <div class="client-feedback-item__image">
                                     <?php if ($image = get_field('image', get_the_ID())): ?>
-                                    <img class="lazyload" data-src="<?php echo $image['sizes']['w560h308'] ?>" alt="<?php the_title() ?>">
+                                    <img src="<?php echo $image['sizes']['w560h308'] ?>" alt="<?php the_title() ?>" loading="lazy">
                                     <?php else: ?>
-                                    <img class="lazyload" data-src="https://via.placeholder.com/560x308" alt="">
+                                    <img src="https://via.placeholder.com/560x308" alt="" loading="lazy">
                                     <?php endif; ?>
                                 </div>
                                 <div class="client-feedback-item__info">

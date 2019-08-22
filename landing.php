@@ -175,10 +175,11 @@ $reviews = new WP_Query(array(
                     </div>
                 </div>
                 <img
-                    class="intro__image js-image-cover lazyload"
-                    <?php echo srcset($intro['image'], ['w468h364', 'w800h600'], true) ?>
-                    data-src="<?php echo $intro['image']['url'] ?>"
+                    class="intro__image js-image-cover"
+                    <?php echo srcset($intro['image'], ['w468h364', 'w800h600']) ?>
+                    src="<?php echo $intro['image']['url'] ?>"
                     alt="<?php echo esc_html($intro['image']['alt']) ?>"
+                    loading="lazy"
                 />
             </div>
             <div class="intro-advantages">
@@ -261,10 +262,11 @@ $reviews = new WP_Query(array(
             <section class="all-details">
                 <?php if ($image = get_field('details_image')): ?>
                 <img
-                    class="all-details__image js-image-cover lazylazyload"
-                    <?php echo srcset($image, ['w468h364', 'w800h600'], true) ?>
-                    data-src="<?php echo $image['url'] ?>"
+                    class="all-details__image js-image-cover"
+                    <?php echo srcset($image, ['w468h364', 'w800h600']) ?>
+                    src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"
+                    loading="lazy"
                 />
                 <?php endif; ?>
                 <div class="container">
@@ -346,10 +348,11 @@ $reviews = new WP_Query(array(
             <section class="about-company">
                 <?php if ($image = get_field('about_image')): ?>
                 <img
-                    class="about-company__image js-image-cover lazyload"
-                    <?php echo srcset($image, ['w468h364', 'w800h600'], true) ?>
-                    data-src="<?php echo $image['url'] ?>"
+                    class="about-company__image js-image-cover"
+                    <?php echo srcset($image, ['w468h364', 'w800h600']) ?>
+                    src="<?php echo $image['url'] ?>"
                     alt="<?php echo $image['alt'] ?>"
+                    loading="lazy"
                 />
                 <?php endif; ?>
                 <div class="container">

@@ -1,7 +1,7 @@
 import MicroModal  from 'micromodal'
 import rangeSlider  from 'rangeslider-pure'
 import svg4everybody from 'svg4everybody'
-import LazyLoad from 'vanilla-lazyload'
+// import LazyLoad from 'vanilla-lazyload'
 import forEach from 'lodash/forEach'
 import throttle from 'lodash/throttle'
 import { tns } from 'tiny-slider/src/tiny-slider.module.js'
@@ -47,14 +47,14 @@ forEach(document.querySelectorAll('.js-header-callback'), el => {
   })
 })
 
-var lazyLoadInstance = new LazyLoad({
-  elements_selector: '.lazyload'
-})
+// var lazyLoadInstance = new LazyLoad({
+//   elements_selector: '.lazyload'
+// })
 
-var lazylazyLoadInstance = new LazyLoad({
-  elements_selector: '.lazylazyload',
-  threshold: 50
-})
+// var lazylazyLoadInstance = new LazyLoad({
+//   elements_selector: '.lazylazyload',
+//   threshold: 50
+// })
 
 svg4everybody()
 

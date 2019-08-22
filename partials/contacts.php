@@ -49,5 +49,5 @@
             </div>
         </div>
     </div>
-    <img class="section-contacts__bg lazyload" data-src="<?php echo get_bloginfo('template_url') ?>/dist/img/map-bg.jpg" />
+    <img class="section-contacts__bg" src="<?php echo get_bloginfo('template_url') ?>/dist/img/map-bg.jpg" loading="lazy" />
 </section>

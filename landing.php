@@ -189,7 +189,7 @@ $reviews = new WP_Query(array(
                         <div class="intro-advantages__cell">
                             <div class="intro-advantage">
                                 <div class="intro-advantage__image">
-                                    <img src="<?php echo $advantage['image']['url'] ?>" alt="">
+                                    <img src="<?php echo $advantage['image']['url'] ?>" alt="" loading="lazy">
                                 </div>
                                 <div class="intro-advantage__title">
                                     <?php echo $advantage['title'] ?>

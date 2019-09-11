@@ -207,7 +207,7 @@ $reviews = new WP_Query(array(
                 <div class="site-desc">
                     <div class="site-desc__title"><?php the_title(); ?></div>
                     <hr class="section-hr">
-                    <?php the_content(); ?>
+                      <div class="content"><?php the_content(); ?></div>
                 </div>
                 <?php endwhile; endif; ?>
             </section>
@@ -232,7 +232,7 @@ $reviews = new WP_Query(array(
                                     <p>
                                         <?php echo $price['prefix'] ?>
                                         <span><?php echo $price['amount'] ?></span>
-                                        <?php echo $price['unit'] ?>    
+                                        <?php echo $price['unit'] ?>
                                     </p>
                                 </div>
                                 <?php endif; ?>
@@ -289,7 +289,7 @@ $reviews = new WP_Query(array(
             <section class="completed-objects">
                 <div class="container">
                     <h3 class="completed-objects__title">Выполненные объекты</h3>
-                    
+
                     <hr class="section-hr">
 
                     <div class="objects-slider js-objects-slider">
@@ -322,7 +322,7 @@ $reviews = new WP_Query(array(
                             <?php endwhile; ?>
                         </div>
                     </div>
-                    
+
                     <div class="completed-objects__more">
                         <a href="<?php echo get_category_link(3) ?>" class="btn-arrow">Больше работ</a>
                     </div>
@@ -331,7 +331,7 @@ $reviews = new WP_Query(array(
             <?php endif; wp_reset_query(); ?>
 
             <?php get_template_part('partials/scheme') ?>
-            
+
             <section class="free-consultation container">
                 <div class="consultation-img">
                     <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/consultation-img.jpg" alt="" loading="lazy">
@@ -344,7 +344,7 @@ $reviews = new WP_Query(array(
                     <a class="more-btn" data-micromodal-trigger="callback"><p>Узнать больше</p><span></span></a>
                 </div>
             </section>
-            
+
             <section class="about-company">
                 <?php if ($image = get_field('about_image')): ?>
                 <img

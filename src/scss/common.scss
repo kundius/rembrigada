@@ -533,7 +533,6 @@ img {
 
 .content {
     position: relative;
-    padding-right: 98px;
     color: #000000;
     font-size: 18px;
     line-height: 1.45;
@@ -735,7 +734,7 @@ img {
         font-weight: 700;
         line-height: 1.2;
         position: absolute;
-        left: 100%;
+        left: calc(100% + 20px);
         width: 200px;
         padding: 30px 25px;
         @media (max-width: $breakpoint-small-max) {
@@ -760,7 +759,7 @@ img {
         border: 2px solid #e5e5e5;
         background-color: #f9f9f9;
         position: absolute;
-        left: 100%;
+        left: calc(100% + 20px);
         width: 200px;
         @media (max-width: $breakpoint-small-max) {
             width: auto;

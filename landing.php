@@ -182,6 +182,7 @@ $reviews = new WP_Query(array(
                     loading="lazy"
                 />
             </div>
+
             <div class="intro-advantages">
                 <div class="container">
                     <div class="intro-advantages__list">
@@ -203,13 +204,15 @@ $reviews = new WP_Query(array(
             <?php endif; ?>
 
             <section class="site-desc-container" id="content">
-                <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
-                <div class="site-desc">
-                    <div class="site-desc__title"><?php the_title(); ?></div>
-                    <hr class="section-hr">
-                      <div class="content"><?php the_content(); ?></div>
+                <div class="container container_alt">
+                    <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+                    <div class="site-desc">
+                        <div class="site-desc__title"><?php the_title(); ?></div>
+                        <hr class="section-hr">
+                          <div class="content"><?php the_content(); ?></div>
+                    </div>
+                    <?php endwhile; endif; ?>
                 </div>
-                <?php endwhile; endif; ?>
             </section>
 
             <?php if ($services->have_posts()): ?>

@@ -25,16 +25,16 @@
             </section>
 
             <div class="bg-category-name">Всё о ремонте</div>
-        <!-- <section class="vertical-social container">
-            <a href="#" class="vk"></a>
-            <a href="#" class="fb"></a>
-            <a href="#" class="telegram"></a>
-            <a href="#" class="ok"></a>
-            <a href="#" class="pinterest"></a>
-            <a href="#" class="twitter"></a>
-        </section> -->
+            <!-- <section class="vertical-social container">
+                <a href="#" class="vk"></a>
+                <a href="#" class="fb"></a>
+                <a href="#" class="telegram"></a>
+                <a href="#" class="ok"></a>
+                <a href="#" class="pinterest"></a>
+                <a href="#" class="twitter"></a>
+            </section> -->
             <section class="news-details">
-                <div class="container container_tiny">
+                <div class="container container_alt">
                     <div class="type-news-date-author-comments-num">
                         <div class="type-news">
                             <?php icon('category', .75) ?>

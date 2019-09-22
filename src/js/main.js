@@ -1,4 +1,3 @@
-import MicroModal  from 'micromodal'
 import rangeSlider  from 'rangeslider-pure'
 import svg4everybody from 'svg4everybody'
 // import LazyLoad from 'vanilla-lazyload'
@@ -7,6 +6,8 @@ import throttle from 'lodash/throttle'
 import { tns } from 'tiny-slider/src/tiny-slider.module.js'
 import AWN from 'awesome-notifications/dist/index.js'
 import 'awesome-notifications/dist/style.css'
+import 'basiclightbox/dist/basicLightbox.min.css'
+import * as basicLightbox from 'basiclightbox'
 
 const formatMoney = (num, thousand = ' ') => {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + thousand)
@@ -26,31 +27,25 @@ let notifier = new AWN({
   }
 })
 
-MicroModal.init({
-  disableScroll: false,
-  awaitCloseAnimation: true,
-  onShow: modal => {
-    forEach(document.querySelectorAll('.modal.is-open'), el => {
-        console.log(el.id, modal.id)
-      if (el.id !== modal.id) {
-        MicroModal.close(el.id)
-      }
-    })
-  }
-})
-
 forEach(document.querySelectorAll('a[href="#callback"]'), el => {
   el.addEventListener('click', (e) => {
     e.preventDefault()
-    MicroModal.show('callback')
+    basicLightbox.create(document.querySelector('#callback')).show()
+  })
+})
+
+forEach(document.querySelectorAll('[data-basiclightbox]'), el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault()
+    basicLightbox.create(document.querySelector(el.dataset.basiclightbox)).show()
   })
 })
 
 forEach(document.querySelectorAll('.js-header-callback'), el => {
   el.addEventListener('click', (e) => {
     e.preventDefault()
-    if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
-      e.stopPropagation()
+    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
+        basicLightbox.create(document.querySelector('#callback')).show()
     }
   })
 })

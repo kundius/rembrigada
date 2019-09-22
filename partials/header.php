@@ -11,7 +11,7 @@
 
         <nav class="navigation">
             <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" alt="<?php echo get_bloginfo('description') ?>"></a>
-            <button class="navigation__callback" data-micromodal-trigger="callback">
+            <button class="navigation__callback" data-basiclightbox="#callback">
                 <?php icon('phone') ?>
             </button>
 
@@ -29,7 +29,7 @@
 
         <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>" class="header-callback">
             <span class="header-callback__phone"><?php the_field('phone', 'options') ?></span>
-            <span class="header-callback__button js-header-callback" data-micromodal-trigger="callback">
+            <span class="header-callback__button js-header-callback">
                 <?php icon('phone') ?>
                 <span>Заказать обратный звонок</span>
             </span>

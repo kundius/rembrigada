@@ -54,7 +54,9 @@ forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
     console.log(document.getElementById(el.dataset.current))
     console.log(document.getElementById(el.dataset.target))
     MicroModal.close()
-    MicroModal.show(el.dataset.target)
+    setTimeout(() => {
+        MicroModal.show(el.dataset.target)
+    }, 1000)
   })
 })
 

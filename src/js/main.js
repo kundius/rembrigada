@@ -27,17 +27,25 @@ let notifier = new AWN({
   }
 })
 
+const showModal = target => {
+  if (!target) return false
+  if (!target.basicLightbox) {
+    target.basicLightbox = basicLightbox.create(target)
+  }
+  target.basicLightbox.show()
+}
+
 forEach(document.querySelectorAll('a[href="#callback"]'), el => {
   el.addEventListener('click', (e) => {
     e.preventDefault()
-    basicLightbox.create(document.querySelector('#callback')).show()
+    showModal(document.querySelector('#callback'))
   })
 })
 
 forEach(document.querySelectorAll('[data-basiclightbox]'), el => {
   el.addEventListener('click', (e) => {
     e.preventDefault()
-    basicLightbox.create(document.querySelector(el.dataset.basiclightbox)).show()
+    showModal(document.querySelector(el.dataset.basiclightbox))
   })
 })
 
@@ -45,7 +53,7 @@ forEach(document.querySelectorAll('.js-header-callback'), el => {
   el.addEventListener('click', (e) => {
     e.preventDefault()
     if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
-        basicLightbox.create(document.querySelector('#callback')).show()
+      showModal(document.querySelector('#callback'))
     }
   })
 })

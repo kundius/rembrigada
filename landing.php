@@ -21,7 +21,7 @@ $projects = new WP_Query(array(
     'posts_per_page' => 12,
 	'tax_query' => [[
         'taxonomy' => 'project_category',
-        'terms'    => [3]
+        'terms'    => [4]
     ]]
 ));
 $reviews = new WP_Query(array(
@@ -207,7 +207,7 @@ $reviews = new WP_Query(array(
                 <div class="container container_alt">
                     <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
                     <div class="site-desc">
-                        <div class="site-desc__title"><?php the_title(); ?></div>
+                        <h2 class="site-desc__title"><?php the_title(); ?></h2>
                         <hr class="section-hr">
                           <div class="content"><?php the_content(); ?></div>
                     </div>

@@ -56,9 +56,9 @@ forEach(document.querySelectorAll('[data-basiclightbox]'), el => {
 forEach(document.querySelectorAll('.js-header-callback'), el => {
   el.addEventListener('click', (e) => {
     e.preventDefault()
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
+    // if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
       showModal(document.querySelector('#callback'))
-    }
+    // }
   })
 })
 

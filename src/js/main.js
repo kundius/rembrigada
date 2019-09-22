@@ -38,14 +38,14 @@ forEach(document.querySelectorAll('a[href="#callback"]'), el => {
   })
 })
 
-forEach(document.querySelectorAll('.js-header-callback'), el => {
-  el.addEventListener('click', (e) => {
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
-      e.preventDefault()
-      MicroModal.show('callback')
-    }
-  })
-})
+// forEach(document.querySelectorAll('.js-header-callback'), el => {
+//   el.addEventListener('click', (e) => {
+//     if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
+//       e.preventDefault()
+//       MicroModal.show('callback')
+//     }
+//   })
+// })
 
 forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
     

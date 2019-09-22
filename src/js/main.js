@@ -50,6 +50,8 @@ forEach(document.querySelectorAll('.js-header-callback'), el => {
 forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
   el.addEventListener('click', (e) => {
     e.preventDefault()
+    console.log(el.dataset)
+    console.log(document.getElementById(el.dataset.current))
     MicroModal.close(el.dataset.current)
     MicroModal.show(el.dataset.target)
   })

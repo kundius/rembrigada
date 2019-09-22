@@ -91,7 +91,7 @@ function get_next_id($list, $id) {
                                             <div class="project-gallery-item">
                                                 <div class="project-gallery-item__inner">
                                                     <img src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
-                                                    <button data-micromodal-trigger="project-<?php echo $item['id'] ?>" class="project-gallery-item__view">
+                                                    <button data-target="project-<?php echo $item['id'] ?>" class="project-gallery-item__view js-project-modal-nav">
                                                         <?php icon('loupe') ?>
                                                     </button>
                                                 </div>

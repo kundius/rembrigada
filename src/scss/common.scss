@@ -22,6 +22,10 @@ img {
        object-fit: contain;
 }
 
+.hidden {
+    display: none;
+}
+
 .hidden\@s {
     @media (max-width: $breakpoint-xsmall-max) {
         display: none !important;

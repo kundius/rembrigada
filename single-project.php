@@ -91,7 +91,7 @@ function get_next_id($list, $id) {
                                             <div class="project-gallery-item">
                                                 <div class="project-gallery-item__inner">
                                                     <img src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
-                                                    <button data-micromodal-trigger="project-<?php echo $item['id'] ?>" class="project-gallery-item__view js-project-modal-nav">
+                                                    <button data-basiclightbox="#project-<?php echo $item['id'] ?>" class="project-gallery-item__view js-project-modal-nav">
                                                         <?php icon('loupe') ?>
                                                     </button>
                                                 </div>
@@ -109,38 +109,36 @@ function get_next_id($list, $id) {
                                         </div>
                                     </div>
                                     <?php foreach ($gallery as $item): ?>
-                                    <div class="modal" id="project-<?php echo $item['id'] ?>" aria-hidden="true">
-                                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                            <div class="modal__container modal__container_large" role="dialog" aria-modal="true">
-                                                <div class="project-modal-layout">
-                                                    <div class="project-modal-layout__left">
-                                                        <div class="project-modal-details__title">
-                                                            <?php the_title() ?>
-                                                        </div>
-                                                        <?php get_template_part('partials/project/details') ?>
+                                    <div class="hidden" id="project-<?php echo $item['id'] ?>">
+                                        <div class="modal modal_large">
+                                            <button class="modal__close" data-basiclightbox-close></button>
+                                            <div class="project-modal-layout">
+                                                <div class="project-modal-layout__left">
+                                                    <div class="project-modal-details__title">
+                                                        <?php the_title() ?>
                                                     </div>
-                                                    <div class="project-modal-layout__middle">
-                                                        <div class="project-modal__image">
-                                                            <img src="<?php echo $item['url'] ?>" alt="">
+                                                    <?php get_template_part('partials/project/details') ?>
+                                                </div>
+                                                <div class="project-modal-layout__middle">
+                                                    <div class="project-modal__image">
+                                                        <img src="<?php echo $item['url'] ?>" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="project-modal-layout__right">
+                                                    <div class="project-modal__nav">
+                                                        <div class="slide-nav">
+                                                            <button class="slide-nav__button slide-nav__button_prev js-project-modal-nav" data-basiclightbox="#project-<?php echo get_prev_id($gallery, $item['id']) ?>"></button>
+                                                            <button class="slide-nav__button slide-nav__button_next js-project-modal-nav" data-basiclightbox="#project-<?php echo get_next_id($gallery, $item['id']) ?>"></button>
                                                         </div>
                                                     </div>
-                                                    <div class="project-modal-layout__right">
-                                                        <div class="project-modal__nav">
-                                                            <div class="slide-nav">
-                                                                <button class="slide-nav__button slide-nav__button_prev js-project-modal-nav" data-micromodal-trigger="project-<?php echo get_prev_id($gallery, $item['id']) ?>"></button>
-                                                                <button class="slide-nav__button slide-nav__button_next js-project-modal-nav" data-micromodal-trigger="project-<?php echo get_next_id($gallery, $item['id']) ?>"></button>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div class="project-modal__title"><?php echo $item['title'] ?></div>
-                                                            <?php if ($item['description']): ?>
-                                                            <div class="project-modal__desc"><?php echo $item['description'] ?></div>
-                                                            <?php endif; ?>
-                                                        </div>
+                                                    <div>
+                                                        <div class="project-modal__title"><?php echo $item['title'] ?></div>
+                                                        <?php if ($item['description']): ?>
+                                                        <div class="project-modal__desc"><?php echo $item['description'] ?></div>
+                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
                                         </div>
                                     </div>
                                     <?php endforeach; ?>

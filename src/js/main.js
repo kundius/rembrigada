@@ -67,7 +67,10 @@ forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
 svg4everybody()
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.preloader').classList.add('preloader_hide')
+  const preloader = document.querySelector('.preloader')
+  if (preloader) {
+    document.querySelector('.preloader').classList.add('preloader_hide')
+  }
 })
 
 forEach(document.querySelectorAll('.wp-block-table'), function(el) {

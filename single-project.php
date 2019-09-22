@@ -91,7 +91,7 @@ function get_next_id($list, $id) {
                                             <div class="project-gallery-item">
                                                 <div class="project-gallery-item__inner">
                                                     <img src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
-                                                    <button data-target="project-<?php echo $item['id'] ?>" class="project-gallery-item__view js-project-modal-nav">
+                                                    <button data-micromodal-trigger="project-<?php echo $item['id'] ?>" class="project-gallery-item__view js-project-modal-nav">
                                                         <?php icon('loupe') ?>
                                                     </button>
                                                 </div>
@@ -127,8 +127,8 @@ function get_next_id($list, $id) {
                                                     <div class="project-modal-layout__right">
                                                         <div class="project-modal__nav">
                                                             <div class="slide-nav">
-                                                                <button class="slide-nav__button slide-nav__button_prev js-project-modal-nav" data-target="project-<?php echo get_prev_id($gallery, $item['id']) ?>"></button>
-                                                                <button class="slide-nav__button slide-nav__button_next js-project-modal-nav" data-target="project-<?php echo get_next_id($gallery, $item['id']) ?>"></button>
+                                                                <button class="slide-nav__button slide-nav__button_prev js-project-modal-nav" data-micromodal-trigger="project-<?php echo get_prev_id($gallery, $item['id']) ?>"></button>
+                                                                <button class="slide-nav__button slide-nav__button_next js-project-modal-nav" data-micromodal-trigger="project-<?php echo get_next_id($gallery, $item['id']) ?>"></button>
                                                             </div>
                                                         </div>
                                                         <div>

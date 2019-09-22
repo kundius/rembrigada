@@ -50,9 +50,10 @@ forEach(document.querySelectorAll('.js-header-callback'), el => {
 forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
   el.addEventListener('click', (e) => {
     e.preventDefault()
-    if (document.querySelectorAll('.modal.is-open').length > 0) {
-      MicroModal.close()
-    }
+//     if (document.querySelectorAll('.modal.is-open').length > 0) {
+//       MicroModal.close()
+//     }
+    alert(el.dataset.target)
     MicroModal.show(el.dataset.target)
 //     console.log(document.getElementById(el.dataset.current))
 //     console.log(document.getElementById(el.dataset.target))

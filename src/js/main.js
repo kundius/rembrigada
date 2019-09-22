@@ -31,6 +31,7 @@ MicroModal.init({
   awaitCloseAnimation: true,
   onShow: modal => {
     forEach(document.querySelectorAll('.modal.is-open'), el => {
+        console.log(el.id, modal.id)
       if (el.id !== modal.id) {
         MicroModal.close(el.id)
       }

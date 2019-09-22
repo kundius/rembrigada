@@ -110,7 +110,7 @@ function get_next_id($list, $id) {
                                     </div>
                                     <?php foreach ($gallery as $item): ?>
                                     <div class="modal" id="project-<?php echo $item['id'] ?>" aria-hidden="true">
-                                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                                        <div class="modal__overlay" tabindex="-1">
                                             <div class="modal__container modal__container_large" role="dialog" aria-modal="true">
                                                 <div class="project-modal-layout">
                                                     <div class="project-modal-layout__left">

@@ -830,7 +830,7 @@ img {
         }
     }
 
-    ul {
+    ul:not(.wp-block-gallery) {
         padding: 0;
         margin: 30px 0;
         line-height: 1.111;

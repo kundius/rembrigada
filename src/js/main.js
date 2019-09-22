@@ -27,6 +27,8 @@ let notifier = new AWN({
   }
 })
 
+const modals = []
+
 const showModal = target => {
   if (!target) return false
   if (!target.basicLightbox) {
@@ -35,7 +37,9 @@ const showModal = target => {
     if (close) {
       close.addEventListener('click', target.basicLightbox.close)
     }
+    modals.push(target.basicLightbox)
   }
+  forEach(modals, modal => modal.close())
   target.basicLightbox.show()
 }
 

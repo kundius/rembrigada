@@ -36,9 +36,9 @@
     </div>
 </footer>
 
-<div id="callback">
+<div id="callback" style="display: none">
     <div class="modal modal_callback">
-        <button class="modal__close"></button>
+        <button class="modal__close" data-basiclightbox-close></button>
         <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="callback js-form">
             <div class="callback__form">
                 <div class="callback__grid">

@@ -30,7 +30,11 @@ let notifier = new AWN({
 const showModal = target => {
   if (!target) return false
   if (!target.basicLightbox) {
+    const close = target.querySelector('[data-basiclightbox-close]')
     target.basicLightbox = basicLightbox.create(target)
+    if (close) {
+      close.addEventListener('click', target.basicLightbox.close)
+    }
   }
   target.basicLightbox.show()
 }

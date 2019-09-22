@@ -51,6 +51,7 @@ forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
   let active = null
   el.addEventListener('click', (e) => {
     e.preventDefault()
+    console.log(document.querySelectorAll('.modal.is-open'))
     MicroModal.show(el.dataset.target)
 //     console.log(document.getElementById(el.dataset.current))
 //     console.log(document.getElementById(el.dataset.target))

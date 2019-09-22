@@ -110,7 +110,7 @@ function get_next_id($list, $id) {
                                     </div>
                                     <?php foreach ($gallery as $item): ?>
                                     <div class="modal" id="project-<?php echo $item['id'] ?>" aria-hidden="true">
-                                        <div class="modal__overlay" tabindex="-1">
+                                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
                                             <div class="modal__container modal__container_large" role="dialog" aria-modal="true">
                                                 <div class="project-modal-layout">
                                                     <div class="project-modal-layout__left">
@@ -127,8 +127,8 @@ function get_next_id($list, $id) {
                                                     <div class="project-modal-layout__right">
                                                         <div class="project-modal__nav">
                                                             <div class="slide-nav">
-                                                                <button class="slide-nav__button slide-nav__button_prev" data-micromodal-trigger="project-<?php echo get_prev_id($gallery, $item['id']) ?>"></button>
-                                                                <button class="slide-nav__button slide-nav__button_next" data-micromodal-trigger="project-<?php echo get_next_id($gallery, $item['id']) ?>"></button>
+                                                                <div class="slide-nav__button slide-nav__button_prev" data-micromodal-trigger="project-<?php echo get_prev_id($gallery, $item['id']) ?>" data-micromodal-close></div>
+                                                                <div class="slide-nav__button slide-nav__button_next" data-micromodal-trigger="project-<?php echo get_next_id($gallery, $item['id']) ?>" data-micromodal-close></div>
                                                             </div>
                                                         </div>
                                                         <div>

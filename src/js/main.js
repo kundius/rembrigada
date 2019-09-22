@@ -28,7 +28,14 @@ let notifier = new AWN({
 
 MicroModal.init({
   disableScroll: false,
-  awaitCloseAnimation: true
+  awaitCloseAnimation: true,
+  onShow: modal => {
+    forEach(document.querySelectorAll('.modal.is-open'), el => {
+      if (el.id !== modal.id) {
+        MicroModal.close(el.id)
+      }
+    })
+  }
 })
 
 forEach(document.querySelectorAll('a[href="#callback"]'), el => {
@@ -40,23 +47,23 @@ forEach(document.querySelectorAll('a[href="#callback"]'), el => {
 
 forEach(document.querySelectorAll('.js-header-callback'), el => {
   el.addEventListener('click', (e) => {
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
-      e.preventDefault()
+    e.preventDefault()
+    if ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
       e.stopPropagation()
     }
   })
 })
 
-forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
-  el.addEventListener('click', (e) => {
-    e.preventDefault()
-    if (document.querySelectorAll('.modal.is-open').length > 0) {
-      MicroModal.close()
-    }
+// forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
+//   el.addEventListener('click', (e) => {
+//     e.preventDefault()
+//     if (document.querySelectorAll('.modal.is-open').length > 0) {
+//       MicroModal.close()
+//     }
 //     alert(el.dataset.target)
 //     MicroModal.show(el.dataset.target)
-  })
-})
+//   })
+// })
 
 // var lazyLoadInstance = new LazyLoad({
 //   elements_selector: '.lazyload'

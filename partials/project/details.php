@@ -46,7 +46,7 @@
     </div>
     <?php if ($review = get_field('review')): ?>
     <div class="project-details__more">
-        <button class="btn-more" data-micromodal-trigger="review-<?php echo $review->ID ?>">Смотреть отзыв</button>
+        <button class="btn-more" data-basiclightbox="#review-<?php echo $review->ID ?>">Смотреть отзыв</button>
     </div>
     <?php endif; ?>
 </div>

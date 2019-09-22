@@ -46,7 +46,7 @@ $reviews = new WP_Query(array(
                                 <div class="reviews-item__image">
                                     <?php if ($image = get_field('image', get_the_ID())): ?>
                                     <img src="<?php echo $image['sizes']['w560h308'] ?>" alt="<?php the_title() ?>">
-                                    <button data-micromodal-trigger="review-image-<?php echo get_the_ID() ?>" class="reviews-item__image-view">
+                                    <button data-basiclightbox="#review-image-<?php echo get_the_ID() ?>" class="reviews-item__image-view">
                                         <?php icon('loupe') ?>
                                     </button>
                                     <?php else: ?>
@@ -62,7 +62,7 @@ $reviews = new WP_Query(array(
                                     <div class="reviews-item__icon"><?php icon('quotes') ?></div>
                                     <?php if (has_excerpt()): ?>
                                     <div class="reviews-item__desc"><?php the_excerpt() ?></div>
-                                    <button data-micromodal-trigger="review-<?php echo get_the_ID() ?>" class="reviews-item__more">читать отзыв полностью</button>
+                                    <button data-basiclightbox="#review-<?php echo get_the_ID() ?>" class="reviews-item__more">читать отзыв полностью</button>
                                     <?php else: ?>
                                     <div class="reviews-item__desc"><?php the_content() ?></div>
                                     <?php endif; ?>
@@ -70,29 +70,25 @@ $reviews = new WP_Query(array(
                             </div>
                         </div>
                     </div>
-                    <div class="modal modal_review" id="review-<?php echo get_the_ID() ?>" aria-hidden="true">
-                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                            <div class="modal__container" role="dialog" aria-modal="true">
-                                <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
-                                <div class="reviews-item__title"><?php the_title() ?></div>
-                                <div class="reviews-item__address"><?php the_field('address') ?></div>
-                                <div class="reviews-item__info">
-                                    <div class="reviews-item__icon"><?php icon('quotes') ?></div>
-                                    <div class="reviews-item__desc">
-                                        <?php the_content() ?>
-                                    </div>
+                    <div class="hidden" id="review-<?php echo get_the_ID() ?>">
+                        <div class="modal modal_review">
+                            <button class="modal__close" data-basiclightbox-close></button>
+                            <div class="reviews-item__title"><?php the_title() ?></div>
+                            <div class="reviews-item__address"><?php the_field('address') ?></div>
+                            <div class="reviews-item__info">
+                                <div class="reviews-item__icon"><?php icon('quotes') ?></div>
+                                <div class="reviews-item__desc">
+                                    <?php the_content() ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <?php if ($image = get_field('image', get_the_ID())): ?>
-                    <div class="modal" id="review-image-<?php echo get_the_ID() ?>" aria-hidden="true">
-                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                            <div class="modal__container" role="dialog" aria-modal="true" style="text-align: center">
-                                <img src="<?php echo $image['url'] ?>" alt="<?php the_title() ?>">
-                            </div>
-                            <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
+                    <div class="hidden" id="review-image-<?php echo get_the_ID() ?>">
+                        <div class="modal" style="text-align: center">
+                            <img src="<?php echo $image['url'] ?>" alt="<?php the_title() ?>">
                         </div>
+                        <button class="modal__close" data-basiclightbox-close></button>
                     </div>
                     <?php endif; ?>
                     <?php endwhile; ?>

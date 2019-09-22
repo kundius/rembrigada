@@ -46,6 +46,7 @@ const showModal = target => {
       modal.close()
     }
   })
+
   target.basicLightbox.show()
 }
 

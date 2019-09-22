@@ -47,6 +47,14 @@ forEach(document.querySelectorAll('.js-header-callback'), el => {
   })
 })
 
+forEach(document.querySelectorAll('.js-project-modal-nav'), el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault()
+    MicroModal.close(el.dataset.current)
+    MicroModal.show(el.dataset.target)
+  })
+})
+
 // var lazyLoadInstance = new LazyLoad({
 //   elements_selector: '.lazyload'
 // })

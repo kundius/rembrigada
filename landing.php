@@ -390,18 +390,16 @@ $reviews = new WP_Query(array(
                                     <div class="client-feedback-item__address"><?php the_field('address') ?></div>
                                     <?php if (has_excerpt()): ?>
                                     <div class="client-feedback-item__desc"><?php the_excerpt() ?></div>
-                                    <button data-micromodal-trigger="review-<?php echo get_the_ID() ?>" class="client-feedback-item__more">читать отзыв полностью</button>
-                                    <div class="modal modal_review" id="review-<?php echo get_the_ID() ?>" aria-hidden="true">
-                                        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                            <div class="modal__container" role="dialog" aria-modal="true">
-                                                <button class="modal__close" aria-label="Закрыть модальное окно" data-micromodal-close></button>
-                                                <div class="reviews-item__title"><?php the_title() ?></div>
-                                                <div class="reviews-item__address"><?php the_field('address') ?></div>
-                                                <div class="reviews-item__info">
-                                                    <div class="reviews-item__icon"><?php icon('quotes') ?></div>
-                                                    <div class="reviews-item__desc">
-                                                        <?php the_content() ?>
-                                                    </div>
+                                    <button data-basiclightbox="#review-<?php echo get_the_ID() ?>" class="client-feedback-item__more">читать отзыв полностью</button>
+                                    <div id="review-<?php echo get_the_ID() ?>" class="hidden">
+                                        <div class="modal modal_review">
+                                            <button class="modal__close" data-basiclightbox-close></button>
+                                            <div class="reviews-item__title"><?php the_title() ?></div>
+                                            <div class="reviews-item__address"><?php the_field('address') ?></div>
+                                            <div class="reviews-item__info">
+                                                <div class="reviews-item__icon"><?php icon('quotes') ?></div>
+                                                <div class="reviews-item__desc">
+                                                    <?php the_content() ?>
                                                 </div>
                                             </div>
                                         </div>

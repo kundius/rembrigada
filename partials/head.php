@@ -2,8 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <?php seo() ?>
-<meta name="yandex-verification" content="9c85ccaf464b2a6a" />
-<meta name="yandex-verification" content="418bf1cb2f3eeb38" />
+<meta name="yandex-verification" content="d2f5c2286aca6f1b" />
 <meta name="cmsmagazine" content="ef9002bde22164e1bb8ca1b1793cf47b" />
 <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ?>" type="text/css" />
 <!--[if lt IE 9]>

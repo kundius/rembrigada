@@ -120,3 +120,229 @@
 		width: 100%;
     }
 }
+
+.works-cats-section {
+	background: url('../img/bg-projects-cats-section.jpg') no-repeat 50% 50%;
+	background-size: cover;
+	padding-top: 54px;
+	padding-bottom: 54px;
+}
+
+.works-cats-section__title {
+	color: #ffffff;
+	font-size: 60px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: "Next Art", sans-serif;
+	letter-spacing: 1.56px;
+	margin: 0 0 50px;
+	text-align: center;
+	span {
+		background-color: rgba(28, 30, 33, 0.5);
+		padding: 0 5px;
+	}
+	@media (max-width: $breakpoint-small-max) {
+			font-size: 28px;
+			letter-spacing: 0.47px;
+	}
+	@media (max-width: $breakpoint-xsmall-max) {
+			font-size: 32px;
+			letter-spacing: 3.2px;
+	}
+}
+
+.works-cats-section__items {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.works-cats-section__item {
+	color: #ffffff;
+	font-family: "Next Art", sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.96px;
+	text-decoration: none;
+	line-height: 42px;
+	padding: 0 5px;
+	background: #ed3947;
+	margin: 0 33px;
+}
+
+.works-section {
+
+}
+
+.works-section {
+
+}
+
+.works-item {
+
+}
+
+.works-item__title {
+
+}
+
+.works-item__grid {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -42px;
+}
+
+.works-item__cell {
+	padding-left: 42px;
+	width: 50%;
+}
+
+.works-item-object {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	border-top: 1px solid #dddddd;
+	position: relative;
+	padding-left: 46px;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 25px;
+		height: 25px;
+		background: url('../img/icon-apartments.svg') no-repeat 50% 50%;
+	}
+}
+
+.works-item-object__label {
+	color: #4d4d4d;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.works-item-object__value {
+	color: #2a2c2f;
+	font-family: "Next Art", sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: -0.4px;
+	margin-left: 28px;
+}
+
+.works-item-info {
+	padding-left: 46px;
+	border-top: 1px solid #dddddd;
+	border-bottom: 1px solid #dddddd;
+	padding: 10px 0;
+}
+
+.works-item-info__title {
+	color: #323232;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.works-item-info__row {
+
+}
+
+.works-item-info__label {
+	color: #646464;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 0.4px;
+}
+
+.works-item-info__area {
+	background-color: #f2f2f2;
+	color: #636363;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1;
+	span {
+		font-size: 14px;
+	}
+}
+
+.works-item-info__value {
+	color: #646464;
+	font-size: 16px;
+	font-weight: 700;
+	letter-spacing: 0.4px;
+}
+
+.works-item-deadline {
+	position: relative;
+	padding-left: 46px;
+	border-bottom: 1px solid #dddddd;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 15px;
+		height: 16px;
+		background: url('../img/icon-calendar.svg') no-repeat 50% 50%;
+	}
+}
+
+.works-item-deadline__label {
+	color: #4d4d4d;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.works-item-deadline__value {
+	color: #2a2c2f;
+	font-family: "Next Art", sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.works-item-deadline__link {
+	color: #19468b;
+	font-family: "Next Art", sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.works-item-pricing {
+	background: #e8e8e8;
+}
+
+.works-item-pricing__title {
+	color: #202021;
+	font-family: "Next Art", sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.99px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.works-item-pricing__text {
+	line-height: 26px;
+	letter-spacing: 0.09px;
+	font-size: 16px;
+}
+
+.works-item-pricing__button {
+	color: #ffffff;
+	font-family: "Next Art", sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.98px;
+	line-height: 48px;
+	padding: 0 25px;
+}

@@ -3,7 +3,7 @@ $term = get_term_by('slug', get_query_var('project_category'), 'project_category
 $categories = get_categories([
     'taxonomy' => 'project_category',
     'hide_empty' => false,
-    'parent' => $term->term_id
+    'parent' => 3
 ]);
 ?>
 <!DOCTYPE html>
@@ -15,75 +15,100 @@ $categories = get_categories([
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
             
-            <div class="breadcrumbs breadcrumbs_absolute" typeof="BreadcrumbList" vocab="https://schema.org/">
+            <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
                 <div class="container">
                     <?php bcn_display() ?>
                 </div>
             </div>
-            
-            <section class="page-headline">
-                <div class="container">
-                    <h1 class="page-headline__title"><span><?php single_cat_title() ?></span></h1>
-                </div>
-            </section>
 
             <?php if (count($categories) > 0): ?>
-            <section class="projects-cats-section">
-                <div class="container container_tiny">
-                    <div class="projects-cats-section__text"><?php echo $term->description ?></div>
-                </div>
-                <div class="container container_alt">
-                    <div class="projects-cats-section__grid">
-                        <?php foreach ($categories as $category): ?>
-                        <div class="projects-cats-section__cell">
-                            <a href="<?php echo get_category_link($category->term_id) ?>" class="project-cat">
-                                <?php if ($image = get_field('image', 'project_category_' . $category->term_id)): ?>
-                                <img class="project-cat__image" src="<?php echo $image['sizes']['w800h600'] ?>" alt="">
-                                <?php else: ?>
-                                <img class="project-cat__image" src="https://via.placeholder.com/800x600" alt="">
-                                <?php endif; ?>
-                                <span class="project-cat__info">
-                                    <span class="project-cat__title"><span><?php echo $category->name ?></span></span>
-                                    <?php if ($category->description): ?>
-                                    <span class="project-cat__desc"><?php echo $category->description ?></span>
-                                    <?php endif; ?>
-                                    <span class="project-cat__more"><span>Подробнее</span></span>
-                                </span>
-                            </a>
-                        </div>
-                        <?php endforeach; ?>
-                    </div>
+            <section class="works-cats-section">
+                <h1 class="works-cats-section__title"><span><?php single_cat_title() ?></span></h1>
+                <div class="works-cats-section__items">
+                    <?php foreach ($categories as $category): ?>
+                    <a href="<?php echo get_category_link($category->term_id) ?>" class="works-cats-section__item">
+                        <?php echo $category->name ?>
+                    </a>
+                    <?php endforeach; ?>
                 </div>
             </section>
-            <?php elseif (have_posts()): ?>
-            <section class="projects-section">
-                <div class="container container_tiny">
-                    <div class="projects-section__text"><?php echo $term->description ?></div>
-                </div>
+            <?php endif; ?>
+
+            <?php if (have_posts()): ?>
+            <section class="works-section">
                 <div class="container container_alt">
-                    <div class="projects-section__grid">
-                        <?php while(have_posts()): the_post(); ?>
-                        <div class="projects-section__cell">
-                            <a href="<?php the_permalink() ?>" class="project-item">
-                                <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(800, 600))): ?>
-                                <img class="project-item__image" src="<?php echo $image ?>" alt="<?php the_title() ?>">
-                                <?php else: ?>
-                                <img class="project-item__image" src="https://via.placeholder.com/468x500" alt="">
+                    <?php while(have_posts()): the_post(); ?>
+                    <div class="works-item">
+                        <div class="works-item__title"><?php the_title() ?></div>
+                        <div class="works-item__grid">
+                            <div class="works-item__cell">
+
+                            </div>
+                            <div class="works-item__cell">
+                                <?php if ($address = get_field('address')): ?>
+                                <div class="works-item-object">
+                                    <div class="works-item-object__label">
+                                        Объект:
+                                    </div>
+                                    <div class="works-item-object__value">
+                                        <?php echo $address ?>
+                                    </div>
+                                </div>
                                 <?php endif; ?>
-                                <span class="project-item__info">
-                                    <span class="project-item__title"><span><?php the_title() ?></span></span>
-                                    <span class="project-item__hr"></span>
-                                    <?php if (has_excerpt()): ?>
-                                    <span class="project-item__desc">
-                                        <?php echo sanitize_text_field(get_the_excerpt()) ?>
-                                    </span>
+                                <div class="works-item-info">
+                                    <div class="works-item-info__title">
+                                        Особенности проекта:
+                                    </div>
+                                    <?php if ($area = get_field('area')): ?>
+                                    <div class="works-item-info__row">
+                                        <div class="works-item-info__label">
+                                            Площадь:
+                                        </div>
+                                        <div class="works-item-info__area">
+                                            <?php echo $area ?> <span>м<sup>2</sup></span>
+                                        </div>
+                                    </div>
                                     <?php endif; ?>
-                                    <span class="project-item__more"><span>Подробнее</span></span>
-                                </span>
-                            </a>
+                                    <?php if ($customer = get_field('customer')): ?>
+                                    <div class="works-item-info__row">
+                                        <div class="works-item-info__label">
+                                            Клиент:
+                                        </div>
+                                        <div class="works-item-info__value">
+                                            <?php echo $customer ?>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
+                                </div>
+                                <?php if ($time_works = get_field('time_works')): ?>
+                                <div class="works-item-deadline">
+                                    <div class="works-item-deadline__label">
+                                        Сроки:
+                                    </div>
+                                    <div class="works-item-deadline__value">
+                                        <?php echo $time_works ?>
+                                    </div>
+                                    <?php if ($review = get_field('review')): ?>
+                                        <a href="#" class="works-item-deadline__link" data-basiclightbox="#review-<?php echo $review->ID ?>">посмотреть отзыв</a>
+                                    <?php endif; ?>
+                                </div>
+                                <?php endif; ?>
+                                <div class="works-item-pricing">
+                                    <div class="works-item-pricing__title">Стоимость:</div>
+                                    <div class="works-item-pricing__text">
+                                        <?php if ($price_works = get_field('price_works')): ?>
+                                        <div>Ремонтные работы: <strong>200 000 руб.</strong></div>
+                                        <?php endif; ?>
+                                        <?php if ($price_material = get_field('price_material')): ?>
+                                        <div>Черновые материалы с доставкой: <strong>200 000 руб.</strong></div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <button class="works-item-pricing__button">Рассчитать стоимость своего ремонта</button>
+                                </div>
+                            </div>
                         </div>
-                        <?php endwhile; ?>
                     </div>
+                    <?php endwhile; ?>
                     <?php the_posts_pagination([
                         'prev_text' => 'Предыдущая',
                         'next_text' => 'Следующая'

@@ -375,19 +375,25 @@
 	}
 }
 
+.works-item-images_single {
+	.works-item-image {
+		width: 100%;
+	}
+}
+
 .works-item-image {
 	padding-top: 5px;
 	padding-left: 10px;
 	width: 25%;
 	float: left;
+	.works-item-image__inner {
+		padding-bottom: 66%;
+	}
 	&:nth-child(1) {
 		width: 75%;
 		.works-item-image__inner {
 			padding-bottom: 67.2%;
 		}
-	}
-	&.works-item-image_single {
-		width: 100%;
 	}
 }
 
@@ -401,7 +407,6 @@
 
 .works-item-image__inner {
 	width: 100%;
-	padding-bottom: 66%;
 	background-size: cover;
 	background-position: 50% 50%;
 }

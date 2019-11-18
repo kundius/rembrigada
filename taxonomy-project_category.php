@@ -46,7 +46,7 @@ $categories = get_categories([
                                 <div class="works-item-images">
                                     <?php foreach ($gallery as $item): ?>
                                     <div class="works-item-image">
-                                        <img class="works-item-image__file" src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
+                                        <div class="works-item-image__file" style="backgroud-image: url('<?php echo $item['sizes']['w800h480'] ?>')"></div>
                                         <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
                                     </div>
                                     <?php endforeach; ?>

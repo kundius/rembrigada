@@ -45,12 +45,12 @@ $categories = get_categories([
                                 <?php if ($gallery = get_field('gallery')): ?>
                                 <div class="works-item-images<?php if (count($gallery) == 1): ?> works-item-images_single<?php endif; ?>">
                                     <?php foreach (array_splice($gallery, 0, 8) as $item): ?>
-                                    <a href="<?php echo $item['url'] ?>" data-fslightbox class="works-item-image">
-                                        <span class="works-item-image__wrapper">
+                                    <div class="works-item-image">
+                                        <a href="<?php echo $item['url'] ?>" data-fslightbox class="works-item-image__wrapper">
                                             <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes']['w800h600'] ?>')"></span>
-                                        </span>
-                                        <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
-                                    </a>
+                                            <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
+                                        </a>
+                                    </div>
                                     <?php endforeach; ?>
                                 </div>
                                 <?php endif; ?>

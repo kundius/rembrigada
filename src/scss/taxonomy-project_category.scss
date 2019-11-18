@@ -551,6 +551,9 @@
 	&:hover {
 		outline: 2px solid #dcdcdc;
 	}
+	@media (max-width: $breakpoint-xsmall-max) {
+		padding: 2px;
+	}
 }
 
 .works-item-image__inner {

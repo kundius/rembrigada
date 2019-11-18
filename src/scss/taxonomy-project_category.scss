@@ -268,6 +268,7 @@
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 0.4px;
+	width: 118px;
 }
 
 .works-item-info__area {
@@ -276,6 +277,7 @@
 	font-size: 24px;
 	font-weight: 700;
 	line-height: 1;
+	padding: 0 5px;
 	span {
 		font-size: 14px;
 	}
@@ -385,7 +387,7 @@
 		height: 6px;
 		border-top: 2px solid #ffffff;
 		border-right: 2px solid #ffffff;
-		transform: rotate(-45deg);
+		transform: rotate(45deg);
 	}
 	&:hover {
 		background: #f9152e;

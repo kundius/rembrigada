@@ -477,7 +477,7 @@
 	background: #d52437;
 	text-decoration: none;
 	text-align: center;
-	&::after {
+	span::after {
 		content: '';
 		position: relative;
 		display: inline-block;

@@ -114,7 +114,7 @@ $categories = get_categories([
                                         <div>Черновые материалы с доставкой: <strong>200 000 руб.</strong></div>
                                         <?php endif; ?>
                                     </div>
-                                    <button class="works-item-pricing__button">Рассчитать стоимость своего ремонта</button>
+                                    <a href="#callback" class="works-item-pricing__button">Рассчитать стоимость своего ремонта</a>
                                 </div>
                             </div>
                         </div>

@@ -398,6 +398,16 @@
 	position: relative;
 	margin-top: -5px;
 	margin-left: -10px;
+	&::before {
+		content: '';
+		width: 262px;
+		height: 262px;
+		background-color: #c0c0c0;
+		opacity: 0.29;
+		position: absolute;
+		right: -25px;
+		bottom: -25px;
+	}
 	&::after {
 		content: '';
 		display: table;
@@ -415,6 +425,7 @@
 	padding-left: 10px;
 	width: 25%;
 	float: left;
+	position: relative;
 	.works-item-image__inner {
 		padding-bottom: 66%;
 	}

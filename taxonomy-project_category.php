@@ -46,7 +46,9 @@ $categories = get_categories([
                                 <div class="works-item-images">
                                     <?php foreach (array_splice($gallery, 0, 8) as $item): ?>
                                     <div class="works-item-image<?php if (count($gallery) == 1): ?> works-item-image_single<?php endif; ?>">
-                                        <div class="works-item-image__file" style="background-image: url('<?php echo $item['sizes']['w800h600'] ?>')"></div>
+                                        <div class="works-item-image__wrapper">
+                                            <div class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes']['w800h600'] ?>')"></div>
+                                        </div>
                                         <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
                                     </div>
                                     <?php endforeach; ?>

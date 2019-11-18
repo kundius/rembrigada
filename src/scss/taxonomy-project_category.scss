@@ -191,6 +191,7 @@
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1.5px;
+	margin-bottom: 30px;
 }
 
 .works-item__grid {
@@ -207,10 +208,11 @@
 .works-item-object {
 	display: flex;
 	align-items: center;
-	padding: 10px 0;
+	padding: 12px 0;
+	padding-left: 46px;
+	line-height: 1;
 	border-top: 1px solid #dddddd;
 	position: relative;
-	padding-left: 46px;
 	&::before {
 		content: '';
 		position: absolute;
@@ -227,6 +229,7 @@
 	color: #4d4d4d;
 	font-size: 18px;
 	font-weight: 700;
+	width: 98px;
 }
 
 .works-item-object__value {
@@ -235,13 +238,12 @@
 	font-size: 16px;
 	font-weight: 700;
 	letter-spacing: -0.4px;
-	margin-left: 28px;
 }
 
 .works-item-info {
 	padding-left: 46px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 11px;
+	padding-bottom: 14px;
 	border-top: 1px solid #dddddd;
 	border-bottom: 1px solid #dddddd;
 }
@@ -250,11 +252,15 @@
 	color: #323232;
 	font-size: 16px;
 	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 12px;
 }
 
 .works-item-info__row {
 	display: flex;
 	align-items: center;
+	margin-top: 6px;
+	line-height: 1;
 }
 
 .works-item-info__label {
@@ -287,10 +293,14 @@
 	padding-left: 46px;
 	border-bottom: 1px solid #dddddd;
 	display: flex;
+	align-items: center;
+	padding-top: 14px;
+	padding-bottom: 11px;
+	line-height: 1;
 	&::before {
 		content: '';
 		position: absolute;
-		left: 10px;
+		left: 15px;
 		top: 50%;
 		transform: translateY(-50%);
 		width: 15px;
@@ -303,6 +313,7 @@
 	color: #4d4d4d;
 	font-size: 18px;
 	font-weight: 700;
+	width: 98px;
 }
 
 .works-item-deadline__value {
@@ -326,8 +337,13 @@
 
 .works-item-pricing {
 	background: #e8e8e8;
-	padding-top: 15px;
-	padding-bottom: 20px;
+	padding-top: 21px;
+	padding-bottom: 19px;
+	margin-top: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	line-height: 1;
 }
 
 .works-item-pricing__title {
@@ -338,13 +354,14 @@
 	text-transform: uppercase;
 	letter-spacing: 0.99px;
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 17px;
 }
 
 .works-item-pricing__text {
 	line-height: 26px;
 	letter-spacing: 0.09px;
 	font-size: 16px;
+	margin-bottom: 17px;
 }
 
 .works-item-pricing__button {
@@ -359,6 +376,17 @@
 	border: none;
 	border-radius: 24px;
 	background: #d52437;
+	&::after {
+		content: '';
+		position: relative;
+		display: inline-block;
+		margin-left: 5px;
+		width: 6px;
+		height: 6px;
+		border-top: 2px solid #ffffff;
+		border-right: 2px solid #ffffff;
+		transform: rotate(-45deg);
+	}
 	&:hover {
 		background: #f9152e;
 	}

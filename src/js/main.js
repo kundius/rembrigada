@@ -8,6 +8,7 @@ import AWN from 'awesome-notifications/dist/index.js'
 import 'awesome-notifications/dist/style.css'
 import 'basiclightbox/dist/basicLightbox.min.css'
 import * as basicLightbox from 'basiclightbox'
+import fslightbox from 'fslightbox'
 
 const formatMoney = (num, thousand = ' ') => {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + thousand)

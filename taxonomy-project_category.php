@@ -45,12 +45,12 @@ $categories = get_categories([
                                 <?php if ($gallery = get_field('gallery')): ?>
                                 <div class="works-item-images<?php if (count($gallery) == 1): ?> works-item-images_single<?php endif; ?>">
                                     <?php foreach (array_splice($gallery, 0, 8) as $item): ?>
-                                    <div class="works-item-image">
-                                        <div class="works-item-image__wrapper">
-                                            <div class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes']['w800h600'] ?>')"></div>
-                                        </div>
+                                    <a href="<?php echo $item['url'] ?>" data-fslightbox class="works-item-image">
+                                        <span class="works-item-image__wrapper">
+                                            <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes']['w800h600'] ?>')"></span>
+                                        </span>
                                         <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
-                                    </div>
+                                    </a>
                                     <?php endforeach; ?>
                                 </div>
                                 <?php endif; ?>
@@ -99,13 +99,16 @@ $categories = get_categories([
                                     <div class="works-item-deadline__value">
                                         <?php echo $time_works ?>
                                     </div>
+                                    <a href="<?php the_permalink() ?>" class="works-item-deadline__link">посмотреть весь проект</a>
                                     <?php if ($review = get_field('review')): ?>
-                                        <a href="#" class="works-item-deadline__link" data-basiclightbox="#review-<?php echo $review->ID ?>">посмотреть отзыв</a>
+                                        <!-- <button class="works-item-deadline__link" data-basiclightbox="#review-<?php echo $review->ID ?>">посмотреть отзыв</button> -->
                                     <?php endif; ?>
                                 </div>
                                 <?php endif; ?>
                                 <div class="works-item-pricing">
-                                    <div class="works-item-pricing__title">Стоимость:</div>
+                                    <?php if (get_field('price_works') || get_field('price_material')): ?>
+                                        <div class="works-item-pricing__title">Стоимость:</div>
+                                    <?php endif; ?>
                                     <div class="works-item-pricing__text">
                                         <?php if ($price_works = get_field('price_works')): ?>
                                         <div>Ремонтные работы: <strong>200 000 руб.</strong></div>

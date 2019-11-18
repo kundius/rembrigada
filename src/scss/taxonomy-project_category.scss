@@ -373,11 +373,10 @@
 		display: table;
 		clear: both;
 	}
-}
-
-.works-item-images_single {
-	.works-item-image {
-		width: 100%;
+	&.works-item-images_single {
+		.works-item-image {
+			width: 100%;
+		}
 	}
 }
 

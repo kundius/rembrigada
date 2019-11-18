@@ -387,13 +387,14 @@
 
 .works-item-image__file {
 	width: 100%;
-	padding-bottom: 50%;
-	border: 6px solid #ffffff;
-	background-position: 50% 50%;
-	background-size: cover;
-	outline: 1px solid #f2f2f2;
+	padding: 6px;
+	border: 1px solid #f2f2f2;
+	img {
+		display: block;
+		width: 100%;
+	}
 	&:hover {
-		outline: 2px solid #dcdcdc;
+		border: 2px solid #dcdcdc;
 	}
 }
 

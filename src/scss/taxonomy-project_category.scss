@@ -449,6 +449,7 @@
 	margin-bottom: 17px;
 	@media (max-width: $breakpoint-xsmall-max) {
 		font-size: 16px;
+		margin-bottom: 8px;
 	}
 }
 
@@ -457,6 +458,9 @@
 	letter-spacing: 0.09px;
 	font-size: 16px;
 	margin-bottom: 17px;
+	@media (max-width: $breakpoint-xsmall-max) {
+		margin-bottom: 8px;
+	}
 }
 
 .works-item-pricing__button {

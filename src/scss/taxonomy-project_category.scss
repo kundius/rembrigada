@@ -326,6 +326,8 @@
 
 .works-item-pricing {
 	background: #e8e8e8;
+	padding-top: 15px;
+	padding-bottom: 20px;
 }
 
 .works-item-pricing__title {
@@ -388,13 +390,13 @@
 .works-item-image__file {
 	width: 100%;
 	padding: 6px;
-	border: 1px solid #f2f2f2;
+	outline: 1px solid #f2f2f2;
 	img {
 		display: block;
 		width: 100%;
 	}
 	&:hover {
-		border: 2px solid #dcdcdc;
+		outline: 2px solid #dcdcdc;
 	}
 }
 

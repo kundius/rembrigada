@@ -365,7 +365,7 @@
 .works-item-images {
 	position: relative;
 	margin-top: -5px;
-	margin-left: -25px;
+	margin-left: -10px;
 	&::before {
 		content: '';
 		position: relative;
@@ -378,12 +378,8 @@
 .works-item-image {
 	position: absolute;
 	overflow: hidden;
-	border: 1px solid #f1f1f1;
-	margin-top: 5px;
-	margin-left: 25px;
-	&:hover {
-		border-color: #d52437;
-	}
+	padding-top: 5px;
+	padding-left: 10px;
 	&:nth-child(1) {
 		width: 75%;
 		height: 75%;
@@ -435,13 +431,15 @@
 }
 
 .works-item-image__file {
-	position: absolute;
-	left: 6px;
-	top: 6px;
-	right: 6px;
-	bottom: 6px;
+	width: 100%;
+	height: 100%;
+	border: 6px solid #ffffff;
 	background-position: 50% 50%;
 	background-size: cover;
+	outline: 1px solid #f2f2f2;
+	&:hover {
+		outline: 2px solid #dcdcdc;
+	}
 }
 
 .works-item-image__loupe {

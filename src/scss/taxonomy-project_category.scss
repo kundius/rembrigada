@@ -376,6 +376,10 @@
 .works-item-image {
 	position: absolute;
 	overflow: hidden;
+	border: 1px solid #f1f1f1;
+	&:hover {
+		border-color: #d52437;
+	}
 	&:nth-child(1) {
 		width: 75%;
 		height: 75%;
@@ -428,10 +432,10 @@
 
 .works-item-image__file {
 	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
+	left: 6px;
+	top: 6px;
+	right: 6px;
+	bottom: 6px;
 	background-position: 50% 50%;
 	background-size: cover;
 }

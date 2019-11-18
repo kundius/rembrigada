@@ -196,6 +196,10 @@
 	padding-bottom: 15px;
 	border-bottom: 1px solid #dddddd;
 	margin-top: 62px;
+	@media (max-width: $breakpoint-xsmall-max) {
+		padding-bottom: 8px;
+		margin-bottom: 35px;
+	}
 }
 
 .works-item__title {

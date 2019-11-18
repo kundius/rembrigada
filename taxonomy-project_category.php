@@ -49,7 +49,7 @@ $categories = get_categories([
                                         <div class="works-item-image__wrapper">
                                             <div class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes']['w800h600'] ?>')"></div>
                                         </div>
-                                        <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
+                                        <span class="works-item-image__loupe"><?php echo count($gallery) ?><?php icon('loupe') ?></span>
                                     </div>
                                     <?php endforeach; ?>
                                 </div>

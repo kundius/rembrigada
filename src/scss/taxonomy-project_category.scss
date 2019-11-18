@@ -336,6 +336,9 @@
 	right: 0;
 	top: 50%;
 	transform: translateY(-50%);
+	&:hover {
+		color: #d52437;
+	}
 	&::after {
 		content: '';
 		position: relative;

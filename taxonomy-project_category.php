@@ -47,6 +47,7 @@ $categories = get_categories([
                                     <?php foreach ($gallery as $item): ?>
                                     <div class="works-item-image<?php if (count($gallery) == 1): ?> works-item-image_single<?php endif; ?>">
                                         <div class="works-item-image__file">
+                                            <?php print_r($item['sizes']) ?>
                                             <img src="<?php echo $item['sizes']['w800h480'] ?>" alt="" />
                                         </div>
                                         <span class="works-item-image__loupe"><?php icon('loupe') ?></span>

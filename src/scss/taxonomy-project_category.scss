@@ -364,6 +364,8 @@
 
 .works-item-images {
 	position: relative;
+	margin-top: -5px;
+	margin-left: -25px;
 	&::before {
 		content: '';
 		position: relative;
@@ -377,6 +379,8 @@
 	position: absolute;
 	overflow: hidden;
 	border: 1px solid #f1f1f1;
+	margin-top: 5px;
+	margin-left: 25px;
 	&:hover {
 		border-color: #d52437;
 	}

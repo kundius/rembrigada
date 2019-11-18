@@ -42,7 +42,16 @@ $categories = get_categories([
                         <div class="works-item__title"><?php the_title() ?></div>
                         <div class="works-item__grid">
                             <div class="works-item__cell">
-
+                                <?php if ($gallery = get_field('gallery')): ?>
+                                <div class="works-item-images">
+                                    <?php foreach ($gallery as $item): ?>
+                                    <div class="works-item-image">
+                                        <img class="works-item-image__file" src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
+                                        <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
+                                    </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php endif; ?>
                             </div>
                             <div class="works-item__cell">
                                 <?php if ($address = get_field('address')): ?>

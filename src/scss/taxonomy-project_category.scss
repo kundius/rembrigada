@@ -163,6 +163,7 @@
 	flex-wrap: wrap;
 	@media (max-width: $breakpoint-small-max) {
 		justify-content: space-between;
+		flex-direction: column;
 	}
 }
 

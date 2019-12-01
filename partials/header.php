@@ -11,9 +11,9 @@
 
         <nav class="navigation">
             <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" alt="<?php echo get_bloginfo('description') ?>"></a>
-            <button class="navigation__callback" data-basiclightbox="#callback">
+            <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>" class="navigation__callback js-header-callback">
                 <?php icon('phone') ?>
-            </button>
+            </a>
 
             <?php wp_nav_menu([
                 'theme_location' => 'mainmenu',

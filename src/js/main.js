@@ -65,14 +65,14 @@ forEach(document.querySelectorAll('[data-basiclightbox]'), el => {
   })
 })
 
-forEach(document.querySelectorAll('.js-header-callback'), el => {
-  el.addEventListener('click', (e) => {
-    e.preventDefault()
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
+if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
+  forEach(document.querySelectorAll('.js-header-callback'), el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault()
       showModal(document.querySelector('#callback'))
-    }
+    })
   })
-})
+}
 
 // var lazyLoadInstance = new LazyLoad({
 //   elements_selector: '.lazyload'
@@ -340,7 +340,7 @@ forEach(document.querySelectorAll('.js-img-to-svg'), function(img) {
       toggle,
       updatePosition
     })
-    
+
     $close.addEventListener('click', close)
     forEach($toggles, el => el.addEventListener('click', toggle))
   })
@@ -375,8 +375,8 @@ forEach(document.querySelectorAll('.js-scroll'), function(el) {
   }
   el.addEventListener('click', () => {
     window.scroll({
-      top, 
-      left, 
+      top,
+      left,
       behavior: 'smooth'
     })
   })
@@ -466,8 +466,8 @@ forEach(document.querySelectorAll('.content-price'), function(wrapper) {
       tab.classList.add('_active')
       if (window.matchMedia('(max-width: 639px)').matches) {
         window.scroll({
-          top: contents[index].offsetTop - header.offsetHeight, 
-          left: 0, 
+          top: contents[index].offsetTop - header.offsetHeight,
+          left: 0,
           behavior: 'smooth'
         })
       }
@@ -502,7 +502,7 @@ forEach(document.querySelectorAll('.js-selectys'), function(select) {
       wrapper.classList.add('_opened')
     }
   })
-  
+
   // create list
   const list = document.createElement('ul')
   list.classList.add('selectys__list')

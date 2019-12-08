@@ -14,7 +14,7 @@ $categories = get_categories([
     <body>
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
-            
+
             <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
                 <div class="container">
                     <?php bcn_display() ?>
@@ -111,10 +111,10 @@ $categories = get_categories([
                                     <?php endif; ?>
                                     <div class="works-item-pricing__text">
                                         <?php if ($price_works = get_field('price_works')): ?>
-                                        <div>Ремонтные работы: <strong>200 000 руб.</strong></div>
+                                        <div>Ремонтные работы: <strong><?php echo $price_works ?> руб.</strong></div>
                                         <?php endif; ?>
                                         <?php if ($price_material = get_field('price_material')): ?>
-                                        <div>Черновые материалы с доставкой: <strong>200 000 руб.</strong></div>
+                                        <div>Черновые материалы с доставкой: <strong><?php echo $price_material ?> руб.</strong></div>
                                         <?php endif; ?>
                                     </div>
                                     <a href="#callback" class="works-item-pricing__button"><span>Рассчитать стоимость своего ремонта</span></a>

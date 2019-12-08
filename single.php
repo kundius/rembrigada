@@ -6,7 +6,7 @@
     <body>
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
-            
+
             <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
                 <div class="container">
                     <?php bcn_display() ?>
@@ -48,9 +48,9 @@
                     </div>
 
                     <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), 'large')): ?>
-                    <div class="news-details__entry">
+                    <!-- <div class="news-details__entry">
                         <img src="<?php echo $image ?>" alt="<?php the_title() ?>">
-                    </div>
+                    </div> -->
                     <?php endif; ?>
 
                     <div class="content">
@@ -88,11 +88,11 @@
                 $also_query = null;
                 if ($related = get_field('related')) {
                     $also_query = new wp_query([
-                        'orderby'=> 'rand',                
-                        'caller_get_posts'=> 1,            
+                        'orderby'=> 'rand',
+                        'caller_get_posts'=> 1,
                         'post__in' => $related,
                         'post__not_in' => [$post->ID],
-                        'showposts'=> 5   
+                        'showposts'=> 5
                     ]);
                 } else {
                     $tags = wp_get_post_tags($post->ID);
@@ -100,11 +100,11 @@
                         $tag_ids = [];
                         foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
                         $also_query = new wp_query([
-                            'tag__in' => $tag_ids,       
-                            'orderby'=> 'rand',                
-                            'caller_get_posts'=> 1,            
+                            'tag__in' => $tag_ids,
+                            'orderby'=> 'rand',
+                            'caller_get_posts'=> 1,
                             'post__not_in' => [$post->ID],
-                            'showposts'=> 5   
+                            'showposts'=> 5
                         ]);
                     }
                 }
@@ -141,7 +141,7 @@
 
             <section class="comments">
                 <div class="container container_alt">
-                    <?php comments_template(); ?> 
+                    <?php comments_template(); ?>
                 </div>
             </section>
 

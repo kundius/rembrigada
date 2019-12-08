@@ -1,6 +1,7 @@
 .single-headline {
     background-color: #e8e8e8;
     padding: 28px 0 24px;
+    overflow: hidden;
     @media (max-width: $breakpoint-small-max) {
         padding: 18px 0 14px;
     }

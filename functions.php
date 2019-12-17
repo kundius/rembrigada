@@ -13,6 +13,7 @@ add_post_type_support( 'page', 'excerpt' );
 add_action('after_setup_theme', function() {
 	register_nav_menus([
 		'mainmenu' => 'Основное меню',
+		'footermenu' => 'Меню в подвале',
 		'aboutmenu' => 'Меню о компании',
 		'sitemap' => 'Карта сайта'
 	]);
@@ -137,7 +138,7 @@ class Sitemap_Walker extends Walker_Nav_Menu {
 		} else {
 			$output .= '</span>';
 		}
-		
+
 		if ($custom_hildren) {
 			$output .= $custom_hildren;
 		}
@@ -306,7 +307,7 @@ add_shortcode('services', function($atts) {
 			if (has_excerpt()):
                 $output .= '<div class="services-item__desc">' . get_the_excerpt() . '</div>';
             endif;
-            
+
             $children = new WP_Query(array(
                 'post_type' => 'page',
                 'order' => 'ASC',
@@ -472,7 +473,7 @@ function seo() {
 	$title = '';
 	$description = '';
 	$keywords = '';
-	
+
 	if (is_archive()) {
 		$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 		if ($term) {
@@ -508,7 +509,7 @@ function seo() {
 		$description = get_field('seo_description');
 		$keywords = get_field('seo_keywords');
 	}
-	
+
 	echo '<title>' . $title . '</title>';
 	if (!empty($description)) {
 		echo '<meta name="keywords" content="' . $keywords . '">';

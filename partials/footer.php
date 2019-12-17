@@ -1,3 +1,12 @@
+<div class="footer-menu">
+    <div class="container">
+        <?php wp_nav_menu([
+            'theme_location' => 'footermenu',
+            'container' => false
+        ]); ?>
+    </div>
+</div>
+
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">

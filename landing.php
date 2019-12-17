@@ -96,10 +96,12 @@ $reviews = new WP_Query(array(
                         <div class="intro__left">
                             <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
                             <div class="intro__description"><?php echo $intro['description'] ?></div>
-                            <button data-micromodal-trigger="callback" class="intro__button">
+                            <?php if (!empty($intro['link'])): ?>
+                            <a href="<?php echo $intro['link'] ?>" class="intro__button">
                                 <span>Получить</span>
                                 <span></span>
-                            </button>
+                            </a>
+                            <?php endif ?>
                         </div>
                         <div class="intro__right">
                             <form action="/wp-json/contact-form-7/v1/contact-forms/1752/feedback" method="post" class="intro-calc js-intro-calc js-form">

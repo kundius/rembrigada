@@ -80,16 +80,6 @@ $categories = get_categories([
                                         </div>
                                     </div>
                                     <?php endif; ?>
-                                    <?php if ($customer = get_field('customer')): ?>
-                                    <div class="works-item-info__row">
-                                        <div class="works-item-info__label">
-                                            Клиент:
-                                        </div>
-                                        <div class="works-item-info__value">
-                                            <?php echo $customer ?>
-                                        </div>
-                                    </div>
-                                    <?php endif; ?>
                                 </div>
                                 <?php if ($time_works = get_field('time_works')): ?>
                                 <div class="works-item-deadline">

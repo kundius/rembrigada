@@ -13,16 +13,6 @@
             </div>
         </div>
         <?php endif; ?>
-        <?php if ($customer = get_field('customer')): ?>
-        <div class="project-details__customer">
-            <div class="project-details__customer-label">
-                <?php icon('user', .75) ?> Клиент
-            </div>
-            <div class="project-details__customer-value">
-                <?php echo $customer ?>
-            </div>
-        </div>
-        <?php endif; ?>
     </div>
     <div class="project-details__estimate">
         <?php if ($price_works = get_field('price_works')): ?>

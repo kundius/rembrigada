@@ -1,13 +1,14 @@
 @import 'variables.scss';
 
 .footer-menu {
-  background: #4f555d;
+  background: #1c1e22;
   padding: 10px 0;
   ul {
-    padding: 0;
+    padding: 12px 0;
     margin: 0;
     list-style: none;
     display: flex;
+    border-bottom: 1px solid rgba(81,88,99,.4);
   }
   li {
     margin-right: 20px;

@@ -7,8 +7,8 @@
                     <h3 class="contacts__title">Контакты</h3>
                     <div class="contacts__text" itemscope itemtype="http://schema.org/Organization">
                         <meta itemprop="name" content="Рембригада116" />
-                        <p itemprop="address"><?php the_field('address', 'options') ?></p>
-                        <div class="contacts-phones">
+                        <div class="contacts__row" itemprop="address"><?php the_field('address', 'options') ?></div>
+                        <div class="contacts__row contacts-phones">
                           <div class="contacts-phones__list">
                             <?php foreach (get_field('phones', 'options') as $row): ?>
                               <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
@@ -23,9 +23,9 @@
                               </a>
                           </div>
                         </div>
-                        <p>
+                        <div class="contacts__row">
                             <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
-                        </p>
+                        </div>
                     </div>
                     <div class="contacts__time">
                         <?php icon('clock', 1.25) ?>

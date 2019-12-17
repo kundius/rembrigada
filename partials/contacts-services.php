@@ -31,11 +31,15 @@
                 <div class="contacts">
                     <h3 class="contacts__title">Контакты</h3>
                     <div class="contacts__text">
-                        <p><?php the_field('address', 'options') ?></p>
-                        <p><?php the_field('phones', 'options') ?></p>
-                        <p>
+                        <div class="contacts__row"><?php the_field('address', 'options') ?></div>
+                        <div class="contacts__row">
+                          <?php foreach (get_field('phones', 'options') as $row): ?>
+                            <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
+                          <?php endforeach ?>
+                        </div>
+                        <div class="contacts__row">
                             <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
-                        </p>
+                        </div>
                     </div>
                     <div class="contacts__time">
                         <?php icon('clock', 1.25) ?>

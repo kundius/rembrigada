@@ -147,8 +147,7 @@ forEach(document.querySelectorAll('.js-project-details'), function(wrapper) {
     axis: window.matchMedia('(max-width: 959px)').matches ? 'horizontal' : 'vertical',
     gutter: window.matchMedia('(max-width: 959px)').matches ? 10 : 10,
     items: 4,
-    loop: false,
-    gutter: 10
+    loop: false
   })
   slider.events.on('transitionStart', (e) => {
     sliderNav.goTo(e.displayIndex - 1)

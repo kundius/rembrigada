@@ -96,7 +96,7 @@ $reviews = new WP_Query(array(
                         <div class="intro__left">
                             <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
                             <div class="intro__description"><?php echo $intro['description'] ?></div>
-                            <a href="#intro-calc" class="intro__button">
+                            <a href="#intro-calc" class="intro__button js-scroll">
                                 <span>Получить</span>
                                 <span></span>
                             </a>

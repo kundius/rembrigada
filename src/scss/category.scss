@@ -7,6 +7,9 @@
   flex-wrap: wrap;
   margin-left: -25px;
   margin-top: -25px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: -40px;
+  }
 }
 
 .news-list__cell {
@@ -15,6 +18,9 @@
   padding-top: 25px;
   @media (max-width: $breakpoint-small-max) {
     width: 100%;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 40px;
   }
 }
 
@@ -88,16 +94,20 @@
 }
 
 .news-item__image::after {
-    position: absolute;
-    bottom: -30px;
-    right: -30px;
-    display: block;
-    content: '';
-    width: 260px;
-    height: 260px;
-    border: 16px solid #ededed;
-    box-sizing: border-box;
-    z-index: -1;
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  display: block;
+  content: '';
+  width: 260px;
+  height: 260px;
+  border: 16px solid #ededed;
+  box-sizing: border-box;
+  z-index: -1;
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .news-item__image img {
@@ -123,11 +133,14 @@
 }
 
 .news-item__title h3 {
-    font-size: 26px;
-    font-family: "Next Art Bold", sans-serif;
-    line-height: 1.15;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
+  font-size: 26px;
+  font-family: "Next Art Bold", sans-serif;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 20px;
+  }
 }
 
 .news-item__title:hover h3 {

@@ -5,7 +5,7 @@
             <div class="section-contacts__item">
                 <div class="contacts">
                     <h3 class="contacts__title">Контакты</h3>
-                    <div class="contacts__text" itemscope itemtype="http://schema.org/Organization">
+                    <div class="contacts__text" itemscope itemtype="http://schema.org/LocalBusiness">
                         <meta itemprop="name" content="Рембригада116" />
                         <a href="<?php the_field('ymap_link', 'options') ?>" class="contacts__row" itemprop="address" target="_blank">
                             <?php the_field('address', 'options') ?>

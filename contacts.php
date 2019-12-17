@@ -17,13 +17,17 @@ Template Name: Контакты
                     <h1 class="page-headline__title"><span><?php the_title() ?></span></h1>
                 </div>
             </section>
-            
+
             <div class="p-contacts-section">
                 <div class="p-contacts-section__content">
                     <div class="p-contacts">
                         <p><?php the_field('address', 'options') ?></p>
                         <div class="p-contacts__grid">
-                            <div class="p-contacts__cell"><?php the_field('phones', 'options') ?></div>
+                            <div class="p-contacts__cell">
+                                <?php foreach (get_field('phones', 'options') as $row): ?>
+                                    <div>Тел.: <?php echo $row['number'] ?></div>
+                                <?php endforeach ?>
+                            </div>
                             <div class="p-contacts__cell"><?php the_field('requisites', 'options') ?></div>
                         </div>
                         <p>

@@ -32,10 +32,20 @@
                     <h3 class="contacts__title">Контакты</h3>
                     <div class="contacts__text">
                         <div class="contacts__row"><?php the_field('address', 'options') ?></div>
-                        <div class="contacts__row">
-                          <?php foreach (get_field('phones', 'options') as $row): ?>
-                            <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
-                          <?php endforeach ?>
+                        <div class="contacts__row contacts-phones">
+                          <div class="contacts-phones__list">
+                            <?php foreach (get_field('phones', 'options') as $row): ?>
+                              <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
+                            <?php endforeach ?>
+                          </div>
+                          <div class="contacts-messengers">
+                              <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+                                  <?php icon('telegram', 1.2) ?>
+                              </a>
+                              <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+                                  <?php icon('whatsapp', 1.3) ?>
+                              </a>
+                          </div>
                         </div>
                         <div class="contacts__row">
                             <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>

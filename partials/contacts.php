@@ -11,7 +11,7 @@
                         <div class="contacts-phones">
                           <div class="contacts-phones__list">
                             <?php foreach (get_field('phones', 'options') as $row): ?>
-                              <p itemprop="telephone"><?php echo $row['number'] ?></p>
+                              <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
                             <?php endforeach ?>
                           </div>
                           <div class="contacts-messengers">

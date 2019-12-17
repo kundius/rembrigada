@@ -167,6 +167,9 @@
       background: #d52437;
     }
   }
+  @media (min-width: $breakpoint-small) {
+    display: none;
+  }
   @media (max-width: $breakpoint-xsmall-max) {
     span:nth-child(1) {
       line-height: 40px;

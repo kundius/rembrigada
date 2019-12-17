@@ -30,7 +30,7 @@ function get_next_id($list, $id) {
     <body>
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
-            
+
             <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
                 <div class="container">
                     <?php bcn_display() ?>
@@ -59,7 +59,7 @@ function get_next_id($list, $id) {
                 </div>
             </div>
             <?php endif; ?>
-    
+
             <div class="js-project-details">
                 <div class="container container_alt">
                     <div class="project-meta">
@@ -70,12 +70,6 @@ function get_next_id($list, $id) {
                         <div class="project-meta__date">
                             <?php icon('date', .75) ?>
                             <span>Опубликовано: </span><?php the_modified_date() ?>
-                        </div>
-                        <div class="project-meta__arrows">
-                            <div class="slide-nav">
-                                <button class="slide-nav__button slide-nav__button_prev js_prev"></button>
-                                <button class="slide-nav__button slide-nav__button_next js_next"></button>
-                            </div>
                         </div>
                     </div>
                     <div class="project-layout">
@@ -163,7 +157,7 @@ function get_next_id($list, $id) {
                     </div>
                 </div>
             </div>
-            
+
             <div class="container container_tiny">
                 <div class="content">
                     <?php the_content(); ?>
@@ -195,9 +189,9 @@ function get_next_id($list, $id) {
                     $tag_ids = [];
                     foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
                     $also_query = new wp_query([
-                        'tag__in' => $tag_ids,       
-                        'orderby'=> 'rand',                
-                        'caller_get_posts'=> 1,            
+                        'tag__in' => $tag_ids,
+                        'orderby'=> 'rand',
+                        'caller_get_posts'=> 1,
                         'post__not_in' => [$post->ID],
                         'showposts'=> 5,
                         'tax_query' => [[

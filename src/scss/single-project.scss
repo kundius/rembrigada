@@ -29,14 +29,8 @@
     }
 }
 
-.project-meta__arrows {
-    @media (max-width: $breakpoint-xsmall-max) {
-        display: none;
-    }
-}
-
 .project-meta__category {
- 
+
 }
 
 .project-meta__date {
@@ -441,9 +435,6 @@
     position: absolute;
     top: 6px;
     right: 12px;
-    @media (min-width: $breakpoint-small) {
-        display: none;
-    }
 }
 
 .project-gallery-controls__previous {

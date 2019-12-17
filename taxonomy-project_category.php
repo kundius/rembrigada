@@ -67,9 +67,9 @@ $categories = get_categories([
                                 </div>
                                 <?php endif; ?>
                                 <div class="works-item-info">
-                                    <div class="works-item-info__title">
+                                    <!-- <div class="works-item-info__title">
                                         Особенности проекта:
-                                    </div>
+                                    </div> -->
                                     <?php if ($area = get_field('area')): ?>
                                     <div class="works-item-info__row">
                                         <div class="works-item-info__label">

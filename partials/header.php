@@ -33,7 +33,7 @@
             <?php icon('telegram', 0.8) ?>
           </a>
           <a class="header-messengers__whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
-            <?php icon('whatsapp', 0.8) ?>
+            <?php icon('whatsapp', 0.9) ?>
           </a>
         </div>
 

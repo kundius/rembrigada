@@ -44,6 +44,9 @@
 .news-item-meta {
   display: flex;
   margin-bottom: 20px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-bottom: 10px;
+  }
 }
 
 .news-item-meta {
@@ -112,8 +115,9 @@
 }
 
 .news-item__image img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .news-item__title {

@@ -129,15 +129,13 @@ forEach(document.querySelectorAll('.js-project-details'), function(wrapper) {
   const navContainer = wrapper.querySelector('.js_nav')
   const prevButton = wrapper.querySelector('.js_prev')
   const nextButton = wrapper.querySelector('.js_next')
-  const prevMButton = wrapper.querySelector('.js_m_prev')
-  const nextMButton = wrapper.querySelector('.js_m_next')
   const navPrevButton = wrapper.querySelector('.js_nav_prev')
   const navNextButton = wrapper.querySelector('.js_nav_next')
   const el_index = wrapper.querySelector('.js_index')
   const slider = tns({
     container,
-    prevButton: window.matchMedia('(max-width: 639px)').matches ? prevMButton : prevButton,
-    nextButton: window.matchMedia('(max-width: 639px)').matches ? nextMButton : nextButton,
+    prevButton,
+    nextButton,
     navContainer,
     items: 1
   })

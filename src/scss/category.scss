@@ -7,9 +7,6 @@
   flex-wrap: wrap;
   margin-left: -25px;
   margin-top: -25px;
-  @media (max-width: $breakpoint-xsmall-max) {
-    margin-top: -40px;
-  }
 }
 
 .news-list__cell {
@@ -19,9 +16,6 @@
   @media (max-width: $breakpoint-small-max) {
     width: 100%;
   }
-  @media (max-width: $breakpoint-xsmall-max) {
-    padding-top: 40px;
-  }
 }
 
 .news-item {
@@ -29,7 +23,12 @@
   transition: box-shadow .3s ease;
   padding: 40px 50px;
   @media (max-width: $breakpoint-xsmall-max) {
-    padding: 0;
+    padding: 0 0 25px;
+    border-bottom: 1px solid #cacaca;
+    &:last-child {
+      border-bottom: none;
+      padding: 0;
+    }
   }
 }
 

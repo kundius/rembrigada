@@ -328,7 +328,7 @@
         align-items: center;
     }
 }
- 
+
 .services-section-result__image {
     border: 12px solid #cccccc;
     position: relative;
@@ -890,7 +890,7 @@
 
 a.services-section-info__item {
     display: block;
-    color: #333333;
+    color: #333333 !important;
     font-size: 24px;
     font-weight: 400;
     text-transform: uppercase;
@@ -898,7 +898,7 @@ a.services-section-info__item {
     padding: 12px 12px 12px 45px;
     padding-right: 0;
     position: relative;
-    text-decoration: none;
+    text-decoration: none !important;
     display: block;
     letter-spacing: -.05em;
     &::before {
@@ -948,13 +948,13 @@ a.services-section-info__item {
     margin-left: -100px;
     > div {
         &:nth-child(1) {
-            
+
         }
         &:nth-child(2) {
-            
+
         }
         &:nth-child(3) {
-            
+
         }
         &:nth-child(4) {
             grid-column: 1 / 4;
@@ -1021,8 +1021,8 @@ a.services-section-info__item {
     position: relative;
     padding-left: 28px;
     a {
-        color: #929db0;
-        text-decoration: underline;
+        color: #929db0 !important;
+        text-decoration: underline !important;
     }
     .form-checkbox {
         & + span {

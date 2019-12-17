@@ -31,13 +31,13 @@
         width: 180px;
     }
     @media (max-width: $breakpoint-medium-max) {
-        // position: absolute;
-        // left: 50%;
-        // top: 50%;
-        // transform: translate(-50%, -50%);
-        // .header_menu-opened & {
-        //     display: none;
-        // }
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        .header_menu-opened & {
+            display: none;
+        }
     }
 }
 
@@ -60,10 +60,11 @@
     display: none;
     position: relative;
     // position: absolute;
-    // left: 0;
+    left: 0;
     // top: 0;
     width: 68px;
     height: 68px;
+    margin-left: -30px;
     cursor: pointer;
     transition: left .3s ease;
     z-index: 20;

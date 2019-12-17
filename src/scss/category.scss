@@ -13,6 +13,9 @@
   width: 50%;
   padding-left: 25px;
   padding-top: 25px;
+  @media (max-width: $breakpoint-small-max) {
+    width: 100%;
+  }
 }
 
 .news-item {
@@ -182,108 +185,4 @@ background-image: url(../img/rubrika.png);
 
 .news-item__category:hover::before {
     background-image: url(../img/rubrika-hover.png);
-}
-
-
-/* 1200px - 1366px */
-@media screen and (max-width: 1366px) {
-    .news-item__desc {
-        max-width: 600px;
-    }
-}
-
-/* 992px - 1200px */
-@media screen and (max-width: 1200px) {
-    .news-item {
-        min-height: 385px;
-        padding-left: 365px;
-    }
-    .news-item__image,
-    .news-item__image::after {
-        width: 250px;
-        height: 250px;
-    }
-    .news-item__image::after {
-        top: 25px;
-        right: -20px;
-        border: 12px solid #ededed;
-    }
-    .news-item__title {
-        margin-bottom: 25px;
-    }
-    .news-item__title h3 {
-        font-size: 18px;
-        line-height: 17px;
-    }
-    .news-item__desc {
-        font-size: 16px;
-        line-height: 20px;
-    }
-}
-
-/* 768px - 992px */
-@media screen and (max-width: 992px) {
-    .news-list {
-        padding-bottom: 20px;
-    }
-    .news-item {
-        padding: 35px 40px 50px 345px;
-        min-height: 335px;
-    }
-    .news-item__image {
-        top: 35px;
-        left: 50px;
-    }
-    .news-item__category {
-        left: -85px;
-    }
-    .news-item-meta {
-        position: absolute;
-        top: 15px;
-        left: 45px;
-        width: 250px;
-        justify-content: space-between;
-    }
-    .news-item__desc {
-        max-width: 360px;
-    }
-    .news-item__more {
-        margin-top: 30px;
-    }
-}
-
-/* 576px - 768px */
-@media screen and (max-width: 768px) {
-    .news-item {
-        padding: 10px 10px 20px 25px;
-        min-height: 335px;
-    }
-    .news-item-meta,
-    .news-item__image {
-        position: relative;
-        top: 0;
-        left: 0;
-        margin: 0 auto;
-    }
-    .news-item__desc,
-    .news-item__more {
-        display: none;
-    }
-    .news-item__title {
-        display: block;
-        margin: 25px 0 0;
-    }
-}
-
-/* 320px - 576px */
-@media screen and (max-width: 576px) {
-    .page-title h1 {
-        margin-left: 0;
-    }
-    .news-item {
-        padding-left: 0;
-    }
-    .news-item:hover {
-        box-shadow: none;
-    }
 }

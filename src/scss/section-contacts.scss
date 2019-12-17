@@ -79,6 +79,52 @@
     }
 }
 
+.contacts-phones {
+  display: flex;
+  align-items: center;
+}
+
+.contacts-phones__list {
+
+}
+
+.contacts-messengers {
+  margin: 0 auto;
+  display: flex;
+}
+
+.contacts-messengers__item {
+  display: inline-block;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  line-height: 32px;
+  text-align: center;
+  margin: 0 9px;
+  position: relative;
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.contacts-messengers__item_telegram {
+  background-color: #29a1d4;
+  &:hover {
+    background-color: #248db9;
+  }
+}
+
+.contacts-messengers__item_whatsapp {
+  background-color: #25d266;
+  &:hover {
+    background-color: #20b658;
+  }
+}
+
 .contacts {
     padding: 40px 70px 37px;
     background-color: rgba(54, 57, 65, .8);
@@ -619,13 +665,13 @@
     align-items: center;
     > div {
         &:nth-child(1) {
-            
+
         }
         &:nth-child(2) {
-            
+
         }
         &:nth-child(3) {
-            
+
         }
         &:nth-child(4) {
             grid-column: 1 / 4;

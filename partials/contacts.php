@@ -1,3 +1,4 @@
+<?php $raw_phone = preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>
 <section class="section-contacts">
     <div class="container container_alt">
         <div class="section-contacts-grid">
@@ -7,7 +8,21 @@
                     <div class="contacts__text" itemscope itemtype="http://schema.org/Organization">
                         <meta itemprop="name" content="Рембригада116" />
                         <p itemprop="address"><?php the_field('address', 'options') ?></p>
-                        <p itemprop="telephone"><?php the_field('phones', 'options') ?></p>
+                        <div class="contacts-phones">
+                          <div class="contacts-phones__list">
+                            <?php foreach (get_field('phones', 'options') as $row): ?>
+                              <p itemprop="telephone"><?php echo $row['number'] ?></p>
+                            <?php endforeach ?>
+                          </div>
+                          <div class="contacts-messengers">
+                              <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+                                  <?php icon('telegram', 1.2) ?>
+                              </a>
+                              <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+                                  <?php icon('whatsapp', 1.3) ?>
+                              </a>
+                          </div>
+                        </div>
                         <p>
                             <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
                         </p>

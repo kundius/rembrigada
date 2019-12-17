@@ -2,13 +2,13 @@
 <div class="header-placeholder"></div>
 <header class="header">
     <div class="container">
-        <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" alt="<?php echo get_bloginfo('description') ?>"></a>
-
         <div class="header-toggle">
             <div class="header-toggle__icon"></div>
             <div class="header-toggle__label header-toggle__label_open">Меню</div>
             <div class="header-toggle__label header-toggle__label_close">Закрыть</div>
         </div>
+
+        <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" alt="<?php echo get_bloginfo('description') ?>"></a>
 
         <nav class="navigation">
             <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" alt="<?php echo get_bloginfo('description') ?>"></a>
@@ -29,12 +29,12 @@
         </nav>
 
         <div class="header-messengers">
-          <a class="header-messengers__item header-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
-            <?php icon('telegram', 0.8) ?>
-          </a>
-          <a class="header-messengers__item header-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
-            <?php icon('whatsapp', 0.9) ?>
-          </a>
+            <a class="header-messengers__item header-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+                <?php icon('telegram', 0.8) ?>
+            </a>
+            <a class="header-messengers__item header-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+                <?php icon('whatsapp', 0.9) ?>
+            </a>
         </div>
 
         <a href="tel:<?php echo $raw_phone ?>" class="header-callback js-header-callback">

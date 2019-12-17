@@ -5,15 +5,20 @@
   padding: 0;
   ul {
     padding: 15px 0;
-    margin: 0;
+    margin: 0 -30px;
     list-style: none;
     border-bottom: 1px solid rgba(81,88,99,.4);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media (max-width: $breakpoint-xsmall-max) {
+      margin: 0 -10px;
+    }
   }
   li {
-    margin-right: 30px;
-    display: inline-block;
+    margin: 0 30px;
     @media (max-width: $breakpoint-xsmall-max) {
-        margin-right: 10px;
+      margin: 0 10px;
     }
   }
   a {

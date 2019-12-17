@@ -160,13 +160,9 @@
     @media (max-width: $breakpoint-medium-max) {
         flex-flow: row;
         margin-right: -10px;
-        // position: absolute;
-        // right: 20px;
-        // top: 50%;
-        // transform: translateY(-50%);
     }
-    @media (max-width: $breakpoint-xsmall-max) {
-        right: -8px;
+    @media (max-width: $breakpoint-small-max) {
+        margin-right: -38px;
     }
 }
 
@@ -182,7 +178,7 @@
         font-weight: bold;
         margin-right: 22px;
     }
-    @media (max-width: $breakpoint-xsmall-max) {
+    @media (max-width: $breakpoint-small-max) {
         display: none;
     }
 }
@@ -223,12 +219,9 @@
             margin-right: 0;
         }
     }
-    @media (max-width: $breakpoint-xsmall-max) {
-        // position: absolute;
+    @media (max-width: $breakpoint-small-max) {
         width: 54px;
         height: 48px;
-        // right: -8px;
-        // top: 4px;
         border-radius: 24px 0 0 24px;
         box-shadow: 0 4px 4px 1px rgba(54, 57, 65, 0.35);
     }
@@ -238,6 +231,7 @@
   display: flex;
   @media (max-width: $breakpoint-medium-max) {
     margin-left: auto;
+    margin-right: 10px;
   }
 }
 

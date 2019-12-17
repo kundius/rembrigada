@@ -37,9 +37,9 @@
           </a>
         </div>
 
-        <a href="tel:<?php echo $raw_phone ?>" class="header-callback">
+        <a href="tel:<?php echo $raw_phone ?>" class="header-callback js-header-callback">
             <span class="header-callback__phone"><?php the_field('phone', 'options') ?></span>
-            <span class="header-callback__button js-header-callback">
+            <span class="header-callback__button">
                 <?php icon('phone') ?>
                 <span>Заказать обратный звонок</span>
             </span>

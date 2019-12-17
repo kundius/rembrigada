@@ -125,6 +125,7 @@
   padding: 0;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   span:nth-child(1) {
     font-family: $font-alt;
     color: #fff;
@@ -486,7 +487,7 @@
   &::-webkit-input-placeholder { color: #f6f7fb; }
   &:-ms-input-placeholder { color: #f6f7fb; }
   &::-ms-input-placeholder { color: #f6f7fb; }
-  &::placeholder { color: #f6f7fb; } 
+  &::placeholder { color: #f6f7fb; }
 }
 
 .intro-calc__label {

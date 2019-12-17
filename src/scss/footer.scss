@@ -7,11 +7,14 @@
     padding: 15px 0;
     margin: 0;
     list-style: none;
-    display: flex;
     border-bottom: 1px solid rgba(81,88,99,.4);
   }
   li {
     margin-right: 30px;
+    display: inline-block;
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-right: 10px;
+    }
   }
   a {
     color: #545b66;

@@ -6,13 +6,13 @@
     <body>
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
-            
+
             <div class="breadcrumbs breadcrumbs_absolute" typeof="BreadcrumbList" vocab="https://schema.org/">
                 <div class="container">
                     <?php bcn_display() ?>
                 </div>
             </div>
-            
+
             <section class="page-headline">
                 <div class="container">
                     <h1 class="page-headline__title"><span><?php single_cat_title() ?></span></h1>
@@ -22,8 +22,9 @@
             <section class="news-list">
                 <div class="container container_alt">
                     <?php if (have_posts()) : ?>
-                    <div class="articles">
+                    <div class="news-list__grid">
                         <?php  while ( have_posts() ) : the_post(); ?>
+                        <div class="news-list__cell">
                             <div class="news-item">
                                 <div class="news-item-meta">
                                     <span><?php icon('date', .75) ?> Опубликовано: <?php the_modified_date(); ?></span>
@@ -51,6 +52,7 @@
                                 </div>
                                 <a href="<?php the_permalink() ?>" class="news-item__more">читать дальше</a>
                             </div>
+                        </div>
                         <?php endwhile; ?>
                     </div>
                     <?php the_posts_pagination([

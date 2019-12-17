@@ -16,6 +16,12 @@
   @media (max-width: $breakpoint-small-max) {
     width: 100%;
   }
+  @media (max-width: $breakpoint-xsmall-max) {
+    &:last-child .news-item {
+      border-bottom: none;
+      padding: 0;
+    }
+  }
 }
 
 .news-item {
@@ -25,10 +31,6 @@
   @media (max-width: $breakpoint-xsmall-max) {
     padding: 0 0 25px;
     border-bottom: 1px solid #cacaca;
-    &:last-child {
-      border-bottom: none;
-      padding: 0;
-    }
   }
 }
 

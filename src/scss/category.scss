@@ -72,11 +72,9 @@
 }
 
 .news-item__image {
-    position: absolute;
-    top: 60px;
-    left: 40px;
-    width: 100%;
-    height: 360px;
+  position: relative;
+  width: 100%;
+  height: 360px;
 }
 
 .news-item__image::after {

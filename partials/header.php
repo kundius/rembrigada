@@ -30,10 +30,10 @@
 
         <div class="header-messengers">
             <a class="header-messengers__item header-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
-                <?php icon('telegram', 0.8) ?>
+                <?php icon('telegram', 0.7) ?>
             </a>
             <a class="header-messengers__item header-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
-                <?php icon('whatsapp', 0.9) ?>
+                <?php icon('whatsapp', 0.8) ?>
             </a>
         </div>
 

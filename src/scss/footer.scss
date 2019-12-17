@@ -1,5 +1,28 @@
 @import 'variables.scss';
 
+.footer-menu {
+  background: #4f555d;
+  padding: 10px 0;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+  }
+  li {
+    margin-right: 20px;
+  }
+  a {
+    color: #545b66;
+    font-size: 12px;
+    text-decoration: underline;
+    letter-spacing: 0.05em;
+    &:hover {
+      color: #9fabc0;
+    }
+  }
+}
+
 .footer {
     background-color: #1c1e22;
     padding-top: 20px;

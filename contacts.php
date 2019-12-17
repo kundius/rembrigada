@@ -20,12 +20,17 @@ Template Name: Контакты
 
             <div class="p-contacts-section">
                 <div class="p-contacts-section__content">
-                    <div class="p-contacts">
-                        <p><?php the_field('address', 'options') ?></p>
+                    <div class="p-contacts" itemscope itemtype="http://schema.org/Organization">
+                        <meta itemprop="name" content="Рембригада116" />
+                        <p>
+                            <a href="<?php the_field('ymap_link', 'options') ?>" itemprop="address" target="_blank">
+                                <?php the_field('address', 'options') ?>
+                            </a>
+                        </p>
                         <div class="p-contacts__grid">
                             <div class="p-contacts__cell">
                                 <?php foreach (get_field('phones', 'options') as $row): ?>
-                                    <div>Тел.: <?php echo $row['number'] ?></div>
+                                    <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
                                 <?php endforeach ?>
                             </div>
                             <div class="p-contacts__cell"><?php the_field('requisites', 'options') ?></div>

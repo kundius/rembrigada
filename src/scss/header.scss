@@ -39,6 +39,9 @@
             display: none;
         }
     }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 128px;
+    }
 }
 
 .header .container {
@@ -231,6 +234,8 @@
 
 .header-messengers {
   display: flex;
+  margin-left: auto;
+  margin-right: 8px;
   @media (min-width: $breakpoint-small) {
     display: none;
   }
@@ -240,11 +245,11 @@
   display: inline-block;
   color: #ffffff;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   line-height: 32px;
   text-align: center;
-  margin: 0 9px;
+  margin: 0 4px;
   position: relative;
   svg {
     position: absolute;

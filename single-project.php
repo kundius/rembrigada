@@ -91,13 +91,13 @@ function get_next_id($list, $id) {
                                             <?php endforeach; ?>
                                         </div>
                                         <div class="project-gallery-controls">
-                                            <button class="project-gallery-controls__previous js_m_prev"></button>
+                                            <button class="project-gallery-controls__previous js_prev"></button>
                                             <div class="project-gallery-controls__text">
                                                 <span class="js_index">01</span>
                                                 <span>/</span>
                                                 <span><?php echo count($gallery) ?></span>
                                             </div>
-                                            <button class="project-gallery-controls__next js_m_next"></button>
+                                            <button class="project-gallery-controls__next js_next"></button>
                                         </div>
                                     </div>
                                     <?php foreach ($gallery as $item): ?>

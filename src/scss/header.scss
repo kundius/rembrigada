@@ -234,7 +234,11 @@
         svg {
             width: initial;
             height: initial;
-            margin-right: 0;
+            background: initial;
+            border-radius: initial;
+            padding: initial;
+            position: initial;
+            left: initial;
         }
     }
     @media (max-width: $breakpoint-xsmall-max) {

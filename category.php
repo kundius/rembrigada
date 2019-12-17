@@ -33,10 +33,10 @@
                                 </div>
                                 <div class="news-item__image">
                                     <a href="<?php the_permalink() ?>">
-                                        <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(560, 308))): ?>
+                                        <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(800, 480))): ?>
                                         <img src="<?php echo $image ?>" alt="<?php the_title() ?>">
                                         <?php else: ?>
-                                        <img src="https://via.placeholder.com/560x308" alt="">
+                                        <img src="https://via.placeholder.com/800x480" alt="">
                                         <?php endif; ?>
                                     </a>
                                     <div class="news-item__category">

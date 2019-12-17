@@ -33,8 +33,20 @@ Template Name: Контакты
                                     <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
                                 <?php endforeach ?>
                             </div>
-                            <div class="p-contacts__cell"><?php the_field('requisites', 'options') ?></div>
+                            <div class="p-contacts__cell">
+                              <div class="contacts-messengers">
+                                  <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+                                      <?php icon('telegram', 1.2) ?>
+                                  </a>
+                                  <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+                                      <?php icon('whatsapp', 1.3) ?>
+                                  </a>
+                              </div>
+                            </div>
                         </div>
+                        <p>
+                          <?php the_field('requisites', 'options') ?>
+                        </p>
                         <p>
                             <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
                         </p>

@@ -1,3 +1,4 @@
+<?php $raw_phone = preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>
 <div class="header-placeholder"></div>
 <header class="header">
     <div class="container">
@@ -22,17 +23,17 @@
             ]); ?>
 
             <div class="navigation__contacts">
-                <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>"><?php the_field('phone', 'options') ?></a>
+                <a href="tel:<?php echo $raw_phone ?>"><?php the_field('phone', 'options') ?></a>
                 <p>Ежедневно с 9:00 до 20:00</p>
             </div>
         </nav>
 
         <div class="header-messengers">
-          <a class="header-messengers__telegram" href="#"><?php icon('telegram') ?></a>
-          <a class="header-messengers__whatsapp" href="#"><?php icon('whatsapp') ?></a>
+          <a class="header-messengers__telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>"><?php icon('telegram') ?></a>
+          <a class="header-messengers__whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>"><?php icon('whatsapp') ?></a>
         </div>
 
-        <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>" class="header-callback">
+        <a href="tel:<?php echo $raw_phone ?>" class="header-callback">
             <span class="header-callback__phone"><?php the_field('phone', 'options') ?></span>
             <span class="header-callback__button js-header-callback">
                 <?php icon('phone') ?>

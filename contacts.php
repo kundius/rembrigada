@@ -21,19 +21,18 @@ Template Name: Контакты
             <div class="p-contacts-section">
                 <div class="p-contacts-section__content">
                     <div class="p-contacts" itemscope itemtype="http://schema.org/Organization">
-                        <meta itemprop="name" content="Рембригада116" />
-                        <p>
+                        <div class="p-contacts__row">
                             <a href="<?php the_field('ymap_link', 'options') ?>" itemprop="address" target="_blank">
                                 <?php the_field('address', 'options') ?>
                             </a>
-                        </p>
-                        <div class="p-contacts__grid">
-                            <div class="p-contacts__cell">
+                        </div>
+                        <div class="p-contacts-phones">
+                            <div class="p-contacts-phones__list">
                                 <?php foreach (get_field('phones', 'options') as $row): ?>
                                     <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
                                 <?php endforeach ?>
                             </div>
-                            <div class="p-contacts__cell">
+                            <div class="p-contacts-phones__messengers">
                               <div class="contacts-messengers">
                                   <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
                                       <?php icon('telegram', 1.2) ?>
@@ -44,12 +43,13 @@ Template Name: Контакты
                               </div>
                             </div>
                         </div>
-                        <p>
+                        <div class="p-contacts__row">
                           <?php the_field('requisites', 'options') ?>
-                        </p>
-                        <p>
+                        </div>
+                        <div class="p-contacts__row">
                             <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
-                        </p>
+                        </div>
+                        <meta itemprop="name" content="Рембригада116" />
                     </div>
                     <div class="p-contacts-time">
                         <?php icon('clock', 1.25) ?>

@@ -16,13 +16,15 @@
                               <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
                             <?php endforeach ?>
                           </div>
-                          <div class="contacts-messengers">
-                              <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
-                                  <?php icon('telegram', 1.2) ?>
-                              </a>
-                              <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
-                                  <?php icon('whatsapp', 1.3) ?>
-                              </a>
+                          <div class="contacts-phones__messengers">
+                            <div class="contacts-messengers">
+                                <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+                                    <?php icon('telegram', 1.2) ?>
+                                </a>
+                                <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+                                    <?php icon('whatsapp', 1.3) ?>
+                                </a>
+                            </div>
                           </div>
                         </div>
                         <div class="contacts__row">

@@ -63,44 +63,39 @@
         text-decoration: underline;
     }
     p {
-        margin: 21px 0;
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+        margin: 0;
     }
     @media (max-width: $breakpoint-small-max) {
     	font-size: 14px;
-        p {
-            margin: 16px 0;
-        }
     }
-    // @media (max-width: $breakpoint-xsmall-max) {
-    //     font-size: 14px;
-    //     margin-top: 31px;
-    //     padding-bottom: 28px;
-    //     p {
-    //         margin-top: 18px;
-    //     }
-    // }
 }
 
-@media (min-width: $breakpoint-medium) {
-	.p-contacts__grid {
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.p-contacts__cell {
-		width: 50%;
-	}
+.p-contacts__row {
+    margin: 21px 0 0;
+    &:first-child {
+        margin-top: 0;
+    }
+    @media (max-width: $breakpoint-small-max) {
+          margin-top: 15px;
+    }
 }
 
-@media (max-width: $breakpoint-small-max) {
-	.p-contacts__cell {
-		margin: 16px 0;
-	}
+.p-contacts__grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.p-contacts-phones {
+	display: flex;
+	align-items: center;
+}
+
+.p-contacts-phones__list {
+
+}
+
+.p-contacts-phones__messengers {
+	margin: 0 auto;
 }
 
 .p-contacts-time {

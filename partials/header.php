@@ -29,10 +29,10 @@
         </nav>
 
         <div class="header-messengers">
-          <a class="header-messengers__telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+          <a class="header-messengers__item header-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
             <?php icon('telegram', 0.8) ?>
           </a>
-          <a class="header-messengers__whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+          <a class="header-messengers__item header-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
             <?php icon('whatsapp', 0.9) ?>
           </a>
         </div>

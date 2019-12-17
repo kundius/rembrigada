@@ -229,14 +229,12 @@
 
 .header-messengers {
   display: flex;
-  @media (max-width: $breakpoint-medium-max) {
-    margin-left: auto;
-    margin-right: 10px;
+  @media (min-width: $breakpoint-small) {
+    display: none;
   }
 }
 
-.header-messengers__telegram,
-.header-messengers__whatsapp {
+.header-messengers__item {
   display: inline-block;
   color: #ffffff;
   border-radius: 50%;
@@ -254,14 +252,14 @@
   }
 }
 
-.header-messengers__telegram {
+.header-messengers__item_telegram {
   background-color: #29a1d4;
   &:hover {
     background-color: #248db9;
   }
 }
 
-.header-messengers__whatsapp {
+.header-messengers__item_whatsapp {
   background-color: #25d266;
   &:hover {
     background-color: #20b658;

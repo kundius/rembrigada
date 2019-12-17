@@ -79,7 +79,7 @@
     @media (max-width: $breakpoint-xsmall-max) {
         width: 56px;
         height: 56px;
-        background-color: #030303;
+        background-color: #1c1e21;
     }
 }
 
@@ -195,22 +195,25 @@
     align-items: center;
     justify-content: center;
     width: 170px;
-    height: 16px;
+    height: 32px;
     margin-top: 5px;
     background-color: #d52437;
     border: none;
-    border-radius: 8px;
+    border-radius: 16px;
+    text-align: center;
     cursor: pointer;
     padding: 0 2px;
     font-family: "Arimo", sans-serif;
-    font-size: 9px;
+    font-size: 13px;
+    letter-spacing: 0.075em;
     font-weight: bold;
-    text-transform: uppercase;
     color: #fff;
     svg {
-        width: 10px;
-        height: 10px;
-        margin-right: 2px;
+        width: 26px;
+        height: 26px;
+        margin-right: 14px;
+        background: #9a1a28;
+        border-radius: 50%;
     }
     @media (max-width: $breakpoint-medium-max) {
         width: 40px;

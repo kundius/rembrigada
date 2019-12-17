@@ -6,8 +6,9 @@
                 <div class="contacts">
                     <h3 class="contacts__title">Контакты</h3>
                     <div class="contacts__text" itemscope itemtype="http://schema.org/LocalBusiness">
-                        <meta itemprop="name" content="Рембригада116" />
+                        <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>" />
                         <meta itemprop="priceRange" content="2500-6000RUB" />
+                        <meta itemprop="description" content="<?php echo get_bloginfo('description') ?>" />
                         <meta itemprop="image" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" />
                         <a href="<?php the_field('ymap_link', 'options') ?>" class="contacts__row" itemprop="address" target="_blank">
                             <?php the_field('address', 'options') ?>

@@ -20,7 +20,7 @@ Template Name: Контакты
 
             <div class="p-contacts-section">
                 <div class="p-contacts-section__content">
-                    <div class="p-contacts" itemscope itemtype="http://schema.org/Organization">
+                    <div class="p-contacts" itemscope itemtype="http://schema.org/LocalBusiness">
                         <div class="p-contacts__row">
                             <a href="<?php the_field('ymap_link', 'options') ?>" itemprop="address" target="_blank">
                                 <?php the_field('address', 'options') ?>
@@ -49,7 +49,10 @@ Template Name: Контакты
                         <div class="p-contacts__row">
                             <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
                         </div>
-                        <meta itemprop="name" content="Рембригада116" />
+                        <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>" />
+                        <meta itemprop="priceRange" content="2500-6000RUB" />
+                        <meta itemprop="description" content="<?php echo get_bloginfo('description') ?>" />
+                        <meta itemprop="image" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" />
                     </div>
                     <div class="p-contacts-time">
                         <?php icon('clock', 1.25) ?>

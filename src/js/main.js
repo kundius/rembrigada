@@ -226,6 +226,13 @@ forEach(document.querySelectorAll('.navigation-list'), function(menu) {
       toggle()
     })
 
+    link.addEventListener('click', (e) => {
+      if (!item.classList.contains('menu-item-opened')) {
+        e.preventDefault()
+        open()
+      }
+    })
+
     if (window.matchMedia("(min-width: 1200px)").matches && item.parentElement.classList.contains('navigation-list')) {
       item.addEventListener('mouseenter', () => {
         clearTimeout(timer)

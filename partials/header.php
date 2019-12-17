@@ -29,8 +29,12 @@
         </nav>
 
         <div class="header-messengers">
-          <a class="header-messengers__telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>"><?php icon('telegram') ?></a>
-          <a class="header-messengers__whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>"><?php icon('whatsapp') ?></a>
+          <a class="header-messengers__telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+            <?php icon('telegram', 0.8) ?>
+          </a>
+          <a class="header-messengers__whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+            <?php icon('whatsapp', 0.8) ?>
+          </a>
         </div>
 
         <a href="tel:<?php echo $raw_phone ?>" class="header-callback">

@@ -223,6 +223,7 @@ forEach(document.querySelectorAll('.navigation-list'), function(menu) {
 
     handler.addEventListener('click', (e) => {
       e.preventDefault()
+      e.stopPropagation()
       toggle()
     })
 

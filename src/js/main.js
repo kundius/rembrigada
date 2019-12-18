@@ -228,7 +228,7 @@ forEach(document.querySelectorAll('.navigation-list'), function(menu) {
     })
 
     link.addEventListener('click', (e) => {
-      if (!item.classList.contains('menu-item-opened')) {
+      if (!item.classList.contains('menu-item-opened') && !window.matchMedia("(min-width: 1200px)").matches) {
         e.preventDefault()
         open()
       }

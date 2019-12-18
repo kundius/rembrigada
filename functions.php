@@ -468,6 +468,7 @@ function be_register_blocks() {
 }
 add_action('acf/init', 'be_register_blocks' );
 
+remove_action('wp_head', 'rel_canonical');
 
 function seo() {
 	$title = '';

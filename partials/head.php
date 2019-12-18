@@ -9,6 +9,6 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <?php wp_head() ?>
-<meta itemprop="url" content="<?php echo wp_get_canonical_url() ?>" />
+<?php seo_canonical() ?>
 <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>" />
 <meta itemprop="description" content="<?php echo get_bloginfo('description') ?>" />

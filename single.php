@@ -17,7 +17,7 @@
             <meta itemprop="author" content="<?php echo get_bloginfo('blogname') ?>" />
             <meta itemprop="dateModified" content="<?php echo the_modified_date('Y-m-d') ?>" />
             <meta itemprop="datePublished" content="<?php echo get_the_date('Y-m-d') ?>" />
-            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none">
                 <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>">
                 <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
                     <a itemprop="url" href="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png">

@@ -54,7 +54,7 @@ a.services-item__title {
     position: relative;
     padding-left: 100px;
     padding-bottom: 10px;
-    text-decoration: none;
+    text-decoration: none !important;
     padding-top: 10px;
     &::before {
         content: '';

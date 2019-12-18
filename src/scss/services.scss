@@ -44,7 +44,7 @@
 }
 
 a.services-item__title {
-    color: #333333 !important;
+    color: #333333;
     font-family: "Next Art", sans-serif;
     font-size: 36px;
     font-weight: 700;
@@ -54,8 +54,12 @@ a.services-item__title {
     position: relative;
     padding-left: 100px;
     padding-bottom: 10px;
-    text-decoration: none !important;
+    text-decoration: none;
     padding-top: 10px;
+    .content & {
+      color: #333333;
+      text-decoration: none;
+    }
     &::before {
         content: '';
         width: 68px;
@@ -75,6 +79,10 @@ a.services-item__title {
         bottom: -19px;
     }
     &:hover {
+        color: #d52437;
+        .content & {
+          color: #d52437;
+        }
         &::before {
             background-color: rgb(177, 200, 208);
         }
@@ -269,7 +277,7 @@ a.services-item__title {
 }
 
 a.services-item-child__name {
-    color: #333333 !important;
+    color: #333333;
     font-size: 24px;
     font-weight: 400;
     text-transform: uppercase;
@@ -277,7 +285,11 @@ a.services-item-child__name {
     padding: 9px 45px;
     padding-right: 0;
     position: relative;
-    text-decoration: none !important;
+    text-decoration: none;
+    .content & {
+      color: #333333;
+      text-decoration: none;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -314,10 +326,13 @@ a.services-item-child__name {
 }
 
 a.services-item-child__more {
-    color: #297780 !important;
+    color: #297780;
     font-size: 16px;
     line-height: 1;
     white-space: nowrap;
+    .content & {
+      color: #297780;
+    }
     span {
         display: inline-block;
         width: 7px;
@@ -346,7 +361,10 @@ a.services-item-child__more {
         }
     }
     &:hover {
-        color: #20a8ff !important;
+      color: #20a8ff;
+      .content & {
+        color: #20a8ff;
+      }
     }
     @media (max-width: $breakpoint-small-max) {
         font-size: 12px;

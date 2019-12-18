@@ -402,7 +402,7 @@ add_action('init', function() {
 		'menu_icon'			 => 'dashicons-portfolio',
 		'menu_position'      => 21,
 		'taxonomies' 		 => ['post_tag'],
-		'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields')
+		'supports'           => array('title', 'editor', 'thumbnail', 'excerpt')
 	));
 	register_post_type('review', array(
 		'labels'             => array(
@@ -425,6 +425,20 @@ add_action('init', function() {
 		'supports'           => array('title', 'editor', 'excerpt')
 	));
 });
+
+function exclude_category_children( $query ) {
+    if ( $query->is_category() && $query->is_main_query() ) {
+        $query->set( 'tax_query', [
+            [
+                'taxonomy'         => 'category',
+                'field'            => 'slug',
+                'terms'            => $query->query_vars['category_name'],
+                'include_children' => false
+            ],
+        ] );
+    }
+}
+add_action( 'pre_get_posts', 'exclude_category_children' );
 
 add_action('init', function() {
 	register_taxonomy_for_object_type('project_category', 'project');

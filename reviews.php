@@ -10,14 +10,14 @@ $reviews = new WP_Query(array(
 ));
 ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" itemscope itemtype="http://schema.org/WebSite">
     <head>
         <?php get_template_part('partials/head'); ?>
     </head>
     <body>
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
-            
+
             <div class="breadcrumbs breadcrumbs_absolute" typeof="BreadcrumbList" vocab="https://schema.org/">
                 <div class="container">
                     <?php bcn_display() ?>

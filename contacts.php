@@ -4,7 +4,7 @@ Template Name: Контакты
 */
 ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" itemscope itemtype="http://schema.org/WebSite">
     <head>
         <?php get_template_part('partials/head'); ?>
     </head>

@@ -1,37 +1,5 @@
 @import 'variables.scss';
 
-.footer-menu {
-  background: #1c1e22;
-  padding: 0;
-  ul {
-    padding: 15px 0;
-    margin: 0;
-    list-style: none;
-    border-bottom: 1px solid rgba(81,88,99,.4);
-    display: flex;
-    flex-wrap: wrap;
-    @media (max-width: $breakpoint-xsmall-max) {
-      justify-content: space-between;
-      margin: 0 -10px;
-    }
-  }
-  li {
-    margin: 0 30px 0 0;
-    @media (max-width: $breakpoint-xsmall-max) {
-      margin: 0 10px;
-    }
-  }
-  a {
-    color: #545b66;
-    font-size: 12px;
-    text-decoration: underline;
-    letter-spacing: 0.05em;
-    &:hover {
-      color: #9fabc0;
-    }
-  }
-}
-
 .footer {
     background-color: #1c1e22;
     padding-top: 20px;

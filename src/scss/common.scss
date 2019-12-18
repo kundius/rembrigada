@@ -2868,10 +2868,10 @@ ul.sitemap > li > ul > li > ul > li > a {
     padding: 40px;
     .content & {
         margin-left: -100px;
-        margin-right: -198px;
+        margin-right: -100px;
         @media (max-width: $breakpoint-medium-max) {
             margin-left: 0;
-            margin-right: -98px;
+            margin-right: 0;
         }
         @media (max-width: $breakpoint-small-max) {
             margin-right: -56px;

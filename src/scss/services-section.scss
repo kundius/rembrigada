@@ -1053,10 +1053,10 @@ a.services-section-info__item {
         position: relative;
         .content & {
             margin-left: -100px;
-            margin-right: -198px;
+            margin-right: -100px;
             @media (max-width: $breakpoint-medium-max) {
                 margin-left: 0;
-                margin-right: -98px;
+                margin-right: 0;
             }
             @media (max-width: $breakpoint-small-max) {
                 margin-right: 0;

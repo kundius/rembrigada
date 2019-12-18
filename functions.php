@@ -470,6 +470,24 @@ add_action('acf/init', 'be_register_blocks' );
 
 remove_action('wp_head', 'rel_canonical');
 
+function seo_canonical() {
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	$id = get_queried_object_id();
+
+	if ( 0 === $id ) {
+		return;
+	}
+
+	$url = wp_get_canonical_url( $id );
+
+	if ( ! empty( $url ) ) {
+		echo '<link rel="canonical" itemprop="url" href="' . esc_url( $url ) . '" />' . "\n";
+	}
+}
+
 function seo() {
 	$title = '';
 	$description = '';

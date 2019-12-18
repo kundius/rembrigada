@@ -15,13 +15,15 @@
 
             <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
             <meta itemprop="author" content="<?php echo get_bloginfo('blogname') ?>" />
-            <meta itemprop="datePublished" content="<?php echo the_modified_date('Y-m-d') ?>" />
+            <meta itemprop="publisher" content="<?php echo get_bloginfo('blogname') ?>" />
+            <meta itemprop="dateModified" content="<?php echo the_modified_date('Y-m-d') ?>" />
+            <meta itemprop="datePublished" content="<?php echo get_the_date('Y-m-d') ?>" />
 
             <section class="single-headline">
                 <div class="container container_alt">
                     <div class="single-headline__date">
-                        <?php the_modified_date('d') ?>
-                        <span><?php the_modified_date('F') ?>`<?php the_modified_date('y') ?></span>
+                        <?php get_the_date('d') ?>
+                        <span><?php get_the_date('F') ?>`<?php get_the_date('y') ?></span>
                     </div>
                     <h1 class="single-headline__title" itemprop="headline"><span><?php the_title() ?></span></h1>
                 </div>
@@ -44,7 +46,7 @@
                             <?php the_category(',') ?>
                         </div>
                         <div class="date-author-comments-num">
-                            <span><?php icon('date', .75) ?> Опубликовано: <?php the_modified_date() ?></span>
+                            <span><?php icon('date', .75) ?> Опубликовано: <?php get_the_date() ?></span>
                             <span><?php icon('user', .75) ?> <?php the_author() ?></span>
                             <span><?php icon('comments', .75) ?> <?php echo get_comments_number() ?></span>
                         </div>
@@ -121,7 +123,7 @@
                         <?php while($also_query->have_posts()): $also_query->the_post(); ?>
                         <div class="interested-news__cell">
                             <div class="interested-news-item">
-                                <div class="interested-news-item__date"><?php the_modified_date(); ?></div>
+                                <div class="interested-news-item__date"><?php get_the_date(); ?></div>
                                 <a href="<?php the_permalink() ?>" class="interested-news-item__title">
                                     <h4><?php the_title() ?></h4>
                                     <hr>

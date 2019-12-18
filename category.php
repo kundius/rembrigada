@@ -27,7 +27,7 @@
                         <div class="news-list__cell">
                             <div class="news-item">
                                 <div class="news-item-meta">
-                                    <span><?php icon('date', .75) ?> Опубликовано: <?php the_modified_date(); ?></span>
+                                    <span><?php icon('date', .75) ?> Опубликовано: <?php get_the_date(); ?></span>
                                     <span><?php icon('user', .75) ?> <?php the_author() ?></span>
                                     <span><?php icon('comments', .75) ?> <?php echo get_comments_number() ?></span>
                                 </div>

@@ -11,7 +11,7 @@ $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 10,
   'paged' => get_query_var('paged') ?: 1,
-  'orderby' => 'parent',
+  'orderby' => ['parent' => 'DESC', 'menu_order' => 'ASC'],
 	'tax_query' => [[
     'taxonomy' => 'project_category',
     'terms' => $queried_term->term_id

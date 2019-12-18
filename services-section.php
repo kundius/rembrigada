@@ -150,20 +150,39 @@ $services = new WP_Query(array(
                     <div class="section-contacts-grid">
                         <div class="section-contacts__item">
                             <div class="contacts">
-                                <div class="contacts__title">Контакты</div>
-                                <div class="contacts__text">
-                                    <p>Казань, ул. Четаева, 27</p>
-                                    <p>
-                                        Тел:  +7 (843) 260-11-00<br>
-                                        Тел:  +7 (987) 230‑17-34
-                                    </p>
-                                    <p>
-                                        <a href="mailto:rembrigada116@yandex.ru">Rembrigada116@yandex.ru</a>
-                                    </p>
+                                <h3 class="contacts__title">Контакты</h3>
+                                <div class="contacts__text" itemscope itemtype="http://schema.org/LocalBusiness">
+                                    <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>" />
+                                    <meta itemprop="priceRange" content="2500-6000RUB" />
+                                    <meta itemprop="description" content="<?php echo get_bloginfo('description') ?>" />
+                                    <meta itemprop="image" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" />
+                                    <a href="<?php the_field('ymap_link', 'options') ?>" class="contacts__row" itemprop="address" target="_blank">
+                                        <?php the_field('address', 'options') ?>
+                                    </a>
+                                    <div class="contacts__row contacts-phones">
+                                      <div class="contacts-phones__list">
+                                        <?php foreach (get_field('phones', 'options') as $row): ?>
+                                          <div itemprop="telephone">Тел.: <?php echo $row['number'] ?></div>
+                                        <?php endforeach ?>
+                                      </div>
+                                      <div class="contacts-phones__messengers">
+                                        <div class="contacts-messengers">
+                                            <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+                                                <?php icon('telegram', 1.2) ?>
+                                            </a>
+                                            <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+                                                <?php icon('whatsapp', 1.3) ?>
+                                            </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="contacts__row">
+                                        <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
+                                    </div>
                                 </div>
                                 <div class="contacts__time">
                                     <?php icon('clock', 1.25) ?>
-                                    Пн-пт 9:00 – 21:00;&#8195;сб 9:00 – 19:00
+                                    <?php the_field('schedule', 'options') ?>
                                 </div>
                             </div>
                         </div>

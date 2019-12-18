@@ -125,6 +125,11 @@
         svg {
             display: block;
         }
+        img {
+            display: block;
+            width: 25px;
+            height: 25px;
+        }
         @media (max-width: $breakpoint-xsmall-max) {
             margin-left: 15px;
         }

@@ -402,7 +402,7 @@ add_action('init', function() {
 		'menu_icon'			 => 'dashicons-portfolio',
 		'menu_position'      => 21,
 		'taxonomies' 		 => ['post_tag'],
-		'supports'           => array('title', 'editor', 'thumbnail', 'excerpt')
+		'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'menu_order')
 	));
 	register_post_type('review', array(
 		'labels'             => array(

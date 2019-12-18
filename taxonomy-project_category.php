@@ -10,7 +10,12 @@ $queried_term = get_queried_object();
 $projects = new WP_Query(array(
   'post_type' => 'project',
   'posts_per_page' => 10,
-  'paged' => get_query_var('paged') ?: 1
+  'paged' => get_query_var('paged') ?: 1,
+  'orderby' => 'parent',
+	'tax_query' => [[
+    'taxonomy' => 'project_category',
+    'terms' => $queried_term->term_id
+  ]]
 ));
 $wp_query = $projects;
 ?>

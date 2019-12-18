@@ -20,6 +20,7 @@
             <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                 <meta itemprop="logo" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" />
                 <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>">
+                <meta itemprop="url" content="https://rembrigada116.ru/">
                 <meta itemprop="address" content="<?php the_field('address', 'options') ?>">
                 <meta itemprop="telephone" content="<?php the_field('phone', 'options') ?>">
             </div>

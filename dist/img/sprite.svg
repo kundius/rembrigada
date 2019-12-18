@@ -33,6 +33,7 @@
     </symbol>
     <symbol id="instagram" viewBox="0 0 551.034 551.034">
         <title>instagram</title>
+        <g style="enable-background:new 0 0 551.034 551.034;">
         <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="275.517" y1="4.57" x2="275.517" y2="549.72" gradientTransform="matrix(1 0 0 -1 0 554)">
         <stop  offset="0" style="stop-color:#E09B3D"/>
         <stop  offset="0.3" style="stop-color:#C74C4D"/>
@@ -62,6 +63,7 @@
         <stop  offset="1" style="stop-color:#7024C4"/>
         </linearGradient>
         <circle style="fill:url(#SVGID_3_);" cx="418.31" cy="134.07" r="34.15"/>
+        </g>
     </symbol>
     <symbol id="twitter" viewBox="0 0 612 612">
         <title>twitter</title>

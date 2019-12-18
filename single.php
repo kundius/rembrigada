@@ -15,9 +15,12 @@
 
             <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
             <meta itemprop="author" content="<?php echo get_bloginfo('blogname') ?>" />
-            <meta itemprop="publisher" content="<?php echo get_bloginfo('blogname') ?>" />
             <meta itemprop="dateModified" content="<?php echo the_modified_date('Y-m-d') ?>" />
             <meta itemprop="datePublished" content="<?php echo get_the_date('Y-m-d') ?>" />
+            <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="image" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" />
+                <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>">
+            </div>
 
             <section class="single-headline">
                 <div class="container container_alt">

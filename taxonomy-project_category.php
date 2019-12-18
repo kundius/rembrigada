@@ -5,6 +5,14 @@ $categories = get_categories([
     'hide_empty' => false,
     'parent' => 3
 ]);
+global $wp_query;
+$queried_term = get_queried_object();
+$projects = new WP_Query(array(
+  'post_type' => 'project',
+  'posts_per_page' => 10,
+  'paged' => get_query_var('paged') ?: 1
+));
+$wp_query = $projects;
 ?>
 <!DOCTYPE html>
 <html lang="ru">

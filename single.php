@@ -4,7 +4,7 @@
         <?php get_template_part('partials/head'); ?>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper" itemscope itemtype="http://schema.org/Article">
             <?php get_template_part('partials/header'); ?>
 
             <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
@@ -14,17 +14,19 @@
             </div>
 
             <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+            <meta itemprop="author" content="<?php echo get_bloginfo('blogname') ?>" />
+
             <section class="single-headline">
                 <div class="container container_alt">
                     <div class="single-headline__date">
                         <?php the_modified_date('d') ?>
                         <span><?php the_modified_date('F') ?>`<?php the_modified_date('y') ?></span>
                     </div>
-                    <h1 class="single-headline__title"><span><?php the_title() ?></span></h1>
+                    <h1 class="single-headline__title" itemprop="headline"><span><?php the_title() ?></span></h1>
                 </div>
             </section>
 
-            <div class="bg-category-name">Всё о ремонте</div>
+            <!-- <div class="bg-category-name">Всё о ремонте</div> -->
             <!-- <section class="vertical-social container">
                 <a href="#" class="vk"></a>
                 <a href="#" class="fb"></a>
@@ -41,19 +43,19 @@
                             <?php the_category(',') ?>
                         </div>
                         <div class="date-author-comments-num">
-                            <span><?php icon('date', .75) ?> Опубликовано: <?php the_modified_date() ?></span>
+                            <span><?php icon('date', .75) ?> Опубликовано: <span itemprop="datePublished"><?php the_modified_date() ?></span></span>
                             <span><?php icon('user', .75) ?> <?php the_author() ?></span>
                             <span><?php icon('comments', .75) ?> <?php echo get_comments_number() ?></span>
                         </div>
                     </div>
 
                     <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), 'large')): ?>
-                    <!-- <div class="news-details__entry">
-                        <img src="<?php echo $image ?>" alt="<?php the_title() ?>">
-                    </div> -->
+                    <a itemprop="url" href="<?php the_permalink() ?>" class="news-details__entry" style="display: none">
+                        <img itemprop="image" src="<?php echo $image ?>" alt="<?php the_title() ?>">
+                    </a>
                     <?php endif; ?>
 
-                    <div class="content">
+                    <div class="content" itemprop="articleBody">
                         <?php the_content(); ?>
                     </div>
 

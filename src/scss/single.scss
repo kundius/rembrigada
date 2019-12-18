@@ -168,7 +168,7 @@
     flex-grow: 10;
     display: flex;
     justify-content: space-between;
-    span {
+    > span {
         display: flex;
         align-items: center;
         font-size: 12px;
@@ -181,8 +181,8 @@
     }
     @media (max-width: $breakpoint-xsmall-max) {
         flex-grow: initial;
-        span:nth-child(1),
-        span:nth-child(2) {
+        > span:nth-child(1),
+        > span:nth-child(2) {
             display: none;
         }
     }

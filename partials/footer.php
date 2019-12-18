@@ -27,9 +27,9 @@
             </div>
             <div class="footer__counters">
                 <?php the_field('counters', 'options') ?>
-                <span target="_blank">
+                <a href="https://domenart-studio.ru/" target="_blank">
                     <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/creator.png" alt="" loading="lazy">
-                </span>
+                </a>
             </div>
             <div class="footer__sitemap">
                 <a href="<?php the_permalink(452) ?>">Карта сайта</a>

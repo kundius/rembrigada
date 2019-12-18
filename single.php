@@ -20,9 +20,9 @@
             <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                 <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>">
                 <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                    <meta itemprop="url" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png">
-                    <meta itemprop="width" content="242">
-                    <meta itemprop="height" content="60">
+                    <a itemprop="url" href="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png">
+                        <img itemprop="image" src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" alt="">
+                    </a>
                 </div>
                 <meta itemprop="address" content="<?php the_field('address', 'options') ?>">
                 <meta itemprop="telephone" content="<?php the_field('phone', 'options') ?>">

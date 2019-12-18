@@ -15,6 +15,7 @@
 
             <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
             <meta itemprop="author" content="<?php echo get_bloginfo('blogname') ?>" />
+            <meta itemprop="datePublished" content="<?php echo the_modified_date('Y-m-d') ?>" />
 
             <section class="single-headline">
                 <div class="container container_alt">
@@ -43,7 +44,7 @@
                             <?php the_category(',') ?>
                         </div>
                         <div class="date-author-comments-num">
-                            <span><?php icon('date', .75) ?> Опубликовано: <span itemprop="datePublished"><?php the_modified_date() ?></span></span>
+                            <span><?php icon('date', .75) ?> Опубликовано: <?php the_modified_date() ?></span>
                             <span><?php icon('user', .75) ?> <?php the_author() ?></span>
                             <span><?php icon('comments', .75) ?> <?php echo get_comments_number() ?></span>
                         </div>

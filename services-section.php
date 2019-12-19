@@ -167,10 +167,10 @@ $services = new WP_Query(array(
                                       </div>
                                       <div class="contacts-phones__messengers">
                                         <div class="contacts-messengers">
-                                            <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo $raw_phone ?>">
+                                            <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
                                                 <?php icon('telegram', 1.2) ?>
                                             </a>
-                                            <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo $raw_phone ?>">
+                                            <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
                                                 <?php icon('whatsapp', 1.3) ?>
                                             </a>
                                         </div>

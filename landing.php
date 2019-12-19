@@ -96,10 +96,6 @@ $reviews = new WP_Query(array(
                         <div class="intro__left">
                             <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
                             <div class="intro__description"><?php echo $intro['description'] ?></div>
-                            <a href="#intro-calc" class="intro__button js-scroll" data-target="#intro-calc">
-                                <span>Получить</span>
-                                <span></span>
-                            </a>
                         </div>
                         <div class="intro__right">
                             <form action="/wp-json/contact-form-7/v1/contact-forms/1752/feedback" id="intro-calc" method="post" class="intro-calc js-intro-calc js-form">

@@ -83,9 +83,9 @@ function get_next_id($list, $id) {
                                             <div class="project-gallery-item">
                                                 <div class="project-gallery-item__inner">
                                                     <img src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
-                                                    <button data-basiclightbox="#project-<?php echo $item['id'] ?>" class="project-gallery-item__view js-project-modal-nav">
+                                                    <a href="<?php echo $item['url'] ?>" data-fslightbox="project-<?php echo get_the_ID() ?>" class="project-gallery-item__view">
                                                         <?php icon('loupe') ?>
-                                                    </button>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <?php endforeach; ?>

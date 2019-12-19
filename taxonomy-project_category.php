@@ -59,7 +59,7 @@ $wp_query = $projects;
                                 <div class="works-item-images<?php if (count($gallery) == 1): ?> works-item-images_single<?php endif; ?>">
                                     <?php foreach (array_splice($gallery, 0, 8) as $item): ?>
                                     <div class="works-item-image">
-                                        <a href="<?php echo $item['url'] ?>" data-fslightbox class="works-item-image__wrapper">
+                                        <a href="<?php echo $item['url'] ?>" data-fslightbox="project-<?php echo get_the_ID() ?>" class="works-item-image__wrapper">
                                             <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes']['w800h600'] ?>')"></span>
                                             <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
                                         </a>

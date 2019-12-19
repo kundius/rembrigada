@@ -96,12 +96,6 @@
         margin: 0;
         border-bottom: 1px solid #eeeeee;
         position: relative;
-        &:first-child {
-            margin-left: 4px;
-        }
-        &:last-child {
-            margin-right: 2px;
-        }
     }
 
     .navigation-list > .menu-item > .sub-menu > .menu-item > a {
@@ -170,6 +164,7 @@
     /* третий уровень */
     .navigation-list > .menu-item > .sub-menu > .menu-item > .sub-menu {
         display: none;
+        position: absolute;
         width: 100%;
         left: 100%;
         top: -8px;

@@ -234,7 +234,7 @@ forEach(document.querySelectorAll('.navigation-list'), function(menu) {
       }
     })
 
-    if (window.matchMedia("(min-width: 1200px)").matches && item.parentElement.classList.contains('navigation-list')) {
+    if (window.matchMedia("(min-width: 1200px)").matches) {
       item.addEventListener('mouseenter', () => {
         clearTimeout(timer)
         timer = setTimeout(open, 200)

@@ -92,9 +92,10 @@
         align-items: center;
         justify-content: space-between;
         flex-flow: column;
-        width: calc(100% - 6px);
-        margin: 0 2px 0 4px;
+        width: 100%;
+        margin: 0;
         border-bottom: 1px solid #eeeeee;
+        position: relative;
         &:first-child {
             margin-left: 4px;
         }
@@ -170,16 +171,18 @@
     .navigation-list > .menu-item > .sub-menu > .menu-item > .sub-menu {
         display: none;
         width: 100%;
-        padding-bottom: 8px;
+        left: 100%;
+        top: -8px;
+        border: 8px solid #545965;
         list-style: none;
     }
 
     .navigation-list > .menu-item > .sub-menu > .menu-item > .sub-menu > .menu-item {
         display: block;
         border-bottom: 1px solid #eeeeee;
-        margin: 0 8px;
-        &:first-child {
-            border-top: 1px solid #eeeeee;
+        margin: 0;
+        &:last-child {
+            border-bottom: none;
         }
     }
 

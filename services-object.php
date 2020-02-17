@@ -12,18 +12,31 @@ Template Name: Услуги - Объект
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>
 
+            <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+            
+            <?php if ($background = get_field('headline_background')): ?>
+            <section class="page-headline page-headline_background" style="background-image: url('<?php echo $background['url'] ?>')">
+                <div class="container">
+                    <h1 class="page-headline__title"><span><?php the_title() ?></span></h1>
+                </div>
+            </section>
             <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
                 <div class="container">
                     <?php bcn_display() ?>
                 </div>
             </div>
-
-            <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
+            <?php else: ?>
+            <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
+                <div class="container">
+                    <?php bcn_display() ?>
+                </div>
+            </div>
             <section class="page-headline">
                 <div class="container">
                     <h1 class="page-headline__title"><span><?php the_title() ?></span></h1>
                 </div>
             </section>
+            <?php endif; ?>
 
             <div class="services-section-content">
                 <div class="container container_tiny">

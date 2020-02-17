@@ -17,6 +17,10 @@ body {
     font-size: 18px;
 }
 
+html {
+    margin-top: 0 !important;
+}
+
 img {
     -o-object-fit: contain;
        object-fit: contain;

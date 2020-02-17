@@ -1,5 +1,20 @@
 @import 'variables.scss';
 
+.customize-support {
+    .header-placeholder {
+        height: 140px;
+        @media (max-width: $breakpoint-medium-max) {
+            height: 110px;
+        }
+        @media (max-width: $breakpoint-xsmall-max) {
+            height: 88px;
+        }
+    }
+    .header {
+        top: 32px;
+    }
+}
+
 .header-placeholder {
     height: 108px;
     @media (max-width: $breakpoint-medium-max) {

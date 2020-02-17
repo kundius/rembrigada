@@ -17,7 +17,7 @@ body {
     font-size: 18px;
 }
 
-html {
+html:has(body.customize-support) {
     margin-top: 0 !important;
 }
 

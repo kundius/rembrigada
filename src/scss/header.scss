@@ -1,6 +1,7 @@
 @import 'variables.scss';
 
-.customize-support {
+body.customize-support {
+    margin-top: -32px;
     .header-placeholder {
         height: 140px;
         @media (max-width: $breakpoint-medium-max) {

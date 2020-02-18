@@ -387,7 +387,6 @@ img {
     background-size: cover;
     background-position: 50% 50%;
     padding: 50px 0;
-    min-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -399,6 +398,12 @@ img {
     }
 }
 
+.page-bg-headline__inner {
+    background-color: rgba(28, 30, 33, 0.5);
+    padding: 20px;
+    max-width: 800px;
+}
+
 .page-bg-headline__title {
     color: #ffffff;
     font-family: "Next Art", sans-serif;
@@ -407,12 +412,7 @@ img {
     text-transform: uppercase;
     letter-spacing: 1.56px;
     line-height: 1.25;
-    max-width: 800px;
     text-align: center;
-    span {
-        background-color: rgba(28, 30, 33, 0.5);
-        padding: 0 5px;
-    }
     @media (max-width: $breakpoint-small-max) {
         font-size: 48px;
         letter-spacing: 0.47px;
@@ -420,6 +420,40 @@ img {
     @media (max-width: $breakpoint-xsmall-max) {
         font-size: 32px;
         letter-spacing: 3.2px;
+    }
+}
+
+.page-bg-headline__description {
+    text-align: center;
+    color: #ffffff;
+    font-family: "Next Art", sans-serif;
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+.page-bg-headline__more {
+    text-align: center;
+}
+
+.page-bg-headline__more-link {
+    display: inline-block;
+    height: 32px;
+    padding: 0 25px;
+    background-color: #d52437;
+    border: none;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    padding-left: 29px;
+    font-family: Arimo, sans-serif;
+    font-size: 13px;
+    letter-spacing: .075em;
+    color: #fff;
+    transition: .3s ease;
+    transition-property: background-color, box-shadow;
+    &:hover {
+        background-color: #ff2b42;
+        box-shadow: .209px 1.989px 8px 0 rgba(239,21,44,.6);
     }
 }
 

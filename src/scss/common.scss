@@ -386,15 +386,15 @@ img {
     background-color: #e8e8e8;
     background-size: cover;
     background-position: 50% 50%;
-    padding: 50px 0;
+    padding: 80px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     @media (max-width: $breakpoint-small-max) {
-        min-height: 320px;
+        padding: 60px 0;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        min-height: 240px;
+        padding: 40px 0;
     }
 }
 
@@ -406,19 +406,17 @@ img {
 
 .page-bg-headline__title {
     color: #ffffff;
-    font-family: "Next Art", sans-serif;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 1.56px;
     line-height: 1.25;
     text-align: center;
     @media (max-width: $breakpoint-small-max) {
-        font-size: 48px;
+        font-size: 40px;
         letter-spacing: 0.47px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        font-size: 32px;
+        font-size: 30px;
         letter-spacing: 3.2px;
     }
 }
@@ -426,13 +424,20 @@ img {
 .page-bg-headline__description {
     text-align: center;
     color: #ffffff;
-    font-family: "Next Art", sans-serif;
     font-size: 21px;
     line-height: 1.25;
+    margin-top: 20px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 18px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 16px;
+    }
 }
 
 .page-bg-headline__more {
     text-align: center;
+    margin-top: 20px;
 }
 
 .page-bg-headline__more-link {
@@ -444,7 +449,7 @@ img {
     border-radius: 24px;
     text-align: center;
     cursor: pointer;
-    font-family: Next Art,sans-serif;
+    font-family: Next Art, sans-serif;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: .075em;

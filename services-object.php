@@ -23,7 +23,7 @@ Template Name: Услуги - Объект
                     <?php endif; ?>
                     <?php if ($more = get_field('headline_more')): ?>
                     <?php $more_title = $more['title'] ? $more['title'] : 'Хочу узнать детали' ?>
-                    <?php $more_link = $more['link'] ? $more['link'] : '#' ?>
+                    <?php $more_link = $more['link'] ? $more['link'] : '#callback' ?>
                     <div class="page-bg-headline__more">
                         <a class="page-bg-headline__more-link" href="<?php echo $more_link ?>"><?php echo $more_title ?></a>
                     </div>

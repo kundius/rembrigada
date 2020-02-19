@@ -394,7 +394,7 @@ img {
         padding: 60px 0;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        padding: 40px 0;
+        padding: 0;
     }
 }
 
@@ -402,6 +402,12 @@ img {
     background-color: rgba(28, 30, 33, 0.5);
     padding: 20px;
     max-width: 800px;
+    @media (max-width: $breakpoint-small-max) {
+        max-width: 95%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        max-width: 100%;
+    }
 }
 
 .page-bg-headline__title {

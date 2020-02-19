@@ -440,7 +440,7 @@ $reviews = new WP_Query(array(
             </section>
             <?php endif; ?>
 
-            <?php get_template_part('partials/contacts'); ?>
+            <?php get_template_part('partials/contacts-landing'); ?>
             <?php get_template_part('partials/footer'); ?>
         </div>
     </body>

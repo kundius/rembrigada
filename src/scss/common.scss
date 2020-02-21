@@ -742,29 +742,11 @@ img {
         display: flex;
         align-items: center;
         margin-left: -100px;
-        &::before {
-            content: '';
-            width: 68px;
-            height: 68px;
-            min-width: 68px;
-            min-height: 68px;
-            background-color: #bbddf1;
-            margin-right: 32px;
-            display: block;
-            align-self: flex-start;
-        }
         @media (max-width: $breakpoint-small-max) {
             font-size: 21px;
             line-height: 1.14;
             margin-top: 67px;
             margin-left: -49px;
-            &::before {
-                width: 42px;
-                height: 42px;
-                min-width: 42px;
-                min-height: 42px;
-                margin-right: 7px;
-            }
         }
         @media (max-width: $breakpoint-xsmall-max) {
             margin-top: 71px;

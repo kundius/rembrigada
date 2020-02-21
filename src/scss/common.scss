@@ -741,12 +741,10 @@ img {
         margin-top: 126px;
         display: flex;
         align-items: center;
-        margin-left: -100px;
         @media (max-width: $breakpoint-small-max) {
             font-size: 21px;
             line-height: 1.14;
             margin-top: 67px;
-            margin-left: -49px;
         }
         @media (max-width: $breakpoint-xsmall-max) {
             margin-top: 71px;

@@ -16,6 +16,7 @@ Template Name: О нас
             
             <?php get_template_part('partials/page-headline') ?>
 
+            <?php if (has_nav_menu('aboutmenu')): ?>
             <div class="page-menu">
                 <div class="container container_tiny">
                     <?php wp_nav_menu([
@@ -25,6 +26,7 @@ Template Name: О нас
                     ]) ?>
                 </div>
             </div>
+            <?php endif; ?>
 
             <div class="services-content">
                 <div class="container container_tiny">

@@ -269,7 +269,7 @@ $reviews = new WP_Query(array(
                 />
                 <?php endif; ?>
                 <div class="container">
-                    <p><?php the_field('details_desc') ?></p>
+                    <h2><?php the_field('details_desc') ?></h2>
                     <h3><?php the_field('details_title') ?></h3>
                     <?php if ($list = get_field('details_list')): ?>
                     <div class="details-list">

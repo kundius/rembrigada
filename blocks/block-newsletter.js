@@ -40,11 +40,12 @@
 
 		save: function( props ) {
 			return (
-				el( 'div', { className: props.className },
-					el( 'form', { className: 'misha-block-form-wrap' },
-						el( 'input', { 'type': 'email', 'placeholder' : 'Enter your email address' } ),
-						el( 'button', {}, 'Subscribe' )
-					)
+				el(
+					'div',
+					{
+						className: props.className
+					},
+					'[template_part path="partials/content-callback.php"]'
 				)
 			);
 		},

@@ -60,7 +60,7 @@ $wp_query = $projects;
                                     <?php foreach (array_splice($gallery, 0, 8) as $key => $item): ?>
                                     <div class="works-item-image">
                                         <a href="<?php echo $item['sizes']['large'] ?>" data-fslightbox="project-<?php echo get_the_ID() ?>" class="works-item-image__wrapper">
-                                            <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes'][$key == 1 ? 'w800h600' : 'w150h100'] ?>')"></span>
+                                            <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes'][$key == 0 ? 'w800h600' : 'w150h100'] ?>')"></span>
                                             <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
                                         </a>
                                     </div>

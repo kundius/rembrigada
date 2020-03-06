@@ -144,13 +144,26 @@ class Sitemap_Walker extends Walker_Nav_Menu {
 	}
 }
 
-add_shortcode('calculation', function($atts) {
-	get_template_part('partials/content-calculation');
-});
+function template_part( $atts, $content = null ){
+	$tp_atts = shortcode_atts(array( 
+		 'path' =>  null,
+	), $atts);         
+	ob_start();  
+	get_template_part($tp_atts['path']);  
+	$ret = ob_get_contents();  
+	ob_end_clean();  
+	return $ret;    
+}
+add_shortcode('template_part', 'template_part');  
 
-add_shortcode('callback', function($atts) {
-	get_template_part('partials/content-callback');
-});
+
+// add_shortcode('calculation', function($atts) {
+// 	get_template_part('partials/content-calculation');
+// });
+
+// add_shortcode('callback', function($atts) {
+// 	get_template_part('partials/content-callback');
+// });
 
 add_shortcode('sitemap', function($atts) {
 	if (!has_nav_menu('sitemap')) return;
@@ -543,4 +556,39 @@ function seo() {
 	if (!empty($keywords)) {
 		echo '<meta name="description" content="' . $description . '">';
 	}
+}
+
+
+add_action( 'enqueue_block_editor_assets', 'misha_block_assets' );
+
+function misha_block_assets(){
+
+	wp_enqueue_script(
+ 		'misha-newsletter',
+		plugin_dir_url( __FILE__ ) . 'assets/block-newsletter.js',
+		array( 'wp-blocks', 'wp-element' ),
+		filemtime( dirname( __FILE__ ) . '/assets/block-newsletter.js' )
+	);
+
+	wp_enqueue_style(
+		'misha-newsletter-css',
+		plugin_dir_url( __FILE__ ) . 'assets/block-newsletter.css',
+		array( 'wp-edit-blocks' ),
+		filemtime( dirname( __FILE__ ) . '/assets/block-newsletter.css' )
+	);
+
+}
+
+
+add_action( 'wp_enqueue_scripts', 'misha_block_front_end_assets' );
+
+function misha_block_front_end_assets(){
+
+	wp_enqueue_style(
+		'wp-block-misha-newsletter-css',
+		plugin_dir_url( __FILE__ ) . 'assets/newsletter.css',
+		array(),
+		filemtime( dirname( __FILE__ ) . '/assets/newsletter.css' )
+	);
+
 }

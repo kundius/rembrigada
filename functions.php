@@ -144,6 +144,14 @@ class Sitemap_Walker extends Walker_Nav_Menu {
 	}
 }
 
+add_shortcode('calculation', function($atts) {
+	get_template_part('partials/content-calculation');
+});
+
+add_shortcode('callback', function($atts) {
+	get_template_part('partials/content-callback');
+});
+
 add_shortcode('sitemap', function($atts) {
 	if (!has_nav_menu('sitemap')) return;
 

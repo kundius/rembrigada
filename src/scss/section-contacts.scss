@@ -624,12 +624,12 @@
 .section-contacts-call {
     background-color: rgb(255, 252, 252);
     box-shadow: 0.5px 0.866px 21px 0px rgba(0, 0, 0, 0.14);
-    padding: 57px 100px;
+    padding: 50px;
     @media (max-width: $breakpoint-small-max) {
-        padding: 35px 40px 38px;
+        padding: 30px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        padding: 36px 11px 14px;
+        padding: 15px;
     }
 }
 

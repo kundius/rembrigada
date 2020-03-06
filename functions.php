@@ -565,16 +565,16 @@ function misha_block_assets(){
 
 	wp_enqueue_script(
  		'misha-newsletter',
-		get_template_directory_uri() . 'assets/block-newsletter.js',
+		get_template_directory_uri() . '/blocks/block-newsletter.js',
 		array( 'wp-blocks', 'wp-element' ),
-		filemtime( dirname( __FILE__ ) . '/assets/block-newsletter.js' )
+		filemtime( dirname( __FILE__ ) . '/blocks/block-newsletter.js' )
 	);
 
 	wp_enqueue_style(
 		'misha-newsletter-css',
-		get_template_directory_uri() . 'assets/block-newsletter.css',
+		get_template_directory_uri() . '/blocks/block-newsletter.css',
 		array( 'wp-edit-blocks' ),
-		filemtime( dirname( __FILE__ ) . '/assets/block-newsletter.css' )
+		filemtime( dirname( __FILE__ ) . '/blocks/block-newsletter.css' )
 	);
 
 }
@@ -586,9 +586,9 @@ function misha_block_front_end_assets(){
 
 	wp_enqueue_style(
 		'wp-block-misha-newsletter-css',
-		get_template_directory_uri() . 'assets/newsletter.css',
+		get_template_directory_uri() . '/blocks/newsletter.css',
 		array(),
-		filemtime( dirname( __FILE__ ) . '/assets/newsletter.css' )
+		filemtime( dirname( __FILE__ ) . '/blocks/newsletter.css' )
 	);
 
 }

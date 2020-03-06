@@ -45,7 +45,7 @@
 					{
 						className: props.className
 					},
-					'[template_part path="partials/content-callback.php"]'
+					'[template_part path="partials/content-callback"]'
 				)
 			);
 		},

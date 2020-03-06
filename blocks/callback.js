@@ -16,7 +16,7 @@
 	);
 
 
-	registerBlockType( 'custom/callback', {
+	registerBlockType( 'form/callback', {
 		title: 'Заказать обратный звонок',
 		icon: icon,
 		category: 'widgets',

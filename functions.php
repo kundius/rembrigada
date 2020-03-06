@@ -559,36 +559,19 @@ function seo() {
 }
 
 
-add_action( 'enqueue_block_editor_assets', 'misha_block_assets' );
-
-function misha_block_assets(){
-
+add_action('enqueue_block_editor_assets', 'callback_block_assets');
+function callback_block_assets() {
 	wp_enqueue_script(
- 		'misha-newsletter',
-		get_template_directory_uri() . '/blocks/block-newsletter.js',
-		array( 'wp-blocks', 'wp-element' ),
-		filemtime( dirname( __FILE__ ) . '/blocks/block-newsletter.js' )
+ 		'block-callback-script',
+		get_template_directory_uri() . '/blocks/callback.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/callback.js')
 	);
 
 	wp_enqueue_style(
-		'misha-newsletter-css',
-		get_template_directory_uri() . '/blocks/block-newsletter.css',
-		array( 'wp-edit-blocks' ),
-		filemtime( dirname( __FILE__ ) . '/blocks/block-newsletter.css' )
+		'block-callback-style',
+		get_template_directory_uri() . '/blocks/callback.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/callback.css')
 	);
-
-}
-
-
-add_action( 'wp_enqueue_scripts', 'misha_block_front_end_assets' );
-
-function misha_block_front_end_assets(){
-
-	wp_enqueue_style(
-		'wp-block-misha-newsletter-css',
-		get_template_directory_uri() . '/blocks/newsletter.css',
-		array(),
-		filemtime( dirname( __FILE__ ) . '/blocks/newsletter.css' )
-	);
-
 }

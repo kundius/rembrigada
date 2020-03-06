@@ -329,7 +329,7 @@ $reviews = new WP_Query(array(
             </section>
             <?php endif; wp_reset_query(); ?>
 
-            <?php get_template_part('partials/scheme') ?>
+            <?php if (get_field('show_scheme')): get_template_part('partials/scheme'); endif; ?>
 
             <section class="free-consultation container">
                 <div class="consultation-img">
@@ -440,7 +440,7 @@ $reviews = new WP_Query(array(
             </section>
             <?php endif; ?>
 
-            <?php get_template_part('partials/contacts-landing'); ?>
+            <?php if (get_field('show_contacts')): get_template_part('partials/contacts', 'services'); endif; ?>
             <?php get_template_part('partials/footer'); ?>
         </div>
     </body>

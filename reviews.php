@@ -104,8 +104,8 @@ $reviews = new WP_Query(array(
                 <p>Извините, ничего не найдено.</p>
             <?php endif; ?>
 
-            <?php get_template_part('partials/scheme') ?>
-            <?php get_template_part('partials/contacts', 'services') ?>
+            <?php if (get_field('show_scheme')): get_template_part('partials/scheme'); endif; ?>
+            <?php if (get_field('show_contacts')): get_template_part('partials/contacts', 'services'); endif; ?>
             <?php get_template_part('partials/footer') ?>
         </div>
     </body>

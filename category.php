@@ -67,7 +67,8 @@
                 </div>
             </section>
 
-            <?php get_template_part('partials/contacts'); ?>
+            <?php if (get_field('show_scheme')): get_template_part('partials/scheme'); endif; ?>
+            <?php if (get_field('show_contacts')): get_template_part('partials/contacts'); endif; ?>
             <?php get_template_part('partials/footer'); ?>
         </div>
     </body>

@@ -461,7 +461,7 @@
 .services-calculation {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-    padding: 52px 135px 73px;
+    padding: 52px 100px 73px;
     position: relative;
     @media (max-width: $breakpoint-small-max) {
         padding: 38px 40px 64px;
@@ -570,6 +570,7 @@
         transition-property: background-color, width;
     }
     &:hover {
+        color: #ffffff;
         &::before {
             background-color: #f9152e;
             width: 100%;

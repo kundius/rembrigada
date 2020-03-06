@@ -648,7 +648,7 @@ img {
         }
     }
 
-    a:not(.wp-block-button__link) {
+    a:not([class]) {
         color: #23a6f8;
         text-decoration: underline;
         &:hover {

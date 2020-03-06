@@ -740,6 +740,7 @@
     display: block;
     position: relative;
     padding-left: 28px;
+    .content & a,
     a {
         color: #929db0;
         text-decoration: underline;

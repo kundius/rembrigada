@@ -74,7 +74,7 @@ function get_next_id($list, $id) {
                                             <div class="project-gallery-item">
                                                 <div class="project-gallery-item__inner">
                                                     <img src="<?php echo $item['sizes']['w800h480'] ?>" alt="">
-                                                    <a href="<?php echo $item['url'] ?>" data-fslightbox="project-<?php echo get_the_ID() ?>" class="project-gallery-item__view">
+                                                    <a href="<?php echo $item['sizes']['large'] ?>" data-fslightbox="project-<?php echo get_the_ID() ?>" class="project-gallery-item__view">
                                                         <?php icon('loupe') ?>
                                                     </a>
                                                 </div>
@@ -104,7 +104,7 @@ function get_next_id($list, $id) {
                                                 </div>
                                                 <div class="project-modal-layout__middle">
                                                     <div class="project-modal__image">
-                                                        <img src="<?php echo $item['url'] ?>" alt="">
+                                                        <img src="<?php echo $item['sizes']['large'] ?>" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="project-modal-layout__right">

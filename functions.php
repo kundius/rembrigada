@@ -574,4 +574,18 @@ function callback_block_assets() {
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/callback.css')
 	);
+
+	wp_enqueue_script(
+ 		'block-calculation-script',
+		get_template_directory_uri() . '/blocks/calculation.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/calculation.js')
+	);
+
+	wp_enqueue_style(
+		'block-calculation-style',
+		get_template_directory_uri() . '/blocks/calculation.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/calculation.css')
+	);
 }

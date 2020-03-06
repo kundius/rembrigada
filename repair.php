@@ -2,19 +2,6 @@
 /*
 Template Name: Тип ремонта
 */
-$services = new WP_Query(array(
-    'post_type' => 'page',
-    'post_parent' => 11,
-    'order' => 'ASC',
-    'orderby' => 'menu_order',
-    'meta_query'    => array(
-        array(
-            'key'       => 'show_at_home',
-            'value'     => '1',
-            'compare'   => '=',
-        )
-    )
-));
 ?>
 <!DOCTYPE html>
 <html lang="ru" itemscope itemtype="http://schema.org/WebSite">
@@ -79,32 +66,7 @@ $services = new WP_Query(array(
                     </div>
                 </div>
 
-                <?php if ($services->have_posts()): ?>
-                <div class="repair-services">
-                    <?php while($services->have_posts()): $services->the_post(); ?>
-                    <div class="repair-services__column">
-                        <div class="repair-services__title">
-                            <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-                        </div>
-                        <?php
-                        $children = new WP_Query(array(
-                            'post_type' => 'page',
-                            'order' => 'ASC',
-                            'orderby' => 'menu_order',
-                            'post_parent' => get_the_ID()
-                        ));
-                        ?>
-                        <?php if ($children->have_posts()): ?>
-                        <div class="repair-subservices">
-                            <?php while($children->have_posts()): $children->the_post(); ?>
-                                <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-                            <?php endwhile; ?>
-                        </div>
-                        <?php endif; ?>
-                    </div>
-                    <?php endwhile; ?>
-                </div>
-                <?php endif; wp_reset_query(); ?>
+                <?php /* get_template_part('partials/repair-services'); */ ?>
 
                 <?php if ($projects = get_field('objects_list')): ?>
                 <div class="repair-projects-section">
@@ -159,26 +121,7 @@ $services = new WP_Query(array(
                 </div>
             </div>
 
-            <?php $background = get_field('cost_background') ?>
-            <div class="repair-cost-section" style="background-image: url('<?php echo $background['url'] ?>')">
-                <div class="container container_alt">
-                    <div class="repair-cost-section__title"><?php the_field('cost_title') ?></div>
-                    <div class="repair-cost-section__desc"><?php the_field('cost_desc') ?></div>
-                    <?php if ($list = get_field('cost_list')): ?>
-                    <div class="repair-cost-section__list">
-                        <?php foreach ($list as $item): ?>
-                        <div class="repair-cost-section__item">
-                            <span></span>
-                            <?php echo $item['text'] ?>
-                        </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <?php endif; ?>
-                    <div class="repair-cost-section__signature">
-                        <?php the_field('cost_signature') ?>
-                    </div>
-                </div>
-            </div>
+            <?php /* get_template_part('partials/repair-cost-section'); */ ?>
 
             <div class="repair-stages-section">
                 <div class="container container_alt">

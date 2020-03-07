@@ -419,6 +419,7 @@ add_action('init', function() {
 			'menu_name'          => 'Проекты'
 		),
 		'public'             => true,
+		'publicly_queryable' => false,
 		'menu_icon'			 => 'dashicons-portfolio',
 		'menu_position'      => 21,
 		'taxonomies' 		 => ['post_tag'],

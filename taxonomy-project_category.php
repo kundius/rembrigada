@@ -102,7 +102,7 @@ $wp_query = $projects;
                                     <div class="works-item-deadline__value">
                                         <?php echo $time_works ?>
                                     </div>
-                                    <a href="<?php the_permalink() ?>" class="works-item-deadline__link">посмотреть весь проект</a>
+                                    <!-- <a href="<?php the_permalink() ?>" class="works-item-deadline__link">посмотреть весь проект</a> -->
                                     <?php if ($review = get_field('review')): ?>
                                         <!-- <button class="works-item-deadline__link" data-basiclightbox="#review-<?php echo $review->ID ?>">посмотреть отзыв</button> -->
                                     <?php endif; ?>

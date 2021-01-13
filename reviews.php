@@ -6,7 +6,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $reviews = new WP_Query(array(
     'post_type' => 'review',
     'paged' => $paged,
-    'posts_per_page' => 10
+    'posts_per_page' => -1
 ));
 ?>
 <!DOCTYPE html>

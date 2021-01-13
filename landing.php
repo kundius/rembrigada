@@ -340,7 +340,7 @@ $reviews = new WP_Query(array(
                     <hr>
                     <p>Помните!</p>
                     <p>Цена хорошего ремонта намного ниже, чем цена плохого. Потому что при <br> плохом ремонте вы сначала заплатите за него, а потом за исправление его <br> последствий.</p>
-                    <a class="more-btn" data-basiclightbox="callback">Узнать больше<span></span></a>
+                    <div class="more-btn" data-basiclightbox="#callback"><p>Узнать больше</p><span></span></div>
                 </div>
             </section>
 

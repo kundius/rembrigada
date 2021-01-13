@@ -590,3 +590,20 @@ function callback_block_assets() {
 		filemtime(dirname(__FILE__) . '/blocks/calculation.css')
 	);
 }
+
+add_filter('navigation_markup_template', 'navigation_template', 10, 2);
+function navigation_template ($template, $class) {
+	/*
+	Вид базового шаблона:
+	<nav class="navigation %1$s" role="navigation">
+		<h2 class="screen-reader-text">%2$s</h2>
+		<div class="nav-links">%3$s</div>
+	</nav>
+	*/
+
+	return '
+	<nav class="%1$s" role="navigation">
+		<div class="nav-links">%3$s</div>
+	</nav>    
+	';
+}

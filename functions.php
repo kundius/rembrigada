@@ -13,6 +13,7 @@ add_post_type_support( 'page', 'excerpt' );
 add_action('after_setup_theme', function() {
 	register_nav_menus([
 		'mainmenu' => 'Основное меню',
+		'footermenu' => 'Меню в подвале',
 		'aboutmenu' => 'Меню о компании',
 		'sitemap' => 'Карта сайта'
 	]);

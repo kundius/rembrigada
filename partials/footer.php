@@ -1,5 +1,10 @@
 <footer class="footer">
     <div class="container">
+        <?php wp_nav_menu([
+            'theme_location' => 'footermenu',
+            'container' => false,
+            'menu_class' => 'footer-menu'
+        ]); ?>
         <div class="footer-grid">
             <div class="footer__copyright">
                 <?php the_field('copyright', 'options') ?>

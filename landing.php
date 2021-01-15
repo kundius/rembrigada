@@ -236,21 +236,6 @@ $reviews = new WP_Query(array(
                                 </div>
                                 <?php endif; ?>
                             </div>
-                            <?php
-                                $children = new WP_Query(array(
-                                    'post_type' => 'page',
-                                    'order' => 'ASC',
-                                    'orderby' => 'menu_order',
-                                    'post_parent' => get_the_ID()
-                                ));
-                            ?>
-                            <?php if ($children->have_posts()): ?>
-                            <div class="repair-list">
-                                <?php while($children->have_posts()): $children->the_post(); ?>
-                                    <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-                                <?php endwhile; ?>
-                            </div>
-                            <?php endif; ?>
                         </div>
                     </div>
                     <?php endwhile; ?>

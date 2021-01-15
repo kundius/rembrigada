@@ -14,6 +14,7 @@ add_action('after_setup_theme', function() {
 	register_nav_menus([
 		'mainmenu' => 'Основное меню',
 		'footermenu' => 'Меню в подвале',
+		'servicesmenu' => 'Меню с услугами',
 		'aboutmenu' => 'Меню о компании',
 		'sitemap' => 'Карта сайта'
 	]);

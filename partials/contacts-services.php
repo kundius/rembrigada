@@ -40,23 +40,13 @@
                 </div>
             </div>
             <div class="section-contacts__item hidden@s">
-                <?php
-                $list = new WP_Query(array(
-                    'post_type' => 'page',
-                    'post_parent' => 11,
-                    'order' => 'ASC',
-                    'orderby' => 'menu_order',
-                    'post__not_in' => [38]
-                ));
-                ?>
                 <div class="contacts">
                     <div class="contacts__title">Услуги</div>
                     <div class="contacts__text">
-                        <ul>
-                            <?php while($list->have_posts()): $list->the_post(); ?>
-                                <li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
-                            <?php endwhile; ?>
-                        </ul>
+                        <?php wp_nav_menu([
+                            'theme_location' => 'servicesmenu',
+                            'container' => false
+                        ]); ?>
                     </div>
                     <div class="contacts__time">
                         <?php icon('info', 1.25) ?>

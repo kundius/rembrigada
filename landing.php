@@ -407,7 +407,11 @@ $reviews = new WP_Query(array(
                     <h3 class="additional-services__title">Дополнительные услуги</h3>
                     <div class="additional-services__list">
                         <?php foreach($complementary as $item): ?>
+                        <?php if ($item['link']): ?>
                         <a href="<?php echo $item['link'] ?>" class="additional-services-item">
+                        <?php else: ?>
+                        <div class="additional-services-item">
+                        <?php endif; ?>
                             <span class="additional-services-item__image">
                                 <span>
                                     <?php if ($image = $item['image']): ?>
@@ -418,7 +422,11 @@ $reviews = new WP_Query(array(
                                 </span>
                             </span>
                             <span class="additional-services-item__name"><?php echo $item['title'] ?></span>
+                        <?php if ($item['link']): ?>
                         </a>
+                        <?php else: ?>
+                        </div>
+                        <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

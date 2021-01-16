@@ -30,7 +30,11 @@ Template Name: Услуги
                     <div class="services-others__title">Дополнительные услуги</div>
                     <div class="services-others__list">
                         <?php foreach($complementary as $item): ?>
+                        <?php if ($item['link']): ?>
                         <a href="<?php echo $item['link'] ?>" class="services-others-item">
+                        <?php else: ?>
+                        <div class="additional-services-item">
+                        <?php endif; ?>
                             <span class="services-others-item__image">
                                 <span>
                                     <?php if ($image = $item['image']): ?>
@@ -41,7 +45,11 @@ Template Name: Услуги
                                 </span>
                             </span>
                             <span class="services-others-item__name"><?php echo $item['title'] ?></span>
+                        <?php if ($item['link']): ?>
                         </a>
+                        <?php else: ?>
+                        </div>
+                        <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
                 </div>

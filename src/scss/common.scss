@@ -300,15 +300,15 @@ img {
 }
 
 .container {
-    width: $container-width + 64px;
+    width: $container-width + 48px * 2;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 48px;
     max-width: 100%;
     &_alt {
-        width: $container-width-alt + 64px;
+        width: $container-width-alt + 48px * 2;
     }
     &_tiny {
-        width: $container-width-tiny + 64px;
+        width: $container-width-tiny + 48px * 2;
     }
     @media (max-width: $breakpoint-small-max) {
         padding: 0 24px;

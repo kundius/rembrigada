@@ -865,7 +865,7 @@ img {
         }
     }
 
-    ol {
+    > ol {
         padding: 0 0 0 170px;
         margin: 30px 0;
         counter-reset: list;
@@ -875,7 +875,7 @@ img {
         @media (max-width: $breakpoint-xsmall-max) {
             padding-left: 48px;
         }
-        li {
+        > li {
             position: relative;
             line-height: 1.12;
             margin: 30px 0;
@@ -908,12 +908,12 @@ img {
         }
     }
 
-    ul:not(.wp-block-gallery) {
+    > ul:not(.wp-block-gallery) {
         padding: 0;
         margin: 30px 0;
         line-height: 1.111;
         overflow: hidden;
-        li {
+        > li {
             position: relative;
             padding-left: 60px;
             margin: 20px 0;

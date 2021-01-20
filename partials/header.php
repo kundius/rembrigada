@@ -40,10 +40,10 @@
         <div class="header__contacts">
             <a href="mailto:<?php the_field('email', 'options') ?>" class="header__fbtn">
                 <span class="header__fbtn-icon">
-                    <?php icon('icon-email') ?>
+                    <?php icon('email') ?>
                 </span>
                 <span class="header__fbtn-label">
-                    Написать письмо
+                    Написать<br /> письмо
                 </span>
             </a>
 
@@ -52,7 +52,7 @@
                     <?php icon('phone') ?>
                 </span>
                 <span class="header__fbtn-label">
-                    Обратный звонок
+                    Обратный<br /> звонок
                 </span>
             </button>
 

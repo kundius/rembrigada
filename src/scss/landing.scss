@@ -634,21 +634,21 @@
     // margin-right: 40px;
     // white-space: normal;
     // line-height: 1;
-    @media (max-width: $container-width + $container-padding) {
-        // width: calc(100vw / 3 - (112px / 3)); // 112px отступ контейнера + оступ между элементами + ширина скролла страницы
-    }
-    @media (max-width: $breakpoint-medium-max) {
-        // margin-right: 16px;
-        // width: calc(100vw / 3 - (64px / 3)); // 64px отступ контейнера + оступ между элементами + ширина скролла страницы
-    }
-    @media (max-width: $breakpoint-small-max) {
-        // margin-right: 16px;
-        // width: calc(100vw / 2 - (48px / 2)); // 48px отступ контейнера + оступ между элементами + ширина скролла страницы
-    }
-    @media (max-width: $breakpoint-xsmall-max) {
-        // margin-right: 16px;
-        // width: 100vw;
-    }
+    // @media (max-width: $container-width + $container-padding) {
+    //     width: calc(100vw / 3 - (112px / 3)); // 112px отступ контейнера + оступ между элементами + ширина скролла страницы
+    // }
+    // @media (max-width: $breakpoint-medium-max) {
+    //     margin-right: 16px;
+    //     width: calc(100vw / 3 - (64px / 3)); // 64px отступ контейнера + оступ между элементами + ширина скролла страницы
+    // }
+    // @media (max-width: $breakpoint-small-max) {
+    //     margin-right: 16px;
+    //     width: calc(100vw / 2 - (48px / 2)); // 48px отступ контейнера + оступ между элементами + ширина скролла страницы
+    // }
+    // @media (max-width: $breakpoint-xsmall-max) {
+    //     margin-right: 16px;
+    //     width: 100vw;
+    // }
 }
 
 .objects-slider-nav {

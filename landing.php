@@ -5,7 +5,7 @@ Template Name: Главная
 
 $services = new WP_Query(array(
     'post_type' => 'page',
-    'post_parent' => 11,
+    // 'post_parent' => 11,
     'order' => 'ASC',
     'orderby' => 'menu_order',
 	'meta_query'	=> array(

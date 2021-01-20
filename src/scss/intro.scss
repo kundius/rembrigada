@@ -16,10 +16,11 @@
 .intro__title {
   color: #fff;
   font-size: 60px;
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  line-height: 1.25;
+  max-width: 800px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
   margin: 0;
   font-family: $font-alt;
   span {
@@ -47,7 +48,7 @@
     font-size: 48px;
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    font-size: 29px;
+    font-size: 28px;
     span {
       margin-bottom: 2px;
       padding: 0 3px 1px;
@@ -66,22 +67,18 @@
   color: #fff;
   text-shadow: 1px 0 1px rgba(0,0,0,.61);
   margin-top: 30px;
-  margin-bottom: 19px;
-  p {
-    font-size: 22px;
-    line-height: 1.25;
-    letter-spacing: .025em;
-  }
+  margin-bottom: 20px;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: .025em;
   ul {
-    font-size: 16px;
-    line-height: 1.333;
     padding: 0;
-    margin: 14px 0;
+    margin: 15px 0;
     list-style: none;
     li {
       position: relative;
       padding-left: 42px;
-      margin: 9px 0;
+      margin: 10px 0;
       &::before {
         content: '';
         border-left: 4px solid currentColor;
@@ -97,19 +94,13 @@
     }
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    p {
-      font-size: 16px;
-      line-height: 1;
-      font-weight: bold;
-    }
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0;
     ul {
-      margin: 15px 0;
       li {
-        margin: 3px 0;
         &::before {
-          top: 6px;
+          top: 8px;
           height: 5px;
           width: 12px;
         }

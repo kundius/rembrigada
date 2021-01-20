@@ -526,6 +526,7 @@
       border: 1px solid #9aa6bb;
       background-color: #31333a;
       position: relative;
+      flex-shrink: 0;
     }
   }
   input:checked + span {

@@ -1,7 +1,7 @@
 .intro {
   position: relative;
   padding-bottom: 102px;
-  padding-top: 112px;
+  padding-top: 184px;
   background-color: #2f2f2f;
   > .container {
     position: relative;
@@ -9,7 +9,10 @@
   }
   @media (max-width: $breakpoint-medium-max) {
     padding-bottom: 40px;
-    padding-top: 40px;
+    padding-top: 104px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 88px;
   }
 }
 

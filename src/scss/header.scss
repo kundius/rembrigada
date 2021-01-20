@@ -235,6 +235,39 @@ body.customize-support {
 //     }
 }
 
+.header__fbtn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+    font-size: 14px;
+}
+
+.header__fbtn-icon {
+    width: 32px;
+    height: 32px;
+    background-color: #d52437;
+    border-radius: 16px;
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 6px;
+    svg {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.header__fbtn-label {
+
+}
+
 // .header-callback__phone {
 //     text-decoration: none;
 //     letter-spacing: 0.035em;

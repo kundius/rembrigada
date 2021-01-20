@@ -310,7 +310,7 @@ img {
     &_tiny {
         width: $container-width-tiny + 48px * 2;
     }
-    @media (max-width: $breakpoint-small-max) {
+    @media (max-width: $breakpoint-medium-max) {
         padding: 0 24px;
     }
     @media (max-width: $breakpoint-xsmall-max) {

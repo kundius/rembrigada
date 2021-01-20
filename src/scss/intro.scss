@@ -8,8 +8,8 @@
     z-index: 20;
   }
   @media (max-width: $breakpoint-medium-max) {
-    padding-bottom: 0;
-    padding-top: 0;
+    padding-bottom: 40px;
+    padding-top: 40px;
   }
 }
 
@@ -100,7 +100,7 @@
     margin-top: 30px;
     margin-bottom: 20px;
     p {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1;
       font-weight: bold;
     }
@@ -201,16 +201,16 @@
   height: 100%;
   object-fit: cover;
   z-index: 10;
-  @media (max-width: $breakpoint-medium-max) {
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    width: auto;
-    height: calc(100vh - 68px);
-  }
-  @media (max-width: $breakpoint-xsmall-max) {
-    height: calc(100vh - 56px);
-  }
+  // @media (max-width: $breakpoint-medium-max) {
+  //   left: 50%;
+  //   top: 0;
+  //   transform: translateX(-50%);
+  //   width: auto;
+  //   height: calc(100vh - 68px);
+  // }
+  // @media (max-width: $breakpoint-xsmall-max) {
+  //   height: calc(100vh - 56px);
+  // }
 }
 
 .intro-advantages {

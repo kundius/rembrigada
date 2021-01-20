@@ -75,6 +75,9 @@
   line-height: 1.25;
   letter-spacing: .025em;
   max-width: 800px;
+  h2 {
+    font-size: 22px;
+  }
   ul {
     padding: 0;
     margin: 1em 0;
@@ -99,10 +102,16 @@
   }
   @media (max-width: $breakpoint-medium-max) {
     font-size: 18px;
+    h2 {
+      font-size: 18px;
+    }
   }
   @media (max-width: $breakpoint-xsmall-max) {
     font-size: 14px;
     line-height: 1;
+    h2 {
+      font-size: 14px;
+    }
   }
 }
 

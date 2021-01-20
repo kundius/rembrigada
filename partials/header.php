@@ -47,14 +47,14 @@
                 </span>
             </a>
 
-            <button class="header__fbtn js-header-callback">
+            <a href="tel:<?php echo $raw_phone ?>" class="header__fbtn js-header-callback">
                 <span class="header__fbtn-icon">
                     <?php icon('phone') ?>
                 </span>
                 <span class="header__fbtn-label">
                     Обратный<br /> звонок
                 </span>
-            </button>
+            </a>
 
             <a href="tel:<?php echo $raw_phone ?>" class="header__phone js-header-callback">
                 <?php the_field('phone', 'options') ?>

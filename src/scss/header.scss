@@ -90,7 +90,7 @@
     height: 72px;
     // background-color: #1c1e21;
     @media (max-width: $breakpoint-medium-max) {
-        width: calc(100% - 40px);
+        // width: calc(100% - 40px);
         height: 64px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
@@ -106,7 +106,7 @@
     // top: 0;
     width: 64px;
     height: 64px;
-    margin-left: -30px;
+    margin-left: -10px;
     cursor: pointer;
     transition: left .3s ease;
     z-index: 20;
@@ -192,8 +192,8 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #e5e5e6;
-    @media (max-width: $breakpoint-xsmall-max) {
-        display: none !important;
+    @media (max-width: $breakpoint-small-max) {
+        display: none;
     }
 }
 

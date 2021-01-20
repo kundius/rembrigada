@@ -1,41 +1,41 @@
 @import 'variables.scss';
 
-body.customize-support {
-    margin-top: -32px;
-    .header-placeholder {
-        height: 140px;
-        @media (max-width: $breakpoint-medium-max) {
-            height: 100px;
-        }
-        @media (max-width: $breakpoint-xsmall-max) {
-            height: 88px;
-        }
-    }
-    .header {
-        top: 32px;
-    }
-}
+// body.customize-support {
+//     margin-top: -32px;
+//     .header-placeholder {
+//         height: 140px;
+//         @media (max-width: $breakpoint-medium-max) {
+//             height: 100px;
+//         }
+//         @media (max-width: $breakpoint-xsmall-max) {
+//             height: 88px;
+//         }
+//     }
+//     .header {
+//         top: 32px;
+//     }
+// }
 
-@media screen and (max-width: 782px) {
-    body.customize-support {
-        margin-top: -46px;
-        .header-placeholder {
-            height: 154px;
-            @media (max-width: $breakpoint-medium-max) {
-                height: 114px;
-            }
-            @media (max-width: $breakpoint-xsmall-max) {
-                height: 102px;
-            }
-        }
-        .header {
-            top: 46px;
-        }
-    }
-    #wpadminbar {
-        position: fixed !important;
-    }
-}
+// @media screen and (max-width: 782px) {
+//     body.customize-support {
+//         margin-top: -46px;
+//         .header-placeholder {
+//             height: 154px;
+//             @media (max-width: $breakpoint-medium-max) {
+//                 height: 114px;
+//             }
+//             @media (max-width: $breakpoint-xsmall-max) {
+//                 height: 102px;
+//             }
+//         }
+//         .header {
+//             top: 46px;
+//         }
+//     }
+//     #wpadminbar {
+//         position: fixed !important;
+//     }
+// }
 
 .header-placeholder {
     height: 72px;

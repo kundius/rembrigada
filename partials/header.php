@@ -1,5 +1,5 @@
 <?php $raw_phone = preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>
-<div class="header-placeholder"></div>
+<!-- <div class="header-placeholder"></div> -->
 <header class="header">
     <div class="container">
         <div class="header-toggle">
@@ -37,7 +37,7 @@
             </a>
         </div> -->
 
-        <div class="header__contacts">
+        <div class="header__fbtns">
             <a href="mailto:<?php the_field('email', 'options') ?>" class="header__fbtn">
                 <span class="header__fbtn-icon">
                     <?php icon('email') ?>

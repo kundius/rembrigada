@@ -196,21 +196,18 @@ body.customize-support {
     }
 }
 
-.header-callback {
+.header__contacts {
     display: flex;
-    flex-flow: column;
     align-items: center;
-    text-decoration: none;
-    @media (max-width: $breakpoint-medium-max) {
-        flex-flow: row;
-        margin-right: -10px;
-    }
-    @media (max-width: $breakpoint-xsmall-max) {
-        margin-right: -38px;
+    > * {
+        margin-left: 20px;
+        &:first-child {
+            margin-left: 0;
+        }
     }
 }
 
-.header-callback__phone {
+.header__phone {
     text-decoration: none;
     letter-spacing: 0.035em;
     font-family: "Next Art", sans-serif;
@@ -225,67 +222,95 @@ body.customize-support {
     @media (max-width: $breakpoint-xsmall-max) {
         display: none;
     }
+//     display: flex;
+//     flex-flow: column;
+//     align-items: center;
+//     text-decoration: none;
+//     @media (max-width: $breakpoint-medium-max) {
+//         flex-flow: row;
+//         margin-right: -10px;
+//     }
+//     @media (max-width: $breakpoint-xsmall-max) {
+//         margin-right: -38px;
+//     }
 }
 
-.header-callback__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 228px;
-    height: 32px;
-    margin-top: 10px;
-    background-color: #d52437;
-    border: none;
-    border-radius: 16px;
-    text-align: center;
-    cursor: pointer;
-    padding-left: 29px;
-    font-family: "Arimo", sans-serif;
-    font-size: 13px;
-    letter-spacing: .075em;
-    color: #fff;
-    position: relative;
-    transition: .3s ease;
-    transition-property: background-color, box-shadow;
-    svg {
-        width: 26px;
-        height: 26px;
-        background: #9a1a28;
-        border-radius: 50%;
-        padding: 5px;
-        position: absolute;
-        left: 3px;
-    }
-    &:hover {
-      background-color: rgb(255, 43, 66);
-      box-shadow: 0.209px 1.989px 8px 0px rgba(239, 21, 44, 0.6);
-    }
-    @media (max-width: $breakpoint-medium-max) {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-top: 0;
-        padding: initial;
-        span {
-            display: none;
-        }
-        svg {
-            width: initial;
-            height: initial;
-            background: initial;
-            border-radius: initial;
-            padding: initial;
-            position: initial;
-            left: initial;
-        }
-    }
-    @media (max-width: $breakpoint-xsmall-max) {
-        width: 54px;
-        height: 48px;
-        border-radius: 24px 0 0 24px;
-        box-shadow: 0 4px 4px 1px rgba(54, 57, 65, 0.35);
-    }
-}
+// .header-callback__phone {
+//     text-decoration: none;
+//     letter-spacing: 0.035em;
+//     font-family: "Next Art", sans-serif;
+//     font-weight: 600;
+//     color: #fff;
+//     font-size: 18px;
+//     @media (max-width: $breakpoint-medium-max) {
+//         font-size: 14px;
+//         font-weight: bold;
+//         margin-right: 22px;
+//     }
+//     @media (max-width: $breakpoint-xsmall-max) {
+//         display: none;
+//     }
+// }
+
+// .header-callback__button {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 228px;
+//     height: 32px;
+//     margin-top: 10px;
+//     background-color: #d52437;
+//     border: none;
+//     border-radius: 16px;
+//     text-align: center;
+//     cursor: pointer;
+//     padding-left: 29px;
+//     font-family: "Arimo", sans-serif;
+//     font-size: 13px;
+//     letter-spacing: .075em;
+//     color: #fff;
+//     position: relative;
+//     transition: .3s ease;
+//     transition-property: background-color, box-shadow;
+//     svg {
+//         width: 26px;
+//         height: 26px;
+//         background: #9a1a28;
+//         border-radius: 50%;
+//         padding: 5px;
+//         position: absolute;
+//         left: 3px;
+//     }
+//     &:hover {
+//       background-color: rgb(255, 43, 66);
+//       box-shadow: 0.209px 1.989px 8px 0px rgba(239, 21, 44, 0.6);
+//     }
+//     @media (max-width: $breakpoint-medium-max) {
+//         width: 40px;
+//         height: 40px;
+//         border-radius: 50%;
+//         margin-top: 0;
+//         padding: initial;
+//         span {
+//             display: none;
+//         }
+//         svg {
+//             width: initial;
+//             height: initial;
+//             background: initial;
+//             border-radius: initial;
+//             padding: initial;
+//             position: initial;
+//             left: initial;
+//         }
+//     }
+//     @media (max-width: $breakpoint-xsmall-max) {
+//         width: 54px;
+//         height: 48px;
+//         border-radius: 24px 0 0 24px;
+//         box-shadow: 0 4px 4px 1px rgba(54, 57, 65, 0.35);
+//     }
+// }
 
 .header-messengers {
   display: flex;

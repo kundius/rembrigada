@@ -28,21 +28,37 @@
             </div>
         </nav>
 
-        <div class="header-messengers">
+        <!-- <div class="header-messengers">
             <a class="header-messengers__item header-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
                 <?php icon('telegram', 0.7) ?>
             </a>
             <a class="header-messengers__item header-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
                 <?php icon('whatsapp', 0.8) ?>
             </a>
-        </div>
+        </div> -->
 
-        <a href="tel:<?php echo $raw_phone ?>" class="header-callback js-header-callback">
-            <span class="header-callback__phone"><?php the_field('phone', 'options') ?></span>
-            <span class="header-callback__button">
-                <?php icon('phone') ?>
-                <span>Заказать обратный звонок</span>
-            </span>
-        </a>
+        <div class="header__contacts">
+            <a href="mailto:<?php the_field('email', 'options') ?>" class="header__fbtn">
+                <span class="header__fbtn-icon">
+                    <?php icon('icon-email') ?>
+                </span>
+                <span class="header__fbtn-label">
+                    Написать письмо
+                </span>
+            </a>
+
+            <button class="header__fbtn js-header-callback">
+                <span class="header__fbtn-icon">
+                    <?php icon('phone') ?>
+                </span>
+                <span class="header__fbtn-label">
+                    Обратный звонок
+                </span>
+            </button>
+
+            <a href="tel:<?php echo $raw_phone ?>" class="header__phone js-header-callback">
+                <?php the_field('phone', 'options') ?>
+            </a>
+        </div>
     </div>
 </header>

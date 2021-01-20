@@ -34,7 +34,7 @@ $reviews = new WP_Query(array(
     <head>
         <?php get_template_part('partials/head'); ?>
     </head>
-    <body>
+    <body class="page-home">
         <?php get_template_part('partials/preloader'); ?>
         <div class="wrapper">
             <?php get_template_part('partials/header'); ?>

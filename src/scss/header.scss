@@ -38,7 +38,11 @@
 // }
 
 .header-placeholder {
+    background-color: rgb(28, 30, 33);
     height: 72px;
+    .page-home & {
+        display: none;
+    }
     @media (max-width: $breakpoint-medium-max) {
         height: 64px;
     }

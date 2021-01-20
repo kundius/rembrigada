@@ -1,5 +1,5 @@
 <?php $raw_phone = preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>
-<!-- <div class="header-placeholder"></div> -->
+<div class="header-placeholder"></div>
 <header class="header">
     <div class="container">
         <div class="header-toggle">

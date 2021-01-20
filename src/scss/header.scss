@@ -270,7 +270,7 @@
 
 .header__fbtn-label {
     margin-left: 6px;
-    @media (max-width: $breakpoint-xsmall-max) {
+    @media (max-width: $breakpoint-small-max) {
         display: none;
     }
 }

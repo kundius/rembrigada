@@ -88,14 +88,14 @@ body.customize-support {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 108px;
+    height: 72px;
     // background-color: #1c1e21;
     @media (max-width: $breakpoint-medium-max) {
         width: calc(100% - 40px);
-        height: 68px;
+        height: 64px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        height: 56px;
+        height: 48px;
     }
 }
 

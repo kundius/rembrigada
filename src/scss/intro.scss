@@ -100,15 +100,6 @@
     font-size: 18px;
     line-height: 1;
     letter-spacing: 0;
-    ul {
-      li {
-        &::before {
-          top: 8px;
-          height: 5px;
-          width: 12px;
-        }
-      }
-    }
   }
 }
 

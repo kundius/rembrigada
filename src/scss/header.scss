@@ -77,6 +77,9 @@
             display: none;
         }
     }
+    @media (max-width: $breakpoint-small-max) {
+        left: 72px;
+    }
     @media (max-width: $breakpoint-xsmall-max) {
         width: 128px;
         left: 56px;

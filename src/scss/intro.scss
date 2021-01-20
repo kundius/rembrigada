@@ -71,12 +71,12 @@
   text-shadow: 1px 0 1px rgba(0,0,0,.61);
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 22px;
+  font-size: 28px;
   line-height: 1.25;
   letter-spacing: .025em;
   max-width: 800px;
   h2 {
-    font-size: 22px;
+    font-size: 28px;
   }
   ul {
     padding: 0;
@@ -91,8 +91,8 @@
         border-left: 4px solid currentColor;
         border-bottom: 4px solid currentColor;
         position: absolute;
-        left: .6em;
-        top: .6em;
+        left: .5em;
+        top: .5em;
         transform: rotate(-45deg);
         height: .25em;
         width: .6em;
@@ -101,16 +101,16 @@
     }
   }
   @media (max-width: $breakpoint-medium-max) {
-    font-size: 18px;
+    font-size: 22px;
     h2 {
-      font-size: 18px;
+      font-size: 22px;
     }
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1;
     h2 {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }

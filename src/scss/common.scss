@@ -311,7 +311,7 @@ img {
         width: $container-width-tiny + 64px;
     }
     @media (max-width: $breakpoint-small-max) {
-        padding: 0 56px;
+        padding: 0 24px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         padding: 0 12px;

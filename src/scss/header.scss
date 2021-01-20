@@ -70,9 +70,9 @@ body.customize-support {
     }
     @media (max-width: $breakpoint-medium-max) {
         position: absolute;
-        left: 50%;
+        left: 130px;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translateY(-50%);
         .header_menu-opened & {
             display: none;
         }
@@ -80,7 +80,6 @@ body.customize-support {
     @media (max-width: $breakpoint-xsmall-max) {
         width: 128px;
         left: 56px;
-        transform: translateY(-50%);
     }
 }
 
@@ -113,6 +112,7 @@ body.customize-support {
     z-index: 20;
     @media (max-width: $breakpoint-medium-max) {
         display: block;
+        margin-right: auto;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         width: 56px;
@@ -219,7 +219,6 @@ body.customize-support {
     @media (max-width: $breakpoint-medium-max) {
         font-size: 14px;
         font-weight: bold;
-        margin-right: 22px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         display: none;

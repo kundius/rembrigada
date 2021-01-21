@@ -53,8 +53,11 @@
                   <?php echo $item['content'] ?>
                 </div>
               </div>
-              <div class="content-repair-types-item__collapse-more">
-                <button><span>Смотреть весь список</span></button>
+              <div class="content-repair-types-item__collapse-toggle">
+                <button class="content-repair-types-item__collapse-toggle-button">
+                  <span>Смотреть весь список</span>
+                  <span>Свернуть список</span>
+                </button>
               </div>
             </div>
           </div>

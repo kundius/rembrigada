@@ -3263,37 +3263,56 @@ ul.sitemap > li > ul > li > ul > li > a {
 }
 
 .content-repair-types-item__collapse-content {
-
+    overflow: hidden;
 }
 
-.content-repair-types-item__collapse-more {
+.content-repair-types-item__collapse-toggle {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    button {
-        border: none;
-        background: transparent;
-        padding: 0;
-        font-family: inherit;
-        font-size: 16px;
-        color: #297780;
-        &:hover {
-            color: #20a8ff;
-        }
-        span {
-            border-bottom: 1px dashed currentColor;
-        }
-        &::after {
-            content: '';
-            width: 4px;
-            height: 4px;
-            display: inline-block;
-            margin-left: 4px;
-            border-left: 1px solid currentColor;
-            border-bottom: 1px solid currentColor;
-            transform: rotate(-45deg);
-            vertical-align: middle;
-        }
+    .content-repair-types-item__collapse_disabled & {
+        display: none;
     }
 }
 
+.content-repair-types-item__collapse-toggle-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-family: inherit;
+    font-size: 16px;
+    color: #297780;
+    &:hover {
+        color: #20a8ff;
+    }
+    span {
+        border-bottom: 1px dashed currentColor;
+        &:first-child {
+            display: block;
+            .content-repair-types-item__collapse_opened {
+                display: none;
+            }
+        }
+        &:last-child {
+            display: none;
+            .content-repair-types-item__collapse_opened {
+                display: block;
+            }
+        }
+    }
+    &::after {
+        content: '';
+        width: 4px;
+        height: 4px;
+        display: inline-block;
+        margin-left: 4px;
+        border-left: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+        transform: rotate(-45deg);
+        vertical-align: middle;
+        transition: transform .5s ease-in-out;
+        .content-repair-types-item__collapse_opened {
+            transform: rotate(-135deg);
+        }
+    }
+}

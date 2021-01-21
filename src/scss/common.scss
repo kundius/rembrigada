@@ -3317,9 +3317,13 @@ ul.sitemap > li > ul > li > ul > li > a {
         border-bottom: 1px solid currentColor;
         transform: rotate(-45deg);
         vertical-align: middle;
-        transition: transform .5s ease-in-out;
+        position: relative;
+        top: -1px;
+        transition: .5s ease-in-out;
+        transition-property: transform, top;
         .content-repair-types-item__collapse_opened & {
             transform: rotate(135deg);
+            top: 2px;
         }
     }
 }

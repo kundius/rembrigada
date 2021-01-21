@@ -632,6 +632,7 @@ forEach(document.querySelectorAll('.content-repair-types-item__collapse'), colla
   const toggle = collapse.querySelector('.content-repair-types-item__collapse-more button')
   const wrapper = collapse.querySelector('.content-repair-types-item__collapse-wrap')
   const content = collapse.querySelector('.content-repair-types-item__collapse-content')
+  console.log(content, content.offsetHeight, wrapper, wrapper.offsetHeight)
   let collapsed = true
   toggle.addEventListener('click', (e) => {
     e.preventDefault()

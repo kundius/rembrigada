@@ -3135,6 +3135,8 @@ ul.sitemap > li > ul > li > ul > li > a {
     text-align: center;
     color: #ffffff;
     margin: 0 -1px;
+    line-height: 1.25;
+    padding: 16px 12px 10px;
 }
 
 .content-repair-types-item__headline-title {
@@ -3151,12 +3153,13 @@ ul.sitemap > li > ul > li > ul > li > a {
 }
 
 .content-repair-types-item__body {
-
+    padding: 12px 12px 36px;
 }
 
 .content-repair-types-item__price {
     color: #e1182d;
     text-align: center;
+    line-height: 1.25;
 }
 
 .content-repair-types-item__price-label {
@@ -3170,7 +3173,10 @@ ul.sitemap > li > ul > li > ul > li > a {
 }
 
 .content-repair-types-item__content {
-
+    margin-top: 16px;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .content-repair-types-item__content-label {
@@ -3178,33 +3184,40 @@ ul.sitemap > li > ul > li > ul > li > a {
     font-weight: bold;
     text-align: center;
     font-size: 18px;
+    line-height: 1.25;
+    margin-bottom: 12px;
 }
 
 .content-repair-types-item__content-value {
     color: #000000;
     font-size: 16px;
+    line-height: 1.25;
     ul {
         padding: 0;
         margin: 0;
         list-style: none;
         li {
             position: relative;
-            padding-left: 28px;
+            padding-left: 18px;
+            margin: 10px 0;
             &::before {
                 content: '';
                 position: absolute;
                 width: 8px;
                 height: 8px;
                 background-color: #d2d4db;
-                left: 10px;
-                top: 2px;
+                left: 0;
+                top: 6px;
             }
         }
     }
 }
 
 .content-repair-types-item__order {
-
+    margin-top: 16px;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .content-repair-types-item__order-button {

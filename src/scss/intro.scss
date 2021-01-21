@@ -197,6 +197,11 @@
       margin-left: -7px;
     }
   }
+  &:hover {
+    span:nth-child(1) {
+      background: #d52437;
+    }
+  }
   @media (max-width: $breakpoint-xsmall-max) {
     span:nth-child(1) {
       line-height: 40px;

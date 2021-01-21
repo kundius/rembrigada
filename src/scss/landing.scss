@@ -706,6 +706,9 @@
         border-top-width: 2px;
         margin-left: 4px;
     }
+    @media (max-width: $breakpoint-xsmall-max) {
+        display: none;
+    }
 }
 
 .objects-slider-next {
@@ -716,6 +719,9 @@
         border-right-width: 2px;
         border-bottom-width: 2px;
         margin-left: -4px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        display: none;
     }
 }
 

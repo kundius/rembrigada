@@ -1,5 +1,5 @@
 <?php if ($list = get_field('repair_types', 'option')): ?>
-<div class="content-repair-types" style="display: none">
+<div class="content-repair-types">
   <?php foreach ($list as $item): ?>
   <div class="content-repair-types__cell">
     <div class="content-repair-types-item">

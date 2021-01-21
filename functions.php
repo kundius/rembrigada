@@ -61,6 +61,13 @@ if (function_exists('acf_add_options_page')) {
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
 	));
+	acf_add_options_page(array(
+		'page_title' 	=> 'Блоки содержимого',
+		'menu_title'	=> 'Блоки содержимого',
+		'menu_slug' 	=> 'acf-content-blocks',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
 }
 
 

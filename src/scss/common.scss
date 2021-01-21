@@ -1025,9 +1025,13 @@ img {
 
     .wp-block-form-cost-table,
     .wp-block-form-timing-table {
+        margin: 40px 0;
+    }
+
+    .content-cost-table,
+    .content-timing-table {
         overflow: auto;
         max-width: 100%;
-        margin: 40px 0;
         table {
             border-style: solid;
             border-width: 1px;
@@ -3091,4 +3095,80 @@ ul.sitemap > li > ul > li > ul > li > a {
             line-height: inherit;
         }
     }
+}
+
+.content-repair-types {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -40px;
+    margin-top: -40px;
+}
+
+.content-repair-types__cell {
+    width: 33.33%;
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+.content-repair-types-item {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(226, 226, 226);
+    background-color: rgb(255, 255, 255);
+}
+
+.content-repair-types-item__image {
+
+}
+
+.content-repair-types-item__headline {
+    background: #a9a9a9;
+    text-align: center;
+}
+
+.content-repair-types-item__headline-title {
+    font-size: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.045em;
+}
+
+.content-repair-types-item__headline-desc {
+
+}
+
+.content-repair-types-item__body {
+
+}
+
+.content-repair-types-item__price {
+
+}
+
+.content-repair-types-item__price-label {
+
+}
+
+.content-repair-types-item__price-value {
+
+}
+
+.content-repair-types-item__content {
+
+}
+
+.content-repair-types-item__content-label {
+
+}
+
+.content-repair-types-item__content-value {
+
+}
+
+.content-repair-types-item__order {
+
+}
+
+.content-repair-types-item__order-button {
+
 }

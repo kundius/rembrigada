@@ -1,0 +1,63 @@
+<?php if ($list = get_field('repair_types', 'option')): ?>
+<div class="content-repair-types" style="display: none">
+  <?php foreach ($list as $item): ?>
+  <div class="content-repair-types__cell">
+    <div class="content-repair-types-item">
+      <?php if ($item['image']): ?>
+      <div class="content-repair-types-item__image">
+        <?php print_r($item['image']) ?>
+      </div>
+      <?php endif; ?>
+
+      <div class="content-repair-types-item__headline">
+        <?php if ($item['title']): ?>
+        <div class="content-repair-types-item__headline-title">
+          <?php echo $item['title'] ?>
+        </div>
+        <?php endif; ?>
+
+        <?php if ($item['title_desc']): ?>
+        <div class="content-repair-types-item__headline-desc">
+          <?php echo $item['title_desc'] ?>
+        </div>
+        <?php endif; ?>
+      </div>
+
+      <div class="content-repair-types-item__body">
+        <div class="content-repair-types-item__price">
+          <?php if ($item['price_title']): ?>
+          <div class="content-repair-types-item__price-label">
+            <?php echo $item['price_title'] ?>
+          </div>
+          <?php endif; ?>
+
+          <?php if ($item['price']): ?>
+          <div class="content-repair-types-item__price-value">
+            <?php echo $item['price'] ?>
+          </div>
+          <?php endif; ?>
+        </div>
+
+        <div class="content-repair-types-item__content">
+          <?php if ($item['content_title']): ?>
+          <div class="content-repair-types-item__content-label">
+            <?php echo $item['content_title'] ?>
+          </div>
+          <?php endif; ?>
+
+          <?php if ($item['content']): ?>
+          <div class="content-repair-types-item__content-value">
+            <?php echo $item['content'] ?>
+          </div>
+          <?php endif; ?>
+        </div>
+
+        <div class="content-repair-types-item__order">
+          <button class="content-repair-types-item__order-button">Заказать замер</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php endforeach; ?>
+</div>
+<?php endif; ?>

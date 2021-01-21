@@ -1027,6 +1027,9 @@ img {
     .wp-block-form-timing-table {
         margin: 40px 0;
         table {
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(226, 226, 226);
             background-color: rgb(255, 255, 255);
             box-shadow: 0.5px 0.866px 21px 0px rgba(0, 0, 0, 0.14);
             th {
@@ -1038,11 +1041,20 @@ img {
             td:nth-child(2n-1) {
                 background-color: #fcfcfc;
             }
-            tr:nth-child(2n) td {
+            tr:nth-child(2n-1) td {
                 background-color: #fcfcfc;
             }
-            tr:nth-child(2n) td:nth-child(2n-1) {
+            tr:nth-child(2n-1) td:nth-child(2n-1) {
                 background-color: #f7f7f7;
+            }
+            strong {
+                color: #4b4a4a;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 1.25;
+            }
+            a {
+                color: inherit;
             }
         }
     }

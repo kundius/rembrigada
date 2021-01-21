@@ -47,7 +47,16 @@
 
           <?php if ($item['content']): ?>
           <div class="content-repair-types-item__content-value">
-            <?php echo $item['content'] ?>
+            <div class="content-repair-types-item__collapse">
+              <div class="content-repair-types-item__collapse-wrap">
+                <div class="content-repair-types-item__collapse-content">
+                  <?php echo $item['content'] ?>
+                </div>
+              </div>
+              <div class="content-repair-types-item__collapse-more">
+                <button><span>Смотреть весь список</span></button>
+              </div>
+            </div>
           </div>
           <?php endif; ?>
         </div>

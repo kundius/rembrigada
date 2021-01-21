@@ -132,6 +132,9 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  @media (min-width: $breakpoint-small) {
+    display: none;
+  }
 }
 
 .intro__order-desc {
@@ -188,9 +191,6 @@
       border-bottom: 4px solid #fff;
       margin-left: -7px;
     }
-  }
-  @media (min-width: $breakpoint-small) {
-    display: none;
   }
   @media (max-width: $breakpoint-xsmall-max) {
     span:nth-child(1) {

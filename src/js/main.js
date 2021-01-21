@@ -633,16 +633,16 @@ forEach(document.querySelectorAll('.content-repair-types-item__collapse'), colla
   const wrapper = collapse.querySelector('.content-repair-types-item__collapse-wrap')
   const content = collapse.querySelector('.content-repair-types-item__collapse-content')
 
-  if (content.offsetHeight === wrapper.offsetHeight) {
+  if (!(content.offsetHeight > wrapper.offsetHeight)) {
     collapse.classList.add('content-repair-types-item__collapse_disabled')
   }
 
   toggle.addEventListener('click', () => {
     if (!collapse.classList.contains('content-repair-types-item__collapse_opened')) {
-      wrapper.style.height = content.offsetHeight + 'px'
+      wrapper.style.maxHeight = content.offsetHeight + 'px'
       collapse.classList.add('content-repair-types-item__collapse_opened')
     } else {
-      wrapper.style.height = null
+      wrapper.style.maxHeight = null
       collapse.classList.remove('content-repair-types-item__collapse_opened')
     }
   })

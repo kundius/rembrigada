@@ -3289,7 +3289,7 @@ ul.sitemap > li > ul > li > ul > li > a {
     span {
         border-bottom: 1px dashed currentColor;
         &:first-child {
-            display: block;
+            display: inline;
             .content-repair-types-item__collapse_opened & {
                 display: none;
             }
@@ -3297,7 +3297,7 @@ ul.sitemap > li > ul > li > ul > li > a {
         &:last-child {
             display: none;
             .content-repair-types-item__collapse_opened & {
-                display: block;
+                display: inline;
             }
         }
     }

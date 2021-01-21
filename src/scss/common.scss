@@ -3289,13 +3289,13 @@ ul.sitemap > li > ul > li > ul > li > a {
         border-bottom: 1px dashed currentColor;
         &:first-child {
             display: block;
-            .content-repair-types-item__collapse_opened {
+            .content-repair-types-item__collapse_opened & {
                 display: none;
             }
         }
         &:last-child {
             display: none;
-            .content-repair-types-item__collapse_opened {
+            .content-repair-types-item__collapse_opened & {
                 display: block;
             }
         }
@@ -3311,7 +3311,7 @@ ul.sitemap > li > ul > li > ul > li > a {
         transform: rotate(-45deg);
         vertical-align: middle;
         transition: transform .5s ease-in-out;
-        .content-repair-types-item__collapse_opened {
+        .content-repair-types-item__collapse_opened & {
             transform: rotate(-135deg);
         }
     }

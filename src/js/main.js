@@ -627,3 +627,20 @@ forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
     control.addEventListener('change', calc)
   })
 })
+
+forEach(document.querySelectorAll('.content-repair-types-item__collapse'), collapse => {
+  const toggle = collapse.querySelector('.content-repair-types-item__collapse-more button')
+  const wrapper = collapse.querySelector('.content-repair-types-item__collapse-wrap')
+  const content = collapse.querySelector('.content-repair-types-item__collapse-content')
+  let collapsed = true
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (collapsed) {
+      wrapper.style.height = content.offsetHeight
+      collapsed = false
+    } else {
+      wrapper.style.height = null
+      collapsed = true
+    }
+  })
+})

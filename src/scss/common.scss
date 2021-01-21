@@ -3257,8 +3257,9 @@ ul.sitemap > li > ul > li > ul > li > a {
 }
 
 .content-repair-types-item__collapse-wrap {
-    max-height: 320px;
+    height: 240px;
     overflow: hidden;
+    transition: height .5s ease-in-out;
 }
 
 .content-repair-types-item__collapse-content {
@@ -3291,6 +3292,7 @@ ul.sitemap > li > ul > li > ul > li > a {
             border-left: 1px solid currentColor;
             border-bottom: 1px solid currentColor;
             transform: rotate(-45deg);
+            vertical-align: middle;
         }
     }
 }

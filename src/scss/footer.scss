@@ -112,7 +112,7 @@
         display: inline-block;
         margin-left: 17px;
         color: #8e98ac;
-        &__vk {
+        &.footer-social__vk {
             // color: #505661;
             // color: #556b9a;
             color: #8e98ac;
@@ -120,7 +120,7 @@
                 color: #556b9a;
             }
         }
-        &__inst {
+        &.footer-social__inst {
             // color: #505661;
             // color: #8e98ac;
             color: #8e98ac;
@@ -128,7 +128,7 @@
                 color: #ca2018;
             }
         }
-        &__twitter {
+        &.footer-social__twitter {
             // color: #505661;
             // color: #03a9f4;
             color: #8e98ac;
@@ -136,7 +136,7 @@
                 color: #03a9f4;
             }
         }
-        &__ok {
+        &.footer-social__ok {
             // color: #505661;
             // color: #ee931d;
             color: #8e98ac;
@@ -144,7 +144,7 @@
                 color: #ee931d;
             }
         }
-        &__youtube {
+        &.footer-social__youtube {
             // color: #505661;
             // color: #ca2018;
             color: #8e98ac;

@@ -3282,6 +3282,7 @@ ul.sitemap > li > ul > li > ul > li > a {
     font-family: inherit;
     font-size: 16px;
     color: #297780;
+    white-space: nowrap;
     &:hover {
         color: #20a8ff;
     }
@@ -3312,7 +3313,7 @@ ul.sitemap > li > ul > li > ul > li > a {
         vertical-align: middle;
         transition: transform .5s ease-in-out;
         .content-repair-types-item__collapse_opened & {
-            transform: rotate(-135deg);
+            transform: rotate(135deg);
         }
     }
 }

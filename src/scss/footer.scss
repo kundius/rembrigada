@@ -112,6 +112,46 @@
         display: inline-block;
         margin-left: 17px;
         color: #8e98ac;
+        &__vk {
+            // color: #505661;
+            // color: #556b9a;
+            color: #8e98ac;
+            &:hover {
+                color: #556b9a;
+            }
+        }
+        &__inst {
+            // color: #505661;
+            // color: #8e98ac;
+            color: #8e98ac;
+            &:hover {
+                color: #8e98ac;
+            }
+        }
+        &__twitter {
+            // color: #505661;
+            // color: #03a9f4;
+            color: #8e98ac;
+            &:hover {
+                color: #03a9f4;
+            }
+        }
+        &__ok {
+            // color: #505661;
+            // color: #ee931d;
+            color: #8e98ac;
+            &:hover {
+                color: #ee931d;
+            }
+        }
+        &__youtube {
+            // color: #505661;
+            // color: #ca2018;
+            color: #8e98ac;
+            &:hover {
+                color: #ca2018;
+            }
+        }
         &:first-child {
             margin-left: 0;
         }
@@ -126,41 +166,6 @@
         @media (max-width: $breakpoint-xsmall-max) {
             margin-left: 15px;
         }
-    }
-    &__vk {
-        // color: #505661;
-        color: #556b9a;
-        // &:hover {
-        //     color: #556b9a;
-        // }
-    }
-    &__inst {
-        // color: #505661;
-        color: #8e98ac;
-        // &:hover {
-        //     color: #8e98ac;
-        // }
-    }
-    &__twitter {
-        // color: #505661;
-        color: #03a9f4;
-        // &:hover {
-        //     color: #03a9f4;
-        // }
-    }
-    &__ok {
-        // color: #505661;
-        color: #ee931d;
-        // &:hover {
-        //     color: #ee931d;
-        // }
-    }
-    &__youtube {
-        // color: #505661;
-        color: #ca2018;
-        // &:hover {
-        //     color: #ca2018;
-        // }
     }
 }
 

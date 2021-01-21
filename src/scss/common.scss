@@ -3118,23 +3118,31 @@ ul.sitemap > li > ul > li > ul > li > a {
 }
 
 .content-repair-types-item__image {
-
+    margin: -1px -1px 0;
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 }
 
 .content-repair-types-item__headline {
     background: #a9a9a9;
     text-align: center;
+    color: #ffffff;
+    margin: 0 -1px;
 }
 
 .content-repair-types-item__headline-title {
     font-size: 20px;
-    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 0.045em;
+    font-weight: bold;
 }
 
 .content-repair-types-item__headline-desc {
-
+    font-size: 16px;
+    letter-spacing: 0.025em;
 }
 
 .content-repair-types-item__body {
@@ -3142,15 +3150,17 @@ ul.sitemap > li > ul > li > ul > li > a {
 }
 
 .content-repair-types-item__price {
-
+    color: #e1182d;
+    text-align: center;
 }
 
 .content-repair-types-item__price-label {
-
+    font-size: 14px;
 }
 
 .content-repair-types-item__price-value {
-
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .content-repair-types-item__content {
@@ -3158,7 +3168,10 @@ ul.sitemap > li > ul > li > ul > li > a {
 }
 
 .content-repair-types-item__content-label {
-
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
 }
 
 .content-repair-types-item__content-value {

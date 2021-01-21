@@ -5,7 +5,7 @@
     <div class="content-repair-types-item">
       <?php if ($item['image']): ?>
       <div class="content-repair-types-item__image">
-        <?php print_r($item['image']) ?>
+        <img src="<?php echo $item['image']['sizes']['w800h600'] ?>" alt="">
       </div>
       <?php endif; ?>
 

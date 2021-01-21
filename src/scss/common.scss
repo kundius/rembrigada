@@ -3229,7 +3229,7 @@ ul.sitemap > li > ul > li > ul > li > a {
 }
 
 .content-repair-types-item__order {
-    margin-top: 16px;
+    margin-top: 22px;
     max-width: 260px;
     margin-left: auto;
     margin-right: auto;
@@ -3269,7 +3269,7 @@ ul.sitemap > li > ul > li > ul > li > a {
 .content-repair-types-item__collapse-toggle {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 18px;
     .content-repair-types-item__collapse_disabled & {
         display: none;
     }
@@ -3283,6 +3283,8 @@ ul.sitemap > li > ul > li > ul > li > a {
     font-size: 16px;
     color: #297780;
     white-space: nowrap;
+    line-height: 1;
+    padding: 6px;
     &:focus {
         outline: none;
     }

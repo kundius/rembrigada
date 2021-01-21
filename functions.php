@@ -612,6 +612,48 @@ function callback_block_assets() {
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/calculator.css')
 	);
+
+	wp_enqueue_script(
+ 		'block-timing_table-script',
+		get_template_directory_uri() . '/blocks/timing_table.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/timing_table.js')
+	);
+
+	wp_enqueue_style(
+		'block-timing_table-style',
+		get_template_directory_uri() . '/blocks/timing_table.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/timing_table.css')
+	);
+
+	wp_enqueue_script(
+ 		'block-cost_table-script',
+		get_template_directory_uri() . '/blocks/cost_table.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/cost_table.js')
+	);
+
+	wp_enqueue_style(
+		'block-cost_table-style',
+		get_template_directory_uri() . '/blocks/cost_table.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/cost_table.css')
+	);
+
+	wp_enqueue_script(
+ 		'block-repair_types-script',
+		get_template_directory_uri() . '/blocks/repair_types.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/repair_types.js')
+	);
+
+	wp_enqueue_style(
+		'block-repair_types-style',
+		get_template_directory_uri() . '/blocks/repair_types.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/repair_types.css')
+	);
 }
 
 add_filter('navigation_markup_template', 'navigation_template', 10, 2);

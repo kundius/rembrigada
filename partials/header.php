@@ -38,14 +38,14 @@
         </div> -->
 
         <div class="header__fbtns">
-            <a href="mailto:<?php the_field('email', 'options') ?>" class="header__fbtn">
+            <!-- <a href="mailto:<?php the_field('email', 'options') ?>" class="header__fbtn">
                 <span class="header__fbtn-icon">
                     <?php icon('email') ?>
                 </span>
                 <span class="header__fbtn-label">
                     Написать<br /> письмо
                 </span>
-            </a>
+            </a> -->
 
             <a href="tel:<?php echo $raw_phone ?>" class="header__fbtn js-header-callback">
                 <span class="header__fbtn-icon">

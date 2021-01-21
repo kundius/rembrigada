@@ -667,6 +667,9 @@ img {
         @media (max-width: $breakpoint-xsmall-max) {
             line-height: 1;
         }
+        th {
+            padding: 19px 10px;
+        }
         td {
             border-top: 1px solid #e2e2e2;
             border-bottom: 1px solid #e2e2e2;
@@ -1016,6 +1019,30 @@ img {
                 height: 117px;
                 border-width: 7px;
                 transform: translate(13px, -14px);
+            }
+        }
+    }
+
+    .wp-block-form-cost-table,
+    .wp-block-form-timing-table {
+        margin: 40px 0;
+        table {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0.5px 0.866px 21px 0px rgba(0, 0, 0, 0.14);
+            th {
+                font-weight: bold;
+                font-size: 18px;
+                color: #fffafa;
+                background-color: #a9a9a9;
+            }
+            td:nth-child(2n-1) {
+                background-color: #fcfcfc;
+            }
+            tr:nth-child(2n) td {
+                background-color: #fcfcfc;
+            }
+            tr:nth-child(2n) td:nth-child(2n-1) {
+                background-color: #f7f7f7;
             }
         }
     }

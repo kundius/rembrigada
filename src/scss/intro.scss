@@ -132,16 +132,22 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  @media (min-width: $breakpoint-small) {
-    display: none;
-  }
 }
 
 .intro__order-desc {
   color: #fff;
-  font-size: 16px;
+  font-size: 28px;
   text-shadow: 1px 0 1px rgba(0,0,0,.61);
   text-align: center;
+  @media (max-width: $breakpoint-medium-max) {
+    font-size: 22px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 16px;
+  }
+  @media (min-width: $breakpoint-small) {
+    display: none;
+  }
 }
 
 .intro__order-button {
@@ -166,7 +172,6 @@
     border-radius: 40px 0 0 40px;
     border: 4px solid #d52437;
     border-right: 0;
-    background: #d52437;
   }
   span:nth-child(2) {
     width: 73px;
@@ -198,6 +203,7 @@
       padding: 0 20px;
       font-size: 14px;
       border-radius: 24px 0 0 24px;
+      background: #d52437;
     }
     span:nth-child(2) {
       height: 48px;

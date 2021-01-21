@@ -128,10 +128,11 @@
 
 .intro__order {
   margin-top: 28px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  @media (max-width: $breakpoint-xsmall-max) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .intro__order-desc {

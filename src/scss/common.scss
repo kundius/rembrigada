@@ -1037,6 +1037,12 @@ img {
                 font-size: 18px;
                 color: #fffafa;
                 background-color: #a9a9a9;
+                line-height: 1;
+                padding: 10px;
+            }
+            td {
+                padding: 4px 50px;
+                line-height: 1;
             }
             td:nth-child(2n-1) {
                 background-color: #fcfcfc;
@@ -1051,7 +1057,7 @@ img {
                 color: #4b4a4a;
                 font-size: 16px;
                 font-weight: 700;
-                line-height: 1.25;
+                line-height: 1;
             }
             a {
                 color: inherit;

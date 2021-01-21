@@ -1,1 +1,2 @@
-<?php the_field('cost_table', 'content-blocks') ?>
+<?php the_field('cost_table', 'options') ?>
+cost_table

@@ -629,8 +629,7 @@ forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
 })
 
 forEach(document.querySelectorAll('.content-repair-types-item__collapse'), collapse => {
-  const toggleBlock = collapse.querySelector('.content-repair-types-item__collapse-toggle')
-  const toggleButton = collapse.querySelector('.content-repair-types-item__collapse-toggle-button')
+  const toggle = collapse.querySelector('.content-repair-types-item__collapse-toggle button')
   const wrapper = collapse.querySelector('.content-repair-types-item__collapse-wrap')
   const content = collapse.querySelector('.content-repair-types-item__collapse-content')
 
@@ -638,7 +637,7 @@ forEach(document.querySelectorAll('.content-repair-types-item__collapse'), colla
     collapse.classList.add('content-repair-types-item__collapse_disabled')
   }
 
-  toggleButton.addEventListener('click', () => {
+  toggle.addEventListener('click', () => {
     if (!collapse.classList.contains('content-repair-types-item__collapse_opened')) {
       wrapper.style.height = content.offsetHeight + 'px'
       collapse.classList.add('content-repair-types-item__collapse_opened')

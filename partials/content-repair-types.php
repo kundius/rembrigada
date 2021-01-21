@@ -54,7 +54,7 @@
                 </div>
               </div>
               <div class="content-repair-types-item__collapse-toggle">
-                <button class="content-repair-types-item__collapse-toggle-button">
+                <button>
                   <span>Смотреть весь список</span>
                   <span>Свернуть список</span>
                 </button>

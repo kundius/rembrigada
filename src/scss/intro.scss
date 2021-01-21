@@ -145,6 +145,7 @@
     border-radius: 40px 0 0 40px;
     border: 4px solid #d52437;
     border-right: 0;
+    background: #d52437;
   }
   span:nth-child(2) {
     width: 73px;
@@ -168,11 +169,6 @@
       border-right: 4px solid #fff;
       border-bottom: 4px solid #fff;
       margin-left: -7px;
-    }
-  }
-  &:hover {
-    span:nth-child(1) {
-      background: #d52437;
     }
   }
   @media (min-width: $breakpoint-small) {

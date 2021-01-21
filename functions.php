@@ -642,6 +642,20 @@ function callback_block_assets() {
 	);
 
 	wp_enqueue_script(
+ 		'block-stages-table-script',
+		get_template_directory_uri() . '/blocks/stages-table.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/stages-table.js')
+	);
+
+	wp_enqueue_style(
+		'block-stages-table-style',
+		get_template_directory_uri() . '/blocks/stages-table.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/stages-table.css')
+	);
+
+	wp_enqueue_script(
  		'block-repair-types-script',
 		get_template_directory_uri() . '/blocks/repair-types.js',
 		array('wp-blocks', 'wp-element'),

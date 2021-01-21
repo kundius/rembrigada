@@ -53,7 +53,7 @@
         </div>
 
         <div class="content-repair-types-item__order">
-          <button class="content-repair-types-item__order-button">Заказать замер</button>
+          <button data-basiclightbox="#callback" class="content-repair-types-item__order-button">Заказать замер</button>
         </div>
       </div>
     </div>

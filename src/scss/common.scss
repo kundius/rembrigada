@@ -3104,14 +3104,29 @@ ul.sitemap > li > ul > li > ul > li > a {
 .content-repair-types {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-left: -40px;
     margin-top: -40px;
+    @media (max-width: $breakpoint-medium-max) {
+        margin-left: -20px;
+        margin-top: -20px;
+    }
 }
 
 .content-repair-types__cell {
     width: 33.33%;
     padding-left: 40px;
     padding-top: 40px;
+    @media (max-width: $breakpoint-medium-max) {
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        width: 50%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+    }
 }
 
 .content-repair-types-item {

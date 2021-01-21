@@ -614,45 +614,45 @@ function callback_block_assets() {
 	);
 
 	wp_enqueue_script(
- 		'block-timing_table-script',
-		get_template_directory_uri() . '/blocks/timing_table.js',
+ 		'block-timing-table-script',
+		get_template_directory_uri() . '/blocks/timing-table.js',
 		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/timing_table.js')
+		filemtime(dirname(__FILE__) . '/blocks/timing-table.js')
 	);
 
 	wp_enqueue_style(
-		'block-timing_table-style',
-		get_template_directory_uri() . '/blocks/timing_table.css',
+		'block-timing-table-style',
+		get_template_directory_uri() . '/blocks/timing-table.css',
 		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/timing_table.css')
+		filemtime(dirname(__FILE__) . '/blocks/timing-table.css')
 	);
 
 	wp_enqueue_script(
- 		'block-cost_table-script',
-		get_template_directory_uri() . '/blocks/cost_table.js',
+ 		'block-cost-table-script',
+		get_template_directory_uri() . '/blocks/cost-table.js',
 		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/cost_table.js')
+		filemtime(dirname(__FILE__) . '/blocks/cost-table.js')
 	);
 
 	wp_enqueue_style(
-		'block-cost_table-style',
-		get_template_directory_uri() . '/blocks/cost_table.css',
+		'block-cost-table-style',
+		get_template_directory_uri() . '/blocks/cost-table.css',
 		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/cost_table.css')
+		filemtime(dirname(__FILE__) . '/blocks/cost-table.css')
 	);
 
 	wp_enqueue_script(
- 		'block-repair_types-script',
-		get_template_directory_uri() . '/blocks/repair_types.js',
+ 		'block-repair-types-script',
+		get_template_directory_uri() . '/blocks/repair-types.js',
 		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/repair_types.js')
+		filemtime(dirname(__FILE__) . '/blocks/repair-types.js')
 	);
 
 	wp_enqueue_style(
-		'block-repair_types-style',
-		get_template_directory_uri() . '/blocks/repair_types.css',
+		'block-repair-types-style',
+		get_template_directory_uri() . '/blocks/repair-types.css',
 		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/repair_types.css')
+		filemtime(dirname(__FILE__) . '/blocks/repair-types.css')
 	);
 }
 

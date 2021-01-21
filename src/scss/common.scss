@@ -1025,6 +1025,8 @@ img {
 
     .wp-block-form-cost-table,
     .wp-block-form-timing-table {
+        overflow: auto;
+        max-width: 100%;
         margin: 40px 0;
         table {
             border-style: solid;
@@ -1039,10 +1041,19 @@ img {
                 background-color: #a9a9a9;
                 line-height: 1;
                 padding: 12px;
+                @media (max-width: $breakpoint-small-max) {
+                    padding: 8px;
+                    font-size: 14px;
+                }
             }
             td {
                 padding: 12px 50px;
                 line-height: 1;
+                font-size: 16px;
+                @media (max-width: $breakpoint-small-max) {
+                    font-size: 12px;
+                    padding: 8px;
+                }
             }
             td:nth-child(2n-1) {
                 background-color: #fcfcfc;
@@ -1064,6 +1075,9 @@ img {
                 font-size: 16px;
                 font-weight: 700;
                 line-height: 1;
+                @media (max-width: $breakpoint-small-max) {
+                    font-size: 12px;
+                }
             }
             a {
                 color: inherit;

@@ -633,6 +633,7 @@ forEach(document.querySelectorAll('.content-repair-types-item__collapse'), colla
   const wrapper = collapse.querySelector('.content-repair-types-item__collapse-wrap')
   const content = collapse.querySelector('.content-repair-types-item__collapse-content')
 
+  console.log(wrapper.offsetHeight, content.offsetHeight)
   if (!(wrapper.offsetHeight > content.offsetHeight)) {
     collapse.classList.add('content-repair-types-item__collapse_disabled')
   }

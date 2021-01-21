@@ -126,9 +126,22 @@
   }
 }
 
-.intro__button-desc {
+.intro__order {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.intro__order-desc {
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
+  text-shadow: 1px 0 1px rgba(0,0,0,.61);
+  text-align: center;
+}
+
+.intro__order-button {
+  margin-top: 12px;
 }
 
 .intro__button {

@@ -94,13 +94,17 @@ $reviews = new WP_Query(array(
                 <div class="container">
                     <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
                     <div class="intro__description"><?php echo $intro['description'] ?></div>
-                    <div class="intro__button-desc">
-                        <?php echo $intro['button_desc'] ?>
+                    <div class="intro__order">
+                        <div class="intro__order-desc">
+                            <?php echo $intro['button_desc'] ?>
+                        </div>
+                        <div class="intro__order-button">
+                            <buttom data-basiclightbox="#callback" class="intro__button">
+                                <span>Заявка на замер</span>
+                                <span></span>
+                            </buttom>
+                        </div>
                     </div>
-                    <buttom data-basiclightbox="#callback" class="intro__button">
-                        <span>Заявка на замер</span>
-                        <span></span>
-                    </buttom>
                 </div>
                 <img
                     class="intro__image js-image-cover"

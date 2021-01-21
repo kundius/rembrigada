@@ -704,10 +704,11 @@
     &::before {
         border-left-width: 2px;
         border-top-width: 2px;
-        margin-left: 4px;
+        margin-left: 2px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        display: none;
+        // display: none;
+        left: 4px;
     }
 }
 
@@ -718,10 +719,11 @@
     &::before {
         border-right-width: 2px;
         border-bottom-width: 2px;
-        margin-left: -4px;
+        margin-left: -2px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        display: none;
+        // display: none;
+        right: 4px;
     }
 }
 

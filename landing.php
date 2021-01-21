@@ -95,7 +95,7 @@ $reviews = new WP_Query(array(
                     <h1 class="intro__title"><?php echo $intro['title'] ?></h1>
                     <div class="intro__description"><?php echo $intro['description'] ?></div>
                     <buttom data-basiclightbox="#callback" class="intro__button">
-                        <p>Заявка на замер</p>
+                        <span>Заявка на замер</span>
                         <span></span>
                     </buttom>
                 </div>

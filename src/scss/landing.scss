@@ -355,6 +355,16 @@
     width: 33.33%;
     padding-left: 40px;
     padding-top: 40px;
+    @media (max-width: $breakpoint-medium-max) {
+        padding-left: 20px;
+        padding-top: 20px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        width: 50%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+    }
 }
 
 .type-of-repair-item {

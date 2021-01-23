@@ -346,13 +346,20 @@
     background-color: #fdfaff;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    margin-left: -40px;
+    margin-top: -40px;
+}
+
+.type-of-repair__cell {
+    width: 33.33%;
+    padding-left: 40px;
+    padding-top: 40px;
 }
 
 .type-of-repair-item {
     display: flex;
     flex-flow: column;
-    width: 33.33%;
     padding: 33px 13px;
     transition: all ease .5s;
 }
@@ -964,9 +971,6 @@
     .type-of-repair__title {
         font-size: 15px;
     }
-    .type-of-repair-item {
-        width: 405px;
-    }
     .about-company .container {
         padding-left: 600px;
     }
@@ -974,9 +978,6 @@
 
 /* 992px - 1200px */
 @media screen and (max-width: 1200px) {
-    .type-of-repair-item {
-        width: 340px;
-    }
     .type-of-repair__title {
         line-height: 30px;
     }
@@ -1132,7 +1133,6 @@
     //     padding-top: 20px;
     // }
     .type-of-repair-item {
-        width: 245px;
         padding: 15px 4px;
     }
     .repair-img-label .label {

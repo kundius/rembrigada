@@ -3,19 +3,6 @@
 Template Name: Главная
 */
 
-$services = new WP_Query(array(
-    'post_type' => 'page',
-    // 'post_parent' => 11,
-    'order' => 'ASC',
-    'orderby' => 'menu_order',
-	'meta_query'	=> array(
-		array(
-			'key'	 	=> 'show_at_home',
-			'value'	  	=> '1',
-			'compare' 	=> '=',
-		)
-	)
-));
 $projects = new WP_Query(array(
     'post_type' => 'project',
     'posts_per_page' => 12,
@@ -147,38 +134,6 @@ $reviews = new WP_Query(array(
                 </div>
             </section>
 
-            <?php if ($services->have_posts()): ?>
-            <section class="type-of-repair">
-                <div class="container">
-                    <?php while($services->have_posts()): $services->the_post(); ?>
-                    <div class="type-of-repair-item">
-                        <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-                        <div class="type-of-repair-item__inner">
-                            <div class="repair-img-label">
-                                <a href="<?php the_permalink() ?>">
-                                    <?php if ($image = get_the_post_thumbnail_url(get_the_ID(), array(468, 364))): ?>
-                                    <img class="repair-img" src="<?php echo $image ?>" alt="<?php the_title() ?>" loading="lazy">
-                                    <?php else: ?>
-                                    <img class="repair-img" src="https://via.placeholder.com/468x364" alt="" loading="lazy">
-                                    <?php endif; ?>
-                                </a>
-                                <?php if ($price = get_field('price', get_the_ID())): ?>
-                                <div class="label">
-                                    <p>
-                                        <?php echo $price['prefix'] ?>
-                                        <span><?php echo $price['amount'] ?></span>
-                                        <?php echo $price['unit'] ?>
-                                    </p>
-                                </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                    </div>
-                    <?php endwhile; ?>
-                </div>
-            </section>
-            <?php endif; wp_reset_query(); ?>
-
             <section class="all-details">
                 <?php if ($image = get_field('details_image')): ?>
                 <img
@@ -252,7 +207,7 @@ $reviews = new WP_Query(array(
 
             <?php if (get_field('show_scheme')): get_template_part('partials/scheme'); endif; ?>
 
-            <section class="free-consultation container">
+            <!-- <section class="free-consultation container">
                 <div class="consultation-img">
                     <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/consultation-img.jpg" alt="" loading="lazy">
                 </div>
@@ -280,7 +235,7 @@ $reviews = new WP_Query(array(
                     <hr>
                     <?php the_field('about_desc') ?>
                 </div>
-            </section>
+            </section> -->
 
             <?php if ($reviews->have_posts()): ?>
             <section class="client-feedback">

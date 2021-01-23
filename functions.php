@@ -668,6 +668,20 @@ function callback_block_assets() {
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/repair-types.css')
 	);
+
+	wp_enqueue_script(
+ 		'block-services-script',
+		get_template_directory_uri() . '/blocks/services.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/services.js')
+	);
+
+	wp_enqueue_style(
+		'block-services-style',
+		get_template_directory_uri() . '/blocks/services.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/services.css')
+	);
 }
 
 add_filter('navigation_markup_template', 'navigation_template', 10, 2);

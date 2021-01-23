@@ -349,6 +349,10 @@
     justify-content: center;
     margin-left: -40px;
     margin-top: -40px;
+    @media (max-width: $breakpoint-medium-max) {
+        margin-left: -20px;
+        margin-top: -20px;
+    }
 }
 
 .type-of-repair__cell {

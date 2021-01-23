@@ -28,14 +28,14 @@
             </div>
         </nav>
 
-        <!-- <div class="header-messengers">
+        <div class="header-messengers">
             <a class="header-messengers__item header-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
                 <?php icon('telegram', 0.7) ?>
             </a>
             <a class="header-messengers__item header-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
                 <?php icon('whatsapp', 0.8) ?>
             </a>
-        </div> -->
+        </div>
 
         <div class="header__fbtns">
             <!-- <a href="mailto:<?php the_field('email', 'options') ?>" class="header__fbtn">

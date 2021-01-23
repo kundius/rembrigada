@@ -1046,6 +1046,10 @@ img {
         .container_alt & {
             margin-left: -165px;
             margin-right: -165px;
+            @media (max-width: $breakpoint-large-max) {
+                margin-left: -65p;
+                margin-right: -65p;
+            }
             @media (max-width: $breakpoint-medium-max) {
                 margin-left: 0;
                 margin-right: 0;
@@ -1054,6 +1058,10 @@ img {
         .container_tiny & {
             margin-left: -265px;
             margin-right: -265px;
+            @media (max-width: $breakpoint-large-max) {
+                margin-left: -165px;
+                margin-right: -165px;
+            }
             @media (max-width: $breakpoint-medium-max) {
                 margin-left: 0;
                 margin-right: 0;

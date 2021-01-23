@@ -742,8 +742,6 @@ img {
         text-transform: uppercase;
         position: relative;
         margin-top: 126px;
-        display: flex;
-        align-items: center;
         @media (max-width: $breakpoint-small-max) {
             font-size: 21px;
             line-height: 1.14;
@@ -753,10 +751,6 @@ img {
             margin-top: 71px;
             font-size: 19px;
         }
-    }
-
-    .has-text-align-center {
-        text-align: center;
     }
 
     h3 {

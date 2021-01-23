@@ -1043,7 +1043,7 @@ img {
 
     .wp-block-form-services {
         margin: 40px 0;
-        .container_alt {
+        .container_alt & {
             margin-left: -165px;
             margin-right: -165px;
             @media (max-width: $breakpoint-medium-max) {

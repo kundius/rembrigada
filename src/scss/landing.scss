@@ -352,7 +352,7 @@
 .type-of-repair-item {
     display: flex;
     flex-flow: column;
-    width: 485px;
+    width: 33.33%;
     padding: 33px 13px;
     transition: all ease .5s;
 }
@@ -373,7 +373,7 @@
     width: 100%;
 }
 
-.type-of-repair h2 {
+.type-of-repair__title {
     padding-bottom: 20px;
     text-align: center;
     text-transform: uppercase;
@@ -383,7 +383,7 @@
     color: #000;
 }
 
-.type-of-repair h2 a {
+.type-of-repair__title a {
     text-decoration: none;
     color: inherit;
 }
@@ -961,7 +961,7 @@
     .header-slider .swiper-pagination {
         left: 0 !important;
     }
-    .type-of-repair h2 {
+    .type-of-repair__title {
         font-size: 15px;
     }
     .type-of-repair-item {
@@ -977,7 +977,7 @@
     .type-of-repair-item {
         width: 340px;
     }
-    .type-of-repair h2 {
+    .type-of-repair__title {
         line-height: 30px;
     }
     .type-of-repair .repair-of-commercial-real-estate h2 {
@@ -1140,7 +1140,7 @@
         right: 5px;
         height: 26px;
     }
-    .type-of-repair h2 {
+    .type-of-repair__title {
         font-size: 12px;
         padding-bottom: 10px;
         line-height: 22px;
@@ -1430,7 +1430,7 @@
     .type-of-repair {
         padding-bottom: 0;
     }
-    .type-of-repair h2 {
+    .type-of-repair__title {
         font-size: 15.51px;
         padding-bottom: 0;
     }

@@ -18,7 +18,7 @@ $services = new WP_Query(array(
 <section class="type-of-repair">
     <?php while($services->have_posts()): $services->the_post(); ?>
     <div class="type-of-repair-item">
-        <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+        <div class="type-of-repair__title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></div>
         <div class="type-of-repair-item__inner">
             <div class="repair-img-label">
                 <a href="<?php the_permalink() ?>">

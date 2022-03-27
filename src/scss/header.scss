@@ -54,7 +54,7 @@
 .header {
     width: 100%;
     margin: 0 auto;
-    background-color: rgba(28, 30, 33, 0.6);
+    background-color: #f0f2f6;
     // background: rgba(0,0,0,.5);
     z-index: 150;
     position: fixed;
@@ -221,7 +221,7 @@
     letter-spacing: 0.035em;
     font-family: "Next Art", sans-serif;
     font-weight: 600;
-    color: #fff;
+    color: #1c1e21;
     font-size: 18px;
     margin-left: 30px;
     @media (max-width: $breakpoint-medium-max) {
@@ -249,7 +249,7 @@
     align-items: center;
     background: transparent;
     border: none;
-    color: #ffffff;
+    color: #1c1e21;
     text-align: left;
     font-size: 14px;
     text-decoration: none;

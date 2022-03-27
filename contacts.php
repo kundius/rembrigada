@@ -52,7 +52,7 @@ Template Name: Контакты
                         <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>" />
                         <meta itemprop="priceRange" content="2500-6000RUB" />
                         <meta itemprop="description" content="<?php echo get_bloginfo('description') ?>" />
-                        <meta itemprop="image" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo.png" />
+                        <meta itemprop="image" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo-light.png" />
                     </div>
                     <div class="p-contacts-time">
                         <?php icon('clock', 1.25) ?>

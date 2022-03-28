@@ -1601,5 +1601,23 @@
 }
 
 .section-landing {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 100%;
+    @media (max-width: $breakpoint-medium-max) {
+        padding: 0 24px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding: 0 12px;
+    }
+}
 
+.section-landing .wp-block-form-services {
+    // margin-left: calc(-50vw + 600px + 10px);
+    // margin-right: calc(-50vw + 600px + 10px);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }

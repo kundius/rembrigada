@@ -382,6 +382,8 @@ img {
 }
 
 .page-bg-headline {
+    position: relative;
+    z-index: 1;
     overflow: hidden;
     background-color: #e8e8e8;
     background-size: cover;
@@ -403,9 +405,19 @@ img {
     }
 }
 
+.page-bg-headline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #1d1f24;
+    opacity: 0.3;
+    z-index: -1;
+}
+
 .page-bg-headline__inner {
-    background-color: rgba(28, 30, 33, 0.5);
-    padding: 20px;
     max-width: 800px;
     @media (max-width: $breakpoint-small-max) {
         max-width: 95%;

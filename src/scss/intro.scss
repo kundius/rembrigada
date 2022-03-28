@@ -246,7 +246,7 @@
 }
 
 .intro-advantages {
-  background-color: #2f2f2f;
+  background-color: #f0f2f6;
   padding: 20px 0;
   @media (max-width: $breakpoint-xsmall-max) {
     padding: 47px 42px;
@@ -286,7 +286,7 @@
 }
 
 .intro-advantage__image {
-  border: 7px solid rgba(237,237,237,.20);
+  border: 7px solid #d3d5db;
   width: 124px;
   height: 124px;
   min-width: 124px;
@@ -315,7 +315,7 @@
 .intro-advantage__title {
   font-size: 18px;
   font-family: $font-alt;
-  color: rgb(255, 255, 255);
+  color: #2b2e34;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1.222;

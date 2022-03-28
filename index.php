@@ -45,7 +45,7 @@
             </div>
 
             <div class="section-landing content">
-                <div class="container container_tiny">
+                <div class="container container_alt">
                     <?php the_content() ?>
                 </div>
             </div>

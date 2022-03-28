@@ -44,7 +44,11 @@
                 </div>
             </div>
 
-            <?php the_content() ?>
+            <div class="section-landing content">
+                <div class="container container_tiny">
+                    <?php the_content() ?>
+                </div>
+            </div>
 
             <?php endwhile; else: ?>
                 <p>Извините, ничего не найдено.</p>

@@ -489,6 +489,7 @@
     }
     @media (max-width: $breakpoint-small-max) {
         font-size: 18px;
+        min-height: 48px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         padding-left: 25px;

@@ -139,10 +139,32 @@
   display: block;
   font-size: 12px;
   color: #404040;
+  margin-top: 20px;
+  margin-left: 18px;
+  margin-right: 18px;
+  padding-left: 30px;
+  position: relative;
+  .form-checkbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
   a {
     color: inherit;
     text-decoration: underline;
   }
+}
+
+.get-estimate-form__rules::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 120%;
+  height: 120%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(#ededed, transparent);
 }
 
 .get-estimate-form__input {

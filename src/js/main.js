@@ -417,10 +417,10 @@ document.querySelectorAll('.js-form').forEach(function(form) {
     const request = new XMLHttpRequest()
     request.open('POST', form.action, true)
     request.addEventListener('readystatechange', function() {
-      console.log(this.readyState)
       if (this.readyState != 4) return
 
       const response = JSON.parse(request.response)
+      console.log(response.status)
 
       if (response.status == 'mail_sent') {
         form.reset()

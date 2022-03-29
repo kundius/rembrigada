@@ -671,16 +671,30 @@ function callback_block_assets() {
 
 	wp_enqueue_script(
  		'block-services-script',
-		get_template_directory_uri() . '/blocks/services.js',
+		get_template_directory_uri() . '/blocks/landing/services.js',
 		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/services.js')
+		filemtime(dirname(__FILE__) . '/blocks/landing/services.js')
 	);
 
 	wp_enqueue_style(
 		'block-services-style',
-		get_template_directory_uri() . '/blocks/services.css',
+		get_template_directory_uri() . '/blocks/landing/services.css',
 		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/services.css')
+		filemtime(dirname(__FILE__) . '/blocks/landing/services.css')
+	);
+
+	wp_enqueue_script(
+ 		'block-problems-script',
+		get_template_directory_uri() . '/blocks/landing/problems.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/problems.js')
+	);
+
+	wp_enqueue_style(
+		'block-problems-style',
+		get_template_directory_uri() . '/blocks/landing/problems.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/problems.css')
 	);
 }
 

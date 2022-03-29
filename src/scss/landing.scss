@@ -329,7 +329,7 @@
 }
 
 /* Ремонт по типу недвижимости */
-.type-of-repair {
+.landing-services {
     background-color: #fdfaff;
     padding: 80px 0 100px;
     @media (max-width: $breakpoint-xsmall-max) {
@@ -337,7 +337,7 @@
     }
 }
 
-.type-of-repair__title {
+.landing-services__title {
     text-align: center;
     text-transform: uppercase;
     font-family: "Next Art", sans-serif;
@@ -350,7 +350,7 @@
     }
 }
 
-.type-of-repair__title::after {
+.landing-services__title::after {
     content: '';
     display: block;
     margin-left: auto;
@@ -364,7 +364,7 @@
     }
 }
 
-.type-of-repair__grid {
+.landing-services__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -372,7 +372,7 @@
     margin-top: -60px;
 }
 
-.type-of-repair__cell {
+.landing-services__cell {
     width: 33.33%;
     padding-left: 60px;
     padding-top: 60px;
@@ -384,22 +384,25 @@
     }
 }
 
-.type-of-repair-item {
+.landing-service {
     display: flex;
     flex-flow: column;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.type-of-repair-item__inner {
+.landing-service__inner {
     overflow: hidden;
     position: relative;
 }
 
-.type-of-repair-item__image img {
+.landing-service__image img {
     display: block;
     width: 100%;
 }
 
-.type-of-repair-item__label {
+.landing-service__label {
     position: absolute;
     top: 9px;
     right: 9px;
@@ -424,7 +427,7 @@
     }
 }
 
-.type-of-repair-item__title {
+.landing-service__title {
     padding-bottom: 20px;
     text-align: center;
     text-transform: uppercase;
@@ -438,12 +441,12 @@
     }
 }
 
-.type-of-repair-item__title a {
+.landing-service__title a {
     text-decoration: none;
     color: inherit;
 }
 
-.type-of-repair-item__request {
+.landing-service__request {
     margin-top: 32px;
 }
 

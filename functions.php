@@ -710,6 +710,20 @@ function callback_block_assets() {
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/landing/measurement.css')
 	);
+
+	wp_enqueue_script(
+ 		'block-get-estimate-script',
+		get_template_directory_uri() . '/blocks/landing/get-estimate.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/get-estimate.js')
+	);
+
+	wp_enqueue_style(
+		'block-get-estimate-style',
+		get_template_directory_uri() . '/blocks/landing/get-estimate.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/get-estimate.css')
+	);
 }
 
 add_filter('navigation_markup_template', 'navigation_template', 10, 2);

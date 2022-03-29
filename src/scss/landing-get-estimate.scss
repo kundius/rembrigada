@@ -1,0 +1,130 @@
+.landing-get-estimate {
+  background: #6b6d89 url('../img/get-estimate-bg.jpg') no-repeat 50% 50%;
+  background-size: auto 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.landing-get-estimate__title {
+  font-size: 48px;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.landing-get-estimate__title::after {
+  content: '';
+  height: 3px;
+  width: 110px;
+  background: #ffffff;
+  display: block;
+  margin-top: 20px;
+}
+
+.landing-get-estimate__layout {
+  display: flex;
+}
+
+.landing-get-estimate__layout-expert {
+
+}
+
+.landing-get-estimate__layout-form {
+
+}
+
+.get-estimate-expert {
+  display: flex;
+  align-items: center;
+}
+
+.get-estimate-expert__image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 40px;
+  flex-shrink: 0;
+  margin-left: -20px;
+  img {
+    display: block;
+  }
+}
+
+.get-estimate-expert__body {
+
+}
+
+.get-estimate-expert__name {
+  color: #fbfbfa;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.get-estimate-expert__stats {
+  font-size: 16px;
+  color: #000;
+  text-decoration: underline;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline-block;
+  line-height: 1;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-left: -5px;
+  margin-top: 28px;
+}
+
+.get-estimate-expert__description {
+  font-size: 18px;
+  color: #e2e3e5;
+  line-height: 1.125;
+}
+
+.get-estimate-form {
+
+}
+
+.get-estimate-form__row {
+
+}
+
+.get-estimate-form__submit {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .05em;
+  max-width: 100%;
+  line-height: 1;
+  border-radius: 26px;
+  background: #d52437;
+  border: none;
+  cursor: pointer;
+  padding: 2px 24px 0px;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  &:hover {
+      background: #ed3947;
+  }
+}
+
+.get-estimate-form__submit::before {
+  content: '';
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  background: url('../img/discount-tag.png') no-repeat 50% 50%;
+  background-size: cover;
+  margin-right: 12px;
+  margin-left: -6px;
+}
+
+.get-estimate-form__rules {
+
+}

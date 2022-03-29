@@ -452,6 +452,7 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
+    letter-spacing: 0.05em;
     padding-left: 20px;
     padding-right: 20px;
     width: 320px;
@@ -463,86 +464,10 @@
     background: #d52437;
     border: none;
     margin-top: 32px;
+    cursor: pointer;
     &:hover {
         background: #ed3947;
     }
-}
-
-/* Фото ремонта и стоимость */
-.repair-img-label {
-    position: relative;
-}
-
-.repair-img-label a,
-.repair-img-label a img {
-    display: block;
-}
-
-.repair-img-label .label {
-    position: absolute;
-    top: 9px;
-    right: 9px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 51px;
-    background-color: #ed3947;
-}
-
-.repair-img-label .label p {
-    padding: 0 17px 0 29px;
-    color: #fff;
-    font-weight: bold;
-}
-
-.repair-img-label .label p span {
-    font-family: "Next Art", sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-}
-
-.repair-img-label .label p sup {
-    font-size: 14px;
-}
-
-/* Список видов ремонта */
-.type-of-repair .repair-list {
-    display: flex;
-    flex-flow: column;
-    align-self: flex-end;
-    padding-top: 20px;
-}
-
-.type-of-repair .repair-list a {
-    display: flex;
-    padding-left: 0.556em;
-    padding-right: 0.556em;
-    color: #333333;
-    text-decoration: none;
-    text-transform: uppercase;
-    line-height: 1.889em;
-    position: relative;
-    align-items: flex-start;
-    font-size: 18px;
-}
-
-.type-of-repair .repair-list a::before {
-    content: '';
-    display: block;
-    margin-right: 0.834em;
-    width: 0.667em;
-    height: 0.667em;
-    min-width: 0.667em;
-    min-height: 0.667em;
-    margin-top: 0.6em;
-    background-color: #ed3947;
-}
-
-.type-of-repair .repair-list a:hover {
-    background-color: #ffefb0;
 }
 
 /* Все детали */
@@ -1041,9 +966,6 @@
     .header-slider .swiper-pagination {
         left: 0 !important;
     }
-    .type-of-repair__title {
-        font-size: 15px;
-    }
     .about-company .container {
         padding-left: 600px;
     }
@@ -1051,15 +973,6 @@
 
 /* 992px - 1200px */
 @media screen and (max-width: 1200px) {
-    .type-of-repair__title {
-        line-height: 30px;
-    }
-    .type-of-repair .repair-of-commercial-real-estate h2 {
-        line-height: 15px;
-    }
-    .type-of-repair .repair-list a {
-        font-size: 14px;
-    }
     .about-company .container {
         padding-left: 500px;
     }
@@ -1190,52 +1103,8 @@
         width: 11px;
         height: 11px;
     }
-    // .site-desc h2 {
-    //     padding: 0 170px 20px;
-    //     font-size: 16px;
-    // }
     .site-desc {
         padding: 35px 0 25px;
-    }
-    // .site-desc p {
-    //     font-size: 14px;
-    //     line-height: 14px;
-    //     padding: 0 100px 12px 100px;
-    // }
-    // .site-desc p:nth-child(3) {
-    //     padding-top: 20px;
-    // }
-    // .type-of-repair-item {
-    //     padding: 15px 4px;
-    // }
-    .repair-img-label .label {
-        top: 5px;
-        right: 5px;
-        height: 26px;
-    }
-    .type-of-repair__title {
-        font-size: 12px;
-        padding-bottom: 10px;
-        line-height: 22px;
-    }
-    .type-of-repair .repair-of-commercial-real-estate h2 {
-        line-height: 11px;
-    }
-    .repair-img-label .label p {
-        padding: 0 8px 0 14px;
-        font-size: 9.22px;
-    }
-    .repair-img-label .label p span {
-        font-size: 12.25px;
-    }
-    .repair-img-label .label p sup {
-        font-size: 6px;
-    }
-    .type-of-repair {
-        padding-bottom: 55px;
-    }
-    .type-of-repair .repair-list a {
-        font-size: 12px;
     }
     .all-details {
         padding: 50px 0 65px;
@@ -1395,18 +1264,6 @@
 
 /* 576px - 768px */
 @media screen and (max-width: 768px) {
-    // .container {
-    //     width: 540px;
-    // }
-    // .site-desc {
-    //     width: 540px;
-    // }
-    // .site-desc h2 {
-    //     padding: 0 0 20px;
-    // }
-    // .site-desc p {
-    //     padding: 0 0 12px;
-    // }
     .repair-of-commercial-real-estate {
         margin: 20px auto 0;
     }
@@ -1486,67 +1343,6 @@
     .header-slider .swiper-button-next {
         bottom: -24px;
         left: calc(50% + 40px);
-    }
-    // .site-desc {
-    //     width: 90%;
-    //     padding-bottom: 10px;
-    // }
-    // .site-desc p {
-    //     font-size: 15.9px;
-    //     line-height: 18px;
-    // }
-    .type-of-repair-item {
-        width: 100%;
-        padding-bottom: 20px;
-        position: relative;
-    }
-    .type-of-repair {
-        padding-bottom: 0;
-    }
-    .type-of-repair__title {
-        font-size: 15.51px;
-        padding-bottom: 0;
-    }
-    .type-of-repair .repair-of-commercial-real-estate h2 {
-        line-height: 20px;
-        height: auto;
-    }
-    .type-of-repair img {
-        opacity: 1;
-    }
-    // .repair-img-label {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    // }
-    .repair-img-label .label {
-        top: 20px;
-        left: 12px;
-        height: 33px;
-        right: auto;
-    }
-    .repair-img-label .label p {
-        font-size: 11.63px;
-    }
-    .repair-img-label .label p span {
-        font-size: 15.51px;
-    }
-    .type-of-repair .repair-list {
-        // padding-top: 0;
-        // position: absolute;
-        // top: 135px;
-        // left: 10px;
-        margin-top: 60px;
-        width: 100%;
-    }
-    .type-of-repair .repair-list a {
-        font-size: 14px;
-    }
-    .type-of-repair .repair-list a::before {
-        width: 10px;
-        height: 10px;
-        top: 5px;
     }
     .repair-of-commercial-real-estate {
         margin: 0;

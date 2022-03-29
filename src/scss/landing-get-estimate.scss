@@ -3,6 +3,9 @@
   // background-size: auto 100%;
   padding-top: 50px;
   padding-bottom: 50px;
+  @media (max-width: 1920px) {
+    background-position: 50% 100%;
+  }
 }
 
 .landing-get-estimate__title {
@@ -24,14 +27,20 @@
 
 .landing-get-estimate__layout {
   display: flex;
+  justify-content: space-around;
+}
+
+.landing-get-estimate__layout::after {
+  content: '';
+  display: block;
 }
 
 .landing-get-estimate__layout-expert {
-
+  width: 480px;
 }
 
 .landing-get-estimate__layout-form {
-
+  width: 274px;
 }
 
 .get-estimate-expert {
@@ -76,10 +85,10 @@
   padding-top: 7px;
   padding-bottom: 7px;
   margin-left: -5px;
-  margin-top: 28px;
 }
 
 .get-estimate-expert__description {
+  margin-top: 28px;
   font-size: 18px;
   color: #e2e3e5;
   line-height: 1.125;

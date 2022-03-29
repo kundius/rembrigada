@@ -26,11 +26,11 @@
       <div class="landing-get-estimate__layout-form">
         <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="get-estimate-form js-form">
           <div class="get-estimate-form__row">
-            <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />
+            <input type="text" name="your-name" value="" class="get-estimate-form__input" placeholder="Имя" />
           </div>
           <div class="get-estimate-form__row">
             <span class="wpcf7-form-control-wrap your-phone">
-              <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон*">
+              <input type="tel" name="your-phone" value="" class="get-estimate-form__input" placeholder="Телефон*">
             </span>
           </div>
           <div class="get-estimate-form__row">

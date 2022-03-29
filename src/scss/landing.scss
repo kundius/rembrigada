@@ -1622,6 +1622,7 @@
     display: flex;
     justify-content: center;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .landing-measurement__title span {
@@ -1632,6 +1633,7 @@
 
 .landing-measurement__request {
     display: flex;
+    align-items: center;
     justify-content: center;
     margin-top: 30px;
 }
@@ -1644,6 +1646,8 @@
     width: 66px;
     height: 28px;
     margin-right: 20px;
+    position: relative;
+    top: 2px;
 }
 
 .landing-measurement__request::after {
@@ -1654,4 +1658,6 @@
     width: 66px;
     height: 28px;
     margin-left: 20px;
+    position: relative;
+    top: 2px;
 }

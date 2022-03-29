@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'Услуги'
+				'Проблемы'
 			);
 		},
 

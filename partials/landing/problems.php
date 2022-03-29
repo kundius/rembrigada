@@ -1,6 +1,6 @@
 <?php $promlems = get_field('problems', 'option'); ?>
 <section class="landing-problems">
-  <div class="container">
+  <div class="container container_medium">
     <div class="landing-problems__title"><?php echo $promlems['title'] ?></div>
 
     <div class="landing-problems__grid">

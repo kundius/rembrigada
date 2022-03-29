@@ -448,6 +448,8 @@
 
 .landing-service__request {
     margin-top: 32px;
+    display: flex;
+    justify-content: center;
 }
 
 .landing-button {
@@ -1456,42 +1458,122 @@
     }
 }
 
-.landing-problems {
 
+.landing-problems {
+    background-color: #fdfdfd;
+    padding: 60px 0 80px;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding: 40px 0 60px;
+    }
 }
 
 .landing-problems__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Next Art", sans-serif;
+    font-weight: bold;
+    font-size: 24.25px;
+    color: #333333;
+    margin-bottom: 60px;
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-bottom: 40px;
+    }
+}
 
+.landing-problems__title::after {
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 110px;
+    height: 3px;
+    background: #ff394f;
 }
 
 .landing-problems__grid {
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -68px;
+    margin-top: -68px;
 }
 
 .landing-problems__cell {
-
-}
-
-.landing-problem {
-
-}
-
-.landing-problem__image {
-
-}
-
-.landing-problem__title {
-
-}
-
-.landing-problem__desc {
-
+    width: 25%;
+    padding-left: 68px;
+    padding-top: 68px;
+    @media (max-width: $breakpoint-small-max) {
+        width: 50%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+    }
 }
 
 .landing-problems__description {
-
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #262625;
+    margin-top: 60px;
+    line-height: 1.125;
 }
 
 .landing-problems__request {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
 
+.landing-problem {
+    background: #fff;
+    border: 1px solid #dddddd;
+    position: relative;
+    z-index: 1;
+    width: 225px;
+    height: 225px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landing-problem::before {
+    content: '';
+    background: transparent;
+    border: 10px solid #ebebeb;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform: translate(28px, 28px);
+}
+
+.landing-problem__image {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-problem__title {
+    font-size: 19px;
+    line-height: 1.125;
+    text-align: center;
+    color: #262625;
+    font-weight: bold;
+}
+
+.landing-problem__desc {
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    color: #262625;
 }

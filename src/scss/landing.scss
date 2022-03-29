@@ -1616,6 +1616,7 @@
 .landing-measurement__title {
     font-size: 30px;
     line-height: 1;
+    font-weight: bold;
     color: #333;
     text-align: center;
     display: flex;
@@ -1624,7 +1625,7 @@
 }
 
 .landing-measurement__title span {
-    padding: 19px 26px;
+    padding: 20px 26px 18px;
     display: inline-block;
     background: #ffffff;
 }
@@ -1632,6 +1633,7 @@
 .landing-measurement__request {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .landing-measurement__request::before {

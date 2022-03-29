@@ -446,6 +446,28 @@
     color: inherit;
 }
 
+.type-of-repair-item__request {
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    line-height: 52px;
+    border-radius: 26px;
+    background: #d52437;
+    border: none;
+    margin-top: 32px;
+    &:hover {
+        background: #ed3947;
+    }
+}
+
 /* Фото ремонта и стоимость */
 .repair-img-label {
     position: relative;
@@ -1657,4 +1679,6 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 0;
+    margin-bottom: 0;
 }

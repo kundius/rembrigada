@@ -401,6 +401,7 @@
     flex-flow: column;
     padding: 33px 13px;
     transition: all ease .5s;
+    position: relative;
 }
 
 .type-of-repair-item__inner {
@@ -415,11 +416,32 @@
     transition: all ease .4s;
 }
 
-.type-of-repair img {
+.type-of-repair-item__image img {
+    display: block;
     width: 100%;
 }
 
-.type-of-repair__title {
+.type-of-repair-item__label {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    display: flex;
+    align-items: center;
+    height: 51px;
+    background-color: #ed3947;
+    color: #fff;
+    font-weight: 700;
+    span {
+        font-family: Next Art,sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+    }
+    sup {
+        font-size: 14px;
+    }
+}
+
+.type-of-repair-item__title {
     padding-bottom: 20px;
     text-align: center;
     text-transform: uppercase;
@@ -429,7 +451,7 @@
     color: #000;
 }
 
-.type-of-repair__title a {
+.type-of-repair-item__title a {
     text-decoration: none;
     color: inherit;
 }

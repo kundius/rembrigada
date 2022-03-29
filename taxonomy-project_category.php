@@ -49,7 +49,7 @@ $wp_query = $projects;
 
             <?php if (have_posts()): ?>
             <section class="works-section">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <?php while(have_posts()): the_post(); ?>
                     <div class="works-item">
                         <div class="works-item__title"><?php the_title() ?></div>

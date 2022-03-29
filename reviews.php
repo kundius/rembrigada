@@ -24,7 +24,7 @@ $reviews = new WP_Query(array(
 
             <?php if ($reviews->have_posts()): ?>
             <div class="reviews-section">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <?php while($reviews->have_posts()): $reviews->the_post(); ?>
                     <div class="reviews-item">
                         <div class="reviews-item__layout">
@@ -94,7 +94,7 @@ $reviews = new WP_Query(array(
             </div>
             <?php endif; wp_reset_query(); ?>
 
-            <div class="container container_tiny">
+            <div class="container container_small">
                 <div class="content">
                     <?php the_content() ?>
                 </div>

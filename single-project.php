@@ -52,7 +52,7 @@ function get_next_id($list, $id) {
             <?php endif; ?>
 
             <div class="js-project-details">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="project-meta">
                         <div class="project-meta__category">
                             <?php icon('category', .75) ?>
@@ -149,14 +149,14 @@ function get_next_id($list, $id) {
                 </div>
             </div>
 
-            <div class="container container_tiny">
+            <div class="container container_small">
                 <div class="content">
                     <?php the_content(); ?>
                 </div>
             </div>
 
             <section class="article-foot">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="article-foot__inner">
                         <div class="article-foot__social">
                             <p>Понравился проект?<br> Поделись с друзьями:</p>
@@ -195,7 +195,7 @@ function get_next_id($list, $id) {
 
             <?php if ($also_query && $also_query->have_posts()): ?>
             <section class="interested-news interested-news_dark">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="interested-news__title">Вам может быть интересно:</div>
                     <div class="interested-news__grid">
                         <?php while($also_query->have_posts()): $also_query->the_post(); ?>

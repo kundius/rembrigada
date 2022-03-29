@@ -1,5 +1,5 @@
 <section class="scheme-of-work">
-    <div class="container container_alt">
+    <div class="container container_medium">
         <h3 class="scheme-of-work__title">Схема работы</h3>
         <hr class="section-hr">
         <div class="scheme-of-work-list">

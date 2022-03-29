@@ -1,5 +1,5 @@
 <section class="section-contacts">
-    <div class="container container_alt">
+    <div class="container container_medium">
         <div class="section-contacts-grid">
             <div class="section-contacts__item">
                 <div class="contacts">

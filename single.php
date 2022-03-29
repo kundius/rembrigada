@@ -29,7 +29,7 @@
             </div>
 
             <section class="single-headline">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="single-headline__date">
                         <?php get_the_date('d') ?>
                         <span><?php get_the_date('F') ?>`<?php get_the_date('y') ?></span>
@@ -48,7 +48,7 @@
                 <a href="#" class="twitter"></a>
             </section> -->
             <section class="news-details">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="type-news-date-author-comments-num">
                         <div class="type-news">
                             <?php icon('category', .75) ?>
@@ -78,7 +78,7 @@
             </section>
 
             <section class="article-foot">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="article-foot__inner">
                         <div class="article-foot__social">
                             <p>Понравился проект?<br> Поделись с друзьями:</p>
@@ -126,7 +126,7 @@
 
             <?php if ($also_query && $also_query->have_posts()): ?>
             <section class="interested-news">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="interested-news__title">Вам может быть интересно:</div>
                     <div class="interested-news__grid">
                         <?php while($also_query->have_posts()): $also_query->the_post(); ?>
@@ -154,7 +154,7 @@
             <?php endif; wp_reset_query(); ?>
 
             <section class="comments">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <?php comments_template(); ?>
                 </div>
             </section>

@@ -17,7 +17,7 @@ Template Name: Услуги
             <?php get_template_part('partials/page-headline') ?>
 
             <div class="services-content">
-                <div class="container container_tiny">
+                <div class="container container_small">
                     <div class="content">
                         <?php the_content() ?>
                     </div>
@@ -26,7 +26,7 @@ Template Name: Услуги
 
             <?php if ($complementary = get_field('complementary')): ?>
             <section class="services-others">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="services-others__title">Дополнительные услуги</div>
                     <div class="services-others__list">
                         <?php foreach($complementary as $item): ?>

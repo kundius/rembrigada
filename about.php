@@ -18,7 +18,7 @@ Template Name: О нас
 
             <?php if (has_nav_menu('aboutmenu')): ?>
             <div class="page-menu">
-                <div class="container container_tiny">
+                <div class="container container_small">
                     <?php wp_nav_menu([
                         'theme_location' => 'aboutmenu',
                         'container' => false,
@@ -29,7 +29,7 @@ Template Name: О нас
             <?php endif; ?>
 
             <div class="services-content">
-                <div class="container container_tiny">
+                <div class="container container_small">
                     <div class="content">
                         <?php the_content() ?>
                     </div>

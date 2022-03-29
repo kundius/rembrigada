@@ -29,7 +29,7 @@ $services = new WP_Query(array(
             <?php endif; ?>
 
             <div class="services-section-content">
-                <div class="container container_tiny">
+                <div class="container container_small">
                     <div class="content">
                         <?php the_content() ?>
                     </div>
@@ -64,7 +64,7 @@ $services = new WP_Query(array(
 
             <?php if ($results = get_field('results')): ?>
                 <div class="services-section-results">
-                    <div class="container container_alt">
+                    <div class="container container_medium">
                         <?php if ($results_title = get_field('results_title')): ?>
                         <div class="services-section-results__title"><?php echo $results_title ?></div>
                         <?php endif; ?>

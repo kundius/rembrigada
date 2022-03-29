@@ -20,7 +20,7 @@
             </section>
 
             <section class="news-list">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <?php if (have_posts()) : ?>
                     <div class="news-list__grid">
                         <?php  while ( have_posts() ) : the_post(); ?>

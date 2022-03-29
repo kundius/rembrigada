@@ -300,21 +300,35 @@ img {
 }
 
 .container {
-    width: $container-width + 48px * 2;
+    width: $container-width-large + 40px * 2;
     margin: 0 auto;
-    padding: 0 48px;
+    padding: 0 40px;
     max-width: 100%;
-    &_alt {
-        width: $container-width-alt + 48px * 2;
+    &_medium {
+        width: $container-width-medium + 40px * 2;
     }
-    &_tiny {
-        width: $container-width-tiny + 48px * 2;
+    &_small {
+        width: $container-width-small + 40px * 2;
     }
     @media (max-width: $breakpoint-medium-max) {
         padding: 0 24px;
+        width: $container-width-large + 24px * 2;
+        &_medium {
+            width: $container-width-medium + 24px * 2;
+        }
+        &_small {
+            width: $container-width-small + 24px * 2;
+        }
     }
     @media (max-width: $breakpoint-xsmall-max) {
         padding: 0 12px;
+        width: $container-width-large + 12px * 2;
+        &_medium {
+            width: $container-width-medium + 12px * 2;
+        }
+        &_small {
+            width: $container-width-small + 12px * 2;
+        }
     }
 }
 
@@ -1038,10 +1052,10 @@ img {
     .wp-block-form-cost-table,
     .wp-block-form-timing-table {
         margin: 40px 0;
-        .container_alt {
+        .container_medium {
 
         }
-        .container_tiny & {
+        .container_small & {
             margin-left: -100px;
             margin-right: -100px;
             @media (max-width: $breakpoint-medium-max) {
@@ -1053,7 +1067,7 @@ img {
 
     .wp-block-form-services {
         margin: 40px 0;
-        .container_alt & {
+        .container_medium & {
             margin-left: -165px;
             margin-right: -165px;
             @media (max-width: $breakpoint-large-max) {
@@ -1065,7 +1079,7 @@ img {
                 margin-right: 0;
             }
         }
-        .container_tiny & {
+        .container_small & {
             margin-left: -265px;
             margin-right: -265px;
             @media (max-width: $breakpoint-large-max) {

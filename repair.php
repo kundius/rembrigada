@@ -16,7 +16,7 @@ Template Name: Тип ремонта
             
             <?php get_template_part('partials/page-headline') ?>
 
-            <div class="container container_alt">
+            <div class="container container_medium">
                 <div class="repair-main">
                     <div class="repair-main__thumbnail">
                         <div class="repair-thumbnail">
@@ -115,7 +115,7 @@ Template Name: Тип ремонта
                 <?php endif; ?>
             </div>
 
-            <div class="container container_tiny">
+            <div class="container container_small">
                 <div class="content">
                     <?php the_content() ?>
                 </div>
@@ -124,7 +124,7 @@ Template Name: Тип ремонта
             <?php /* get_template_part('partials/repair-cost-section'); */ ?>
 
             <div class="repair-stages-section">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <div class="repair-stages-section__title"><?php the_field('stages_title') ?></div>
                     <?php if ($list = get_field('stages_list')): ?>
                     <div class="repair-stages-section__list">

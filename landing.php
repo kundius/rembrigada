@@ -123,7 +123,7 @@ $reviews = new WP_Query(array(
             <?php endif; ?>
 
             <section class="site-desc-container" id="content">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
                     <div class="site-desc">
                         <h2 class="site-desc__title"><?php the_title(); ?></h2>
@@ -239,7 +239,7 @@ $reviews = new WP_Query(array(
 
             <?php if ($reviews->have_posts()): ?>
             <section class="client-feedback">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <h3 class="client-feedback__title">Отзывы наших клиентов</h3>
                     <div class="client-feedback-grid">
                         <?php while($reviews->have_posts()): $reviews->the_post(); ?>
@@ -294,7 +294,7 @@ $reviews = new WP_Query(array(
 
             <?php if ($complementary = get_field('complementary', 11)): ?>
             <section class="additional-services">
-                <div class="container container_alt">
+                <div class="container container_medium">
                     <h3 class="additional-services__title">Дополнительные услуги</h3>
                     <div class="additional-services__list">
                         <?php foreach($complementary as $item): ?>

@@ -17,7 +17,7 @@ Template Name: Услуги - Объект
             <?php get_template_part('partials/page-headline') ?>
 
             <div class="services-section-content">
-                <div class="container container_tiny">
+                <div class="container container_small">
                     <div class="content">
                         <?php the_content() ?>
                     </div>

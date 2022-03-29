@@ -18,7 +18,7 @@
             <?php echo $problem['title'] ?>
           </div>
           <div class="landing-problem__desc">
-            <?php echo $problem['desc'] ?>
+            <?php echo $problem['description'] ?>
           </div>
         </div>
       </div>

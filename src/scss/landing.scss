@@ -637,41 +637,6 @@
     display: inline-block;
     vertical-align: top;
     white-space: normal;
-    // position: relative;
-    // display: inline-block;
-    // width: $container-width / 3 - 80px / 3;
-    // margin-right: 40px;
-    // white-space: normal;
-    // line-height: 1;
-    // @media (max-width: $container-width + $container-padding) {
-    //     width: calc(100vw / 3 - (112px / 3)); // 112px отступ контейнера + оступ между элементами + ширина скролла страницы
-    // }
-    // @media (max-width: $breakpoint-medium-max) {
-    //     margin-right: 16px;
-    //     width: calc(100vw / 3 - (64px / 3)); // 64px отступ контейнера + оступ между элементами + ширина скролла страницы
-    // }
-    // @media (max-width: $breakpoint-small-max) {
-    //     margin-right: 16px;
-    //     width: calc(100vw / 2 - (48px / 2)); // 48px отступ контейнера + оступ между элементами + ширина скролла страницы
-    // }
-    // @media (max-width: $breakpoint-xsmall-max) {
-    //     margin-right: 16px;
-    //     width: 100vw;
-    // }
-}
-
-.objects-slider-nav {
-    // position: absolute;
-    // right: 0;
-    // top: -91px;
-    // display: flex;
-    // @media (max-width: $breakpoint-xsmall-max) {
-    //     position: relative;
-    //     margin: 0 auto 22px;
-    //     width: 64px;
-    //     top: initial;
-    //     right: initial;
-    // }
 }
 
 .objects-slider-prev,
@@ -1489,4 +1454,44 @@
         margin-left: -12px;
         margin-right: -12px;
     }
+}
+
+.landing-problems {
+
+}
+
+.landing-problems__title {
+
+}
+
+.landing-problems__grid {
+
+}
+
+.landing-problems__cell {
+
+}
+
+.landing-problem {
+
+}
+
+.landing-problem__image {
+
+}
+
+.landing-problem__title {
+
+}
+
+.landing-problem__desc {
+
+}
+
+.landing-problems__description {
+
+}
+
+.landing-problems__request {
+
 }

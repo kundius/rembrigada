@@ -307,7 +307,7 @@ add_shortcode('services', function($atts) {
 	$output = '';
 	if ($services->have_posts()):
 		$output .= '<section class="services">';
-        $output .= '<div class="container container_alt">';
+        $output .= '<div class="container container_medium">';
 		while($services->have_posts()): $services->the_post();
             $output .= '<div class="services-item">';
             $output .= '<div class="services-item__headline">';

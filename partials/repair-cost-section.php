@@ -1,6 +1,6 @@
 <?php $background = get_field('cost_background') ?>
 <div class="repair-cost-section" style="background-image: url('<?php echo $background['url'] ?>')">
-    <div class="container container_alt">
+    <div class="container container_medium">
         <div class="repair-cost-section__title"><?php the_field('cost_title') ?></div>
         <div class="repair-cost-section__desc"><?php the_field('cost_desc') ?></div>
         <?php if ($list = get_field('cost_list')): ?>

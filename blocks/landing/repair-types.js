@@ -3,7 +3,7 @@
 	const el = element.createElement;
 	const { registerBlockType } = blocks;
 
-	registerBlockType( 'form/repair-types', {
+	registerBlockType( 'landing/repair-types', {
 		title: 'Виды ремонта',
 		icon: 'embed-generic',
 		category: 'widgets',
@@ -22,7 +22,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'[template_part path="partials/content-repair-types"]'
+				'[template_part path="partials/landing/repair-types"]'
 			);
 		}
 	});

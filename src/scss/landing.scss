@@ -344,6 +344,10 @@
 /* Ремонт по типу недвижимости */
 .type-of-repair {
     background-color: #fdfaff;
+    padding: 40px 0;
+}
+
+.type-of-repair__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

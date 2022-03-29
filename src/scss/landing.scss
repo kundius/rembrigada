@@ -376,7 +376,7 @@
     width: 33.33%;
     padding-left: 60px;
     padding-top: 60px;
-    @media (max-width: $breakpoint-small-max) {
+    @media (max-width: $breakpoint-medium-max) {
         width: 50%;
     }
     @media (max-width: $breakpoint-xsmall-max) {

@@ -1476,7 +1476,7 @@
     }
 }
 
-.section-landing .wp-block-form-services {
+.section-landing [class^='wp-block-landing'] {
     margin-left: calc(-50vw + 600px);
     margin-right: calc(-50vw + 600px);
     margin-top: 0;

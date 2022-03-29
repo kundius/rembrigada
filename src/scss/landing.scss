@@ -1611,6 +1611,10 @@
     background-color: #6d6e8a;
     padding-top: 50px;
     padding-bottom: 50px;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
 
 .landing-measurement__title {
@@ -1624,12 +1628,18 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-family: "Next Art", sans-serif;
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 20px;
+    }
 }
 
 .landing-measurement__title span {
     padding: 20px 26px 18px;
     display: inline-block;
     background: #ffffff;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding: 14px 16px 12px;
+    }
 }
 
 .landing-measurement__request {
@@ -1649,6 +1659,15 @@
     margin-right: 20px;
     position: relative;
     top: 2px;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        width: 33px;
+        height: 14px;
+        top: 1px;
+        margin-right: 8px;
+        margin-left: -12px;
+    }
 }
 
 .landing-measurement__request::after {
@@ -1661,4 +1680,13 @@
     margin-left: 20px;
     position: relative;
     top: 2px;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        width: 33px;
+        height: 14px;
+        top: 1px;
+        margin-left: 8px;
+        margin-right: -12px;
+    }
 }

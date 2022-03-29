@@ -1605,3 +1605,51 @@
     color: #262625;
     margin-top: 15px;
 }
+
+.landing-measurement {
+    background-image: url('../img/measurement-pattern.png');
+    background-color: #6d6e8a;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.landing-measurement__title {
+    font-size: 30px;
+    line-height: 1;
+    color: #333;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.landing-measurement__title span {
+    padding: 19px 26px;
+    display: inline-block;
+    background: #ffffff;
+}
+
+.landing-measurement__request {
+    display: flex;
+    justify-content: center;
+}
+
+.landing-measurement__request::before {
+    content: '';
+    display: block;
+    background: url('../img/arrow-right.png') no-repeat 50% 50%;
+    background-size: cover;
+    width: 66px;
+    height: 28px;
+    margin-right: 20px;
+}
+
+.landing-measurement__request::after {
+    content: '';
+    display: block;
+    background: url('../img/arrow-left.png') no-repeat 50% 50%;
+    background-size: cover;
+    width: 66px;
+    height: 28px;
+    margin-left: 20px;
+}

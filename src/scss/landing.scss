@@ -372,21 +372,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: -40px;
-    margin-top: -40px;
+    margin-left: -60px;
+    margin-top: -60px;
     @media (max-width: $breakpoint-medium-max) {
-        margin-left: -20px;
-        margin-top: -20px;
+        margin-left: -30px;
+        margin-top: -30px;
     }
 }
 
 .type-of-repair__cell {
     width: 33.33%;
-    padding-left: 40px;
-    padding-top: 40px;
+    padding-left: 60px;
+    padding-top: 60px;
     @media (max-width: $breakpoint-medium-max) {
-        padding-left: 20px;
-        padding-top: 20px;
+        padding-left: 30px;
+        padding-top: 30px;
     }
     @media (max-width: $breakpoint-small-max) {
         width: 50%;
@@ -399,21 +399,11 @@
 .type-of-repair-item {
     display: flex;
     flex-flow: column;
-    padding: 33px 13px;
-    transition: all ease .5s;
-    position: relative;
 }
 
 .type-of-repair-item__inner {
     overflow: hidden;
     position: relative;
-}
-
-.type-of-repair-item:hover {
-    -webkit-box-shadow: 0 0 30px #dbdbdb;
-            box-shadow: 0 0 30px #dbdbdb;
-    background-color: #fffcfc;
-    transition: all ease .4s;
 }
 
 .type-of-repair-item__image img {
@@ -425,14 +415,13 @@
     position: absolute;
     top: 9px;
     right: 9px;
-    display: flex;
-    align-items: center;
-    height: 51px;
     background-color: #ed3947;
     color: #fff;
     font-weight: 700;
+    padding: 0 20px;
+    line-height: 50px;
     span {
-        font-family: Next Art,sans-serif;
+        font-family: "Next Art", sans-serif;
         font-weight: 700;
         font-size: 24px;
     }

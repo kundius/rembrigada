@@ -9,8 +9,8 @@
           <div class="type-of-repair-item__title"><?php echo $service['name'] ?></div>
           <div class="type-of-repair-item__inner">
             <div class="type-of-repair-item__image">
-              <?php if ($image = $service['image']): print_r($service['image']); ?>
-              <img src="<?php echo $image ?>" alt="" loading="lazy">
+              <?php if ($image = $service['image']): ?>
+              <img src="<?php echo $image['sizes']['w468h364'] ?>" alt="" loading="lazy">
               <?php else: ?>
               <img src="https://via.placeholder.com/468x364" alt="" loading="lazy">
               <?php endif; ?>

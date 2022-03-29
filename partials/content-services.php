@@ -23,7 +23,9 @@
             </div>
             <?php endif; ?>
           </div>
-          <button data-basiclightbox="#callback" class="type-of-repair-item__request">Оставить заявку</button>
+          <div class="type-of-repair-item__request">
+            <button data-basiclightbox="#callback" class="landing-button">Оставить заявку</button>
+          </div>
         </div>
       </div>
       <?php endforeach; ?>

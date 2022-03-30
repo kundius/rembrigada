@@ -469,7 +469,8 @@
 }
 
 .landing-button {
-    font-size: 22px;
+    font-size: 18px;
+    // font-size: 22px;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
@@ -488,10 +489,10 @@
     &:hover {
         background: #ed3947;
     }
-    @media (max-width: $breakpoint-small-max) {
-        font-size: 18px;
-        min-height: 48px;
-    }
+    // @media (max-width: $breakpoint-small-max) {
+    //     font-size: 18px;
+    //     min-height: 48px;
+    // }
     @media (max-width: $breakpoint-xsmall-max) {
         padding-left: 25px;
         padding-right: 25px;

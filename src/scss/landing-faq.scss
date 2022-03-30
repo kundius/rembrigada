@@ -30,7 +30,7 @@
 
 .landing-faq__list {
   margin-top: 38px;
-  max-width: 460px;
+  max-width: 760px;
   margin-left: auto;
 }
 
@@ -88,6 +88,7 @@
 
 .faq-item__question-content {
   padding-left: 69px;
+  padding-right: 23px;
   background: #fff;
   letter-spacing: 0.025em;
   font-size: 18px;
@@ -104,4 +105,6 @@
 
 .faq-item__answer-content {
   padding-left: 69px;
+  font-size: 18px;
+  line-height: 20px;
 }

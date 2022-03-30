@@ -1,9 +1,9 @@
 .landing-faq {
-  background: #ecf5f9 url('../img/faq-bg.jpg') no-repeat 50% 50%;
+  background: #ecf5f9 url('../img/faq-bg.jpg') no-repeat 50% 0;
   padding-bottom: 38px;
   padding-top: 69px;
   @media (min-width: 1920px) {
-    background-position: 0 50%;
+    background-position: 0 0;
   }
 }
 

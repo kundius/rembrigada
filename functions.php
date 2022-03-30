@@ -684,6 +684,20 @@ function callback_block_assets() {
 	);
 
 	wp_enqueue_script(
+ 		'block-readiness-script',
+		get_template_directory_uri() . '/blocks/landing/readiness.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/readiness.js')
+	);
+
+	wp_enqueue_style(
+		'block-readiness-style',
+		get_template_directory_uri() . '/blocks/landing/readiness.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/readiness.css')
+	);
+
+	wp_enqueue_script(
  		'block-problems-script',
 		get_template_directory_uri() . '/blocks/landing/problems.js',
 		array('wp-blocks', 'wp-element'),

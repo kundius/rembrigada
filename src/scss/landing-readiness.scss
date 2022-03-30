@@ -3,8 +3,14 @@
   background-size: cover;
   position: relative;
   z-index: 1;
-  padding-top: 200px;
+  padding-top: 205px;
   padding-bottom: 30px;
+  @media (max-width: $breakpoint-small-max) {
+    padding-top: 160px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 100px;
+  }
 }
 
 .landing-readiness::before {
@@ -17,6 +23,12 @@
   left: 0;
   top: 0;
   z-index: -1;
+  @media (max-width: $breakpoint-small-max) {
+    height: 200px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 125px;
+  }
 }
 
 .landing-readiness::after {
@@ -29,6 +41,12 @@
   left: 0;
   bottom: 0;
   z-index: -1;
+  @media (max-width: $breakpoint-small-max) {
+    height: 120px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 75px;
+  }
 }
 
 .landing-readiness__title {
@@ -39,6 +57,12 @@
   line-height: 1;
   position: relative;
   z-index: 1;
+  @media (max-width: $breakpoint-small-max) {
+    font-size: 48px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 26px;
+  }
 }
 
 .landing-readiness__title::before {
@@ -84,13 +108,22 @@
   flex-wrap: wrap;
   align-items: center;
   width: 640px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 70px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 30px;
+  }
 }
 
 .readiness-form__phone {
   flex-grow: 1;
   margin-right: 42px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-right: 0;
+    width: 100%;
+  }
 }
 
 .readiness-form__input {
@@ -109,7 +142,12 @@
 }
 
 .readiness-form__submit {
-
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .readiness-form__rules {
@@ -131,6 +169,10 @@
   a {
     color: inherit;
     text-decoration: underline;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-left: 12px;
+    margin-right: 12px;
   }
 }
 

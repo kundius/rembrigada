@@ -11,12 +11,12 @@
         <div class="faq-item__question">
           <div class="faq-item__question-icon"></div>
           <div class="faq-item__question-content">
-            <?php echo $service['question'] ?>
+            <?php echo $item['question'] ?>
           </div>
         </div>
         <div class="faq-item__answer">
           <div class="faq-item__answer-content">
-            <?php echo $service['answer'] ?>
+            <?php echo $item['answer'] ?>
           </div>
         </div>
       </div>

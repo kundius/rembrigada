@@ -420,7 +420,6 @@ document.querySelectorAll('.js-form').forEach(function(form) {
       if (this.readyState != 4) return
 
       const response = JSON.parse(request.response)
-      console.log(response.status)
 
       if (response.status == 'mail_sent') {
         form.reset()
@@ -439,7 +438,9 @@ document.querySelectorAll('.js-form').forEach(function(form) {
         notifier.alert(response.message)
       }
 
+      console.log(response.status)
       if (response.status == 'validation_failed') {
+        console.log(response.invalidFields)
         forEach(response.invalidFields, field => {
           const el = form.querySelector(field.into)
           console.log(field, el)

@@ -35,6 +35,13 @@
   align-items: center;
 }
 
+.landing-get-estimate__layout::before {
+  @media (max-width: $breakpoint-small-max) {
+    content: '';
+    display: block;
+  }
+}
+
 .landing-get-estimate__layout::after {
   content: '';
   display: block;

@@ -166,7 +166,7 @@
     left: 50%;
     top: 50%;
     position: absolute;
-    background-color: #cfcfd0;
+    background-color: #2d2d29;
     height: 4px;
     width: 26px;
     transform: translate(-50%, -50%);
@@ -199,7 +199,7 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #e5e5e6;
+    color: #2d2d29;
     @media (max-width: $breakpoint-small-max) {
         display: none;
     }

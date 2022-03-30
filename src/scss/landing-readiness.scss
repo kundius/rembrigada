@@ -37,6 +37,20 @@
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.landing-readiness__title::before {
+  content: '';
+  background: url('../img/readiness-shadow-title.png') no-repeat 50% 50%;
+  width: 1173px;
+  height: 187px;
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .landing-readiness__title span {
@@ -45,8 +59,23 @@
 
 .landing-readiness__description {
   font-size: 16px;
+  color: #fff;
   text-align: center;
   line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.landing-readiness__description::before {
+  content: '';
+  background: url('../img/readiness-shadow-description.png') no-repeat 50% 50%;
+  width: 987px;
+  height: 105px;
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .readiness-form {

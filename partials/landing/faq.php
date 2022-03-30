@@ -9,7 +9,6 @@
       <?php foreach ($faq['items'] as $item): ?>
       <div class="faq-item">
         <div class="faq-item__question">
-          <div class="faq-item__question-icon"></div>
           <div class="faq-item__question-content">
             <?php echo $item['question'] ?>
           </div>

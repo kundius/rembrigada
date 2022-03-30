@@ -1,7 +1,7 @@
 .landing-get-estimate {
   background: #6b6d89 url('../img/get-estimate-bg.jpg') no-repeat 100% 100%;
   // background-size: auto 100%;
-  padding-top: 50px;
+  padding-top: 44px;
   padding-bottom: 50px;
   @media (max-width: 1920px) {
     background-position: 50% 100%;
@@ -18,11 +18,11 @@
 
 .landing-get-estimate__title::after {
   content: '';
-  height: 3px;
+  height: 4px;
   width: 110px;
   background: #ffffff;
   display: block;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
 .landing-get-estimate__layout {

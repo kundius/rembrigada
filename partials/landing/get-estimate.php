@@ -1,9 +1,11 @@
 <?php $get_estimate = get_field('get-estimate', 'option'); ?>
 <section class="landing-get-estimate">
   <div class="container container_medium">
+    <?php if (!empty($get_estimate['title'])): ?>
     <div class="landing-get-estimate__title">
       <?php echo $get_estimate['title'] ?>
     </div>
+    <?php endif; ?>
     <div class="landing-get-estimate__layout">
       <div class="landing-get-estimate__layout-expert">
         <div class="get-estimate-expert">
@@ -11,15 +13,21 @@
             <img src="<?php echo $get_estimate['expert']['image']['url'] ?>" alt="">
           </div>
           <div class="get-estimate-expert__body">
+            <?php if (!empty($get_estimate['expert']['name'])): ?>
             <div class="get-estimate-expert__name">
               <?php echo $get_estimate['expert']['name'] ?>
             </div>
+            <?php endif; ?>
+            <?php if (!empty($get_estimate['expert']['stats'])): ?>
             <div class="get-estimate-expert__stats">
               <?php echo $get_estimate['expert']['stats'] ?>
             </div>
+            <?php endif; ?>
+            <?php if (!empty($get_estimate['expert']['description'])): ?>
             <div class="get-estimate-expert__description">
               <?php echo $get_estimate['expert']['description'] ?>
             </div>
+            <?php endif; ?>
           </div>
         </div>
       </div>

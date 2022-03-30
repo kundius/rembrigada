@@ -647,3 +647,32 @@ forEach(document.querySelectorAll('.landing-repair-type__collapse'), collapse =>
     }
   })
 })
+
+
+forEach(document.querySelectorAll(".faq-items"), (container) => {
+  const items = container.querySelectorAll(".faq-item")
+  const closeAll = () => {
+    forEach(items, (item) => {
+      item.classList.remove("faq-item_active");
+      body.style.maxHeight = null;
+    })
+  }
+  forEach(items, (item) => {
+    const head = item.querySelector(".faq-item__question");
+    const body = item.querySelector(".faq-item__answer");
+    head.addEventListener("click", function () {
+      forEach(items, (sibling) => {
+        if (item !== sibling) {
+          sibling.classList.remove("faq-item_active");
+          sibling.querySelector(".faq-item__answer").style.maxHeight = null;
+        }
+      })
+      item.classList.toggle("faq-item_active");
+      if (body.style.maxHeight) {
+        body.style.maxHeight = null;
+      } else {
+        body.style.maxHeight = body.scrollHeight + "px";
+      }
+    });
+  });
+});

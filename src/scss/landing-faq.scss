@@ -57,6 +57,10 @@
   margin-top: 28px;
 }
 
+.faq-item_active .faq-item__question-content {
+  background: transparent;
+}
+
 .faq-item__question {
   position: relative;
   display: flex;
@@ -101,10 +105,14 @@
 }
 
 .faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
 }
 
 .faq-item__answer-content {
   padding-left: 69px;
   font-size: 18px;
   line-height: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }

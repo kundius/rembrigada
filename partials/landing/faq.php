@@ -5,7 +5,7 @@
     <div class="landing-faq__title"><?php echo $faq['title'] ?></div>
     <?php endif; ?>
 
-    <div class="landing-faq__list">
+    <div class="landing-faq__list faq-items">
       <?php foreach ($faq['items'] as $item): ?>
       <div class="faq-item">
         <div class="faq-item__question">

@@ -440,8 +440,8 @@ document.querySelectorAll('.js-form').forEach(function(form) {
 
       console.log(response.status)
       if (response.status == 'validation_failed') {
-        console.log(response.invalidFields)
-        forEach(response.invalidFields, field => {
+        console.log(response.invalid_fields)
+        forEach(response.invalid_fields, field => {
           const el = form.querySelector(field.into)
           console.log(field, el)
           el.classList.add('_validation-error')

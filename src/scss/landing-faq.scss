@@ -107,6 +107,7 @@
 .faq-item__answer {
   max-height: 0;
   overflow: hidden;
+  transition: max-height .5s ease;
 }
 
 .faq-item__answer-content {

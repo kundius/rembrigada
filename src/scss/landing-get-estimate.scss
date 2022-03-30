@@ -18,6 +18,10 @@
     font-size: 36px;
     margin-bottom: 30px;
   }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 28px;
+    text-align: center;
+  }
 }
 
 .landing-get-estimate__title::after {
@@ -27,12 +31,19 @@
   background: #ffffff;
   display: block;
   margin-top: 28px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .landing-get-estimate__layout {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: $breakpoint-xsmall-max) {
+    flex-direction: column;
+  }
 }
 
 .landing-get-estimate__layout::before {
@@ -51,6 +62,9 @@
   width: 480px;
   @media (max-width: $breakpoint-small-max) {
     width: 280px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-bottom: 30px;
   }
 }
 

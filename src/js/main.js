@@ -438,12 +438,9 @@ document.querySelectorAll('.js-form').forEach(function(form) {
         notifier.alert(response.message)
       }
 
-      console.log(response.status)
       if (response.status == 'validation_failed') {
-        console.log(response.invalid_fields)
         forEach(response.invalid_fields, field => {
           const el = form.querySelector(field.into)
-          console.log(field, el)
           el.classList.add('_validation-error')
           const message = document.createElement('span')
           message.classList.add('form-error')

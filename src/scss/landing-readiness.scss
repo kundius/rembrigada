@@ -61,9 +61,10 @@
   font-size: 16px;
   color: #fff;
   text-align: center;
-  line-height: 1;
+  line-height: 1.5;
   position: relative;
   z-index: 1;
+  margin-top: 22px;
 }
 
 .landing-readiness__description::before {
@@ -79,7 +80,8 @@
 }
 
 .readiness-form {
-
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .readiness-form__phone {
@@ -87,7 +89,18 @@
 }
 
 .readiness-form__input {
-
+  height: 48px;
+  border: 2px solid #ededed;
+  background-color: #fff;
+  color: #505661;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: inherit;
+  line-height: 1;
+  letter-spacing: .35px;
+  padding: 0 20px;
+  width: 100%;
+  display: block;
 }
 
 .readiness-form__submit {
@@ -95,5 +108,35 @@
 }
 
 .readiness-form__rules {
+  display: block;
+  font-size: 12px;
+  color: #404040;
+  line-height: 1.25;
+  margin-top: 16px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-left: 24px;
+  position: relative;
+  z-index: 1;
+  span {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
 
+.readiness-form__rules::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 150%;
+  height: 150%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: radial-gradient(ellipse, #ededed,transparent 70%,transparent);;
 }

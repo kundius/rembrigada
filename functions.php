@@ -657,16 +657,16 @@ function callback_block_assets() {
 
 	wp_enqueue_script(
  		'block-repair-types-script',
-		get_template_directory_uri() . '/blocks/landing/repair-types.js',
+		get_template_directory_uri() . '/blocks/content/repair-types.js',
 		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/repair-types.js')
+		filemtime(dirname(__FILE__) . '/blocks/content/repair-types.js')
 	);
 
 	wp_enqueue_style(
 		'block-repair-types-style',
-		get_template_directory_uri() . '/blocks/landing/repair-types.css',
+		get_template_directory_uri() . '/blocks/content/repair-types.css',
 		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/repair-types.css')
+		filemtime(dirname(__FILE__) . '/blocks/content/repair-types.css')
 	);
 
 	wp_enqueue_script(

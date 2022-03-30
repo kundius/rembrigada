@@ -27,7 +27,7 @@
     height: 200px;
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    padding-top: 125px;
+    height: 125px;
   }
 }
 
@@ -45,7 +45,7 @@
     height: 120px;
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    padding-top: 75px;
+    height: 75px;
   }
 }
 

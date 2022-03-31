@@ -1,4 +1,4 @@
-<?php if ($list = get_field('content-portfolio')): print_r(get_fields()); ?>
+<?php if ($list = get_field('content-portfolio')): ?>
 <div class="wp-block-content-portfolio">
   <?php foreach($list as $item):  print_r(get_fields('project_' . $item->ID)); ?>
   <div class="works-item">

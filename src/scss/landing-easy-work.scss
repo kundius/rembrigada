@@ -105,6 +105,8 @@
   height: 282px;
   border: 1px solid #dedede;
   position: relative;
+  z-index: 1;
+  margin: 0 auto;
   img {
     display: block;
   }
@@ -113,6 +115,7 @@
 .easy-work-item__image::after {
   content: '';
   position: absolute;
+  z-index: -1;
   left: 0;
   right: 0;
   top: 0;
@@ -123,9 +126,10 @@
 
 .easy-work-item__image-number {
   position: absolute;
-  top: 241px;
+  top: 109px;
   right: -67px;
   background: #ed3947;
+  color: #fff;
   width: 108px;
   text-align: center;
   line-height: 89px;

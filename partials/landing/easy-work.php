@@ -11,7 +11,7 @@
         <div class="easy-work-item__cell">
           <div class="easy-work-item__image">
             <?php if ($image = $item['image']): ?>
-            <img src="<?php echo $image['sizes']['url'] ?>" alt="" loading="lazy">
+            <img src="<?php echo $image['url'] ?>" alt="" loading="lazy">
             <?php else: ?>
             <img src="https://via.placeholder.com/282x282" alt="" loading="lazy">
             <?php endif; ?>

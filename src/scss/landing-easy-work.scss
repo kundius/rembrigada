@@ -10,7 +10,7 @@
   font-weight: bold;
   font-size: 30px;
   color: #333333;
-  margin-bottom: 40px;
+  margin-bottom: 70px;
   line-height: 1;
   letter-spacing: 0.05em;
   @media (max-width: $breakpoint-xsmall-max) {
@@ -98,6 +98,7 @@
 
 .easy-work-item__request {
   margin-top: 20px;
+  display: flex;
 }
 
 .easy-work-item__image {
@@ -137,4 +138,30 @@
   font-size: 67px;
   font-weight: bold;
   font-family: "Next Art", sans-serif;
+}
+
+.easy-work-item:nth-child(2n) {
+  .easy-work-item__cell:first-child {
+    order: 1;
+  }
+  .easy-work-item__image {
+    margin-left: 67px;
+    margin-right: auto;
+  }
+  .easy-work-item__image::after {
+    transform: translate(67px, 46px);
+  }
+  .easy-work-item__image-number {
+    right: auto;
+    left: -67px;
+  }
+  .easy-work-item__title {
+    text-align: right;
+  }
+  .easy-work-item__description {
+    text-align: right;
+  }
+  .easy-work-item__request {
+    justify-content: flex-end;
+  }
 }

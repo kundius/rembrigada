@@ -1,6 +1,6 @@
 <?php $easy_work = get_field('easy-work', 'option'); ?>
 <section class="landing-easy-work">
-  <div class="container">
+  <div class="container container_medium">
     <?php if (!empty($easy_work['title'])): ?>
     <div class="landing-easy-work__title"><?php echo $easy_work['title'] ?></div>
     <?php endif; ?>

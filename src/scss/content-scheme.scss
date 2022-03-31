@@ -16,6 +16,9 @@
   @media (max-width: $breakpoint-small-max) {
     width: calc(100% / 3);
   }
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: calc(100% / 2);
+  }
 }
 
 .content-scheme-item {
@@ -79,5 +82,9 @@
   @media (max-width: $breakpoint-small-max) {
     font-size: 16px;
     margin-top: 30px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 14px;
+    margin-top: 20px;
   }
 }

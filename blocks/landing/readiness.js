@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'landing/readiness', {
-		title: 'ГОТОВЫ ПРИСТУПИТЬ К РЕМОНТУ?',
+		title: 'Готовы приступить к ремонту',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'readiness' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'ГОТОВЫ ПРИСТУПИТЬ К РЕМОНТУ?'
+				'Готовы приступить к ремонту'
 			);
 		},
 

@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'landing/problems', {
-		title: 'ВОЗЬМЕМ НА СЕБЯ ВСЕ ПРОБЛЕМЫ',
+		title: 'Возьмем на себя все проблемы',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'problems' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'ВОЗЬМЕМ НА СЕБЯ ВСЕ ПРОБЛЕМЫ'
+				'Возьмем на себя все проблемы'
 			);
 		},
 

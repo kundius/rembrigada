@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'landing/measurement', {
-		title: 'Получить замер',
+		title: 'БЕСПЛАТНО ПРИЕДЕМ, ЗАМЕРИМ, РАССЧИТАЕМ',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'measurement' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'Получить замер'
+				'БЕСПЛАТНО ПРИЕДЕМ, ЗАМЕРИМ, РАССЧИТАЕМ'
 			);
 		},
 

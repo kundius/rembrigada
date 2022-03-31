@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'landing/services', {
-		title: 'Услуги',
+		title: 'НАШИ УСЛУГИ',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'services' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'Услуги'
+				'НАШИ УСЛУГИ'
 			);
 		},
 

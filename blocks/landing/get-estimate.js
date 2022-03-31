@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'landing/get-estimate', {
-		title: 'Получить смету',
+		title: 'Получите подробную смету',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'get-estimate' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'Получить смету'
+				'Получите подробную смету'
 			);
 		},
 

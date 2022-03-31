@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'content/repair-types', {
-		title: 'Виды ремонта',
+		title: 'ВИДЫ РЕМОНТА И СТОИМОСТЬ',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'repair-types' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'Виды ремонта'
+				'ВИДЫ РЕМОНТА И СТОИМОСТЬ'
 			);
 		},
 

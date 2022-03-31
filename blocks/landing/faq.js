@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'landing/faq', {
-		title: 'Ответы на вопросы',
+		title: 'ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'faq' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'Ответы на вопросы'
+				'ОТВЕТЫ НА ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ'
 			);
 		},
 

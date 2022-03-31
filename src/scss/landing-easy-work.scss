@@ -99,3 +99,37 @@
 .easy-work-item__request {
   margin-top: 20px;
 }
+
+.easy-work-item__image {
+  width: 282px;
+  height: 282px;
+  border: 1px solid #dedede;
+  position: relative;
+  img {
+    display: block;
+  }
+}
+
+.easy-work-item__image::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: 12px solid #ebebeb;
+  transform: translate(-67px, 46px);
+}
+
+.easy-work-item__image-number {
+  position: absolute;
+  top: 241px;
+  right: -67px;
+  background: #ed3947;
+  width: 108px;
+  text-align: center;
+  line-height: 89px;
+  font-size: 67px;
+  font-weight: bold;
+  font-family: "Next Art", sans-serif;
+}

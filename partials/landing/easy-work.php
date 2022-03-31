@@ -6,10 +6,17 @@
     <?php endif; ?>
 
     <div class="landing-easy-work__list">
-      <?php foreach ($easy_work['items'] as $item): ?>
+      <?php foreach ($easy_work['items'] as $key => $item): ?>
       <div class="easy-work-item">
         <div class="easy-work-item__cell">
-          left
+          <div class="easy-work-item__image">
+            <?php if ($image = $item['image']): ?>
+            <img src="<?php echo $image['sizes']['url'] ?>" alt="" loading="lazy">
+            <?php else: ?>
+            <img src="https://via.placeholder.com/282x282" alt="" loading="lazy">
+            <?php endif; ?>
+            <div class="easy-work-item__image-number"><?php echo $key + 1 ?></div>
+          </div>
         </div>
         <div class="easy-work-item__cell">
           <?php if (!empty($item['title'])): ?>

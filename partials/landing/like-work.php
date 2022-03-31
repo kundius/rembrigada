@@ -10,12 +10,12 @@
       <div class="landing-like-work__cell">
         <div class="like-work-item">
           <div class="like-work-item__body">
-            <?php if (!empty($like_work['title'])): ?>
+            <?php if (!empty($like_work_item['title'])): ?>
             <div class="like-work-item__title">
               <?php echo $like_work_item['title'] ?>
             </div>
             <?php endif; ?>
-            <?php if (!empty($like_work['description'])): ?>
+            <?php if (!empty($like_work_item['description'])): ?>
             <div class="like-work-item__desc">
               <?php echo $like_work_item['description'] ?>
             </div>

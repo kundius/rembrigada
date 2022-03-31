@@ -51,8 +51,6 @@
 }
 
 .like-work-item {
-  background: #fff;
-  border: 1px solid #dedede;
   position: relative;
   z-index: 1;
   display: flex;
@@ -70,11 +68,25 @@
   height: 120px;
   bottom: -20px;
   right: -20px;
+  z-index: -1;
   border: 6px solid #ededed;
+}
+
+.like-work-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #fff;
+  border: 1px solid #dedede;
 }
 
 .like-work-item__body {
   margin-right: 40px;
+  flex-grow: 1;
 }
 
 .like-work-item__title {

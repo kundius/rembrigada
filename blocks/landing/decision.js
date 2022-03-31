@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'landing/decision', {
-		title: 'ВОТ ВЫ И ПОСМОТРЕЛИ НАШ САЙТ',
+		title: 'Вот вы и посмотрели наш сайт',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'decision' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'ВОТ ВЫ И ПОСМОТРЕЛИ НАШ САЙТ'
+				'Вот вы и посмотрели наш сайт'
 			);
 		},
 

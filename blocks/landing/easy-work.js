@@ -4,7 +4,7 @@
 	const { registerBlockType } = blocks;
 
 	registerBlockType( 'landing/easy-work', {
-		title: 'РАБОТАТЬ С НАМИ ЛЕГКО И ПОНЯТНО',
+		title: 'Работать с нами легко и понятно',
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'easy-work' ],
@@ -14,7 +14,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'РАБОТАТЬ С НАМИ ЛЕГКО И ПОНЯТНО'
+				'Работать с нами легко и понятно'
 			);
 		},
 

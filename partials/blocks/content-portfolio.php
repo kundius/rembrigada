@@ -1,6 +1,6 @@
 <?php if ($list = get_field('content-portfolio')): ?>
 <div class="wp-block-content-portfolio">
-  <?php foreach($list as $item): print_r(get_fields(1275)); ?>
+  <?php foreach($list as $item): print_r(get_fields($item->ID)); ?>
   <div class="works-item">
       <div class="works-item__title"><?php echo $item->post_title ?></div>
       <div class="works-item__grid">

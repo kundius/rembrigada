@@ -706,6 +706,20 @@ function callback_block_assets() {
 	);
 
 	wp_enqueue_script(
+ 		'block-about-team-script',
+		get_template_directory_uri() . '/blocks/landing/about-team.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/about-team.js')
+	);
+
+	wp_enqueue_style(
+		'block-about-team-style',
+		get_template_directory_uri() . '/blocks/landing/about-team.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/about-team.css')
+	);
+
+	wp_enqueue_script(
  		'block-reviews-script',
 		get_template_directory_uri() . '/blocks/landing/reviews.js',
 		array('wp-blocks', 'wp-element'),

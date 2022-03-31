@@ -12,7 +12,17 @@
           left
         </div>
         <div class="easy-work-item__cell">
-          right
+          <?php if (!empty($item['title'])): ?>
+          <div class="easy-work-item__title"><?php echo $item['title'] ?></div>
+          <?php endif; ?>
+          <?php if (!empty($item['description'])): ?>
+          <div class="easy-work-item__description"><?php echo $item['description'] ?></div>
+          <?php endif; ?>
+          <?php if (!empty($item['request'])): ?>
+          <div class="easy-work-item__request">
+            <button data-basiclightbox="#callback" class="landing-button"><?php echo $item['request'] ?></button>
+          </div>
+          <?php endif; ?>
         </div>
       </div>
       <?php endforeach; ?>

@@ -671,6 +671,20 @@ a.btn-plus,
         padding-right: 0;
     }
 
+    img.alignleft {
+        @media (min-width: $breakpoint-small) {
+            float: left;
+            margin-right: 40px;
+        }
+    }
+
+    img.alignright {
+        @media (min-width: $breakpoint-small) {
+            float: right;
+            margin-left: 40px;
+        }
+    }
+
     p {
         margin: 26px 0;
         @media (max-width: $breakpoint-small-max) {

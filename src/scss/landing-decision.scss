@@ -5,21 +5,24 @@
   padding-bottom: 48px;
 }
 
-.landing-decision__body {
-  width: 740px;
-  max-width: 100%;
+.landing-decision__layout {
   display: flex;
   justify-content: space-between;
 }
 
-.landing-decision__body::before {
+.landing-decision__layout::before {
   content: '';
   flex-grow: 20;
 }
 
-.landing-decision__body::after {
+.landing-decision__layout::after {
   content: '';
   flex-grow: 10;
+}
+
+.landing-decision__layout-body {
+  width: 740px;
+  max-width: 100%;
 }
 
 .landing-decision__title {

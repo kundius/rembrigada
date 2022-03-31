@@ -1,6 +1,10 @@
 .landing-easy-work {
   padding-top: 80px;
   padding-bottom: 80px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .landing-easy-work__title {
@@ -15,6 +19,7 @@
   letter-spacing: 0.05em;
   @media (max-width: $breakpoint-xsmall-max) {
     font-size: 24px;
+    margin-bottom: 40px;
   }
 }
 
@@ -38,6 +43,9 @@
   justify-content: center;
   // margin-top: 160px;
   margin-top: 120px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 40px;
+  }
 }
 
 .easy-work-item {
@@ -106,6 +114,9 @@
   @media (max-width: $breakpoint-small-max) {
     text-align: center;
   }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 24px;
+  }
 }
 
 .easy-work-item__description {
@@ -115,6 +126,10 @@
   @media (max-width: $breakpoint-small-max) {
     text-align: center;
   }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 16px;
+    margin-top: 12px;
+  }
 }
 
 .easy-work-item__request {
@@ -122,6 +137,9 @@
   display: flex;
   @media (max-width: $breakpoint-small-max) {
     justify-content: center;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 16px;
   }
 }
 
@@ -141,6 +159,10 @@
     height: 260px;
     margin-left: auto;
     margin-right: auto;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 220px;
+    height: 220px;
   }
 }
 
@@ -171,6 +193,13 @@
   font-size: 67px;
   font-weight: bold;
   font-family: "Next Art", sans-serif;
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 90px;
+    right: -45px;
+    font-size: 54px;
+    line-height: 70px;
+    top: 80px;
+  }
 }
 
 @media (min-width: $breakpoint-medium) {

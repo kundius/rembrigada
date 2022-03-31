@@ -478,7 +478,7 @@
     letter-spacing: .05em;
     max-width: 100%;
     line-height: 1;
-    border-radius: 26px;
+    border-radius: 32px;
     background: #d52437;
     border: none;
     cursor: pointer;
@@ -497,6 +497,11 @@
         padding-left: 25px;
         padding-right: 25px;
     }
+}
+
+.landing-button_large {
+    font-size: 24px;
+    min-height: 64px;
 }
 
 /* Все детали */

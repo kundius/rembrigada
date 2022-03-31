@@ -1,0 +1,57 @@
+.landing-decision {
+  background: #2e3741 url('../img/decision-bg.jpg') no-repeat 50% 50%;
+  background-size: auto 100%;
+  padding-top: 75px;
+  padding-bottom: 48px;
+}
+
+.landing-decision__body {
+  width: 740px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing-decision__body::before {
+  content: '';
+  flex-grow: 20;
+}
+
+.landing-decision__body::after {
+  content: '';
+  flex-grow: 10;
+}
+
+.landing-decision__title {
+  font-size: 36px;
+  line-height: 1.125;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Next Art", sans-serif;
+  color: #fff;
+}
+
+.landing-decision__title::after {
+  content: '';
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 22px;
+  width: 110px;
+  height: 4px;
+  background: #ff394f;
+}
+
+.landing-decision__description {
+  font-size: 20px;
+  line-height: 1.25;
+  color: #fff;
+  margin-top: 25px;
+}
+
+.landing-decision__request {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}

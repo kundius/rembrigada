@@ -752,6 +752,20 @@ function callback_block_assets() {
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/landing/faq.css')
 	);
+
+	wp_enqueue_script(
+ 		'block-decision-script',
+		get_template_directory_uri() . '/blocks/landing/decision.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/decision.js')
+	);
+
+	wp_enqueue_style(
+		'block-decision-style',
+		get_template_directory_uri() . '/blocks/landing/decision.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/decision.css')
+	);
 }
 
 add_filter('navigation_markup_template', 'navigation_template', 10, 2);

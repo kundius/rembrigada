@@ -1458,21 +1458,23 @@
 }
 
 .section-landing {
-    width: 1280px;
+    width: $container-width-medium + 40px * 2;
     margin: 0 auto;
     padding: 0 40px;
     max-width: 100%;
     @media (max-width: $breakpoint-medium-max) {
         padding: 0 24px;
+        width: $container-width-medium + 24px * 2;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         padding: 0 12px;
+        width: $container-width-medium + 12px * 2;
     }
 }
 
 .section-landing [class^='wp-block-landing'] {
-    margin-left: calc(-50vw + 600px);
-    margin-right: calc(-50vw + 600px);
+    margin-left: calc(-50vw + 550px);
+    margin-right: calc(-50vw + 550px);
     margin-top: 0;
     margin-bottom: 0;
     @media (max-width: $breakpoint-medium-max) {

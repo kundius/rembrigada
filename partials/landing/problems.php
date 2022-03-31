@@ -11,7 +11,7 @@
         <div class="landing-problem">
           <div class="landing-problem__image">
               <?php if ($image = $problem['image']): ?>
-              <img src="<?php echo $image['sizes']['w468h364'] ?>" alt="" loading="lazy">
+              <img src="<?php echo $image['url'] ?>" alt="" loading="lazy">
               <?php else: ?>
               <img src="https://via.placeholder.com/468x364" alt="" loading="lazy">
               <?php endif; ?>

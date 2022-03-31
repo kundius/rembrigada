@@ -3,18 +3,18 @@
 	const el = element.createElement;
 	const { registerBlockType } = blocks;
 
-	registerBlockType( 'content/repair-types', {
-		title: 'Виды ремонта и стоимость',
+	registerBlockType( 'content/scheme', {
+		title: 'Схема работы',
 		icon: 'embed-generic',
 		category: 'widgets',
-		keywords: [ 'repair-types' ],
+		keywords: [ 'scheme' ],
 
 		// The "edit" property must be a valid function.
 		edit: function( props ) {
 			return el(
 				'div',
 				{ className: props.className },
-				'Виды ремонта и стоимость'
+				'Схема работы'
 			);
 		},
 
@@ -22,7 +22,7 @@
 			return el(
 				'div',
 				{ className: props.className },
-				'[template_part path="partials/content/repair-types"]'
+				'[template_part path="partials/content/scheme"]'
 			);
 		}
 	});

@@ -1,6 +1,6 @@
 <?php $about_team = get_field('about-team', 'option'); ?>
 <section class="landing-about-team">
-  <div class="container">
+  <div class="container container_medium">
     <?php if (!empty($about_team['title'])): ?>
     <div class="landing-about-team__title"><?php echo $about_team['title'] ?></div>
     <?php endif; ?>

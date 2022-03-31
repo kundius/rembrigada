@@ -698,6 +698,20 @@ function callback_block_assets() {
 	);
 
 	wp_enqueue_script(
+ 		'block-reviews-script',
+		get_template_directory_uri() . '/blocks/landing/reviews.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/reviews.js')
+	);
+
+	wp_enqueue_style(
+		'block-reviews-style',
+		get_template_directory_uri() . '/blocks/landing/reviews.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/reviews.css')
+	);
+
+	wp_enqueue_script(
  		'block-readiness-script',
 		get_template_directory_uri() . '/blocks/landing/readiness.js',
 		array('wp-blocks', 'wp-element'),

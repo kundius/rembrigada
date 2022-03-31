@@ -1,7 +1,9 @@
 <?php $services = get_field('services', 'option'); ?>
 <section class="landing-services">
   <div class="container">
+    <?php if (!empty($services['title'])): ?>
     <div class="landing-services__title"><?php echo $services['title'] ?></div>
+    <?php endif; ?>
     <div class="landing-services__grid">
       <?php foreach ($services['items'] as $service): ?>
       <div class="landing-services__cell">

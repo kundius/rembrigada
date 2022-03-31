@@ -1,11 +1,11 @@
 <?php if ($list = get_field('content-portfolio')): ?>
 <div class="wp-block-content-portfolio">
-  <?php foreach($list as $item): print_r(get_fields($item->ID)); ?>
+  <?php foreach($list as $item): $fields = get_fields($item->ID); ?>
   <div class="works-item">
       <div class="works-item__title"><?php echo $item->post_title ?></div>
       <div class="works-item__grid">
           <div class="works-item__cell">
-              <?php if ($gallery = get_field('gallery', $item->ID)): ?>
+              <?php if ($gallery = $fields['gallery']): ?>
               <div class="works-item-images<?php if (count($gallery) == 1): ?> works-item-images_single<?php endif; ?>">
                   <?php foreach (array_splice($gallery, 0, 8) as $key => $item): ?>
                   <div class="works-item-image">
@@ -19,13 +19,13 @@
               <?php endif; ?>
           </div>
           <div class="works-item__cell">
-              <?php if ($address = get_field('address', $item->ID)): ?>
+              <?php if ($fields['address']): ?>
               <div class="works-item-object">
                   <div class="works-item-object__label">
                       Объект:
                   </div>
                   <div class="works-item-object__value">
-                      <?php echo $address ?>
+                      <?php echo $fields['address'] ?>
                   </div>
               </div>
               <?php endif; ?>
@@ -33,37 +33,37 @@
                   <!-- <div class="works-item-info__title">
                       Особенности проекта:
                   </div> -->
-                  <?php if ($area = get_field('area', $item->ID)): ?>
+                  <?php if ($fields['area']): ?>
                   <div class="works-item-info__row">
                       <div class="works-item-info__label">
                           Площадь:
                       </div>
                       <div class="works-item-info__area">
-                          <?php echo $area ?> <span>м<sup>2</sup></span>
+                          <?php echo $fields['area'] ?> <span>м<sup>2</sup></span>
                       </div>
                   </div>
                   <?php endif; ?>
               </div>
-              <?php if ($time_works = get_field('time_works', $item->ID)): ?>
+              <?php if ($fields['time_works']): ?>
               <div class="works-item-deadline">
                   <div class="works-item-deadline__label">
                       Сроки:
                   </div>
                   <div class="works-item-deadline__value">
-                      <?php echo $time_works ?>
+                      <?php echo $fields['time_works'] ?>
                   </div>
               </div>
               <?php endif; ?>
               <div class="works-item-pricing">
-                  <?php if (get_field('price_works', $item->ID) || get_field('price_material', $item->ID)): ?>
+                  <?php if ($fields['price_works'] || $fields['price_material']): ?>
                       <div class="works-item-pricing__title">Стоимость:</div>
                   <?php endif; ?>
                   <div class="works-item-pricing__text">
-                      <?php if ($price_works = get_field('price_works', $item->ID)): ?>
-                      <div>Ремонтные работы: <strong><?php echo $price_works ?> руб.</strong></div>
+                      <?php if ($fields['price_works']): ?>
+                      <div>Ремонтные работы: <strong><?php echo $fields['price_works'] ?> руб.</strong></div>
                       <?php endif; ?>
-                      <?php if ($price_material = get_field('price_material', $item->ID)): ?>
-                      <div>Черновые материалы с доставкой: <strong><?php echo $price_material ?> руб.</strong></div>
+                      <?php if ($fields['price_material']): ?>
+                      <div>Черновые материалы с доставкой: <strong><?php echo $fields['price_material'] ?> руб.</strong></div>
                       <?php endif; ?>
                   </div>
                   <a href="#callback" class="works-item-pricing__button"><span>Рассчитать стоимость своего ремонта</span></a>

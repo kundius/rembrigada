@@ -3,6 +3,11 @@
   background-size: auto 100%;
   padding-top: 75px;
   padding-bottom: 48px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: none;
+  }
 }
 
 .landing-decision__layout {
@@ -33,13 +38,18 @@
   text-transform: uppercase;
   font-family: "Next Art", sans-serif;
   color: #fff;
+  @media (max-width: $breakpoint-small-max) {
+    font-size: 28px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 24px;
+    text-align: center;
+  }
 }
 
 .landing-decision__title::after {
   content: '';
   display: block;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 22px;
   width: 110px;
   height: 4px;
@@ -51,10 +61,19 @@
   line-height: 1.25;
   color: #fff;
   margin-top: 25px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 18px;
+    text-align: center;
+  }
 }
 
 .landing-decision__request {
   margin-top: 45px;
-  display: flex;
-  justify-content: center;
+  margin-left: -4px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    margin-top: 30px;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -1,8 +1,8 @@
-<?php if ($list = get_field('content-portfolio')): ?>
+<?php if ($list = get_field('content-portfolio')): print_r(get_fields()); ?>
 <div class="wp-block-content-portfolio">
-  <?php foreach($list as $item): ?>
+  <?php foreach($list as $item):  print_r('project_' . $item->ID); ?>
   <div class="works-item">
-      <div class="works-item__title"><?php echo 'project_' . $item->ID ?></div>
+      <div class="works-item__title"><?php echo $item->post_title ?></div>
       <div class="works-item__grid">
           <div class="works-item__cell">
               <?php if ($gallery = get_field('gallery', 'project_' . $item->ID)): ?>

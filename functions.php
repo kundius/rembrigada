@@ -495,6 +495,14 @@ function be_register_blocks() {
         'icon' => 'editor-ul',
         'mode' => 'edit'
     ));
+    acf_register_block( array(
+        'name' => 'content-portfolio',
+        'title' => 'Содержимое - Портфолио',
+        'render_template' => 'partials/blocks/content-portfolio.php',
+        'category' => 'formatting',
+        'icon' => 'editor-ul',
+        'mode' => 'edit'
+    ));
 }
 add_action('acf/init', 'be_register_blocks' );
 

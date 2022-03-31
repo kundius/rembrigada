@@ -120,6 +120,7 @@ img {
     }
 }
 
+.content a.btn-plus,
 a.btn-plus,
 .btn-plus {
     display: inline-block;
@@ -161,6 +162,7 @@ a.btn-plus,
         box-shadow: 2px 0px 0 0px currentColor, 4px 0px 0 0px currentColor, 6px 0px 0 0px currentColor, -2px 0px 0 0px currentColor, -4px 0px 0 0px currentColor, -6px 0px 0 0px currentColor, 0 -2px 0 0px currentColor, 0 -4px 0 0px currentColor, 0 -6px 0 0px currentColor, 0 2px 0 0px currentColor, 0 4px 0 0px currentColor, 0 6px 0 0px currentColor;
     }
     &:hover {
+        color: #000;
         background-color: #d7d7d7;
     }
     &:active {

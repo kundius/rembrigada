@@ -219,14 +219,14 @@
 .works-item__title {
 	color: #202021;
 	font-family: "Next Art", sans-serif;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 1.5px;
-	margin-bottom: 30px;
-	@media (max-width: $breakpoint-small-max) {
-		font-size: 26px;
-	}
+	letter-spacing: 0.05em;
+	margin-bottom: 24px;
+	// @media (max-width: $breakpoint-small-max) {
+	// 	font-size: 26px;
+	// }
 	@media (max-width: $breakpoint-xsmall-max) {
 		font-size: 18px;
 		margin-bottom: 10px;
@@ -508,6 +508,10 @@ a.works-item-pricing__button,
 	position: relative;
 	margin-top: -5px;
 	margin-left: -10px;
+	margin-bottom: 20px;
+	@media (max-width: $breakpoint-xsmall-max) {
+		margin-bottom: 0;
+	}
 	&::before {
 		content: '';
 		width: 262px;

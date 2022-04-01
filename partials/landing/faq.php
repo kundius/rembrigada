@@ -28,7 +28,14 @@
 
     <?php if (!empty($faq['request'])): ?>
     <div class="landing-faq__request">
-      <button data-order data-order-with-message="true" data-order-subject="<?php echo $faq['request'] ?>" data-order-section="<?php echo $faq['title'] ?>" class="landing-button"><?php echo $faq['request'] ?></button>
+      <button
+        data-order
+        data-order-title="<?php echo $faq['form']['title'] ?>"
+        data-order-submit="<?php echo $faq['form']['submit'] ?>"
+        data-order-subject="<?php echo $faq['title'] ?>"
+        data-order-with-message="true"
+        class="landing-button"
+      ><?php echo $faq['request'] ?></button>
     </div>
     <?php endif; ?>
   </div>

@@ -40,6 +40,10 @@
   align-items: center;
 }
 
+.about-team-item + .about-team-item {
+  margin-top: 50px;
+}
+
 .about-team-item:nth-child(2n) .about-team-item__image {
   order: -1;
 }

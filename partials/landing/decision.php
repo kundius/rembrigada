@@ -11,7 +11,7 @@
         <?php endif; ?>
         <?php if (!empty($decision['request'])): ?>
         <div class="landing-decision__request">
-          <button data-order="<?php echo $decision['title'] ?>" class="landing-button landing-button_large"><?php echo $decision['request'] ?></button>
+          <button data-order="<?php echo $decision['request'] ?>" class="landing-button landing-button_large"><?php echo $decision['request'] ?></button>
         </div>
         <?php endif; ?>
       </div>

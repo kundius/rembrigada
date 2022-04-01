@@ -31,11 +31,13 @@
 </div>
 <?php endif; ?>
 <?php else: ?>
+<?php if (!is_front_page()): ?>
 <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
     <div class="container">
         <?php bcn_display() ?>
     </div>
 </div>
+<?php endif; ?>
 <section class="page-headline">
     <div class="container">
         <h1 class="page-headline__title"><span><?php the_title() ?></span></h1>

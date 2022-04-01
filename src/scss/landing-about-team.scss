@@ -34,6 +34,44 @@
   background: #ff394f;
 }
 
-.landing-about-team__content {
+.about-team-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.about-team-item:nth-child(2n) .about-team-item__image {
+  order: -1;
+}
+
+.about-team-item__body {
+  width: calc(50% - 15px);
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+  }
+}
+
+.about-team-item__title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #262625;
+  margin-bottom: 25px;
+}
+
+.about-team-item__description {
+  font-size: 18px;
+  color: #000;
+  line-height: 1.333;
+}
+
+.about-team-item__image {
+  width: calc(50% - 15px);
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.about-team-item__image img {
+  display: block;
 }

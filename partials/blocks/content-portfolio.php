@@ -74,7 +74,7 @@
     </div>
     <?php endforeach; ?>
     <div class="works__more">
-      <a href="<?php the_permalink(17) ?>" class="btn-plus">Больше работ</a>
+      <a href="<?php echo get_category_link(3) ?>" class="btn-plus">Больше работ</a>
     </div>
   </div>
 </div>

@@ -61,6 +61,8 @@ img {
     white-space: normal;
 }
 
+.content a.btn-arrow,
+a.btn-arrow,
 .btn-arrow {
     display: inline-block;
     text-decoration: none;
@@ -100,6 +102,7 @@ img {
         border-bottom: 2px solid currentColor;
     }
     &:hover {
+        color: #ffffff;
         background: rgba(237, 57, 72, .8);
     }
     @media (max-width: $breakpoint-xsmall-max) {

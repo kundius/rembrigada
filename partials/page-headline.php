@@ -11,7 +11,13 @@
             <?php if ($more_link = $more['link']): ?>
             <a class="page-bg-headline__more-link" href="<?php echo $more_link ?>"><?php echo $more_title ?></a>
             <?php else: ?>
-            <button class="page-bg-headline__more-link" data-order data-order-subject="<?php echo $more_title ?>" data-order-section="<?php the_title() ?>"><?php echo $more_title ?></button>
+            <button
+                data-order
+                data-order-title="<?php echo $more_title ?>"
+                data-order-submit="<?php echo $more_title ?>"
+                data-order-subject="<?php the_title() ?>"
+                class="page-bg-headline__more-link"
+            ><?php echo $more_title ?></button>
             <?php endif; ?>
         </div>
         <?php endif; ?>

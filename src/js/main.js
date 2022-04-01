@@ -70,15 +70,16 @@ forEach(document.querySelectorAll('[data-order]'), el => {
   const titleEl = modalEl.querySelector('.order-form__title')
   const messageEL = modalEl.querySelector('.order-form__message')
   const subjectEl = modalEl.querySelector('[name="subject"]')
-  const sectionEl = modalEl.querySelector('[name="section"]')
+  const submitEl = modalEl.querySelector('[type="submit"]')
   const orderSubject = el.dataset.orderSubject || 'Заявка на расчет'
-  const orderSection = el.dataset.orderSection || 'Не указано'
+  const orderTitle = el.dataset.orderTitle || 'Заявка на расчет'
+  const orderSubmit = el.dataset.orderSubmit || 'Отправить'
   const orderWithMessage = !!el.dataset.orderWithMessage || false
   el.addEventListener('click', (e) => {
     e.preventDefault()
-    titleEl.innerHTML = orderSubject
+    titleEl.innerHTML = orderTitle
+    submitEl.innerHTML = orderSubmit
     subjectEl.value = orderSubject
-    sectionEl.value = orderSection
     messageEL.style.display = orderWithMessage ? 'block' : 'none'
     showModal(modalEl)
   })

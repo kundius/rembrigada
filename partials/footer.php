@@ -139,7 +139,6 @@
         <button class="modal__close" data-basiclightbox-close></button>
         <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="order-form js-form">
             <input type="hidden" name="subject" value="Заявка на расчет">
-            <input type="hidden" name="section" value="Не указано">
 
             <div class="order-form__title">Заявка на расчет</div>
             <div class="order-form__desc">Заполните форму, и&nbsp;наш специалист свяжется с&nbsp;Вами в&nbsp;течение 15&nbsp;минут</div>
@@ -156,7 +155,7 @@
                     <textarea name="message" class="form-textarea" placeholder="Сообщение"></textarea>
                 </div>
                 <div class="order-form__row order-form__submit">
-                    <button type="submit" class="landing-button"><span></span><span>Отправить</span></button>
+                    <button type="submit" class="landing-button">Отправить</button>
                 </div>
                 <div class="order-form__row">
                     <label class="order-form__rules">

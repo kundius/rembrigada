@@ -23,7 +23,7 @@
         <?php endif; ?>
     </div>
 </section>
-<?php if (!is_home()): ?>
+<?php if (!is_front_page()): ?>
 <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
     <div class="container">
         <?php bcn_display() ?>

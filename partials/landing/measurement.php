@@ -8,7 +8,7 @@
     <?php endif; ?>
     <?php if (!empty($measurement['request'])): ?>
     <div class="landing-measurement__request">
-      <button data-basiclightbox="#callback" class="landing-button">
+      <button data-order data-order-subject="<?php echo $measurement['subject'] ?>" data-order-section="<?php echo $measurement['title'] ?>" class="landing-button">
         <?php echo $measurement['request'] ?>
       </button>
     </div>

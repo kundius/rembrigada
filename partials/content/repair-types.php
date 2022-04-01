@@ -65,7 +65,7 @@
         </div>
 
         <div class="content-repair-type__order">
-          <button data-basiclightbox="#callback" class="content-repair-type__order-button">Заказать замер</button>
+          <button data-order data-order-subject="Заказать замер" data-order-section="<?php echo $item['title'] ?>" class="content-repair-type__order-button">Заказать замер</button>
         </div>
       </div>
     </div>

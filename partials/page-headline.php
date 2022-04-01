@@ -7,9 +7,12 @@
         <?php endif; ?>
         <?php if ($more = get_field('headline_more')): ?>
         <?php $more_title = $more['title'] ? $more['title'] : 'Хочу узнать детали' ?>
-        <?php $more_link = $more['link'] ? $more['link'] : '#callback' ?>
         <div class="page-bg-headline__more">
+            <?php if ($more_link = $more['link']): ?>
             <a class="page-bg-headline__more-link" href="<?php echo $more_link ?>"><?php echo $more_title ?></a>
+            <?php else: ?>
+            <button class="page-bg-headline__more-link" data-order data-order-subject="<?php echo $more_title ?>" data-order-section="<?php the_title() ?>"><?php echo $more_title ?></button>
+            <?php endif; ?>
         </div>
         <?php endif; ?>
     </div>

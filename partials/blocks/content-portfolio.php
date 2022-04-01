@@ -67,7 +67,7 @@
                         <div>Черновые материалы с доставкой: <strong><?php echo $fields['price_material'] ?> руб.</strong></div>
                         <?php endif; ?>
                     </div>
-                    <a href="#callback" class="works-item-pricing__button"><span>Рассчитать стоимость своего ремонта</span></a>
+                    <button data-order data-order-subject="Рассчитать стоимость своего ремонта" data-order-section="<?php echo $item->post_title ?>" class="works-item-pricing__button"><span>Рассчитать стоимость своего ремонта</span></button>
                 </div>
             </div>
         </div>

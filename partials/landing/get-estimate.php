@@ -32,7 +32,9 @@
         </div>
       </div>
       <div class="landing-get-estimate__layout-form">
-        <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="get-estimate-form js-form">
+        <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="get-estimate-form js-form">
+          <input type="hidden" name="subject" value="<?php echo $get_estimate['request'] ?>">
+          <input type="hidden" name="section" value="<?php echo $get_estimate['title'] ?>">
           <div class="get-estimate-form__row">
             <input type="text" name="your-name" value="" class="get-estimate-form__input" placeholder="Имя" />
           </div>
@@ -42,7 +44,6 @@
             </span>
           </div>
           <div class="get-estimate-form__row">
-            <input type="hidden" name="referrer" value="<?php echo wp_get_document_title() ?>">
             <button type="submit" class="get-estimate-form__submit"><?php echo $get_estimate['request'] ?></button>
           </div>
           <label class="get-estimate-form__rules">

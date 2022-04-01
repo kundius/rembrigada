@@ -33,7 +33,7 @@
 
     <?php if (!empty($promlems['request'])): ?>
     <div class="landing-problems__request">
-      <button data-basiclightbox="#callback" class="landing-button"><?php echo $promlems['request'] ?></button>
+      <button data-order data-order-subject="<?php echo $promlems['subject'] ?>" data-order-section="<?php echo $promlems['title'] ?>" class="landing-button"><?php echo $promlems['request'] ?></button>
     </div>
     <?php endif; ?>
   </div>

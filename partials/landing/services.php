@@ -26,7 +26,7 @@
             <?php endif; ?>
           </div>
           <div class="landing-service__request">
-            <button data-basiclightbox="#callback" class="landing-button">Оставить заявку</button>
+            <button data-order data-order-subject="<?php echo $price['subject'] ?>" data-order-section="<?php echo $services['title'] ?> / <?php echo $price['name'] ?>" class="landing-button"><?php echo $price['request'] ?></button>
           </div>
         </div>
       </div>

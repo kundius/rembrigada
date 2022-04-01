@@ -2788,12 +2788,13 @@ a.btn-plus,
 }
 
 .order-form__title {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #333333;
     font-weight: bold;
+    text-align: center;
     @media (max-width: $breakpoint-small-max) {
         font-size: 20px;
     }
@@ -2805,16 +2806,13 @@ a.btn-plus,
 .order-form__desc {
     font-size: 16px;
     line-height: 1.125;
-    margin-top: 27px;
-    margin-bottom: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
     @media (max-width: $breakpoint-small-max) {
         font-size: 14px;
-        margin-top: 16px;
-        margin-bottom: 28px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        margin-top: 20px;
-        margin-bottom: 13px;
     }
 }
 
@@ -2857,12 +2855,10 @@ a.btn-plus,
         top: 0;
     }
     @media (max-width: $breakpoint-small-max) {
-        margin-top: 15px;
-        margin-bottom: 15px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        margin-top: 10px;
-        margin-bottom: 13px;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 

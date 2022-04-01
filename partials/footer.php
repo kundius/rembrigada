@@ -161,7 +161,7 @@
                     <label class="order-form__rules">
                         <input type="checkbox" name="rules" value="1" class="form-checkbox" />
                         <span></span>
-                        Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и&nbsp;соглашаюсь с&nbsp;<a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
+                        Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и&nbsp;соглашаюсь с&nbsp;<a href="<?php the_permalink(3) ?>" target="_blank">Политикой конфиденциальности</a>
                     </label>
                 </div>
             </div>

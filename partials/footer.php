@@ -139,7 +139,7 @@
         <button class="modal__close" data-basiclightbox-close></button>
         <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="order-form js-form">
             <div class="order-form__title">Заявка на расчет</div>
-            <div class="order-form__desc">Заполните форму, и наш специалист свяжется с Вами в течение 15 минут</div>
+            <div class="order-form__desc">Заполните форму, и&nbsp;наш специалист свяжется с&nbsp;Вами в&nbsp;течение 15&nbsp;минут</div>
             <div class="order-form__fields">
                 <div class="order-form__row">
                     <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />
@@ -157,7 +157,7 @@
                     <label class="order-form__rules">
                         <input type="checkbox" name="rules" value="1" class="form-checkbox" />
                         <span></span>
-                        Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
+                        Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и&nbsp;соглашаюсь с&nbsp;<a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
                     </label>
                 </div>
             </div>

@@ -423,12 +423,13 @@ document.querySelectorAll('.js-form').forEach(function(form) {
   // grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
   // // Add your logic to submit to your backend server here.
   // });
-  console.log(grecaptcha, wpcf7_recaptcha)
   // _wpcf7_recaptcha_response
   let controls = form.querySelectorAll('span.wpcf7-form-control-wrap')
   let messages = []
   form.addEventListener('submit', function(e) {
     e.preventDefault()
+    
+    console.log(grecaptcha, wpcf7_recaptcha)
 
     forEach(controls, el => el.classList.remove('_validation-error'))
 

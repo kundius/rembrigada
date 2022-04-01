@@ -468,6 +468,8 @@
     }
 }
 
+.content a.landing-button,
+a.landing-button,
 .landing-button {
     font-size: 18px;
     // font-size: 22px;
@@ -480,6 +482,7 @@
     line-height: 1;
     border-radius: 32px;
     background: #d52437;
+    text-decoration: none;
     border: none;
     cursor: pointer;
     padding: 2px 40px 0px;
@@ -487,6 +490,7 @@
     display: inline-flex;
     align-items: center;
     &:hover {
+        color: #fff;
         background: #ed3947;
     }
     // @media (max-width: $breakpoint-small-max) {

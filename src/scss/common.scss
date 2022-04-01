@@ -2775,8 +2775,10 @@ a.btn-plus,
     background: #fff;
     opacity: 0;
     transition: opacity .3s ease;
+    display: none;
     ._validation-mail_sent & {
         opacity: 1;
+        display: block;
     }
 }
 

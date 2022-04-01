@@ -72,11 +72,17 @@ forEach(document.querySelectorAll('[data-order]'), el => {
   const sectionEl = modalEl.querySelector('[name="section"]')
   const orderSubject = el.dataset.orderSubject || 'Заявка на расчет'
   const orderSection = el.dataset.orderSection || 'Не указано'
+  const orderWithMessage = !!el.dataset.orderWithMessage || false
   el.addEventListener('click', (e) => {
     e.preventDefault()
     titleEl.innerHTML = orderSubject
     subjectEl.value = orderSubject
     sectionEl.value = orderSection
+    if (orderWithMessage) {
+      modalEl.classList.add('_orderWithMessage')
+    } else {
+      modalEl.classList.remove('_orderWithMessage')
+    }
     showModal(modalEl)
   })
 })

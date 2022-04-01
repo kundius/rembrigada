@@ -152,6 +152,9 @@
                         <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон*">
                     </span>
                 </div>
+                <div class="order-form__row order-form__message">
+                    <textarea name="message" class="form-textarea" placeholder="Сообщение"></textarea>
+                </div>
                 <div class="order-form__row order-form__submit">
                     <button type="submit" class="landing-button"><span></span><span>Отправить</span></button>
                 </div>

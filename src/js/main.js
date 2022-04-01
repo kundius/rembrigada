@@ -420,16 +420,12 @@ forEach(document.querySelectorAll('.scrollup'), function(el) {
 })
 
 document.querySelectorAll('.js-form').forEach(function(form) {
-  // _wpcf7_recaptcha_response
   let controls = form.querySelectorAll('span.wpcf7-form-control-wrap')
   let messages = []
   form.addEventListener('submit', function(e) {
     e.preventDefault()
 
     grecaptcha.execute(wpcf7_recaptcha.sitekey, {action: 'submit'}).then(function(token) {
-      console.log(token)
-      // // Add your logic to submit to your backend server here.
-
       forEach(controls, el => el.classList.remove('_validation-error'))
 
       forEach(messages, message => {
@@ -485,6 +481,7 @@ document.querySelectorAll('.js-form').forEach(function(form) {
           })
         }
       })
+
       const formData = new FormData(form)
       formData.append('_wpcf7_recaptcha_response', token)
       request.send(formData)

@@ -74,7 +74,7 @@
     </div>
     <?php endforeach; ?>
     <div class="works__more">
-      <a href="<?php the_permalink(17) ?>" class="btn-plus">Ещё отзывы</a>
+      <a href="<?php the_permalink(17) ?>" class="btn-plus">Больше работ</a>
     </div>
   </div>
 </div>

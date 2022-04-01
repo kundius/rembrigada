@@ -155,7 +155,7 @@
                     <textarea name="message" class="form-textarea" placeholder="Сообщение"></textarea>
                 </div>
                 <div class="order-form__row order-form__submit">
-                    <button type="submit" class="landing-button">Отправить</button>
+                    <button type="submit" class="landing-button wpcf7-form-control wpcf7-submit">Отправить</button>
                 </div>
                 <div class="order-form__row">
                     <label class="order-form__rules">

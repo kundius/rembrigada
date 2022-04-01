@@ -1,6 +1,6 @@
-<?php if ($list = get_field('repair_types', 'option')): ?>
+<?php if ($repair_types = get_field('repair_types', 'option')): ?>
 <div class="content-repair-types">
-  <?php foreach ($list as $item): ?>
+  <?php foreach ($repair_types['items'] as $item): ?>
   <div class="content-repair-types__cell">
     <div class="content-repair-type">
       <?php if ($item['image']): ?>
@@ -65,7 +65,13 @@
         </div>
 
         <div class="content-repair-type__order">
-          <button data-order data-order-subject="Заказать замер" data-order-section="<?php echo $item['title'] ?>" class="content-repair-type__order-button">Заказать замер</button>
+          <button
+            data-order
+            data-order-title="<?php echo $repair_types['form']['title'] ?>"
+            data-order-submit="<?php echo $repair_types['form']['submit'] ?>"
+            data-order-subject="Виды ремонта / <?php echo $item['title'] ?>"
+            class="content-repair-type__order-button"
+          ><?php echo $repair_types['request'] ?></button>
         </div>
       </div>
     </div>

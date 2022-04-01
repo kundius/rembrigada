@@ -11,8 +11,8 @@
       <?php echo $readiness['description'] ?>
     </div>
     <?php endif; ?>
-    <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="readiness-form js-form">
-      <input type="hidden" name="referrer" value="<?php echo wp_get_document_title() ?>">
+    <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="readiness-form js-form">
+      <input type="hidden" name="subject" value="<?php echo wp_get_document_title() ?>">
       <div class="readiness-form__phone">
         <span class="wpcf7-form-control-wrap your-phone">
           <input type="tel" name="your-phone" value="" class="readiness-form__input" placeholder="Телефон*">

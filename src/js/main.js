@@ -69,10 +69,14 @@ forEach(document.querySelectorAll('[data-order]'), el => {
   const modalEl = document.querySelector('#order')
   const titleEl = modalEl.querySelector('.order-form__title')
   const subjectEl = modalEl.querySelector('[name="subject"]')
+  const sectionEl = modalEl.querySelector('[name="section"]')
+  const orderSubject = el.dataset.orderSubject || 'Заявка на расчет'
+  const orderSection = el.dataset.orderSection || 'Не указано'
   el.addEventListener('click', (e) => {
     e.preventDefault()
-    titleEl.innerHTML = el.dataset.order
-    subjectEl.value = el.dataset.order
+    titleEl.innerHTML = orderSubject
+    subjectEl.value = orderSubject
+    sectionEl.value = orderSection
     showModal(modalEl)
   })
 })

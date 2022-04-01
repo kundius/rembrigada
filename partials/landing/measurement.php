@@ -8,7 +8,13 @@
     <?php endif; ?>
     <?php if (!empty($measurement['request'])): ?>
     <div class="landing-measurement__request">
-      <button data-order data-order-subject="<?php echo $measurement['subject'] ?>" data-order-section="<?php echo $measurement['title'] ?>" class="landing-button">
+      <button
+        data-order
+        data-order-title="<?php echo $measurement['form']['title'] ?>"
+        data-order-submit="<?php echo $measurement['form']['submit'] ?>"
+        data-order-subject="<?php echo $measurement['title'] ?>"
+        class="landing-button"
+      >
         <?php echo $measurement['request'] ?>
       </button>
     </div>

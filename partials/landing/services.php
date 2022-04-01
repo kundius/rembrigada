@@ -26,7 +26,13 @@
             <?php endif; ?>
           </div>
           <div class="landing-service__request">
-            <button data-order data-order-subject="<?php echo $price['subject'] ?>" data-order-section="<?php echo $services['title'] ?> / <?php echo $price['name'] ?>" class="landing-button"><?php echo $price['request'] ?></button>
+            <button
+              data-order
+              data-order-title="<?php echo $services['form']['title'] ?>"
+              data-order-submit="<?php echo $services['form']['submit'] ?>"
+              data-order-subject="<?php echo $services['title'] ?> / <?php echo $service['name'] ?>"
+              class="landing-button"
+            ><?php echo $services['request'] ?></button>
           </div>
         </div>
       </div>

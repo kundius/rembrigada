@@ -33,7 +33,13 @@
 
     <?php if (!empty($promlems['request'])): ?>
     <div class="landing-problems__request">
-      <button data-order data-order-subject="<?php echo $promlems['subject'] ?>" data-order-section="<?php echo $promlems['title'] ?>" class="landing-button"><?php echo $promlems['request'] ?></button>
+      <button
+        data-order
+        data-order-title="<?php echo $promlems['form']['title'] ?>"
+        data-order-submit="<?php echo $promlems['form']['submit'] ?>"
+        data-order-subject="<?php echo $promlems['title'] ?>"
+        class="landing-button"
+      ><?php echo $promlems['request'] ?></button>
     </div>
     <?php endif; ?>
   </div>

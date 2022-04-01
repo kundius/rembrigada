@@ -429,64 +429,66 @@ document.querySelectorAll('.js-form').forEach(function(form) {
     grecaptcha.execute(wpcf7_recaptcha.sitekey, {action: 'submit'}).then(function(token) {
       console.log(token)
       // // Add your logic to submit to your backend server here.
-    })
 
-    forEach(controls, el => el.classList.remove('_validation-error'))
+      forEach(controls, el => el.classList.remove('_validation-error'))
 
-    forEach(messages, message => {
-      if (message.parentNode) {
-        message.parentNode.removeChild(message)
-      }
-    })
-    messages = []
+      forEach(messages, message => {
+        if (message.parentNode) {
+          message.parentNode.removeChild(message)
+        }
+      })
+      messages = []
 
-    const request = new XMLHttpRequest()
-    request.open('POST', form.action, true)
-    request.addEventListener('readystatechange', function() {
-      if (this.readyState != 4) return
+      const request = new XMLHttpRequest()
+      request.open('POST', form.action, true)
+      request.addEventListener('readystatechange', function() {
+        if (this.readyState != 4) return
 
-      const response = JSON.parse(request.response)
+        const response = JSON.parse(request.response)
 
-      if (response.status == 'mail_sent') {
-        form.reset()
-        form.classList.add('_validation-mail_sent')
-        notifier.success(response.message)
-        setTimeout(() => {
-          form.classList.remove('_validation-mail_sent')
-        }, 5000)
-      }
+        if (response.status == 'mail_sent') {
+          form.reset()
+          form.classList.add('_validation-mail_sent')
+          notifier.success(response.message)
+          setTimeout(() => {
+            form.classList.remove('_validation-mail_sent')
+          }, 5000)
+        }
 
-      if (response.status == 'acceptance_missing') {
-        notifier.warning(response.message)
-      }
+        if (response.status == 'acceptance_missing') {
+          notifier.warning(response.message)
+        }
 
-      if (response.status == 'mail_failed') {
-        notifier.alert(response.message)
-      }
+        if (response.status == 'mail_failed') {
+          notifier.alert(response.message)
+        }
 
-      if (response.status == 'spam') {
-        notifier.alert(response.message)
-      }
+        if (response.status == 'spam') {
+          notifier.alert(response.message)
+        }
 
-      if (response.status == 'validation_failed') {
-        forEach(response.invalid_fields, field => {
-          const el = form.querySelector(field.into)
-          el.classList.add('_validation-error')
-          const message = document.createElement('span')
-          message.classList.add('form-error')
-          message.innerHTML = field.message
-          el.appendChild(message)
-          messages.push(message)
-          const close = document.createElement('span')
-          close.classList.add('form-error__close')
-          message.appendChild(close)
-          close.addEventListener('click', () => {
-            message.parentNode.removeChild(message)
+        if (response.status == 'validation_failed') {
+          forEach(response.invalid_fields, field => {
+            const el = form.querySelector(field.into)
+            el.classList.add('_validation-error')
+            const message = document.createElement('span')
+            message.classList.add('form-error')
+            message.innerHTML = field.message
+            el.appendChild(message)
+            messages.push(message)
+            const close = document.createElement('span')
+            close.classList.add('form-error__close')
+            message.appendChild(close)
+            close.addEventListener('click', () => {
+              message.parentNode.removeChild(message)
+            })
           })
-        })
-      }
+        }
+      })
+      const formData = new FormData(form)
+      formData.append('_wpcf7_recaptcha_response', token)
+      request.send(formData)
     })
-    request.send(new FormData(form))
   })
 })
 

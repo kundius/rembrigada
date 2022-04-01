@@ -134,6 +134,68 @@
     </div>
 </div>
 
+<div id="order" class="hidden">
+    <div class="modal modal_order">
+        <button class="modal__close" data-basiclightbox-close></button>
+        <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="order-form js-form">
+            <div class="order-form__title">Заявка на расчет</div>
+            <div class="order-form__desc">Заполните форму, и наш специалист свяжется с Вами в течение 15 минут</div>
+            <div class="order-form__fields">
+                <div class="order-form__row">
+                    <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />
+                </div>
+                <div class="order-form__row">
+                    <span class="wpcf7-form-control-wrap your-phone">
+                        <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон*">
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    <input type="hidden" name="subject" value="<?php echo wp_get_document_title() ?>">
+                    <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
+                </div>
+                <div class="order-form__row">
+                    <label class="order-form__rules">
+                        <input type="checkbox" name="rules" value="1" class="form-checkbox" />
+                        <span></span>
+                        Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
+                    </label>
+                </div>
+            </div>
+                            
+            <div class="order-form__success">
+                <div class="order-form__title">Ваша заявка успешно отправлена</div>
+                <div class="order-form__desc">Наш специалист свяжется с Вами в течении 15 минут, а пока вы можете ознакомиться с видами ремонта, которые мы делаем и как мы его делаем.</div>
+                <div class="callback-items">
+                    <div class="callback-item">
+                        <div class="callback-item__image">
+                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/apartments.svg" alt="" loading="lazy"></div>
+                        </div>
+                        <div class="callback-item__title">
+                            Ремонт квартир
+                        </div>
+                    </div>
+                    <div class="callback-item">
+                        <div class="callback-item__image">
+                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/houses.svg" alt="" loading="lazy"></div>
+                        </div>
+                        <div class="callback-item__title">
+                            Ремонт домов
+                        </div>
+                    </div>
+                    <div class="callback-item">
+                        <div class="callback-item__image">
+                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/commercial.svg" alt="" loading="lazy"></div>
+                        </div>
+                        <div class="callback-item__title">
+                            Ремонт коммерческой недвижимости
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 <button class="scrollup js-scroll"></button>
 
 <script src="<?php echo get_bloginfo('template_url') ?>/dist/main.js"></script>

@@ -65,6 +65,18 @@ forEach(document.querySelectorAll('[data-basiclightbox]'), el => {
   })
 })
 
+forEach(document.querySelectorAll('[data-order]'), el => {
+  const modalEl = document.querySelector('#order')
+  const titleEl = modalEl.querySelector('.order-form__title')
+  const subjectEl = modalEl.querySelector('[name="subject"]')
+  el.addEventListener('click', (e) => {
+    e.preventDefault()
+    titleEl.innerHTML = el.dataset.order
+    subjectEl.value = el.dataset.order
+    showModal(modalEl)
+  })
+})
+
 if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent))) {
   forEach(document.querySelectorAll('.js-header-callback'), el => {
     el.addEventListener('click', (e) => {

@@ -2760,6 +2760,103 @@ a.btn-plus,
     }
 }
 
+
+.order-form {
+
+}
+
+.order-form__success {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    background: #fff;
+    opacity: 0;
+    transition: opacity .3s ease;
+    ._validation-mail_sent & {
+        opacity: 1;
+    }
+}
+
+.order-form__fields {
+}
+
+.order-form__title {
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #333333;
+    font-weight: bold;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 20px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 18px;
+    }
+}
+
+.order-form__desc {
+    font-size: 16px;
+    line-height: 1.125;
+    margin-top: 27px;
+    margin-bottom: 22px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 14px;
+        margin-top: 16px;
+        margin-bottom: 28px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-top: 20px;
+        margin-bottom: 13px;
+    }
+}
+
+.order-form__row {
+    margin: 13px 0;
+    max-width: 290px;
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin: 10px 0;
+        max-width: initial;
+    }
+}
+
+.order-form__rules {
+    margin-top: 19px;
+    margin-bottom: 34px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #9d9d9d;
+    position: relative;
+    padding-left: 30px;
+    display: block;
+    a {
+        text-decoration: underline;
+        color: #767676;
+    }
+    .form-checkbox + span {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-top: 10px;
+        margin-bottom: 13px;
+    }
+}
+
 .scrollup {
     border-radius: 50%;
     background-color: rgba(204, 204, 204, 0.8);

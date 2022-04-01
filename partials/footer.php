@@ -149,9 +149,9 @@
                         <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон*">
                     </span>
                 </div>
-                <div class="order-form__row">
+                <div class="order-form__row order-form__submit">
                     <input type="hidden" name="subject" value="<?php echo wp_get_document_title() ?>">
-                    <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
+                    <button type="submit" class="landing-button"><span></span><span>Отправить</span></button>
                 </div>
                 <div class="order-form__row">
                     <label class="order-form__rules">

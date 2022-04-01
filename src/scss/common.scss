@@ -2837,8 +2837,6 @@ a.btn-plus,
 
 .order-form__rules {
     margin-top: 16px;
-    margin-left: 16px;
-    margin-right: 16px;
     font-size: 12px;
     line-height: 1.2;
     color: #404040;
@@ -2857,8 +2855,6 @@ a.btn-plus,
     @media (max-width: $breakpoint-small-max) {
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        margin-left: 0;
-        margin-right: 0;
     }
 }
 

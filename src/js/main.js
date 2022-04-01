@@ -420,6 +420,11 @@ forEach(document.querySelectorAll('.scrollup'), function(el) {
 })
 
 document.querySelectorAll('.js-form').forEach(function(form) {
+  // grecaptcha.execute('reCAPTCHA_site_key', {action: 'submit'}).then(function(token) {
+  // // Add your logic to submit to your backend server here.
+  // });
+  console.log(grecaptcha, wpcf7_recaptcha)
+  // _wpcf7_recaptcha_response
   let controls = form.querySelectorAll('span.wpcf7-form-control-wrap')
   let messages = []
   form.addEventListener('submit', function(e) {
@@ -455,6 +460,10 @@ document.querySelectorAll('.js-form').forEach(function(form) {
       }
 
       if (response.status == 'mail_failed') {
+        notifier.alert(response.message)
+      }
+
+      if (response.status == 'spam') {
         notifier.alert(response.message)
       }
 

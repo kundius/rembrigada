@@ -24,7 +24,7 @@
     </div>
 </section>
 <?php if (!is_home()): ?>
-<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+<div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
     <div class="container">
         <?php bcn_display() ?>
     </div>

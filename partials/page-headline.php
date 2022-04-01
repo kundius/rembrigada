@@ -14,11 +14,6 @@
         <?php endif; ?>
     </div>
 </section>
-<div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
-    <div class="container">
-        <?php bcn_display() ?>
-    </div>
-</div>
 <?php else: ?>
 <div class="breadcrumbs breadcrumbs_light" typeof="BreadcrumbList" vocab="https://schema.org/">
     <div class="container">

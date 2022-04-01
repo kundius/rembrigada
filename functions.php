@@ -734,6 +734,20 @@ function callback_block_assets() {
 	);
 
 	wp_enqueue_script(
+ 		'block-advantages-script',
+		get_template_directory_uri() . '/blocks/landing/advantages.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/advantages.js')
+	);
+
+	wp_enqueue_style(
+		'block-advantages-style',
+		get_template_directory_uri() . '/blocks/landing/advantages.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/advantages.css')
+	);
+
+	wp_enqueue_script(
  		'block-readiness-script',
 		get_template_directory_uri() . '/blocks/landing/readiness.js',
 		array('wp-blocks', 'wp-element'),

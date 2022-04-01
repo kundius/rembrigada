@@ -2776,11 +2776,13 @@ a.btn-plus,
     opacity: 0;
     padding: 40px;
     border-radius: 8px;
+    visibility: hidden;
     transition: opacity .3s ease;
-    display: none;
+    // display: none;
     ._validation-mail_sent & {
         opacity: 1;
-        display: block;
+        visibility: visible;
+        // display: block;
     }
 }
 

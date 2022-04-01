@@ -2860,13 +2860,6 @@ a.btn-plus,
     }
 }
 
-.order-form__message {
-    display: none;
-    ._orderWithMessage & {
-        display: block;
-    }
-}
-
 .scrollup {
     border-radius: 50%;
     background-color: rgba(204, 204, 204, 0.8);

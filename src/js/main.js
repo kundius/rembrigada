@@ -68,6 +68,7 @@ forEach(document.querySelectorAll('[data-basiclightbox]'), el => {
 forEach(document.querySelectorAll('[data-order]'), el => {
   const modalEl = document.querySelector('#order')
   const titleEl = modalEl.querySelector('.order-form__title')
+  const messageEL = modalEl.querySelector('.order-form__message')
   const subjectEl = modalEl.querySelector('[name="subject"]')
   const sectionEl = modalEl.querySelector('[name="section"]')
   const orderSubject = el.dataset.orderSubject || 'Заявка на расчет'
@@ -78,11 +79,7 @@ forEach(document.querySelectorAll('[data-order]'), el => {
     titleEl.innerHTML = orderSubject
     subjectEl.value = orderSubject
     sectionEl.value = orderSection
-    if (orderWithMessage) {
-      modalEl.classList.add('_orderWithMessage')
-    } else {
-      modalEl.classList.remove('_orderWithMessage')
-    }
+    messageEL.style.display = orderWithMessage ? 'block' : 'none'
     showModal(modalEl)
   })
 })

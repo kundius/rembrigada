@@ -9,7 +9,8 @@
 
             <?php if (have_posts()) : while ( have_posts() ) : the_post(); ?>
 
-            <section class="page-bg-headline" style="background-image: url('<?php echo get_field('headline_background')['url'] ?>')">
+            <?php if ($bg = get_field('headline_background')): ?>
+            <section class="page-bg-headline" style="background-image: url('<?php echo $bg['url'] ?>')">
                 <div class="page-bg-headline__inner">
                     <h1 class="page-bg-headline__title"><?php the_title() ?></h1>
                     <?php if ($description = get_field('headline_description')): ?>
@@ -24,6 +25,13 @@
                     <?php endif; ?>
                 </div>
             </section>
+            <?php else: ?>
+            <section class="page-headline">
+                <div class="container">
+                    <h1 class="page-headline__title"><span><?php the_title() ?></span></h1>
+                </div>
+            </section>
+            <?php endif; ?>
 
             <div class="intro-advantages">
                 <div class="container">

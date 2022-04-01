@@ -38,6 +38,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .about-team-item + .about-team-item {
@@ -49,7 +50,7 @@
 }
 
 .about-team-item__body {
-  width: calc(50% - 15px);
+  width: calc(50% - 20px);
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
   }
@@ -69,10 +70,11 @@
 }
 
 .about-team-item__image {
-  width: calc(50% - 15px);
+  width: calc(50% - 20px);
   @media (max-width: $breakpoint-xsmall-max) {
     width: 100%;
-    margin-top: 20px;
+    margin-bottom: 20px;
+    order: -1;
   }
 }
 

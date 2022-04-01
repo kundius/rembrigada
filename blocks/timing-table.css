@@ -1,8 +1,18 @@
 .wp-block-form-timing-table {
-	background: #ffde00;
-	padding: 40px 20px;
-	color:#494633;
+	background: #2196f3;
+	padding: 40px;
+	color: #ffffff;
 	font-size: 24px;
 	text-align: center;
 	font-weight: bold;
+	position: relative;
+}
+
+.wp-block-form-timing-table::before {
+	content: 'Контент блок';
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-size: 14px;
+	font-weight: normal;
 }

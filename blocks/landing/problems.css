@@ -1,8 +1,18 @@
 .wp-block-landing-problems {
-	background: #ffde00;
-	padding: 40px 20px;
-	color:#494633;
+	background: #6d6e8a;
+	padding: 40px;
+	color: #ffffff;
 	font-size: 24px;
 	text-align: center;
 	font-weight: bold;
+	position: relative;
+}
+
+.wp-block-landing-problems::before {
+	content: 'Лендинг блок';
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-size: 14px;
+	font-weight: normal;
 }

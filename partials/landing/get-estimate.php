@@ -33,8 +33,7 @@
       </div>
       <div class="landing-get-estimate__layout-form">
         <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="get-estimate-form js-form">
-          <input type="hidden" name="subject" value="<?php echo $get_estimate['request'] ?>">
-          <input type="hidden" name="section" value="<?php echo $get_estimate['title'] ?>">
+          <input type="hidden" name="subject" value="<?php echo $get_estimate['title'] ?>">
           <div class="get-estimate-form__row">
             <input type="text" name="your-name" value="" class="get-estimate-form__input" placeholder="Имя" />
           </div>

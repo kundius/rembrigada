@@ -27,7 +27,13 @@
           <?php endif; ?>
           <?php if (!empty($item['request'])): ?>
           <div class="easy-work-item__request">
-            <button data-order data-order-subject="<?php echo $item['request'] ?>" data-order-section="<?php echo $item['title'] ?>" class="landing-button"><?php echo $item['request'] ?></button>
+            <button
+              data-order
+              data-order-title="<?php echo $item['title'] ?>"
+              data-order-submit="<?php echo $item['title'] ?>"
+              data-order-subject="<?php echo $easy_work['title'] ?> / <?php echo $item['title'] ?>"
+              class="landing-button"
+            ><?php echo $item['request'] ?></button>
           </div>
           <?php endif; ?>
         </div>
@@ -37,7 +43,13 @@
 
     <?php if (!empty($easy_work['request'])): ?>
     <div class="landing-easy-work__request">
-      <button data-order data-order-subject="<?php echo $easy_work['subject'] ?>" data-order-section="<?php echo $easy_work['title'] ?>" class="landing-button landing-button_large"><?php echo $easy_work['request'] ?></button>
+      <button
+        data-order
+        data-order-title="<?php echo $easy_work['form']['title'] ?>"
+        data-order-submit="<?php echo $easy_work['form']['submit'] ?>"
+        data-order-subject="<?php echo $easy_work['title'] ?>"
+        class="landing-button landing-button_large"
+      ><?php echo $easy_work['request'] ?></button>
     </div>
     <?php endif; ?>
   </div>

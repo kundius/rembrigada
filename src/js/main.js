@@ -728,7 +728,7 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
     })
     
     forEach(lineItems, (item, i) => {
-      if (i <= n) {
+      if (i + 1 < n) {
         item.classList.add('quiz-steps__line_active')
       } else {
         item.classList.remove('quiz-steps__line_active')

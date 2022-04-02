@@ -27,13 +27,13 @@
             <div class="quiz-screens__item quiz-screens__item_active">
               1
               <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
                 <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
               </div>
             </div>
             <div class="quiz-screens__item">
               2
               <div class="quiz-buttons">
+                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
                 <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
               </div>
             </div>

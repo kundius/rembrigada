@@ -711,7 +711,7 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
   const stepItems = container.querySelectorAll('.quiz-steps__item')
   const screenItems = container.querySelectorAll('.quiz-screens__item')
   const previousItems = container.querySelectorAll('.quiz-screens__previous')
-  const nextItems = container.querySelectorAll('.quiz-screens__next]')
+  const nextItems = container.querySelectorAll('.quiz-screens__next')
 
   let active = 1
 

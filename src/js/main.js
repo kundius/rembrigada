@@ -709,6 +709,7 @@ forEach(document.querySelectorAll(".faq-items"), (container) => {
 
 forEach(document.querySelectorAll(".quiz"), (container) => {
   const stepItems = container.querySelectorAll('.quiz-steps__item')
+  const lineItems = container.querySelectorAll('.quiz-steps__line')
   const screenItems = container.querySelectorAll('.quiz-screens__item')
   const previousItems = container.querySelectorAll('.quiz-screens__previous')
   const nextItems = container.querySelectorAll('.quiz-screens__next')
@@ -726,8 +727,16 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
       }
     })
     
+    forEach(lineItems, (item, i) => {
+      if (i <= n) {
+        item.classList.add('quiz-steps__line_active')
+      } else {
+        item.classList.remove('quiz-steps__line_active')
+      }
+    })
+    
     forEach(screenItems, (item, i) => {
-      if (i + 1 <= n) {
+      if (i + 1 === n) {
         item.classList.add('quiz-screens__item_active')
       } else {
         item.classList.remove('quiz-screens__item_active')

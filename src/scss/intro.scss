@@ -257,10 +257,10 @@
   margin-left: -40px;
   margin-top: -20px;
   display: flex;
-  padding-left: 20px;
+  // padding-left: 20px;
   flex-wrap: wrap;
   @media (max-width: $breakpoint-xsmall-max) {
-    padding-left: 0;
+    // padding-left: 0;
     margin-top: -15px;
   }
 }

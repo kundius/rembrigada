@@ -705,3 +705,57 @@ forEach(document.querySelectorAll(".faq-items"), (container) => {
     });
   });
 });
+
+
+forEach(document.querySelectorAll(".quiz"), (container) => {
+  const stepItems = container.querySelectorAll('.quiz-steps__item')
+  const screenItems = container.querySelectorAll('.quiz-screens__item')
+  const previousItems = container.querySelectorAll('.quiz-screens__previous')
+  const nextItems = container.querySelectorAll('.quiz-screens__next]')
+
+  let active = 1
+
+  const to = (n) => {
+    active = n
+    
+    forEach(stepItems, (item, i) => {
+      if (i + 1 <= n) {
+        item.classList.add('quiz-steps__item_active')
+      } else {
+        item.classList.remove('quiz-steps__item_active')
+      }
+    })
+    
+    forEach(screenItems, (item, i) => {
+      if (i + 1 <= n) {
+        item.classList.add('quiz-screens__item_active')
+      } else {
+        item.classList.remove('quiz-screens__item_active')
+      }
+    })
+  }
+
+  const previous = () => {
+    if (active === 1) return
+    to(active - 1)
+  }
+
+  const next = () => {
+    if (active === screenItems.length) return
+    to(active + 1)
+  }
+
+  forEach(previousItems, (item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault()
+      previous()
+    })
+  })
+
+  forEach(nextItems, (item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault()
+      next()
+    })
+  })
+})

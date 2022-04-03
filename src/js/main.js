@@ -773,6 +773,7 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
   forEach(nextItems, (item) => {
     item.addEventListener('click', (e) => {
       // e.preventDefault()
+      console.log('next', item)
       next()
     })
   })

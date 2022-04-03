@@ -340,13 +340,46 @@
                     Пришлите мне все в Telegram 
                   </label>
                 </div>
+                <div class="quiz-form__feedback">
+                  <div class="quiz-feedback">
+                    <div class="quiz-feedback__phone">
+                      <span class="wpcf7-form-control-wrap your-phone">
+                        <input type="tel" name="your-phone" value="" class="quiz-feedback__input" placeholder="Телефон">
+                      </span>
+                    </div>
+                    <div class="quiz-feedback__submit">
+                      <button type="submit" class="landing-button">
+                        Отправить расчет и&nbsp;получить подарок
+                      </button>
+                    </div>
+                    <label class="quiz-feedback__rules">
+                      <div class="ui-checkbox">
+                        <input type="checkbox" name="rules" value="1" />
+                        <span></span>
+                      </div>
+                      Прочитал(-а) <a href="https://rembrigada116.ru/polzovatelskoe-soglashenie" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="https://rembrigada116.ru/privacy-policy" target="_blank">Политикой обработки персональных данных</a>
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
 
             <!-- -->
 
             <div class="quiz-screens__item">
-              
+              <div class="quiz-form">
+                <div class="quiz-form__title">
+                  <div class="quiz-form__title-marker quiz-form__title-marker_check"></div>
+                  <div class="quiz-form__title-content">
+                    <div class="quiz-form__title-text">
+                      Ваша заявка успешно отправлена!
+                    </div>
+                    <div class="quiz-form__title-desc">
+                      Как только мы завершим расчет, результат будет отправлен Вам указанным способом.
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>

@@ -12,7 +12,7 @@
   font-weight: 700;
   font-size: 24px;
   color: #333;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
   @media (max-width: $breakpoint-xsmall-max) {
     margin-bottom: 20px;
   }
@@ -113,9 +113,10 @@
 }
 
 .quiz-info {
-  padding: 25px;
+  padding: 44px 25px;
   background: #ececef;
   border-radius: 4px;
+  min-height: 100%;
 }
 
 .quiz-info__title {
@@ -125,7 +126,7 @@
   font-weight: bold;
   text-align: center;
   line-height: 1;
-  margin-bottom: 45px;
+  margin-bottom: 56px;
 }
 
 .quiz-info__items {

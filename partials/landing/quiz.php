@@ -28,60 +28,327 @@
       <div class="quiz-layout">
         <div class="quiz-layout__screens">
           <div class="quiz-screens">
+
             <div class="quiz-screens__item quiz-screens__item_active">
-              1
-              <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+              <div class="quiz-content">
+                <div class="quiz-content__image quiz-content__image_first">
+
+                </div>
+                <div class="quiz-content__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                      <div class="quiz-form__title-marker">1</div>
+                      <div class="quiz-form__title-content">
+                        <div class="quiz-form__title-text">
+                          Укажите тип Вашего дома
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz-form__fields">
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-1" value="Новостройка" />
+                        <span></span>
+                        Новостройка
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-1" value="Вторичное жилье" />
+                        <span></span>
+                        Вторичное жилье
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-1" value="Дом или коттедж" />
+                        <span></span>
+                        Дом или коттедж
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-1" value="Другое" />
+                        <span></span>
+                        Другое
+                      </label>
+                    </div>
+                    <div class="quiz-buttons">
+                      <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!--  -->
+
             <div class="quiz-screens__item">
-              2
-              <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
-                <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+              <div class="quiz-content">
+                <div class="quiz-content__image quiz-content__image_second">
+
+                </div>
+                <div class="quiz-content__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                      <div class="quiz-form__title-marker">2</div>
+                      <div class="quiz-form__title-content">
+                        <div class="quiz-form__title-text">
+                          Укажите общую площадь помещения
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz-form__fields">
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-2" value="До 30 м²" />
+                        <span></span>
+                        До 30 м<sup>2</sup>
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-2" value="От 30 м² до 60 м²" />
+                        <span></span>
+                        От 30 м<sup>2</sup> до 60 м<sup>2</sup>
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-2" value="Более 60 м²" />
+                        <span></span>
+                        Более 60 м<sup>2</sup>
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-2" value="Указана площадь" />
+                        <span></span>
+                        <input type="text" name="step-2-value" placeholder="Введите площадь" />
+                        м<sup>2</sup>
+                      </label>
+                    </div>
+                    <div class="quiz-buttons">
+                      <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
+                      <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!--  -->
+
             <div class="quiz-screens__item">
-              3
-              <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
-                <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+              <div class="quiz-content">
+                <div class="quiz-content__image quiz-content__image_third">
+
+                </div>
+                <div class="quiz-content__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                      <div class="quiz-form__title-marker">3</div>
+                      <div class="quiz-form__title-content">
+                        <div class="quiz-form__title-text">
+                          Какой вид ремонта требуется?
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz-form__fields">
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-3" value="Черновой ремонт" />
+                        <span></span>
+                        Черновой ремонт
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-3" value="Косметический ремонт" />
+                        <span></span>
+                        Косметический ремонт
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-3" value="Капитальный ремонт" />
+                        <span></span>
+                        Капитальный ремонт
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-3" value="Элитный ремонт" />
+                        <span></span>
+                        Элитный ремонт
+                      </label>
+                    </div>
+                    <div class="quiz-buttons">
+                      <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
+                      <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!--  -->
+
             <div class="quiz-screens__item">
-              4
-              <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
-                <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+              <div class="quiz-content">
+                <div class="quiz-content__image quiz-content__image_fourth">
+
+                </div>
+                <div class="quiz-content__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                      <div class="quiz-form__title-marker">4</div>
+                      <div class="quiz-form__title-content">
+                        <div class="quiz-form__title-text">
+                          У вас уже есть дизайн проект?
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz-form__fields">
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-4" value="Да" />
+                        <span></span>
+                        Да
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-4" value="Нет" />
+                        <span></span>
+                        Нет
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-4" value="Планирую заказать" />
+                        <span></span>
+                        Планирую заказать
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-4" value="В разработке" />
+                        <span></span>
+                        В разработке
+                      </label>
+                    </div>
+                    <div class="quiz-buttons">
+                      <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
+                      <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!--  -->
+
             <div class="quiz-screens__item">
-              5
-              <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
-                <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+              <div class="quiz-content">
+                <div class="quiz-content__image quiz-content__image_fifth">
+
+                </div>
+                <div class="quiz-content__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                      <div class="quiz-form__title-marker">5</div>
+                      <div class="quiz-form__title-content">
+                        <div class="quiz-form__title-text">
+                          Когда вы планируете начать ремонт?
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz-form__fields">
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-5" value="В течение 3х дней" />
+                        <span></span>
+                        В течение 3х дней
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-5" value="В течение месяца" />
+                        <span></span>
+                        В течение месяца
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-5" value="В течение полугода" />
+                        <span></span>
+                        В течение полугода
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-5" value="Более длительный срок" />
+                        <span></span>
+                        Более длительный срок
+                      </label>
+                    </div>
+                    <div class="quiz-buttons">
+                      <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
+                      <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
             <div class="quiz-screens__item">
-              6
-              <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
-                <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+              <div class="quiz-content">
+                <div class="quiz-content__image quiz-content__image_sixth">
+
+                </div>
+                <div class="quiz-content__form">
+                  <div class="quiz-form">
+                    <div class="quiz-form__title">
+                      <div class="quiz-form__title-marker">6</div>
+                      <div class="quiz-form__title-content">
+                        <div class="quiz-form__title-text">
+                          Какой бы Вам хотелось получить подарок после ремонта?
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quiz-form__fields">
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-6" value="Каталог дизайн-проектов" />
+                        <span></span>
+                        Каталог дизайн-проектов
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-6" value="Фотосессия после ремонта" />
+                        <span></span>
+                        Фотосессия после ремонта
+                      </label>
+                      <label class="quiz-form__fields-item">
+                        <input type="radio" name="step-6" value="Мне не нужен подарок" />
+                        <span></span>
+                        Мне не нужен подарок
+                      </label>
+                    </div>
+                    <div class="quiz-buttons">
+                      <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
+                      <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+            <!-- -->
+
             <div class="quiz-screens__item">
-              7
-              <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
-                <button class="quiz-buttons__item quiz-screens__next">Следующий шаг</button>
+              <div class="quiz-form">
+                <div class="quiz-form__title">
+                  <div class="quiz-form__title-marker quiz-form__title-marker_check"></div>
+                  <div class="quiz-form__title-content">
+                    <div class="quiz-form__title-text">
+                      Мы уже приступили к расчету!
+                    </div>
+                    <div class="quiz-form__title-desc">
+                      За Вами закреплена скидка. Куда отправлять результат?
+                    </div>
+                  </div>
+                </div>
+                <div class="quiz-form__fields">
+                  <label class="quiz-form__fields-item">
+                    <input type="radio" name="step-7" value="Перезвоните мне, у меня остались вопросы" />
+                    <span></span>
+                    Перезвоните мне, у меня остались вопросы
+                  </label>
+                  <label class="quiz-form__fields-item">
+                    <input type="radio" name="step-7" value="Пришлите мне все в Whatsapp" />
+                    <span></span>
+                    Пришлите мне все в Whatsapp
+                  </label>
+                  <label class="quiz-form__fields-item">
+                    <input type="radio" name="step-7" value="Пришлите мне все в Telegram " />
+                    <span></span>
+                    Пришлите мне все в Telegram 
+                  </label>
+                </div>
               </div>
             </div>
+
+            <!-- -->
+
             <div class="quiz-screens__item">
-              8
-              <div class="quiz-buttons">
-                <button class="quiz-buttons__item quiz-screens__previous">Назад</button>
-              </div>
+              
             </div>
+
           </div>
         </div>
         <div class="quiz-layout__info">

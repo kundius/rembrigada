@@ -720,8 +720,9 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
   const stepItems = container.querySelectorAll('.quiz-steps__item')
   const lineItems = container.querySelectorAll('.quiz-steps__line')
   const screenItems = container.querySelectorAll('.quiz-screens__item')
-  const previousItems = container.querySelectorAll('[data-quiz-previous]')
-  const nextItems = container.querySelectorAll('[data-quiz-next]')
+  const previousItems = container.querySelectorAll('.quiz-screens__previous')
+  const nextItems = container.querySelectorAll('.quiz-screens__next')
+  const radioItems = container.querySelectorAll('[type="radio"]')
   // const labelItems = container.querySelectorAll('.quiz-form__fields-control')
 
   let active = 1
@@ -766,14 +767,21 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
 
   forEach(previousItems, (item) => {
     item.addEventListener('click', (e) => {
-      // e.preventDefault()
+      e.preventDefault()
       previous()
     })
   })
 
   forEach(nextItems, (item) => {
     item.addEventListener('click', (e) => {
-      // e.preventDefault()
+      e.preventDefault()
+      next()
+    })
+  })
+
+  forEach(radioItems, (item) => {
+    item.addEventListener('change', (e) => {
+      e.preventDefault()
       next()
     })
   })

@@ -28,6 +28,8 @@
       </div>
 
       <form action="/wp-json/contact-form-7/v1/contact-forms/4295/feedback" method="post" class="quiz-layout js-form">
+        <input type="hidden" name="referrer" value="<?php the_title() ?>">
+
         <div class="quiz-layout__screens">
           <div class="quiz-screens">
 
@@ -48,28 +50,28 @@
                     </div>
                     <div class="quiz-form__fields">
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-1" value="Новостройка" checked />
                           <span></span>
                           <span>Новостройка</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-1" value="Вторичное жилье" />
                           <span></span>
                           <span>Вторичное жилье</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-1" value="Дом или коттедж" />
                           <span></span>
                           <span>Дом или коттедж</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-1" value="Другое" />
                           <span></span>
                           <span>Другое</span>
@@ -103,28 +105,28 @@
                     </div>
                     <div class="quiz-form__fields">
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-2" value="До 30 м²" checked />
                           <span></span>
                           <span>До 30 м<sup>2</sup></span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-2" value="От 30 м² до 60 м²" />
                           <span></span>
                           <span>От 30 м<sup>2</sup> до 60 м<sup>2</sup></span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-2" value="Более 60 м²" />
                           <span></span>
                           <span>Более 60 м<sup>2</sup></span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-2" value="Указана площадь" />
                           <span></span>
                           <span><input type="text" name="step-2-value" placeholder="Введите площадь" /> м<sup>2</sup></span>
@@ -159,28 +161,28 @@
                     </div>
                     <div class="quiz-form__fields">
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-3" value="Черновой ремонт" checked />
                           <span></span>
                           <span>Черновой ремонт</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-3" value="Косметический ремонт" />
                           <span></span>
                           <span>Косметический ремонт</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-3" value="Капитальный ремонт" />
                           <span></span>
                           <span>Капитальный ремонт</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-3" value="Элитный ремонт" />
                           <span></span>
                           <span>Элитный ремонт</span>
@@ -215,28 +217,28 @@
                     </div>
                     <div class="quiz-form__fields">
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-4" value="Да" checked />
                           <span></span>
                           <span>Да</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-4" value="Нет" />
                           <span></span>
                           <span>Нет</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-4" value="Планирую заказать" />
                           <span></span>
                           <span>Планирую заказать</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-4" value="В разработке" />
                           <span></span>
                           <span>В разработке</span>
@@ -271,28 +273,28 @@
                     </div>
                     <div class="quiz-form__fields">
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-5" value="В течение 3х дней" checked />
                           <span></span>
                           <span>В течение 3х дней</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-5" value="В течение месяца" />
                           <span></span>
                           <span>В течение месяца</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-5" value="В течение полугода" />
                           <span></span>
                           <span>В течение полугода</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-5" value="Более длительный срок" />
                           <span></span>
                           <span>Более длительный срок</span>
@@ -325,21 +327,21 @@
                     </div>
                     <div class="quiz-form__fields">
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-6" value="Каталог дизайн-проектов" checked />
                           <span></span>
                           <span>Каталог дизайн-проектов</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-6" value="Фотосессия после ремонта" />
                           <span></span>
                           <span>Фотосессия после ремонта</span>
                         </label>
                       </div>
                       <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label" data-quiz-next>
+                        <label class="quiz-form__fields-label">
                           <input type="radio" name="step-6" value="Мне не нужен подарок" />
                           <span></span>
                           <span>Мне не нужен подарок</span>

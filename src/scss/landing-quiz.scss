@@ -463,7 +463,7 @@
 }
 
 .quiz-feedback__submit {
-  width: 328px;
+  width: 320px;
   margin-left: 20px;
 }
 
@@ -471,12 +471,14 @@
   padding-left: 32px;
   padding-right: 32px;
   font-size: 17px;
+  letter-spacing: 0;
 }
 
 .quiz-feedback__submit .landing-button svg {
   display: inline-block;
   margin-left: 18px;
   margin-right: -6px;
+  flex-shrink: 0;
 }
 
 .quiz-feedback__rules {

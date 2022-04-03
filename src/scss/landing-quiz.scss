@@ -495,11 +495,18 @@
   padding-left: 57px;
   width: 677px;
   max-width: 100%;
+  @media (max-width: $breakpoint-xsmall-max) {
+    padding-left: 0;
+    margin-top: 20px;
+  }
 }
 
 .quiz-feedback__phone {
   flex-grow: 1;
   width: 140px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+  }
 }
 
 .quiz-feedback__input {
@@ -517,6 +524,13 @@
 .quiz-feedback__submit {
   width: 320px;
   margin-left: 20px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 12px;
+  }
 }
 
 .quiz-feedback__submit .landing-button {
@@ -524,6 +538,9 @@
   padding-right: 32px;
   font-size: 17px;
   letter-spacing: 0;
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 15px;
+  }
 }
 
 .quiz-feedback__submit .landing-button svg {

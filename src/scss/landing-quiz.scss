@@ -104,6 +104,7 @@
 
 .quiz-layout__screens {
   width: calc(100% - (350px + 40px));
+  padding-top: 35px;
 }
 
 .quiz-layout__info {
@@ -174,7 +175,6 @@
 .quiz-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 35px;
 }
 
 .quiz-content__image {

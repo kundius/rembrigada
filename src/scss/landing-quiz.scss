@@ -398,8 +398,14 @@
 
 .quiz-feedback__submit .landing-button {
   padding-left: 32px;
-  padding-right: 70px;
+  padding-right: 32px;
   font-size: 17px;
+}
+
+.quiz-feedback__submit .landing-button svg {
+  display: inline-block;
+  margin-left: 18px;
+  margin-right: -6px;
 }
 
 .quiz-feedback__rules {

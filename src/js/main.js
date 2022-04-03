@@ -722,7 +722,7 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
   const screenItems = container.querySelectorAll('.quiz-screens__item')
   const previousItems = container.querySelectorAll('[data-quiz-previous]')
   const nextItems = container.querySelectorAll('[data-quiz-next]')
-  const labelItems = container.querySelectorAll('.quiz-form__fields-label')
+  // const labelItems = container.querySelectorAll('.quiz-form__fields-control')
 
   let active = 1
 
@@ -778,11 +778,11 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
     })
   })
 
-  forEach(labelItems, (item) => {
-    item.addEventListener('click', (e) => {
-      // e.preventDefault()
-      // next()
-      console.log('click label', item)
-    })
-  })
+  // forEach(labelItems, (item) => {
+  //   item.addEventListener('click', (e) => {
+  //     // e.preventDefault()
+  //     // next()
+  //     console.log('click label', item)
+  //   })
+  // })
 })

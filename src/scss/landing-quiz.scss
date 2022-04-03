@@ -318,7 +318,7 @@
 }
 
 .quiz-form__fields-label {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   cursor: pointer;
 }
@@ -381,8 +381,12 @@
   line-height: 1;
 }
 
+.quiz-form__fields-control {
+}
+
 .quiz-form__fields-item {
   display: flex;
+  justify-content: flex-start;
 }
 
 .quiz-form__fields-item + .quiz-form__fields-item {

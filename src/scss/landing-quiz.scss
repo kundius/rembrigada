@@ -105,11 +105,17 @@
 .quiz-layout__screens {
   width: calc(100% - (350px + 40px));
   padding-top: 35px;
+  @media (max-width: $breakpoint-small-max) {
+    width: 100%;
+  }
 }
 
 .quiz-layout__info {
   width: 346px;
   flex-shrink: 0;
+  @media (max-width: $breakpoint-small-max) {
+    display: none;
+  }
 }
 
 .quiz-info {

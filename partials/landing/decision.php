@@ -16,6 +16,9 @@
             data-order-title="<?php echo $decision['form']['title'] ?>"
             data-order-submit="<?php echo $decision['form']['submit'] ?>"
             data-order-subject="<?php echo $decision['title'] ?>"
+            data-order-description="<?php echo $repair_types['form']['description'] ?>"
+            data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
+            data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
             class="landing-button landing-button_large"
           ><?php echo $decision['request'] ?></button>
         </div>

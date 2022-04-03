@@ -141,7 +141,7 @@
             <input type="hidden" name="subject" value="Заявка на расчет">
 
             <div class="order-form__title">Заявка на расчет</div>
-            <div class="order-form__desc">Заполните форму, и&nbsp;наш специалист свяжется с&nbsp;Вами в&nbsp;течение 15&nbsp;минут</div>
+            <div class="order-form__desc"></div>
             <div class="order-form__fields">
                 <div class="order-form__row">
                     <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />
@@ -168,7 +168,7 @@
                             
             <div class="order-form__success">
                 <div class="order-form__title">Ваша заявка успешно отправлена</div>
-                <div class="order-form__desc">Наш специалист свяжется с Вами в течении 15 минут, а пока вы можете ознакомиться с видами ремонта, которые мы делаем и как мы его делаем.</div>
+                <div class="order-form__desc"></div>
                 <div class="callback-items">
                     <div class="callback-item">
                         <div class="callback-item__image">

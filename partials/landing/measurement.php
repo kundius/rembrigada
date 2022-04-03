@@ -13,6 +13,9 @@
         data-order-title="<?php echo $measurement['form']['title'] ?>"
         data-order-submit="<?php echo $measurement['form']['submit'] ?>"
         data-order-subject="<?php echo $measurement['title'] ?>"
+        data-order-description="<?php echo $repair_types['form']['description'] ?>"
+        data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
+        data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
         class="landing-button"
       >
         <?php echo $measurement['request'] ?>

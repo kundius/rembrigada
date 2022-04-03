@@ -33,6 +33,9 @@
         data-order-title="<?php echo $faq['form']['title'] ?>"
         data-order-submit="<?php echo $faq['form']['submit'] ?>"
         data-order-subject="<?php echo $faq['title'] ?>"
+        data-order-description="<?php echo $repair_types['form']['description'] ?>"
+        data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
+        data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
         data-order-with-message="true"
         class="landing-button"
       ><?php echo $faq['request'] ?></button>

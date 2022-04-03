@@ -68,17 +68,26 @@ forEach(document.querySelectorAll('[data-basiclightbox]'), el => {
 forEach(document.querySelectorAll('[data-order]'), el => {
   const modalEl = document.querySelector('#order')
   const titleEl = modalEl.querySelector('.order-form__title')
+  const descriptionEl = modalEl.querySelector('.order-form__desc')
+  const successTitleEl = modalEl.querySelector('.order-form__success .order-form__title')
+  const successDescriptionEl = modalEl.querySelector('.order-form__success .order-form__desc')
   const messageEL = modalEl.querySelector('.order-form__message')
   const subjectEl = modalEl.querySelector('[name="subject"]')
   const submitEl = modalEl.querySelector('[type="submit"]')
   const orderSubject = el.dataset.orderSubject || 'Заявка на расчет'
   const orderTitle = el.dataset.orderTitle || 'Заявка на расчет'
   const orderSubmit = el.dataset.orderSubmit || 'Отправить'
+  const orderDescription = el.dataset.orderDescription || ''
+  const orderSuccessTitle = el.dataset.orderSuccessTitle || 'Ваша заявка успешно отправлена'
+  const orderSuccessDescription = el.dataset.orderSuccessDescription || ''
   const orderWithMessage = !!el.dataset.orderWithMessage || false
   el.addEventListener('click', (e) => {
     e.preventDefault()
     titleEl.innerHTML = orderTitle
     submitEl.innerHTML = orderSubmit
+    descriptionEl.innerHTML = orderDescription
+    successTitleEl.innerHTML = orderSuccessTitle
+    successDescriptionEl.innerHTML = orderSuccessDescription
     subjectEl.value = orderSubject
     messageEL.style.display = orderWithMessage ? 'block' : 'none'
     showModal(modalEl)

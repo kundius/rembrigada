@@ -70,6 +70,9 @@
             data-order-title="<?php echo $repair_types['form']['title'] ?>"
             data-order-submit="<?php echo $repair_types['form']['submit'] ?>"
             data-order-subject="Виды ремонта / <?php echo $item['title'] ?>"
+            data-order-description="<?php echo $repair_types['form']['description'] ?>"
+            data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
+            data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
             class="content-repair-type__order-button"
           ><?php echo $repair_types['request'] ?></button>
         </div>

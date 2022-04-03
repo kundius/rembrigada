@@ -358,7 +358,11 @@
             <div class="quiz-screens__item">
               <div class="quiz-form">
                 <div class="quiz-form__title">
-                  <div class="quiz-form__title-marker quiz-form__title-marker_check"></div>
+                  <div class="quiz-form__title-marker">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="14px">
+                      <path fill="currentColor" d="M19.982,2.683 L10.333,13.977 L10.0,13.587 L9.667,13.977 L0.20,2.683 L2.294,0.21 L10.1,9.43 L17.708,0.21 L19.982,2.683 Z"/>
+                    </svg>
+                  </div>
                   <div class="quiz-form__title-content">
                     <div class="quiz-form__title-text">
                       Мы уже приступили к расчету!
@@ -404,10 +408,8 @@
                       </button>
                     </div>
                     <label class="quiz-feedback__rules">
-                      <div class="ui-checkbox">
-                        <input type="checkbox" name="rules" value="1" />
-                        <span></span>
-                      </div>
+                      <input type="checkbox" name="rules" value="1" class="form-checkbox" />
+                      <span></span>
                       Прочитал(-а) <a href="https://rembrigada116.ru/polzovatelskoe-soglashenie" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="https://rembrigada116.ru/privacy-policy" target="_blank">Политикой обработки персональных данных</a>
                     </label>
                   </div>

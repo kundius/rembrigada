@@ -51,7 +51,7 @@
   z-index: 1;
 }
 
-.quiz-steps__item_active {
+.quiz-steps__item._active {
   color: #fff;
   background: #677897;
 }
@@ -81,7 +81,7 @@
   height: 10px;
 }
 
-.quiz-steps__line_active {
+.quiz-steps__line._active {
   background: #677897;
 }
 
@@ -93,7 +93,7 @@
   display: none;
 }
 
-.quiz-screens__item_active {
+.quiz-screens__item._active {
   display: block;
 }
 

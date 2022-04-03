@@ -449,9 +449,13 @@ document.querySelectorAll('.js-form').forEach(function(form) {
       request.addEventListener('readystatechange', function() {
         if (this.readyState != 4) return
 
+        form.dispatchEvent(new Event("wpcf7submit"))
+
         const response = JSON.parse(request.response)
 
         if (response.status == 'mail_sent') {
+          form.dispatchEvent(new Event("wpcf7mailsent"))
+
           form.reset()
           form.classList.add('_validation-mail_sent')
           notifier.success(response.message)
@@ -461,18 +465,26 @@ document.querySelectorAll('.js-form').forEach(function(form) {
         }
 
         if (response.status == 'acceptance_missing') {
+          form.dispatchEvent(new Event("wpcf7invalid"))
+
           notifier.warning(response.message)
         }
 
         if (response.status == 'mail_failed') {
+          form.dispatchEvent(new Event("wpcf7mailfailed"))
+
           notifier.alert(response.message)
         }
 
         if (response.status == 'spam') {
+          form.dispatchEvent(new Event("wpcf7spam"))
+
           notifier.alert(response.message)
         }
 
         if (response.status == 'validation_failed') {
+          form.dispatchEvent(new Event("wpcf7invalid"))
+          
           forEach(response.invalid_fields, field => {
             const el = form.querySelector(field.into)
             el.classList.add('_validation-error')
@@ -716,14 +728,14 @@ forEach(document.querySelectorAll(".faq-items"), (container) => {
 });
 
 
-forEach(document.querySelectorAll(".quiz"), (container) => {
-  const formItem = container.querySelector('.quiz-layout')
-  const stepItems = container.querySelectorAll('.quiz-steps__item')
-  const lineItems = container.querySelectorAll('.quiz-steps__line')
-  const screenItems = container.querySelectorAll('.quiz-screens__item')
-  const previousItems = container.querySelectorAll('.quiz-screens__previous')
-  const nextItems = container.querySelectorAll('.quiz-screens__next')
-  const forNextItems = container.querySelectorAll('[name="step-1"],[name="step-2"],[name="step-3"],[name="step-4"],[name="step-5"],[name="step-6"]')
+forEach(document.querySelectorAll("[data-quiz]"), (container) => {
+  const formItem = container.querySelector('[data-quiz-form]')
+  const stepItems = container.querySelectorAll('[data-quiz-step]')
+  const lineItems = container.querySelectorAll('[data-quiz-line]')
+  const screenItems = container.querySelectorAll('[data-quiz-screen]')
+  const previousItems = container.querySelectorAll('[data-quiz-previous]')
+  const nextItems = container.querySelectorAll('[data-quiz-next]')
+  const forwardOnChangeItems = container.querySelectorAll('[data-quiz-forward-on-change]')
 
   let active = 1
 
@@ -732,25 +744,25 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
     
     forEach(stepItems, (item, i) => {
       if (i + 1 <= n) {
-        item.classList.add('quiz-steps__item_active')
+        item.classList.add('_active')
       } else {
-        item.classList.remove('quiz-steps__item_active')
+        item.classList.remove('_active')
       }
     })
     
     forEach(lineItems, (item, i) => {
       if (i + 1 < n) {
-        item.classList.add('quiz-steps__line_active')
+        item.classList.add('_active')
       } else {
-        item.classList.remove('quiz-steps__line_active')
+        item.classList.remove('_active')
       }
     })
     
     forEach(screenItems, (item, i) => {
       if (i + 1 === n) {
-        item.classList.add('quiz-screens__item_active')
+        item.classList.add('_active')
       } else {
-        item.classList.remove('quiz-screens__item_active')
+        item.classList.remove('_active')
       }
     })
   }
@@ -779,7 +791,7 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
     })
   })
 
-  forEach(forNextItems, (item) => {
+  forEach(forwardOnChangeItems, (item) => {
     item.addEventListener('change', (e) => {
       e.preventDefault()
       next()

@@ -717,13 +717,13 @@ forEach(document.querySelectorAll(".faq-items"), (container) => {
 
 
 forEach(document.querySelectorAll(".quiz"), (container) => {
+  const formItem = container.querySelector('.quiz-layout')
   const stepItems = container.querySelectorAll('.quiz-steps__item')
   const lineItems = container.querySelectorAll('.quiz-steps__line')
   const screenItems = container.querySelectorAll('.quiz-screens__item')
   const previousItems = container.querySelectorAll('.quiz-screens__previous')
   const nextItems = container.querySelectorAll('.quiz-screens__next')
-  const radioItems = container.querySelectorAll('[type="radio"]')
-  // const labelItems = container.querySelectorAll('.quiz-form__fields-control')
+  const forNextItems = container.querySelectorAll('[name="step-1"],[name="step-2"],[name="step-3"],[name="step-4"],[name="step-5"],[name="step-6"]')
 
   let active = 1
 
@@ -779,18 +779,14 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
     })
   })
 
-  forEach(radioItems, (item) => {
+  forEach(forNextItems, (item) => {
     item.addEventListener('change', (e) => {
       e.preventDefault()
       next()
     })
   })
 
-  // forEach(labelItems, (item) => {
-  //   item.addEventListener('click', (e) => {
-  //     // e.preventDefault()
-  //     // next()
-  //     console.log('click label', item)
-  //   })
-  // })
+  formItem.addEventListener('wpcf7mailsent', (e) => {
+    next()
+  }, false )
 })

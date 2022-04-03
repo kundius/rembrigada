@@ -765,14 +765,14 @@ forEach(document.querySelectorAll(".quiz"), (container) => {
 
   forEach(previousItems, (item) => {
     item.addEventListener('click', (e) => {
-      e.preventDefault()
+      // e.preventDefault()
       previous()
     })
   })
 
   forEach(nextItems, (item) => {
     item.addEventListener('click', (e) => {
-      e.preventDefault()
+      // e.preventDefault()
       next()
     })
   })

@@ -392,8 +392,14 @@
 }
 
 .quiz-feedback__submit {
-  width: 316px;
+  width: 328px;
   margin-left: 20px;
+}
+
+.quiz-feedback__submit .landing-button {
+  padding-left: 32px;
+  padding-right: 70px;
+  font-size: 17px;
 }
 
 .quiz-feedback__rules {

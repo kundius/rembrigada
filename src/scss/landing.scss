@@ -473,11 +473,12 @@ a.landing-button,
 .landing-button {
     font-size: 18px;
     // font-size: 22px;
+    font-family: "Next Art", sans-serif;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: .1em;
+    letter-spacing: 0.05em;
     max-width: 100%;
     line-height: 1;
     border-radius: 32px;
@@ -485,7 +486,7 @@ a.landing-button,
     text-decoration: none;
     border: none;
     cursor: pointer;
-    padding: 2px 40px 0px;
+    padding: 0 40px;
     min-height: 52px;
     display: inline-flex;
     align-items: center;

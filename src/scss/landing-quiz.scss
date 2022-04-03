@@ -184,6 +184,9 @@
   background-size: contain;
   position: relative;
   z-index: 1;
+  @media (max-width: $breakpoint-medium-max) {
+    width: calc(35% - 10px);
+  }
 }
 
 .quiz-content__image::before {
@@ -193,6 +196,9 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: $breakpoint-medium-max) {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 }
 
 .quiz-content__image_first::before {
@@ -241,6 +247,9 @@
   width: calc(50% - 10px);
   position: relative;
   z-index: 2;
+  @media (max-width: $breakpoint-medium-max) {
+    width: calc(65% - 10px);
+  }
 }
 
 .quiz-form {
@@ -449,6 +458,7 @@
 
 .quiz-feedback__phone {
   flex-grow: 1;
+  width: 140px;
 }
 
 .quiz-feedback__input {

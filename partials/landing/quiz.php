@@ -6,7 +6,7 @@
     
     <div class="quiz" data-quiz>
       <div class="quiz-steps">
-        <div class="quiz-steps__item quiz-steps__item_active" data-quiz-step>1</div>
+        <div class="quiz-steps__item _active" data-quiz-step>1</div>
         <div class="quiz-steps__line" data-quiz-line></div>
         <div class="quiz-steps__item" data-quiz-step>2</div>
         <div class="quiz-steps__line" data-quiz-line></div>
@@ -33,7 +33,7 @@
         <div class="quiz-layout__screens">
           <div class="quiz-screens">
 
-            <div class="quiz-screens__item quiz-screens__item_active" data-quiz-screen>
+            <div class="quiz-screens__item _active" data-quiz-screen>
               <div class="quiz-content">
                 <div class="quiz-content__image quiz-content__image_first">
 

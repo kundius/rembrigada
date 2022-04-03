@@ -261,23 +261,26 @@
   align-items: center;
 }
 
-.quiz-form__fields-item input {
+.quiz-form__fields-item > input {
     display: none;
 }
 
-.quiz-form__fields-item input + span {
-    width: 25px;
-    height: 25px;
+.quiz-form__fields-item > input + span {
+    width: 26px;
+    height: 26px;
     flex-shrink: 0;
     border-radius: 50%;
     border: 2px solid #bcbcbc;
     background: #f7f7f7;
     position: relative;
-    align-self: flex-start;
     margin-right: 13px;
 }
 
-.quiz-form__fields-item input:checked + span::before {
+.quiz-form__fields-item > input:checked + span {
+    border-color: #9aa6bb;
+}
+
+.quiz-form__fields-item > input:checked + span::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -289,14 +292,28 @@
     background: #ed3947;
 }
 
-.quiz-form__fields-item input + span + span {
+.quiz-form__fields-item > input + span + span {
   font-size: 20px;
   line-height: 1;
   color: #151618;
 }
 
-.quiz-form__fields-item input:checked + span::before + span {
+.quiz-form__fields-item > input:checked + span::before + span {
   font-weight: bold;
+}
+
+.quiz-form__fields-item span input {
+  height: 40px;
+  width: 160px;
+  padding: 0 16px;
+  border: 2px solid #bcbcbc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.quiz-form__fields-item sup {
+  font-size: 80%;
 }
 
 .quiz-form__fields-item + .quiz-form__fields-item {
@@ -320,26 +337,33 @@
   border: 2px solid #bcbcbc;
   min-height: 46px;
   border-radius: 23px;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 5px;
+}
+
+.quiz-buttons__item:hover {
+  background: #d7d7d7;
 }
 
 .quiz-screens__previous::before {
   content: '';
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-left: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
 }
 
 .quiz-screens__next::after {
   content: '';
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
 }

@@ -372,9 +372,12 @@
 .quiz-feedback {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   flex-grow: 1;
   margin-top: 35px;
-  margin-left: 57px;
+  padding-left: 57px;
+  width: 677px;
+  max-width: 100%;
 }
 
 .quiz-feedback__phone {
@@ -420,7 +423,7 @@
   span {
     position: absolute;
     left: 0;
-    top: 0;
+    top: -2px;
   }
   a {
     color: inherit;

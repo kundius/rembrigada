@@ -3,6 +3,7 @@
     <div class="landing-quiz__title">
       Узнайте стоимость Вашего ремонта за 1 минуту + <span>подарок!</span>
     </div>
+    
     <div class="quiz">
       <div class="quiz-steps">
         <div class="quiz-steps__item quiz-steps__item_active">1</div>
@@ -25,7 +26,8 @@
           </svg>
         </div>
       </div>
-      <div class="quiz-layout">
+
+      <form action="/wp-json/contact-form-7/v1/contact-forms/4295/feedback" method="post" class="quiz-layout js-form">
         <div class="quiz-layout__screens">
           <div class="quiz-screens">
 
@@ -470,7 +472,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </section>

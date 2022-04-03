@@ -256,16 +256,17 @@
   margin-top: 39px;
 }
 
-.quiz-form__fields-item {
-  display: flex;
+.quiz-form__fields-label {
+  display: inline-flex;
   align-items: center;
+  cursor: pointer;
 }
 
-.quiz-form__fields-item > input {
+.quiz-form__fields-label > input {
     display: none;
 }
 
-.quiz-form__fields-item > input + span {
+.quiz-form__fields-label > input + span {
     width: 26px;
     height: 26px;
     flex-shrink: 0;
@@ -276,11 +277,11 @@
     margin-right: 13px;
 }
 
-.quiz-form__fields-item > input:checked + span {
+.quiz-form__fields-label > input:checked + span {
     border-color: #9aa6bb;
 }
 
-.quiz-form__fields-item > input:checked + span::before {
+.quiz-form__fields-label > input:checked + span::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -292,17 +293,17 @@
     background: #ed3947;
 }
 
-.quiz-form__fields-item > input + span + span {
+.quiz-form__fields-label > input + span + span {
   font-size: 20px;
   line-height: 1;
   color: #151618;
 }
 
-.quiz-form__fields-item > input:checked + span::before + span {
+.quiz-form__fields-label > input:checked + span::before + span {
   font-weight: bold;
 }
 
-.quiz-form__fields-item span input {
+.quiz-form__fields-label span input {
   height: 40px;
   width: 160px;
   padding: 0 16px;
@@ -312,7 +313,7 @@
   font-family: inherit;
 }
 
-.quiz-form__fields-item sup {
+.quiz-form__fields-label sup {
   font-size: 80%;
 }
 

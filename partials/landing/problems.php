@@ -38,9 +38,9 @@
         data-order-title="<?php echo $promlems['form']['title'] ?>"
         data-order-submit="<?php echo $promlems['form']['submit'] ?>"
         data-order-subject="<?php echo $promlems['title'] ?>"
-        data-order-description="<?php echo $repair_types['form']['description'] ?>"
-        data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
-        data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
+        data-order-description="<?php echo $promlems['form']['description'] ?>"
+        data-order-success-title="<?php echo $promlems['form']['success']['title'] ?>"
+        data-order-success-description="<?php echo $promlems['form']['success']['description'] ?>"
         class="landing-button"
       ><?php echo $promlems['request'] ?></button>
     </div>

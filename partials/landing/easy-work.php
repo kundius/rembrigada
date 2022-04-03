@@ -48,9 +48,9 @@
         data-order-title="<?php echo $easy_work['form']['title'] ?>"
         data-order-submit="<?php echo $easy_work['form']['submit'] ?>"
         data-order-subject="<?php echo $easy_work['title'] ?>"
-        data-order-description="<?php echo $repair_types['form']['description'] ?>"
-        data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
-        data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
+        data-order-description="<?php echo $easy_work['form']['description'] ?>"
+        data-order-success-title="<?php echo $easy_work['form']['success']['title'] ?>"
+        data-order-success-description="<?php echo $easy_work['form']['success']['description'] ?>"
         class="landing-button landing-button_large"
       ><?php echo $easy_work['request'] ?></button>
     </div>

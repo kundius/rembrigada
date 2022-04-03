@@ -31,9 +31,9 @@
               data-order-title="<?php echo $services['form']['title'] ?>"
               data-order-submit="<?php echo $services['form']['submit'] ?>"
               data-order-subject="<?php echo $services['title'] ?> / <?php echo $service['name'] ?>"
-              data-order-description="<?php echo $repair_types['form']['description'] ?>"
-              data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
-              data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
+              data-order-description="<?php echo $services['form']['description'] ?>"
+              data-order-success-title="<?php echo $services['form']['success']['title'] ?>"
+              data-order-success-description="<?php echo $services['form']['success']['description'] ?>"
               class="landing-button"
             ><?php echo $services['request'] ?></button>
           </div>

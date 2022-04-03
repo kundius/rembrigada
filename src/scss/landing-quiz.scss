@@ -105,6 +105,9 @@
 .quiz-layout__screens {
   width: calc(100% - (350px + 40px));
   padding-top: 35px;
+  @media (max-width: $breakpoint-medium-max) {
+    width: calc(100% - (320px + 20px));
+  }
   @media (max-width: $breakpoint-small-max) {
     width: 100%;
   }
@@ -113,6 +116,9 @@
 .quiz-layout__info {
   width: 346px;
   flex-shrink: 0;
+  @media (max-width: $breakpoint-medium-max) {
+    width: 320px;
+  }
   @media (max-width: $breakpoint-small-max) {
     display: none;
   }
@@ -191,7 +197,7 @@
   position: relative;
   z-index: 1;
   @media (max-width: $breakpoint-medium-max) {
-    width: calc(35% - 10px);
+    width: calc(40% - 10px);
   }
 }
 
@@ -254,7 +260,7 @@
   position: relative;
   z-index: 2;
   @media (max-width: $breakpoint-medium-max) {
-    width: calc(65% - 10px);
+    width: calc(60% - 10px);
   }
 }
 

@@ -120,7 +120,13 @@ $wp_query = $projects;
                                         <div>Черновые материалы с доставкой: <strong><?php echo $price_material ?> руб.</strong></div>
                                         <?php endif; ?>
                                     </div>
-                                    <a href="#callback" class="works-item-pricing__button"><span>Рассчитать стоимость своего ремонта</span></a>
+                                    <button
+                                        data-order
+                                        data-order-title="Рассчитайте подобный"
+                                        data-order-submit="Рассчитать подобный"
+                                        data-order-subject="Портфолио / <?php the_title() ?>"
+                                        class="works-item-pricing__button"
+                                    ><span>Рассчитать стоимость своего ремонта</span></button>
                                 </div>
                             </div>
                         </div>

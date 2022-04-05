@@ -34,8 +34,8 @@
               data-order-description="<?php echo $services['form']['description'] ?>"
               data-order-success-title="<?php echo $services['form']['success']['title'] ?>"
               data-order-success-description="<?php echo $services['form']['success']['description'] ?>"
-              class="landing-button"
-            ><?php echo $services['request'] ?></button>
+              class="landing-button<?php if ($services['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+            ><?php echo $services['button']['text'] ?></button>
           </div>
         </div>
       </div>

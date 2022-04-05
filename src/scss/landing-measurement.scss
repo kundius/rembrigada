@@ -41,6 +41,17 @@
   margin-top: 30px;
 }
 
+@keyframes leftArrow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+}
+
 .landing-measurement__request::before {
   content: '';
   display: block;
@@ -51,12 +62,24 @@
   margin-right: 20px;
   position: relative;
   top: 2px;
+  animation: leftArrow 1s ease-in-out infinite;
   @media (max-width: $breakpoint-xsmall-max) {
       width: 33px;
       height: 14px;
       top: 1px;
       margin-right: 8px;
       margin-left: -12px;
+  }
+}
+
+@keyframes rightArrow {
+  0%,
+  100% {
+    transform: translate(10px, 0);
+  }
+
+  50% {
+    transform: translate(0, 0);
   }
 }
 
@@ -70,6 +93,7 @@
   margin-left: 20px;
   position: relative;
   top: 2px;
+  animation: rightArrow 1s ease-in-out infinite;
   @media (max-width: $breakpoint-xsmall-max) {
       width: 33px;
       height: 14px;

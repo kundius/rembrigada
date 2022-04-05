@@ -37,8 +37,8 @@
         data-order-success-title="<?php echo $faq['form']['success']['title'] ?>"
         data-order-success-description="<?php echo $faq['form']['success']['description'] ?>"
         data-order-with-message="true"
-        class="landing-button"
-      ><?php echo $faq['request'] ?></button>
+        class="landing-button<?php if ($faq['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+      ><?php echo $faq['button']['text'] ?></button>
     </div>
     <?php endif; ?>
   </div>

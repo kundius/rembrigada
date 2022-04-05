@@ -19,8 +19,8 @@
             data-order-description="<?php echo $decision['form']['description'] ?>"
             data-order-success-title="<?php echo $decision['form']['success']['title'] ?>"
             data-order-success-description="<?php echo $decision['form']['success']['description'] ?>"
-            class="landing-button landing-button_large"
-          ><?php echo $decision['request'] ?></button>
+            class="landing-button landing-button_large<?php if ($decision['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+          ><?php echo $decision['button']['text'] ?></button>
         </div>
         <?php endif; ?>
       </div>

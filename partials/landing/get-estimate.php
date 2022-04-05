@@ -43,7 +43,9 @@
             </span>
           </div>
           <div class="get-estimate-form__row">
-            <button type="submit" class="get-estimate-form__submit landing-button"><?php echo $get_estimate['request'] ?></button>
+            <button type="submit" class="get-estimate-form__submit landing-button<?php if ($get_estimate['button']['glare']): ?> landing-button_glare<?php endif; ?>">
+              <?php echo $get_estimate['button']['text'] ?>
+            </button>
           </div>
           <label class="get-estimate-form__rules">
             <input type="checkbox" name="rules" value="1" class="form-checkbox" />

@@ -73,8 +73,8 @@
             data-order-description="<?php echo $repair_types['form']['description'] ?>"
             data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
             data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
-            class="landing-button"
-          ><?php echo $repair_types['request'] ?></button>
+            class="landing-button<?php if ($repair_types['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+          ><?php echo $repair_types['button']['text'] ?></button>
         </div>
       </div>
     </div>

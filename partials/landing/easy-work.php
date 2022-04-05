@@ -32,8 +32,8 @@
               data-order-title="<?php echo $item['title'] ?>"
               data-order-submit="<?php echo $item['title'] ?>"
               data-order-subject="<?php echo $easy_work['title'] ?> / <?php echo $item['title'] ?>"
-              class="landing-button"
-            ><?php echo $item['request'] ?></button>
+              class="landing-button<?php if ($easy_work['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+            ><?php echo $easy_work['button']['text'] ?></button>
           </div>
           <?php endif; ?>
         </div>
@@ -51,8 +51,8 @@
         data-order-description="<?php echo $easy_work['form']['description'] ?>"
         data-order-success-title="<?php echo $easy_work['form']['success']['title'] ?>"
         data-order-success-description="<?php echo $easy_work['form']['success']['description'] ?>"
-        class="landing-button landing-button_large"
-      ><?php echo $easy_work['request'] ?></button>
+        class="landing-button landing-button_large<?php if ($easy_work['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+      ><?php echo $easy_work['button']['text'] ?></button>
     </div>
     <?php endif; ?>
   </div>

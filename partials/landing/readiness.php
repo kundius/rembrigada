@@ -19,7 +19,9 @@
         </span>
       </div>
       <div class="readiness-form__submit">
-        <button type="submit" class="landing-button"><?php echo $readiness['request'] ?></button>
+        <button type="submit" class="landing-button<?php if ($readiness['button']['glare']): ?> landing-button_glare<?php endif; ?>">
+          <?php echo $readiness['button']['text'] ?>
+        </button>
       </div>
       <label class="readiness-form__rules">
         <input type="checkbox" name="rules" value="1" class="form-checkbox" />

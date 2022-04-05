@@ -41,8 +41,8 @@
         data-order-description="<?php echo $promlems['form']['description'] ?>"
         data-order-success-title="<?php echo $promlems['form']['success']['title'] ?>"
         data-order-success-description="<?php echo $promlems['form']['success']['description'] ?>"
-        class="landing-button"
-      ><?php echo $promlems['request'] ?></button>
+        class="landing-button<?php if ($promlems['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+      ><?php echo $promlems['button']['text'] ?></button>
     </div>
     <?php endif; ?>
   </div>

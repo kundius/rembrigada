@@ -16,9 +16,9 @@
         data-order-description="<?php echo $measurement['form']['description'] ?>"
         data-order-success-title="<?php echo $measurement['form']['success']['title'] ?>"
         data-order-success-description="<?php echo $measurement['form']['success']['description'] ?>"
-        class="landing-button"
+        class="landing-button<?php if ($measurement['button']['glare']): ?> landing-button_glare<?php endif; ?>"
       >
-        <?php echo $measurement['request'] ?>
+      <?php echo $measurement['button']['text'] ?>
       </button>
     </div>
     <?php endif; ?>

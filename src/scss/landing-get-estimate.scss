@@ -141,27 +141,8 @@
 }
 
 .get-estimate-form__submit {
-  font-size: 18px;
-  color: #fff;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: .05em;
   width: 100%;
-  line-height: 1;
-  border-radius: 26px;
-  background: #d52437;
-  border: none;
-  cursor: pointer;
-  padding: 2px 24px 0px;
-  min-height: 52px;
-  text-align: center;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  &:hover {
-      background: #ed3947;
-  }
+  padding: 0 24px ;
 }
 
 .get-estimate-form__submit::before {

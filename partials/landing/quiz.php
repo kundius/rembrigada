@@ -60,7 +60,7 @@
                       <?php foreach ($quiz['step-1']['items'] as $key => $item): ?>
                       <div class="quiz-form__fields-item">
                         <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == '0'): ?> checked<?php endif; ?> />
+                          <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == 0): ?> checked<?php endif; ?> />
                           <span></span>
                           <span><?php echo $key ?></span>
                         </label>
@@ -101,7 +101,7 @@
                       <?php foreach ($quiz['step-2']['items'] as $key => $item): ?>
                       <div class="quiz-form__fields-item">
                         <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == '0'): ?> checked<?php endif; ?> />
+                          <input type="radio" data-quiz-forward-on-change name="step-2" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == 0): ?> checked<?php endif; ?> />
                           <span></span>
                           <span><?php echo $item['text'] ?></span>
                         </label>
@@ -143,7 +143,7 @@
                       <?php foreach ($quiz['step-3']['items'] as $key => $item): ?>
                       <div class="quiz-form__fields-item">
                         <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == '0'): ?> checked<?php endif; ?> />
+                          <input type="radio" data-quiz-forward-on-change name="step-3" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == 0): ?> checked<?php endif; ?> />
                           <span></span>
                           <span><?php echo $item['text'] ?></span>
                         </label>
@@ -185,7 +185,7 @@
                       <?php foreach ($quiz['step-4']['items'] as $key => $item): ?>
                       <div class="quiz-form__fields-item">
                         <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == '0'): ?> checked<?php endif; ?> />
+                          <input type="radio" data-quiz-forward-on-change name="step-4" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == 0): ?> checked<?php endif; ?> />
                           <span></span>
                           <span><?php echo $item['text'] ?></span>
                         </label>
@@ -227,7 +227,7 @@
                       <?php foreach ($quiz['step-5']['items'] as $key => $item): ?>
                       <div class="quiz-form__fields-item">
                         <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == '0'): ?> checked<?php endif; ?> />
+                          <input type="radio" data-quiz-forward-on-change name="step-5" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == 0): ?> checked<?php endif; ?> />
                           <span></span>
                           <span><?php echo $item['text'] ?></span>
                         </label>
@@ -267,7 +267,7 @@
                       <?php foreach ($quiz['step-6']['items'] as $key => $item): ?>
                       <div class="quiz-form__fields-item">
                         <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == '0'): ?> checked<?php endif; ?> />
+                          <input type="radio" data-quiz-forward-on-change name="step-6" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == 0): ?> checked<?php endif; ?> />
                           <span></span>
                           <span><?php echo $item['text'] ?></span>
                         </label>
@@ -308,7 +308,7 @@
                   <?php foreach ($quiz['step-7']['items'] as $key => $item): ?>
                   <div class="quiz-form__fields-item">
                     <label class="quiz-form__fields-label">
-                      <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == '0'): ?> checked<?php endif; ?> />
+                      <input type="radio" data-quiz-forward-on-change name="step-7" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == 0): ?> checked<?php endif; ?> />
                       <span></span>
                       <span><?php echo $item['text'] ?></span>
                     </label>

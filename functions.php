@@ -412,9 +412,9 @@ function be_register_blocks() {
         'mode' => 'edit'
     ));
     acf_register_block( array(
-        'name' => 'content-collapse-text',
+        'name' => 'content-collapsible',
         'title' => 'Содержимое - Раздвижной текст',
-        'render_template' => 'partials/blocks/content-collapse-text.php',
+        'render_template' => 'partials/blocks/content-collapsible.php',
         'category' => 'formatting',
         'icon' => 'editor-ul',
         'mode' => 'edit'

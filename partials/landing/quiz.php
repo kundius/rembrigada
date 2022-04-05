@@ -1,8 +1,11 @@
+<?php $quiz = get_field('quiz', 'option'); ?>
 <section class="landing-quiz">
   <div class="container container_medium">
+    <?php if (!empty($quiz['title'])): ?>
     <div class="landing-quiz__title">
-      Узнайте стоимость Вашего ремонта за 1 минуту + <span>подарок!</span>
+      <?php echo $quiz['title'] ?>
     </div>
+    <?php endif; ?>
     
     <div class="quiz" data-quiz>
       <div class="quiz-steps">
@@ -44,39 +47,20 @@
                       <div class="quiz-form__title-marker">1</div>
                       <div class="quiz-form__title-content">
                         <div class="quiz-form__title-text">
-                          Укажите тип Вашего дома
+                          <?php echo $quiz['step-1']['title'] ?>
                         </div>
                       </div>
                     </div>
                     <div class="quiz-form__fields">
+                      <?php foreach ($quiz['step-1']['items'] as $key => $item): ?>
                       <div class="quiz-form__fields-item">
                         <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="Новостройка" checked />
+                          <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo $item['text'] ?>"<?php if ($key === 0): ?> checked<?php endif; ?> />
                           <span></span>
-                          <span>Новостройка</span>
+                          <span><?php echo $item['text'] ?></span>
                         </label>
                       </div>
-                      <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="Вторичное жилье" />
-                          <span></span>
-                          <span>Вторичное жилье</span>
-                        </label>
-                      </div>
-                      <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="Дом или коттедж" />
-                          <span></span>
-                          <span>Дом или коттедж</span>
-                        </label>
-                      </div>
-                      <div class="quiz-form__fields-item">
-                        <label class="quiz-form__fields-label">
-                          <input type="radio" data-quiz-forward-on-change name="step-1" value="Другое" />
-                          <span></span>
-                          <span>Другое</span>
-                        </label>
-                      </div>
+                      <?php endforeach; ?>
                     </div>
                     <div class="quiz-buttons">
                       <button type="button" class="quiz-buttons__item quiz-screens__next" data-quiz-next>Следующий шаг</button>

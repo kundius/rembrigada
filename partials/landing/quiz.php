@@ -62,7 +62,7 @@
                         <label class="quiz-form__fields-label">
                           <input type="radio" data-quiz-forward-on-change name="step-1" value="<?php echo strip_tags($item['text']) ?>"<?php if ($key == 0): ?> checked<?php endif; ?> />
                           <span></span>
-                          <span><?php echo $key ?></span>
+                          <span><?php echo $item['text'] ?></span>
                         </label>
                       </div>
                       <?php endforeach; ?>

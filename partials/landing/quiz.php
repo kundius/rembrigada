@@ -2,9 +2,9 @@
 <section class="landing-quiz">
   <div class="container container_medium">
     <?php if (!empty($quiz['title'])): ?>
-    <div class="landing-quiz__title">
+    <h2 class="landing-quiz__title">
       <?php echo $quiz['title'] ?>
-    </div>
+    </h2>
     <?php endif; ?>
     
     <div class="quiz" data-quiz>

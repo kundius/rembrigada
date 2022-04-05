@@ -2,9 +2,9 @@
 <section class="landing-get-estimate">
   <div class="container container_medium">
     <?php if (!empty($get_estimate['title'])): ?>
-    <div class="landing-get-estimate__title">
+    <h2 class="landing-get-estimate__title">
       <?php echo $get_estimate['title'] ?>
-    </div>
+    </h2>
     <?php endif; ?>
     <div class="landing-get-estimate__layout">
       <div class="landing-get-estimate__layout-expert">

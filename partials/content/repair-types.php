@@ -73,7 +73,7 @@
             data-order-description="<?php echo $repair_types['form']['description'] ?>"
             data-order-success-title="<?php echo $repair_types['form']['success']['title'] ?>"
             data-order-success-description="<?php echo $repair_types['form']['success']['description'] ?>"
-            class="content-repair-type__order-button"
+            class="landing-button"
           ><?php echo $repair_types['request'] ?></button>
         </div>
       </div>

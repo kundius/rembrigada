@@ -72,7 +72,7 @@
                     data-order-title="Рассчитайте подобный"
                     data-order-submit="Рассчитать подобный"
                     data-order-subject="Портфолио / <?php echo $item->post_title ?>"
-                    class="works-item-pricing__button"
+                    class="landing-button works-item-pricing__button"
                 ><span>Рассчитать стоимость своего ремонта</span></button>
                 </div>
             </div>

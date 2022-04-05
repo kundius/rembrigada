@@ -474,23 +474,8 @@
 
 a.works-item-pricing__button,
 .works-item-pricing__button {
-	color: #ffffff;
-	font-family: "Next Art", sans-serif;
 	font-size: 14px;
-	font-weight: 700;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-transform: uppercase;
-	letter-spacing: 0.98px;
-	line-height: 1;
 	padding: 0 25px;
-	min-height: 48px;
-	border: none;
-	border-radius: 24px;
-	background: #d52437;
-	text-decoration: none;
-	text-align: center;
 	span::after {
 		content: '';
 		position: relative;
@@ -502,10 +487,6 @@ a.works-item-pricing__button,
 		border-right: 2px solid currentColor;
 		transform: rotate(45deg);
 		top: -1px;
-	}
-	&:hover {
-		background: #f9152e;
-		color: #fff;
 	}
 }
 

@@ -484,29 +484,6 @@ a.btn-plus,
     margin-top: 20px;
 }
 
-.page-bg-headline__more-link {
-    display: inline-block;
-    line-height: 48px;
-    padding: 0 25px;
-    background-color: #d52437;
-    border: none;
-    border-radius: 24px;
-    text-align: center;
-    cursor: pointer;
-    font-family: Next Art, sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: .075em;
-    text-decoration: none;
-    color: #fff;
-    transition: .3s ease;
-    transition-property: background-color, box-shadow;
-    &:hover {
-        background-color: #ff2b42;
-        box-shadow: .209px 1.989px 8px 0 rgba(239,21,44,.6);
-    }
-}
-
 .page-headline {
     background: #e8e8e8;
     overflow: hidden;

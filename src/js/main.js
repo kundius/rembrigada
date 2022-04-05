@@ -802,3 +802,17 @@ forEach(document.querySelectorAll("[data-quiz]"), (container) => {
     next()
   }, false )
 })
+
+
+forEach(document.querySelectorAll('.content-collapsible'), (item) => {
+  const button = item.querySelector(".content-collapsible__button");
+  const body = item.querySelector(".content-collapsible__body");
+  button.addEventListener("click", function () {
+    item.classList.toggle("content-collapsible_active");
+    if (body.style.maxHeight) {
+      body.style.maxHeight = null;
+    } else {
+      body.style.maxHeight = body.scrollHeight + "px";
+    }
+  });
+});

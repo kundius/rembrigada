@@ -3,8 +3,9 @@
 }
 
 .content-collapsible__body {
-  min-height: 0;
+  max-height: 0;
   overflow: hidden;
+  transition: max-height .5s ease;
 }
 
 .content-collapsible__inner {
@@ -22,6 +23,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #1c1e22;
+  color: #1c1e22;
+  cursor: pointer;
+}
+
+.content-collapsible__button:hover {
+  color: #fff;
+  background: #1c1e22;
 }
 
 .content-collapsible__button::after {
@@ -29,7 +38,15 @@
   display: block;
   width: 12px;
   height: 12px;
-  border-left: 2px solid #000;
-  border-bottom: 2px solid #000;
-  transform: rotate(45deg);
+  border-left: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(-45deg);
+  margin: -4px 0 0 0;
+  transition: .3s ease;
+  transition-property: mmargin, transform;
+}
+
+.content-collapsible_active .content-collapsible__button::after {
+  transform: rotate(-225deg);
+  margin: 4px 0 0 0;
 }

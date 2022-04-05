@@ -25,15 +25,15 @@
           <?php if (!empty($item['description'])): ?>
           <div class="easy-work-item__description"><?php echo $item['description'] ?></div>
           <?php endif; ?>
-          <?php if (!empty($item['request'])): ?>
+          <?php if (!empty($item['button']['text'])): ?>
           <div class="easy-work-item__request">
             <button
               data-order
               data-order-title="<?php echo $item['title'] ?>"
               data-order-submit="<?php echo $item['title'] ?>"
               data-order-subject="<?php echo $easy_work['title'] ?> / <?php echo $item['title'] ?>"
-              class="landing-button<?php if ($easy_work['button']['glare']): ?> landing-button_glare<?php endif; ?>"
-            ><?php echo $easy_work['button']['text'] ?></button>
+              class="landing-button<?php if ($item['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+            ><?php echo $item['button']['text'] ?></button>
           </div>
           <?php endif; ?>
         </div>

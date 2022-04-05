@@ -109,7 +109,6 @@
                       <?php endforeach; ?>
                     </div>
                     <div class="quiz-buttons">
-                      
                       <button type="button" class="quiz-buttons__item quiz-screens__previous" data-quiz-previous>Назад</button>
                       <button type="button" class="quiz-buttons__item quiz-screens__next" data-quiz-next>Следующий шаг</button>
                     </div>

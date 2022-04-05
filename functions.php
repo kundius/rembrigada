@@ -411,6 +411,14 @@ function be_register_blocks() {
         'icon' => 'editor-ul',
         'mode' => 'edit'
     ));
+    acf_register_block( array(
+        'name' => 'content-collapse-text',
+        'title' => 'Содержимое - Раздвижной текст',
+        'render_template' => 'partials/blocks/content-collapse-text.php',
+        'category' => 'formatting',
+        'icon' => 'editor-ul',
+        'mode' => 'edit'
+    ));
 }
 add_action('acf/init', 'be_register_blocks' );
 

@@ -4,6 +4,7 @@
 
 .content-collapsible__body {
   max-height: 0;
+  padding-bottom: 24px;
   overflow: hidden;
   transition: max-height .5s ease;
 }

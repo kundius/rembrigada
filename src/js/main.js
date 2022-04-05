@@ -678,22 +678,22 @@ forEach(document.querySelectorAll('.js-intro-calc'), function(form) {
   })
 })
 
-forEach(document.querySelectorAll('.landing-repair-type__collapse'), collapse => {
-  const toggle = collapse.querySelector('.landing-repair-type__collapse-toggle button')
-  const wrapper = collapse.querySelector('.landing-repair-type__collapse-wrap')
-  const content = collapse.querySelector('.landing-repair-type__collapse-content')
+forEach(document.querySelectorAll('.content-repair-type__collapse'), collapse => {
+  const toggle = collapse.querySelector('.content-repair-type__collapse-toggle button')
+  const wrapper = collapse.querySelector('.content-repair-type__collapse-wrap')
+  const content = collapse.querySelector('.content-repair-type__collapse-content')
 
   if (!(content.offsetHeight > wrapper.offsetHeight)) {
-    collapse.classList.add('landing-repair-type__collapse_disabled')
+    collapse.classList.add('content-repair-type__collapse_disabled')
   }
 
   toggle.addEventListener('click', () => {
-    if (!collapse.classList.contains('landing-repair-type__collapse_opened')) {
+    if (!collapse.classList.contains('content-repair-type__collapse_opened')) {
       wrapper.style.maxHeight = content.offsetHeight + 'px'
-      collapse.classList.add('landing-repair-type__collapse_opened')
+      collapse.classList.add('content-repair-type__collapse_opened')
     } else {
       wrapper.style.maxHeight = null
-      collapse.classList.remove('landing-repair-type__collapse_opened')
+      collapse.classList.remove('content-repair-type__collapse_opened')
     }
   })
 })

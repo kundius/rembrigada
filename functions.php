@@ -295,98 +295,6 @@ add_shortcode('service-info', function($atts) {
 	return $output;
 });
 
-add_shortcode('services', function($atts) {
-	$services = new WP_Query(array(
-	    'post_type' => 'page',
-	    'post_parent' => get_the_ID(),
-	    'order' => 'ASC',
-	    'orderby' => 'menu_order',
-	    'post__not_in' => [38]
-	));
-
-	$output = '';
-	if ($services->have_posts()):
-		$output .= '<section class="services">';
-        $output .= '<div class="container container_medium">';
-		while($services->have_posts()): $services->the_post();
-            $output .= '<div class="services-item">';
-            $output .= '<div class="services-item__headline">';
-            $output .= '<a class="services-item__title" href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
-            if ($price = get_field('price', get_the_ID())):
-                $output .= '<div class="services-item__price">';
-                $output .= $price['prefix'];
-                $output .= '<span>' . $price['amount'] . '</span>';
-                $output .= $price['unit'];
-                $output .= '</div>';
-            endif;
-            $output .= '</div>';
-
-            $output .= '<div class="services-item__body">';
-            $output .= '<div class="services-item__image">';
-            $output .= '<a href="' . get_the_permalink() . '">';
-            if ($image = get_the_post_thumbnail_url(get_the_ID(), array(400, 400))):
-                $output .= '<img src="' . $image . '" alt="' . get_the_title() . '">';
-            else:
-                $output .= '<img src="https://via.placeholder.com/400x400" alt="">';
-            endif;
-			$output .= '</a>';
-			$output .= '</div>';
-
-            $output .= '<div class="services-item__info">';
-			if (has_excerpt()):
-                $output .= '<div class="services-item__desc">' . get_the_excerpt() . '</div>';
-            endif;
-
-            $children = new WP_Query(array(
-                'post_type' => 'page',
-                'order' => 'ASC',
-                'orderby' => 'menu_order',
-                'post_parent' => get_the_ID()
-            ));
-            if ($children->have_posts()):
-                $output .= '<div class="services-item__children">';
-                while($children->have_posts()): $children->the_post();
-                    $output .= '<div class="services-item-child">';
-                    $output .= '<a class="services-item-child__name" href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
-                    $output .= '<a class="services-item-child__more" href="' . get_the_permalink() . '">подробнее о ремонте <span></span></a>';
-                    $output .= '</div>';
-                endwhile;
-            	$output .= '</div>';
-            endif;
-            $output .= '</div>';
-            $output .= '</div>';
-            $output .= '</div>';
-		endwhile;
-		$output .= '</div>';
-		$output .= '</section>';
-	endif; wp_reset_query();
-	return $output;
-});
-
-/*add_shortcode('services', function($atts) {
-	$services = new WP_Query(array(
-		'post_type' => 'page',
-		'post_parent' => get_the_ID()
-	));
-
-	if ($services->have_posts()): ?>
-		<div class="directions">
-			<?php while($services->have_posts()): $services->the_post(); ?>
-				<div>
-					<div class="directions-item">
-						<div class="directions-item__image-wrapper">
-							<div class="directions-item__image" style="background-image:url('<?php echo the_post_thumbnail_url('medium') ?>')"></div>
-							<div class="directions-item__more">Подробнее</div>
-						</div>
-						<div class="directions-item__title"><?php the_title() ?></div>
-						<a href="<?php the_permalink() ?>" class="directions-item__link"></a>
-					</div>
-				</div>
-			<?php endwhile; ?>
-		</div>
-	<?php endif; wp_reset_query();
-});*/
-
 add_action('init', function() {
 	register_taxonomy('project_category', '', array(
 		'label'                 => '',
@@ -689,6 +597,20 @@ function callback_block_assets() {
 		get_template_directory_uri() . '/blocks/content/scheme.css',
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/content/scheme.css')
+	);
+
+	wp_enqueue_script(
+ 		'block-services-script',
+		get_template_directory_uri() . '/blocks/content/services.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/content/services.js')
+	);
+
+	wp_enqueue_style(
+		'block-services-style',
+		get_template_directory_uri() . '/blocks/content/services.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/content/services.css')
 	);
 
 	wp_enqueue_script(

@@ -9,14 +9,16 @@
         <?php $more_title = $more['title'] ? $more['title'] : 'Хочу узнать детали' ?>
         <div class="page-bg-headline__more">
             <?php if ($more_link = $more['link']): ?>
-            <a class="landing-button" href="<?php echo $more_link ?>"><?php echo $more_title ?></a>
+            <a class="landing-button<?php if ($more['glare']): ?> landing-button_glare<?php endif; ?>" href="<?php echo $more_link ?>">
+                <?php echo $more_title ?>
+            </a>
             <?php else: ?>
             <button
                 data-order
                 data-order-title="<?php echo $more_title ?>"
                 data-order-submit="<?php echo $more_title ?>"
                 data-order-subject="<?php the_title() ?>"
-                class="landing-button"
+                class="landing-button<?php if ($more['glare']): ?> landing-button_glare<?php endif; ?>"
             ><?php echo $more_title ?></button>
             <?php endif; ?>
         </div>

@@ -1,0 +1,35 @@
+.content-collapsible {
+  position: relative;
+}
+
+.content-collapsible__body {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.content-collapsible__inner {
+
+}
+
+.content-collapsible__button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  background: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-collapsible__button::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  transform: rotate(45deg);
+}

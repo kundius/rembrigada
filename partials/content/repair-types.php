@@ -64,6 +64,7 @@
           <?php endif; ?>
         </div>
 
+        <?php if (!empty($repair_types['button']['text'])): ?>
         <div class="content-repair-type__order">
           <button
             data-order
@@ -76,6 +77,7 @@
             class="landing-button<?php if ($repair_types['button']['glare']): ?> landing-button_glare<?php endif; ?>"
           ><?php echo $repair_types['button']['text'] ?></button>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>

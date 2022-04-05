@@ -31,7 +31,7 @@
     <div class="landing-problems__description"><?php echo $promlems['description'] ?></div>
     <?php endif; ?>
 
-    <?php if (!empty($promlems['request'])): ?>
+    <?php if (!empty($promlems['button']['text'])): ?>
     <div class="landing-problems__request">
       <button
         data-order

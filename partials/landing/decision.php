@@ -9,7 +9,7 @@
         <?php if (!empty($decision['description'])): ?>
         <div class="landing-decision__description"><?php echo $decision['description'] ?></div>
         <?php endif; ?>
-        <?php if (!empty($decision['request'])): ?>
+        <?php if (!empty($decision['button']['text'])): ?>
         <div class="landing-decision__request">
           <button
             data-order

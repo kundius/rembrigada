@@ -25,6 +25,7 @@
             </div>
             <?php endif; ?>
           </div>
+          <?php if (!empty($services['button']['text'])): ?>
           <div class="landing-service__request">
             <button
               data-order
@@ -37,6 +38,7 @@
               class="landing-button<?php if ($services['button']['glare']): ?> landing-button_glare<?php endif; ?>"
             ><?php echo $services['button']['text'] ?></button>
           </div>
+          <?php endif; ?>
         </div>
       </div>
       <?php endforeach; ?>

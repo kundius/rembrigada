@@ -41,7 +41,7 @@
       <?php endforeach; ?>
     </div>
 
-    <?php if (!empty($easy_work['request'])): ?>
+    <?php if (!empty($easy_work['button']['text'])): ?>
     <div class="landing-easy-work__request">
       <button
         data-order

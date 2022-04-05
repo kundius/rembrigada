@@ -26,7 +26,7 @@
     <div class="landing-faq__description"><?php echo $faq['description'] ?></div>
     <?php endif; ?>
 
-    <?php if (!empty($faq['request'])): ?>
+    <?php if (!empty($faq['button']['text'])): ?>
     <div class="landing-faq__request">
       <button
         data-order

@@ -6,7 +6,7 @@
       <span><?php echo $measurement['title'] ?></span>
     </div>
     <?php endif; ?>
-    <?php if (!empty($measurement['request'])): ?>
+    <?php if (!empty($measurement['button']['text'])): ?>
     <div class="landing-measurement__request">
       <button
         data-order

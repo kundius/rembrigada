@@ -1,12 +1,14 @@
 .landing-faq {
   background: #ecf5f9 url('../img/faq-bg.jpg') no-repeat 50% 0;
-  padding-bottom: 38px;
+  // padding-bottom: 38px;
+  padding-bottom: 69px;
   padding-top: 69px;
   @media (min-width: 1920px) {
     background-position: 0 0;
   }
   @media (max-width: $breakpoint-xsmall-max) {
     padding-top: 40px;
+    padding-bottom: 40px;
     background-image: none;
   }
 }

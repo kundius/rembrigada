@@ -4,52 +4,16 @@
   max-height: 300px;
 }
 
-// .content-scrollable__body {
-//   max-height: 0;
-//   overflow: hidden;
-//   transition: max-height .5s ease;
-// }
-
-// .content-scrollable__inner {
-//   padding-bottom: 24px;
-// }
-
-// .content-scrollable__button {
-//   position: absolute;
-//   width: 48px;
-//   height: 48px;
-//   left: 50%;
-//   bottom: 0;
-//   transform: translate(-50%, 50%);
-//   background: #e8e8e8;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   border: 2px solid #1c1e22;
-//   color: #1c1e22;
-//   cursor: pointer;
-// }
-
-// .content-scrollable__button:hover {
-//   color: #fff;
-//   background: #1c1e22;
-// }
-
-.content-scrollable__button::after {
-  content: '';
-  display: block;
+.content-scrollable::-webkit-scrollbar {
   width: 12px;
-  height: 12px;
-  border-left: 3px solid currentColor;
-  border-bottom: 3px solid currentColor;
-  position: relative;
-  transform: rotate(-45deg);
-  top: -4px;
-  transition: .3s ease;
-  transition-property: top, transform;
 }
 
-.content-scrollable_active .content-scrollable__button::after {
-  transform: rotate(-225deg);
-  top: 4px;
+.content-scrollable::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.content-scrollable::-webkit-scrollbar-thumb {
+  background-color: #6b6d89;
+  border-radius: 20px;
+  border: 3px solid #ffffff; 
 }

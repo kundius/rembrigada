@@ -37,27 +37,15 @@
             </a>
         </div>
 
-        <div class="header__fbtns">
-            <!-- <a href="mailto:<?php the_field('email', 'options') ?>" class="header__fbtn">
-                <span class="header__fbtn-icon">
-                    <?php icon('email') ?>
-                </span>
-                <span class="header__fbtn-label">
-                    Написать<br /> письмо
-                </span>
-            </a> -->
-
-            <a href="tel:<?php echo $raw_phone ?>" class="header__fbtn js-header-callback">
-                <span class="header__fbtn-icon">
-                    <?php icon('phone') ?>
-                </span>
-                <span class="header__fbtn-label">
-                    Обратный<br /> звонок
-                </span>
-            </a>
-
-            <a href="tel:<?php echo $raw_phone ?>" class="header__phone js-header-callback">
-                <?php the_field('phone', 'options') ?>
+        <div class="header__contacts">
+            <a href="tel:<?php echo $raw_phone ?>" class="header-phone js-header-callback">
+                <div class="header-phone__number">
+                    <span class="header-phone__icon">
+                        <?php icon('phone') ?>
+                    </span>
+                    <?php the_field('phone', 'options') ?>
+                </div>
+                <div class="header-phone__label">Перезвоните мне</div>
             </a>
         </div>
     </div>

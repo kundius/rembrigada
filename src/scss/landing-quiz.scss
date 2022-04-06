@@ -5,6 +5,7 @@
   }
 }
 
+h2.landing-quiz__title,
 .landing-quiz__title {
   text-align: center;
   text-transform: uppercase;
@@ -12,6 +13,7 @@
   font-weight: 700;
   font-size: 24px;
   color: #333;
+  margin-top: 0;
   margin-bottom: 34px;
   @media (max-width: $breakpoint-xsmall-max) {
     margin-bottom: 20px;

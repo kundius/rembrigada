@@ -8,11 +8,13 @@
   }
 }
 
+h2.landing-get-estimate__title,
 .landing-get-estimate__title {
   font-size: 48px;
   color: #fff;
   line-height: 1;
   margin-bottom: 20px;
+  margin-top: 0;
   font-weight: bold;
   @media (max-width: $breakpoint-small-max) {
     font-size: 36px;

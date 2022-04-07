@@ -45,7 +45,7 @@
                 class="page-bg-headline__button<?php if (!empty($headline['button']['glare'])): ?> page-bg-headline__button_glare<?php endif; ?>"
             >
                 <span class="page-bg-headline__button-icon">
-                    <?php icon('calc', 1.8) ?>
+                    <?php icon('calc', 1.4) ?>
                 </span>
                 <span class="page-bg-headline__button-text">
                     <?php echo $headline['button']['text'] ?>

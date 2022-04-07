@@ -1,5 +1,5 @@
 <?php $quiz = get_field('quiz', 'option'); ?>
-<section class="landing-quiz">
+<section class="landing-quiz" id="quiz">
   <div class="container container_medium">
     <?php if (!empty($quiz['title'])): ?>
     <h2 class="landing-quiz__title">

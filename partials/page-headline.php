@@ -1,28 +1,76 @@
-<?php if ($background = get_field('headline_background')): ?>
-<section class="page-bg-headline" style="background-image: url('<?php echo $background['url'] ?>')">
-    <div class="page-bg-headline__inner">
-        <h1 class="page-bg-headline__title"><?php the_title() ?></h1>
-        <?php if ($description = get_field('headline_description')): ?>
-        <div class="page-bg-headline__description"><?php echo $description ?></div>
-        <?php endif; ?>
-        <?php if ($more = get_field('headline_more')): ?>
-        <?php $more_title = $more['title'] ? $more['title'] : 'Хочу узнать детали' ?>
-        <div class="page-bg-headline__more">
-            <?php if ($more_link = $more['link']): ?>
-            <a class="landing-button<?php if ($more['glare']): ?> landing-button_glare<?php endif; ?>" href="<?php echo $more_link ?>">
-                <?php echo $more_title ?>
+<?php $headline = get_field('headline') ?>
+<?php if ($headline['background']): ?>
+<section class="page-bg-headline" style="background-image: url('<?php echo $headline['background']['url'] ?>')">
+    <div class="container">
+        <div class="page-bg-headline__inner">
+            <?php if (!empty($headline['before-title'])): ?>
+            <div class="page-bg-headline__before-title"><?php echo $headline['before-title'] ?></div>
+            <?php endif; ?>
+
+            <h1 class="page-bg-headline__title"><?php the_title() ?></h1>
+
+            <?php if (!empty($headline['after-title']['text'])): ?>
+            <div class="page-bg-headline__after-title<?php if (!empty($headline['after-title']['line'])): ?> page-bg-headline__after-title_line<?php endif; ?>">
+                <?php echo $headline['after-title']['text'] ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if (!empty($headline['items'])): ?>
+            <div class="page-bg-headline__items">
+                <div class="page-bg-headline__items-grid">
+                    <?php foreach ($headline['items'] as $item): ?>
+                    <div class="page-bg-headline__items-cell">
+                        <div class="page-bg-headline__item">
+                            <div class="page-bg-headline__item-icon">
+                                <img src="<?php echo $item['icon']['url'] ?>" alt="<?php echo $item['title'] ?>" />
+                            </div>
+                            <div class="page-bg-headline__item-info">
+                                <div class="page-bg-headline__item-title">
+                                    <?php echo $item['title'] ?>
+                                </div>
+                                <div class="page-bg-headline__item-description">
+                                    <?php echo $item['description'] ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <?php endif; ?>
+
+            <?php if (!empty($headline['button']['text'])): ?>
+            <?php if ($headline['button']['action'] == 'calc'): ?>
+            <a
+                href="#quiz"
+                class="page-bg-headline__button<?php if (!empty($headline['button']['glare'])): ?> page-bg-headline__button_glare<?php endif; ?>"
+            >
+                <span class="page-bg-headline__button-icon">
+                    <?php icon('calc', 1.8) ?>
+                </span>
+                <span class="page-bg-headline__button-text">
+                    <?php echo $headline['button']['text'] ?>
+                </span>
             </a>
-            <?php else: ?>
+            <?php endif; ?>
+            <?php if ($headline['button']['action'] == 'order'): ?>
             <button
                 data-order
-                data-order-title="<?php echo $more_title ?>"
-                data-order-submit="<?php echo $more_title ?>"
-                data-order-subject="<?php the_title() ?>"
-                class="landing-button<?php if ($more['glare']): ?> landing-button_glare<?php endif; ?>"
-            ><?php echo $more_title ?></button>
+                data-order-title="<?php echo $headline['form']['title'] ?>"
+                data-order-submit="<?php echo $headline['form']['submit'] ?>"
+                data-order-subject="<?php echo the_title() ?>"
+                data-order-description="<?php echo $headline['form']['description'] ?>"
+                data-order-success-title="<?php echo $headline['form']['success']['title'] ?>"
+                data-order-success-description="<?php echo $headline['form']['success']['description'] ?>"
+                class="page-bg-headline__button<?php if (!empty($headline['button']['glare'])): ?> page-bg-headline__button_glare<?php endif; ?>"
+            >
+                <span class="page-bg-headline__button-text">
+                    <?php echo $headline['button']['text'] ?>
+                </span>
+            </button>
+            <?php endif; ?>
             <?php endif; ?>
         </div>
-        <?php endif; ?>
     </div>
 </section>
 <?php if (!is_front_page()): ?>

@@ -41,7 +41,7 @@
             <div class="header-messengers">
                 <div class="header-messengers__label">Задайте вопрос напрямую в:</div>
                 <div class="header-messengers__buttons">
-                    <a class="header-messengers__button" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
+                    <a class="header-messengers__button header-messengers__button_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
                         <?php icon('whatsapp-bulk', 1.4) ?>
                         WhatsApp
                     </a>

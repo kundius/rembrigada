@@ -587,6 +587,10 @@ a.btn-plus,
     letter-spacing: -0.05em;
 }
 
+.page-bg-headline__item-title sup {
+    font-size: 60%;
+}
+
 .page-bg-headline__item-description {
     font-size: 20px;
     color: rgb(68, 70, 76);
@@ -597,7 +601,26 @@ a.btn-plus,
 
 .page-bg-headline__button {
     margin-top: 56px;
+    background-color: rgb(213, 36, 55);
+    box-shadow: 0 5px 0 #ad1d2d, inset 0.782px -4.938px 0px 0px rgba(173, 29, 45, 0.004);
+    height: 75px;
+    padding: 0 35px;
+    font-size: 20px;
+    font-family: "Next Art", sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1.452;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.41);
+    border-radius: 40px;
+    cursor: pointer;
+    padding-top: 5px;
 }
+
+.page-bg-headline__button:hover {
+    background-image: linear-gradient(0, #d5162a 0%, #fe2c53 50%, #d7172c 100%);
+    box-shadow: 0 5px 0 #ab1526, 0px 3px 23.28px 0.72px rgba(255, 79, 99, 0.6),inset 0.782px -4.938px 0px 0px rgba(171, 21, 38, 0.004);
+  }
+  
 
 .page-bg-headline__button_glare {
 

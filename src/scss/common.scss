@@ -489,6 +489,12 @@ a.btn-plus,
     align-items: center;
     padding: 80px 0;
     min-height: calc(100vh - 70px);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #e8e8e8;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .page-bg-headline__inner {

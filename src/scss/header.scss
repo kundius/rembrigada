@@ -247,7 +247,7 @@
 
 .header__contacts {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 26px;
 }
 
@@ -321,10 +321,6 @@
 
 .header-phone:hover .header-phone__number {
     color: #000000;
-}
-
-.header__contacts {
-
 }
 
 .header-messengers {

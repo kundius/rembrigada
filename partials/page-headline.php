@@ -21,8 +21,8 @@
                     <?php foreach ($headline['items'] as $item): ?>
                     <div class="page-bg-headline__items-cell">
                         <div class="page-bg-headline__item">
-                            <div class="page-bg-headline__item-icon">
-                                <img src="<?php echo $item['icon']['url'] ?>" alt="<?php echo $item['title'] ?>" />
+                            <div class="page-bg-headline__item-image">
+                                <img src="<?php echo $item['image']['url'] ?>" alt="<?php echo $item['title'] ?>" />
                             </div>
                             <div class="page-bg-headline__item-info">
                                 <div class="page-bg-headline__item-title">

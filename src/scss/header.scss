@@ -354,11 +354,15 @@
     height: 32px;
     padding: 0 6px;
     text-decoration: none;
-    gap: 3px;
+}
+
+.header-messengers__button svg {
+    margin-left: -3px;
+    margin-right: 3px;
 }
 
 .header-messengers__button_whatsapp svg {
-    margin: 0 -3px;
+    margin-right: -3px;
 }
 
 .header-messengers__button:hover {

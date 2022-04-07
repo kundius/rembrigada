@@ -247,6 +247,7 @@
 
 .header__contacts {
     display: flex;
+    align-items: center;
     gap: 26px;
 }
 
@@ -357,6 +358,10 @@
     height: 32px;
     padding: 0 6px;
     text-decoration: none;
+}
+
+.header-messengers__button_telegram svg {
+    margin-right: 3px;
 }
 
 .header-messengers__button:hover {

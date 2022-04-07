@@ -484,6 +484,122 @@ a.btn-plus,
 //     margin-top: 20px;
 // }
 
+.page-bg-headline {
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    min-height: calc(100vh - 70px);
+}
+
+.page-bg-headline__inner {
+    max-width: 1200px;
+}
+
+.page-bg-headline__before-title {
+    font-size: 30px;
+    color: rgb(100, 107, 121);
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.page-bg-headline__title {
+    font-size: 50px;
+    color: rgb(43, 46, 52);
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.page-bg-headline__after-title {
+    font-size: 36px;
+    color: rgb(100, 107, 121);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.page-bg-headline__after-title span {
+    color: #ed3947;
+}
+
+.page-bg-headline__after-title_line::before {
+    content: '';
+    height: 3px;
+    width: 110px;
+    display: block;
+    margin-right: 14px;
+}
+
+.page-bg-headline__items {
+    background-color: rgba(249, 251, 255, 0.529);
+    box-shadow: 0.5px 0.866px 21px 0px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+.page-bg-headline__items-grid {
+    margin-left: -60px;
+    margin-top: -40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page-bg-headline__items-cell {
+    width: calc(100% / 3);
+    padding-left: 60px;
+    padding-top: 40px;
+}
+
+.page-bg-headline__item {
+    display: flex;
+}
+
+.page-bg-headline__item-icon {
+    margin-right: 10px;
+    width: 89px;
+    height: 89px;
+    flex-shrink: 0;
+    border: 5px solid rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-bg-headline__item-info {
+
+}
+
+.page-bg-headline__item-title {
+    font-size: 24px;
+    font-family: "Next Art", sans-serif;
+    color: rgb(43, 46, 52);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.083;
+}
+
+.page-bg-headline__item-description {
+    font-size: 20px;
+    color: rgb(68, 70, 76);
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 12px;
+}
+
+.page-bg-headline__button {
+    margin-top: 56px;
+}
+
+.page-bg-headline__button_glare {
+
+}
+
+.page-bg-headline__button-text {
+
+}
+
+
 .page-headline {
     background: #e8e8e8;
     overflow: hidden;

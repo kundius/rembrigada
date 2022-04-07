@@ -487,7 +487,7 @@ a.btn-plus,
 .page-bg-headline {
     display: flex;
     align-items: center;
-    padding: 80px 0;
+    padding: 80px 0 160px;
     min-height: calc(100vh - 70px);
     position: relative;
     z-index: 1;
@@ -599,8 +599,13 @@ a.btn-plus,
     margin-top: 12px;
 }
 
+.page-bg-headline__item-description sup {
+    font-size: 60%;
+}
+
 .page-bg-headline__button {
     margin-top: 56px;
+    border: none;
     background-color: rgb(213, 36, 55);
     box-shadow: 0 5px 0 #ad1d2d, inset 0.782px -4.938px 0px 0px rgba(173, 29, 45, 0.004);
     height: 75px;
@@ -616,6 +621,7 @@ a.btn-plus,
     padding-top: 5px;
     position: relative;
     overflow: hidden;
+    transition: all .3s ease;
 }
 
 .page-bg-headline__button:hover {

@@ -513,7 +513,6 @@ a.btn-plus,
     font-size: 36px;
     color: rgb(100, 107, 121);
     line-height: 1.2;
-    display: flex;
     align-items: center;
     margin-top: 20px;
 }
@@ -522,8 +521,18 @@ a.btn-plus,
     color: #ed3947;
 }
 
+.page-bg-headline__after-title_line {
+    padding-left: 124px;
+    position: relative;
+}
+
 .page-bg-headline__after-title_line::before {
     content: '';
+    position: absolute;
+    background: #ed3947;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     height: 3px;
     width: 110px;
     display: block;

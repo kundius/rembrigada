@@ -205,7 +205,7 @@
     }
 }
 
-.header-messengers {
+.header-m-messengers {
   display: flex;
   margin-left: auto;
   margin-right: 8px;
@@ -214,7 +214,7 @@
   }
 }
 
-.header-messengers__item {
+.header-m-messengers__item {
   display: inline-block;
   color: #ffffff;
   border-radius: 50%;
@@ -231,14 +231,14 @@
   }
 }
 
-.header-messengers__item_telegram {
+.header-m-messengers__item_telegram {
   background-color: #29a1d4;
   &:hover {
     background-color: #248db9;
   }
 }
 
-.header-messengers__item_whatsapp {
+.header-m-messengers__item_whatsapp {
   background-color: #25d266;
   &:hover {
     background-color: #20b658;
@@ -247,6 +247,7 @@
 
 .header__contacts {
     display: flex;
+    gap: 26px;
 }
 
 .header-phone {

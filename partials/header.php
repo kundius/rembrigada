@@ -28,16 +28,29 @@
             </div>
         </nav>
 
-        <div class="header-messengers">
-            <a class="header-messengers__item header-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
+        <div class="header-m-messengers">
+            <a class="header-m-messengers__item header-m-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
                 <?php icon('telegram', 0.7) ?>
             </a>
-            <a class="header-messengers__item header-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
+            <a class="header-m-messengers__item header-m-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
                 <?php icon('whatsapp', 0.8) ?>
             </a>
         </div>
 
         <div class="header__contacts">
+            <div class="header-messengers">
+                <div class="header-messengers__label">Задайте вопрос напрямую в:</div>
+                <div class="header-messengers__buttons">
+                    <a class="header-messengers__button" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
+                        <?php icon('whatsapp', 1) ?>
+                        WhatsApp
+                    </a>
+                    <a class="header-messengers__button" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
+                        <?php icon('telegram', 1) ?>
+                        Telegram
+                    </a>
+                </div>
+            </div>
             <a href="tel:<?php echo $raw_phone ?>" class="header-phone js-header-callback">
                 <div class="header-phone__number">
                     <span class="header-phone__icon">

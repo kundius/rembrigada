@@ -20,25 +20,21 @@
 
             <?php if (!empty($headline['items'])): ?>
             <div class="page-bg-headline__items">
-                <div class="page-bg-headline__items-grid">
-                    <?php foreach ($headline['items'] as $item): ?>
-                    <div class="page-bg-headline__items-cell">
-                        <div class="page-bg-headline__item">
-                            <div class="page-bg-headline__item-image">
-                                <img src="<?php echo $item['image']['url'] ?>" alt="<?php echo $item['title'] ?>" />
-                            </div>
-                            <div class="page-bg-headline__item-info">
-                                <div class="page-bg-headline__item-title">
-                                    <?php echo $item['title'] ?>
-                                </div>
-                                <div class="page-bg-headline__item-description">
-                                    <?php echo $item['description'] ?>
-                                </div>
-                            </div>
+                <?php foreach ($headline['items'] as $item): ?>
+                <div class="page-bg-headline__item">
+                    <div class="page-bg-headline__item-image">
+                        <img src="<?php echo $item['image']['url'] ?>" alt="<?php echo $item['title'] ?>" />
+                    </div>
+                    <div class="page-bg-headline__item-info">
+                        <div class="page-bg-headline__item-title">
+                            <?php echo $item['title'] ?>
+                        </div>
+                        <div class="page-bg-headline__item-description">
+                            <?php echo $item['description'] ?>
                         </div>
                     </div>
-                    <?php endforeach; ?>
                 </div>
+                <?php endforeach; ?>
             </div>
             <?php endif; ?>
 

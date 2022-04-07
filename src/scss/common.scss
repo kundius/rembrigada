@@ -614,16 +614,45 @@ a.btn-plus,
     border-radius: 40px;
     cursor: pointer;
     padding-top: 5px;
+    position: relative;
+    overflow: hidden;
 }
 
 .page-bg-headline__button:hover {
     background-image: linear-gradient(0, #d5162a 0%, #fe2c53 50%, #d7172c 100%);
     box-shadow: 0 5px 0 #ab1526, 0px 3px 23.28px 0.72px rgba(255, 79, 99, 0.6),inset 0.782px -4.938px 0px 0px rgba(171, 21, 38, 0.004);
-  }
-  
+}
 
-.page-bg-headline__button_glare {
+@keyframes headlineButtonGlare{
+    0% {
+        left:-30px;
+        margin-left:0
+    }
+    30% {
+        left:110%;
+        margin-left:80px
+    }
+    100% {
+        left:110%;
+        margin-left:80px
+    }
+}
 
+.page-bg-headline__button_glare::after {
+    content: '';
+    margin-left: 60px;
+    width: 30px;
+    height: 300px;
+    background: rgb(255, 236, 236);
+    animation-delay: 0.05s;
+    position: absolute;
+    left: -40px;
+    top: -150px;
+    animation-timing-function: ease-in-out;
+    animation-name: headlineButtonGlare;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    transform: rotate(45deg);
 }
 
 .page-bg-headline__button-text {

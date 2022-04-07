@@ -606,6 +606,9 @@ a.btn-plus,
 .page-bg-headline__button {
     margin-top: 56px;
     border: none;
+    text-decoration: none;
+    align-items: center;
+    display: inline-flex;
     background-color: rgb(213, 36, 55);
     box-shadow: 0 5px 0 #ad1d2d, inset 0.782px -4.938px 0px 0px rgba(173, 29, 45, 0.004);
     height: 75px;
@@ -661,10 +664,15 @@ a.btn-plus,
     transform: rotate(45deg);
 }
 
+.page-bg-headline__button-icon {
+    margin-right: 18px;
+    margin-left: -6px;
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+}
+
 .page-bg-headline__button-text {
 
 }
-
 
 .page-headline {
     background: #e8e8e8;

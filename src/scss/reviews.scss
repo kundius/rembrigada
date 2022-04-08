@@ -10,13 +10,13 @@
     }
 }
 
-.reviews-item {
-	margin-bottom: 128px;
+.reviews-item + .reviews-item {
+	margin-top: 128px;
     @media (max-width: $breakpoint-small-max) {
-    	margin-bottom: 78px;
+    	margin-top: 78px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-    	margin-bottom: 44px;
+    	margin-top: 44px;
     }
 }
 

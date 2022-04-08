@@ -295,7 +295,7 @@ add_shortcode('service-info', function($atts) {
 	return $output;
 });
 
-add_action('init', function() {
+// add_action('init', function() {
 // 	register_taxonomy('project_category', '', array(
 // 		'label'                 => '',
 // 		'labels'                => array(

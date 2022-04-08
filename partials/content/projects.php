@@ -90,3 +90,10 @@ $projects = new WP_Query(array(
     </div>
 </div>
 <?php endwhile; ?>
+<?php
+    the_posts_pagination([
+        'prev_text' => 'Предыдущая',
+        'next_text' => 'Следующая',
+        'total' => $projects->max_num_pages
+    ]);
+?>

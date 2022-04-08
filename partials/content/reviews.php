@@ -67,6 +67,7 @@ $reviews = new WP_Query(array(
 <?php
     the_posts_pagination([
         'prev_text' => 'Предыдущая',
-        'next_text' => 'Следующая'
+        'next_text' => 'Следующая',
+        'total' => $reviews->max_num_pages
     ]);
 ?>

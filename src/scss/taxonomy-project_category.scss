@@ -238,6 +238,11 @@
 	}
 }
 
+.works-item__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
 .works-item__grid {
 	display: flex;
 	flex-wrap: wrap;

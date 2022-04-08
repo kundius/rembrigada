@@ -621,7 +621,7 @@ a.btn-plus,
 .page-bg-headline__item {
     display: flex;
     align-items: center;
-    @media (max-width: $breakpoint-xsmall-max) {
+    @media (max-width: $breakpoint-small-max) {
         flex-direction: column;
     }
 }
@@ -639,12 +639,9 @@ a.btn-plus,
     @media (max-width: $breakpoint-small-max) {
         width: 60px;
         height: 60px;
-        margin-right: 8px;
-        border-width: 4px;
-    }
-    @media (max-width: $breakpoint-xsmall-max) {
         margin-left: auto;
         margin-right: auto;
+        border-width: 4px;
     }
 }
 
@@ -672,11 +669,11 @@ a.btn-plus,
     }
     @media (max-width: $breakpoint-small-max) {
         font-size: 16px;
+        margin-top: 12px;
+        text-align: center;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         font-size: 14px;
-        margin-top: 12px;
-        text-align: center;
     }
 }
 
@@ -694,7 +691,9 @@ a.btn-plus,
         font-size: 16px;
     }
     @media (max-width: $breakpoint-small-max) {
-        display: none;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 8px;
     }
 }
 

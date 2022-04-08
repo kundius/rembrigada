@@ -42,28 +42,28 @@ $reviews = new WP_Query(array(
             </div>
         </div>
     </div>
-</div>
-<div class="hidden" id="review-<?php echo get_the_ID() ?>">
-    <div class="modal modal_review">
-        <button class="modal__close" data-basiclightbox-close></button>
-        <div class="reviews-item__title"><?php the_title() ?></div>
-        <div class="reviews-item__address"><?php the_field('address') ?></div>
-        <div class="reviews-item__info">
-            <div class="reviews-item__icon"><?php icon('quotes') ?></div>
-            <div class="reviews-item__desc">
-                <?php the_content() ?>
+    <div class="hidden" id="review-<?php echo get_the_ID() ?>">
+        <div class="modal modal_review">
+            <button class="modal__close" data-basiclightbox-close></button>
+            <div class="reviews-item__title"><?php the_title() ?></div>
+            <div class="reviews-item__address"><?php the_field('address') ?></div>
+            <div class="reviews-item__info">
+                <div class="reviews-item__icon"><?php icon('quotes') ?></div>
+                <div class="reviews-item__desc">
+                    <?php the_content() ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<?php if ($image = get_field('image', get_the_ID())): ?>
-<div class="hidden" id="review-image-<?php echo get_the_ID() ?>">
-    <div class="modal" style="text-align: center">
-        <img src="<?php echo $image['url'] ?>" alt="<?php the_title() ?>">
+    <?php if ($image = get_field('image', get_the_ID())): ?>
+    <div class="hidden" id="review-image-<?php echo get_the_ID() ?>">
+        <div class="modal" style="text-align: center">
+            <img src="<?php echo $image['url'] ?>" alt="<?php the_title() ?>">
+        </div>
+        <button class="modal__close" data-basiclightbox-close></button>
     </div>
-    <button class="modal__close" data-basiclightbox-close></button>
+    <?php endif; ?>
 </div>
-<?php endif; ?>
 <?php endwhile; ?>
 
 <?php if ($reviews->max_num_pages > $posts_per_page): ?>

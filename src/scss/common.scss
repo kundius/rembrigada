@@ -501,6 +501,9 @@ a.btn-plus,
     @media (max-width: $breakpoint-small-max) {
         padding: 40px 0 80px;
     }
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding: 30px 0;
+    }
 }
 
 .page-bg-headline__inner {
@@ -510,6 +513,10 @@ a.btn-plus,
     }
     @media (max-width: $breakpoint-small-max) {
         max-width: 800px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -522,6 +529,11 @@ a.btn-plus,
         font-size: 24px;
         margin-bottom: 20px;
     }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 16px;
+    }
 }
 
 .page-bg-headline__title {
@@ -531,6 +543,10 @@ a.btn-plus,
     line-height: 1.2;
     @media (max-width: $breakpoint-small-max) {
         font-size: 36px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 28px;
+        text-align: center;
     }
 }
 
@@ -545,6 +561,11 @@ a.btn-plus,
         font-size: 28px;
         margin-top: 20px;
     }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 16px;
+    }
 }
 
 .page-bg-headline__after-title span {
@@ -556,6 +577,9 @@ a.btn-plus,
     position: relative;
     @media (max-width: $breakpoint-small-max) {
         padding-left: 84px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding-left: 0;
     }
 }
 
@@ -572,6 +596,9 @@ a.btn-plus,
     margin-right: 14px;
     @media (max-width: $breakpoint-small-max) {
         width: 70px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        display: none;
     }
 }
 
@@ -612,8 +639,8 @@ a.btn-plus,
 }
 
 .page-bg-headline__item-image img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 70%;
+    max-height: 70%;
     width: auto;
     height: auto;
 }
@@ -684,6 +711,15 @@ a.btn-plus,
     transition: all .3s ease;
     @media (max-width: $breakpoint-small-max) {
         margin-top: 40px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 12px;
+        padding-left: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 2px;
+        padding-right: 20px;
+        height: 48px;
     }
 }
 

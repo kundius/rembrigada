@@ -3,7 +3,9 @@
     <div class="works">
         <?php foreach($list as $item): $fields = get_fields($item->ID); ?>
         <div class="works-item">
-            <div class="works-item__title"><?php echo $item->post_title ?></div>
+            <div class="works-item__title">
+                <a href="<?php echo get_the_permalink($item->ID) ?>"><?php echo $item->post_title ?></a>
+            </div>
             <div class="works-item__grid">
             <div class="works-item__cell">
                 <?php if ($gallery = $fields['gallery']): ?>
@@ -80,7 +82,7 @@
         </div>
         <?php endforeach; ?>
         <div class="works__more">
-            <a href="<?php echo get_category_link(3) ?>" class="landing-button">Больше работ</a>
+            <a href="<?php echo get_the_permalink(5249) ?>" class="landing-button">Больше работ</a>
         </div>
     </div>
 </div>

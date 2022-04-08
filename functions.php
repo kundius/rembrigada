@@ -296,28 +296,28 @@ add_shortcode('service-info', function($atts) {
 });
 
 add_action('init', function() {
-	register_taxonomy('project_category', '', array(
-		'label'                 => '',
-		'labels'                => array(
-			'name'              => 'Категории',
-			'singular_name'     => 'Категория',
-			'search_items'      => 'Искать категории',
-			'all_items'         => 'Все категории',
-			'view_item '        => 'Смотреть категорию',
-			'parent_item'       => 'Родительская категория',
-			'parent_item_colon' => 'Родительская категория:',
-			'edit_item'         => 'Редактировать категорию',
-			'update_item'       => 'Изменить категорию',
-			'add_new_item'      => 'Добавить новую категорию',
-			'new_item_name'     => 'Название новой категории',
-			'menu_name'         => 'Категории'
-		),
-		'description'           => '',
-		'public'                => true,
-		'hierarchical'          => true,
-		'meta_box_cb'           => 'post_categories_meta_box'
-	));
-});
+// 	register_taxonomy('project_category', '', array(
+// 		'label'                 => '',
+// 		'labels'                => array(
+// 			'name'              => 'Категории',
+// 			'singular_name'     => 'Категория',
+// 			'search_items'      => 'Искать категории',
+// 			'all_items'         => 'Все категории',
+// 			'view_item '        => 'Смотреть категорию',
+// 			'parent_item'       => 'Родительская категория',
+// 			'parent_item_colon' => 'Родительская категория:',
+// 			'edit_item'         => 'Редактировать категорию',
+// 			'update_item'       => 'Изменить категорию',
+// 			'add_new_item'      => 'Добавить новую категорию',
+// 			'new_item_name'     => 'Название новой категории',
+// 			'menu_name'         => 'Категории'
+// 		),
+// 		'description'           => '',
+// 		'public'                => true,
+// 		'hierarchical'          => true,
+// 		'meta_box_cb'           => 'post_categories_meta_box'
+// 	));
+// });
 
 add_action('init', function() {
 	register_post_type('project', array(
@@ -364,9 +364,9 @@ add_action('init', function() {
 	));
 });
 
-add_action('init', function() {
-	register_taxonomy_for_object_type('project_category', 'project');
-});
+// add_action('init', function() {
+// 	register_taxonomy_for_object_type('project_category', 'project');
+// });
 
 function be_register_blocks() {
     if( ! function_exists('acf_register_block') )

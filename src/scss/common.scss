@@ -612,10 +612,11 @@ a.btn-plus,
     justify-content: space-between;
     @media (max-width: $breakpoint-small-max) {
         margin-top: 30px;
+        gap: 8px;
+        justify-content: space-around;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         padding: 12px;
-        gap: 8px;
     }
 }
 

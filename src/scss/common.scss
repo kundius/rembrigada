@@ -495,10 +495,22 @@ a.btn-plus,
     background-color: #e8e8e8;
     background-size: cover;
     background-position: 50% 50%;
+    @media (max-width: $breakpoint-medium-max) {
+        padding: 60px 0 120px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        padding: 40px 0 80px;
+    }
 }
 
 .page-bg-headline__inner {
     max-width: 1200px;
+    @media (max-width: $breakpoint-medium-max) {
+        max-width: 1000px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        max-width: 800px;
+    }
 }
 
 .page-bg-headline__before-title {
@@ -506,6 +518,10 @@ a.btn-plus,
     color: rgb(100, 107, 121);
     line-height: 1.2;
     margin-bottom: 30px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
 }
 
 .page-bg-headline__title {
@@ -513,6 +529,9 @@ a.btn-plus,
     color: rgb(43, 46, 52);
     font-weight: bold;
     line-height: 1.2;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 36px;
+    }
 }
 
 .page-bg-headline__after-title {
@@ -522,6 +541,10 @@ a.btn-plus,
     align-items: center;
     margin-top: 26px;
     letter-spacing: -0.025em;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 28px;
+        margin-top: 20px;
+    }
 }
 
 .page-bg-headline__after-title span {
@@ -531,6 +554,9 @@ a.btn-plus,
 .page-bg-headline__after-title_line {
     padding-left: 124px;
     position: relative;
+    @media (max-width: $breakpoint-small-max) {
+        padding-left: 84px;
+    }
 }
 
 .page-bg-headline__after-title_line::before {
@@ -544,6 +570,9 @@ a.btn-plus,
     width: 110px;
     display: block;
     margin-right: 14px;
+    @media (max-width: $breakpoint-small-max) {
+        width: 70px;
+    }
 }
 
 .page-bg-headline__items {
@@ -554,6 +583,9 @@ a.btn-plus,
     margin-top: 34px;
     display: flex;
     justify-content: space-between;
+    @media (max-width: $breakpoint-small-max) {
+        margin-top: 20px;
+    }
 }
 
 .page-bg-headline__item {
@@ -571,6 +603,19 @@ a.btn-plus,
     align-items: center;
     justify-content: center;
     align-self: flex-start;
+    @media (max-width: $breakpoint-small-max) {
+        width: 60px;
+        height: 60px;
+        margin-right: 8px;
+        border-width: 4px;
+    }
+}
+
+.page-bg-headline__item-image img {
+    max-width: 80%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
 }
 
 .page-bg-headline__item-info {
@@ -585,6 +630,12 @@ a.btn-plus,
     text-transform: uppercase;
     line-height: 1.083;
     letter-spacing: -0.05em;
+    @media (max-width: $breakpoint-medium-max) {
+        font-size: 20px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 16px;
+    }
 }
 
 .page-bg-headline__item-title sup {
@@ -597,6 +648,12 @@ a.btn-plus,
     font-weight: bold;
     line-height: 1.2;
     margin-top: 12px;
+    @media (max-width: $breakpoint-medium-max) {
+        font-size: 16px;
+    }
+    @media (max-width: $breakpoint-small-max) {
+        display: none;
+    }
 }
 
 .page-bg-headline__item-description sup {
@@ -625,6 +682,9 @@ a.btn-plus,
     position: relative;
     overflow: hidden;
     transition: all .3s ease;
+    @media (max-width: $breakpoint-small-max) {
+        margin-top: 40px;
+    }
 }
 
 .page-bg-headline__button:hover {
@@ -665,6 +725,7 @@ a.btn-plus,
 }
 
 .page-bg-headline__button-icon {
+    display: flex;
     margin-right: 18px;
     margin-left: -6px;
     filter: drop-shadow(0px 0px 3px rgba(0,0,0,.5));

@@ -210,7 +210,7 @@
 .header-m-messengers {
   display: flex;
   margin-left: auto;
-  margin-right: 8px;
+  gap: 8px;
   @media (min-width: $breakpoint-small) {
     display: none;
   }
@@ -220,10 +220,9 @@
   display: inline-block;
   color: #ffffff;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   text-align: center;
-  margin: 0 4px;
   position: relative;
   svg {
     position: absolute;

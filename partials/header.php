@@ -36,7 +36,7 @@
                 <?php icon('whatsapp', 0.8) ?>
             </a>
             <a class="header-m-messengers__item header-m-messengers__item_phone" href="tel:<?php echo $raw_phone ?>">
-                <?php icon('phone', 0.8) ?>
+                <?php icon('phone', 0.7) ?>
             </a>
         </div>
 

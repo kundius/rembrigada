@@ -613,6 +613,9 @@ a.btn-plus,
     @media (max-width: $breakpoint-small-max) {
         margin-top: 20px;
     }
+    @media (max-width: $breakpoint-xsmall-max) {
+        display: none;
+    }
 }
 
 .page-bg-headline__item {
@@ -769,6 +772,9 @@ a.btn-plus,
     margin-right: 18px;
     margin-left: -6px;
     filter: drop-shadow(0px 0px 3px rgba(0,0,0,.5));
+    @media (max-width: $breakpoint-xsmall-max) {
+        display: none;
+    }
 }
 
 .page-bg-headline__button-text {

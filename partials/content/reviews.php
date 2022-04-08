@@ -1,9 +1,9 @@
 <?php
+$per_page = 1;
 $reviews = new WP_Query(array(
     'post_type' => 'review',
     'paged' => get_query_var('paged') ?: 1,
-    // 'posts_per_page' => -1,
-    'posts_per_page' => 1
+    'posts_per_page' => $per_page
 ));
 ?>
 <?php while($reviews->have_posts()): $reviews->the_post(); ?>
@@ -64,9 +64,14 @@ $reviews = new WP_Query(array(
 </div>
 <?php endif; ?>
 <?php endwhile; ?>
-<?php
-echo paginate_links([
-  'current' => max(1, get_query_var('paged')),
-  'total' => $reviews->max_num_pages,
-]);
-?>
+
+<?php if ($reviews->max_num_pages > $per_page): ?>
+<div class="pagination">
+  <?php
+  echo paginate_links([
+    'current' => max(1, get_query_var('paged')),
+    'total' => $reviews->max_num_pages,
+  ]);
+  ?>
+</div>
+<?php endif; ?>

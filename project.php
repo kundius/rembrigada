@@ -59,7 +59,7 @@ function get_next_id($list, $id) {
                     <div class="project-meta">
                         <div class="project-meta__category">
                             <?php icon('category', .75) ?>
-                            <?php the_terms(get_the_ID(), 'project_category') ?>
+                            <a href="<?php the_permalink(wp_get_post_parent_id()) ?>"><?php the_title(wp_get_post_parent_id()) ?></a>
                         </div>
                         <div class="project-meta__date">
                             <?php icon('date', .75) ?>

@@ -1,15 +1,3 @@
-.reviews-section {
-	padding-top: 90px;
-	padding-bottom: 128px;
-    @media (max-width: $breakpoint-small-max) {
-    	padding-top: 53px;
-    	padding-bottom: 0;
-    }
-    @media (max-width: $breakpoint-xsmall-max) {
-    	padding-top: 10px;
-    }
-}
-
 .reviews-item + .reviews-item {
 	margin-top: 128px;
     @media (max-width: $breakpoint-small-max) {

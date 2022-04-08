@@ -1,8 +1,10 @@
 <?php
+$posts_per_page = -1;
+$paged = get_query_var('paged') ?: 1;
 $projects = new WP_Query(array(
   'post_type' => 'project',
-  'posts_per_page' => -1,
-  'paged' => get_query_var('paged') ?: 1,
+  'posts_per_page' => $posts_per_page,
+  'paged' => $paged,
   'orderby' => ['parent' => 'DESC', 'menu_order' => 'ASC']
 ));
 ?>
@@ -90,10 +92,14 @@ $projects = new WP_Query(array(
     </div>
 </div>
 <?php endwhile; ?>
-<?php
-    the_posts_pagination([
-        'prev_text' => 'Предыдущая',
-        'next_text' => 'Следующая',
-        'total' => $projects->max_num_pages
-    ]);
-?>
+
+<?php if ($projects->max_num_pages > $posts_per_page): ?>
+<div class="pagination">
+  <?php
+  echo paginate_links([
+    'current' => $paged,
+    'total' => $projects->max_num_pages,
+  ]);
+  ?>
+</div>
+<?php endif; ?>

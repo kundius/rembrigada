@@ -82,7 +82,7 @@
         </div>
         <?php endforeach; ?>
         <div class="works__more">
-            <a href="<?php echo get_the_permalink(5249) ?>" class="landing-button">Больше работ</a>
+            <a href="<?php echo get_the_permalink(15) ?>" class="landing-button">Больше работ</a>
         </div>
     </div>
 </div>

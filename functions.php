@@ -636,6 +636,20 @@ function callback_block_assets() {
 	);
 
 	wp_enqueue_script(
+ 		'block-content-reviews-script',
+		get_template_directory_uri() . '/blocks/content/reviews.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/content/reviews.js')
+	);
+
+	wp_enqueue_style(
+		'block-content-reviews-style',
+		get_template_directory_uri() . '/blocks/content/reviews.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/content/reviews.css')
+	);
+
+	wp_enqueue_script(
  		'block-landing-services-script',
 		get_template_directory_uri() . '/blocks/landing/services.js',
 		array('wp-blocks', 'wp-element'),
@@ -647,6 +661,20 @@ function callback_block_assets() {
 		get_template_directory_uri() . '/blocks/landing/services.css',
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/landing/services.css')
+	);
+
+	wp_enqueue_script(
+ 		'block-landing-contacts-script',
+		get_template_directory_uri() . '/blocks/landing/contacts.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/contacts.js')
+	);
+
+	wp_enqueue_style(
+		'block-landing-contacts-style',
+		get_template_directory_uri() . '/blocks/landing/contacts.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/contacts.css')
 	);
 
 	wp_enqueue_script(

@@ -64,11 +64,14 @@ $reviews = new WP_Query(array(
 </div>
 <?php endif; ?>
 <?php endwhile; ?>
-<?php echo $reviews->max_num_pages ?>
 <?php
 echo paginate_links([
 	// 'base' => user_trailingslashit( wp_normalize_path( get_permalink() .'/%#%/' ) ),
-  'current' => max(1, get_query_var('page' )),
+  // 'current' => max(1, get_query_var('page')),
+  // 'total' => $reviews->max_num_pages,
+  'base' => get_pagenum_link(1) . '%_%',
+  'format' => '/page/%#%',
+  'current' => max(1, get_query_var('page')),
   'total' => $reviews->max_num_pages,
 ]);
 ?>

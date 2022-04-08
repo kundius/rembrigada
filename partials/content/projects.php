@@ -2,7 +2,8 @@
 $posts_per_page = -1;
 $paged = get_query_var('paged') ?: 1;
 $projects = new WP_Query(array(
-  'post_type' => 'project',
+  'post_type' => 'page',
+  'post_parent' => get_the_ID(),
   'posts_per_page' => $posts_per_page,
   'paged' => $paged,
   'orderby' => ['parent' => 'DESC', 'menu_order' => 'ASC']

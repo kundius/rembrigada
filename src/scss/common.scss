@@ -720,12 +720,16 @@ a.btn-plus,
         padding-top: 2px;
         padding-right: 20px;
         height: 48px;
+        box-shadow: 0 2px 0 #ad1d2d, inset 0.782px -4.938px 0px 0px rgba(173, 29, 45, 0.004);
     }
 }
 
 .page-bg-headline__button:hover {
     background-image: linear-gradient(0, #d5162a 0%, #fe2c53 50%, #d7172c 100%);
     box-shadow: 0 5px 0 #ab1526, 0px 3px 23.28px 0.72px rgba(255, 79, 99, 0.6),inset 0.782px -4.938px 0px 0px rgba(171, 21, 38, 0.004);
+    @media (max-width: $breakpoint-xsmall-max) {
+        box-shadow: 0 2px 0 #ab1526, 0px 3px 23.28px 0.72px rgba(255, 79, 99, 0.6),inset 0.782px -4.938px 0px 0px rgba(171, 21, 38, 0.004);
+    }
 }
 
 @keyframes headlineButtonGlare{

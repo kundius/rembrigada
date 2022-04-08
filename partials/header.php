@@ -35,6 +35,9 @@
             <a class="header-m-messengers__item header-m-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
                 <?php icon('whatsapp', 0.8) ?>
             </a>
+            <a class="header-m-messengers__item header-m-messengers__item_phone" href="tel:<?php echo $raw_phone ?>">
+                <?php icon('phone', 0.8) ?>
+            </a>
         </div>
 
         <div class="header__contacts">

@@ -247,6 +247,13 @@
   }
 }
 
+.header-m-messengers__item_phone {
+  background-color: rgb(213, 36, 55);
+  &:hover {
+    background-color: #d5162a;
+  }
+}
+
 .header__contacts {
     display: flex;
     align-items: flex-end;

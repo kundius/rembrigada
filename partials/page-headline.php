@@ -8,8 +8,7 @@
             <?php endif; ?>
 
             <h1 class="page-bg-headline__title">
-                <?php // the_title() ?>
-                Сделаем качественный премиальный ремонт Вашей квартиры точно в срок и сохраним Вашу нервную систему
+                <?php the_title() ?>
             </h1>
 
             <?php if (!empty($headline['after-title']['text'])): ?>

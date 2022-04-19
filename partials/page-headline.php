@@ -8,7 +8,7 @@
             <?php endif; ?>
 
             <h1 class="page-bg-headline__title">
-                <?php the_title() ?>
+                <?php echo (!empty($headline['title']) ? $headline['title'] : get_the_title()) ?>
             </h1>
 
             <?php if (!empty($headline['after-title']['text'])): ?>

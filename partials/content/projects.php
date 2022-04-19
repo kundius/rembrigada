@@ -8,6 +8,7 @@ $projects = new WP_Query(array(
   'paged' => $paged,
   'orderby' => ['parent' => 'DESC', 'menu_order' => 'ASC']
 ));
+// array_splice($gallery, 0, 8)
 ?>
 <?php while($projects->have_posts()): $projects->the_post(); ?>
 <div class="works-item">
@@ -18,7 +19,7 @@ $projects = new WP_Query(array(
         <div class="works-item__cell">
             <?php if ($gallery = get_field('gallery')): ?>
             <div class="works-item-images<?php if (count($gallery) == 1): ?> works-item-images_single<?php endif; ?>">
-                <?php foreach (array_splice($gallery, 0, 8) as $key => $item): ?>
+                <?php foreach ($gallery as $key => $item): ?>
                 <div class="works-item-image">
                     <a href="<?php echo $item['sizes']['large'] ?>" data-fslightbox="project-<?php echo get_the_ID() ?>" class="works-item-image__wrapper">
                         <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes'][$key == 0 ? 'w800h600' : 'w150h100'] ?>')"></span>

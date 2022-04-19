@@ -1,7 +1,7 @@
 <?php
 $services = new WP_Query(array(
   'post_type' => 'page',
-  'post_parent' => get_the_ID(),
+  'post_parent' => 4239,
   'order' => 'ASC',
   'orderby' => 'menu_order'
 ));

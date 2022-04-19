@@ -20,7 +20,7 @@ $projects = new WP_Query(array(
             <?php if ($gallery = get_field('gallery')): ?>
             <div class="works-item-images<?php if (count($gallery) == 1): ?> works-item-images_single<?php endif; ?>">
                 <?php foreach ($gallery as $key => $item): ?>
-                <div class="works-item-image" style="display: <?php echo ($key > 8 ? 'none' : 'block') ?>">
+                <div class="works-item-image" style="display: <?php echo ($key > 7 ? 'none' : 'block') ?>">
                     <a href="<?php echo $item['sizes']['large'] ?>" data-fslightbox="project-<?php echo get_the_ID() ?>" class="works-item-image__wrapper">
                         <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes'][$key == 0 ? 'w800h600' : 'w150h100'] ?>')"></span>
                         <span class="works-item-image__loupe"><?php icon('loupe') ?></span>

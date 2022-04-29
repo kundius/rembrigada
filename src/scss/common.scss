@@ -506,6 +506,17 @@ a.btn-plus,
     }
 }
 
+.page-bg-headline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    background: linear-gradient(90deg,#ddd 25%,hsla(0,0%,86.7%,0));
+}
+
 .page-bg-headline__inner {
     max-width: 1150px;
     @media (max-width: $breakpoint-medium-max) {

@@ -459,6 +459,9 @@ document.querySelectorAll('.js-form').forEach(function(form) {
           form.reset()
           form.classList.add('_validation-mail_sent')
           notifier.success(response.message)
+          if (typeof ym !== 'undefined') {
+            ym(31338108, 'reachGoal', 'ordercallon')
+          }
           setTimeout(() => {
             form.classList.remove('_validation-mail_sent')
           }, 5000)

@@ -286,7 +286,7 @@ add_shortcode('service-info', function($atts) {
 	$output .= '</div>';
 	$output .= '<div>';
 	$output .= '<label class="services-section-info__form-rules">';
-	$output .= '<input type="checkbox" name="rules" value="1" class="form-checkbox" />';
+	$output .= '<input type="checkbox" name="rules" checked value="1" class="form-checkbox" />';
 	$output .= '<span></span>';
 	$output .= 'Прочитал(-а) <a href="' . get_permalink(231) . '" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="' . get_permalink(3) . '" target="_blank">Политикой обработки персональных данных</a>';
 	$output .= '</label>';

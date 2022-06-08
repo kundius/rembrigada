@@ -77,7 +77,7 @@ Template Name: Контакты
                             </div>
                             <div class="p-contacts-form__row">
                                 <label class="p-contacts-form__rules">
-                                    <input type="checkbox" name="rules" value="1" class="form-checkbox" />
+                                    <input type="checkbox" name="rules" checked value="1" class="form-checkbox" />
                                     <span></span>
                                     Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
                                 </label>

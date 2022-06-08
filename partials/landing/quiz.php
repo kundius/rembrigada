@@ -331,7 +331,7 @@
                       </button>
                     </div>
                     <label class="quiz-feedback__rules">
-                      <input type="checkbox" name="rules" value="1" class="form-checkbox" />
+                      <input type="checkbox" name="rules" checked value="1" class="form-checkbox" />
                       <span></span>
                       Прочитал(-а) <a href="https://rembrigada116.ru/polzovatelskoe-soglashenie" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="https://rembrigada116.ru/privacy-policy" target="_blank">Политикой обработки персональных данных</a>
                     </label>

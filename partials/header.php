@@ -48,10 +48,14 @@
                         <?php icon('whatsapp-bulk', 1.4) ?>
                         WhatsApp
                     </a>
-                    <a class="header-messengers__button header-messengers__button_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
+                    <a class="header-messengers__button header-messengers__button_instagram" href="https://instagram.com/rembrigada116?igshid=YmMyMTA2M2Y=" target="_blank">
+                        <?php icon('instagram-bulk', 1) ?>
+                        Instagram
+                    </a>
+                    <!-- <a class="header-messengers__button header-messengers__button_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
                         <?php icon('telegram-bulk', 1) ?>
                         Telegram
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <a href="tel:<?php echo $raw_phone ?>" class="header-phone js-header-callback">

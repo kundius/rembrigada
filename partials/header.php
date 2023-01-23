@@ -29,8 +29,11 @@
         </nav>
 
         <div class="header-m-messengers">
-            <a class="header-m-messengers__item header-m-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
+            <!-- <a class="header-m-messengers__item header-m-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
                 <?php icon('telegram', 0.7) ?>
+            </a> -->
+            <a class="header-m-messengers__item header-m-messengers__item_instagram" href="https://instagram.com/rembrigada116?igshid=YmMyMTA2M2Y=" target="_blank">
+                <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/instagram-logo.svg" width="18" height="18" />
             </a>
             <a class="header-m-messengers__item header-m-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
                 <?php icon('whatsapp', 0.8) ?>

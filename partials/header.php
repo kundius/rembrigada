@@ -49,7 +49,7 @@
                         WhatsApp
                     </a>
                     <a class="header-messengers__button header-messengers__button_instagram" href="https://instagram.com/rembrigada116?igshid=YmMyMTA2M2Y=" target="_blank">
-                        <?php icon('instagram-bulk', 1) ?>
+                        <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/instagram-logo.svg" />
                         Instagram
                     </a>
                     <!-- <a class="header-messengers__button header-messengers__button_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">

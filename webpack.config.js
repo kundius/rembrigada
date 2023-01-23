@@ -14,6 +14,7 @@ module.exports = {
         PATHS.source + 'js/main.js',
         PATHS.source + 'scss/styles.scss',
         PATHS.source + 'img/sprite.svg',
+        PATHS.source + 'img/instagram-logo.svg',
         PATHS.source + 'img/commercial.svg',
         PATHS.source + 'img/houses.svg',
         PATHS.source + 'img/apartments.svg',

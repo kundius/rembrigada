@@ -43,33 +43,14 @@
             </a>
         </div>
 
-        <div class="header__contacts">
-            <div class="header-messengers">
-                <div class="header-messengers__label">Задайте вопрос напрямую в:</div>
-                <div class="header-messengers__buttons">
-                    <a class="header-messengers__button header-messengers__button_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
-                        <?php icon('whatsapp-bulk', 1.4) ?>
-                        WhatsApp
-                    </a>
-                    <a class="header-messengers__button header-messengers__button_instagram" href="https://instagram.com/rembrigada116?igshid=YmMyMTA2M2Y=" target="_blank">
-                        <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/instagram-logo.svg" width="16" height="16" style="margin-right: 2px" />
-                        Instagram
-                    </a>
-                    <!-- <a class="header-messengers__button header-messengers__button_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
-                        <?php icon('telegram-bulk', 1) ?>
-                        Telegram
-                    </a> -->
-                </div>
+        <a href="tel:<?php echo $raw_phone ?>" class="header-phone js-header-callback">
+            <div class="header-phone__number">
+                <span class="header-phone__icon">
+                    <?php icon('phone') ?>
+                </span>
+                <?php the_field('phone', 'options') ?>
             </div>
-            <a href="tel:<?php echo $raw_phone ?>" class="header-phone js-header-callback">
-                <div class="header-phone__number">
-                    <span class="header-phone__icon">
-                        <?php icon('phone') ?>
-                    </span>
-                    <?php the_field('phone', 'options') ?>
-                </div>
-                <div class="header-phone__label">Перезвоните мне</div>
-            </a>
-        </div>
+            <div class="header-phone__label">Перезвоните мне</div>
+        </a>
     </div>
 </header>

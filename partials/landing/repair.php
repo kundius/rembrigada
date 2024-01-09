@@ -5,7 +5,7 @@
     <div class="landing-repair__title"><?php echo $data['title'] ?></div>
     <?php endif; ?>
     <div class="landing-repair__grid">
-      <?php foreach ($data['items'] as $item): ?>
+      <?php foreach ($data['list'] as $item): ?>
       <div class="landing-repair__cell">
         <div class="landing-repair-item">
           <div class="landing-repair-item__image">

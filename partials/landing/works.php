@@ -8,7 +8,7 @@
     <div class="landing-works__description"><?php echo $data['description'] ?></div>
     <?php endif; ?>
     <div class="landing-works__grid">
-      <?php foreach ($data['items'] as $item): ?>
+      <?php foreach ($data['list'] as $item): ?>
       <div class="landing-works__cell">
         <div class="landing-works-item">
           <div class="landing-works-item__gallery">

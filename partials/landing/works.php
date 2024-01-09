@@ -17,7 +17,7 @@
                 <?php foreach ($item['gallery'] as $slide): ?>
                 <div class="landing-works-gallery__slide">
                   <img
-                    class="landing-works-gallery__image tns-lazy-img"
+                    class="landing-works-gallery__image"
                     src="<?php echo $slide['sizes']['w468h364'] ?>"
                     alt="<?php echo esc_html($slide['title']) ?>"
                   />

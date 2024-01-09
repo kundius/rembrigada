@@ -1714,6 +1714,7 @@ a.landing-repair-item__button:hover {
 }
 
 .landing-works-item__gallery {
+    position: relative;
     .tns-controls {
         display: none;
     }
@@ -1739,6 +1740,7 @@ a.landing-repair-item__button:hover {
             padding: 0;
             background: transparent;
             border: none;
+            cursor: pointer;
             &::before {
                 content: '';
                 left: 50%;
@@ -1895,6 +1897,7 @@ a.landing-works__more-link {
     padding-right: 80px;
     width: 294px;
     max-width: 100%;
+    text-decoration: none;
 }
 
 a.landing-works__more-link::before {
@@ -1909,8 +1912,8 @@ a.landing-works__more-link::before {
 
 a.landing-works__more-link::after {
     content: '';
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
     position: absolute;

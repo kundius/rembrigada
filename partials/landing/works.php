@@ -12,33 +12,31 @@
       <div class="landing-works__cell">
         <div class="landing-works-item">
           <div class="landing-works-item__gallery">
-            <div class="slideshow js-slideshow">
-                <div class="slideshow-slides js_slides">
-                  <?php foreach ($item['gallery'] as $slide): ?>
-                  <div class="slideshow-slide">
-                    <img
-                      class="slideshow-slide__image js-image-cover tns-lazy-img"
-                      <?php echo srcset($slide['image'], ['w468h364', 'w800h600'], true) ?>
-                      data-src="<?php echo $slide['image']['url'] ?>"
-                      alt="<?php echo esc_html($slide['title']) ?>"
-                    />
-                  </div>
-                  <?php endforeach; ?>
+            <div class="landing-works-gallery js-landing-works-gallery">
+              <div class="landing-works-gallery__slides js_slides">
+                <?php foreach ($item['gallery'] as $slide): ?>
+                <div class="landing-works-gallery__slide">
+                  <img
+                    class="landing-works-gallery__image tns-lazy-img"
+                    src="<?php echo $slide['sizes']['w468h364'] ?>"
+                    alt="<?php echo esc_html($slide['title']) ?>"
+                  />
                 </div>
-                <div class="slideshow-nav js_dots"></div>
+                <?php endforeach; ?>
+              </div>
             </div>
             <div class="landing-works-item__labels">
-              <div class="landing-works-item__area"><?php echo $works['area'] ?></div>
-              <div class="landing-works-item__term"><?php echo $works['term'] ?></div>
+              <div class="landing-works-item__area"><?php echo $item['area'] ?></div>
+              <div class="landing-works-item__term"><?php echo $item['term'] ?></div>
             </div>
           </div>
           <div class="landing-works-item__inner">
-            <div class="landing-works-item__title"><?php echo $works['name'] ?></div>
-            <div class="landing-works-item__address"><?php echo $works['address'] ?></div>
-            <div class="landing-works-item__price"><?php echo $works['price'] ?></div>
-            <?php if (!empty($data['button']['text'])): ?>
+            <div class="landing-works-item__title"><?php echo $item['name'] ?></div>
+            <div class="landing-works-item__address"><?php echo $item['address'] ?></div>
+            <div class="landing-works-item__price"><?php echo $item['price'] ?></div>
+            <?php if (!empty($item['button']['text'])): ?>
             <a href="<?php echo $data['button']['link'] ?>" class="landing-works-item__button">
-              <?php echo $data['button']['text'] ?>
+              <?php echo $item['button']['text'] ?>
             </a>
             <?php endif; ?>
           </div>

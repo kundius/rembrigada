@@ -1534,9 +1534,9 @@ a.landing-button,
 
 
 .landing-repair {
-    padding: 80px 0 100px;
+    padding: 100px 0;
     @media (max-width: $breakpoint-xsmall-max) {
-        padding: 40px 0 50px;
+        padding: 50px 0;
     }
 }
 
@@ -1598,13 +1598,12 @@ a.landing-button,
     top: 24px;
     display: flex;
     gap: 12px;
+    z-index: 20;
 }
 
 .landing-repair-item__term {
     border-radius: 6px;
-    background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(0,0,0) 100%);
-    background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(0,0,0) 100%);
-    background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(0,0,0) 100%);
+    background-image: linear-gradient(180deg, #ffb700 0%, #ffd700 100%);
     display: inline-block;
     padding: 0 16px;
     line-height: 32px;
@@ -1622,8 +1621,8 @@ a.landing-button,
     color: #010101;
     font-weight: bold;
     line-height: 1.2;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
     border-bottom: 1px solid #e8e8e8;
 }
 
@@ -1638,12 +1637,12 @@ a.landing-button,
     color: #e1182d;
     font-weight: bold;
     line-height: 1;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 a.landing-repair-item__button {
     display: block;
-    margin-top: 20px;
+    margin-top: 22px;
     text-decoration: none;
     text-align: center;
     line-height: 46px;
@@ -1651,7 +1650,7 @@ a.landing-repair-item__button {
     border-radius: 24px;
     font-weight: bold;
     color: #ed3947;
-    font-size: 12px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 

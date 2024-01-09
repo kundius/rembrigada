@@ -155,6 +155,17 @@ forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
   }
 })
 
+forEach(document.querySelectorAll('.js-landing-works-gallery'), function(wrapper) {
+  const container = wrapper.querySelector('.js_slides')
+  const slider = tns({
+    lazyload: true,
+    container,
+    prevButton: false,
+    nextButton: false,
+    navPosition: 'bottom'
+  })
+})
+
 forEach(document.querySelectorAll('.js-project-details'), function(wrapper) {
   const container = wrapper.querySelector('.js_slides')
   const navContainer = wrapper.querySelector('.js_nav')

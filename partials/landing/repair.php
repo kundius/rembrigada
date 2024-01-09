@@ -15,16 +15,16 @@
             <img src="https://via.placeholder.com/468x364" alt="" loading="lazy">
             <?php endif; ?>
             <div class="landing-repair-item__labels">
-              <div class="landing-repair-item__term"><?php echo $repair['term'] ?></div>
+              <div class="landing-repair-item__term"><?php echo $item['term'] ?></div>
             </div>
           </div>
           <div class="landing-repair-item__inner">
-            <div class="landing-repair-item__title"><?php echo $repair['name'] ?></div>
-            <div class="landing-repair-item__description"><?php echo $repair['description'] ?></div>
-            <div class="landing-repair-item__price"><?php echo $repair['price'] ?></div>
-            <?php if (!empty($data['button']['text'])): ?>
-            <a href="<?php echo $data['button']['link'] ?>" class="landing-repair-item__button">
-              <?php echo $data['button']['text'] ?>
+            <div class="landing-repair-item__title"><?php echo $item['name'] ?></div>
+            <div class="landing-repair-item__description"><?php echo $item['description'] ?></div>
+            <div class="landing-repair-item__price"><?php echo $item['price'] ?></div>
+            <?php if (!empty($item['button']['text'])): ?>
+            <a href="<?php echo $item['button']['link'] ?>" class="landing-repair-item__button">
+              <?php echo $item['button']['text'] ?>
             </a>
             <?php endif; ?>
           </div>

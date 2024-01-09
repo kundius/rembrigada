@@ -1531,3 +1531,125 @@ a.landing-button,
     margin-bottom: 40px;
 }
 
+
+
+.landing-repair {
+    padding: 80px 0 100px;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding: 40px 0 50px;
+    }
+}
+
+.landing-repair__title {
+    font-weight: bold;
+    line-height: 1;
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.landing-repair__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -40px;
+    margin-top: -40px;
+}
+
+.landing-repair__cell {
+    width: 33.33%;
+    padding-left: 40px;
+    padding-top: 40px;
+    @media (max-width: $breakpoint-medium-max) {
+        width: 50%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+    }
+}
+
+.landing-repair-item {
+    display: flex;
+    flex-flow: column;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);
+}
+
+.landing-repair-item__image {
+    position: relative;
+}
+
+.landing-repair-item__image img {
+    display: block;
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    z-index: 10;
+}
+
+.landing-repair-item__labels {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.landing-repair-item__term {
+    border-radius: 6px;
+    background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(0,0,0) 100%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(0,0,0) 100%);
+    background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(0,0,0) 100%);
+    display: inline-block;
+    padding: 0 16px;
+    line-height: 32px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.139px 0.99px 0px rgba(0, 29, 47, 0.25);
+}
+
+.landing-repair-item__inner {
+    padding: 20px 24px 30px;
+}
+
+.landing-repair-item__title {
+    font-size: 18px;
+    color: #010101;
+    font-weight: bold;
+    line-height: 1.2;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.landing-repair-item__description {
+    font-size: 15px;
+    color: rgb(99, 99, 99);
+    line-height: 1.333;
+}
+
+.landing-repair-item__price {
+    font-size: 24px;
+    color: #e1182d;
+    font-weight: bold;
+    line-height: 1;
+    margin-top: 16px;
+}
+
+.landing-repair-item__button {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 46px;
+    border: 1px solid #e1182d;
+    border-radius: 24px;
+    font-weight: bold;
+    color: #ed3947;
+    font-size: 24px;
+    text-transform: uppercase;
+}

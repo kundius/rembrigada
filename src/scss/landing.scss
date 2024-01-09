@@ -1738,6 +1738,7 @@ a.landing-repair-item__button:hover {
             position: relative;
             padding: 0;
             background: transparent;
+            border: none;
             &::before {
                 content: '';
                 left: 50%;
@@ -1878,10 +1879,11 @@ a.landing-works-item__button:hover {
     justify-content: center;
 }
 
-.landing-works__more-link {
+a.landing-works__more-link {
     position: relative;
     display: inline-block;
     font-size: 16px;
+    font-weight: bold;
     color: #fff;
     text-transform: uppercase;
     text-align: center;
@@ -1891,9 +1893,11 @@ a.landing-works-item__button:hover {
     border-radius: 24px;
     padding-left: 24px;
     padding-right: 80px;
+    width: 294px;
+    max-width: 100%;
 }
 
-.landing-works__more-link::before {
+a.landing-works__more-link::before {
     content: '';
     right: 52px;
     top: 0;
@@ -1903,7 +1907,7 @@ a.landing-works-item__button:hover {
     position: absolute;
 }
 
-.landing-works__more-link::after {
+a.landing-works__more-link::after {
     content: '';
     width: 10px;
     height: 10px;

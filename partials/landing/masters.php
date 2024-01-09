@@ -14,14 +14,11 @@
             <?php else: ?>
             <img src="https://via.placeholder.com/468x364" alt="" loading="lazy">
             <?php endif; ?>
-            <div class="landing-masters-item__labels">
-              <div class="landing-masters-item__term"><?php echo $masters['term'] ?></div>
-            </div>
           </div>
           <div class="landing-masters-item__inner">
-            <div class="landing-masters-item__name"><?php echo $masters['name'] ?></div>
-            <div class="landing-masters-item__specialization"><?php echo $masters['specialization'] ?></div>
-            <div class="landing-masters-item__experience"><?php echo $masters['experience'] ?></div>
+            <div class="landing-masters-item__name"><?php echo $item['name'] ?></div>
+            <div class="landing-masters-item__specialization"><?php echo $item['specialization'] ?></div>
+            <div class="landing-masters-item__experience"><?php echo $item['experience'] ?></div>
           </div>
         </div>
       </div>

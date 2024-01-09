@@ -846,6 +846,13 @@ function callback_block_assets() {
 		filemtime(dirname(__FILE__) . '/blocks/landing/like-work.css')
 	);
 
+	wp_enqueue_script(
+ 		'block-works-script',
+		get_template_directory_uri() . '/blocks/landing/works.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/works.js')
+	);
+
 	wp_enqueue_style(
 		'block-works-style',
 		get_template_directory_uri() . '/blocks/landing/works.css',
@@ -853,11 +860,11 @@ function callback_block_assets() {
 		filemtime(dirname(__FILE__) . '/blocks/landing/works.css')
 	);
 
-	wp_enqueue_style(
-		'block-repair-style',
-		get_template_directory_uri() . '/blocks/landing/repair.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/repair.css')
+	wp_enqueue_script(
+ 		'block-masters-script',
+		get_template_directory_uri() . '/blocks/landing/masters.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/masters.js')
 	);
 
 	wp_enqueue_style(
@@ -865,6 +872,20 @@ function callback_block_assets() {
 		get_template_directory_uri() . '/blocks/landing/masters.css',
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/landing/masters.css')
+	);
+
+	wp_enqueue_script(
+ 		'block-repair-script',
+		get_template_directory_uri() . '/blocks/landing/repair.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/repair.js')
+	);
+
+	wp_enqueue_style(
+		'block-repair-style',
+		get_template_directory_uri() . '/blocks/landing/repair.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/landing/repair.css')
 	);
 }
 

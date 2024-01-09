@@ -158,11 +158,16 @@ forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
 forEach(document.querySelectorAll('.js-landing-works-gallery'), function(wrapper) {
   const container = wrapper.querySelector('.js_slides')
   const slider = tns({
-    lazyload: false,
-    container,
-    prevButton: false,
-    nextButton: false,
-    navPosition: 'bottom'
+    container: wrapper,
+    items: 1,
+    loop: true,
+    slideBy: 'page',
+    mouseDrag: true,
+    // lazyload: false,
+    // container,
+    // prevButton: false,
+    // nextButton: false,
+    // navPosition: 'bottom'
   })
 })
 

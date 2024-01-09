@@ -1716,7 +1716,11 @@ a.landing-repair-item__button:hover {
 
 .landing-works-gallery__slide {}
 
-.landing-works-gallery__image {}
+.landing-works-gallery__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 .landing-works-item__labels {}
 

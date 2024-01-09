@@ -13,17 +13,15 @@
         <div class="landing-works-item">
           <div class="landing-works-item__gallery">
             <div class="landing-works-gallery js-landing-works-gallery">
-              <div class="landing-works-gallery__slides js_slides">
-                <?php foreach ($item['gallery'] as $slide): ?>
-                <div class="landing-works-gallery__slide">
-                  <img
-                    class="landing-works-gallery__image"
-                    src="<?php echo $slide['sizes']['w468h364'] ?>"
-                    alt="<?php echo esc_html($slide['title']) ?>"
-                  />
-                </div>
-                <?php endforeach; ?>
+              <?php foreach ($item['gallery'] as $slide): ?>
+              <div class="landing-works-gallery__slide">
+                <img
+                  class="landing-works-gallery__image"
+                  src="<?php echo $slide['sizes']['w468h364'] ?>"
+                  alt="<?php echo esc_html($slide['title']) ?>"
+                />
               </div>
+              <?php endforeach; ?>
             </div>
             <div class="landing-works-item__labels">
               <div class="landing-works-item__area"><?php echo $item['area'] ?></div>

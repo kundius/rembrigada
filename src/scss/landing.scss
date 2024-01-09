@@ -1560,6 +1560,7 @@ a.landing-button,
     width: 33.33%;
     padding-left: 40px;
     padding-top: 40px;
+    display: flex;
     @media (max-width: $breakpoint-medium-max) {
         width: 50%;
     }
@@ -1640,7 +1641,7 @@ a.landing-button,
     margin-top: 16px;
 }
 
-.landing-repair-item__button {
+a.landing-repair-item__button {
     display: block;
     margin-top: 20px;
     text-decoration: none;
@@ -1650,6 +1651,11 @@ a.landing-button,
     border-radius: 24px;
     font-weight: bold;
     color: #ed3947;
-    font-size: 24px;
+    font-size: 12px;
     text-transform: uppercase;
+}
+
+a.landing-repair-item__button:hover {
+    color: #fff;
+    background: #ed3947;
 }

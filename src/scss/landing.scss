@@ -1708,9 +1708,25 @@ a.landing-repair-item__button:hover {
     box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);
 }
 
-.landing-works-item__gallery {}
+.landing-works-item__gallery {
+    .tns-controls {
+        display: none;
+    }
+    .tns-liveregion {
+        display: none;
+    }
+    .tns-outer {
+        position: relative;
+    }
+    .tns-nav {
+        position: absolute;
+        button {
+            &.tns-nav-active {
 
-.landing-works-gallery {}
+            }
+        }
+    }
+}
 
 .landing-works-gallery__slides {}
 

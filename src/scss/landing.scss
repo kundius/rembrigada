@@ -1658,3 +1658,82 @@ a.landing-repair-item__button:hover {
     color: #fff;
     background: #ed3947;
 }
+
+.landing-works {
+    padding: 100px 0;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding: 50px 0;
+    }
+}
+
+.landing-works__title {
+    font-weight: bold;
+    line-height: 1;
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.landing-works__description {}
+
+.landing-works__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -40px;
+    margin-top: -40px;
+}
+
+.landing-works__cell {
+    width: 33.33%;
+    padding-left: 40px;
+    padding-top: 40px;
+    display: flex;
+    @media (max-width: $breakpoint-medium-max) {
+        width: 50%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+    }
+}
+
+.landing-works-item {
+    display: flex;
+    flex-flow: column;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);
+}
+
+.landing-works-item__gallery {}
+
+.landing-works-gallery {}
+
+.landing-works-gallery__slides {}
+
+.landing-works-gallery__slide {}
+
+.landing-works-gallery__image {}
+
+.landing-works-item__labels {}
+
+.landing-works-item__area {}
+
+.landing-works-item__term {}
+
+.landing-works-item__inner {}
+
+.landing-works-item__title {}
+
+.landing-works-item__address {}
+
+.landing-works-item__price {}
+
+.landing-works-item__button {}
+
+.landing-works__more {}
+
+.landing-works__more-link {}

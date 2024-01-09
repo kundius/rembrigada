@@ -144,13 +144,15 @@ forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
     nextButton,
     navPosition: 'bottom'
   })
-  slider.events.on('transitionStart', (e) => {
-    if (e.displayIndex < 10) {
-      el_index.innerHTML = '0' + e.displayIndex
-    } else {
-      el_index.innerHTML = e.displayIndex
-    }
-  })
+  if (el_index) {
+    slider.events.on('transitionStart', (e) => {
+      if (e.displayIndex < 10) {
+        el_index.innerHTML = '0' + e.displayIndex
+      } else {
+        el_index.innerHTML = e.displayIndex
+      }
+    })
+  }
 })
 
 forEach(document.querySelectorAll('.js-project-details'), function(wrapper) {

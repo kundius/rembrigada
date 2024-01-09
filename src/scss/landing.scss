@@ -1674,7 +1674,12 @@ a.landing-repair-item__button:hover {
     margin-bottom: 40px;
 }
 
-.landing-works__description {}
+.landing-works__description {
+    line-height: 1;
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 40px;
+}
 
 .landing-works__grid {
     display: flex;
@@ -1722,6 +1727,7 @@ a.landing-repair-item__button:hover {
         position: absolute;
         z-index: 20;
         left: 50%;
+        transform: translateX(-50%);
         bottom: 12px;
         display: flex;
         gap: 8px;
@@ -1731,6 +1737,7 @@ a.landing-repair-item__button:hover {
             height: 12px;
             position: relative;
             padding: 0;
+            background: transparent;
             &::before {
                 content: '';
                 left: 50%;
@@ -1750,10 +1757,6 @@ a.landing-repair-item__button:hover {
         }
     }
 }
-
-.landing-works-gallery__slides {}
-
-.landing-works-gallery__slide {}
 
 .landing-works-gallery__image {
     display: block;
@@ -1819,7 +1822,7 @@ a.landing-repair-item__button:hover {
 .landing-works-item__title {
     font-weight: bold;
     line-height: 1;
-    font-size: 36px;
+    font-size: 18px;
     color: #333333;
     margin-bottom: 40px;
 }
@@ -1869,6 +1872,45 @@ a.landing-works-item__button:hover {
     background: #ed3947;
 }
 
-.landing-works__more {}
+.landing-works__more {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
 
-.landing-works__more-link {}
+.landing-works__more-link {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 45px;
+    border: 2px solid #ed3947;
+    background: #f2747e;
+    border-radius: 24px;
+    padding-left: 24px;
+    padding-right: 80px;
+}
+
+.landing-works__more-link::before {
+    content: '';
+    right: 52px;
+    top: 0;
+    width: 2px;
+    bottom: 0;
+    background: #ed3947;
+    position: absolute;
+}
+
+.landing-works__more-link::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    right: 24px;
+}

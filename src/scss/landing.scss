@@ -1900,6 +1900,10 @@ a.landing-works__more-link {
     text-decoration: none;
 }
 
+a.landing-works__more-link:hover {
+    background: #ed3947;
+}
+
 a.landing-works__more-link::before {
     content: '';
     right: 52px;

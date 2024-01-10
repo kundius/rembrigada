@@ -1534,9 +1534,9 @@ a.landing-button,
 
 
 .landing-repair {
-    padding: 100px 0;
+    margin: 100px 0;
     @media (max-width: $breakpoint-xsmall-max) {
-        padding: 50px 0;
+        margin: 50px 0;
     }
 }
 
@@ -1660,9 +1660,9 @@ a.landing-repair-item__button:hover {
 }
 
 .landing-works {
-    padding: 100px 0;
+    margin: 100px 0;
     @media (max-width: $breakpoint-xsmall-max) {
-        padding: 50px 0;
+        margin: 50px 0;
     }
 }
 
@@ -1929,9 +1929,9 @@ a.landing-works__more-link::after {
 }
 
 .landing-masters {
-    padding: 100px 0;
+    margin: 100px 0;
     @media (max-width: $breakpoint-xsmall-max) {
-        padding: 50px 0;
+        margin: 50px 0;
     }
 }
 

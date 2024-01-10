@@ -1,12 +1,14 @@
 <?php $data = get_field('works', 'option'); ?>
 <section class="landing-works">
   <div class="container">
-    <?php if (!empty($data['title'])): ?>
-    <div class="landing-works__title"><?php echo $data['title'] ?></div>
-    <?php endif; ?>
-    <?php if (!empty($data['description'])): ?>
-    <div class="landing-works__description"><?php echo $data['description'] ?></div>
-    <?php endif; ?>
+    <div class="landing-works__headline">
+      <?php if (!empty($data['title'])): ?>
+      <div class="landing-works__title"><?php echo $data['title'] ?></div>
+      <?php endif; ?>
+      <?php if (!empty($data['description'])): ?>
+      <div class="landing-works__description"><?php echo $data['description'] ?></div>
+      <?php endif; ?>
+    </div>
     <div class="landing-works__grid">
       <?php foreach ($data['list'] as $item): ?>
       <div class="landing-works__cell">

@@ -1666,19 +1666,22 @@ a.landing-repair-item__button:hover {
     }
 }
 
+.landing-works__headline {
+    margin-bottom: 36px;
+}
+
 .landing-works__title {
     font-weight: bold;
     line-height: 1;
     font-size: 36px;
     color: #333333;
-    margin-bottom: 16px;
 }
 
 .landing-works__description {
     line-height: 1;
     font-size: 18px;
     color: #333333;
-    margin-bottom: 36px;
+    margin-top: 16px;
 }
 
 .landing-works__grid {

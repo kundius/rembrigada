@@ -1902,6 +1902,7 @@ a.landing-works__more-link {
 
 a.landing-works__more-link:hover {
     background: #ed3947;
+    color: #fff;
 }
 
 a.landing-works__more-link::before {
@@ -1924,4 +1925,81 @@ a.landing-works__more-link::after {
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
     right: 24px;
+}
+
+.landing-masters {
+    padding: 100px 0;
+    @media (max-width: $breakpoint-xsmall-max) {
+        padding: 50px 0;
+    }
+}
+
+.landing-masters__title {
+    font-weight: bold;
+    line-height: 1;
+    font-size: 36px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.landing-masters__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -40px;
+    margin-top: -40px;
+}
+
+.landing-masters__cell {
+    width: 33.33%;
+    padding-left: 40px;
+    padding-top: 40px;
+    display: flex;
+    @media (max-width: $breakpoint-medium-max) {
+        width: 50%;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        width: 100%;
+    }
+}
+
+.landing-masters-item {}
+
+.landing-masters-item__image {
+    border-radius: 6px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);
+}
+
+.landing-masters-item__inner {
+    padding: 16px;
+}
+
+.landing-masters-item__name {
+    text-align: center;
+    font-size: 18px;
+    color: #010101;
+    line-height: 1;
+}
+
+.landing-masters-item__specialization {
+    text-align: center;
+    font-size: 15px;
+    color: #636363;
+    line-height: 1;
+}
+
+.landing-masters-item__experience {
+    text-align: center;
+    width: 132px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    border-radius: 6px;
+    background-image: linear-gradient(180deg, #ffb700 0%, #ffd700 100%);
+    padding: 0 12px;
+    line-height: 32px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0.139px 0.99px 0px rgba(0, 29, 47, 0.25);
 }

@@ -1951,7 +1951,7 @@ a.landing-works__more-link::after {
 }
 
 .landing-masters__cell {
-    width: 33.33%;
+    width: 25%;
     padding-left: 40px;
     padding-top: 40px;
     display: flex;
@@ -1963,9 +1963,20 @@ a.landing-works__more-link::after {
     }
 }
 
-.landing-masters-item {}
+.landing-masters-item {
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .landing-masters-item__image {
+}
+
+.landing-masters-item__image img {
+    display: block;
+    width: 100%;
+    height: auto;
     border-radius: 6px;
     background-color: rgb(255, 255, 255);
     box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);

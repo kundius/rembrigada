@@ -1671,14 +1671,14 @@ a.landing-repair-item__button:hover {
     line-height: 1;
     font-size: 36px;
     color: #333333;
-    margin-bottom: 40px;
+    margin-bottom: 16px;
 }
 
 .landing-works__description {
     line-height: 1;
     font-size: 18px;
     color: #333333;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
 }
 
 .landing-works__grid {
@@ -1824,10 +1824,10 @@ a.landing-repair-item__button:hover {
 
 .landing-works-item__title {
     font-weight: bold;
-    line-height: 1;
+    line-height: 1.2;
     font-size: 18px;
     color: #333333;
-    margin-bottom: 40px;
+    margin-bottom: 18px;
 }
 
 .landing-works-item__address {
@@ -1853,7 +1853,7 @@ a.landing-repair-item__button:hover {
     color: #e1182d;
     font-weight: bold;
     line-height: 1;
-    margin-top: 20px;
+    margin-top: 36px;
 }
 
 a.landing-works-item__button {
@@ -1983,7 +1983,7 @@ a.landing-works__more-link::after {
 }
 
 .landing-masters-item__inner {
-    padding: 16px;
+    padding: 18px;
 }
 
 .landing-masters-item__name {
@@ -1991,6 +1991,7 @@ a.landing-works__more-link::after {
     font-size: 18px;
     color: #010101;
     line-height: 1;
+    font-weight: bold;
 }
 
 .landing-masters-item__specialization {
@@ -1998,6 +1999,7 @@ a.landing-works__more-link::after {
     font-size: 15px;
     color: #636363;
     line-height: 1;
+    margin-top: 5px;
 }
 
 .landing-masters-item__experience {
@@ -2009,8 +2011,9 @@ a.landing-works__more-link::after {
     border-radius: 6px;
     background-image: linear-gradient(180deg, #ffb700 0%, #ffd700 100%);
     padding: 0 12px;
-    line-height: 32px;
+    line-height: 28px;
     font-size: 14px;
     color: rgb(255, 255, 255);
     text-shadow: 0.139px 0.99px 0px rgba(0, 29, 47, 0.25);
+    margin-top: 10px;
 }

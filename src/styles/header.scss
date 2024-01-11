@@ -131,14 +131,6 @@
     }
 }
 
-.header-toggle__label_open {
-    display: block;
-}
-
-.header-toggle__label_close {
-    display: none;
-}
-
 .header-toggle_opened {
     left: 263px;
     .header-toggle__icon {
@@ -154,13 +146,6 @@
         &::after {
             transform: translate(-50%, -50%) rotate(45deg);
         }
-    }
-    .header-toggle__label_open {
-        display: none;
-    }
-
-    .header-toggle__label_close {
-        display: block;
     }
 }
 

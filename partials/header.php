@@ -4,8 +4,7 @@
     <div class="container">
         <div class="header-toggle">
             <div class="header-toggle__icon"></div>
-            <div class="header-toggle__label header-toggle__label_open">Меню</div>
-            <div class="header-toggle__label header-toggle__label_close">Закрыть</div>
+            <div class="header-toggle__label">Меню</div>
         </div>
 
         <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-dark.png" alt="<?php echo get_bloginfo('description') ?>"></a>

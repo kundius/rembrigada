@@ -8,20 +8,21 @@ import Swiper, { Autoplay, EffectCoverflow, EffectCreative, Pagination, Navigati
 
 const contentMastersSwipers = document.querySelectorAll('.content-masters-swiper') || []
 contentMastersSwipers.forEach((el) => {
-    const container = el.querySelector('.swiper')
-    const nextEl = el.querySelector('.swiper-button-next')
-    const prevEl = el.querySelector('.swiper-button-prev')
-    new Swiper(container, {
-        modules: [Navigation],
-        slidesPerView: 3,
-        spaceBetween: 40,
-        // pagination: {
-        //     el: ".swiper-pagination",
-        //     clickable: true,
-        // },
-        navigation: {
-            nextEl,
-            prevEl,
-        },
-    });
+    console.log(el)
+    // const container = el.querySelector('.swiper')
+    // const nextEl = el.querySelector('.swiper-button-next')
+    // const prevEl = el.querySelector('.swiper-button-prev')
+    // new Swiper(container, {
+    //     modules: [Navigation],
+    //     slidesPerView: 3,
+    //     spaceBetween: 40,
+    //     // pagination: {
+    //     //     el: ".swiper-pagination",
+    //     //     clickable: true,
+    //     // },
+    //     navigation: {
+    //         nextEl,
+    //         prevEl,
+    //     },
+    // });
 })

@@ -35,11 +35,21 @@ contentMastersSwipers.forEach((el) => {
     const prevEl = el.querySelector('.swiper-button-prev')
     new Swiper(container, {
         modules: [Navigation],
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 40,
         navigation: {
             nextEl,
             prevEl,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
         },
     });
 })

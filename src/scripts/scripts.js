@@ -155,22 +155,6 @@ forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
   }
 })
 
-forEach(document.querySelectorAll('.js-content-works-gallery'), function(wrapper) {
-  const container = wrapper.querySelector('.js_slides')
-  const slider = tns({
-    container: wrapper,
-    items: 1,
-    loop: true,
-    slideBy: 'page',
-    mouseDrag: true,
-    // lazyload: false,
-    // container,
-    // prevButton: false,
-    // nextButton: false,
-    // navPosition: 'bottom'
-  })
-})
-
 forEach(document.querySelectorAll('.js-project-details'), function(wrapper) {
   const container = wrapper.querySelector('.js_slides')
   const navContainer = wrapper.querySelector('.js_nav')

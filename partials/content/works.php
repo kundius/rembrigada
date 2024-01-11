@@ -4,17 +4,20 @@
     <?php foreach ($data['list'] as $item): ?>
     <div class="content-works__cell">
       <div class="content-works-item">
-        <div class="content-works-item__gallery">
-          <div class="content-works-gallery js-content-works-gallery">
-            <?php foreach ($item['gallery'] as $slide): ?>
-            <div class="content-works-gallery__slide">
-              <img
-                class="content-works-gallery__image"
-                src="<?php echo $slide['sizes']['w468h364'] ?>"
-                alt="<?php echo esc_html($slide['title']) ?>"
-              />
+        <div class="content-works-item__gallery content-works-swiper">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <?php foreach ($item['gallery'] as $slide): ?>
+              <div class="swiper-slide">
+                <?php if ($image = $item['image']): ?>
+                <img src="<?php echo $slide['sizes']['w468h364'] ?>" alt="<?php echo esc_html($slide['title']) ?>" loading="lazy">
+                <?php else: ?>
+                <img src="https://via.placeholder.com/468x364" alt="" loading="lazy">
+                <?php endif; ?>
+              </div>
+              <?php endforeach; ?>
             </div>
-            <?php endforeach; ?>
+            <div class="swiper-pagination"></div>
           </div>
           <div class="content-works-item__labels">
             <div class="content-works-item__area"><?php echo $item['area'] ?></div>

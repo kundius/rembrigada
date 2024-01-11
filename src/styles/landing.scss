@@ -1916,10 +1916,14 @@ a.content-works__more-link::after {
 .content-masters .swiper-button-next {
     background: rgba(0, 0, 0, 0.3);
     color: #fff;
-    height: 48px;
-    width: 48px;
+    height: 44px;
+    width: 44px;
     // right: 0;
     transform: translateY(-66px);
+}
+
+.content-masters .swiper-button-next:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .content-masters .swiper-button-next::after {
@@ -1929,14 +1933,18 @@ a.content-works__more-link::after {
 .content-masters .swiper-button-prev {
     background: rgba(0, 0, 0, 0.3);
     color: #fff;
-    height: 48px;
-    width: 48px;
+    height: 44px;
+    width: 44px;
     // left: 0;
     transform: translateY(-66px);
 }
 
 .content-masters .swiper-button-prev::after {
     font-size: 24px;
+}
+
+.content-masters .swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .content-masters-item {

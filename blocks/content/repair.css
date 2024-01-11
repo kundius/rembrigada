@@ -1,4 +1,4 @@
-.wp-block-landing-repair {
+.wp-block-content-repair {
 	background: #6d6e8a;
 	padding: 40px;
 	color: #ffffff;
@@ -8,8 +8,8 @@
 	position: relative;
 }
 
-.wp-block-landing-repair::before {
-	content: 'Лендинг блок';
+.wp-block-content-repair::before {
+	content: 'Контент блок';
 	position: absolute;
 	left: 10px;
 	top: 10px;

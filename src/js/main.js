@@ -155,7 +155,7 @@ forEach(document.querySelectorAll('.js-slideshow'), function(wrapper) {
   }
 })
 
-forEach(document.querySelectorAll('.js-landing-works-gallery'), function(wrapper) {
+forEach(document.querySelectorAll('.js-content-works-gallery'), function(wrapper) {
   const container = wrapper.querySelector('.js_slides')
   const slider = tns({
     container: wrapper,

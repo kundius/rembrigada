@@ -1533,14 +1533,14 @@ a.landing-button,
 
 
 
-.landing-repair {
+.content-repair {
     margin: 100px 0;
     @media (max-width: $breakpoint-xsmall-max) {
         margin: 50px 0;
     }
 }
 
-.landing-repair__title {
+.content-repair__title {
     font-weight: bold;
     line-height: 1;
     font-size: 36px;
@@ -1548,7 +1548,7 @@ a.landing-button,
     margin-bottom: 40px;
 }
 
-.landing-repair__grid {
+.content-repair__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1556,7 +1556,7 @@ a.landing-button,
     margin-top: -40px;
 }
 
-.landing-repair__cell {
+.content-repair__cell {
     width: 33.33%;
     padding-left: 40px;
     padding-top: 40px;
@@ -1569,7 +1569,7 @@ a.landing-button,
     }
 }
 
-.landing-repair-item {
+.content-repair-item {
     display: flex;
     flex-flow: column;
     max-width: 480px;
@@ -1580,11 +1580,11 @@ a.landing-button,
     box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);
 }
 
-.landing-repair-item__image {
+.content-repair-item__image {
     position: relative;
 }
 
-.landing-repair-item__image img {
+.content-repair-item__image img {
     display: block;
     width: 100%;
     border-radius: 6px 6px 0 0;
@@ -1592,7 +1592,7 @@ a.landing-button,
     z-index: 10;
 }
 
-.landing-repair-item__labels {
+.content-repair-item__labels {
     position: absolute;
     left: 24px;
     top: 24px;
@@ -1601,7 +1601,7 @@ a.landing-button,
     z-index: 20;
 }
 
-.landing-repair-item__term {
+.content-repair-item__term {
     border-radius: 6px;
     background-image: linear-gradient(180deg, #ffb700 0%, #ffd700 100%);
     display: inline-block;
@@ -1612,11 +1612,11 @@ a.landing-button,
     text-shadow: 0.139px 0.99px 0px rgba(0, 29, 47, 0.25);
 }
 
-.landing-repair-item__inner {
+.content-repair-item__inner {
     padding: 20px 24px 30px;
 }
 
-.landing-repair-item__title {
+.content-repair-item__title {
     font-size: 18px;
     color: #010101;
     font-weight: bold;
@@ -1626,13 +1626,13 @@ a.landing-button,
     border-bottom: 1px solid #e8e8e8;
 }
 
-.landing-repair-item__description {
+.content-repair-item__description {
     font-size: 15px;
     color: rgb(99, 99, 99);
     line-height: 1.333;
 }
 
-.landing-repair-item__price {
+.content-repair-item__price {
     font-size: 24px;
     color: #e1182d;
     font-weight: bold;
@@ -1640,7 +1640,7 @@ a.landing-button,
     margin-top: 20px;
 }
 
-a.landing-repair-item__button {
+a.content-repair-item__button {
     display: block;
     margin-top: 22px;
     text-decoration: none;
@@ -1654,37 +1654,37 @@ a.landing-repair-item__button {
     text-transform: uppercase;
 }
 
-a.landing-repair-item__button:hover {
+a.content-repair-item__button:hover {
     color: #fff;
     background: #ed3947;
 }
 
-.landing-works {
+.content-works {
     margin: 100px 0;
     @media (max-width: $breakpoint-xsmall-max) {
         margin: 50px 0;
     }
 }
 
-.landing-works__headline {
+.content-works__headline {
     margin-bottom: 40px;
 }
 
-.landing-works__title {
+.content-works__title {
     font-weight: bold;
     line-height: 1;
     font-size: 36px;
     color: #333333;
 }
 
-.landing-works__description {
+.content-works__description {
     line-height: 1;
     font-size: 18px;
     color: #333333;
     margin-top: 16px;
 }
 
-.landing-works__grid {
+.content-works__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1692,7 +1692,7 @@ a.landing-repair-item__button:hover {
     margin-top: -40px;
 }
 
-.landing-works__cell {
+.content-works__cell {
     width: 33.33%;
     padding-left: 40px;
     padding-top: 40px;
@@ -1705,7 +1705,7 @@ a.landing-repair-item__button:hover {
     }
 }
 
-.landing-works-item {
+.content-works-item {
     display: flex;
     flex-flow: column;
     max-width: 480px;
@@ -1716,7 +1716,7 @@ a.landing-repair-item__button:hover {
     box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);
 }
 
-.landing-works-item__gallery {
+.content-works-item__gallery {
     position: relative;
     .tns-controls {
         display: none;
@@ -1764,14 +1764,14 @@ a.landing-repair-item__button:hover {
     }
 }
 
-.landing-works-gallery__image {
+.content-works-gallery__image {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 6px 6px 0 0;
 }
 
-.landing-works-item__labels {
+.content-works-item__labels {
     position: absolute;
     left: 24px;
     top: 24px;
@@ -1780,7 +1780,7 @@ a.landing-repair-item__button:hover {
     z-index: 20;
 }
 
-.landing-works-item__area {
+.content-works-item__area {
     border-radius: 6px;
     background-image: linear-gradient(180deg, #ffb700 0%, #ffd700 100%);
     display: inline-flex;
@@ -1793,7 +1793,7 @@ a.landing-repair-item__button:hover {
     text-shadow: 0.139px 0.99px 0px rgba(0, 29, 47, 0.25);
 }
 
-.landing-works-item__area::before {
+.content-works-item__area::before {
     content: '';
     background: url('../img/icon-area.png') no-repeat 50% 50%;
     width: 16px;
@@ -1801,7 +1801,7 @@ a.landing-repair-item__button:hover {
     display: block;
 }
 
-.landing-works-item__term {
+.content-works-item__term {
     border-radius: 6px;
     background-image: linear-gradient(180deg, #9abbce 0%, #c7d9e4 100%);
     display: inline-flex;
@@ -1814,7 +1814,7 @@ a.landing-repair-item__button:hover {
     text-shadow: 0.139px 0.99px 0px rgba(0, 29, 47, 0.25);
 }
 
-.landing-works-item__term::before {
+.content-works-item__term::before {
     content: '';
     background: url('../img/icon-time.png') no-repeat 50% 50%;
     width: 16px;
@@ -1822,11 +1822,11 @@ a.landing-repair-item__button:hover {
     display: block;
 }
 
-.landing-works-item__inner {
+.content-works-item__inner {
     padding: 20px 24px 30px;
 }
 
-.landing-works-item__title {
+.content-works-item__title {
     font-weight: bold;
     line-height: 1.2;
     font-size: 18px;
@@ -1834,7 +1834,7 @@ a.landing-repair-item__button:hover {
     margin-bottom: 18px;
 }
 
-.landing-works-item__address {
+.content-works-item__address {
     font-size: 15px;
     color: rgb(99, 99, 99);
     line-height: 1.333;
@@ -1842,7 +1842,7 @@ a.landing-repair-item__button:hover {
     padding-left: 30px;
 }
 
-.landing-works-item__address::before {
+.content-works-item__address::before {
     content: '';
     width: 15px;
     height: 20px;
@@ -1852,7 +1852,7 @@ a.landing-repair-item__button:hover {
     top: 0;
 }
 
-.landing-works-item__price {
+.content-works-item__price {
     font-size: 24px;
     color: #e1182d;
     font-weight: bold;
@@ -1860,7 +1860,7 @@ a.landing-repair-item__button:hover {
     margin-top: 36px;
 }
 
-a.landing-works-item__button {
+a.content-works-item__button {
     display: block;
     margin-top: 22px;
     text-decoration: none;
@@ -1874,18 +1874,18 @@ a.landing-works-item__button {
     text-transform: uppercase;
 }
 
-a.landing-works-item__button:hover {
+a.content-works-item__button:hover {
     color: #fff;
     background: #ed3947;
 }
 
-.landing-works__more {
+.content-works__more {
     margin-top: 50px;
     display: flex;
     justify-content: center;
 }
 
-a.landing-works__more-link {
+a.content-works__more-link {
     position: relative;
     display: inline-block;
     font-size: 16px;
@@ -1904,12 +1904,12 @@ a.landing-works__more-link {
     text-decoration: none;
 }
 
-a.landing-works__more-link:hover {
+a.content-works__more-link:hover {
     background: #ed3947;
     color: #fff;
 }
 
-a.landing-works__more-link::before {
+a.content-works__more-link::before {
     content: '';
     right: 52px;
     top: 0;
@@ -1919,7 +1919,7 @@ a.landing-works__more-link::before {
     position: absolute;
 }
 
-a.landing-works__more-link::after {
+a.content-works__more-link::after {
     content: '';
     width: 8px;
     height: 8px;
@@ -1931,14 +1931,14 @@ a.landing-works__more-link::after {
     right: 24px;
 }
 
-.landing-masters {
+.content-masters {
     margin: 100px 0;
     @media (max-width: $breakpoint-xsmall-max) {
         margin: 50px 0;
     }
 }
 
-.landing-masters__title {
+.content-masters__title {
     font-weight: bold;
     line-height: 1;
     font-size: 36px;
@@ -1946,7 +1946,7 @@ a.landing-works__more-link::after {
     margin-bottom: 40px;
 }
 
-.landing-masters__grid {
+.content-masters__grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1954,7 +1954,7 @@ a.landing-works__more-link::after {
     margin-top: -40px;
 }
 
-.landing-masters__cell {
+.content-masters__cell {
     width: 25%;
     padding-left: 40px;
     padding-top: 40px;
@@ -1967,17 +1967,17 @@ a.landing-works__more-link::after {
     }
 }
 
-.landing-masters-item {
+.content-masters-item {
     width: 100%;
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.landing-masters-item__image {
+.content-masters-item__image {
 }
 
-.landing-masters-item__image img {
+.content-masters-item__image img {
     display: block;
     width: 100%;
     height: auto;
@@ -1986,11 +1986,11 @@ a.landing-works__more-link::after {
     box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);
 }
 
-.landing-masters-item__inner {
+.content-masters-item__inner {
     padding: 18px;
 }
 
-.landing-masters-item__name {
+.content-masters-item__name {
     text-align: center;
     font-size: 18px;
     color: #010101;
@@ -1998,7 +1998,7 @@ a.landing-works__more-link::after {
     font-weight: bold;
 }
 
-.landing-masters-item__specialization {
+.content-masters-item__specialization {
     text-align: center;
     font-size: 15px;
     color: #636363;
@@ -2006,7 +2006,7 @@ a.landing-works__more-link::after {
     margin-top: 5px;
 }
 
-.landing-masters-item__experience {
+.content-masters-item__experience {
     text-align: center;
     width: 132px;
     margin-left: auto;

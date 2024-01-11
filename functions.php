@@ -848,44 +848,44 @@ function callback_block_assets() {
 
 	wp_enqueue_script(
  		'block-works-script',
-		get_template_directory_uri() . '/blocks/landing/works.js',
+		get_template_directory_uri() . '/blocks/content/works.js',
 		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/works.js')
+		filemtime(dirname(__FILE__) . '/blocks/content/works.js')
 	);
 
 	wp_enqueue_style(
 		'block-works-style',
-		get_template_directory_uri() . '/blocks/landing/works.css',
+		get_template_directory_uri() . '/blocks/content/works.css',
 		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/works.css')
+		filemtime(dirname(__FILE__) . '/blocks/content/works.css')
 	);
 
 	wp_enqueue_script(
  		'block-masters-script',
-		get_template_directory_uri() . '/blocks/landing/masters.js',
+		get_template_directory_uri() . '/blocks/content/masters.js',
 		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/masters.js')
+		filemtime(dirname(__FILE__) . '/blocks/content/masters.js')
 	);
 
 	wp_enqueue_style(
 		'block-masters-style',
-		get_template_directory_uri() . '/blocks/landing/masters.css',
+		get_template_directory_uri() . '/blocks/content/masters.css',
 		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/masters.css')
+		filemtime(dirname(__FILE__) . '/blocks/content/masters.css')
 	);
 
 	wp_enqueue_script(
  		'block-repair-script',
-		get_template_directory_uri() . '/blocks/landing/repair.js',
+		get_template_directory_uri() . '/blocks/content/repair.js',
 		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/repair.js')
+		filemtime(dirname(__FILE__) . '/blocks/content/repair.js')
 	);
 
 	wp_enqueue_style(
 		'block-repair-style',
-		get_template_directory_uri() . '/blocks/landing/repair.css',
+		get_template_directory_uri() . '/blocks/content/repair.css',
 		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/repair.css')
+		filemtime(dirname(__FILE__) . '/blocks/content/repair.css')
 	);
 }
 

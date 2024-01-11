@@ -1,4 +1,4 @@
-.wp-block-landing-masters {
+.wp-block-content-masters {
 	background: #6d6e8a;
 	padding: 40px;
 	color: #ffffff;
@@ -8,8 +8,8 @@
 	position: relative;
 }
 
-.wp-block-landing-masters::before {
-	content: 'Лендинг блок';
+.wp-block-content-masters::before {
+	content: 'Контент блок';
 	position: absolute;
 	left: 10px;
 	top: 10px;

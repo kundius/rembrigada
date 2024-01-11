@@ -2,12 +2,12 @@
 <div class="header-placeholder"></div>
 <header class="header">
     <div class="container">
+        <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-dark.png" alt="<?php echo get_bloginfo('description') ?>"></a>
+
         <div class="header-toggle">
             <div class="header-toggle__icon"></div>
             <div class="header-toggle__label">Меню</div>
         </div>
-
-        <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-dark.png" alt="<?php echo get_bloginfo('description') ?>"></a>
 
         <nav class="navigation">
             <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-light.png" alt="<?php echo get_bloginfo('description') ?>"></a>

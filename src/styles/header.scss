@@ -110,18 +110,17 @@
 .header-toggle {
     display: none;
     position: relative;
-    // position: absolute;
-    left: 0;
-    // top: 0;
-    width: 64px;
-    height: 64px;
-    margin-left: -18px;
+    align-items: center;
+    margin-left: -16px;
     cursor: pointer;
     transition: left .3s ease;
     z-index: 20;
+    padding: 16px;
+    min-height: 48px;
+    min-width: 48px;
+    justify-content: center;
     @media (max-width: $breakpoint-medium-max) {
-        display: block;
-        margin-right: auto;
+        display: flex;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         margin-left: -12px;
@@ -131,32 +130,11 @@
     }
 }
 
-// .header-toggle_opened {
-//     left: 263px;
-//     .header-toggle__icon {
-//         background: transparent;
-//         &::before,
-//         &::after {
-//             left: 50%;
-//             top: 50%;
-//         }
-//         &::before {
-//             transform: translate(-50%, -50%) rotate(-45deg);
-//         }
-//         &::after {
-//             transform: translate(-50%, -50%) rotate(45deg);
-//         }
-//     }
-// }
-
 .header-toggle__icon {
-    left: 50%;
-    top: 50%;
-    position: absolute;
+    position: relative;
     background-color: #2d2d29;
     height: 4px;
     width: 26px;
-    transform: translate(-50%, -50%);
     &::before,
     &::after {
         display: block;
@@ -177,16 +155,13 @@
 }
 
 .header-toggle__label {
-    position: absolute;
-    top: 50%;
-    left: 58px;
-    transform: translate(0, -50%);
     font-size: 14px;
-    font-family: "Next Art", sans-serif;
-    font-weight: bold;
+    font-family: "Next Art",sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: .05em;
     color: #2d2d29;
+    margin-left: 12px;
 }
 
 .header-m-messengers {

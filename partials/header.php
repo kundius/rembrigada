@@ -5,7 +5,11 @@
         <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-dark.png" alt="<?php echo get_bloginfo('description') ?>"></a>
 
         <div class="header-toggle">
-            <div class="header-toggle__icon"></div>
+            <div class="header-toggle__icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="header-toggle__label">Меню</div>
         </div>
 

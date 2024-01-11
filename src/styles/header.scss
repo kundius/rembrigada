@@ -124,25 +124,30 @@
 .header-toggle__icon {
     position: relative;
     background-color: #2d2d29;
-    height: 4px;
+    height: 26px;
     width: 26px;
-    &::before,
-    &::after {
-        display: block;
-        content: '';
-        position: absolute;
-        left: 50%;
-        width: 26px;
-        height: 4px;
-        background-color: #2d2d29;
-        transform: translate(-50%, -50%);
-    }
-    &::before {
-        top: calc(50% - 8px);
-    }
-    &::after {
-        top: calc(50% + 8px);
-    }
+}
+
+.header-toggle__icon span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: 26px;
+    height: 4px;
+    background-color: #2d2d29;
+    transform: translate(-50%, -50%);
+}
+
+.header-toggle__icon span:nth-child(1) {
+    top: calc(50% - 8px);
+}
+
+.header-toggle__icon span:nth-child(2) {
+    top: calc(50%);
+}
+
+.header-toggle__icon span:nth-child(3) {
+    top: calc(50% + 8px);
 }
 
 .header-toggle__label {
@@ -153,7 +158,7 @@
     letter-spacing: .05em;
     color: #2d2d29;
     margin-left: 12px;
-    
+
     @media (max-width: $breakpoint-xsmall-max) {
         margin-left: 0;
     }

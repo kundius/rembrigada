@@ -169,6 +169,7 @@
 .header-m-messengers {
   display: flex;
   margin-left: auto;
+  align-items: center;
   gap: 8px;
   @media (min-width: $breakpoint-medium) {
     display: none;
@@ -202,10 +203,19 @@
 }
 
 .header-m-messengers__item_price {
-  background-color: #e5e353;
-  &:hover {
-    background-color: #b7aa32;
-  }
+    background-color: #e5e353;
+    color: #000;
+    text-decoration: none;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    &:hover {
+        background-color: #b7aa32;
+    }
+    @medi
 }
 
 .header-m-messengers__item_instagram {

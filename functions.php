@@ -51,7 +51,7 @@ function srcset($image, $wh) {
 function icon($name, $scale = 1) {
 	$width = $scale * 20;
 	$height = $scale * 20;
-	echo '<svg class="inline-svg-icon" width="' . $width . '" height="' . $height . '"><use xlink:href="' . get_bloginfo('template_url') . '/dist/img/sprite.svg#' . $name . '"></use></svg>';
+	echo '<svg class="inline-svg-icon" width="' . $width . '" height="' . $height . '"><use xlink:href="' . get_bloginfo('template_url') . '/dist/images/sprite.svg#' . $name . '"></use></svg>';
 }
 
 if (function_exists('acf_add_options_page')) {

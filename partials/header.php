@@ -8,10 +8,10 @@
             <div class="header-toggle__label header-toggle__label_close">Закрыть</div>
         </div>
 
-        <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo-dark.png" alt="<?php echo get_bloginfo('description') ?>"></a>
+        <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-dark.png" alt="<?php echo get_bloginfo('description') ?>"></a>
 
         <nav class="navigation">
-            <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/img/logo-light.png" alt="<?php echo get_bloginfo('description') ?>"></a>
+            <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-light.png" alt="<?php echo get_bloginfo('description') ?>"></a>
             <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>" class="navigation__callback js-header-callback">
                 <?php icon('phone') ?>
             </a>

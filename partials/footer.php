@@ -22,7 +22,7 @@
             <div class="footer__counters">
                 <?php the_field('counters', 'options') ?>
                 <a href="https://domenart-studio.ru/" target="_blank">
-                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/creator.png" alt="" loading="lazy">
+                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/images/creator.png" alt="" loading="lazy">
                 </a>
             </div>
             <div class="footer__sitemap">
@@ -49,7 +49,7 @@
                 <div class="callback__grid">
                     <div class="callback__cell">
                         <div class="callback__image">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/callback.jpg" alt="" loading="lazy">
+                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/images/callback.jpg" alt="" loading="lazy">
                         </div>
                     </div>
                     <div class="callback__cell">
@@ -90,7 +90,7 @@
                 <div class="callback__grid">
                     <div class="callback__cell">
                         <div class="callback__image">
-                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/our-work-send.jpg" alt="" loading="lazy">
+                            <img src="<?php echo get_bloginfo('template_url') ?>/dist/images/our-work-send.jpg" alt="" loading="lazy">
                             <a href="<?php the_permalink(15) ?>" class="callback__works">
                                 <span>Наши работы</span>
                             </a>
@@ -103,7 +103,7 @@
                             <div class="callback-items">
                                 <div class="callback-item">
                                     <div class="callback-item__image">
-                                        <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/apartments.svg" alt="" loading="lazy"></div>
+                                        <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/apartments.svg" alt="" loading="lazy"></div>
                                     </div>
                                     <div class="callback-item__title">
                                         Ремонт квартир
@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="callback-item">
                                     <div class="callback-item__image">
-                                        <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/houses.svg" alt="" loading="lazy"></div>
+                                        <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/houses.svg" alt="" loading="lazy"></div>
                                     </div>
                                     <div class="callback-item__title">
                                         Ремонт домов
@@ -119,7 +119,7 @@
                                 </div>
                                 <div class="callback-item">
                                     <div class="callback-item__image">
-                                        <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/commercial.svg" alt="" loading="lazy"></div>
+                                        <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/commercial.svg" alt="" loading="lazy"></div>
                                     </div>
                                     <div class="callback-item__title">
                                         Ремонт коммерческой недвижимости
@@ -172,7 +172,7 @@
                 <div class="callback-items">
                     <div class="callback-item">
                         <div class="callback-item__image">
-                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/apartments.svg" alt="" loading="lazy"></div>
+                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/apartments.svg" alt="" loading="lazy"></div>
                         </div>
                         <div class="callback-item__title">
                             Ремонт квартир
@@ -180,7 +180,7 @@
                     </div>
                     <div class="callback-item">
                         <div class="callback-item__image">
-                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/houses.svg" alt="" loading="lazy"></div>
+                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/houses.svg" alt="" loading="lazy"></div>
                         </div>
                         <div class="callback-item__title">
                             Ремонт домов
@@ -188,7 +188,7 @@
                     </div>
                     <div class="callback-item">
                         <div class="callback-item__image">
-                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/img/commercial.svg" alt="" loading="lazy"></div>
+                            <div><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/commercial.svg" alt="" loading="lazy"></div>
                         </div>
                         <div class="callback-item__title">
                             Ремонт коммерческой недвижимости
@@ -202,5 +202,5 @@
 
 <button class="scrollup js-scroll"></button>
 
-<script src="<?php echo get_bloginfo('template_url') ?>/dist/main.js"></script>
+<script src="<?php echo get_bloginfo('template_url') ?>/dist/scripts/scripts.js"></script>
 <?php wp_footer() ?>

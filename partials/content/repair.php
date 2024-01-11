@@ -1,8 +1,5 @@
 <?php $data = get_field('repair', 'option'); ?>
 <div class="content-repair">
-  <?php if (!empty($data['title'])): ?>
-  <div class="content-repair__title"><?php echo $data['title'] ?></div>
-  <?php endif; ?>
   <div class="content-repair__grid">
     <?php foreach ($data['list'] as $item): ?>
     <div class="content-repair__cell">

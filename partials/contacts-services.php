@@ -8,7 +8,7 @@
                         <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>" />
                         <meta itemprop="priceRange" content="2500-6000RUB" />
                         <meta itemprop="description" content="<?php echo get_bloginfo('description') ?>" />
-                        <meta itemprop="image" content="<?php echo get_bloginfo('template_url') ?>/dist/img/logo-light.png" />
+                        <meta itemprop="image" content="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-light.png" />
                         <a href="<?php the_field('ymap_link', 'options') ?>" class="contacts__row" itemprop="address" target="_blank">
                             <?php the_field('address', 'options') ?>
                         </a>
@@ -57,5 +57,5 @@
             </div>
         </div>
     </div>
-    <img class="section-contacts__bg" src="<?php echo get_bloginfo('template_url') ?>/dist/img/map-bg.jpg" loading="lazy" />
+    <img class="section-contacts__bg" src="<?php echo get_bloginfo('template_url') ?>/dist/images/map-bg.jpg" loading="lazy" />
 </section>

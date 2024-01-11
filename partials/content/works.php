@@ -1,13 +1,5 @@
 <?php $data = get_field('works', 'option'); ?>
 <div class="content-works">
-  <div class="content-works__headline">
-    <?php if (!empty($data['title'])): ?>
-    <div class="content-works__title"><?php echo $data['title'] ?></div>
-    <?php endif; ?>
-    <?php if (!empty($data['description'])): ?>
-    <div class="content-works__description"><?php echo $data['description'] ?></div>
-    <?php endif; ?>
-  </div>
   <div class="content-works__grid">
     <?php foreach ($data['list'] as $item): ?>
     <div class="content-works__cell">

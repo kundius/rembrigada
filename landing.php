@@ -209,7 +209,7 @@ $reviews = new WP_Query(array(
 
             <!-- <section class="free-consultation container">
                 <div class="consultation-img">
-                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/consultation-img.jpg" alt="" loading="lazy">
+                    <img src="<?php echo get_bloginfo('template_url') ?>/dist/images/consultation-img.jpg" alt="" loading="lazy">
                 </div>
                 <div class="free-consultation-desc">
                     <h3>Заказать <br> бесплатную консультацию</h3>

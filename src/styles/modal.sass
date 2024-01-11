@@ -1,0 +1,95 @@
+@import 'variables.scss'
+
+.basicLightbox__placeholder
+  max-height: 100%
+  max-width: calc(100% - 20px)
+  overflow: auto
+
+.modal
+  border-radius: 8px
+  background-color: rgb(255, 255, 255)
+  box-shadow: 0px 0px 16px 0px rgba(34, 37, 40, 0.2)
+  padding: 100px 50px
+  width: 1155px
+  max-width: 100%
+  // max-width: calc(100% - 20px)
+  // max-height: calc(100vh - 20px)
+  box-sizing: border-box
+  position: relative
+  &_large
+    width: auto
+    max-width: 1668px
+    @media (max-width: $breakpoint-xsmall-max)
+      min-height: 100%
+  @media (max-width: $breakpoint-small-max)
+    padding: 40px
+  @media (max-width: $breakpoint-xsmall-max)
+    padding: 10px
+    border-radius: 0
+
+.modal_callback
+  width: 1078px
+  padding: 8% 5% 5% // 130px 175px 70px 80px
+  border-radius: 0
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35)
+  @media (max-width: $breakpoint-xsmall-max)
+    padding: 15px 16px 50px
+
+.modal_review
+  width: 820px
+  padding: 40px 150px 110px 110px
+  border-radius: 0
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35)
+  @media (max-width: $breakpoint-small-max)
+    padding: 65px 83px 65px 52px
+  @media (max-width: $breakpoint-xsmall-max)
+    padding: 15px 16px 50px
+
+.modal_order
+  width: 460px
+  padding: 40px
+  @media (max-width: $breakpoint-xsmall-max)
+    padding: 20px
+
+.modal__close
+  position: absolute
+  z-index: 30
+  top: 0
+  right: 0
+  width: 48px
+  height: 48px
+  cursor: pointer
+  transition: all 200ms ease-out
+  background: rgba(0, 0, 0, 0.4)
+  color: rgba(255, 255, 255, 0.8)
+  border: none
+  @media (max-width: $breakpoint-small-max)
+    width: 48px
+    height: 48px
+  .modal__container &
+    right: 40px
+    top: 40px
+    @media (max-width: $breakpoint-small-max)
+      right: 8px
+      top: 8px
+  &:hover
+    background: rgba(0, 0, 0, 0.6)
+    color: rgba(255, 255, 255, 1)
+  &::before
+    content: ''
+    width: 50%
+    height: 3px
+    background-color: currentColor
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) rotate(-45deg)
+  &::after
+    content: ''
+    width: 50%
+    height: 3px
+    background-color: currentColor
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) rotate(45deg)

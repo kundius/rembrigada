@@ -5,7 +5,7 @@
     <div class="services-calculation__grid">
         <div class="services-calculation__cell">
             <div class="services-calculation__image">
-                <img src="<?php echo get_bloginfo('template_url') ?>/dist/img/our-work-send.jpg" alt="">
+                <img src="<?php echo get_bloginfo('template_url') ?>/dist/images/our-work-send.jpg" alt="">
                 <a href="<?php echo get_category_link(3) ?>" class="services-calculation__works" target="_blank">
                     <span>Наши работы</span>
                 </a>

@@ -280,6 +280,7 @@ forEach(document.querySelectorAll('.navigation-list'), function(menu) {
 
 forEach(document.querySelectorAll('.header-toggle'), function(handler) {
   const header = document.querySelector('.header')
+  const navigationClose = document.querySelector('.navigation-close')
   const navigation = document.querySelector('.navigation')
   const close = () => {
     header.classList.remove('header_menu-opened')
@@ -301,6 +302,10 @@ forEach(document.querySelectorAll('.header-toggle'), function(handler) {
   handler.addEventListener('click', (e) => {
     e.preventDefault()
     toggle()
+  })
+  navigationClose.addEventListener('click', (e) => {
+    e.preventDefault()
+    close()
   })
 })
 

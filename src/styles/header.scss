@@ -75,20 +75,11 @@
         width: 180px;
     }
     @media (max-width: $breakpoint-medium-max) {
-        position: absolute;
-        left: 140px;
-        top: 50%;
-        transform: translateY(-50%);
-        .header_menu-opened & {
-            display: none;
-        }
     }
     @media (max-width: $breakpoint-small-max) {
-        left: 72px;
     }
     @media (max-width: $breakpoint-xsmall-max) {
         width: 128px;
-        left: 56px;
     }
 }
 
@@ -111,7 +102,8 @@
     display: none;
     position: relative;
     align-items: center;
-    margin-left: -16px;
+    margin-left: 16px;
+    margin-right: auto;
     cursor: pointer;
     transition: left .3s ease;
     z-index: 20;
@@ -123,10 +115,6 @@
         display: flex;
     }
     @media (max-width: $breakpoint-xsmall-max) {
-        margin-left: -12px;
-        width: 48px;
-        height: 48px;
-        background-color: #1c1e21;
     }
 }
 

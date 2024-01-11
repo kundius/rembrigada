@@ -133,7 +133,7 @@
     position: absolute;
     left: 50%;
     width: 26px;
-    height: 4px;
+    height: 3px;
     background-color: #2d2d29;
     transform: translate(-50%, -50%);
 }
@@ -198,6 +198,13 @@
   background-color: #29a1d4;
   &:hover {
     background-color: #248db9;
+  }
+}
+
+.header-m-messengers__item_price {
+  background-color: #e5e353;
+  &:hover {
+    background-color: #b7aa32;
   }
 }
 

@@ -115,13 +115,10 @@
     @media (max-width: $breakpoint-medium-max) {
         display: flex;
     }
-    @media (max-width: $breakpoint-small-max) {
-        margin-left: 12px;
-        flex-direction: column;
-        padding: 0;
-    }
     @media (max-width: $breakpoint-xsmall-max) {
         margin-left: 8px;
+        flex-direction: column;
+        padding: 0;
     }
 }
 

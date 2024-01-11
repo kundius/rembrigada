@@ -9,11 +9,7 @@
             <div class="swiper-wrapper">
               <?php foreach ($item['gallery'] as $slide): ?>
               <div class="swiper-slide">
-                <?php if ($image = $item['image']): ?>
                 <img src="<?php echo $slide['sizes']['w468h364'] ?>" alt="<?php echo esc_html($slide['title']) ?>" loading="lazy">
-                <?php else: ?>
-                <img src="https://via.placeholder.com/468x364" alt="" loading="lazy">
-                <?php endif; ?>
               </div>
               <?php endforeach; ?>
             </div>

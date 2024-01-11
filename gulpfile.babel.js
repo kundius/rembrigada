@@ -66,7 +66,7 @@ export const scriptsTask = () => {
 
 export const imagesTask = () => {
   return src("src/images/**/*.{jpg,jpeg,png,svg,gif}")
-    .pipe(gulpif(PRODUCTION, imagemin()))
+    // .pipe(gulpif(PRODUCTION, imagemin()))
     .pipe(dest("dist/images"));
 };
 

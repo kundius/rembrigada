@@ -35,15 +35,15 @@ contentMastersSwipers.forEach((el) => {
     console.log(container, nextEl, prevEl)
     new Swiper(container, {
         // modules: [Navigation],
-        // slidesPerView: 3,
-        // spaceBetween: 40,
+        slidesPerView: 3,
+        spaceBetween: 40,
         // // pagination: {
         // //     el: ".swiper-pagination",
         // //     clickable: true,
         // // },
-        // navigation: {
-        //     nextEl,
-        //     prevEl,
-        // },
+        navigation: {
+            nextEl,
+            prevEl,
+        },
     });
 })

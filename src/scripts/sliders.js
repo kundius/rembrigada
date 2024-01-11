@@ -1,5 +1,5 @@
-import Swiper, { Autoplay, EffectCoverflow, EffectCreative, Pagination, Navigation } from "swiper";
-// import { Navigation, Pagination } from 'swiper/modules';
+import Swiper from "swiper";
+import { Navigation, Pagination } from 'swiper/modules';
 // import Swiper and modules styles
 // import 'swiper/swiper-bundle.css';
 // import 'swiper/css';

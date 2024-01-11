@@ -14,10 +14,8 @@
         </div>
 
         <nav class="navigation">
-            <button class="navigation__close"></button>
-
             <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-light.png" alt="<?php echo get_bloginfo('description') ?>"></a>
-            
+
             <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>" class="navigation__callback js-header-callback">
                 <?php icon('phone') ?>
             </a>
@@ -33,6 +31,8 @@
                 <p>Ежедневно с 9:00 до 20:00</p>
             </div>
         </nav>
+        
+        <button class="navigation-close"></button>
 
         <div class="header-m-messengers">
             <!-- <a class="header-m-messengers__item header-m-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">

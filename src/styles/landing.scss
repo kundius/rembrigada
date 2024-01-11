@@ -1687,6 +1687,7 @@ a.content-repair-item__button:hover {
     margin-left: auto;
     margin-right: auto;
     border-radius: 6px;
+    overflow: hidden;
     background-color: rgb(255, 255, 255);
     box-shadow: 1.259px 1.554px 10px 0px rgba(107, 110, 154, 0.18);
 }
@@ -1697,6 +1698,7 @@ a.content-repair-item__button:hover {
 
 .content-works-item__gallery .swiper-pagination-bullet {
     background: #f0f2f6;
+    opacity: 1;
 }
 
 .content-works-item__gallery .swiper-pagination-bullet-active {

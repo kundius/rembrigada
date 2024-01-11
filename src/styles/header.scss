@@ -107,14 +107,17 @@
     cursor: pointer;
     transition: left .3s ease;
     z-index: 20;
-    padding: 16px;
+    padding: 12px;
     min-height: 48px;
     min-width: 48px;
     justify-content: center;
+    flex-shrink: 0;
     @media (max-width: $breakpoint-medium-max) {
         display: flex;
     }
     @media (max-width: $breakpoint-xsmall-max) {
+        margin-left: 12px;
+        flex-direction: column;
     }
 }
 
@@ -150,6 +153,10 @@
     letter-spacing: .05em;
     color: #2d2d29;
     margin-left: 12px;
+    
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-left: 0;
+    }
 }
 
 .header-m-messengers {

@@ -27,12 +27,12 @@ import Swiper, { Autoplay, EffectCoverflow, EffectCreative, Pagination, Navigati
 //     });
 // // })
 
+console.log(Navigation)
 const contentMastersSwipers = document.querySelectorAll('.content-masters-swiper') || []
 contentMastersSwipers.forEach((el) => {
     const container = el.querySelector('.swiper')
     const nextEl = el.querySelector('.swiper-button-next')
     const prevEl = el.querySelector('.swiper-button-prev')
-    console.log(container, nextEl, prevEl)
     new Swiper(container, {
         // modules: [Navigation],
         slidesPerView: 3,

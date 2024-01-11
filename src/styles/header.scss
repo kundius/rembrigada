@@ -107,7 +107,7 @@
     cursor: pointer;
     transition: left .3s ease;
     z-index: 20;
-    padding: 12px;
+    padding: 0 12px;
     min-height: 48px;
     min-width: 48px;
     justify-content: center;
@@ -115,15 +115,18 @@
     @media (max-width: $breakpoint-medium-max) {
         display: flex;
     }
-    @media (max-width: $breakpoint-xsmall-max) {
+    @media (max-width: $breakpoint-small-max) {
         margin-left: 12px;
         flex-direction: column;
+        padding: 0;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        margin-left: 8px;
     }
 }
 
 .header-toggle__icon {
     position: relative;
-    background-color: #2d2d29;
     height: 26px;
     width: 26px;
 }
@@ -161,6 +164,8 @@
 
     @media (max-width: $breakpoint-xsmall-max) {
         margin-left: 0;
+        margin-top: 2px;
+        font-size: 10px;
     }
 }
 
@@ -170,6 +175,9 @@
   gap: 8px;
   @media (min-width: $breakpoint-medium) {
     display: none;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    gap: 4px;
   }
 }
 

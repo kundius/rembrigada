@@ -215,7 +215,9 @@
     &:hover {
         background-color: #b7aa32;
     }
-    @medi
+    @media (max-width: 374px) {
+        display: none;
+    }
 }
 
 .header-m-messengers__item_instagram {

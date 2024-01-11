@@ -2598,118 +2598,118 @@ a.btn-plus,
 }
 
 /* Arrows */
-.completed-objects .swiper-button-next,
-.completed-objects .swiper-button-prev,
-.feedback-img-gallery-container .swiper-button-next,
-.feedback-img-gallery-container .swiper-button-prev,
-.package-completed-objects .swiper-button-next,
-.package-completed-objects .swiper-button-prev,
-.project-swiper .swiper-container.gallery-top .swiper-button-next,
-.project-swiper .swiper-container.gallery-top .swiper-button-prev,
-.detailed-view .swiper-button-next,
-.detailed-view .swiper-button-prev {
-    background-image: none;
-    top: 22px;
-    right: 0;
-    width: 29px;
-    height: 28px;
-    -webkit-transform: translate(0);
-        -ms-transform: translate(0);
-            transform: translate(0);
-    background-color: transparent;
-    border: 2px solid #bcbcbc;
-    border-left: 1px solid #bcbcbc;
-    border-top-right-radius: 14px;
-    border-bottom-right-radius: 14px;
-}
+// .completed-objects .swiper-button-next,
+// .completed-objects .swiper-button-prev,
+// .feedback-img-gallery-container .swiper-button-next,
+// .feedback-img-gallery-container .swiper-button-prev,
+// .package-completed-objects .swiper-button-next,
+// .package-completed-objects .swiper-button-prev,
+// .project-swiper .swiper-container.gallery-top .swiper-button-next,
+// .project-swiper .swiper-container.gallery-top .swiper-button-prev,
+// .detailed-view .swiper-button-next,
+// .detailed-view .swiper-button-prev {
+//     background-image: none;
+//     top: 22px;
+//     right: 0;
+//     width: 29px;
+//     height: 28px;
+//     -webkit-transform: translate(0);
+//         -ms-transform: translate(0);
+//             transform: translate(0);
+//     background-color: transparent;
+//     border: 2px solid #bcbcbc;
+//     border-left: 1px solid #bcbcbc;
+//     border-top-right-radius: 14px;
+//     border-bottom-right-radius: 14px;
+// }
 
-.completed-objects .swiper-button-next:hover,
-.completed-objects .swiper-button-prev:hover,
-.feedback-img-gallery-container .swiper-button-next:hover,
-.feedback-img-gallery-container .swiper-button-prev:hover,
-.package-completed-objects .swiper-button-next:hover,
-.package-completed-objects .swiper-button-prev:hover,
-.project-swiper .swiper-container.gallery-top .swiper-button-next:hover,
-.project-swiper .swiper-container.gallery-top .swiper-button-prev:hover,
-.detailed-view .swiper-button-next:hover,
-.detailed-view .swiper-button-prev:hover {
-    background: #acadad;
-}
+// .completed-objects .swiper-button-next:hover,
+// .completed-objects .swiper-button-prev:hover,
+// .feedback-img-gallery-container .swiper-button-next:hover,
+// .feedback-img-gallery-container .swiper-button-prev:hover,
+// .package-completed-objects .swiper-button-next:hover,
+// .package-completed-objects .swiper-button-prev:hover,
+// .project-swiper .swiper-container.gallery-top .swiper-button-next:hover,
+// .project-swiper .swiper-container.gallery-top .swiper-button-prev:hover,
+// .detailed-view .swiper-button-next:hover,
+// .detailed-view .swiper-button-prev:hover {
+//     background: #acadad;
+// }
 
-.completed-objects .swiper-button-prev,
-.feedback-img-gallery-container .swiper-button-prev,
-.package-completed-objects .swiper-button-prev,
-.project-swiper .swiper-container.gallery-top .swiper-button-prev,
-.detailed-view .swiper-button-prev {
-    left: unset;
-    right: 29px;
-    border-right: 1px solid #bcbcbc;
-    border-top-left-radius: 14px;
-    border-bottom-left-radius: 14px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
+// .completed-objects .swiper-button-prev,
+// .feedback-img-gallery-container .swiper-button-prev,
+// .package-completed-objects .swiper-button-prev,
+// .project-swiper .swiper-container.gallery-top .swiper-button-prev,
+// .detailed-view .swiper-button-prev {
+//     left: unset;
+//     right: 29px;
+//     border-right: 1px solid #bcbcbc;
+//     border-top-left-radius: 14px;
+//     border-bottom-left-radius: 14px;
+//     border-top-right-radius: 0;
+//     border-bottom-right-radius: 0;
+// }
 
-.completed-objects .swiper-button-disabled,
-.feedback-img-gallery-container .swiper-button-disabled,
-.package-completed-objects .swiper-button-disabled,
-.project-swiper .swiper-container.gallery-top .swiper-button-disabled,
-.detailed-view .swiper-button-disabled {
-    opacity: 1 !important;
-}
+// .completed-objects .swiper-button-disabled,
+// .feedback-img-gallery-container .swiper-button-disabled,
+// .package-completed-objects .swiper-button-disabled,
+// .project-swiper .swiper-container.gallery-top .swiper-button-disabled,
+// .detailed-view .swiper-button-disabled {
+//     opacity: 1 !important;
+// }
 
-.completed-objects .swiper-button-prev::before,
-.completed-objects .swiper-button-prev::after,
-.feedback-img-gallery-container .swiper-button-prev::before,
-.feedback-img-gallery-container .swiper-button-prev::after,
-.package-completed-objects .swiper-button-prev::before,
-.package-completed-objects .swiper-button-prev::after,
-.completed-objects .swiper-button-next::before,
-.completed-objects .swiper-button-next::after,
-.feedback-img-gallery-container .swiper-button-next::before,
-.feedback-img-gallery-container .swiper-button-next::after,
-.package-completed-objects .swiper-button-next::before,
-.package-completed-objects .swiper-button-next::after,
-.project-swiper .swiper-container.gallery-top .swiper-button-next::before,
-.project-swiper .swiper-container.gallery-top .swiper-button-prev::before,
-.project-swiper .swiper-container.gallery-top .swiper-button-next::after,
-.project-swiper .swiper-container.gallery-top .swiper-button-prev::after,
-.detailed-view .swiper-button-next::before,
-.detailed-view .swiper-button-prev::before,
-.detailed-view .swiper-button-next::after,
-.detailed-view .swiper-button-prev::after {
-    width: 8px;
-    height: 2px;
-    left: 10px;
-}
+// .completed-objects .swiper-button-prev::before,
+// .completed-objects .swiper-button-prev::after,
+// .feedback-img-gallery-container .swiper-button-prev::before,
+// .feedback-img-gallery-container .swiper-button-prev::after,
+// .package-completed-objects .swiper-button-prev::before,
+// .package-completed-objects .swiper-button-prev::after,
+// .completed-objects .swiper-button-next::before,
+// .completed-objects .swiper-button-next::after,
+// .feedback-img-gallery-container .swiper-button-next::before,
+// .feedback-img-gallery-container .swiper-button-next::after,
+// .package-completed-objects .swiper-button-next::before,
+// .package-completed-objects .swiper-button-next::after,
+// .project-swiper .swiper-container.gallery-top .swiper-button-next::before,
+// .project-swiper .swiper-container.gallery-top .swiper-button-prev::before,
+// .project-swiper .swiper-container.gallery-top .swiper-button-next::after,
+// .project-swiper .swiper-container.gallery-top .swiper-button-prev::after,
+// .detailed-view .swiper-button-next::before,
+// .detailed-view .swiper-button-prev::before,
+// .detailed-view .swiper-button-next::after,
+// .detailed-view .swiper-button-prev::after {
+//     width: 8px;
+//     height: 2px;
+//     left: 10px;
+// }
 
-.completed-objects .swiper-button-prev::before,
-.feedback-img-gallery-container .swiper-button-prev::before,
-.project-swiper .swiper-container.gallery-top .swiper-button-prev::before,
-.detailed-view .swiper-button-prev::before {
-    top: calc(50% - 4px);
-}
+// .completed-objects .swiper-button-prev::before,
+// .feedback-img-gallery-container .swiper-button-prev::before,
+// .project-swiper .swiper-container.gallery-top .swiper-button-prev::before,
+// .detailed-view .swiper-button-prev::before {
+//     top: calc(50% - 4px);
+// }
 
-.completed-objects .swiper-button-prev::after,
-.feedback-img-gallery-container .swiper-button-prev::after,
-.project-swiper .swiper-container.gallery-top .swiper-button-prev::after,
-.detailed-view .swiper-button-prev::after {
-    top: calc(50% + 1px);
-}
+// .completed-objects .swiper-button-prev::after,
+// .feedback-img-gallery-container .swiper-button-prev::after,
+// .project-swiper .swiper-container.gallery-top .swiper-button-prev::after,
+// .detailed-view .swiper-button-prev::after {
+//     top: calc(50% + 1px);
+// }
 
-.completed-objects .swiper-button-next::before,
-.feedback-img-gallery-container .swiper-button-next::before,
-.project-swiper .swiper-container.gallery-top .swiper-button-next::before,
-.detailed-view .swiper-button-next::before {
-    top: calc(50% - 4px);
-}
+// .completed-objects .swiper-button-next::before,
+// .feedback-img-gallery-container .swiper-button-next::before,
+// .project-swiper .swiper-container.gallery-top .swiper-button-next::before,
+// .detailed-view .swiper-button-next::before {
+//     top: calc(50% - 4px);
+// }
 
-.completed-objects .swiper-button-next::after,
-.feedback-img-gallery-container .swiper-button-next::after,
-.project-swiper .swiper-container.gallery-top .swiper-button-next::after,
-.detailed-view .swiper-button-next::after {
-    top: calc(50% + 1px);
-}
+// .completed-objects .swiper-button-next::after,
+// .feedback-img-gallery-container .swiper-button-next::after,
+// .project-swiper .swiper-container.gallery-top .swiper-button-next::after,
+// .detailed-view .swiper-button-next::after {
+//     top: calc(50% + 1px);
+// }
 
 /* Экран "Схема работы" */
 .scheme-of-work {

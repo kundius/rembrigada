@@ -65,13 +65,8 @@ export const scriptsTask = () => {
 };
 
 export const imagesTask = () => {
-  return src("src/images/**/*.{jpg,jpeg,png,gif}")
-    .pipe(gulpif(PRODUCTION, imagemin()))
-    .pipe(dest("dist/images"));
-};
-
-export const svgTask = () => {
-  return src("src/images/**/*.{svg}")
+  return src("src/images/**/*.{jpg,jpeg,png,svg,gif}")
+    // .pipe(gulpif(PRODUCTION, imagemin()))
     .pipe(dest("dist/images"));
 };
 
@@ -89,7 +84,7 @@ export const watchTask = () => {
   watch("src/styles/**/*.{scss,css,sass}", stylesTask);
   watch(
     "src/images/**/*.{jpg,jpeg,png,svg,gif}",
-    series(imagesTask, svgTask)
+    series(imagesTask)
   );
   watch("src/fonts/**/*.{ttf,woff,woff2}", series(fontsTask));
   watch("src/scripts/**/*.js", series(scriptsTask));
@@ -97,13 +92,13 @@ export const watchTask = () => {
 
 export const dev = series(
   cleanTask,
-  parallel(stylesTask, imagesTask, svgTask, fontsAwesomeTask, fontsTask, scriptsTask),
+  parallel(stylesTask, imagesTask, fontsAwesomeTask, fontsTask, scriptsTask),
   watchTask
 );
 
 export const build = series(
   cleanTask,
-  parallel(stylesTask, imagesTask, svgTask, fontsAwesomeTask, fontsTask, scriptsTask)
+  parallel(stylesTask, imagesTask, fontsAwesomeTask, fontsTask, scriptsTask)
 );
 
 export default dev;

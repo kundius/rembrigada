@@ -15,14 +15,14 @@ contentMastersSwipers.forEach((el) => {
             prevEl,
         },
         breakpoints: {
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
         },
     });
 })
@@ -37,7 +37,8 @@ contentWorksSwipers.forEach((el) => {
         slidesPerView: 1,
         spaceBetween: 10,
         pagination: {
-          el: pagination,
+            el: pagination,
+            clickable: true,
         },
     });
 })

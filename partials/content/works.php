@@ -21,7 +21,15 @@
           </div>
         </div>
         <div class="content-works-item__inner">
-          <div class="content-works-item__title"><?php echo $item['name'] ?></div>
+          <div class="content-works-item__title">
+            <?php if (!empty($item['button']['link'])): ?>
+            <a href="<?php echo $item['button']['link'] ?>">
+            <?php endif; ?>
+            <?php echo $item['name'] ?>
+            <?php if (!empty($item['button']['link'])): ?>
+            </a>
+            <?php endif; ?>
+          </div>
           <div class="content-works-item__address"><?php echo $item['address'] ?></div>
           <div class="content-works-item__price"><?php echo $item['price'] ?></div>
           <?php if (!empty($item['button']['text'])): ?>

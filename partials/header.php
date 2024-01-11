@@ -14,7 +14,10 @@
         </div>
 
         <nav class="navigation">
+            <button class="navigation__close"></button>
+
             <a href="/"><img class="navigation__logo" src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-light.png" alt="<?php echo get_bloginfo('description') ?>"></a>
+            
             <a href="tel:<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>" class="navigation__callback js-header-callback">
                 <?php icon('phone') ?>
             </a>

@@ -6,13 +6,13 @@ import Swiper, { Autoplay, EffectCoverflow, EffectCreative, Pagination, Navigati
 // import 'swiper/css/navigation';
 // import 'swiper/css/pagination';
 
-const contentMastersSwipers = document.querySelectorAll('.content-masters-swiper') || []
-contentMastersSwipers.forEach((el) => {
-    const container = el.querySelector('.swiper')
-    const nextEl = el.querySelector('.swiper-button-next')
-    const prevEl = el.querySelector('.swiper-button-prev')
-    console.log(container, nextEl, prevEl)
-    new Swiper(container, {
+// const contentMastersSwipers = document.querySelectorAll('.content-masters-swiper') || []
+// contentMastersSwipers.forEach((el) => {
+    // const container = el.querySelector('.swiper')
+    // const nextEl = el.querySelector('.swiper-button-next')
+    // const prevEl = el.querySelector('.swiper-button-prev')
+    // console.log(container, nextEl, prevEl)
+    new Swiper('.content-masters-swiper .swiper', {
         modules: [Navigation],
         slidesPerView: 3,
         spaceBetween: 40,
@@ -21,8 +21,8 @@ contentMastersSwipers.forEach((el) => {
         //     clickable: true,
         // },
         navigation: {
-            nextEl,
-            prevEl,
+            nextEl: '.content-masters-swiper .swiper-button-next',
+            prevEl: '.content-masters-swiper .swiper-button-prev',
         },
     });
-})
+// })

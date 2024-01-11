@@ -1546,6 +1546,12 @@ a.landing-button,
     font-size: 36px;
     color: #333333;
     margin-bottom: 40px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 32px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 28px;
+    }
 }
 
 .content-repair__grid {
@@ -1675,6 +1681,12 @@ a.content-repair-item__button:hover {
     line-height: 1;
     font-size: 36px;
     color: #333333;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 32px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 28px;
+    }
 }
 
 .content-works__description {
@@ -1944,6 +1956,12 @@ a.content-works__more-link::after {
     font-size: 36px;
     color: #333333;
     margin-bottom: 40px;
+    @media (max-width: $breakpoint-small-max) {
+        font-size: 32px;
+    }
+    @media (max-width: $breakpoint-xsmall-max) {
+        font-size: 28px;
+    }
 }
 
 .content-masters__grid {

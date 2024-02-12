@@ -515,6 +515,7 @@ document.querySelectorAll('.js-form').forEach(function(form) {
 
       const formData = new FormData(form)
       formData.append('_wpcf7_recaptcha_response', token)
+      formData.append('_wpcf7_unit_tag', 'wpcf7')
       request.send(formData)
     })
   })

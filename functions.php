@@ -1,6 +1,6 @@
 <?php
-//add_filter( 'wpcf7_load_js', '__return_false' );
-//add_filter( 'wpcf7_load_css', '__return_false' );
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
 
 add_filter('style_loader_tag', 'sj_remove_type_attr', 10, 2);
 add_filter('script_loader_tag', 'sj_remove_type_attr', 10, 2);

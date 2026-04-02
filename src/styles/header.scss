@@ -113,9 +113,9 @@
     display: flex;
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    margin-left: 8px;
-    flex-direction: column;
-    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    order: 1;
   }
 }
 

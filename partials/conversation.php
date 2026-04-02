@@ -51,7 +51,7 @@
                 </div>
 
                 <!-- Чат -->
-                <div class="conversion__item">
+                <div class="conversion__item conversion__item--wide">
                   <div class="conversion__item-title">
                     Начать чат 
                     <span>Телеграм и WhatsApp</span>

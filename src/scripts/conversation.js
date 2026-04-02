@@ -27,6 +27,14 @@ function initConversation() {
   btn.addEventListener("click", () => {
     conversion.classList.toggle("opened");
   });
+
+  const backdrop = conversion.querySelector("[data-conversion-backdrop]");
+
+  if (backdrop) {
+    backdrop.addEventListener("click", () => {
+      conversion.classList.remove("opened");
+    });
+  }
 }
 
 export { initConversation };

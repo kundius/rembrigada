@@ -16,13 +16,21 @@
 
 .conversion__btn-close {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.conversion.opened .conversion__btn-close {
+  opacity: 1;
 }
 
 .conversion__btn:has([data-conversion-btn-icon="email"].active) {
@@ -75,6 +83,10 @@
   opacity: 1;
 }
 
+.conversion.opened .conversion__btn-icon.show {
+  opacity: 0;
+}
+
 .conversion__btn-wave {
   position: absolute;
   top: 50%;
@@ -87,6 +99,10 @@
   border-radius: 50%;
   opacity: 0.8;
   animation: conversion-wave 2s infinite cubic-bezier(0.37, 0, 0.8, 0.77);
+}
+
+.conversion.opened .conversion__btn-wave {
+  opacity: 0;
 }
 
 @keyframes conversion-wave {

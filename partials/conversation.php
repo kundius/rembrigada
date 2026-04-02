@@ -123,7 +123,7 @@
       </div>
       <div class="conversion__content-backdrop"></div>
     </div>
-    <div class="conversion__backdrop"></div>
+    <div class="conversion__backdrop" data-conversion-backdrop></div>
   </div>
 
   <!-- Кнопка-триггер -->
@@ -153,9 +153,10 @@
     <span class="conversion__btn-icon" data-conversion-btn-icon="email">
       <span class="icon icon-email"></span>
     </span>
-      <!-- <div class="conversion__btn-close">
-        <span class="conversion__btn-play conversion__btn-play--close"><i class="icon icon-close"></i></span>
-      </div> -->
+
+    <span class="conversion__btn-close">
+      <span class="icon icon-close"></span>
+    </span>
   </button>
 
 </div>

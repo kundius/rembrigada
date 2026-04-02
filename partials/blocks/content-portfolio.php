@@ -10,10 +10,10 @@
             <div class="works-item__cell">
                 <?php if ($gallery = $fields['gallery']): ?>
                 <div class="works-item-images<?php if (count($gallery) == 1): ?> works-item-images_single<?php endif; ?>">
-                <?php foreach ($gallery as $key => $item): ?>
+                <?php foreach ($gallery as $key => $photo): ?>
                 <div class="works-item-image" style="display: <?php echo ($key > 7 ? 'none' : 'block') ?>">
-                    <a href="<?php echo $item['sizes']['large'] ?>" data-fslightbox="project-<?php echo $item->ID ?>" class="works-item-image__wrapper">
-                        <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes'][$key == 0 ? 'w800h600' : 'w150h100'] ?>')"></span>
+                    <a href="<?php echo $photo['sizes']['large'] ?>" data-fslightbox="project-<?php echo $item->ID ?>" class="works-item-image__wrapper">
+                        <span class="works-item-image__inner" style="background-image: url('<?php echo $photo['sizes'][$key == 0 ? 'w800h600' : 'w150h100'] ?>')"></span>
                         <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
                     </a>
                 </div>

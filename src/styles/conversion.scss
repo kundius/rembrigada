@@ -223,21 +223,12 @@
 }
 
 .conversion__grid {
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
 .conversion__item {
-  margin-bottom: 12px;
-}
-.conversion__item:nth-child(2n-1) {
-  clear: both;
-}
-.conversion__item:nth-child(5) {
-  margin-bottom: 0;
-}
-.conversion__item:nth-child(6) {
-  margin-bottom: 0;
 }
 
 .conversion__item-inner {
@@ -248,7 +239,6 @@
 
 .conversion__item-title {
   color: #fff;
-  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -263,71 +253,26 @@
 .conversion__item-content {
   margin-top: 16px;
   overflow: hidden;
-}
-
-.conversion__item-content span {
-  display: inline-block;
-  float: left;
-}
-
-.conversion__item-content span + span {
-  margin-left: 16px;
+  display: flex;
+  gap: 12px;
 }
 
 .conversion__item-btn {
-  display: block;
-  overflow: hidden;
-  text-align: center;
   border-radius: 50%;
   transition: all 0.3s;
   width: 56px;
   height: 56px;
+  background: #0a0a0b;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.conversion__item-btn i {
-  line-height: 56px;
-}
 .conversion__item-btn:hover {
   background-color: #fff;
-}
-
-.conversion__item-btn--calculator-design,
-.conversion__item-btn--form,
-.conversion__item-btn--telegram {
-  background-color: #1f81ff;
-}
-
-.conversion__item-btn--calculator-design:hover i,
-.conversion__item-btn--form:hover i,
-.conversion__item-btn--telegram:hover i {
-  color: #1f81ff;
-}
-
-.conversion__item-btn--calculator-renovation,
-.conversion__item-btn--email {
-  background-color: #009bb2;
-}
-
-.conversion__item-btn--calculator-renovation:hover i,
-.conversion__item-btn--email:hover i {
-  color: #009bb2;
-}
-
-.conversion__item-btn--phone-call,
-.conversion__item-btn--whatsapp {
-  background-color: #35c759;
-}
-
-.conversion__item-btn--phone-call:hover i,
-.conversion__item-btn--whatsapp:hover i {
-  color: #35c759;
-}
-
-.conversion__item-btn--phone-back {
-  background-color: #7f58ff;
-}
-.conversion__item-btn--phone-back:hover i {
-  color: #7f58ff;
+  color: #0a0a0b;
 }
 
 @media (max-width: 479px) {
@@ -362,9 +307,6 @@
   .conversion__item-btn {
     width: 48px;
     height: 48px;
-  }
-  .conversion__item-content span + span {
-    margin-left: 8px;
   }
 }
 

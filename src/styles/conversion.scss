@@ -10,7 +10,6 @@
   padding: 0;
   background: transparent;
   cursor: pointer;
-  background: #0a0a0b;
   transition: 0.5s ease;
   border-radius: 50%;
 }
@@ -35,13 +34,13 @@
 }
 
 .conversion__btn:has([data-conversion-btn-icon="max"].active) {
-  background: radial-gradient(
-    136.12% 140.74% at 99.77% 99.04%,
-    #8d28c8,
-    #7c42fa 20%,
-    #007aff 80%,
-    #609ceb
-  );
+  // background: radial-gradient(
+  //   136.12% 140.74% at 99.77% 99.04%,
+  //   #8d28c8,
+  //   #7c42fa 20%,
+  //   #007aff 80%,
+  //   #609ceb
+  // );
   background: #7c42fa;
 }
 
@@ -60,7 +59,7 @@
   transition: 0.5s ease;
 }
 
-.conversion__btn-icon.show-icon {
+.conversion__btn-icon.show {
   opacity: 1;
 }
 
@@ -72,7 +71,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  border: 2px solid #1f81ff;
+  border: 2px solid transparent;
   border-radius: 50%;
   opacity: 0.8;
   animation: conversion-wave 2s infinite cubic-bezier(0.37, 0, 0.8, 0.77);
@@ -86,10 +85,6 @@
     opacity: 0;
   }
 }
-
-// .conversion__btn--gray .conversion__btn-toggler {
-//   background-color: #0a0a0b;
-// }
 
 .conversion__btn:has([data-conversion-btn-icon="blue"].active)
   .conversion__btn-wave {

@@ -129,16 +129,19 @@
   <!-- Кнопка-триггер -->
   <button class="conversion__btn" data-conversion-btn type="button">
     <div class="conversion__btn-wave"></div>
-    <div class="conversion__btn-toggler">
-      <div class="conversion__btn-play">
-        <span class="conversion__btn-icon" data-conversion-btn-icon="red"><i class="icon icon-phone"></i></span>
-        <span class="conversion__btn-icon" data-conversion-btn-icon="max"><i class="icon icon-max"></i></span>
-        <span class="conversion__btn-icon" data-conversion-btn-icon="blue"><i class="icon icon-email"></i></span>
-      </div>
-      <div class="conversion__btn-close">
+
+    <span class="conversion__btn-icon" data-conversion-btn-icon="red">
+      <i class="icon icon-phone"></i>
+    </span>
+    <span class="conversion__btn-icon" data-conversion-btn-icon="max">
+      <i class="icon icon-max"></i>
+    </span>
+    <span class="conversion__btn-icon" data-conversion-btn-icon="blue">
+      <i class="icon icon-email"></i>
+    </span>
+      <!-- <div class="conversion__btn-close">
         <span class="conversion__btn-icon conversion__btn-icon--close"><i class="icon icon-close"></i></span>
-      </div>
-    </div>
+      </div> -->
   </button>
 
 </div>

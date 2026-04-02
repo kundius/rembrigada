@@ -63,6 +63,12 @@
                         title="Написать в MAX">
                       <span class="icon icon-max"></span>
                     </a>
+                    <a href="<?php echo esc_html(get_field('vk_link', 'options')) ?>" 
+                        class="conversion__item-btn conversion__item-btn--vk" 
+                        target="_blank" 
+                        title="Написать в VK">
+                      <span class="icon icon-vk"></span>
+                    </a>
                     <a href="<?php echo esc_html(get_field('telegram_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--telegram" 
                         target="_blank" 
@@ -74,12 +80,6 @@
                         target="_blank" 
                         title="Написать в WhatsApp">
                       <span class="icon icon-whatsapp"></span>
-                    </a>
-                    <a href="<?php echo esc_html(get_field('vk_link', 'options')) ?>" 
-                        class="conversion__item-btn conversion__item-btn--vk" 
-                        target="_blank" 
-                        title="Написать в VK">
-                      <span class="icon icon-vk"></span>
                     </a>
                   </div>
                 </div>
@@ -116,10 +116,6 @@
 
     <span class="conversion__btn-icon" data-conversion-btn-icon="vk">
       <span class="icon icon-vk"></span>
-    </span>
-
-    <span class="conversion__btn-icon" data-conversion-btn-icon="email">
-      <span class="icon icon-email"></span>
     </span>
 
     <span class="conversion__btn-close">

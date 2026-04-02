@@ -41,8 +41,11 @@
                 <span class="header-phone__icon">
                     <?php icon('phone') ?>
                 </span>
-                <?php the_field('phone', 'options') ?>
+                <div class="header-phone__value">
+                    <?php the_field('phone', 'options') ?>
+                </div>
             </div>
+            <div class="header-phone__desc">Ежедневно с 9:00 до 20:00</div>
             <div class="header-phone__label">Перезвоните мне</div>
         </a>
     </div>

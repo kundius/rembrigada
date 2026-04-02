@@ -172,25 +172,25 @@
   flex-direction: column;
   align-items: center;
   transition: border-color 0.3s ease;
-  @media (max-width: $breakpoint-small-max) {
-    display: none;
-  }
 }
 
 .header-phone__number {
   display: flex;
   align-items: center;
-  color: #1c1e21;
-  font-size: 16px;
-  letter-spacing: 0.025em;
-  font-weight: bold;
-  line-height: 1;
   background: #f0f2f6;
   margin-top: -8px;
   margin-bottom: 5px;
   padding: 0 4px;
+}
+
+.header-phone__value {
   font-family: "Next Art", sans-serif;
+  color: #1c1e21;
+  font-size: 16px;
+  letter-spacing: 0.025em;
   transition: color 0.3s ease;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .header-phone__icon {
@@ -211,6 +211,10 @@
 .header-phone__icon svg {
   width: 10px;
   height: 10px;
+}
+
+.header-phone__desc {
+  display: none;
 }
 
 .header-phone__label {
@@ -234,6 +238,6 @@
   color: #ff2f45;
 }
 
-.header-phone:hover .header-phone__number {
+.header-phone:hover .header-phone__value {
   color: #000000;
 }

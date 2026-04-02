@@ -69,13 +69,9 @@
                     <div>Черновые материалы с доставкой: <strong><?php echo $fields['price_material'] ?> руб.</strong></div>
                     <?php endif; ?>
                 </div>
-                <button
-                    data-order
-                    data-order-title="Рассчитайте подобный"
-                    data-order-submit="Рассчитать подобный"
-                    data-order-subject="Портфолио / <?php echo $item->post_title ?>"
-                    class="landing-button works-item-pricing__button"
-                ><span>Рассчитать стоимость своего ремонта</span></button>
+                <a href="<?php echo get_the_permalink($item->ID) ?>" class="landing-button landing-button--secondary works-item-pricing__button">
+                    <span>Посмотреть обьект</span>
+                </a>
                 </div>
             </div>
             </div>

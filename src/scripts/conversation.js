@@ -14,16 +14,16 @@ function initConversation() {
 
   if (icons.length > 0) {
     const iconSwitch = (index) => {
-      icons.forEach((el) => el.classList.remove("show-icon"));
+      icons.forEach((el) => el.classList.remove("animate-first"));
       setTimeout(() => {
-        icons[index].classList.add("show-icon");
+        icons[index].classList.add("animate-first");
+        icons.forEach((el) => el.classList.remove("animate-second"));
         setTimeout(() => {
-          icons.forEach((el) => el.classList.remove("show-circle"));
-          icons[index].classList.add("show-circle");
+          icons[index].classList.add("animate-second");
           const nextIndex = index == icons.length - 1 ? 0 : index + 1;
-          setTimeout(() => iconSwitch(nextIndex), 2000);
-        }, 250);
-      }, 250);
+          setTimeout(() => iconSwitch(nextIndex), 10000);
+        }, 5000);
+      }, 5000);
     };
     iconSwitch(icons.length - 1, 0);
   }

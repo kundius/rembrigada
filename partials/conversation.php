@@ -131,12 +131,12 @@
     <div class="conversion__btn-wave"></div>
     <button class="conversion__toggler" type="button">
       <div class="conversion__play">
-        <span class="conversion__icon" data-color="red"><i class="fa fa-phone-call"></i></span>
-        <span class="conversion__icon" data-color="max"><i class="fa fa-whatsapp"></i></span>
-        <span class="conversion__icon" data-color="blue"><i class="fa fa-email"></i></span>
+        <span class="conversion__icon" data-color="red"><i class="icon icon-phone"></i></span>
+        <span class="conversion__icon" data-color="max"><i class="icon icon-max"></i></span>
+        <span class="conversion__icon" data-color="blue"><i class="icon icon-email"></i></span>
       </div>
       <div class="conversion__close">
-        <span class="conversion__icon conversion__icon--close"><i class="fa fa-close"></i></span>
+        <span class="conversion__icon conversion__icon--close"><i class="icon icon-close"></i></span>
       </div>
     </button>
   </div>

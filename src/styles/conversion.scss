@@ -10,6 +10,7 @@
   padding: 0;
   background: transparent;
   cursor: pointer;
+  background: #1f81ff;
 }
 
 .conversion__btn-close {
@@ -34,9 +35,6 @@
   justify-content: center;
   font-size: 24px;
   color: #fff;
-  z-index: 1;
-  background: yellowgreen;
-  border-radius: 50%;
 }
 
 .conversion__btn-circle {
@@ -48,14 +46,11 @@
   border-radius: 50%;
   opacity: 0;
   background: #1f81ff;
-  visibility: hidden;
   transition: 0.5s ease;
-  z-index: 1;
 }
 
 .conversion__btn-play.show-circle .conversion__btn-circle {
   opacity: 1;
-  visibility: visible;
 }
 
 .conversion__btn-play[data-conversion-play="blue"] .conversion__btn-circle {
@@ -78,15 +73,12 @@
 
 .conversion__btn-play .icon {
   position: relative;
-  visibility: hidden;
   opacity: 0;
   transition: 0.5s ease;
-  z-index: 2;
 }
 
-.conversion__btn-play.show .icon {
+.conversion__btn-play.show-icon .icon {
   opacity: 1;
-  visibility: visible;
 }
 
 .conversion__btn-wave {

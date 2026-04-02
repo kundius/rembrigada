@@ -34,6 +34,8 @@
   justify-content: center;
   font-size: 24px;
   color: #fff;
+  border-radius: 50%;
+  background: #1f81ff;
 }
 
 .conversion__btn-icon::before {
@@ -55,15 +57,15 @@
   visibility: visible;
 }
 
-.conversion__btn-icon:has([data-conversion-btn-icon="blue"])::before {
+.conversion__btn-icon[data-conversion-btn-icon="blue"]::before {
   background: #1f81ff;
 }
 
-.conversion__btn-icon:has([data-conversion-btn-icon="red"])::before {
+.conversion__btn-icon[data-conversion-btn-icon="red"]::before {
   background: #d52437;
 }
 
-.conversion__btn-icon:has([data-conversion-btn-icon="max"])::before {
+.conversion__btn-icon[data-conversion-btn-icon="max"]::before {
   background: radial-gradient(
     136.12% 140.74% at 99.77% 99.04%,
     #8d28c8,

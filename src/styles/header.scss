@@ -76,7 +76,8 @@
     color: #fe394f;
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    font-size: 14px;
+    font-size: 16px;
+    letter-spacing: -0.025em;
   }
 }
 
@@ -116,7 +117,7 @@
   }
   @media (max-width: $breakpoint-xsmall-max) {
     margin-left: 0;
-    margin-right: 0;
+    margin-right: -6px;
     order: 1;
   }
 }

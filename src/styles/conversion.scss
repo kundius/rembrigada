@@ -53,8 +53,7 @@
   z-index: 1;
 }
 
-.conversion__btn-play.active .conversion__btn-circle,
-.conversion__btn-play.show .conversion__btn-circle {
+.conversion__btn-play.show-circle .conversion__btn-circle {
   opacity: 1;
   visibility: visible;
 }
@@ -117,20 +116,20 @@
 //   background-color: #0a0a0b;
 // }
 
-.conversion__btn:has([data-conversion-play="blue"].active)
+.conversion__btn:has([data-conversion-play="blue"].show-circle)
   .conversion__btn-wave {
   border-color: #1f81ff;
 }
-.conversion__btn:has([data-conversion-play="red"].active)
+.conversion__btn:has([data-conversion-play="red"].show-circle)
   .conversion__btn-wave {
   border-color: #d52437;
 }
-.conversion__btn:has([data-conversion-play="max"].active)
+.conversion__btn:has([data-conversion-play="max"].show-circle)
   .conversion__btn-wave {
   border-color: #8d28c8;
 }
 
-.conversion--active .conversion__container {
+.conversion--show-circle .conversion__container {
   display: block;
 }
 

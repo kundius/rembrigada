@@ -14,12 +14,12 @@ function initConversation() {
 
   if (icons.length > 0) {
     const iconSwitch = (index) => {
-      icons.forEach((el) => el.classList.remove("show"));
+      icons.forEach((el) => el.classList.remove("show-icon"));
       setTimeout(() => {
-        icons[index].classList.add("show");
+        icons[index].classList.add("show-icon");
         setTimeout(() => {
-          icons.forEach((el) => el.classList.remove("active"));
-          icons[index].classList.add("active");
+          icons.forEach((el) => el.classList.remove("show-circle"));
+          icons[index].classList.add("show-circle");
           const nextIndex = index == icons.length - 1 ? 0 : index + 1;
           setTimeout(() => iconSwitch(nextIndex), 10000);
         }, 250);

@@ -7,10 +7,10 @@
         <div class="conversion__content-scroller">
           <div class="conversion__content-container">
             <div class="conversion__content-container-inner">
-              <div class="conversion__row row">
+              <div class="conversion__grid">
 
                 <!-- Калькулятор дизайна -->
-                <div class="conversion__item col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="conversion__item">
                   <div class="conversion__item-inner">
                     <div class="conversion__item-title">Калькулятор дизайна</div>
                     <div class="conversion__item-content">
@@ -24,7 +24,7 @@
                 </div>
 
                 <!-- Калькулятор ремонта -->
-                <div class="conversion__item col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="conversion__item">
                   <div class="conversion__item-inner">
                     <div class="conversion__item-title">Калькулятор ремонта</div>
                     <div class="conversion__item-content">
@@ -38,7 +38,7 @@
                 </div>
 
                 <!-- Позвонить -->
-                <div class="conversion__item col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="conversion__item">
                   <div class="conversion__item-inner">
                     <div class="conversion__item-title">
                       Позвонить нам 
@@ -55,7 +55,7 @@
                 </div>
 
                 <!-- Обратный звонок -->
-                <div class="conversion__item col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="conversion__item">
                   <div class="conversion__item-inner">
                     <div class="conversion__item-title">Заказать обратный <br>звонок</div>
                     <div class="conversion__item-content">
@@ -70,7 +70,7 @@
                 </div>
 
                 <!-- Написать -->
-                <div class="conversion__item col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="conversion__item">
                   <div class="conversion__item-inner">
                     <div class="conversion__item-title">
                       Написать нам 
@@ -93,7 +93,7 @@
                 </div>
 
                 <!-- Чат -->
-                <div class="conversion__item col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="conversion__item">
                   <div class="conversion__item-inner">
                     <div class="conversion__item-title">
                       Начать чат 

@@ -222,11 +222,9 @@
   width: 100%;
 }
 
-.conversion__row {
-  margin: 0 -6px;
-}
-.conversion__row div[class*="col-"] {
-  padding: 0 6px;
+.conversion__grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .conversion__item {

@@ -215,6 +215,10 @@
 
 .header-phone__desc {
   display: none;
+
+  @media (max-width: $breakpoint-small-max) {
+    display: block;
+  }
 }
 
 .header-phone__label {
@@ -224,6 +228,10 @@
   font-weight: bold;
   text-decoration: underline;
   transition: color 0.3s ease;
+
+  @media (max-width: $breakpoint-small-max) {
+    display: none;
+  }
 }
 
 .header-phone:hover {

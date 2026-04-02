@@ -11,7 +11,7 @@
                 <?php if ($gallery = $fields['gallery']): ?>
                 <div class="works-item-images<?php if (count($gallery) == 1): ?> works-item-images_single<?php endif; ?>">
                 <?php foreach ($gallery as $key => $item): ?>
-                <div class="works-item-image">
+                <div class="works-item-image" style="display: <?php echo ($key > 7 ? 'none' : 'block') ?>">
                     <a href="<?php echo $item['sizes']['large'] ?>" data-fslightbox="project-<?php echo $item->ID ?>" class="works-item-image__wrapper">
                         <span class="works-item-image__inner" style="background-image: url('<?php echo $item['sizes'][$key == 0 ? 'w800h600' : 'w150h100'] ?>')"></span>
                         <span class="works-item-image__loupe"><?php icon('loupe') ?></span>
@@ -58,20 +58,22 @@
                 </div>
                 <?php endif; ?>
                 <div class="works-item-pricing">
-                <?php if ($fields['price_works'] || $fields['price_material']): ?>
-                    <div class="works-item-pricing__title">Стоимость:</div>
-                <?php endif; ?>
-                <div class="works-item-pricing__text">
-                    <?php if ($fields['price_works']): ?>
-                    <div>Ремонтные работы: <strong><?php echo $fields['price_works'] ?> руб.</strong></div>
+                    <?php if ($fields['price_works'] || $fields['price_material']): ?>
+                        <div class="works-item-pricing__title">Стоимость:</div>
                     <?php endif; ?>
-                    <?php if ($fields['price_material']): ?>
-                    <div>Черновые материалы с доставкой: <strong><?php echo $fields['price_material'] ?> руб.</strong></div>
-                    <?php endif; ?>
+                    <div class="works-item-pricing__text">
+                        <?php if ($fields['price_works']): ?>
+                        <div>Ремонтные работы: <strong><?php echo $fields['price_works'] ?> руб.</strong></div>
+                        <?php endif; ?>
+                        <?php if ($fields['price_material']): ?>
+                        <div>Черновые материалы с доставкой: <strong><?php echo $fields['price_material'] ?> руб.</strong></div>
+                        <?php endif; ?>
+                    </div>
                 </div>
-                <a href="<?php echo get_the_permalink($item->ID) ?>" class="landing-button landing-button--secondary works-item-pricing__button">
-                    <span>Посмотреть обьект</span>
-                </a>
+                <div class="works-item-more">
+                    <a href="<?php echo get_the_permalink($item->ID) ?>" class="landing-button landing-button--secondary works-item-pricing__button">
+                        <span>Посмотреть обьект</span>
+                    </a>
                 </div>
             </div>
             </div>

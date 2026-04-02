@@ -82,13 +82,11 @@ $projects = new WP_Query(array(
                     <div>Черновые материалы с доставкой: <strong><?php echo $price_material ?> руб.</strong></div>
                     <?php endif; ?>
                 </div>
-                <button
-                    data-order
-                    data-order-title="Рассчитайте подобный"
-                    data-order-submit="Рассчитать подобный"
-                    data-order-subject="Портфолио / <?php the_title() ?>"
-                    class="landing-button works-item-pricing__button"
-                ><span>Рассчитать стоимость своего ремонта</span></button>
+            </div>
+            <div class="works-item-more">
+                <a href="<?php the_permalink() ?>" class="landing-button landing-button--secondary works-item-pricing__button">
+                    <span>Посмотреть обьект</span>
+                </a>
             </div>
         </div>
     </div>

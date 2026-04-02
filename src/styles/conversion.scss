@@ -36,6 +36,7 @@
   color: #fff;
   border-radius: 50%;
   background: #1f81ff;
+  z-index: 1;
 }
 
 .conversion__btn-icon::before {
@@ -46,13 +47,13 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #1f81ff;
   opacity: 0;
   visibility: hidden;
   transition: 0.5s ease;
+  z-index: 1;
 }
 
-.conversion__btn-icon.active::before {
+.conversion__btn-icon.show::before {
   opacity: 1;
   visibility: visible;
 }
@@ -80,6 +81,7 @@
   visibility: hidden;
   opacity: 0;
   transition: 0.5s ease;
+  z-index: 2;
 }
 
 .conversion__btn-icon.show .icon {

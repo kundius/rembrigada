@@ -95,6 +95,7 @@
     height: 48px;
     padding-left: 6px;
     padding-right: 6px;
+    gap: 6px;
   }
 }
 
@@ -184,6 +185,7 @@
     padding: 0;
     padding-right: 40px;
     align-items: flex-start;
+    margin-left: auto;
   }
 }
 
@@ -244,7 +246,7 @@
     border: 1px solid #d3d5db;
     box-shadow: none;
     color: #1c1e21;
-    border-radius: none;
+    border-radius: 0;
   }
 }
 
@@ -253,8 +255,8 @@
   height: 10px;
 
   @media (max-width: $breakpoint-xsmall-max) {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 }
 

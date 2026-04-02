@@ -22,8 +22,8 @@ function initConversation() {
           icons[index].classList.add("active");
           const nextIndex = index == icons.length - 1 ? 0 : index + 1;
           setTimeout(() => iconSwitch(nextIndex), 2000);
-        }, 500);
-      }, 500);
+        }, 250);
+      }, 250);
     };
     iconSwitch(icons.length - 1, 0);
   }

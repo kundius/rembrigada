@@ -1,97 +1,69 @@
-/* === Блок: conversion === */
-.conversion a,
-.conversion a:hover {
-  text-decoration: none;
-}
-
-/* --- Элемент: кнопка-триггер --- */
-.conversion__btn,
-.conversion__toggler,
-.conversion__play,
-.conversion__close,
-.conversion__item-btn {
-  width: 56px;
-  height: 56px;
-}
-
-.conversion__toggler,
-.conversion__play,
-.conversion__close,
-.conversion__btn-wave,
-.conversion__item-btn {
-  border-radius: 50%;
-}
-
-.conversion__btn,
-.conversion__container {
-  position: fixed;
-}
-
 .conversion__btn {
-  z-index: 100;
+  position: fixed;
+  z-index: 198;
   right: 40px;
   bottom: 40px;
+  width: 56px;
+  height: 56px;
+  border: none;
+  padding: 0;
 }
 
-/* Модификаторы цвета кнопки */
-.conversion__btn--blue .conversion__toggler {
-  background-color: #1f81ff;
-}
-.conversion__btn--red .conversion__toggler {
-  background-color: #d52437;
-}
-.conversion__btn--max .conversion__toggler {
-  background: radial-gradient(
-    136.12% 140.74% at 99.77% 99.04%,
-    #8d28c8,
-    #7c42fa 20%,
-    #007aff 80%,
-    #609ceb
-  );
-}
-.conversion__btn--gray .conversion__toggler {
-  background-color: #0a0a0b;
-}
-
-/* --- Элементы переключателя --- */
-.conversion__toggler {
+.conversion__btn-toggler {
   position: relative;
+  display: block;
+  width: 56px;
+  height: 56px;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
   background-color: #1f81ff;
 }
 
-.conversion__play,
-.conversion__close,
-.conversion__icon {
+.conversion__btn-play {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: block;
+  width: 56px;
+  height: 56px;
 }
 
-.conversion__close,
-.conversion__icon {
+.conversion__btn-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
 }
 
-.conversion__play,
-.conversion__btn-wave,
-.conversion--active .conversion__container,
-.conversion__toggler i,
-.conversion__item-title span,
-.conversion__toggler,
-.conversion__item-btn {
+.conversion__btn-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  font-size: 24px;
+  color: #fff;
+}
+
+.conversion__btn-icon.active {
   display: block;
 }
 
-/* --- Анимация волны --- */
 .conversion__btn-wave {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid #fff0;
+  display: block;
   width: 100%;
   height: 100%;
+  border: 2px solid #fff0;
   border-radius: 50%;
   opacity: 0.8;
   animation: conversion-wave 2s infinite cubic-bezier(0.37, 0, 0.8, 0.77);
@@ -106,17 +78,45 @@
   }
 }
 
-.conversion__btn--blue .conversion__btn-wave {
+.conversion__btn:has([data-conversion-btn-icon="blue"].active)
+  .conversion__btn-toggler {
+  background-color: #1f81ff;
+}
+.conversion__btn:has([data-conversion-btn-icon="red"].active)
+  .conversion__btn-toggler {
+  background-color: #d52437;
+}
+.conversion__btn:has([data-conversion-btn-icon="max"].active)
+  .conversion__btn-toggler {
+  background: radial-gradient(
+    136.12% 140.74% at 99.77% 99.04%,
+    #8d28c8,
+    #7c42fa 20%,
+    #007aff 80%,
+    #609ceb
+  );
+}
+// .conversion__btn--gray .conversion__btn-toggler {
+//   background-color: #0a0a0b;
+// }
+
+.conversion__btn:has([data-conversion-btn-icon="blue"].active)
+  .conversion__btn-wave {
   border-color: #1f81ff;
 }
-.conversion__btn--green .conversion__btn-wave {
-  border-color: #35c759;
+.conversion__btn:has([data-conversion-btn-icon="red"].active)
+  .conversion__btn-wave {
+  border-color: #d52437;
 }
-.conversion__btn--gray .conversion__btn-wave {
-  border-color: #fff0;
+.conversion__btn:has([data-conversion-btn-icon="max"].active)
+  .conversion__btn-wave {
+  border-color: #8d28c8;
 }
 
-/* --- Контейнер и контент --- */
+.conversion--active .conversion__container {
+  display: block;
+}
+
 .conversion__container {
   position: fixed;
   z-index: 197;
@@ -185,11 +185,9 @@
   width: 100%;
 }
 
-/* --- Элементы списка --- */
 .conversion__row {
   margin: 0 -6px;
 }
-
 .conversion__row div[class*="col-"] {
   padding: 0 6px;
 }
@@ -197,12 +195,12 @@
 .conversion__item {
   margin-bottom: 12px;
 }
-
 .conversion__item:nth-child(2n-1) {
   clear: both;
 }
-
-.conversion__item:nth-child(5),
+.conversion__item:nth-child(5) {
+  margin-bottom: 0;
+}
 .conversion__item:nth-child(6) {
   margin-bottom: 0;
 }
@@ -241,25 +239,29 @@
   margin-left: 16px;
 }
 
-/* --- Кнопки действий --- */
 .conversion__item-btn {
   display: block;
   overflow: hidden;
   text-align: center;
   border-radius: 50%;
   transition: all 0.3s;
+  width: 56px;
+  height: 56px;
 }
 
 .conversion__item-btn i {
   line-height: 56px;
 }
+.conversion__item-btn:hover {
+  background-color: #fff;
+}
 
-/* Модификаторы кнопок */
 .conversion__item-btn--calculator-design,
 .conversion__item-btn--form,
 .conversion__item-btn--telegram {
   background-color: #1f81ff;
 }
+
 .conversion__item-btn--calculator-design:hover i,
 .conversion__item-btn--form:hover i,
 .conversion__item-btn--telegram:hover i {
@@ -270,6 +272,7 @@
 .conversion__item-btn--email {
   background-color: #009bb2;
 }
+
 .conversion__item-btn--calculator-renovation:hover i,
 .conversion__item-btn--email:hover i {
   color: #009bb2;
@@ -279,6 +282,7 @@
 .conversion__item-btn--whatsapp {
   background-color: #35c759;
 }
+
 .conversion__item-btn--phone-call:hover i,
 .conversion__item-btn--whatsapp:hover i {
   color: #35c759;
@@ -291,11 +295,6 @@
   color: #7f58ff;
 }
 
-.conversion__item-btn:hover {
-  background-color: #fff;
-}
-
-/* === Адаптив === */
 @media (max-width: 479px) {
   .conversion__content-backdrop {
     background-color: rgb(255 255 255 / 0.35);

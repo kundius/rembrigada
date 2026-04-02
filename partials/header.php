@@ -2,7 +2,9 @@
 <div class="header-placeholder"></div>
 <header class="header">
     <div class="container">
-        <a href="/" class="header__logo"><img src="<?php echo get_bloginfo('template_url') ?>/dist/images/logo-dark.png" alt="<?php echo get_bloginfo('description') ?>"></a>
+        <a href="/" class="header__logo">
+            РЕМБРИГАДА<span>116</span>
+        </a>
 
         <div class="header-toggle">
             <div class="header-toggle__icon">

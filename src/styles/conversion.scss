@@ -34,8 +34,6 @@
   justify-content: center;
   font-size: 24px;
   color: #fff;
-  border-radius: 50%;
-  background: #1f81ff;
   z-index: 1;
 }
 
@@ -54,7 +52,8 @@
   z-index: 1;
 }
 
-.conversion__btn-icon.active::before {
+.conversion__btn-icon.active::before,
+.conversion__btn-icon.show::before {
   opacity: 1;
   visibility: visible;
 }

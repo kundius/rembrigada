@@ -96,6 +96,7 @@
   width: 100%;
   height: 100%;
   border: 2px solid transparent;
+  transition: 0.5s ease;
   border-radius: 50%;
   opacity: 0.8;
   animation: conversion-wave 2s infinite cubic-bezier(0.37, 0, 0.8, 0.77);

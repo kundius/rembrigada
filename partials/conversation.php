@@ -11,73 +11,41 @@
             <div class="conversion__content-container-inner">
               <div class="conversion__grid">
 
-                <!-- Калькулятор дизайна -->
-                <div class="conversion__item">
-                  <div class="conversion__item-title">Калькулятор дизайна</div>
+                <!-- Позвонить -->
+                <!-- <div class="conversion__item">
+                  <div class="conversion__item-title">
+                    Позвонить нам 
+                    <span>Ежедневно <br>9:00–20:00</span>
+                  </div>
                   <div class="conversion__item-content">
-                    <a class="conversion__item-btn conversion__item-btn--calculator-design" href="#">
-                      <i class="fa fa-calculator-design"></i>
+                    <a class="conversion__item-btn conversion__item-btn--phone-call" 
+                        href="tel:<?php echo $raw_phone ?>" 
+                        title="Позвонить нам">
+                      <span class="icon icon-phone"></span>
+                    </a>
+                  </div>
+                </div> -->
+
+                <!-- Обратный звонок -->
+                <div class="conversion__item">
+                  <div class="conversion__item-title">Заказать обратный <br>звонок</div>
+                  <div class="conversion__item-content">
+                    <a class="conversion__item-btn conversion__item-btn--phone-back" 
+                        data-load="click" 
+                        href="#callback" 
+                        title="Обратный звонок">
+                      <span class="icon icon-phone"></span>
                     </a>
                   </div>
                 </div>
 
                 <!-- Калькулятор ремонта -->
                 <div class="conversion__item">
-                  <div class="conversion__item-title">Калькулятор ремонта</div>
+                  <div class="conversion__item-title">Цены</div>
                   <div class="conversion__item-content">
-                    <a class="conversion__item-btn conversion__item-btn--calculator-renovation call-wqec" 
-                        data-wqec-section-id="4928" 
-                        href="#">
-                      <i class="fa fa-calculator-renovation"></i>
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Позвонить -->
-                <div class="conversion__item">
-                  <div class="conversion__item-title">
-                    Позвонить нам 
-                    <span>Ежедневно <br>9:00–20:00</span>
-                  </div>
-                  <div class="conversion__item-content">
-                    <a class="conversion__item-btn conversion__item-btn--phone" 
-                        href="tel:<?php echo $raw_phone ?>" 
-                        title="Позвонить нам">
-                      <span class="icon icon-phone"></span>
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Обратный звонок -->
-                <div class="conversion__item">
-                  <div class="conversion__item-title">Заказать обратный <br>звонок</div>
-                  <div class="conversion__item-content">
-                    <a class="conversion__item-btn conversion__item-btn--phone-back b24-web-form-popup-btn-45 btn-loader" 
-                        data-load="click" 
-                        href="/contacts/" 
-                        title="Обратный звонок">
-                      <i class="fa fa-phone-back"></i>
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Написать -->
-                <div class="conversion__item">
-                  <div class="conversion__item-title">
-                    Написать нам 
-                    <span>Email и Обратная связь</span>
-                  </div>
-                  <div class="conversion__item-content">
-                    <a href="mailto:vira@eremont.ru?subject=Обращение с сайта eremont.ru.+7 (495) 357-11-67" 
-                        class="conversion__item-btn conversion__item-btn--email" 
-                        title="Написать нам">
-                      <i class="fa fa-email"></i>
-                    </a>
-                    <a class="conversion__item-btn conversion__item-btn--form b24-web-form-popup-btn-27 btn-loader" 
-                        data-load="click" 
-                        href="/contacts/" 
-                        title="Обратная связь">
-                      <i class="fa fa-form"></i>
+                    <a class="conversion__item-btn conversion__item-btn--calc" 
+                        href="/price">
+                      <span class="icon icon-calc"></span>
                     </a>
                   </div>
                 </div>
@@ -89,17 +57,29 @@
                     <span>Телеграм и WhatsApp</span>
                   </div>
                   <div class="conversion__item-content">
+                    <a href="max" 
+                        class="conversion__item-btn conversion__item-btn--max" 
+                        target="_blank" 
+                        title="Написать в MAX">
+                      <span class="icon icon-telegram"></span>
+                    </a>
                     <a href="https://t.me/viraartstroy?text=Здравствуйте!..." 
                         class="conversion__item-btn conversion__item-btn--telegram" 
                         target="_blank" 
                         title="Написать в Телеграм">
-                      <i class="fa fa-telegram"></i>
+                      <span class="icon icon-telegram"></span>
                     </a>
                     <a href="https://wa.me/74953571488?text=Здравствуйте!..." 
                         class="conversion__item-btn conversion__item-btn--whatsapp" 
                         target="_blank" 
                         title="Написать в WhatsApp">
-                      <i class="fa fa-whatsapp"></i>
+                      <span class="icon icon-whatsapp"></span>
+                    </a>
+                    <a href="vk" 
+                        class="conversion__item-btn conversion__item-btn--vk" 
+                        target="_blank" 
+                        title="Написать в VK">
+                      <span class="icon icon-whatsapp"></span>
                     </a>
                   </div>
                 </div>

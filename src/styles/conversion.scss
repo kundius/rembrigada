@@ -272,12 +272,60 @@
   color: #0a0a0b;
 }
 
-.conversion__item-btn--phone {
+.conversion__item-btn--phone-call {
   background: #35c759;
 }
 
-.conversion__item-btn--phone:hover {
+.conversion__item-btn--phone-call:hover {
   color: #35c759;
+}
+
+.conversion__item-btn--phone-back {
+  background: #7f58ff;
+}
+
+.conversion__item-btn--phone-back:hover {
+  color: #7f58ff;
+}
+
+.conversion__item-btn--calc {
+  background: #009bb2;
+}
+
+.conversion__item-btn--calc:hover {
+  color: #009bb2;
+}
+
+.conversion__item-btn--max {
+  background: #7c42fa;
+}
+
+.conversion__item-btn--max:hover {
+  color: #7c42fa;
+}
+
+.conversion__item-btn--telegram {
+  background: #0088cc;
+}
+
+.conversion__item-btn--telegram:hover {
+  color: #0088cc;
+}
+
+.conversion__item-btn--whatsapp {
+  background: #128c7e;
+}
+
+.conversion__item-btn--whatsapp:hover {
+  color: #128c7e;
+}
+
+.conversion__item-btn--vk {
+  background: #0077ff;
+}
+
+.conversion__item-btn--vk:hover {
+  color: #0077ff;
 }
 
 @media (max-width: 479px) {

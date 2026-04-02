@@ -216,7 +216,7 @@
 .header-phone__desc {
   display: none;
 
-  @media (max-width: $breakpoint-small-max) {
+  @media (max-width: $breakpoint-xsmall-max) {
     display: block;
   }
 }
@@ -229,7 +229,7 @@
   text-decoration: underline;
   transition: color 0.3s ease;
 
-  @media (max-width: $breakpoint-small-max) {
+  @media (max-width: $breakpoint-xsmall-max) {
     display: none;
   }
 }

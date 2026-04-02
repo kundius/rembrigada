@@ -36,6 +36,11 @@
   justify-content: center;
   font-size: 24px;
   color: #fff;
+  z-index: 1;
+}
+
+.conversion__btn-play.show-icon {
+  z-index: 2;
 }
 
 .conversion__btn-circle {
@@ -50,6 +55,7 @@
   transition: 0.5s ease;
 }
 
+.conversion__btn-play.show-icon .conversion__btn-circle,
 .conversion__btn-play.show-circle .conversion__btn-circle {
   opacity: 1;
 }

@@ -25,11 +25,11 @@
   border-radius: 50%;
 }
 
-.conversion__btn:has([data-conversion-btn-icon="blue"].active) {
+.conversion__btn:has([data-conversion-btn-icon="email"].active) {
   background: #1f81ff;
 }
 
-.conversion__btn:has([data-conversion-btn-icon="red"].active) {
+.conversion__btn:has([data-conversion-btn-icon="phone"].active) {
   background: #d52437;
 }
 
@@ -42,6 +42,18 @@
   //   #609ceb
   // );
   background: #7c42fa;
+}
+
+.conversion__btn:has([data-conversion-btn-icon="telegram"].active) {
+  background: #0088cc;
+}
+
+.conversion__btn:has([data-conversion-btn-icon="whatsapp"].active) {
+  background: #128c7e;
+}
+
+.conversion__btn:has([data-conversion-btn-icon="vk"].active) {
+  background: #0077ff;
 }
 
 .conversion__btn-icon {
@@ -86,17 +98,34 @@
   }
 }
 
-.conversion__btn:has([data-conversion-btn-icon="blue"].active)
+.conversion__btn:has([data-conversion-btn-icon="email"].active)
   .conversion__btn-wave {
   border-color: #1f81ff;
 }
-.conversion__btn:has([data-conversion-btn-icon="red"].active)
+
+.conversion__btn:has([data-conversion-btn-icon="phone"].active)
   .conversion__btn-wave {
   border-color: #d52437;
 }
+
 .conversion__btn:has([data-conversion-btn-icon="max"].active)
   .conversion__btn-wave {
   border-color: #8d28c8;
+}
+
+.conversion__btn:has([data-conversion-btn-icon="whatsapp"].active)
+  .conversion__btn-wave {
+  border-color: #128c7e;
+}
+
+.conversion__btn:has([data-conversion-btn-icon="telegram"].active)
+  .conversion__btn-wave {
+  border-color: #0088cc;
+}
+
+.conversion__btn:has([data-conversion-btn-icon="vk"].active)
+  .conversion__btn-wave {
+  border-color: #0077ff;
 }
 
 .conversion__container {

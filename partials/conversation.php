@@ -130,15 +130,27 @@
   <button class="conversion__btn" data-conversion-btn type="button">
     <div class="conversion__btn-wave"></div>
 
-    <span class="conversion__btn-icon" data-conversion-btn-icon="red">
+    <span class="conversion__btn-icon" data-conversion-btn-icon="phone">
       <span class="icon icon-phone"></span>
     </span>
-    
+
     <span class="conversion__btn-icon" data-conversion-btn-icon="max">
       <span class="icon icon-max"></span>
     </span>
 
-    <span class="conversion__btn-icon" data-conversion-btn-icon="blue">
+    <span class="conversion__btn-icon" data-conversion-btn-icon="telegram">
+      <span class="icon icon-telegram"></span>
+    </span>
+
+    <span class="conversion__btn-icon" data-conversion-btn-icon="whatsapp">
+      <span class="icon icon-whatsapp"></span>
+    </span>
+
+    <span class="conversion__btn-icon" data-conversion-btn-icon="vk">
+      <span class="icon icon-vk"></span>
+    </span>
+
+    <span class="conversion__btn-icon" data-conversion-btn-icon="email">
       <span class="icon icon-email"></span>
     </span>
       <!-- <div class="conversion__btn-close">

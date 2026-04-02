@@ -14,13 +14,18 @@ function initConversation() {
 
   if (icons.length > 0) {
     const iconSwitch = (index) => {
-      console.log(index);
-      icons.forEach((el) => el.classList.remove("active"));
-      icons[index].classList.add("active");
-      const nextIndex = index == icons.length - 1 ? 0 : index + 1;
-      setTimeout(() => iconSwitch(nextIndex), 2000);
+      icons.forEach((el) => el.classList.remove("show"));
+      setTimeout(() => {
+        icons[index].classList.add("show");
+        setTimeout(() => {
+          icons.forEach((el) => el.classList.remove("active"));
+          icons[index].classList.add("active");
+          const nextIndex = index == icons.length - 1 ? 0 : index + 1;
+          setTimeout(() => iconSwitch(nextIndex), 2000);
+        }, 500);
+      }, 500);
     };
-    iconSwitch(0);
+    iconSwitch(icons.length - 1, 0);
   }
 }
 

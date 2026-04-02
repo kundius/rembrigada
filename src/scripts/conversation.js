@@ -21,7 +21,7 @@ function initConversation() {
           icons.forEach((el) => el.classList.remove("active"));
           icons[index].classList.add("active");
           const nextIndex = index == icons.length - 1 ? 0 : index + 1;
-          setTimeout(() => iconSwitch(nextIndex), 2000);
+          setTimeout(() => iconSwitch(nextIndex), 10000);
         }, 250);
       }, 250);
     };

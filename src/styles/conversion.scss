@@ -272,6 +272,14 @@
   color: #0a0a0b;
 }
 
+.conversion__item-btn--phone {
+  background: #35c759;
+}
+
+.conversion__item-btn--phone:hover {
+  color: #35c759;
+}
+
 @media (max-width: 479px) {
   .conversion__content-backdrop {
     background-color: rgb(255 255 255 / 0.35);

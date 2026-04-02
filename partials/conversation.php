@@ -1,3 +1,5 @@
+<?php $raw_phone = preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>
+
 <div class="conversion" data-conversion>
   
   <!-- Контейнер виджета -->
@@ -38,10 +40,10 @@
                     <span>Ежедневно <br>9:00–20:00</span>
                   </div>
                   <div class="conversion__item-content">
-                    <a class="conversion__item-btn conversion__item-btn--phone-call phone-call" 
-                        href="tel:+74953571167" 
+                    <a class="conversion__item-btn conversion__item-btn--phone" 
+                        href="tel:<?php echo $raw_phone ?>" 
                         title="Позвонить нам">
-                      <i class="fa fa-phone-call"></i>
+                      <span class="icon icon-phone"></span>
                     </a>
                   </div>
                 </div>

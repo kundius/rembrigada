@@ -9,7 +9,7 @@ function initConversation() {
 
   if (!btn) return;
 
-  const icons = btn.querySelectorAll("[data-conversion-btn-icon]") || [];
+  const icons = btn.querySelectorAll("[data-conversion-play]") || [];
   console.log(icons);
 
   if (icons.length > 0) {

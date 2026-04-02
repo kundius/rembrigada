@@ -130,17 +130,22 @@
   <button class="conversion__btn" data-conversion-btn type="button">
     <div class="conversion__btn-wave"></div>
 
-    <span class="conversion__btn-icon" data-conversion-btn-icon="red">
-      <i class="icon icon-phone"></i>
+    <span class="conversion__btn-play" data-conversion-play="red">
+      <span class="conversion__btn-circle"></span>
+      <span class="conversion__btn-icon icon icon-phone"></span>
     </span>
-    <span class="conversion__btn-icon" data-conversion-btn-icon="max">
-      <i class="icon icon-max"></i>
+    
+    <span class="conversion__btn-play" data-conversion-play="max">
+      <span class="conversion__btn-circle"></span>
+      <span class="conversion__btn-icon icon icon-max"></span>
     </span>
-    <span class="conversion__btn-icon" data-conversion-btn-icon="blue">
-      <i class="icon icon-email"></i>
+
+    <span class="conversion__btn-play" data-conversion-play="blue">
+      <span class="conversion__btn-circle"></span>
+      <span class="conversion__btn-icon icon icon-email"></span>
     </span>
       <!-- <div class="conversion__btn-close">
-        <span class="conversion__btn-icon conversion__btn-icon--close"><i class="icon icon-close"></i></span>
+        <span class="conversion__btn-play conversion__btn-play--close"><i class="icon icon-close"></i></span>
       </div> -->
   </button>
 

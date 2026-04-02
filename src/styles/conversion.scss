@@ -23,7 +23,7 @@
   border-radius: 50%;
 }
 
-.conversion__btn-icon {
+.conversion__btn-play {
   position: absolute;
   left: 0;
   top: 0;
@@ -35,10 +35,11 @@
   font-size: 24px;
   color: #fff;
   z-index: 1;
+  background: yellowgreen;
+  border-radius: 50%;
 }
 
-.conversion__btn-icon::before {
-  content: "";
+.conversion__btn-circle {
   position: absolute;
   left: 0;
   top: 0;
@@ -52,21 +53,21 @@
   z-index: 1;
 }
 
-.conversion__btn-icon.active::before,
-.conversion__btn-icon.show::before {
+.conversion__btn-play.active .conversion__btn-circle,
+.conversion__btn-play.show .conversion__btn-circle {
   opacity: 1;
   visibility: visible;
 }
 
-.conversion__btn-icon[data-conversion-btn-icon="blue"]::before {
+.conversion__btn-play[data-conversion-play="blue"] .conversion__btn-circle {
   background: #1f81ff;
 }
 
-.conversion__btn-icon[data-conversion-btn-icon="red"]::before {
+.conversion__btn-play[data-conversion-play="red"] .conversion__btn-circle {
   background: #d52437;
 }
 
-.conversion__btn-icon[data-conversion-btn-icon="max"]::before {
+.conversion__btn-play[data-conversion-play="max"] .conversion__btn-circle {
   background: radial-gradient(
     136.12% 140.74% at 99.77% 99.04%,
     #8d28c8,
@@ -76,7 +77,7 @@
   );
 }
 
-.conversion__btn-icon .icon {
+.conversion__btn-play .icon {
   position: relative;
   visibility: hidden;
   opacity: 0;
@@ -84,7 +85,7 @@
   z-index: 2;
 }
 
-.conversion__btn-icon.show .icon {
+.conversion__btn-play.show .icon {
   opacity: 1;
   visibility: visible;
 }
@@ -116,15 +117,15 @@
 //   background-color: #0a0a0b;
 // }
 
-.conversion__btn:has([data-conversion-btn-icon="blue"].active)
+.conversion__btn:has([data-conversion-play="blue"].active)
   .conversion__btn-wave {
   border-color: #1f81ff;
 }
-.conversion__btn:has([data-conversion-btn-icon="red"].active)
+.conversion__btn:has([data-conversion-play="red"].active)
   .conversion__btn-wave {
   border-color: #d52437;
 }
-.conversion__btn:has([data-conversion-btn-icon="max"].active)
+.conversion__btn:has([data-conversion-play="max"].active)
   .conversion__btn-wave {
   border-color: #8d28c8;
 }

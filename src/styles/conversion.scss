@@ -1,0 +1,451 @@
+/* === Базовые сбросы и размеры === */
+.conversion_widget a,
+.conversion_widget a:hover {
+  text-decoration: none;
+}
+
+.conversion_widget-btn,
+.conversion_widget-toggler,
+.conversion_widget-toggler .play,
+.conversion_widget-toggler .close,
+.conversion_widget-item-btn {
+  width: 56px;
+  height: 56px;
+}
+
+.conversion_widget-toggler,
+.conversion_widget-toggler .play,
+.conversion_widget-toggler .close,
+.conversion_widget-btn-wave,
+.conversion_widget-item-btn {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+/* === Позиционирование === */
+.conversion_widget-container,
+.conversion_widget-btn {
+  position: fixed;
+}
+
+.conversion_widget-btn {
+  z-index: 100;
+  right: var(--gap-10);
+  bottom: var(--gap-10);
+}
+
+.conversion_widget-toggler,
+.conversion_widget-content-inner,
+.conversion_widget-content-scroller {
+  position: relative;
+}
+
+/* === Цвета кнопки-триггера === */
+.conversion_widget-toggler {
+  background-color: var(--blue-56);
+}
+
+.conversion_widget-btn.blue .conversion_widget-toggler {
+  background-color: var(--blue-56);
+}
+
+.conversion_widget-btn.green .conversion_widget-toggler {
+  background-color: #35c759;
+}
+
+.conversion_widget-btn.gray .conversion_widget-toggler {
+  background-color: var(--gray-04);
+}
+
+/* === Видимость элементов === */
+.conversion_widget .close,
+.conversion_widget .play span,
+.conversion_widget .close span,
+.conversion_widget-container {
+  display: none;
+}
+
+.conversion_widget .play,
+.conversion_widget-btn-wave,
+.conversion_widget.active .conversion_widget-container,
+.conversion_widget-toggler i,
+.conversion_widget-item-title span,
+.conversion_widget-toggler,
+.conversion_widget-item-btn {
+  display: block;
+}
+
+/* === Абсолютное позиционирование === */
+.conversion_widget-content,
+.conversion_widget-backdrop,
+.conversion_widget-content-backdrop,
+.conversion_widget .play span,
+.conversion_widget .close span,
+.conversion_widget-btn-wave {
+  position: absolute;
+}
+
+.conversion_widget .play span,
+.conversion_widget .close span,
+.conversion_widget-btn-wave {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+/* === Иконки === */
+.conversion_widget i {
+  color: var(--white);
+  font-size: 24px;
+}
+
+.conversion_widget .whatsapp i {
+  font-size: 32px;
+}
+
+.conversion_widget .email i,
+.conversion_widget .calculator-design i,
+.conversion_widget .telegram i {
+  font-size: 28px;
+}
+
+.conversion_widget .calculator-renovation i {
+  font-size: 30px;
+}
+
+.conversion_widget .form i {
+  font-size: 26px;
+}
+
+/* === Анимация волны === */
+.conversion_widget-btn-wave {
+  border-color: #fff0;
+  border-width: 2px;
+  border-style: solid;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  -webkit-animation: wave-stroke 2s infinite cubic-bezier(0.37, 0, 0.8, 0.77);
+  animation: wave-stroke 2s infinite cubic-bezier(0.37, 0, 0.8, 0.77);
+}
+
+@-webkit-keyframes wave-stroke {
+  100% {
+    width: 200%;
+    height: 200%;
+    border-color: #fff0;
+    opacity: 0;
+  }
+}
+
+@keyframes wave-stroke {
+  100% {
+    width: 200%;
+    height: 200%;
+    border-color: #fff0;
+    opacity: 0;
+  }
+}
+
+.conversion_widget-btn.blue .conversion_widget-btn-wave {
+  border-color: var(--blue-56);
+}
+
+.conversion_widget-btn.green .conversion_widget-btn-wave {
+  border-color: #35c759;
+}
+
+.conversion_widget-btn.gray .conversion_widget-btn-wave {
+  border-color: #fff0;
+}
+
+/* === Контейнеры контента === */
+.conversion_widget-content,
+.conversion_widget-backdrop,
+.conversion_widget-container,
+.conversion_widget-content-backdrop,
+.conversion_widget-content-inner,
+.conversion_widget-content-scroller,
+.conversion_widget-content-container {
+  height: 100%;
+}
+
+.conversion_widget-content,
+.conversion_widget-backdrop,
+.conversion_widget-container,
+.conversion_widget-content-backdrop,
+.conversion_widget-content-inner,
+.conversion_widget-content-scroller {
+  top: 0;
+}
+
+.conversion_widget-backdrop,
+.conversion_widget-container,
+.conversion_widget-content-backdrop,
+.conversion_widget-content-inner,
+.conversion_widget-content-scroller,
+.conversion_widget-content-container,
+.conversion_widget-content-container-inner,
+.conversion_widget-content,
+.conversion_widget-item-title span {
+  width: 100%;
+}
+
+.conversion_widget-backdrop,
+.conversion_widget-container,
+.conversion_widget-content-backdrop,
+.conversion_widget-content-inner,
+.conversion_widget-content-scroller {
+  left: 0;
+}
+
+.conversion_widget-content-container {
+  display: table;
+}
+
+.conversion_widget-content-container-inner {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+/* === Z-index и фон === */
+.conversion_widget-container {
+  z-index: 97;
+}
+
+.conversion_widget-backdrop {
+  z-index: 98;
+  background-color: var(--surface-darkest);
+  opacity: 0.75;
+}
+
+.conversion_widget-content-backdrop {
+  z-index: 99;
+  background-color: rgb(255 255 255 / 0.5);
+  backdrop-filter: blur(20px);
+}
+
+.conversion_widget-content {
+  z-index: 101;
+  max-width: 440px;
+  right: 0;
+}
+
+.conversion_widget-content-inner {
+  padding: 110px var(--gap-10) 150px var(--gap-10);
+  z-index: 102;
+}
+
+.conversion_widget-content-scroller {
+  overflow-y: auto;
+}
+
+/* === Элементы виджета === */
+.conversion_widget-item {
+  margin-bottom: var(--gap-3);
+}
+
+.conversion_widget-item:nth-child(2n-1) {
+  clear: both;
+}
+
+.conversion_widget-item:nth-child(5),
+.conversion_widget-item:nth-child(6) {
+  margin-bottom: 0;
+}
+
+.conversion_widget-row {
+  margin-right: -6px;
+  margin-left: -6px;
+}
+
+.conversion_widget-row div[class*="col-"] {
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+.conversion_widget-item-inner {
+  background-color: var(--gray-20);
+  padding: var(--gap-4);
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+}
+
+.conversion_widget-item-title {
+  color: var(--text-primary-on-dark);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.conversion_widget-item-title span {
+  opacity: 0.6;
+}
+
+.conversion_widget-item-content,
+.conversion_widget-content-container-inner,
+.conversion_widget-toggler,
+.conversion_widget-toggler .play,
+.conversion_widget-toggler .close,
+.conversion_widget-btn-wave,
+.conversion_widget-item-btn {
+  overflow: hidden;
+}
+
+.conversion_widget-item-content {
+  margin-top: var(--gap-4);
+}
+
+.conversion_widget-item-content span {
+  display: inline-block;
+  float: left;
+}
+
+.conversion_widget-item-btn {
+  text-align: center;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+.conversion_widget-item-btn i {
+  line-height: 56px;
+}
+
+.conversion_widget-item-content span + span {
+  margin-left: var(--gap-4);
+}
+
+/* === Цвета кнопок действий === */
+.conversion_widget-item-calculator-design,
+.conversion_widget-item-form,
+.conversion_widget-item-telegram {
+  background-color: var(--blue-56);
+}
+
+.conversion_widget-item-calculator-design:hover i,
+.conversion_widget-item-form:hover i,
+.conversion_widget-item-telegram:hover i {
+  color: var(--blue-56);
+}
+
+.conversion_widget-item-calculator-renovation,
+.conversion_widget-item-email {
+  background-color: #009bb2;
+}
+
+.conversion_widget-item-calculator-renovation:hover i,
+.conversion_widget-item-email:hover i {
+  color: #009bb2;
+}
+
+.conversion_widget-item-phone-call,
+.conversion_widget-item-whatsapp {
+  background-color: #35c759;
+}
+
+.conversion_widget-item-phone-call:hover i,
+.conversion_widget-item-whatsapp:hover i {
+  color: #35c759;
+}
+
+.conversion_widget-item-phone-back {
+  background-color: #7f58ff;
+}
+
+.conversion_widget-item-phone-back:hover i {
+  color: #7f58ff;
+}
+
+.conversion_widget-item-calculator-design:hover,
+.conversion_widget-item-form:hover,
+.conversion_widget-item-telegram:hover,
+.conversion_widget-item-calculator-renovation:hover,
+.conversion_widget-item-email:hover,
+.conversion_widget-item-phone-call:hover,
+.conversion_widget-item-whatsapp:hover,
+.conversion_widget-item-phone-back:hover {
+  background-color: var(--white);
+}
+
+/* === Адаптив: ≤479px === */
+@media (max-width: 479px) {
+  .conversion_widget-content-backdrop {
+    background-color: rgb(255 255 255 / 0.35);
+  }
+
+  .conversion_widget-backdrop {
+    display: none;
+  }
+
+  .conversion_widget-content {
+    max-width: 100%;
+  }
+
+  .conversion_widget-content-scroller {
+    max-width: 370px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+
+  .conversion_widget-btn {
+    bottom: var(--gap-4);
+    right: var(--gap-4);
+  }
+
+  .conversion_widget-content-inner {
+    padding: 80px var(--gap-4) 120px var(--gap-4);
+  }
+}
+
+/* === Адаптив: ≤375px === */
+@media (max-width: 375px) {
+  .conversion_widget-item-title {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .conversion_widget-item-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .conversion_widget-item-content span + span {
+    margin-left: var(--gap-2);
+  }
+
+  .conversion_widget-item-btn i {
+    line-height: 48px;
+  }
+
+  .conversion_widget i {
+    font-size: 21px;
+  }
+
+  .conversion_widget .whatsapp i {
+    font-size: 29px;
+  }
+
+  .conversion_widget .email i,
+  .conversion_widget .calculator-design i,
+  .conversion_widget .telegram i {
+    font-size: 25px;
+  }
+
+  .conversion_widget .calculator-renovation i {
+    font-size: 27px;
+  }
+
+  .conversion_widget .form i {
+    font-size: 23px;
+  }
+}
+
+/* === Адаптив: ≤350px === */
+@media (max-width: 350px) {
+  .conversion_widget-item-title {
+    font-size: 13px;
+  }
+}

@@ -204,3 +204,8 @@
 
 <script src="<?php echo get_bloginfo('template_url') ?>/dist/scripts/scripts.js"></script>
 <?php wp_footer() ?>
+
+<?php if (isset($_GET['test'])): ?>
+<?php get_template_part('partials/conversation'); ?>
+<?php endif; ?>
+

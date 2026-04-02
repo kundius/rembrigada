@@ -54,32 +54,32 @@
                 <div class="conversion__item conversion__item--wide">
                   <div class="conversion__item-title">
                     Начать чат 
-                    <span>Телеграм и WhatsApp</span>
+                    <span>MAX, VK, Телеграм и WhatsApp</span>
                   </div>
                   <div class="conversion__item-content">
-                    <a href="max" 
+                    <a href="<?php echo esc_html(get_field('max_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--max" 
                         target="_blank" 
                         title="Написать в MAX">
-                      <span class="icon icon-telegram"></span>
+                      <span class="icon icon-max"></span>
                     </a>
-                    <a href="https://t.me/viraartstroy?text=Здравствуйте!..." 
+                    <a href="<?php echo esc_html(get_field('telegram_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--telegram" 
                         target="_blank" 
                         title="Написать в Телеграм">
                       <span class="icon icon-telegram"></span>
                     </a>
-                    <a href="https://wa.me/74953571488?text=Здравствуйте!..." 
+                    <a href="<?php echo esc_html(get_field('whatsapp_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--whatsapp" 
                         target="_blank" 
                         title="Написать в WhatsApp">
                       <span class="icon icon-whatsapp"></span>
                     </a>
-                    <a href="vk" 
+                    <a href="<?php echo esc_html(get_field('vk_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--vk" 
                         target="_blank" 
                         title="Написать в VK">
-                      <span class="icon icon-whatsapp"></span>
+                      <span class="icon icon-vk"></span>
                     </a>
                   </div>
                 </div>

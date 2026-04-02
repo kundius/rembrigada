@@ -1,4 +1,4 @@
-<div class="conversion conversion--widget" data-conversion>
+<div class="conversion" data-conversion>
   
   <!-- Контейнер виджета -->
   <div class="conversion__container">

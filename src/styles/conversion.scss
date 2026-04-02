@@ -7,6 +7,8 @@
   height: 56px;
   border: none;
   padding: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
 .conversion__btn-toggler {
@@ -52,7 +54,7 @@
 }
 
 .conversion__btn-icon.active {
-  display: block;
+  display: flex;
 }
 
 .conversion__btn-wave {
@@ -63,7 +65,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  border: 2px solid #fff0;
+  border: 2px solid #1f81ff;
   border-radius: 50%;
   opacity: 0.8;
   animation: conversion-wave 2s infinite cubic-bezier(0.37, 0, 0.8, 0.77);

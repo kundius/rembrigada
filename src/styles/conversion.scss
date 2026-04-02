@@ -48,12 +48,13 @@
   height: 100%;
   border-radius: 50%;
   opacity: 0;
+  background: #1f81ff;
   visibility: hidden;
   transition: 0.5s ease;
   z-index: 1;
 }
 
-.conversion__btn-icon.show::before {
+.conversion__btn-icon.active::before {
   opacity: 1;
   visibility: visible;
 }

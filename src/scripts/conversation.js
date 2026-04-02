@@ -17,10 +17,8 @@ function initConversation() {
       icons.forEach((el) => el.classList.remove("show"));
       setTimeout(() => {
         icons[index].classList.add("show");
-        setTimeout(() => {
-          const nextIndex = index == icons.length - 1 ? 0 : index + 1;
-          setTimeout(() => iconSwitch(nextIndex), 3000);
-        }, 250);
+        const nextIndex = index == icons.length - 1 ? 0 : index + 1;
+        setTimeout(() => iconSwitch(nextIndex), 3000);
       }, 250);
     };
     iconSwitch(0);

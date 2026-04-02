@@ -23,6 +23,10 @@ function initConversation() {
     };
     iconSwitch(0);
   }
+
+  btn.addEventListener("click", () => {
+    conversion.classList.toggle("opened");
+  });
 }
 
 export { initConversation };

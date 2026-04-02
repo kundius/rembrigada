@@ -138,6 +138,10 @@
   display: none;
 }
 
+.conversion.opened .conversion__container {
+  display: block;
+}
+
 .conversion__backdrop {
   position: absolute;
   z-index: 98;

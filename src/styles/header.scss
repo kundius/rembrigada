@@ -169,7 +169,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   transition: border-color 0.3s ease;
+
+  @media (max-width: $breakpoint-xsmall-max) {
+    border: none;
+    padding: 0;
+    padding-left: 40px;
+  }
 }
 
 .header-phone__number {
@@ -206,6 +213,13 @@
   margin-right: 3px;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.49);
   transition: background 0.3s ease;
+
+  @media (max-width: $breakpoint-xsmall-max) {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .header-phone__icon svg {
@@ -215,6 +229,9 @@
 
 .header-phone__desc {
   display: none;
+  font-size: 14px;
+  color: #1c1e21;
+  line-height: 1;
 
   @media (max-width: $breakpoint-xsmall-max) {
     display: block;

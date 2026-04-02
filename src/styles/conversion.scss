@@ -11,6 +11,7 @@
   background: transparent;
   cursor: pointer;
   background: #0a0a0b;
+  transition: 0.5s ease;
   border-radius: 50%;
 }
 
@@ -25,7 +26,26 @@
   border-radius: 50%;
 }
 
-.conversion__btn-play {
+.conversion__btn:has([data-conversion-btn-icon="blue"].active) {
+  background: #1f81ff;
+}
+
+.conversion__btn:has([data-conversion-btn-icon="red"].active) {
+  background: #d52437;
+}
+
+.conversion__btn:has([data-conversion-btn-icon="max"].active) {
+  background: radial-gradient(
+    136.12% 140.74% at 99.77% 99.04%,
+    #8d28c8,
+    #7c42fa 20%,
+    #007aff 80%,
+    #609ceb
+  );
+  background: #7c42fa;
+}
+
+.conversion__btn-icon {
   position: absolute;
   left: 0;
   top: 0;
@@ -36,58 +56,11 @@
   justify-content: center;
   font-size: 24px;
   color: #fff;
-  z-index: 1;
-}
-
-.conversion__btn-play.animate-first.animate-second {
-  z-index: 2;
-}
-
-.conversion__btn-circle {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  opacity: 1;
-  background: #1f81ff;
-  transition: 5s ease;
-}
-
-.conversion__btn-play.animate-first .conversion__btn-circle {
   opacity: 0;
+  transition: 0.5s ease;
 }
 
-.conversion__btn-play.animate-first.animate-second .conversion__btn-circle {
-  opacity: 1;
-}
-
-.conversion__btn-play[data-conversion-play="blue"] .conversion__btn-circle {
-  background: #1f81ff;
-}
-
-.conversion__btn-play[data-conversion-play="red"] .conversion__btn-circle {
-  background: #d52437;
-}
-
-.conversion__btn-play[data-conversion-play="max"] .conversion__btn-circle {
-  background: radial-gradient(
-    136.12% 140.74% at 99.77% 99.04%,
-    #8d28c8,
-    #7c42fa 20%,
-    #007aff 80%,
-    #609ceb
-  );
-}
-
-.conversion__btn-icon {
-  position: relative;
-  opacity: 0;
-  transition: 5s ease;
-}
-
-.conversion__btn-play.animate-first .conversion__btn-icon {
+.conversion__btn-icon.show-icon {
   opacity: 1;
 }
 
@@ -118,15 +91,15 @@
 //   background-color: #0a0a0b;
 // }
 
-.conversion__btn:has([data-conversion-play="blue"].show-circle)
+.conversion__btn:has([data-conversion-btn-icon="blue"].active)
   .conversion__btn-wave {
   border-color: #1f81ff;
 }
-.conversion__btn:has([data-conversion-play="red"].show-circle)
+.conversion__btn:has([data-conversion-btn-icon="red"].active)
   .conversion__btn-wave {
   border-color: #d52437;
 }
-.conversion__btn:has([data-conversion-play="max"].show-circle)
+.conversion__btn:has([data-conversion-btn-icon="max"].active)
   .conversion__btn-wave {
   border-color: #8d28c8;
 }

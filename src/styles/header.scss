@@ -76,7 +76,7 @@
     color: #fe394f;
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -92,6 +92,8 @@
   }
   @media (max-width: $breakpoint-xsmall-max) {
     height: 48px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 
@@ -175,7 +177,7 @@
   @media (max-width: $breakpoint-xsmall-max) {
     border: none;
     padding: 0;
-    padding-right: 40px;
+    padding-right: 32px;
     align-items: flex-start;
   }
 }
@@ -203,6 +205,11 @@
   font-weight: bold;
   line-height: 1;
   white-space: nowrap;
+
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 14px;
+    letter-spacing: 0;
+  }
 }
 
 .header-phone__icon {
@@ -228,6 +235,10 @@
     width: 32px;
     height: 32px;
     margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #1c1e21;
   }
 }
 
@@ -243,11 +254,12 @@
 
 .header-phone__desc {
   display: none;
-  font-size: 13px;
+  font-size: 11px;
   color: #1c1e21;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   margin-top: 4px;
+  white-space: nowrap;
 
   @media (max-width: $breakpoint-xsmall-max) {
     display: block;

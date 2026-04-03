@@ -121,8 +121,8 @@
     margin-right: 0;
     order: 1;
     padding: 0 4px;
-    min-height: 36px;
-    min-width: 36px;
+    min-height: 40px;
+    min-width: 40px;
     border: 1px solid #d3d5db;
   }
 }
@@ -172,14 +172,15 @@
 .header-callback {
   display: none;
   border: 1px solid rgb(211, 213, 219);
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   display: block;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #2d2d29;
   flex-shrink: none;
+  margin-left: auto;
 
   @media (max-width: $breakpoint-xsmall-max) {
     display: flex;

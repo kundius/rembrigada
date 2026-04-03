@@ -133,21 +133,29 @@ $messengers_desc = implode(', ', $messengers_desc);
       <span class="icon icon-phone"></span>
     </span>
 
+    <?php if ($max_link): ?>
     <span class="conversion__btn-icon" data-conversion-btn-icon="max">
       <span class="icon icon-max"></span>
     </span>
+    <?php endif; ?>
 
+    <?php if ($telegram_link): ?>
     <span class="conversion__btn-icon" data-conversion-btn-icon="telegram">
       <span class="icon icon-telegram"></span>
     </span>
+    <?php endif; ?>
 
+    <?php if ($whatsapp_link): ?>
     <span class="conversion__btn-icon" data-conversion-btn-icon="whatsapp">
       <span class="icon icon-whatsapp"></span>
     </span>
+    <?php endif; ?>
 
+    <?php if ($vk_link): ?>
     <span class="conversion__btn-icon" data-conversion-btn-icon="vk">
       <span class="icon icon-vk"></span>
     </span>
+    <?php endif; ?>
 
     <span class="conversion__btn-close">
       <span class="icon icon-close"></span>

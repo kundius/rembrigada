@@ -183,7 +183,8 @@
   @media (max-width: $breakpoint-xsmall-max) {
     border: none;
     padding: 0;
-    padding-right: 42px;
+    padding-right: 36px;
+    height: 36px;
     align-items: flex-start;
     margin-left: auto;
   }
@@ -216,6 +217,9 @@
   @media (max-width: $breakpoint-xsmall-max) {
     font-size: 14px;
     letter-spacing: 0;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    display: none;
   }
 }
 
@@ -270,7 +274,7 @@
   white-space: nowrap;
 
   @media (max-width: $breakpoint-xsmall-max) {
-    display: block;
+    display: none;
   }
 }
 

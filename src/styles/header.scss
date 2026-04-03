@@ -169,6 +169,27 @@
   }
 }
 
+.header-callback {
+  display: none;
+  border: 1px solid rgb(211, 213, 219);
+  width: 36px;
+  height: 36px;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2d2d29;
+  flex-shrink: none;
+
+  @media (max-width: $breakpoint-xsmall-max) {
+    display: flex;
+  }
+}
+
+.header-callback svg {
+  font-size: 18px;
+}
+
 .header-phone {
   border: 1px solid rgb(211, 213, 219);
   border-radius: 4px;
@@ -181,12 +202,7 @@
   transition: border-color 0.3s ease;
 
   @media (max-width: $breakpoint-xsmall-max) {
-    border: none;
-    padding: 0;
-    padding-right: 36px;
-    height: 36px;
-    align-items: flex-start;
-    margin-left: auto;
+    display: none;
   }
 }
 
@@ -197,11 +213,6 @@
   margin-top: -8px;
   margin-bottom: 5px;
   padding: 0 4px;
-
-  @media (max-width: $breakpoint-xsmall-max) {
-    padding: 0;
-    margin: 0;
-  }
 }
 
 .header-phone__value {
@@ -213,14 +224,6 @@
   font-weight: bold;
   line-height: 1;
   white-space: nowrap;
-
-  @media (max-width: $breakpoint-xsmall-max) {
-    font-size: 14px;
-    letter-spacing: 0;
-  }
-  @media (max-width: $breakpoint-xsmall-max) {
-    display: none;
-  }
 }
 
 .header-phone__icon {
@@ -237,31 +240,11 @@
   margin-right: 3px;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.49);
   transition: background 0.3s ease;
-
-  @media (max-width: $breakpoint-xsmall-max) {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    margin: 0;
-    background: transparent;
-    border: 1px solid #d3d5db;
-    box-shadow: none;
-    color: #2d2d29;
-    border-radius: 0;
-  }
 }
 
 .header-phone__icon svg {
   width: 10px;
   height: 10px;
-
-  @media (max-width: $breakpoint-xsmall-max) {
-    width: 18px;
-    height: 18px;
-  }
 }
 
 .header-phone__desc {
@@ -272,10 +255,6 @@
   letter-spacing: -0.025em;
   margin-top: 4px;
   white-space: nowrap;
-
-  @media (max-width: $breakpoint-xsmall-max) {
-    display: none;
-  }
 }
 
 .header-phone__label {
@@ -285,10 +264,6 @@
   font-weight: bold;
   text-decoration: underline;
   transition: color 0.3s ease;
-
-  @media (max-width: $breakpoint-xsmall-max) {
-    display: none;
-  }
 }
 
 .header-phone:hover {
@@ -297,10 +272,6 @@
 
 .header-phone:hover .header-phone__icon {
   background: #f72e43;
-
-  @media (max-width: $breakpoint-xsmall-max) {
-    background: transparent;
-  }
 }
 
 .header-phone:hover .header-phone__label {

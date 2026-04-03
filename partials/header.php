@@ -48,5 +48,9 @@
             <div class="header-phone__desc">Ежедневно с 9:00 до 20:00</div>
             <div class="header-phone__label">Перезвоните мне</div>
         </a>
+
+        <a href="tel:<?php echo $raw_phone ?>" class="header-callback js-header-callback">
+            <?php icon('phone') ?>
+        </a>
     </div>
 </header>

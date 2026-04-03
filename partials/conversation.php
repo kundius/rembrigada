@@ -1,4 +1,27 @@
-<?php $raw_phone = preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options')) ?>
+<?php
+
+$raw_phone = preg_replace("/[ \(\)\-]/", "", get_field('phone', 'options'));
+
+$max_link = get_field('max_link', 'options');
+$vk_link = get_field('vk_link', 'options');
+$telegram_link = get_field('telegram_link', 'options');
+$whatsapp_link = get_field('whatsapp_link', 'options');
+
+$messengers_desc = [];
+if ($max_link) {
+  $messengers_desc[] = 'MAX';
+}
+if ($vk_link) {
+  $messengers_desc[] = 'VK';
+}
+if ($telegram_link) {
+  $messengers_desc[] = 'Телеграм';
+}
+if ($whatsapp_link) {
+  $messengers_desc[] = 'WhatsApp';
+}
+$messengers_desc = implode(', ', $messengers_desc);
+?>
 
 <div class="conversion" data-conversion>
   
@@ -54,33 +77,41 @@
                 <div class="conversion__item conversion__item--wide">
                   <div class="conversion__item-title">
                     Начать чат 
-                    <span>MAX, VK, Телеграм и WhatsApp</span>
+                    <span><?php echo $messengers_desc; ?></span>
                   </div>
                   <div class="conversion__item-content">
-                    <a href="<?php echo esc_html(get_field('max_link', 'options')) ?>" 
+                    <?php if ($max_link): ?>
+                    <a href="<?php echo esc_html($max_link) ?>" 
                         class="conversion__item-btn conversion__item-btn--max" 
                         target="_blank" 
                         title="Написать в MAX">
                       <span class="icon icon-max"></span>
                     </a>
+                    <?php endif; ?>
+                    <?php if ($vk_link): ?>
                     <a href="<?php echo esc_html(get_field('vk_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--vk" 
                         target="_blank" 
                         title="Написать в VK">
                       <span class="icon icon-vk"></span>
                     </a>
+                    <?php endif; ?>
+                    <?php if ($telegram_link): ?>
                     <a href="<?php echo esc_html(get_field('telegram_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--telegram" 
                         target="_blank" 
                         title="Написать в Телеграм">
                       <span class="icon icon-telegram"></span>
                     </a>
+                    <?php endif; ?>
+                    <?php if ($whatsapp_link): ?>
                     <a href="<?php echo esc_html(get_field('whatsapp_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--whatsapp" 
                         target="_blank" 
                         title="Написать в WhatsApp">
                       <span class="icon icon-whatsapp"></span>
                     </a>
+                    <?php endif; ?>
                   </div>
                 </div>
 

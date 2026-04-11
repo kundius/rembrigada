@@ -1,21 +1,14 @@
 <?php $global_faq = get_field('faq', 'option'); ?>
 <?php $faq = get_field('content-faq'); ?>
-
-<?php $title = $faq['title'] ?: $global_faq['title']; ?>
-<?php $items = $faq['items'] ?: $global_faq['items']; ?>
-<?php $description = $faq['description'] ?: $global_faq['description']; ?>
-<?php $button = $faq['button'] ?: $global_faq['button']; ?>
-<?php $form = $faq['form'] ?: $global_faq['form']; ?>
-
 <div class="wp-block-landing-faq">
   <section class="landing-faq">
     <div class="container container_medium">
-      <?php if (!empty($title)): ?>
-      <div class="landing-faq__title"><?php echo $title ?></div>
+      <?php if (!empty($global_faq['title'])): ?>
+      <div class="landing-faq__title"><?php echo $global_faq['title'] ?></div>
       <?php endif; ?>
 
       <div class="landing-faq__list faq-items">
-        <?php foreach ($items as $item): ?>
+        <?php foreach ($faq['items'] as $item): ?>
         <div class="faq-item">
           <div class="faq-item__question">
             <div class="faq-item__question-content">
@@ -31,23 +24,23 @@
         <?php endforeach; ?>
       </div>
 
-      <?php if (!empty($description)): ?>
-      <div class="landing-faq__description"><?php echo $description ?></div>
+      <?php if (!empty($global_faq['description'])): ?>
+      <div class="landing-faq__description"><?php echo $global_faq['description'] ?></div>
       <?php endif; ?>
 
-      <?php if (!empty($button['text'])): ?>
+      <?php if (!empty($global_faq['button']['text'])): ?>
       <div class="landing-faq__request">
         <button
           data-order
-          data-order-title="<?php echo $form['title'] ?>"
-          data-order-submit="<?php echo $form['submit'] ?>"
-          data-order-subject="<?php echo $faq['title'] ?>"
-          data-order-description="<?php echo $form['description'] ?>"
-          data-order-success-title="<?php echo $form['success']['title'] ?>"
-          data-order-success-description="<?php echo $form['success']['description'] ?>"
+          data-order-title="<?php echo $global_faq['form']['title'] ?>"
+          data-order-submit="<?php echo $global_faq['form']['submit'] ?>"
+          data-order-subject="<?php echo $global_faq['title'] ?>"
+          data-order-description="<?php echo $global_faq['form']['description'] ?>"
+          data-order-success-title="<?php echo $global_faq['form']['success']['title'] ?>"
+          data-order-success-description="<?php echo $global_faq['form']['success']['description'] ?>"
           data-order-with-message="true"
-          class="landing-button<?php if ($button['glare']): ?> landing-button_glare<?php endif; ?>"
-        ><?php echo $button['text'] ?></button>
+          class="landing-button<?php if ($global_faq['button']['glare']): ?> landing-button_glare<?php endif; ?>"
+        ><?php echo $global_faq['button']['text'] ?></button>
       </div>
       <?php endif; ?>
     </div>

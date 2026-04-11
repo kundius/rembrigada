@@ -413,6 +413,14 @@ function be_register_blocks() {
         'mode' => 'edit'
     ));
     acf_register_block( array(
+        'name' => 'content-faq',
+        'title' => 'Содержимое - FAQ',
+        'render_template' => 'partials/blocks/content-faq.php',
+        'category' => 'formatting',
+        'icon' => 'editor-ul',
+        'mode' => 'edit'
+    ));
+    acf_register_block( array(
         'name' => 'content-scrollable',
         'title' => 'Содержимое - Прокручиваемый текст',
         'render_template' => 'partials/blocks/content-scrollable.php',

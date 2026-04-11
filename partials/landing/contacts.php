@@ -46,7 +46,7 @@
                     </div>
                     <div class="contacts-form__row">
                         <span class="wpcf7-form-control-wrap your-email">
-                            <input type="email" name="your-email" value="" class="form-input" placeholder="E-mail*" />
+                            <input type="email" name="your-email" value="" class="form-input" placeholder="E-mail" />
                         </span>
                     </div>
                     <div class="contacts-form__row">

@@ -80,6 +80,7 @@ forEach(document.querySelectorAll("[data-order]"), (el) => {
   const messageEL = modalEl.querySelector(".order-form__message");
   const subjectEl = modalEl.querySelector('[name="subject"]');
   const submitEl = modalEl.querySelector('[type="submit"]');
+  const formEl = modalEl.querySelector("form");
   const orderSubject = el.dataset.orderSubject || "Заявка на расчет";
   const orderTitle = el.dataset.orderTitle || "Заявка на расчет";
   const orderSubmit = el.dataset.orderSubmit || "Отправить";
@@ -90,6 +91,7 @@ forEach(document.querySelectorAll("[data-order]"), (el) => {
   const orderWithMessage = !!el.dataset.orderWithMessage || false;
   el.addEventListener("click", (e) => {
     e.preventDefault();
+    formEl.setAttribute("data-ym-goal", orderTitle);
     titleEl.innerHTML = orderTitle;
     submitEl.innerHTML = orderSubmit;
     descriptionEl.innerHTML = orderDescription;
@@ -493,7 +495,7 @@ document.querySelectorAll(".js-form").forEach(function (form) {
             notifier.success(response.message);
             if (typeof ym !== "undefined") {
               const goal = form.dataset.ymGoal || "ordercallon";
-              console.log("ym goal 31338108" + goal);
+              console.log("ym goal 31338108 " + goal);
               ym(31338108, "reachGoal", goal);
             }
             setTimeout(() => {

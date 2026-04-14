@@ -83,6 +83,7 @@ forEach(document.querySelectorAll("[data-order]"), (el) => {
   const formEl = modalEl.querySelector("form");
   const orderSubject = el.dataset.orderSubject || "Заявка на расчет";
   const orderTitle = el.dataset.orderTitle || "Заявка на расчет";
+  const orderGoal = el.dataset.orderGoal || "";
   const orderSubmit = el.dataset.orderSubmit || "Отправить";
   const orderDescription = el.dataset.orderDescription || "";
   const orderSuccessTitle =
@@ -91,7 +92,11 @@ forEach(document.querySelectorAll("[data-order]"), (el) => {
   const orderWithMessage = !!el.dataset.orderWithMessage || false;
   el.addEventListener("click", (e) => {
     e.preventDefault();
-    formEl.setAttribute("data-ym-goal", orderTitle);
+    if (orderGoal) {
+      formEl.setAttribute("data-ym-goal", orderGoal);
+    } else {
+      formEl.removeAttribute("data-ym-goal");
+    }
     titleEl.innerHTML = orderTitle;
     submitEl.innerHTML = orderSubmit;
     descriptionEl.innerHTML = orderDescription;

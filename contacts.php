@@ -58,7 +58,7 @@ Template Name: Контакты
                         <?php icon('clock', 1.25) ?>
                         <?php the_field('schedule', 'options') ?>
                     </div>
-                    <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="p-contacts-form js-form">
+                    <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="p-contacts-form js-form" data-ym-goal="Контакты форма заявки">
                         <div class="p-contacts-form__title">Обратная связь</div>
                         <div class="p-contacts-form__grid">
                             <div class="p-contacts-form__row">

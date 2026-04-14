@@ -13,6 +13,7 @@
         <div class="landing-decision__request">
           <button
             data-order
+            data-order-goal="<?php echo $decision['form']['goal'] ?>"
             data-order-title="<?php echo $decision['form']['title'] ?>"
             data-order-submit="<?php echo $decision['form']['submit'] ?>"
             data-order-subject="<?php echo $decision['title'] ?>"

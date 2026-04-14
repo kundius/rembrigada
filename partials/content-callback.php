@@ -1,7 +1,7 @@
 <div class="section-contacts-call">
     <div class="section-contacts-call__title">Заказать Обратный звонок</div>
     <div class="section-contacts-call__desc">Заполните форму, и наш специалист свяжется с Вами в течении 15 минут</div>
-    <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="section-contacts-call__form js-form">
+    <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="section-contacts-call__form js-form" data-ym-goal="Заказать Обратный звонок">
         <div>
             <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />
         </div>

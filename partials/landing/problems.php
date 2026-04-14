@@ -36,6 +36,7 @@
       <button
         data-order
         data-order-title="<?php echo $promlems['form']['title'] ?>"
+        data-order-goal="<?php echo $promlems['form']['goal'] ?>"
         data-order-submit="<?php echo $promlems['form']['submit'] ?>"
         data-order-subject="<?php echo $promlems['title'] ?>"
         data-order-description="<?php echo $promlems['form']['description'] ?>"

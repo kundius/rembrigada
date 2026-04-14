@@ -11,7 +11,7 @@
       <?php echo $readiness['description'] ?>
     </div>
     <?php endif; ?>
-    <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="readiness-form js-form">
+    <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="readiness-form js-form" data-ym-goal="<?php echo $readiness['goal'] ?>">
       <input type="hidden" name="subject" value="<?php echo $readiness['title'] ?>">
       <div class="readiness-form__phone">
         <span class="wpcf7-form-control-wrap your-phone">

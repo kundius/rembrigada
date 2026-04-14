@@ -11,6 +11,7 @@
       <button
         data-order
         data-order-title="<?php echo $measurement['form']['title'] ?>"
+        data-order-goal="<?php echo $measurement['form']['goal'] ?>"
         data-order-submit="<?php echo $measurement['form']['submit'] ?>"
         data-order-subject="<?php echo $measurement['title'] ?>"
         data-order-description="<?php echo $measurement['form']['description'] ?>"

@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <form action="/wp-json/contact-form-7/v1/contact-forms/4295/feedback" method="post" class="quiz-layout js-form" data-quiz-form>
+      <form action="/wp-json/contact-form-7/v1/contact-forms/4295/feedback" method="post" class="quiz-layout js-form" data-quiz-form data-ym-goal="Квиз Форма">
         <input type="hidden" name="referrer" value="<?php the_title() ?>">
 
         <div class="quiz-layout__screens">

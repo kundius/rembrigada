@@ -56,7 +56,7 @@
                 data-order
                 data-order-title="<?php echo $headline['form']['title'] ?>"
                 data-order-submit="<?php echo $headline['form']['submit'] ?>"
-                data-order-subject="<?php echo the_title() ?>"
+                data-order-subject="<?php echo $headline['form']['title'] ?>"
                 data-order-description="<?php echo $headline['form']['description'] ?>"
                 data-order-success-title="<?php echo $headline['form']['success']['title'] ?>"
                 data-order-success-description="<?php echo $headline['form']['success']['description'] ?>"

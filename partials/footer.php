@@ -155,6 +155,7 @@
                     <textarea name="message" class="form-textarea" placeholder="Сообщение"></textarea>
                 </div>
                 <div class="order-form__row order-form__submit">
+                    <input type="hidden" name="referrer" value="<?php echo wp_get_document_title() ?>">
                     <button type="submit" class="landing-button">Отправить</button>
                 </div>
                 <div class="order-form__row">

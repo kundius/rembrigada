@@ -84,7 +84,8 @@ $messengers_desc = implode(', ', $messengers_desc);
                     <a href="<?php echo esc_html($max_link) ?>" 
                         class="conversion__item-btn conversion__item-btn--max" 
                         target="_blank" 
-                        title="Написать в MAX">
+                        title="Написать в MAX"
+                        onclick="ym(31338108,'reachGoal','MAX_LINK'); return true;">
                       <span class="icon icon-max"></span>
                     </a>
                     <?php endif; ?>
@@ -92,7 +93,8 @@ $messengers_desc = implode(', ', $messengers_desc);
                     <a href="<?php echo esc_html(get_field('vk_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--vk" 
                         target="_blank" 
-                        title="Написать в VK">
+                        title="Написать в VK"
+                        onclick="ym(31338108,'reachGoal','VK_LINK'); return true;">
                       <span class="icon icon-vk"></span>
                     </a>
                     <?php endif; ?>
@@ -100,7 +102,8 @@ $messengers_desc = implode(', ', $messengers_desc);
                     <a href="<?php echo esc_html(get_field('telegram_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--telegram" 
                         target="_blank" 
-                        title="Написать в Телеграм">
+                        title="Написать в Телеграм"
+                        onclick="ym(31338108,'reachGoal','TELEGRAM_LINK'); return true;">
                       <span class="icon icon-telegram"></span>
                     </a>
                     <?php endif; ?>
@@ -108,7 +111,8 @@ $messengers_desc = implode(', ', $messengers_desc);
                     <a href="<?php echo esc_html(get_field('whatsapp_link', 'options')) ?>" 
                         class="conversion__item-btn conversion__item-btn--whatsapp" 
                         target="_blank" 
-                        title="Написать в WhatsApp">
+                        title="Написать в WhatsApp"
+                        onclick="ym(31338108,'reachGoal','WHATSAPP_LINK'); return true;">
                       <span class="icon icon-whatsapp"></span>
                     </a>
                     <?php endif; ?>

@@ -20,17 +20,19 @@
                           </div>
                           <div class="contacts-phones__messengers">
                             <div class="contacts-messengers">
-                                <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
+                                <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>"
+                        onclick="ym(31338108,'reachGoal','TELEGRAM_LINK'); return true;">
                                     <?php icon('telegram', 1.2) ?>
                                 </a>
-                                <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
+                                <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>"
+                        onclick="ym(31338108,'reachGoal','WHATSAPP_LINK'); return true;">
                                     <?php icon('whatsapp', 1.3) ?>
                                 </a>
                             </div>
                           </div>
                         </div>
                         <div class="contacts__row">
-                            <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
+                            <a href="mailto:<?php the_field('email', 'options') ?>" onclick="ym(31338108,'reachGoal','EMAIL_LINK'); return true;"><?php the_field('email', 'options') ?></a>
                         </div>
                     </div>
                     <div class="contacts__time">

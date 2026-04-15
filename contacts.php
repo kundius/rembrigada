@@ -34,10 +34,12 @@ Template Name: Контакты
                             </div>
                             <div class="p-contacts-phones__messengers">
                                 <div class="contacts-messengers">
-                                    <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>">
+                                    <a class="contacts-messengers__item contacts-messengers__item_telegram" href="tg://resolve?domain=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_telegram', 'options')) ?>"
+                        onclick="ym(31338108,'reachGoal','TELEGRAM_LINK'); return true;">
                                         <?php icon('telegram', 1.2) ?>
                                     </a>
-                                    <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>">
+                                    <a class="contacts-messengers__item contacts-messengers__item_whatsapp" href="whatsapp://send?text=Hello&phone=<?php echo preg_replace("/[ \(\)\-]/", "", get_field('phone_whatsapp', 'options')) ?>"
+                        onclick="ym(31338108,'reachGoal','WHATSAPP_LINK'); return true;">
                                         <?php icon('whatsapp', 1.3) ?>
                                     </a>
                                 </div>
@@ -47,7 +49,7 @@ Template Name: Контакты
                           <?php the_field('requisites', 'options') ?>
                         </div>
                         <div class="p-contacts__row">
-                            <a href="mailto:<?php the_field('email', 'options') ?>"><?php the_field('email', 'options') ?></a>
+                            <a href="mailto:<?php the_field('email', 'options') ?>" onclick="ym(31338108,'reachGoal','EMAIL_LINK'); return true;"><?php the_field('email', 'options') ?></a>
                         </div>
                         <meta itemprop="name" content="<?php echo get_bloginfo('blogname') ?>" />
                         <meta itemprop="priceRange" content="2500-6000RUB" />
@@ -58,7 +60,7 @@ Template Name: Контакты
                         <?php icon('clock', 1.25) ?>
                         <?php the_field('schedule', 'options') ?>
                     </div>
-                    <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="p-contacts-form js-form" data-ym-goal="Контакты форма заявки">
+                    <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="p-contacts-form js-form" data-ym-goal="CONTACTS_FORM">
                         <div class="p-contacts-form__title">Обратная связь</div>
                         <div class="p-contacts-form__grid">
                             <div class="p-contacts-form__row">

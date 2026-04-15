@@ -54,7 +54,7 @@
             <?php if ($headline['button']['action'] == 'order'): ?>
             <button
                 data-order
-                data-order-goal="<?php echo $decision['form']['goal'] ?>"
+                data-order-goal="ordercallon"
                 data-order-title="<?php echo $headline['form']['title'] ?>"
                 data-order-submit="<?php echo $headline['form']['submit'] ?>"
                 data-order-subject="<?php echo $headline['form']['title'] ?>"

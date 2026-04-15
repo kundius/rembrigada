@@ -498,10 +498,9 @@ document.querySelectorAll(".js-form").forEach(function (form) {
             form.reset();
             form.classList.add("_validation-mail_sent");
             notifier.success(response.message);
-            if (typeof ym !== "undefined") {
-              const goal = form.dataset.ymGoal || "ordercallon";
-              console.log("ym goal 31338108 " + goal);
-              ym(31338108, "reachGoal", goal);
+            if (typeof ym !== "undefined" && form.dataset.ymGoal) {
+              console.log("ym goal 31338108 " + form.dataset.ymGoal);
+              ym(31338108, "reachGoal", form.dataset.ymGoal);
             }
             setTimeout(() => {
               form.classList.remove("_validation-mail_sent");

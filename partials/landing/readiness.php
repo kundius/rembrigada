@@ -19,6 +19,7 @@
         </span>
       </div>
       <div class="readiness-form__submit">
+        <input type="hidden" name="referrer" value="<?php echo wp_get_document_title() ?>">
         <button type="submit" class="landing-button<?php if ($readiness['button']['glare']): ?> landing-button_glare<?php endif; ?>">
           <?php echo $readiness['button']['text'] ?>
         </button>

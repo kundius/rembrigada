@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="landing-get-estimate__layout-form">
-        <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="get-estimate-form js-form" data-ym-goal="<?php echo $get_estimate['goal'] ?>">
+        <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="get-estimate-form js-form" data-ym-goal="<?php echo $get_estimate['form']['goal'] ?>">
           <input type="hidden" name="subject" value="<?php echo $get_estimate['title'] ?>">
           <div class="get-estimate-form__row">
             <input type="text" name="your-name" value="" class="get-estimate-form__input" placeholder="Имя" />
@@ -44,8 +44,8 @@
           </div>
           <div class="get-estimate-form__row">
             <input type="hidden" name="referrer" value="<?php echo wp_get_document_title() ?>">
-            <button type="submit" class="get-estimate-form__submit landing-button<?php if ($get_estimate['button']['glare']): ?> landing-button_glare<?php endif; ?>">
-              <?php echo $get_estimate['button']['text'] ?>
+            <button type="submit" class="get-estimate-form__submit landing-button<?php if ($get_estimate['form']['button']['glare']): ?> landing-button_glare<?php endif; ?>">
+              <?php echo $get_estimate['form']['button']['text'] ?>
             </button>
           </div>
           <label class="get-estimate-form__rules">

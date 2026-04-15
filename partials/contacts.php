@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="section-contacts__item">
-                <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="contacts-form js-form" data-ym-goal="Контакты форма заявки">
+                <form action="/wp-json/contact-form-7/v1/contact-forms/5/feedback" method="post" class="contacts-form js-form" data-ym-goal="CONTACTS_FORM">
                     <div class="contacts-form__row">
                         <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />
                     </div>

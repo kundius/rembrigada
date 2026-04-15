@@ -11,7 +11,7 @@
       <?php echo $readiness['description'] ?>
     </div>
     <?php endif; ?>
-    <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="readiness-form js-form" data-ym-goal="<?php echo $readiness['goal'] ?>">
+    <form action="/wp-json/contact-form-7/v1/contact-forms/4198/feedback" method="post" class="readiness-form js-form" data-ym-goal="<?php echo $readiness['form']['goal'] ?>">
       <input type="hidden" name="subject" value="<?php echo $readiness['title'] ?>">
       <div class="readiness-form__phone">
         <span class="wpcf7-form-control-wrap your-phone">
@@ -20,8 +20,8 @@
       </div>
       <div class="readiness-form__submit">
         <input type="hidden" name="referrer" value="<?php echo wp_get_document_title() ?>">
-        <button type="submit" class="landing-button<?php if ($readiness['button']['glare']): ?> landing-button_glare<?php endif; ?>">
-          <?php echo $readiness['button']['text'] ?>
+        <button type="submit" class="landing-button<?php if ($readiness['form']['button']['glare']): ?> landing-button_glare<?php endif; ?>">
+          <?php echo $readiness['form']['button']['text'] ?>
         </button>
       </div>
       <label class="readiness-form__rules">

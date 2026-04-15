@@ -44,7 +44,7 @@
 <div id="callback" class="hidden">
     <div class="modal modal_callback">
         <button class="modal__close" data-basiclightbox-close></button>
-        <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="callback js-form">
+        <form action="/wp-json/contact-form-7/v1/contact-forms/379/feedback" method="post" class="callback js-form" data-ym-goal="MODAL_CALLBACK">
             <div class="callback__form">
                 <div class="callback__grid">
                     <div class="callback__cell">

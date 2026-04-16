@@ -529,7 +529,9 @@ document.querySelectorAll(".js-form").forEach(function (form) {
             form.dispatchEvent(new Event("wpcf7invalid"));
 
             forEach(response.invalid_fields, (field) => {
-              const el = form.querySelector(field.into);
+              const el = form.querySelector(
+                `.wpcf7-form-control-wrap.${field.field}`,
+              );
               el.classList.add("_validation-error");
               const message = document.createElement("span");
               message.classList.add("form-error");

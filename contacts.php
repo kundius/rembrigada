@@ -72,7 +72,9 @@ Template Name: Контакты
                                 </span>
                             </div>
                             <div class="p-contacts-form__row">
-                                <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон">
+                                <span class="wpcf7-form-control-wrap your-phone">
+                                    <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон">
+                                </span>
                             </div>
                             <div class="p-contacts-form__row">
                                 <textarea name="message" class="form-textarea" placeholder="Текст сообщения" style="height: 100%;"></textarea>

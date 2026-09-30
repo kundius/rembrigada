@@ -1,0 +1,373 @@
+@import "variables.scss";
+
+// Форма "Добавить отзыв" — порт из renovation-wp-theme (field-rating, gallery-field),
+// адаптирован под сетку/брейкпоинты rembrigada и модалку basicLightbox.
+
+.modal_review-form {
+  .reviews-item__title {
+    margin-bottom: 18px;
+  }
+}
+
+.review-form__desc {
+  color: #000;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.review-form {
+  position: relative;
+}
+
+.review-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.review-form__full {
+  grid-column: 1 / -1;
+}
+
+.review-form__submit {
+  display: flex;
+  justify-content: center;
+  .landing-button {
+    min-width: 240px;
+    cursor: pointer;
+    border: none;
+  }
+}
+
+.review-form__errors {
+  grid-column: 1 / -1;
+  background: #fff1f3;
+  color: #c2274b;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid #f6cdd8;
+  margin-bottom: 16px;
+  &:empty {
+    display: none;
+  }
+}
+
+.review-form__photos-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.review-form__rules {
+  display: block;
+  font-size: 13px;
+  color: #828282;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  input {
+    margin-right: 6px;
+  }
+  a {
+    color: currentColor;
+    text-decoration: underline;
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.review-form-success {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 24px;
+  [data-review-form-success] & {
+    display: flex;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.97);
+  }
+}
+
+.review-form-success__title {
+  font-weight: 700;
+  color: #2a2c2f;
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.review-form-success__desc {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+// Рейтинг-звезды (порт .field-rating из донора).
+.field-rating {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.field-rating__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 700;
+  color: #7d8798;
+  line-height: 1;
+  position: absolute;
+  user-select: none;
+  letter-spacing: 0.1em;
+  left: 20px;
+  top: 8px;
+  z-index: 2;
+}
+
+.field-rating__input {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 4px;
+  height: 56px;
+  padding: 14px 20px 0;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #f3f5f8;
+  border-radius: 8px;
+  input {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+    transition: color 0.2s;
+    user-select: none;
+    color: #d1d5db;
+    font-size: 30px;
+    line-height: 1;
+    display: flex;
+  }
+  input:checked ~ label {
+    color: #eab308;
+  }
+  input:checked ~ label:hover,
+  label:hover,
+  label:hover ~ label {
+    color: #fde047;
+  }
+}
+
+// Текстовые поля (порт .text-field/.textarea-field из донора).
+.review-text-field {
+  position: relative;
+  display: flex;
+}
+
+.review-text-field__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 700;
+  color: #7d8798;
+  line-height: 1;
+  position: absolute;
+  user-select: none;
+  letter-spacing: 0.1em;
+  left: 20px;
+  top: 8px;
+  span {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #ed3947;
+  }
+}
+
+.review-text-field__input {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1;
+  color: #2d2d2d;
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 0.025em;
+  background-color: #f3f5f8;
+  height: 56px;
+  padding: 12px 20px 0;
+  font-family: inherit;
+}
+
+.review-textarea-field {
+  position: relative;
+  display: flex;
+}
+
+.review-textarea-field__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: 700;
+  color: #7d8798;
+  line-height: 1;
+  position: absolute;
+  user-select: none;
+  letter-spacing: 0.1em;
+  left: 20px;
+  top: 8px;
+  span {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #ed3947;
+  }
+}
+
+.review-textarea-field__input {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #2d2d2d;
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 0.025em;
+  background-color: #f3f5f8;
+  min-height: calc(3em + 48px);
+  padding: 32px 20px 16px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+// Галерея загрузки фото (порт .gallery-field из донора).
+.gallery-field {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gallery-field__add {
+  aspect-ratio: 1;
+  width: 140px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: none;
+  background: #f3f5f8;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #7d8798;
+  cursor: pointer;
+  font-family: inherit;
+  &:hover {
+    background: #e8ecf1;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 110px;
+  }
+}
+
+.gallery-field__add-icon {
+  font-size: 40px;
+  line-height: 1;
+  display: flex;
+}
+
+.gallery-field__add-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+  color: #000;
+}
+
+.gallery-field__item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  background: #f3f5f8;
+  flex-shrink: 0;
+  width: 140px;
+  @media (max-width: $breakpoint-xsmall-max) {
+    width: 110px;
+  }
+}
+
+.gallery-field__item-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 20;
+}
+
+.gallery-field__item-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  appearance: none;
+  opacity: 0;
+  z-index: 10;
+}
+
+.gallery-field__item-remove {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Список чекбоксов выбора отзывов в инспекторе блоков.
+.reviews-block-selector {
+  max-height: 220px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  margin: 8px 0 12px;
+  .components-checkbox-control {
+    margin-bottom: 4px;
+  }
+}

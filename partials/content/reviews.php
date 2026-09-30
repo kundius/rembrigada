@@ -1,11 +1,30 @@
 <?php
+$review_block = isset($args['attributes']) ? $args['attributes'] : array();
+if (function_exists('rembrigada_normalize_review_attributes')) {
+  $review_block = rembrigada_normalize_review_attributes($review_block);
+} else {
+  $review_block = array(
+    'what' => (isset($review_block['what']) && $review_block['what'] === 'selected' && !empty($review_block['ids'])) ? 'selected' : 'all',
+    'ids' => isset($review_block['ids']) ? array_values(array_filter(array_map('intval', (array) $review_block['ids']))) : array(),
+    'showButton' => !empty($review_block['showButton']),
+  );
+}
 $posts_per_page = -1;
 $paged = get_query_var('paged') ?: 1;
-$reviews = new WP_Query(array(
+if ($review_block['what'] === 'selected') {
+  $reviews = new WP_Query(array(
     'post_type' => 'review',
-    'paged' => $paged,
-    'posts_per_page' => $posts_per_page
-));
+    'posts_per_page' => count($review_block['ids']),
+    'post__in' => $review_block['ids'],
+    'orderby' => 'post__in',
+  ));
+} else {
+  $reviews = new WP_Query(array(
+      'post_type' => 'review',
+      'paged' => $paged,
+      'posts_per_page' => $posts_per_page
+  ));
+}
 ?>
 <?php while($reviews->have_posts()): $reviews->the_post(); ?>
 <div class="reviews-item">
@@ -66,7 +85,7 @@ $reviews = new WP_Query(array(
 </div>
 <?php endwhile; ?>
 
-<?php if ($reviews->max_num_pages > $posts_per_page): ?>
+<?php if ($review_block['what'] !== 'selected' && $reviews->max_num_pages > $posts_per_page): ?>
 <div class="pagination">
   <?php
   echo paginate_links([
@@ -74,5 +93,11 @@ $reviews = new WP_Query(array(
     'total' => $reviews->max_num_pages,
   ]);
   ?>
+</div>
+<?php endif; ?>
+
+<?php if (!empty($review_block['showButton'])): ?>
+<div class="reviews-more" style="text-align: center; margin-top: 57px;">
+  <button type="button" data-basiclightbox="#review-modal" class="btn-plus">Добавить отзыв</button>
 </div>
 <?php endif; ?>

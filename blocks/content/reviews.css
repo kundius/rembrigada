@@ -16,3 +16,11 @@
 	font-size: 14px;
 	font-weight: normal;
 }
+
+.reviews-block-selector {
+	max-height: 220px;
+	overflow: auto;
+	border: 1px solid #ddd;
+	padding: 8px 12px;
+	margin: 8px 0 12px;
+}

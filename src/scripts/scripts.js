@@ -10,6 +10,7 @@ import AWN from "awesome-notifications/dist/index.js";
 import * as basicLightbox from "basiclightbox";
 import fslightbox from "fslightbox";
 import { initConversation } from "./conversation";
+import { initReviewForm, initReviewGalleryField } from "./review-form";
 
 const formatMoney = (num, thousand = " ") => {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1" + thousand);
@@ -880,3 +881,5 @@ forEach(document.querySelectorAll(".content-collapsible"), (item) => {
 });
 
 initConversation();
+initReviewForm();
+initReviewGalleryField();

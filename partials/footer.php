@@ -203,6 +203,8 @@
 
 <button class="scrollup js-scroll"></button>
 
+<?php get_template_part('partials/review-modal'); ?>
+
 <?php get_template_part('partials/conversation'); ?>
 
 <script src="<?php echo get_bloginfo('template_url') ?>/dist/scripts/scripts.js"></script>

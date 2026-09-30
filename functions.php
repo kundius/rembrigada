@@ -155,16 +155,118 @@ class Sitemap_Walker extends Walker_Nav_Menu {
 }
 
 function template_part( $atts, $content = null ){
-	$tp_atts = shortcode_atts(array( 
+	$tp_atts = shortcode_atts(array(
 		 'path' =>  null,
-	), $atts);         
-	ob_start();  
-	get_template_part($tp_atts['path']);  
-	$ret = ob_get_contents();  
-	ob_end_clean();  
-	return $ret;    
+		 'what' => null,
+		 'ids' => null,
+		 'show_button' => null,
+		 'showButton' => null,
+	), $atts);
+	$args = array();
+	if ($tp_atts['what'] !== null && $tp_atts['what'] !== '') {
+		$args['attributes']['what'] = $tp_atts['what'];
+	}
+	$raw_ids = $tp_atts['ids'];
+	if ($raw_ids !== null && $raw_ids !== '') {
+		$args['attributes']['ids'] = array_values(array_filter(array_map('intval', preg_split('/[\s,;]+/', (string) $raw_ids))));
+	}
+	$raw_button = $tp_atts['show_button'] !== null && $tp_atts['show_button'] !== '' ? $tp_atts['show_button'] : $tp_atts['showButton'];
+	if ($raw_button !== null && $raw_button !== '') {
+		$args['attributes']['showButton'] = in_array(strtolower((string) $raw_button), array('1', 'true', 'yes', 'on'), true);
+	}
+	ob_start();
+	if (!empty($args)) {
+		get_template_part($tp_atts['path'], null, $args);
+	} else {
+		get_template_part($tp_atts['path']);
+	}
+	$ret = ob_get_contents();
+	ob_end_clean();
+	return $ret;
 }
-add_shortcode('template_part', 'template_part');  
+add_shortcode('template_part', 'template_part');
+
+/**
+ * Отзывы: нормализация атрибутов блока (JS <-> PHP).
+ * what: all|selected, ids: int[], showButton: bool.
+ */
+function rembrigada_normalize_review_attributes($attributes) {
+	$attributes = is_array($attributes) ? $attributes : array();
+	$what = isset($attributes['what']) ? (string) $attributes['what'] : 'all';
+	if ($what !== 'selected') {
+		$what = 'all';
+	}
+	$ids = array();
+	if (isset($attributes['ids'])) {
+		if (is_string($attributes['ids'])) {
+			$attributes['ids'] = preg_split('/[\s,;]+/', $attributes['ids']);
+		}
+		if (is_array($attributes['ids'])) {
+			$ids = array_values(array_filter(array_map('intval', $attributes['ids'])));
+		}
+	}
+	if ($what === 'selected' && empty($ids)) {
+		$what = 'all';
+	}
+	return array(
+		'what' => $what,
+		'ids' => $ids,
+		'showButton' => !empty($attributes['showButton']),
+	);
+}
+
+function rembrigada_render_landing_reviews($attributes) {
+	ob_start();
+	get_template_part('partials/landing/reviews', null, array(
+		'attributes' => rembrigada_normalize_review_attributes($attributes),
+	));
+	return ob_get_clean();
+}
+
+function rembrigada_render_content_reviews($attributes) {
+	ob_start();
+	get_template_part('partials/content/reviews', null, array(
+		'attributes' => rembrigada_normalize_review_attributes($attributes),
+	));
+	return ob_get_clean();
+}
+
+function rembrigada_register_review_blocks() {
+	if (!function_exists('register_block_type')) {
+		return;
+	}
+	$review_block_attributes = array(
+		'what' => array('type' => 'string', 'default' => 'all'),
+		'ids' => array('type' => 'array', 'default' => array(), 'items' => array('type' => 'number')),
+		'showButton' => array('type' => 'boolean', 'default' => false),
+	);
+	register_block_type('landing/reviews', array(
+		'attributes' => $review_block_attributes,
+		'render_callback' => 'rembrigada_render_landing_reviews',
+	));
+	register_block_type('content/reviews', array(
+		'attributes' => $review_block_attributes,
+		'render_callback' => 'rembrigada_render_content_reviews',
+	));
+}
+add_action('init', 'rembrigada_register_review_blocks');
+
+/**
+ * Опция: сначала 'option', потом 'options' (в теме используются оба варианта).
+ */
+function rembrigada_get_option($key, $default = '') {
+	$value = function_exists('get_field') ? get_field($key, 'option') : null;
+	if ($value === null || $value === false || $value === '') {
+		$fallback = function_exists('get_field') ? get_field($key, 'options') : null;
+		if ($fallback !== null && $fallback !== false && $fallback !== '') {
+			return $fallback;
+		}
+	}
+	if ($value === null || $value === false) {
+		return $default;
+	}
+	return $value;
+}
 
 
 // add_shortcode('calculation', function($atts) {
@@ -359,6 +461,8 @@ add_action('init', function() {
 			'menu_name'          => 'Отзывы'
 		),
 		'public'             => true,
+		'show_in_rest'       => true,
+		'rest_base'          => 'review',
 		'menu_icon'			 => 'dashicons-format-status',
 		'menu_position'      => 22,
 		'supports'           => array('title', 'editor', 'excerpt')
@@ -647,7 +751,7 @@ function callback_block_assets() {
 	wp_enqueue_script(
  		'block-content-reviews-script',
 		get_template_directory_uri() . '/blocks/content/reviews.js',
-		array('wp-blocks', 'wp-element'),
+		array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-data', 'wp-api-fetch'),
 		filemtime(dirname(__FILE__) . '/blocks/content/reviews.js')
 	);
 
@@ -717,7 +821,7 @@ function callback_block_assets() {
 	wp_enqueue_script(
  		'block-reviews-script',
 		get_template_directory_uri() . '/blocks/landing/reviews.js',
-		array('wp-blocks', 'wp-element'),
+		array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-data', 'wp-api-fetch'),
 		filemtime(dirname(__FILE__) . '/blocks/landing/reviews.js')
 	);
 
@@ -895,6 +999,203 @@ function callback_block_assets() {
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/content/repair.css')
 	);
+}
+
+/**
+ * Форма "Добавить отзыв" (порт из renovation-wp-theme, пост-тип review переиспользуется).
+ * Создает черновик review: title=имя, content=текст, rating + review_gallery (ACF, создаются вручную).
+ */
+function rembrigada_calc_mail_attachment_path($tmp_name, $original_name) {
+	$safe = preg_replace('/[\/\\\\\\x00]/', '_', (string) $original_name);
+	$safe = trim($safe, ' .');
+	if ($safe === '') {
+		$safe = 'file';
+	}
+	$dir = sys_get_temp_dir();
+	$dest = $dir . DIRECTORY_SEPARATOR . $safe;
+	$i = 1;
+	while (file_exists($dest)) {
+		$p = pathinfo($safe);
+		$base = isset($p['filename']) && $p['filename'] !== '' ? $p['filename'] : 'file';
+		$ext = isset($p['extension']) && $p['extension'] !== '' ? '.' . $p['extension'] : '';
+		$dest = $dir . DIRECTORY_SEPARATOR . $base . '_' . $i . $ext;
+		$i++;
+	}
+	return copy($tmp_name, $dest) ? $dest : $tmp_name;
+}
+
+function rembrigada_create_attachment_from_upload($upload, $post_id = 0) {
+	require_once(ABSPATH . 'wp-admin/includes/media.php');
+	require_once(ABSPATH . 'wp-admin/includes/file.php');
+	require_once(ABSPATH . 'wp-admin/includes/image.php');
+	$attachment_id = media_handle_sideload($upload, $post_id);
+	if (is_wp_error($attachment_id)) {
+		return 0;
+	}
+	return (int) $attachment_id;
+}
+
+function rembrigada_get_recaptcha_secret() {
+	if (defined('REMBRIGADA_RECAPTCHA_SECRET') && REMBRIGADA_RECAPTCHA_SECRET) {
+		return REMBRIGADA_RECAPTCHA_SECRET;
+	}
+	$secret = (string) apply_filters('rembrigada_recaptcha_secret', '');
+	if ($secret !== '') {
+		return $secret;
+	}
+	// Ключи интеграции reCAPTCHA в Contact Form 7 + общие варианты.
+	$candidates = array('wpcf7_recaptcha_secret', 'wpcf7_recaptcha', 'wpcf7_service_recaptcha', 'recaptcha_secret');
+	foreach ($candidates as $key) {
+		$value = get_option($key);
+		if (is_array($value) && !empty($value['secret'])) {
+			return $value['secret'];
+		}
+		if (is_string($value) && strlen($value) > 20) {
+			return $value;
+		}
+	}
+	return '';
+}
+
+function rembrigada_verify_recaptcha($token) {
+	$token = (string) $token;
+	if ($token === '') {
+		return false;
+	}
+	$secret = rembrigada_get_recaptcha_secret();
+	if ($secret === '') {
+		// Секрет не настроен (ключи CF7 не найдены): не блокируем отправку.
+		return true;
+	}
+	$response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', array(
+		'timeout' => 10,
+		'body' => array('secret' => $secret, 'response' => $token),
+	));
+	if (is_wp_error($response)) {
+		return false;
+	}
+	$data = json_decode(wp_remote_retrieve_body($response), true);
+	if (empty($data['success'])) {
+		return false;
+	}
+	// Для reCAPTCHA v3 отсекаем ботов по score.
+	if (isset($data['score']) && (float) $data['score'] < 0.3) {
+		return false;
+	}
+	return true;
+}
+
+add_action('wp_ajax_review_form', 'rembrigada_review_form_callback');
+add_action('wp_ajax_nopriv_review_form', 'rembrigada_review_form_callback');
+function rembrigada_review_form_callback() {
+	$errors = array();
+	if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'review-nonce')) {
+		wp_send_json_error(array('nonce' => 'Данные отправлены с неподдерживаемого адреса. Обновите страницу.'));
+	}
+	if (!empty($_POST['submitted'])) {
+		$errors['submitted'] = 'Что?';
+	}
+	$name = isset($_POST['your-name']) ? sanitize_text_field($_POST['your-name']) : '';
+	$message = isset($_POST['message']) ? sanitize_textarea_field($_POST['message']) : '';
+	$rating = isset($_POST['rating']) ? (int) $_POST['rating'] : 0;
+	if (empty($message)) {
+		$errors['message'] = 'Напишите Ваш отзыв.';
+	}
+	if ($rating < 1 || $rating > 5) {
+		$rating = 5;
+	}
+	if (empty($_POST['rules'])) {
+		$errors['rules'] = 'Подтвердите согласие на обработку персональных данных.';
+	}
+	$recaptcha_token = isset($_POST['g-recaptcha-response']) ? (string) $_POST['g-recaptcha-response'] : '';
+	$recaptcha_configured = rembrigada_get_recaptcha_secret() !== '';
+	if ($recaptcha_configured && $recaptcha_token === '') {
+		$errors['recaptcha'] = 'Не пройдена проверка reCAPTCHA. Попробуйте еще раз.';
+	} elseif ($recaptcha_token !== '' && !rembrigada_verify_recaptcha($recaptcha_token)) {
+		$errors['recaptcha'] = 'Не пройдена проверка reCAPTCHA. Попробуйте еще раз.';
+	}
+	if ($errors) {
+		wp_send_json_error($errors);
+	}
+
+	$post_id = wp_insert_post(array(
+		'post_title' => $name !== '' ? $name : 'Новый отзыв',
+		'post_content' => $message,
+		'post_status' => 'draft',
+		'post_type' => 'review',
+		'post_author' => 1,
+	));
+	if (!$post_id || is_wp_error($post_id)) {
+		wp_send_json_error(array('post' => 'Не удалось сохранить отзыв. Попробуйте позже.'));
+	}
+
+	if (function_exists('update_field')) {
+		update_field('rating', $rating, $post_id);
+	} else {
+		update_post_meta($post_id, 'rating', $rating);
+	}
+
+	$gallery_ids = array();
+	$attachments = array();
+	$tmp_copies = array();
+	if (!empty($_FILES['gallery'])) {
+		$files = $_FILES['gallery'];
+		$flat = array();
+		if (is_array($files['name'])) {
+			$count = count($files['name']);
+			for ($i = 0; $i < $count; $i++) {
+				$flat[] = array(
+					'name' => $files['name'][$i],
+					'full_path' => isset($files['full_path'][$i]) ? $files['full_path'][$i] : $files['name'][$i],
+					'type' => $files['type'][$i],
+					'tmp_name' => $files['tmp_name'][$i],
+					'error' => $files['error'][$i],
+					'size' => $files['size'][$i],
+				);
+			}
+		} elseif (!empty($files['tmp_name'])) {
+			$flat[] = $files + array('full_path' => $files['name']);
+		}
+		foreach ($flat as $file) {
+			if (!isset($file['error']) || (int) $file['error'] !== UPLOAD_ERR_OK) {
+				continue;
+			}
+			if (!is_uploaded_file($file['tmp_name'])) {
+				continue;
+			}
+			$dest = rembrigada_calc_mail_attachment_path($file['tmp_name'], $file['name']);
+			$attachments[] = $dest;
+			if ($dest !== $file['tmp_name']) {
+				$tmp_copies[] = $dest;
+			}
+			$attachment_id = rembrigada_create_attachment_from_upload($file, $post_id);
+			if ($attachment_id) {
+				$gallery_ids[] = $attachment_id;
+			}
+		}
+		if ($gallery_ids) {
+			if (function_exists('update_field')) {
+				update_field('review_gallery', $gallery_ids, $post_id);
+			} else {
+				update_post_meta($post_id, 'review_gallery', $gallery_ids);
+			}
+		}
+	}
+
+	$admin_url = get_site_url() . '/wp-admin/post.php?post=' . $post_id . '&action=edit';
+	$email_to = get_option('admin_email');
+	$headers = array('Content-Type: text/html; charset=UTF-8');
+	$rows = array();
+	$rows[] = 'Имя: ' . esc_html($name);
+	$rows[] = 'Оценка: ' . esc_html((string) $rating);
+	$rows[] = 'Сообщение: ' . esc_html($message);
+	$rows[] = 'Страница: ' . (isset($_POST['page']) ? esc_html(sanitize_text_field($_POST['page'])) : '');
+	$rows[] = 'Отзыв в админке: <a href="' . esc_url($admin_url) . '">' . esc_html($admin_url) . '</a>';
+	wp_mail($email_to, isset($_POST['subject']) ? sanitize_text_field($_POST['subject']) : 'Новый отзыв', implode("<br>\n", $rows), $headers, $attachments);
+	foreach ($tmp_copies as $tmp_copy) {
+		@unlink($tmp_copy);
+	}
+	wp_send_json_success();
 }
 
 add_filter('navigation_markup_template', 'navigation_template', 10, 2);

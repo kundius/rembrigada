@@ -12,6 +12,10 @@
 	const TextControl = components && components.TextControl;
 	const Spinner = components && components.Spinner;
 
+	const BLOCK_TITLE = 'Отзывы наших клиентов';
+	const BLOCK_BADGE = 'Лендинг';
+	const MAX_VISIBLE_TITLES = 5;
+
 	function buildShortcode( attributes ) {
 		const what = attributes.what || 'all';
 		const ids = attributes.ids || [];
@@ -61,11 +65,6 @@
 				return function() { cancelled = true; };
 			}, [] );
 		}
-
-		const summary = what === 'selected'
-			? 'Выбрано: ' + ids.length
-			: 'Все';
-		const buttonNote = showButton ? ' • Кнопка «Добавить отзыв»' : '';
 
 		const inspector = hasInspector ? el(
 			InspectorControls,
@@ -127,11 +126,74 @@
 			)
 		) : null;
 
+		const whatValue = what === 'selected' ? 'Выбрано: ' + ids.length : 'Все';
+
+		let selectedList = null;
+		if ( what === 'selected' ) {
+			if ( hasHooks && listState && listState.posts ) {
+				const byId = {};
+				listState.posts.forEach( function( post ) { byId[ post.id ] = post; } );
+				const visible = ids.slice( 0, MAX_VISIBLE_TITLES ).map( function( id ) {
+					const post = byId[ id ];
+					const label = post
+						? ( ( post.title && post.title.rendered ? post.title.rendered : 'Без названия' ) + ' (#' + id + ')' )
+						: 'ID ' + id + ' (не найден)';
+					return el(
+						'li',
+						{ key: id, className: 'reviews-block-card__list-item' },
+						post
+							? el( 'span', { dangerouslySetInnerHTML: { __html: ( post.title && post.title.rendered ? post.title.rendered : 'Без названия' ) + ' (#' + id + ')' } } )
+							: label
+					);
+				} );
+				if ( ids.length > MAX_VISIBLE_TITLES ) {
+					visible.push( el( 'li', { key: 'more', className: 'reviews-block-card__list-more' }, '…и ещё ' + ( ids.length - MAX_VISIBLE_TITLES ) ) );
+				}
+				selectedList = ids.length
+					? el( 'ul', { className: 'reviews-block-card__list' }, visible )
+					: el( 'div', { className: 'reviews-block-card__empty' }, 'Ничего не выбрано — будут показаны все' );
+			} else {
+				selectedList = ids.length
+					? el( 'div', { className: 'reviews-block-card__ids' }, 'ID: ' + ids.join( ', ' ) )
+					: el( 'div', { className: 'reviews-block-card__empty' }, 'Ничего не выбрано — будут показаны все' );
+			}
+		}
+
+		const preview = el(
+			'div',
+			{ className: 'reviews-block-card' },
+			el(
+				'div',
+				{ className: 'reviews-block-card__title' },
+				BLOCK_TITLE,
+				el( 'span', { className: 'reviews-block-card__badge' }, BLOCK_BADGE )
+			),
+			el(
+				'div',
+				{ className: 'reviews-block-card__row' },
+				el( 'span', { className: 'reviews-block-card__label' }, 'Что показывать' ),
+				el( 'span', { className: 'reviews-block-card__value' }, whatValue )
+			),
+			selectedList,
+			el(
+				'div',
+				{ className: 'reviews-block-card__row' },
+				el( 'span', { className: 'reviews-block-card__label' }, 'Кнопка «Добавить отзыв»' ),
+				el(
+					'span',
+					{ className: 'reviews-block-card__value' },
+					el( 'span', { className: 'reviews-block-card__dot' + ( showButton ? ' reviews-block-card__dot--on' : '' ) } ),
+					showButton ? 'Включена' : 'Выключена'
+				)
+			),
+			el( 'div', { className: 'reviews-block-card__hint' }, 'Настройки — в боковой панели' )
+		);
+
 		return el(
 			'div',
 			{ className: props.className },
 			inspector,
-			el( 'div', {}, 'Отзывы наших клиентов — ' + summary + buttonNote )
+			preview
 		);
 	}
 
@@ -144,7 +206,7 @@
 	}
 
 	registerBlockType( 'landing/reviews', {
-		title: 'Отзывы наших клиентов',
+		title: BLOCK_TITLE,
 		icon: 'embed-generic',
 		category: 'widgets',
 		keywords: [ 'reviews' ],

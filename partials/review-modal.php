@@ -76,7 +76,7 @@ if ($form_button === '') {
         </div>
 
         <div class="review-form__full">
-          <label class="order-form__rules">
+          <label class="review-form__rules">
             <input type="checkbox" name="rules" value="1" class="form-checkbox" checked />
             <span></span>
             Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
@@ -91,7 +91,7 @@ if ($form_button === '') {
       <div class="review-form-success">
         <div class="review-form-success__title"><?php echo nl2br(esc_html($success_title)); ?></div>
         <div class="review-form-success__desc"><?php echo nl2br(esc_html($success_desc)); ?></div>
-        <button type="button" class="btn-plus" data-review-form-reset data-basiclightbox-close>Закрыть</button>
+        <button type="button" class="landing-button" data-review-form-reset data-basiclightbox-close>Закрыть</button>
       </div>
     </form>
   </div>

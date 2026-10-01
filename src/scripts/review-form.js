@@ -79,11 +79,23 @@ export function initReviewGalleryField() {
 function sendReviewForm(form) {
   const errors = form.querySelector("[data-review-form-errors]");
   const submit = form.querySelector('[type="submit"]');
+  const submitText = submit ? submit.textContent : null;
 
   if (errors) errors.innerHTML = "";
   form.removeAttribute("data-review-form-success");
   form.setAttribute("data-review-form-loading", "");
-  if (submit) submit.setAttribute("disabled", "");
+  if (submit) {
+    submit.setAttribute("disabled", "");
+    submit.textContent = "Отправка…";
+  }
+
+  const done = () => {
+    form.removeAttribute("data-review-form-loading");
+    if (submit) {
+      submit.removeAttribute("disabled");
+      if (submitText !== null) submit.textContent = submitText;
+    }
+  };
 
   const formData = new FormData(form);
   formData.append("action", form.dataset.reviewFormAction || "review_form");
@@ -106,13 +118,11 @@ function sendReviewForm(form) {
           ym(31338108, "reachGoal", goal);
         }
       }
-      form.removeAttribute("data-review-form-loading");
-      if (submit) submit.removeAttribute("disabled");
+      done();
     })
     .catch((error) => {
       if (errors) errors.innerHTML = "Ошибка отправки. Попробуйте позже.";
-      form.removeAttribute("data-review-form-loading");
-      if (submit) submit.removeAttribute("disabled");
+      done();
       // eslint-disable-next-line no-console
       console.error(error);
     });

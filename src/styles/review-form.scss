@@ -113,6 +113,35 @@
   }
 }
 
+// Индикация отправки: курсор + приглушенная кнопка (текст кнопки меняет JS).
+.review-form[data-review-form-loading] {
+  cursor: progress;
+  [type="submit"] {
+    opacity: 0.7;
+  }
+}
+
+// Правила — как order-form__rules, но без отступа сверху.
+.review-form__rules {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1.125;
+  color: #404040;
+  position: relative;
+  padding-left: 30px;
+  display: block;
+  cursor: pointer;
+  a {
+    text-decoration: underline;
+    color: #404040;
+  }
+  .form-checkbox + span {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 .review-form-success__title {
   font-weight: 700;
   color: #2a2c2f;

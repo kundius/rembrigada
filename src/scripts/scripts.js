@@ -37,11 +37,10 @@ const showModal = (target) => {
   if (!target) return false;
 
   if (!target.basicLightbox) {
-    const close = target.querySelector("[data-basiclightbox-close]");
     target.basicLightbox = basicLightbox.create(target);
-    if (close) {
+    forEach(target.querySelectorAll("[data-basiclightbox-close]"), (close) => {
       close.addEventListener("click", target.basicLightbox.close);
-    }
+    });
     modals.push(target.basicLightbox);
   }
 

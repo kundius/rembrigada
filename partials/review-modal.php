@@ -75,7 +75,7 @@ if ($form_button === '') {
         </div>
 
         <div class="review-form__full">
-          <label class="review-form__rules">
+          <label class="order-form__rules">
             <input type="checkbox" name="rules" value="1" class="form-checkbox" checked />
             <span></span>
             Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>

@@ -231,12 +231,9 @@ function rembrigada_render_landing_reviews($attributes) {
 	return ob_get_clean();
 }
 
+// Алиас удаленного блока content/reviews: старые вставки рендерятся как landing/reviews.
 function rembrigada_render_content_reviews($attributes) {
-	ob_start();
-	get_template_part('partials/content/reviews', null, array(
-		'attributes' => rembrigada_normalize_review_attributes($attributes),
-	));
-	return ob_get_clean();
+	return rembrigada_render_landing_reviews($attributes);
 }
 
 function rembrigada_register_review_blocks() {
@@ -763,20 +760,6 @@ function callback_block_assets() {
 		get_template_directory_uri() . '/blocks/content/projects.css',
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/content/projects.css')
-	);
-
-	wp_enqueue_script(
- 		'block-content-reviews-script',
-		get_template_directory_uri() . '/blocks/content/reviews.js',
-		array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-data', 'wp-api-fetch'),
-		filemtime(dirname(__FILE__) . '/blocks/content/reviews.js')
-	);
-
-	wp_enqueue_style(
-		'block-content-reviews-style',
-		get_template_directory_uri() . '/blocks/content/reviews.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/content/reviews.css')
 	);
 
 	wp_enqueue_script(

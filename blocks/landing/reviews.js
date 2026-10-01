@@ -13,7 +13,6 @@
 	const Spinner = components && components.Spinner;
 
 	const BLOCK_TITLE = 'Отзывы наших клиентов';
-	const BLOCK_BADGE = 'Лендинг';
 	const MAX_VISIBLE_TITLES = 5;
 
 	function buildShortcode( attributes ) {
@@ -179,8 +178,7 @@
 			el(
 				'div',
 				{ className: 'block-card__title' },
-				BLOCK_TITLE,
-				el( 'span', { className: 'block-card__badge' }, BLOCK_BADGE )
+				BLOCK_TITLE
 			),
 			el(
 				'div',

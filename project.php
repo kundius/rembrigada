@@ -42,14 +42,7 @@ function get_next_id($list, $id) {
             <div id="review-<?php echo $review->ID ?>" class="hidden">
                 <div class="modal modal_review">
                     <button class="modal__close" data-basiclightbox-close></button>
-                    <div class="reviews-item__title"><?php echo $review->post_title ?></div>
-                    <div class="reviews-item__address"><?php the_field('address', $review->ID) ?></div>
-                    <div class="reviews-item__info">
-                        <div class="reviews-item__icon"><?php icon('quotes') ?></div>
-                        <div class="reviews-item__desc">
-                            <?php echo $review->post_content ?>
-                        </div>
-                    </div>
+                    <?php get_template_part('partials/review-item', null, array('post_id' => $review->ID)); ?>
                 </div>
             </div>
             <?php endif; ?>

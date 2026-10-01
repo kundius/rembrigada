@@ -15,10 +15,6 @@ if ($form_button === '') {
 <div id="review-modal" class="hidden">
   <div class="modal modal_review">
     <button class="modal__close" data-basiclightbox-close></button>
-    <div class="review-form__title"><?php echo esc_html($form_title); ?></div>
-    <?php if ($form_desc !== ''): ?>
-    <div class="review-form__desc"><?php echo esc_html($form_desc); ?></div>
-    <?php endif; ?>
     <form
       action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>"
       method="post"
@@ -32,6 +28,11 @@ if ($form_button === '') {
       <input type="hidden" name="page" value="<?php echo esc_attr(wp_get_document_title()); ?>">
       <input type="hidden" name="subject" value="<?php echo esc_attr($form_title); ?>">
       <input type="hidden" name="g-recaptcha-response" value="" data-recaptcha-response>
+
+      <div class="review-form__title"><?php echo esc_html($form_title); ?></div>
+      <?php if ($form_desc !== ''): ?>
+      <div class="review-form__desc"><?php echo esc_html($form_desc); ?></div>
+      <?php endif; ?>
 
       <div class="review-form__errors" data-review-form-errors></div>
 

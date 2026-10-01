@@ -47,6 +47,14 @@
 	white-space: nowrap;
 }
 
+.reviews-block-card__row--stack {
+	display: block;
+}
+
+.reviews-block-card__selected {
+	margin-top: 4px;
+}
+
 .reviews-block-card__value {
 	font-weight: bold;
 	text-align: right;

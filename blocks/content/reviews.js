@@ -161,6 +161,15 @@
 			}
 		}
 
+		const selectedRow = what === 'selected'
+			? el(
+				'div',
+				{ className: 'reviews-block-card__row reviews-block-card__row--stack' },
+				el( 'span', { className: 'reviews-block-card__label' }, 'Выбранные' ),
+				el( 'div', { className: 'reviews-block-card__selected' }, selectedList )
+			)
+			: null;
+
 		return el(
 			'div',
 			{ className: props.className },
@@ -177,7 +186,7 @@
 				el( 'span', { className: 'reviews-block-card__label' }, 'Что показывать' ),
 				el( 'span', { className: 'reviews-block-card__value' }, whatValue )
 			),
-			selectedList,
+			selectedRow,
 			el(
 				'div',
 				{ className: 'reviews-block-card__row' },

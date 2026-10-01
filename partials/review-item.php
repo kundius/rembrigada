@@ -29,6 +29,47 @@ $normalize_gallery = function ($gallery) {
 };
 $gallery_ids = $normalize_gallery(get_field('review_gallery', $review_id));
 
+// Видео Rutube: в поле только ссылка вида https://rutube.ru/video/{id}/?r=...
+$parse_rutube_id = function ($value) {
+  $value = trim((string) $value);
+  if ($value === '') {
+    return '';
+  }
+  if (preg_match('~/video/(?:private/)?([a-f0-9]{32})~i', $value, $m)) {
+    return strtolower($m[1]);
+  }
+  if (preg_match('~/play/embed/([a-f0-9]{32})~i', $value, $m)) {
+    return strtolower($m[1]);
+  }
+  if (preg_match('~^[a-f0-9]{32}$~i', $value)) {
+    return strtolower($value);
+  }
+  return '';
+};
+$videos = array();
+$videos_rows = get_field('videos', $review_id);
+if (is_array($videos_rows)) {
+  foreach ($videos_rows as $row) {
+    if (!is_array($row)) {
+      continue;
+    }
+    $rutube_id = $parse_rutube_id(isset($row['rutube_url']) ? $row['rutube_url'] : '');
+    if ($rutube_id === '') {
+      continue;
+    }
+    $thumb = '';
+    if (!empty($row['video_thumbnail'])) {
+      $thumb_value = $row['video_thumbnail'];
+      if (is_array($thumb_value)) {
+        $thumb = $thumb_value['sizes']['thumbnail'] ?? $thumb_value['url'] ?? '';
+      } else {
+        $thumb = wp_get_attachment_image_url((int) $thumb_value, 'thumbnail');
+      }
+    }
+    $videos[] = array('id' => $rutube_id, 'thumb' => $thumb);
+  }
+}
+
 $reply_content = get_field('reply_content', $review_id);
 $reply_date_raw = get_field('reply_date', $review_id);
 $reply_date = '';
@@ -62,14 +103,34 @@ $reply_avatar = function_exists('rembrigada_get_option') ? rembrigada_get_option
     <?php endfor; ?>
   </div>
   <div class="user-reviews-item__text"><?php echo $review_content; ?></div>
-  <?php if ($gallery_ids): ?>
+  <?php if ($gallery_ids || $videos): ?>
   <div class="user-reviews-item__gallery">
     <?php foreach ($gallery_ids as $attachment_id): ?>
     <a href="<?php echo esc_url(wp_get_attachment_image_url($attachment_id, 'full')); ?>" data-fslightbox="review-gallery-<?php echo $review_id; ?>">
       <?php echo wp_get_attachment_image($attachment_id, 'thumbnail'); ?>
     </a>
     <?php endforeach; ?>
+    <?php foreach ($videos as $index => $video): ?>
+    <button type="button" class="user-reviews-item__video" data-basiclightbox="#review-video-<?php echo $review_id; ?>-<?php echo $index; ?>" aria-label="Смотреть видео">
+      <?php if ($video['thumb']): ?>
+      <img src="<?php echo esc_url($video['thumb']); ?>" alt="" loading="lazy">
+      <?php else: ?>
+      <img data-rutube-thumb="<?php echo esc_attr($video['id']); ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" loading="lazy">
+      <?php endif; ?>
+      <span class="user-reviews-item__play"><span class="icon icon-play"></span></span>
+    </button>
+    <?php endforeach; ?>
   </div>
+  <?php foreach ($videos as $index => $video): ?>
+  <div class="hidden" id="review-video-<?php echo $review_id; ?>-<?php echo $index; ?>">
+    <div class="modal modal_review">
+      <button class="modal__close" data-basiclightbox-close></button>
+      <div class="user-reviews-video">
+        <iframe data-video-src="https://rutube.ru/play/embed/<?php echo esc_attr($video['id']); ?>/" frameborder="0" allow="clipboard-write; autoplay" allowFullScreen title="Видео отзыв"></iframe>
+      </div>
+    </div>
+  </div>
+  <?php endforeach; ?>
   <?php endif; ?>
 
   <?php if ($reply_content): ?>

@@ -11,6 +11,7 @@ import * as basicLightbox from "basiclightbox";
 import fslightbox from "fslightbox";
 import { initConversation } from "./conversation";
 import { initReviewForm, initReviewGalleryField } from "./review-form";
+import { initReviewVideos } from "./review-videos";
 
 const formatMoney = (num, thousand = " ") => {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1" + thousand);
@@ -43,6 +44,11 @@ const showModal = (target) => {
     });
     modals.push(target.basicLightbox);
   }
+
+  // Ленивые iframe видео: src подставляется только при открытии модалки.
+  forEach(target.querySelectorAll("iframe[data-video-src]:not([src])"), (frame) => {
+    frame.src = frame.dataset.videoSrc;
+  });
 
   forEach(modals, (modal) => {
     if (modal.visible()) {
@@ -882,3 +888,4 @@ forEach(document.querySelectorAll(".content-collapsible"), (item) => {
 initConversation();
 initReviewForm();
 initReviewGalleryField();
+initReviewVideos();

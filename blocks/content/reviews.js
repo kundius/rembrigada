@@ -142,33 +142,24 @@
 						: 'ID ' + id + ' (не найден)';
 					return el(
 						'li',
-						{ key: id, className: 'reviews-block-card__list-item' },
+						{ key: id, className: 'block-card__list-item' },
 						post
 							? el( 'span', { dangerouslySetInnerHTML: { __html: ( post.title && post.title.rendered ? post.title.rendered : 'Без названия' ) + ' (#' + id + ')' } } )
 							: label
 					);
 				} );
 				if ( ids.length > MAX_VISIBLE_TITLES ) {
-					visible.push( el( 'li', { key: 'more', className: 'reviews-block-card__list-more' }, '…и ещё ' + ( ids.length - MAX_VISIBLE_TITLES ) ) );
+					visible.push( el( 'li', { key: 'more', className: 'block-card__list-more' }, '…и ещё ' + ( ids.length - MAX_VISIBLE_TITLES ) ) );
 				}
 				selectedList = ids.length
-					? el( 'ul', { className: 'reviews-block-card__list' }, visible )
-					: el( 'div', { className: 'reviews-block-card__empty' }, 'Ничего не выбрано — будут показаны все' );
+					? el( 'ul', { className: 'block-card__list' }, visible )
+					: el( 'div', { className: 'block-card__empty' }, 'Ничего не выбрано — будут показаны все' );
 			} else {
 				selectedList = ids.length
-					? el( 'div', { className: 'reviews-block-card__ids' }, 'ID: ' + ids.join( ', ' ) )
-					: el( 'div', { className: 'reviews-block-card__empty' }, 'Ничего не выбрано — будут показаны все' );
+					? el( 'div', { className: 'block-card__ids' }, 'ID: ' + ids.join( ', ' ) )
+					: el( 'div', { className: 'block-card__empty' }, 'Ничего не выбрано — будут показаны все' );
 			}
 		}
-
-		const selectedRow = what === 'selected'
-			? el(
-				'div',
-				{ className: 'reviews-block-card__row reviews-block-card__row--stack' },
-				el( 'span', { className: 'reviews-block-card__label' }, 'Выбранные' ),
-				el( 'div', { className: 'reviews-block-card__selected' }, selectedList )
-			)
-			: null;
 
 		return el(
 			'div',
@@ -176,29 +167,37 @@
 			inspector,
 			el(
 				'div',
-				{ className: 'reviews-block-card__title' },
+				{ className: 'block-card__title' },
 				BLOCK_TITLE,
-				el( 'span', { className: 'reviews-block-card__badge' }, BLOCK_BADGE )
+				el( 'span', { className: 'block-card__badge' }, BLOCK_BADGE )
 			),
 			el(
 				'div',
-				{ className: 'reviews-block-card__row' },
-				el( 'span', { className: 'reviews-block-card__label' }, 'Что показывать' ),
-				el( 'span', { className: 'reviews-block-card__value' }, whatValue )
-			),
-			selectedRow,
-			el(
-				'div',
-				{ className: 'reviews-block-card__row' },
-				el( 'span', { className: 'reviews-block-card__label' }, 'Кнопка «Добавить отзыв»' ),
+				{ className: 'block-card__row' },
 				el(
-					'span',
-					{ className: 'reviews-block-card__value' },
-					el( 'span', { className: 'reviews-block-card__dot' + ( showButton ? ' reviews-block-card__dot--on' : '' ) } ),
-					showButton ? 'Включена' : 'Выключена'
+					'div',
+					{ className: 'block-card__group' },
+					el( 'span', { className: 'block-card__label' }, 'Что показывать' ),
+					el( 'span', { className: 'block-card__value' }, whatValue )
+				),
+				selectedList
+			),
+			el(
+				'div',
+				{ className: 'block-card__row' },
+				el(
+					'div',
+					{ className: 'block-card__group' },
+					el( 'span', { className: 'block-card__label' }, 'Кнопка «Добавить отзыв»' ),
+					el(
+						'span',
+						{ className: 'block-card__value' },
+						el( 'span', { className: 'block-card__dot' + ( showButton ? ' block-card__dot--on' : '' ) } ),
+						showButton ? 'Включена' : 'Выключена'
+					)
 				)
 			),
-			el( 'div', { className: 'reviews-block-card__hint' }, 'Настройки — в боковой панели' )
+			el( 'div', { className: 'block-card__hint' }, 'Настройки — в боковой панели' )
 		);
 	}
 

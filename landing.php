@@ -286,7 +286,7 @@ $reviews = new WP_Query(array(
                         <?php endwhile; ?>
                     </div>
                     <div class="client-feedback__more">
-                        <a href="<?php the_permalink(17) ?>" class="btn-plus">Ещё отзывы</a>
+                        <a href="<?php the_permalink(17) ?>" class="btn-plus btn-plus--arrow">Ещё отзывы</a>
                     </div>
                 </div>
             </section>

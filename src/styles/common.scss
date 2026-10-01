@@ -253,6 +253,34 @@ a.btn-plus,
   }
 }
 
+// Модификатор btn-plus со стрелкой вместо плюсика (кнопка «Ещё отзывы»).
+.content a.btn-plus--arrow,
+a.btn-plus--arrow,
+.btn-plus--arrow {
+  &::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    margin-top: -5px;
+    background: transparent;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    box-shadow: none;
+    transform: rotate(-45deg);
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    &::after {
+      width: 6px;
+      height: 6px;
+      right: 19px;
+      margin-top: -4px;
+    }
+  }
+}
+
 .btn-more {
   display: inline-block;
   text-decoration: none;

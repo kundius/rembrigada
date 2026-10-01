@@ -72,9 +72,11 @@ if ($review_block['what'] === 'selected') {
       </div>
       <?php endwhile; ?>
     </div>
+    <?php if (!empty($review_block['showMoreButton'])): ?>
     <div class="client-feedback__more">
-      <a href="<?php the_permalink(17) ?>" class="btn-plus">Ещё отзывы</a>
+      <a href="<?php the_permalink(17) ?>" class="btn-plus btn-plus--arrow">Ещё отзывы</a>
     </div>
+    <?php endif; ?>
     <?php endif; ?>
     <?php if (!empty($review_block['showButton'])): ?>
     <div class="client-feedback__more">

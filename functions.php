@@ -161,6 +161,8 @@ function template_part( $atts, $content = null ){
 		 'ids' => null,
 		 'show_button' => null,
 		 'showButton' => null,
+		 'show_more' => null,
+		 'showMoreButton' => null,
 	), $atts);
 	$args = array();
 	if ($tp_atts['what'] !== null && $tp_atts['what'] !== '') {
@@ -173,6 +175,10 @@ function template_part( $atts, $content = null ){
 	$raw_button = $tp_atts['show_button'] !== null && $tp_atts['show_button'] !== '' ? $tp_atts['show_button'] : $tp_atts['showButton'];
 	if ($raw_button !== null && $raw_button !== '') {
 		$args['attributes']['showButton'] = in_array(strtolower((string) $raw_button), array('1', 'true', 'yes', 'on'), true);
+	}
+	$raw_more = $tp_atts['show_more'] !== null && $tp_atts['show_more'] !== '' ? $tp_atts['show_more'] : $tp_atts['showMoreButton'];
+	if ($raw_more !== null && $raw_more !== '') {
+		$args['attributes']['showMoreButton'] = in_array(strtolower((string) $raw_more), array('1', 'true', 'yes', 'on'), true);
 	}
 	ob_start();
 	if (!empty($args)) {
@@ -212,6 +218,8 @@ function rembrigada_normalize_review_attributes($attributes) {
 		'what' => $what,
 		'ids' => $ids,
 		'showButton' => !empty($attributes['showButton']),
+		// Кнопка «Ещё отзывы» включена по умолчанию (старые блоки без атрибута).
+		'showMoreButton' => !isset($attributes['showMoreButton']) || !empty($attributes['showMoreButton']),
 	);
 }
 
@@ -239,6 +247,7 @@ function rembrigada_register_review_blocks() {
 		'what' => array('type' => 'string', 'default' => 'all'),
 		'ids' => array('type' => 'array', 'default' => array(), 'items' => array('type' => 'number')),
 		'showButton' => array('type' => 'boolean', 'default' => false),
+		'showMoreButton' => array('type' => 'boolean', 'default' => true),
 	);
 	register_block_type('landing/reviews', array(
 		'attributes' => $review_block_attributes,
@@ -608,6 +617,14 @@ function seo() {
 
 add_action('enqueue_block_editor_assets', 'callback_block_assets');
 function callback_block_assets() {
+	// Общие классы превью-карточек блоков (blocks/block-card.css).
+	wp_enqueue_style(
+		'block-card-style',
+		get_template_directory_uri() . '/blocks/block-card.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/block-card.css')
+	);
+
 	wp_enqueue_script(
  		'block-callback-script',
 		get_template_directory_uri() . '/blocks/callback.js',

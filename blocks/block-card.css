@@ -1,0 +1,101 @@
+/* Общие классы превью-карточки блока в редакторе.
+   Подключить: wp_enqueue_style в callback_block_assets (functions.php).
+   Использование в edit():
+     div.{block} > .block-card__title (+ .block-card__badge)
+               > .block-card__row > .block-card__group > .block-card__label + .block-card__value
+                                   + опционально .block-card__list / .block-card__empty / .block-card__ids
+               > .block-card__hint
+*/
+
+.block-card__title {
+	margin-bottom: 16px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.block-card__badge {
+	display: inline-block;
+	margin-left: 8px;
+	padding: 2px 10px;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.25);
+	font-size: 12px;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+.block-card__row {
+	padding: 8px 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.block-card__group {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 12px;
+}
+
+.block-card__label {
+	opacity: 0.75;
+	white-space: nowrap;
+}
+
+.block-card__value {
+	font-weight: bold;
+	text-align: right;
+}
+
+.block-card__dot {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	margin-right: 6px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	opacity: 0.6;
+}
+
+.block-card__dot--on {
+	border-color: #4ade80;
+	background: #4ade80;
+	opacity: 1;
+}
+
+.block-card__list {
+	margin: 2px 0 4px;
+	padding-left: 20px;
+	list-style: disc;
+}
+
+.block-card__list-item,
+.block-card__list-more,
+.block-card__ids,
+.block-card__empty {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.block-card__list-more,
+.block-card__empty,
+.block-card__ids {
+	opacity: 0.85;
+}
+
+.block-card__row .block-card__list,
+.block-card__row .block-card__empty,
+.block-card__row .block-card__ids {
+	margin-top: 4px;
+}
+
+.block-card__empty {
+	padding: 2px 0;
+}
+
+.block-card__hint {
+	margin-top: 8px;
+	text-align: center;
+	font-size: 12px;
+	opacity: 0.7;
+}

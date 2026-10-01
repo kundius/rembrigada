@@ -112,11 +112,7 @@ $reply_avatar = function_exists('rembrigada_get_option') ? rembrigada_get_option
     <?php endforeach; ?>
     <?php foreach ($videos as $index => $video): ?>
     <button type="button" class="user-reviews-item__video" data-basiclightbox="#review-video-<?php echo $review_id; ?>-<?php echo $index; ?>" aria-label="Смотреть видео">
-      <?php if ($video['thumb']): ?>
-      <img src="<?php echo esc_url($video['thumb']); ?>" alt="" loading="lazy">
-      <?php else: ?>
-      <img data-rutube-thumb="<?php echo esc_attr($video['id']); ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" loading="lazy">
-      <?php endif; ?>
+      <img src="<?php echo esc_url($video['thumb'] ?: ('https://preview.rutube.ru/preview/' . $video['id'] . '.webp')); ?>" alt="" loading="lazy" onerror="this.style.display='none'">
       <span class="user-reviews-item__play"><span class="icon icon-play"></span></span>
     </button>
     <?php endforeach; ?>
@@ -126,7 +122,7 @@ $reply_avatar = function_exists('rembrigada_get_option') ? rembrigada_get_option
     <div class="modal modal_review">
       <button class="modal__close" data-basiclightbox-close></button>
       <div class="user-reviews-video">
-        <iframe data-video-src="https://rutube.ru/play/embed/<?php echo esc_attr($video['id']); ?>/" frameborder="0" allow="clipboard-write; autoplay" allowFullScreen title="Видео отзыв"></iframe>
+        <iframe width="720" height="405" src="https://rutube.ru/play/embed/<?php echo esc_attr($video['id']); ?>/" style="border: none;" allow="clipboard-write; autoplay" allowFullScreen loading="lazy"></iframe>
       </div>
     </div>
   </div>

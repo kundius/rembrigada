@@ -231,11 +231,6 @@ function rembrigada_render_landing_reviews($attributes) {
 	return ob_get_clean();
 }
 
-// Алиас удаленного блока content/reviews: старые вставки рендерятся как landing/reviews.
-function rembrigada_render_content_reviews($attributes) {
-	return rembrigada_render_landing_reviews($attributes);
-}
-
 function rembrigada_register_review_blocks() {
 	if (!function_exists('register_block_type')) {
 		return;
@@ -249,10 +244,6 @@ function rembrigada_register_review_blocks() {
 	register_block_type('landing/reviews', array(
 		'attributes' => $review_block_attributes,
 		'render_callback' => 'rembrigada_render_landing_reviews',
-	));
-	register_block_type('content/reviews', array(
-		'attributes' => $review_block_attributes,
-		'render_callback' => 'rembrigada_render_content_reviews',
 	));
 }
 add_action('init', 'rembrigada_register_review_blocks');

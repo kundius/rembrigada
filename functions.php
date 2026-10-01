@@ -612,6 +612,11 @@ function seo() {
 }
 
 
+// ВРЕМЕННО: одноразовая миграция фото отзывов (удалить вместе с tools/migrate-review-images*.php).
+if (is_admin()) {
+	require_once __DIR__ . '/tools/migrate-review-images-page.php';
+}
+
 add_action('enqueue_block_editor_assets', 'callback_block_assets');
 function callback_block_assets() {
 	// Общие классы превью-карточек блоков (blocks/block-card.css).

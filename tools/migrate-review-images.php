@@ -10,7 +10,16 @@
  * После окончания работ файл УДАЛИТЬ.
  */
 
-require_once dirname(__FILE__, 4) . '/wp-load.php';
+// Временно показываем ошибки (файл одноразовый, после работ удалить).
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+$wp_root = dirname(dirname(dirname(dirname(__FILE__))));
+$loader = $wp_root . '/wp-load.php';
+if (!file_exists($loader)) {
+  die('wp-load.php не найден по пути: ' . htmlspecialchars($loader));
+}
+require_once $loader;
 
 if (!function_exists('get_field')) {
   wp_die('ACF не активен.');

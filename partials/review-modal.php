@@ -13,9 +13,9 @@ if ($form_button === '') {
 }
 ?>
 <div id="review-modal" class="hidden">
-  <div class="modal modal_review modal_review-form">
+  <div class="modal modal_review">
     <button class="modal__close" data-basiclightbox-close></button>
-    <div class="reviews-item__title"><?php echo esc_html($form_title); ?></div>
+    <div class="review-form__title"><?php echo esc_html($form_title); ?></div>
     <?php if ($form_desc !== ''): ?>
     <div class="review-form__desc"><?php echo esc_html($form_desc); ?></div>
     <?php endif; ?>

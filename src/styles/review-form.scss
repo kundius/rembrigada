@@ -3,24 +3,22 @@
 // Форма "Добавить отзыв" — порт из renovation-wp-theme (field-rating, gallery-field),
 // адаптирован под сетку/брейкпоинты rembrigada и модалку basicLightbox.
 
-.modal_review-form {
-  .reviews-item__title {
-    margin-bottom: 0;
-    padding: 0;
-    border: none;
-    font-family: inherit;
-    font-size: 28px;
-    line-height: 1;
-    letter-spacing: 0.01em;
-    color: #333333;
-    font-weight: bold;
-    text-align: center;
-    @media (max-width: $breakpoint-small-max) {
-      font-size: 24px;
-    }
-    @media (max-width: $breakpoint-xsmall-max) {
-      font-size: 20px;
-    }
+.review-form__title {
+  margin-bottom: 32px;
+  padding: 0;
+  border: none;
+  font-family: inherit;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #333333;
+  font-weight: bold;
+  text-align: center;
+  @media (max-width: $breakpoint-small-max) {
+    font-size: 24px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 20px;
   }
 }
 

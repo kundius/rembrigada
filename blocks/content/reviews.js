@@ -161,9 +161,10 @@
 			}
 		}
 
-		const preview = el(
+		return el(
 			'div',
-			{ className: 'reviews-block-card' },
+			{ className: props.className },
+			inspector,
 			el(
 				'div',
 				{ className: 'reviews-block-card__title' },
@@ -189,13 +190,6 @@
 				)
 			),
 			el( 'div', { className: 'reviews-block-card__hint' }, 'Настройки — в боковой панели' )
-		);
-
-		return el(
-			'div',
-			{ className: props.className },
-			inspector,
-			preview
 		);
 	}
 

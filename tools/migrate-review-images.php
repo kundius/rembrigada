@@ -14,10 +14,24 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$wp_root = dirname(dirname(dirname(dirname(__FILE__))));
-$loader = $wp_root . '/wp-load.php';
-if (!file_exists($loader)) {
-  die('wp-load.php не найден по пути: ' . htmlspecialchars($loader));
+$loader = '';
+$tried = array();
+$dir = __DIR__;
+for ($i = 0; $i < 8; $i++) {
+  $candidate = $dir . '/wp-load.php';
+  $tried[] = $candidate;
+  if (file_exists($candidate)) {
+    $loader = $candidate;
+    break;
+  }
+  $parent = dirname($dir);
+  if ($parent === $dir) {
+    break;
+  }
+  $dir = $parent;
+}
+if ($loader === '') {
+  die('wp-load.php не найден. Проверено: ' . htmlspecialchars(implode(', ', $tried)));
 }
 require_once $loader;
 

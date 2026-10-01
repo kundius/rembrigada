@@ -37,9 +37,11 @@ const showModal = (target) => {
   if (!target) return false;
 
   if (!target.basicLightbox) {
+    // Важно: ищем кнопки ДО create(), т.к. create() перемещает детей из target в лайтбокс.
+    const closers = Array.from(target.querySelectorAll("[data-basiclightbox-close]"));
     target.basicLightbox = basicLightbox.create(target);
-    forEach(target.querySelectorAll("[data-basiclightbox-close]"), (close) => {
-      close.addEventListener("click", target.basicLightbox.close);
+    forEach(closers, (close) => {
+      close.addEventListener("click", () => target.basicLightbox.close());
     });
     modals.push(target.basicLightbox);
   }

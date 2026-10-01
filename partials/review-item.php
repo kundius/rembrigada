@@ -105,16 +105,16 @@ $reply_avatar = function_exists('rembrigada_get_option') ? rembrigada_get_option
   <div class="user-reviews-item__text"><?php echo $review_content; ?></div>
   <?php if ($gallery_ids || $videos): ?>
   <div class="user-reviews-item__gallery">
-    <?php foreach ($gallery_ids as $attachment_id): ?>
-    <a href="<?php echo esc_url(wp_get_attachment_image_url($attachment_id, 'full')); ?>" data-fslightbox="review-gallery-<?php echo $review_id; ?>">
-      <?php echo wp_get_attachment_image($attachment_id, 'thumbnail'); ?>
-    </a>
-    <?php endforeach; ?>
     <?php foreach ($videos as $index => $video): ?>
     <button type="button" class="user-reviews-item__video" data-basiclightbox="#review-video-<?php echo $review_id; ?>-<?php echo $index; ?>" aria-label="Смотреть видео">
       <img src="<?php echo esc_url($video['thumb'] ?: ('https://preview.rutube.ru/preview/' . $video['id'] . '.webp')); ?>" alt="" loading="lazy" onerror="this.style.display='none'">
       <span class="user-reviews-item__play"><span class="icon icon-play"></span></span>
     </button>
+    <?php endforeach; ?>
+    <?php foreach ($gallery_ids as $attachment_id): ?>
+    <a href="<?php echo esc_url(wp_get_attachment_image_url($attachment_id, 'full')); ?>" data-fslightbox="review-gallery-<?php echo $review_id; ?>">
+      <?php echo wp_get_attachment_image($attachment_id, 'thumbnail'); ?>
+    </a>
     <?php endforeach; ?>
   </div>
   <?php foreach ($videos as $index => $video): ?>

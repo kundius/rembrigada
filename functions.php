@@ -563,6 +563,13 @@ function rembrigada_quiz_field_defs($p, $for_block = false) {
             'layout' => 'horizontal',
         );
     }
+    if (!$for_block) {
+        $fields[] = array(
+            'key' => $p . '_tab',
+            'label' => 'Квиз',
+            'type' => 'tab',
+        );
+    }
     $cond_custom = $for_block ? array(array(array(
         'field' => $p . '_source',
         'operator' => '==',
@@ -682,7 +689,7 @@ add_action('acf/init', function() {
         'location' => array(array(array(
             'param' => 'options_page',
             'operator' => '==',
-            'value' => 'acf-options',
+            'value' => 'acf-content-blocks',
         ))),
     ));
     acf_add_local_field_group(array(

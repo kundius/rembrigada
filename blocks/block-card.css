@@ -94,3 +94,44 @@
 	font-size: 12px;
 	opacity: 0.7;
 }
+
+/* Шапка ACF-блока «Квиз»: message-поле с классом quiz-block-head в обёртке.
+   Ярлык поля скрыт — заголовок задан внутри HTML сообщения. */
+.acf-field.quiz-block-head > .acf-label {
+	display: none;
+}
+
+.acf-field.quiz-block-head {
+	background: #f0f6fc;
+	border: 1px solid #c3d9ec;
+	border-left: 4px solid #2271b1;
+	border-radius: 4px;
+	padding: 12px 16px;
+}
+
+.quiz-block-head__title {
+	margin: 0 0 8px;
+	font-size: 16px;
+	font-weight: 700;
+	color: #1d2327;
+}
+
+.acf-field.quiz-block-head ul {
+	margin: 8px 0 0;
+	padding-left: 20px;
+	list-style: disc;
+}
+
+.acf-field.quiz-block-head li {
+	margin: 2px 0;
+	font-size: 13px;
+	line-height: 1.5;
+	color: #3c434a;
+}
+
+.acf-field.quiz-block-head code {
+	background: rgba(0, 0, 0, 0.07);
+	padding: 0 5px;
+	border-radius: 3px;
+	font-size: 12px;
+}

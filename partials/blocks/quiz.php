@@ -77,7 +77,6 @@ $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'От
                               class="quiz-option__input"
                               data-option-input
                               placeholder="<?php echo esc_attr($option['input_placeholder'] !== '' ? $option['input_placeholder'] : 'Ваш вариант'); ?>"
-                              <?php if (!empty($option['input_required'])): ?>data-input-required="1"<?php endif; ?>
                               autocomplete="off"
                             >
                             <?php endif; ?>

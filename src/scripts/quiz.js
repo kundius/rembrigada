@@ -104,20 +104,15 @@ function selectedOptions(screen) {
       input,
       title,
       extra,
-      text: extra ? title + ": " + extra : title,
+      // Пустой ввод тоже отправляется: «Ответ: » с пустой строкой.
+      text: textInput ? title + ": " + extra : title,
       next: input.getAttribute("data-option-next") || "",
-      inputRequired: textInput && textInput.hasAttribute("data-input-required"),
-      inputEmpty: textInput ? textInput.value.trim() === "" : false,
     };
   });
 }
 
 function stepIsValid(screen) {
-  const sel = selectedOptions(screen);
-  if (!sel.length) return false;
-  // Опция с обязательным вводом и пустым полем — шаг невалиден.
-  if (sel.some((s) => s.inputRequired && s.inputEmpty)) return false;
-  return true;
+  return selectedOptions(screen).length > 0;
 }
 
 function questionText(screen) {

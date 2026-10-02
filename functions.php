@@ -542,167 +542,6 @@ function be_register_blocks() {
 }
 add_action('acf/init', 'be_register_blocks' );
 
-/**
- * Квиз: структура полей (общая для опций и ACF-блока).
- * Текстовый next_key вместо select: шаги заранее неизвестны, менеджер
- * указывает ключ следующего шага, `finish` или пусто (= следующий по порядку).
- */
-function rembrigada_quiz_field_defs($p, $for_block = false) {
-    $fields = array();
-    if ($for_block) {
-        $fields[] = array(
-            'key' => $p . '_source',
-            'label' => 'Источник наполнения',
-            'name' => 'quiz_source',
-            'type' => 'radio',
-            'choices' => array(
-                'common' => 'Общие (из Параметры)',
-                'custom' => 'Уникальные (задать здесь)',
-            ),
-            'default_value' => 'common',
-            'layout' => 'horizontal',
-        );
-    }
-    if (!$for_block) {
-        $fields[] = array(
-            'key' => $p . '_tab',
-            'label' => 'Квиз',
-            'type' => 'tab',
-        );
-    }
-    $cond_custom = $for_block ? array(array(array(
-        'field' => $p . '_source',
-        'operator' => '==',
-        'value' => 'custom',
-    ))) : null;
-
-    $mk = function($key, $field) use ($cond_custom) {
-        if ($cond_custom) {
-            $field['conditional_logic'] = $cond_custom;
-        }
-        $field['key'] = $key;
-        return $field;
-    };
-
-    $fields[] = $mk($p . '_title', array(
-        'label' => 'Заголовок',
-        'name' => 'quiz_title',
-        'type' => 'text',
-    ));
-    $fields[] = $mk($p . '_goal', array(
-        'label' => 'Цель в метрике (data-ym-goal)',
-        'name' => 'quiz_goal',
-        'type' => 'text',
-    ));
-    $fields[] = $mk($p . '_bonus_title', array(
-        'label' => 'Бонусы / Заголовок',
-        'name' => 'quiz_bonus_title',
-        'type' => 'textarea',
-        'rows' => 2,
-    ));
-    $fields[] = $mk($p . '_bonus_items', array(
-        'label' => 'Бонусы / Список',
-        'name' => 'quiz_bonus_items',
-        'type' => 'repeater',
-        'layout' => 'table',
-        'button_label' => 'Добавить бонус',
-        'sub_fields' => array(
-            array('key' => $p . '_bonus_image', 'label' => 'Иконка', 'name' => 'image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail'),
-            array('key' => $p . '_bonus_item_title', 'label' => 'Название', 'name' => 'title', 'type' => 'text'),
-        ),
-    ));
-    $fields[] = $mk($p . '_steps', array(
-        'label' => 'Шаги',
-        'name' => 'quiz_steps',
-        'type' => 'repeater',
-        'layout' => 'block',
-        'button_label' => 'Добавить шаг',
-        'sub_fields' => array(
-            array(
-                'key' => $p . '_step_key',
-                'label' => 'Ключ шага (латиница, уникально)',
-                'name' => 'key',
-                'type' => 'text',
-                'instructions' => 'Используется для ветвления. Пусто = step_1, step_2... по порядку.',
-                'wrapper' => array('width' => '30'),
-            ),
-            array(
-                'key' => $p . '_step_type',
-                'label' => 'Тип выбора',
-                'name' => 'type',
-                'type' => 'radio',
-                'choices' => array('radio' => 'Один вариант', 'checkbox' => 'Несколько (чекбоксы)'),
-                'default_value' => 'radio',
-                'layout' => 'horizontal',
-                'wrapper' => array('width' => '70'),
-            ),
-            array('key' => $p . '_step_question', 'label' => 'Вопрос', 'name' => 'question', 'type' => 'textarea', 'rows' => 2, 'required' => 1),
-            array('key' => $p . '_step_desc', 'label' => 'Описание', 'name' => 'description', 'type' => 'textarea', 'rows' => 2),
-            array('key' => $p . '_step_image', 'label' => 'Картинка шага', 'name' => 'image', 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'medium'),
-            array(
-                'key' => $p . '_step_options',
-                'label' => 'Варианты ответов',
-                'name' => 'options',
-                'type' => 'repeater',
-                'layout' => 'block',
-                'button_label' => 'Добавить вариант',
-                'sub_fields' => array(
-                    array('key' => $p . '_opt_title', 'label' => 'Ответ', 'name' => 'title', 'type' => 'text', 'required' => 1, 'wrapper' => array('width' => '50')),
-                    array('key' => $p . '_opt_desc', 'label' => 'Описание ответа', 'name' => 'desc', 'type' => 'textarea', 'rows' => 2, 'wrapper' => array('width' => '50')),
-                    array('key' => $p . '_opt_input', 'label' => 'Поле для своего значения?', 'name' => 'with_input', 'type' => 'true_false', 'message' => 'Показать инпут', 'default_value' => 0, 'ui' => 1, 'wrapper' => array('width' => '33')),
-                    array('key' => $p . '_opt_ph', 'label' => 'Плейсхолдер инпута', 'name' => 'input_placeholder', 'type' => 'text', 'wrapper' => array('width' => '34'), 'conditional_logic' => array(array(array('field' => $p . '_opt_input', 'operator' => '==', 'value' => '1')))),
-                    array('key' => $p . '_opt_req', 'label' => 'Ввод обязателен?', 'name' => 'input_required', 'type' => 'true_false', 'message' => 'Да', 'default_value' => 0, 'ui' => 1, 'wrapper' => array('width' => '33'), 'conditional_logic' => array(array(array('field' => $p . '_opt_input', 'operator' => '==', 'value' => '1')))),
-                    array('key' => $p . '_opt_next', 'label' => 'Следующий шаг', 'name' => 'next_key', 'type' => 'text', 'instructions' => 'Ключ шага, `finish` — сразу к форме, пусто — следующий по порядку.', 'wrapper' => array('width' => '100')),
-                ),
-            ),
-        ),
-    ));
-    $fields[] = $mk($p . '_finish_title', array(
-        'label' => 'Финал / Заголовок',
-        'name' => 'quiz_finish_title',
-        'type' => 'textarea',
-        'rows' => 2,
-    ));
-    $fields[] = $mk($p . '_finish_desc', array(
-        'label' => 'Финал / Описание',
-        'name' => 'quiz_finish_desc',
-        'type' => 'textarea',
-        'rows' => 2,
-    ));
-    $fields[] = $mk($p . '_finish_button', array(
-        'label' => 'Финал / Текст кнопки',
-        'name' => 'quiz_finish_button',
-        'type' => 'text',
-        'default_value' => 'Отправить',
-    ));
-    return $fields;
-}
-
-add_action('acf/init', function() {
-    if (!function_exists('acf_add_local_field_group')) {
-        return;
-    }
-    acf_add_local_field_group(array(
-        'key' => 'group_quiz_options',
-        'title' => 'Квиз (общие)',
-        'fields' => rembrigada_quiz_field_defs('field_quiz_opt', false),
-        'location' => array(array(array(
-            'param' => 'options_page',
-            'operator' => '==',
-            'value' => 'acf-content-blocks',
-        ))),
-    ));
-    acf_add_local_field_group(array(
-        'key' => 'group_quiz_block',
-        'title' => 'Квиз',
-        'fields' => rembrigada_quiz_field_defs('field_quiz_blk', true),
-        'location' => array(array(array(
-            'param' => 'block',
-            'operator' => '==',
-            'value' => 'acf/quiz',
-        ))),
-    ));
-});
 
 /**
  * Нормализация сырого repeater-шага в структуру для рендера.
@@ -742,7 +581,6 @@ function rembrigada_normalize_quiz_steps($raw_steps) {
                     'desc' => isset($opt['desc']) ? (string) $opt['desc'] : '',
                     'with_input' => !empty($opt['with_input']),
                     'input_placeholder' => isset($opt['input_placeholder']) ? (string) $opt['input_placeholder'] : '',
-                    'input_required' => !empty($opt['input_required']),
                     'next' => $next,
                 );
             }
@@ -768,71 +606,6 @@ function rembrigada_normalize_quiz_steps($raw_steps) {
         );
     }
     return $steps;
-}
-
-/**
- * Конвертер старого формата (quiz.step-1..step-8 из опций) в новый.
- */
-function rembrigada_convert_legacy_quiz($legacy) {
-    if (!is_array($legacy)) {
-        return null;
-    }
-    $steps = array();
-    for ($n = 1; $n <= 6; $n++) {
-        $sk = 'step-' . $n;
-        if (empty($legacy[$sk]) || !is_array($legacy[$sk])) {
-            continue;
-        }
-        $items = array();
-        if (!empty($legacy[$sk]['items']) && is_array($legacy[$sk]['items'])) {
-            foreach ($legacy[$sk]['items'] as $item) {
-                $text = '';
-                if (is_array($item) && isset($item['text'])) {
-                    $text = (string) $item['text'];
-                } elseif (is_string($item)) {
-                    $text = $item;
-                }
-                if (trim(wp_strip_all_tags($text)) === '') {
-                    continue;
-                }
-                $items[] = array('title' => $text, 'desc' => '', 'with_input' => false, 'input_placeholder' => '', 'input_required' => false, 'next' => '');
-            }
-        }
-        if (empty($items)) {
-            continue;
-        }
-        $steps[] = array(
-            'key' => 'step_' . $n,
-            'question' => isset($legacy[$sk]['title']) ? (string) $legacy[$sk]['title'] : '',
-            'description' => isset($legacy[$sk]['description']) ? (string) $legacy[$sk]['description'] : '',
-            'image' => '',
-            'type' => 'radio',
-            'options' => $items,
-        );
-    }
-    if (empty($steps)) {
-        return null;
-    }
-    $bonus_items = array();
-    if (!empty($legacy['bonus']['items']) && is_array($legacy['bonus']['items'])) {
-        foreach ($legacy['bonus']['items'] as $item) {
-            $img = '';
-            if (!empty($item['image']['url'])) {
-                $img = $item['image']['url'];
-            }
-            $bonus_items[] = array('image' => $img, 'title' => isset($item['title']) ? (string) $item['title'] : '');
-        }
-    }
-    return array(
-        'title' => isset($legacy['title']) ? (string) $legacy['title'] : '',
-        'goal' => isset($legacy['goal']) ? (string) $legacy['goal'] : '',
-        'bonus_title' => isset($legacy['bonus']['title']) ? (string) $legacy['bonus']['title'] : '',
-        'bonus_items' => $bonus_items,
-        'steps' => $steps,
-        'finish_title' => isset($legacy['step-7']['title']) ? (string) $legacy['step-7']['title'] : '',
-        'finish_desc' => isset($legacy['step-7']['description']) ? (string) $legacy['step-7']['description'] : '',
-        'finish_button' => isset($legacy['step-7']['button']['text']) && $legacy['step-7']['button']['text'] !== '' ? (string) $legacy['step-7']['button']['text'] : 'Отправить',
-    );
 }
 
 /**
@@ -883,13 +656,6 @@ function rembrigada_get_quiz_data() {
         }
     }
 
-    if (empty($data['steps']) && !$from_block && function_exists('get_field')) {
-        $legacy = get_field('quiz', 'option');
-        $converted = rembrigada_convert_legacy_quiz($legacy);
-        if ($converted) {
-            return $converted;
-        }
-    }
     return $data;
 }
 
@@ -1563,6 +1329,6 @@ function navigation_template ($template, $class) {
 	return '
 	<nav class="%1$s" role="navigation">
 		<div class="nav-links">%3$s</div>
-	</nav>    
+	</nav>
 	';
 }

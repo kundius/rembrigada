@@ -609,35 +609,41 @@ function rembrigada_normalize_quiz_steps($raw_steps) {
 }
 
 /**
- * Собрать данные квиза: ACF-блок (source=custom) или общие опции.
+ * Собрать данные квиза: посекционное переопределение.
+ * Поле quiz_override (checkbox во вставке acf/quiz): title|goal|bonus|steps|finish.
+ * Отмеченная секция берется из вставки, неотмеченная — из общих опций.
  * В контексте рендера acf/quiz get_field() без post_id отдает поля блока.
  */
 function rembrigada_get_quiz_data() {
-    $source = function_exists('get_field') ? get_field('quiz_source') : null;
-    $from_block = ($source === 'custom');
-    $get = function($name) use ($from_block) {
+    $override = function_exists('get_field') ? get_field('quiz_override') : array();
+    if (!is_array($override)) {
+        $override = $override ? array((string) $override) : array();
+    }
+    $from_block = function($section) use ($override) {
+        return in_array($section, $override, true);
+    };
+    $get = function($name, $section) use ($from_block) {
         if (!function_exists('get_field')) {
             return null;
         }
-        if ($from_block) {
-            $v = get_field($name);
-            return $v;
+        if ($from_block($section)) {
+            return get_field($name);
         }
         return get_field($name, 'option');
     };
 
-    $raw_steps = $get('quiz_steps');
+    $raw_steps = $get('quiz_steps', 'steps');
     $data = array(
-        'title' => (string) ($get('quiz_title') ?: ''),
-        'goal' => (string) ($get('quiz_goal') ?: ''),
-        'bonus_title' => (string) ($get('quiz_bonus_title') ?: ''),
+        'title' => (string) ($get('quiz_title', 'title') ?: ''),
+        'goal' => (string) ($get('quiz_goal', 'goal') ?: ''),
+        'bonus_title' => (string) ($get('quiz_bonus_title', 'bonus') ?: ''),
         'bonus_items' => array(),
         'steps' => rembrigada_normalize_quiz_steps($raw_steps),
-        'finish_title' => (string) ($get('quiz_finish_title') ?: ''),
-        'finish_desc' => (string) ($get('quiz_finish_desc') ?: ''),
-        'finish_button' => (string) ($get('quiz_finish_button') ?: 'Отправить'),
+        'finish_title' => (string) ($get('quiz_finish_title', 'finish') ?: ''),
+        'finish_desc' => (string) ($get('quiz_finish_desc', 'finish') ?: ''),
+        'finish_button' => (string) ($get('quiz_finish_button', 'finish') ?: 'Отправить'),
     );
-    $raw_bonus = $get('quiz_bonus_items');
+    $raw_bonus = $get('quiz_bonus_items', 'bonus');
     if (is_array($raw_bonus)) {
         foreach ($raw_bonus as $b) {
             if (!is_array($b)) {

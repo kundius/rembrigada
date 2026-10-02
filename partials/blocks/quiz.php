@@ -1,7 +1,8 @@
 <?php
 /**
  * Квиз (ACF-блок acf/quiz).
- * Источник: quiz_source = custom (поля блока) | common (опции).
+ * Источник посекционный: quiz_override = title|goal|bonus|steps|finish
+ * (отмеченное — из вставки, остальное — из общих опций).
  * Отправка: фиксированные поля CF7 referrer / quiz_result / your-phone / rules.
  */
 $quiz = function_exists('rembrigada_get_quiz_data') ? rembrigada_get_quiz_data() : null;

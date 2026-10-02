@@ -8,7 +8,6 @@
 h2.landing-quiz__title,
 .landing-quiz__title {
   text-align: center;
-  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 24px;
   color: #333;
@@ -46,7 +45,6 @@ h2.landing-quiz__title,
   display: flex;
   font-size: 24px;
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -252,7 +250,6 @@ h2.landing-quiz__title,
   color: #fff;
   font-weight: bold;
   font-size: 33px;
-  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,11 +285,8 @@ h2.landing-quiz__title,
 
 .quiz-form__title-text {
   color: #0c0c0c;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 24px;
   line-height: 1;
-  font-family: "Roboto", sans-serif;
-  max-height: 36px;
 }
 
 .quiz-form__title-desc {
@@ -454,7 +448,6 @@ h2.landing-quiz__title,
   font-size: 16px;
   font-weight: bold;
   color: #000;
-  font-family: "Roboto", sans-serif;
   padding: 0 20px;
   background: #f2f2f2;
   border: 2px solid #bcbcbc;

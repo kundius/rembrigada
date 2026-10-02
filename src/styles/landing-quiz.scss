@@ -364,13 +364,13 @@ h2.landing-quiz__title,
 
 .quiz-option {
   display: block;
-  font-size: 20px;
-  line-height: 26px;
-  color: #151618;
 }
 
 .quiz-option__title {
   display: block;
+  font-size: 20px;
+  line-height: 26px;
+  color: #151618;
 }
 
 .quiz-form__fields-label > input:checked ~ .quiz-option .quiz-option__title {

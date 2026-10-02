@@ -536,8 +536,8 @@ function be_register_blocks() {
         'render_template' => 'partials/blocks/quiz.php',
         'category' => 'formatting',
         'icon' => 'editor-ul',
-        'mode' => 'preview',
-        'supports' => array('multiple' => true),
+        'mode' => 'edit',
+        'supports' => array('multiple' => true, 'mode' => false),
     ));
 }
 add_action('acf/init', 'be_register_blocks' );
@@ -906,20 +906,6 @@ function callback_block_assets() {
 		get_template_directory_uri() . '/blocks/landing/contacts.css',
 		array('wp-edit-blocks'),
 		filemtime(dirname(__FILE__) . '/blocks/landing/contacts.css')
-	);
-
-	wp_enqueue_script(
- 		'block-quiz-script',
-		get_template_directory_uri() . '/blocks/landing/quiz.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/quiz.js')
-	);
-
-	wp_enqueue_style(
-		'block-quiz-style',
-		get_template_directory_uri() . '/blocks/landing/quiz.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/quiz.css')
 	);
 
 	wp_enqueue_script(

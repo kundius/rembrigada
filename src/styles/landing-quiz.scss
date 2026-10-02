@@ -375,10 +375,10 @@ h2.landing-quiz__title,
 }
 
 .quiz-option__input {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   height: 40px;
-  width: 100%;
-  max-width: 280px;
+  width: 160px;
   padding: 0 16px;
   margin-top: 8px;
   border: 2px solid #bcbcbc;
@@ -387,6 +387,12 @@ h2.landing-quiz__title,
   font-family: inherit;
   background: #fff;
   color: #151618;
+}
+
+.quiz-option__input + .quiz-option__desc {
+  display: inline;
+  vertical-align: middle;
+  margin-left: 12px;
 }
 
 .quiz-option__input:focus {

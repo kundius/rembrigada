@@ -309,7 +309,6 @@ h2.landing-quiz__title,
 }
 
 .quiz-form__fields {
-  margin-left: 57px;
   margin-top: 39px;
   min-height: 149px;
 }
@@ -421,7 +420,7 @@ h2.landing-quiz__title,
 }
 
 .quiz-form__error {
-  margin: 12px 0 0 57px;
+  margin: 12px 0 0;
   font-size: 14px;
   color: #d52437;
 }

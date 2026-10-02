@@ -12,7 +12,7 @@
 	const TextControl = components && components.TextControl;
 	const Spinner = components && components.Spinner;
 
-	const BLOCK_TITLE = 'Отзывы наших клиентов';
+	const BLOCK_TITLE = 'Отзывы';
 	const MAX_VISIBLE_TITLES = 5;
 
 	function buildShortcode( attributes ) {

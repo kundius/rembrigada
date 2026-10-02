@@ -126,7 +126,7 @@ h2.landing-quiz__title,
 }
 
 .quiz-layout__screens {
-  width: calc(100% - (350px + 40px));
+  width: calc(100% - (320px + 40px));
   padding-top: 35px;
   @media (max-width: $breakpoint-medium-max) {
     width: calc(100% - (320px + 20px));
@@ -138,11 +138,8 @@ h2.landing-quiz__title,
 }
 
 .quiz-layout__info {
-  width: 346px;
+  width: 320px;
   flex-shrink: 0;
-  @media (max-width: $breakpoint-medium-max) {
-    width: 320px;
-  }
   @media (max-width: $breakpoint-small-max) {
     display: none;
   }

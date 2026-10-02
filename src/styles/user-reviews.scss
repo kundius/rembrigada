@@ -51,10 +51,38 @@
   }
 }
 
-.user-reviews-list__item:not(:first-child) {
-  border-top: 1px solid #e5e7eb;
-  padding-top: 24px;
-  margin-top: 24px;
+.user-reviews-list__item {
+  position: relative;
+  &:nth-child(even)::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    bottom: -16px;
+    left: -24px;
+    right: -24px;
+    background: #f4f4f4;
+    border-radius: 12px;
+  }
+  @media (max-width: $breakpoint-small-max) {
+    &:nth-child(even)::before {
+      top: -8px;
+      bottom: -8px;
+      left: -12px;
+      right: -12px;
+    }
+  }
+}
+
+.user-reviews-list__item + .user-reviews-list__item {
+  margin-top: 48px;
+  @media (max-width: $breakpoint-small-max) {
+    margin-top: 32px;
+  }
+}
+
+.user-reviews-item {
+  position: relative;
+  z-index: 1;
 }
 
 .user-reviews__more {

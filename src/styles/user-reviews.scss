@@ -53,18 +53,18 @@
 
 .user-reviews-list__item {
   position: relative;
-  &:nth-child(even)::before {
+  &:nth-child(odd)::before {
     content: '';
     position: absolute;
-    top: -16px;
-    bottom: -16px;
+    top: -24px;
+    bottom: -24px;
     left: -24px;
     right: -24px;
     background: #f4f4f4;
     border-radius: 12px;
   }
   @media (max-width: $breakpoint-small-max) {
-    &:nth-child(even)::before {
+    &:nth-child(odd)::before {
       top: -8px;
       bottom: -8px;
       left: -12px;
@@ -74,7 +74,7 @@
 }
 
 .user-reviews-list__item + .user-reviews-list__item {
-  margin-top: 48px;
+  margin-top: 64px;
   @media (max-width: $breakpoint-small-max) {
     margin-top: 32px;
   }

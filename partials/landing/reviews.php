@@ -29,26 +29,24 @@ if ($review_block['what'] === 'selected') {
 ?>
 <?php if ($reviews->have_posts() || !empty($review_block['showButton'])): ?>
 <section class="user-reviews">
-  <div class="container container_medium">
-    <?php if ($reviews->have_posts()): ?>
-    <div class="user-reviews-list">
-      <?php while ($reviews->have_posts()): $reviews->the_post(); ?>
-      <div class="user-reviews-list__item">
-        <?php get_template_part('partials/review-item', null, array('post_id' => get_the_ID())); ?>
-      </div>
-      <?php endwhile; ?>
+  <?php if ($reviews->have_posts()): ?>
+  <div class="user-reviews-list">
+    <?php while ($reviews->have_posts()): $reviews->the_post(); ?>
+    <div class="user-reviews-list__item">
+      <?php get_template_part('partials/review-item', null, array('post_id' => get_the_ID())); ?>
     </div>
+    <?php endwhile; ?>
+  </div>
+  <?php endif; ?>
+  <?php if (!empty($review_block['showMoreButton']) || !empty($review_block['showButton'])): ?>
+  <div class="user-reviews__more">
+    <?php if (!empty($review_block['showMoreButton'])): ?>
+    <a href="<?php the_permalink(17) ?>" class="btn-plus btn-plus--arrow">Ещё отзывы</a>
     <?php endif; ?>
-    <?php if (!empty($review_block['showMoreButton']) || !empty($review_block['showButton'])): ?>
-    <div class="user-reviews__more">
-      <?php if (!empty($review_block['showMoreButton'])): ?>
-      <a href="<?php the_permalink(17) ?>" class="btn-plus btn-plus--arrow">Ещё отзывы</a>
-      <?php endif; ?>
-      <?php if (!empty($review_block['showButton'])): ?>
-      <button type="button" data-basiclightbox="#review-modal" class="btn-plus">Добавить отзыв</button>
-      <?php endif; ?>
-    </div>
+    <?php if (!empty($review_block['showButton'])): ?>
+    <button type="button" data-basiclightbox="#review-modal" class="btn-plus">Добавить отзыв</button>
     <?php endif; ?>
   </div>
+  <?php endif; ?>
 </section>
 <?php endif; wp_reset_query(); ?>

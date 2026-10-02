@@ -3,15 +3,15 @@
 // Список отзывов — порт user-review-list / user-review-item из renovation-wp-theme.
 
 .user-reviews {
-  padding-top: 72px;
-  padding-bottom: 72px;
+  margin-top: 72px;
+  margin-bottom: 72px;
   @media (max-width: $breakpoint-small-max) {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
   @media (max-width: $breakpoint-xsmall-max) {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 }
 

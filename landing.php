@@ -239,18 +239,16 @@ $reviews = new WP_Query(array(
 
             <?php if ($reviews->have_posts()): ?>
             <section class="user-reviews">
-                <div class="container container_medium">
-                    <h3 class="user-reviews__title">Отзывы наших клиентов</h3>
-                    <div class="user-reviews-list">
-                        <?php while($reviews->have_posts()): $reviews->the_post(); ?>
-                        <div class="user-reviews-list__item">
-                            <?php get_template_part('partials/review-item', null, array('post_id' => get_the_ID())); ?>
-                        </div>
-                        <?php endwhile; ?>
+                <h3 class="user-reviews__title">Отзывы наших клиентов</h3>
+                <div class="user-reviews-list">
+                    <?php while($reviews->have_posts()): $reviews->the_post(); ?>
+                    <div class="user-reviews-list__item">
+                        <?php get_template_part('partials/review-item', null, array('post_id' => get_the_ID())); ?>
                     </div>
-                    <div class="user-reviews__more">
-                        <a href="<?php the_permalink(17) ?>" class="btn-plus btn-plus--arrow">Ещё отзывы</a>
-                    </div>
+                    <?php endwhile; ?>
+                </div>
+                <div class="user-reviews__more">
+                    <a href="<?php the_permalink(17) ?>" class="btn-plus btn-plus--arrow">Ещё отзывы</a>
                 </div>
             </section>
             <?php endif; wp_reset_query(); ?>

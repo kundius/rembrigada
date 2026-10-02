@@ -313,15 +313,15 @@ h2.landing-quiz__title,
 }
 
 .quiz-form__fields-marker {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
     border-radius: 50%;
     border: 2px solid #bcbcbc;
     background: #f7f7f7;
     position: relative;
-    margin-right: 13px;
-    margin-top: 1px;
+    margin-right: 12px;
+    margin-top: -2px;
 }
 
 .quiz-form__fields-label_checkbox .quiz-form__fields-marker {
@@ -338,8 +338,8 @@ h2.landing-quiz__title,
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: #ed3947;
 }

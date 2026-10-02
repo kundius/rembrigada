@@ -232,6 +232,13 @@ h2.landing-quiz__title,
   }
 }
 
+.quiz-content_no-image .quiz-content__form {
+  width: 100%;
+  @media (max-width: $breakpoint-medium-max) {
+    width: 100%;
+  }
+}
+
 .quiz-form {
 
 }

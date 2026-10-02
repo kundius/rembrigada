@@ -34,12 +34,12 @@ $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'От
 
             <?php foreach ($steps as $si => $step): ?>
             <div class="quiz-screens__item" data-quiz-screen data-step-key="<?php echo esc_attr($step['key']); ?>" data-step-type="<?php echo esc_attr($step['type']); ?>" data-step-index="<?php echo esc_attr((string) $si); ?>">
-              <div class="quiz-content">
+              <div class="quiz-content<?php echo empty($step['image']) ? ' quiz-content_no-image' : ''; ?>">
+                <?php if (!empty($step['image'])): ?>
                 <div class="quiz-content__image">
-                  <?php if (!empty($step['image'])): ?>
                   <img src="<?php echo esc_url($step['image']); ?>" alt="" loading="lazy">
-                  <?php endif; ?>
                 </div>
+                <?php endif; ?>
                 <div class="quiz-content__form">
                   <div class="quiz-form">
                     <div class="quiz-form__title">

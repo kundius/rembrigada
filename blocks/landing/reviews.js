@@ -129,7 +129,7 @@
 				} ),
 				el( CheckboxControl, {
 					label: 'Кнопка «Добавить отзыв»',
-					help: 'Модалка одна общая, подключается в подвале.',
+					help: 'Открывает модальное окно.',
 					checked: showButton,
 					onChange: function( checked ) {
 						setAttributes( { showButton: !! checked } );

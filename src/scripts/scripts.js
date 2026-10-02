@@ -11,6 +11,7 @@ import * as basicLightbox from "basiclightbox";
 import fslightbox from "fslightbox";
 import { initConversation } from "./conversation";
 import { initReviewForm, initReviewGalleryField } from "./review-form";
+import { initQuiz } from "./quiz";
 
 const formatMoney = (num, thousand = " ") => {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1" + thousand);
@@ -787,86 +788,7 @@ forEach(document.querySelectorAll(".faq-items"), (container) => {
   });
 });
 
-forEach(document.querySelectorAll("[data-quiz]"), (container) => {
-  const formItem = container.querySelector("[data-quiz-form]");
-  const stepItems = container.querySelectorAll("[data-quiz-step]");
-  const lineItems = container.querySelectorAll("[data-quiz-line]");
-  const screenItems = container.querySelectorAll("[data-quiz-screen]");
-  const previousItems = container.querySelectorAll("[data-quiz-previous]");
-  const nextItems = container.querySelectorAll("[data-quiz-next]");
-  const forwardOnChangeItems = container.querySelectorAll(
-    "[data-quiz-forward-on-change]",
-  );
-
-  let active = 1;
-
-  const to = (n) => {
-    active = n;
-
-    forEach(stepItems, (item, i) => {
-      if (i + 1 <= n) {
-        item.classList.add("_active");
-      } else {
-        item.classList.remove("_active");
-      }
-    });
-
-    forEach(lineItems, (item, i) => {
-      if (i + 1 < n) {
-        item.classList.add("_active");
-      } else {
-        item.classList.remove("_active");
-      }
-    });
-
-    forEach(screenItems, (item, i) => {
-      if (i + 1 === n) {
-        item.classList.add("_active");
-      } else {
-        item.classList.remove("_active");
-      }
-    });
-  };
-
-  const previous = () => {
-    if (active === 1) return;
-    to(active - 1);
-  };
-
-  const next = () => {
-    if (active === screenItems.length) return;
-    to(active + 1);
-  };
-
-  forEach(previousItems, (item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-      previous();
-    });
-  });
-
-  forEach(nextItems, (item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-      next();
-    });
-  });
-
-  forEach(forwardOnChangeItems, (item) => {
-    item.addEventListener("change", (e) => {
-      e.preventDefault();
-      next();
-    });
-  });
-
-  formItem.addEventListener(
-    "wpcf7mailsent",
-    (e) => {
-      next();
-    },
-    false,
-  );
-});
+initQuiz(document);
 
 forEach(document.querySelectorAll(".content-collapsible"), (item) => {
   const button = item.querySelector(".content-collapsible__button");

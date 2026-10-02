@@ -97,3 +97,4 @@
 
 .acf-block-component .acf-field-message:first-child > .acf-label {margin: 0;}
 .acf-block-component .acf-field-message:first-child > .acf-label > label {color: #fff;font-size: 20px;margin: 0;line-height: 1;}
+.acf-block-component .acf-block-fields div.acf-field.acf-field-message {background: #6d6e8a;}

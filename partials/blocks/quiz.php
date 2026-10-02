@@ -69,9 +69,6 @@ $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'От
                           <span class="quiz-form__fields-marker" aria-hidden="true"></span>
                           <span class="quiz-option">
                             <span class="quiz-option__title"><?php echo wp_kses_post($option['title']); ?></span>
-                            <?php if (!empty($option['desc'])): ?>
-                            <span class="quiz-option__desc"><?php echo wp_kses_post($option['desc']); ?></span>
-                            <?php endif; ?>
                             <?php if (!empty($option['with_input'])): ?>
                             <input
                               type="text"
@@ -80,6 +77,9 @@ $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'От
                               placeholder="<?php echo esc_attr($option['input_placeholder'] !== '' ? $option['input_placeholder'] : 'Ваш вариант'); ?>"
                               autocomplete="off"
                             >
+                            <?php endif; ?>
+                            <?php if (!empty($option['desc'])): ?>
+                            <span class="quiz-option__desc"><?php echo wp_kses_post($option['desc']); ?></span>
                             <?php endif; ?>
                           </span>
                         </label>

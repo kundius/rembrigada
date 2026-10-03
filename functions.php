@@ -544,7 +544,37 @@ add_action('acf/init', 'be_register_blocks' );
 
 
 /**
+ * Слаг для ключей шагов: вводить можно что угодно (хоть по-русски),
+ * регистр и буква ё не важны. Кириллица транслитерируется.
+ */
+function rembrigada_quiz_slug($text) {
+    static $map = null;
+    if ($map === null) {
+        $map = array(
+            'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd',
+            'е' => 'e', 'ё' => 'e', 'ж' => 'zh', 'з' => 'z', 'и' => 'i',
+            'й' => 'y', 'к' => 'k', 'л' => 'l', 'м' => 'm', 'н' => 'n',
+            'о' => 'o', 'п' => 'p', 'р' => 'r', 'с' => 's', 'т' => 't',
+            'у' => 'u', 'ф' => 'f', 'х' => 'h', 'ц' => 'c', 'ч' => 'ch',
+            'ш' => 'sh', 'щ' => 'sch', 'ъ' => '', 'ы' => 'y', 'ь' => '',
+            'э' => 'e', 'ю' => 'yu', 'я' => 'ya',
+        );
+    }
+    $text = (string) $text;
+    if (function_exists('mb_strtolower')) {
+        $text = mb_strtolower($text, 'UTF-8');
+    } else {
+        $text = strtolower($text);
+    }
+    $text = strtr($text, $map);
+    $text = preg_replace('/[^a-z0-9_\-]+/', '_', $text);
+    $text = preg_replace('/_+/', '_', $text);
+    return trim($text, '_');
+}
+
+/**
  * Нормализация сырого repeater-шага в структуру для рендера.
+ * Ключи шагов и next_key приводятся одним слагером — совпадение гарантировано.
  */
 function rembrigada_normalize_quiz_steps($raw_steps) {
     $steps = array();
@@ -557,11 +587,10 @@ function rembrigada_normalize_quiz_steps($raw_steps) {
             continue;
         }
         $i++;
-        $key = isset($row['key']) ? trim((string) $row['key']) : '';
+        $key = rembrigada_quiz_slug(isset($row['key']) ? $row['key'] : '');
         if ($key === '') {
             $key = 'step_' . $i;
         }
-        $key = preg_replace('/[^a-zA-Z0-9_\-]/', '_', $key);
         $options = array();
         if (!empty($row['options']) && is_array($row['options'])) {
             foreach ($row['options'] as $opt) {
@@ -572,9 +601,13 @@ function rembrigada_normalize_quiz_steps($raw_steps) {
                 if ($title === '') {
                     continue;
                 }
-                $next = isset($opt['next_key']) ? trim((string) $opt['next_key']) : '';
-                if ($next === 'auto') {
+                $next = rembrigada_quiz_slug(isset($opt['next_key']) ? $opt['next_key'] : '');
+                if ($next === '' || $next === 'auto') {
+                    // Пусто / auto — следующий по порядку (резолвится в JS).
                     $next = '';
+                } elseif ($next === 'finish') {
+                    // Канонический финиш (срабатывает и на Finish, ФИНИШ и т.п.).
+                    $next = 'finish';
                 }
                 $options[] = array(
                     'title' => $title,

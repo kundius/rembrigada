@@ -531,10 +531,17 @@ document.querySelectorAll(".js-form").forEach(function (form) {
           if (response.status == "validation_failed") {
             form.dispatchEvent(new Event("wpcf7invalid"));
 
+            const fallbackMessages = [];
             forEach(response.invalid_fields, (field) => {
               const el = form.querySelector(
                 `.wpcf7-form-control-wrap.${field.field}`,
               );
+              // Поля без обертки (скрытые, кастомная верстка) — без падения,
+              // их ошибки покажем общим уведомлением ниже.
+              if (!el) {
+                if (field.message) fallbackMessages.push(field.message);
+                return;
+              }
               el.classList.add("_validation-error");
               const message = document.createElement("span");
               message.classList.add("form-error");
@@ -548,6 +555,11 @@ document.querySelectorAll(".js-form").forEach(function (form) {
                 message.parentNode.removeChild(message);
               });
             });
+            // Пользователь всегда видит причину: общее сообщение CF7
+            // плюс ошибки полей, которые не к чему прикрепить.
+            notifier.warning(
+              [response.message].concat(fallbackMessages).join("<br>"),
+            );
           }
         });
 

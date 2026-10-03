@@ -548,6 +548,11 @@ h2.landing-quiz__title,
   flex-shrink: 0;
 }
 
+.quiz-feedback .wpcf7-form-control-wrap.rules {
+  display: block;
+  width: 100%;
+}
+
 .quiz-feedback__rules {
   display: block;
   width: 100%;

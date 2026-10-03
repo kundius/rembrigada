@@ -260,7 +260,6 @@
     font-size: 16px;
     line-height: 1.125;
     font-weight: bold;
-    font-family: $font-alt;
     border-bottom: 1px solid #dddddd;
     padding-bottom: 15px;
     @media (max-width: $breakpoint-small-max) {
@@ -479,13 +478,11 @@
     span {
         &:nth-child(1) {
             color: #ffffff;
-            font-family: "Next Art", sans-serif;
             font-size: 24px;
             font-weight: 600;
             text-transform: uppercase;
         }
         &:nth-child(2) {
-            font-family: "Next Art", sans-serif;
             color: #afafaf;
             font-size: 24px;
             font-weight: 400;
@@ -493,7 +490,6 @@
             margin: 0 2px;
         }
         &:nth-child(3) {
-            font-family: "Next Art", sans-serif;
             color: #afafaf;
             font-size: 16px;
             font-weight: 400;

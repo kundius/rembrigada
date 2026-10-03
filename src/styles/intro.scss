@@ -25,7 +25,6 @@
   // flex-direction: column;
   // align-items: flex-start;
   margin: 0;
-  font-family: $font-alt;
   span {
     letter-spacing: .1em;
     padding: 0 10px;
@@ -161,7 +160,6 @@
   cursor: pointer;
   text-decoration: none;
   span:nth-child(1) {
-    font-family: $font-alt;
     color: #fff;
     font-weight: 700;
     font-size: 18px;
@@ -314,7 +312,6 @@
 
 .intro-advantage__title {
   font-size: 18px;
-  font-family: $font-alt;
   color: #2b2e34;
   font-weight: bold;
   text-transform: uppercase;
@@ -477,7 +474,6 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 12px;
-  font-family: $font-alt;
   position: relative;
   padding-left: 37px;
   span {
@@ -589,7 +585,6 @@
   letter-spacing: 0.1em;
   font-size: 12px;
   margin-right: 10px;
-  font-family: $font-alt;
 }
 
 .intro-calc__price-value {

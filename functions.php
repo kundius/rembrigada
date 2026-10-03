@@ -539,6 +539,16 @@ function be_register_blocks() {
         'mode' => 'edit',
         'supports' => array('multiple' => true, 'mode' => false),
     ));
+    acf_register_block(array(
+        'name' => 'repair-cost',
+        'title' => 'Стоимость ремонта',
+        'description' => 'Стоимость ремонта: общие настройки или уникальные для вставки',
+        'render_template' => 'partials/blocks/content-repair.php',
+        'category' => 'formatting',
+        'icon' => 'editor-ul',
+        'mode' => 'edit',
+        'supports' => array('multiple' => true, 'mode' => false),
+    ));
 }
 add_action('acf/init', 'be_register_blocks' );
 
@@ -713,6 +723,32 @@ function rembrigada_get_quiz_data() {
     }
 
     return $data;
+}
+
+/**
+ * Данные блока «Стоимость ремонта»: посекционное переопределение.
+ * Поле repair_override (checkbox во вставке acf/repair-cost): ['list'] или пусто.
+ * Отмеченный список берется из вставки, иначе — из общих опций (группа repair).
+ * В контексте рендера acf/repair-cost get_field() без post_id отдает поля блока.
+ * Возвращает список позиций (каждая: name, description, term, price, button, image).
+ */
+function rembrigada_get_repair_data() {
+    $override = function_exists('get_field') ? get_field('repair_override') : array();
+    if (!is_array($override)) {
+        $override = $override ? array((string) $override) : array();
+    }
+    $from_block = in_array('list', $override, true);
+
+    if (!function_exists('get_field')) {
+        return array();
+    }
+    if ($from_block) {
+        $raw = get_field('repair_list');
+    } else {
+        $group = get_field('repair', 'option');
+        $raw = (is_array($group) && isset($group['list'])) ? $group['list'] : array();
+    }
+    return is_array($raw) ? array_values($raw) : array();
 }
 
 remove_action('wp_head', 'rel_canonical');
@@ -1146,19 +1182,7 @@ function callback_block_assets() {
 		filemtime(dirname(__FILE__) . '/blocks/content/masters.css')
 	);
 
-	wp_enqueue_script(
- 		'block-repair-script',
-		get_template_directory_uri() . '/blocks/content/repair.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/content/repair.js')
-	);
 
-	wp_enqueue_style(
-		'block-repair-style',
-		get_template_directory_uri() . '/blocks/content/repair.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/content/repair.css')
-	);
 }
 
 /**

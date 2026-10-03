@@ -206,14 +206,15 @@ h2.landing-quiz__title,
 }
 
 .quiz-content__image {
-  flex-shrink: 0;
-  min-width: 0;
-  max-width: 50%;
+  flex: 0 0 calc(50% - 10px);
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: $breakpoint-medium-max) {
+    flex-basis: calc(40% - 10px);
+  }
   @media (max-width: $breakpoint-xsmall-max) {
     display: none;
   }
@@ -427,7 +428,7 @@ h2.landing-quiz__title,
 
 .quiz-content__image img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 4px;
 }

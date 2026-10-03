@@ -665,8 +665,25 @@ function rembrigada_get_quiz_data() {
         return get_field($name, 'option');
     };
 
+    // Отключённые шаги: только уровень вставки (поле quiz_disabled, по ключу на строку).
+    // Действует поверх любого источника — шаги не редактируем.
+    $disabled = array();
+    if (function_exists('get_field') && function_exists('rembrigada_quiz_slug')) {
+        $raw_disabled = get_field('quiz_disabled');
+        if (!is_array($raw_disabled)) {
+            $raw_disabled = preg_split('/[\r\n,;]+/', (string) $raw_disabled);
+        }
+        foreach ((array) $raw_disabled as $d) {
+            $slug = rembrigada_quiz_slug($d);
+            if ($slug !== '' && $slug !== '__finish' && $slug !== '__success' && !in_array($slug, $disabled, true)) {
+                $disabled[] = $slug;
+            }
+        }
+    }
+
     $raw_steps = $get('quiz_steps', 'steps');
     $data = array(
+        'disabled' => $disabled,
         'title' => (string) ($get('quiz_title', 'title') ?: ''),
         'goal' => (string) ($get('quiz_goal', 'goal') ?: ''),
         'bonus_title' => (string) ($get('quiz_bonus_title', 'bonus') ?: ''),

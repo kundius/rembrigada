@@ -22,7 +22,7 @@ $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'От
     </h2>
     <?php endif; ?>
 
-    <div class="quiz" data-quiz>
+    <div class="quiz" data-quiz<?php if (!empty($quiz['disabled'])): ?> data-quiz-disabled="<?php echo esc_attr(implode(',', $quiz['disabled'])); ?>"<?php endif; ?>>
       <div class="quiz-steps" data-quiz-steps aria-hidden="true"></div>
 
       <form action="/wp-json/contact-form-7/v1/contact-forms/4295/feedback" method="post" class="quiz-layout js-form" data-quiz-form data-ym-goal="<?php echo esc_attr($goal); ?>">

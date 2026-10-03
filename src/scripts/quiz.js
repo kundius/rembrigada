@@ -8,6 +8,8 @@ import forEach from "lodash/forEach";
  * - Без автовперёд: кнопка Далее disabled, пока ничего не выбрано.
  * - Прогресс пересчитывается от текущего пути: пройденное + прогулка
  *   вперёд от выбранного шага (выбор учитывается, дальше — по умолчанию).
+ * - Отключённые во вставке вопросы (data-quiz-disabled): пропускаются
+ *   в навигации, прогрессе и письме; явный next на отключённый идёт дальше.
  * - Перед submit упаковываем ответы в [data-quiz-result] (quiz_result для CF7).
  */
 
@@ -30,7 +32,20 @@ function collectStepScreens(container) {
   return { screens, byKey, questions, finish, success };
 }
 
-function nextKeyAfter(container, byKey, questions, screen, selectedNexts) {
+function skipDisabled(byKey, questions, disabled, key) {
+  // Отключённый вопрос пропускаем: идём дальше по его наследнику по умолчанию.
+  let cur = key;
+  const seen = new Set();
+  let guard = 0;
+  while (cur && cur !== "__finish" && cur !== "__success" && disabled.has(cur) && !seen.has(cur) && guard++ < 60) {
+    seen.add(cur);
+    const sc = byKey[cur];
+    cur = sc ? defaultSuccKey(byKey, questions, disabled, sc) : "__finish";
+  }
+  return cur || "__finish";
+}
+
+function nextKeyAfter(container, byKey, questions, disabled, screen, selectedNexts) {
   // selectedNexts: массив data-option-next выбранных опций шага.
   let next = "";
   if (selectedNexts.length === 1) {
@@ -44,50 +59,65 @@ function nextKeyAfter(container, byKey, questions, screen, selectedNexts) {
     else if (uniq.length > 1) next = uniq[0];
     else next = "";
   }
+  let raw = "";
   if (next === "" || next === "auto") {
     const idx = questions.indexOf(screen);
     if (idx !== -1 && idx + 1 < questions.length) {
-      return questions[idx + 1].getAttribute("data-step-key") || "";
+      raw = questions[idx + 1].getAttribute("data-step-key") || "";
+    } else {
+      raw = "__finish";
     }
-    return "__finish";
+  } else if (next === "finish" || next === "__finish") {
+    raw = "__finish";
+  } else if (byKey[next]) {
+    raw = next;
+  } else {
+    // Неизвестный ключ — fallback на следующий по порядку.
+    const idx = questions.indexOf(screen);
+    if (idx !== -1 && idx + 1 < questions.length) {
+      raw = questions[idx + 1].getAttribute("data-step-key") || "";
+    } else {
+      raw = "__finish";
+    }
   }
-  if (next === "finish" || next === "__finish") return "__finish";
-  if (byKey[next]) return next;
-  // Неизвестный ключ — fallback на следующий по порядку.
-  const idx = questions.indexOf(screen);
-  if (idx !== -1 && idx + 1 < questions.length) {
-    return questions[idx + 1].getAttribute("data-step-key") || "";
-  }
-  return "__finish";
+  return skipDisabled(byKey, questions, disabled, raw);
 }
 
-function defaultSuccKey(byKey, questions, screen) {
+function defaultSuccKey(byKey, questions, disabled, screen) {
   // Наследник шага по умолчанию: next первой опции, иначе следующий по порядку.
+  // questions — только включённые, линейные fallback'ы отключённые пропускают сами.
   const first = screen.querySelector("[data-option-next]");
   const nv = first ? (first.getAttribute("data-option-next") || "").trim() : "";
+  let raw = "";
   if (nv === "" || nv === "auto") {
     const idx = questions.indexOf(screen);
     if (idx !== -1 && idx + 1 < questions.length) {
-      return questions[idx + 1].getAttribute("data-step-key") || "";
+      raw = questions[idx + 1].getAttribute("data-step-key") || "";
+    } else {
+      raw = "__finish";
     }
-    return "__finish";
+  } else if (nv === "finish" || nv === "__finish") {
+    raw = "__finish";
+  } else if (byKey[nv]) {
+    raw = nv;
+  } else {
+    // Неизвестный ключ — fallback на следующий по порядку.
+    const idx = questions.indexOf(screen);
+    if (idx !== -1 && idx + 1 < questions.length) {
+      raw = questions[idx + 1].getAttribute("data-step-key") || "";
+    } else {
+      raw = "__finish";
+    }
   }
-  if (nv === "finish" || nv === "__finish") return "__finish";
-  if (byKey[nv]) return nv;
-  // Неизвестный ключ — fallback на следующий по порядку.
-  const idx = questions.indexOf(screen);
-  if (idx !== -1 && idx + 1 < questions.length) {
-    return questions[idx + 1].getAttribute("data-step-key") || "";
-  }
-  return "__finish";
+  return skipDisabled(byKey, questions, disabled, raw);
 }
 
-function tailKeys(byKey, questions, startKey, stopKeys) {
+function tailKeys(byKey, questions, disabled, startKey, stopKeys) {
   // Честная прогулка вперёд от startKey: каждый следующий шаг — по умолчанию.
   // Учитывает и шаги после ветки, идущие дальше по порядку.
   const tail = [];
   const seen = new Set(stopKeys || []);
-  let cur = startKey;
+  let cur = skipDisabled(byKey, questions, disabled, startKey);
   let guard = 0;
   while (cur && !seen.has(cur) && guard++ < 60) {
     seen.add(cur);
@@ -95,7 +125,7 @@ function tailKeys(byKey, questions, startKey, stopKeys) {
     if (cur === "__finish" || cur === "__success") break;
     const sc = byKey[cur];
     if (!sc) break;
-    cur = defaultSuccKey(byKey, questions, sc);
+    cur = skipDisabled(byKey, questions, disabled, defaultSuccKey(byKey, questions, disabled, sc));
   }
   return tail;
 }
@@ -140,17 +170,18 @@ function buildResult(history, byKey) {
   return parts.join("; ");
 }
 
-function renderProgress(container, stepsBar, history, byKey, questions, currentKey) {
+function renderProgress(container, stepsBar, history, byKey, questions, disabled, currentKey) {
   if (!stepsBar) return;
   // Оставшаяся цепочка: от выбранного следующего шага идём вперёд
   // по умолчанию — учитываются и шаги после ветки по порядку.
+  // Отключённые вопросы пропущены везде (их нет в questions, явные next резолвятся мимо).
   const curScreen = byKey[currentKey];
   let remaining = [];
   if (curScreen && curScreen.getAttribute("data-step-type") !== "finish" && curScreen.getAttribute("data-step-type") !== "success") {
     const sel = selectedOptions(curScreen).map((s) => s.next);
     const firstOpt = curScreen.querySelector("[data-option-next]");
-    const nk = nextKeyAfter(container, byKey, questions, curScreen, sel.length ? sel : [firstOpt ? firstOpt.getAttribute("data-option-next") : ""]);
-    remaining = tailKeys(byKey, questions, nk, history.concat([currentKey]));
+    const nk = nextKeyAfter(container, byKey, questions, disabled, curScreen, sel.length ? sel : [firstOpt ? firstOpt.getAttribute("data-option-next") : ""]);
+    remaining = tailKeys(byKey, questions, disabled, nk, history.concat([currentKey]));
   } else if (currentKey === "__finish") {
     remaining = ["__finish"];
   }
@@ -199,18 +230,27 @@ export function applyQuiz(container) {
   if (!form) return;
   const { byKey, questions, finish, success } = collectStepScreens(container);
   if (!questions.length) return;
+  // Отключённые во вставке вопросы (data-quiz-disabled): questions оставляем
+  // полными (позиции для линейных fallback'ов), пропуск — в резолве ключей.
+  const disabled = new Set(
+    (container.getAttribute("data-quiz-disabled") || "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean)
+  );
   const stepsBar = container.querySelector("[data-quiz-steps]");
   const resultInput = form.querySelector("[data-quiz-result]");
 
   let history = [];
-  let currentKey = questions[0].getAttribute("data-step-key");
+  // Старт — с пропуском отключённых; отключили всё — сразу финиш-форма.
+  let currentKey = skipDisabled(byKey, questions, disabled, questions[0].getAttribute("data-step-key") || "");
 
   const show = (key) => {
     currentKey = key;
     forEach(container.querySelectorAll("[data-quiz-screen]"), (el) => {
       el.classList.toggle("_active", el.getAttribute("data-step-key") === key);
     });
-    renderProgress(container, stepsBar, history, byKey, questions, currentKey);
+    renderProgress(container, stepsBar, history, byKey, questions, disabled, currentKey);
   };
 
   const refreshStep = (screen) => {
@@ -231,7 +271,7 @@ export function applyQuiz(container) {
       return;
     }
     const sel = selectedOptions(screen).map((s) => s.next);
-    const nk = nextKeyAfter(container, byKey, questions, screen, sel);
+    const nk = nextKeyAfter(container, byKey, questions, disabled, screen, sel);
     const key = screen.getAttribute("data-step-key");
     if (history[history.length - 1] !== key) history.push(key);
     show(nk);
@@ -268,7 +308,7 @@ export function applyQuiz(container) {
         }
       }
       refreshStep(screen);
-      renderProgress(container, stepsBar, history, byKey, questions, currentKey);
+      renderProgress(container, stepsBar, history, byKey, questions, disabled, currentKey);
     });
     screen.addEventListener("input", (e) => {
       const t = e.target;
@@ -296,7 +336,7 @@ export function applyQuiz(container) {
   });
 
   if (history.length === 0) {
-    show(questions[0].getAttribute("data-step-key"));
+    show(currentKey);
   }
 }
 

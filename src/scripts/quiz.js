@@ -6,8 +6,8 @@ import forEach from "lodash/forEach";
  * - Типы: radio | checkbox | finish | success.
  * - Ветвление: data-option-next = ключ шага | "finish" | "" (= следующий по порядку).
  * - Без автовперёд: кнопка Далее disabled, пока ничего не выбрано.
- * - Прогресс пересчитывается от текущего пути (по умолчанию — цепочка
- *   по первым опциям, после выбора — с учётом выбранного).
+ * - Прогресс пересчитывается от текущего пути: пройденное + прогулка
+ *   вперёд от выбранного шага (выбор учитывается, дальше — по умолчанию).
  * - Перед submit упаковываем ответы в [data-quiz-result] (quiz_result для CF7).
  */
 
@@ -61,37 +61,43 @@ function nextKeyAfter(container, byKey, questions, screen, selectedNexts) {
   return "__finish";
 }
 
-function defaultChainKeys(questions) {
-  // Цепочка по умолчанию: от первого шага по первым опциям.
-  if (!questions.length) return [];
-  const byKey = {};
-  questions.forEach((el) => {
-    byKey[el.getAttribute("data-step-key")] = el;
-  });
-  const chain = [];
-  const seen = new Set();
-  let cur = questions[0];
-  while (cur && !seen.has(cur)) {
-    seen.add(cur);
-    const key = cur.getAttribute("data-step-key");
-    chain.push(key);
-    const firstNext = cur.querySelector("[data-option-next]");
-    const nv = firstNext ? (firstNext.getAttribute("data-option-next") || "").trim() : "";
-    if (nv === "" || nv === "auto") {
-      const idx = questions.indexOf(cur);
-      cur = idx + 1 < questions.length ? questions[idx + 1] : null;
-    } else if (nv === "finish" || nv === "__finish") {
-      cur = null;
-    } else {
-      cur = byKey[nv] || null;
-      if (!cur) {
-        const idx = questions.indexOf(questions.find((q) => q.getAttribute("data-step-key") === key));
-        cur = idx + 1 < questions.length ? questions[idx + 1] : null;
-      }
+function defaultSuccKey(byKey, questions, screen) {
+  // Наследник шага по умолчанию: next первой опции, иначе следующий по порядку.
+  const first = screen.querySelector("[data-option-next]");
+  const nv = first ? (first.getAttribute("data-option-next") || "").trim() : "";
+  if (nv === "" || nv === "auto") {
+    const idx = questions.indexOf(screen);
+    if (idx !== -1 && idx + 1 < questions.length) {
+      return questions[idx + 1].getAttribute("data-step-key") || "";
     }
-    if (chain.length > 50) break;
+    return "__finish";
   }
-  return chain;
+  if (nv === "finish" || nv === "__finish") return "__finish";
+  if (byKey[nv]) return nv;
+  // Неизвестный ключ — fallback на следующий по порядку.
+  const idx = questions.indexOf(screen);
+  if (idx !== -1 && idx + 1 < questions.length) {
+    return questions[idx + 1].getAttribute("data-step-key") || "";
+  }
+  return "__finish";
+}
+
+function tailKeys(byKey, questions, startKey, stopKeys) {
+  // Честная прогулка вперёд от startKey: каждый следующий шаг — по умолчанию.
+  // Учитывает и шаги после ветки, идущие дальше по порядку.
+  const tail = [];
+  const seen = new Set(stopKeys || []);
+  let cur = startKey;
+  let guard = 0;
+  while (cur && !seen.has(cur) && guard++ < 60) {
+    seen.add(cur);
+    tail.push(cur);
+    if (cur === "__finish" || cur === "__success") break;
+    const sc = byKey[cur];
+    if (!sc) break;
+    cur = defaultSuccKey(byKey, questions, sc);
+  }
+  return tail;
 }
 
 function selectedOptions(screen) {
@@ -136,27 +142,15 @@ function buildResult(history, byKey) {
 
 function renderProgress(container, stepsBar, history, byKey, questions, currentKey) {
   if (!stepsBar) return;
-  // Оставшаяся цепочка от текущего шага по умолчанию/выбору.
+  // Оставшаяся цепочка: от выбранного следующего шага идём вперёд
+  // по умолчанию — учитываются и шаги после ветки по порядку.
   const curScreen = byKey[currentKey];
   let remaining = [];
   if (curScreen && curScreen.getAttribute("data-step-type") !== "finish" && curScreen.getAttribute("data-step-type") !== "success") {
     const sel = selectedOptions(curScreen).map((s) => s.next);
-    const nk = nextKeyAfter(container, byKey, questions, curScreen, sel.length ? sel : [(curScreen.querySelector("[data-option-next]") || {}).getAttribute ? curScreen.querySelector("[data-option-next]").getAttribute("data-option-next") : ""]);
-    // Строим хвост от nk до конца по default-цепочке.
-    const defaults = defaultChainKeys(questions);
-    const tail = [];
-    let startIdx = defaults.indexOf(nk);
-    if (nk === "__finish" || nk === "finish") {
-      tail.push("__finish");
-    } else if (startIdx !== -1) {
-      for (let i = startIdx; i < defaults.length; i++) tail.push(defaults[i]);
-      tail.push("__finish");
-    } else if (byKey[nk]) {
-      tail.push(nk, "__finish");
-    } else {
-      tail.push("__finish");
-    }
-    remaining = tail;
+    const firstOpt = curScreen.querySelector("[data-option-next]");
+    const nk = nextKeyAfter(container, byKey, questions, curScreen, sel.length ? sel : [firstOpt ? firstOpt.getAttribute("data-option-next") : ""]);
+    remaining = tailKeys(byKey, questions, nk, history.concat([currentKey]));
   } else if (currentKey === "__finish") {
     remaining = ["__finish"];
   }

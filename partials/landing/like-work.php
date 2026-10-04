@@ -16,7 +16,7 @@
             </div>
             <?php endif; ?>
             <?php if (!empty($like_work_item['description'])): ?>
-            <div class="like-work-item__desc">
+            <div class="like-work-item__desc rich-text">
               <?php echo $like_work_item['description'] ?>
             </div>
             <?php endif; ?>

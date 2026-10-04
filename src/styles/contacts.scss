@@ -142,6 +142,7 @@
 .p-contacts-form {
     margin-top: 36px;
     padding-top: 28px;
+    max-width: 400px;
     @media (max-width: $breakpoint-small-max) {
 		margin-top: 29px;
     }

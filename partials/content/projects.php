@@ -71,17 +71,21 @@ $projects = new WP_Query(array(
             </div>
             <?php endif; ?>
             <div class="works-item-pricing">
-                <?php if (get_field('price_works') || get_field('price_material')): ?>
-                    <div class="works-item-pricing__title">Стоимость:</div>
+                <?php if ($price_desc = get_field('price_desc')): ?>
+                    <div class="works-item-pricing__desc"><?php echo $price_desc ?></div>
+                <?php else: ?>
+                    <?php if (get_field('price_works') || get_field('price_material')): ?>
+                        <div class="works-item-pricing__title">Стоимость:</div>
+                    <?php endif; ?>
+                    <div class="works-item-pricing__text">
+                        <?php if ($price_works = get_field('price_works')): ?>
+                        <div>Ремонтные работы: <strong><?php echo $price_works ?> руб.</strong></div>
+                        <?php endif; ?>
+                        <?php if ($price_material = get_field('price_material')): ?>
+                        <div>Черновые материалы с доставкой: <strong><?php echo $price_material ?> руб.</strong></div>
+                        <?php endif; ?>
+                    </div>
                 <?php endif; ?>
-                <div class="works-item-pricing__text">
-                    <?php if ($price_works = get_field('price_works')): ?>
-                    <div>Ремонтные работы: <strong><?php echo $price_works ?> руб.</strong></div>
-                    <?php endif; ?>
-                    <?php if ($price_material = get_field('price_material')): ?>
-                    <div>Черновые материалы с доставкой: <strong><?php echo $price_material ?> руб.</strong></div>
-                    <?php endif; ?>
-                </div>
             </div>
             <div class="works-item-more">
                 <a href="<?php the_permalink() ?>" class="landing-button landing-button--secondary works-item-pricing__button">

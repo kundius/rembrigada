@@ -58,17 +58,21 @@
                 </div>
                 <?php endif; ?>
                 <div class="works-item-pricing">
-                    <?php if ($fields['price_works'] || $fields['price_material']): ?>
-                        <div class="works-item-pricing__title">Стоимость:</div>
+                    <?php if (!empty($fields['price_desc'])): ?>
+                        <div class="works-item-pricing__desc"><?php echo $fields['price_desc'] ?></div>
+                    <?php else: ?>
+                        <?php if ($fields['price_works'] || $fields['price_material']): ?>
+                            <div class="works-item-pricing__title">Стоимость:</div>
+                        <?php endif; ?>
+                        <div class="works-item-pricing__text">
+                            <?php if ($fields['price_works']): ?>
+                            <div>Ремонтные работы: <strong><?php echo $fields['price_works'] ?> руб.</strong></div>
+                            <?php endif; ?>
+                            <?php if ($fields['price_material']): ?>
+                            <div>Черновые материалы с доставкой: <strong><?php echo $fields['price_material'] ?> руб.</strong></div>
+                            <?php endif; ?>
+                        </div>
                     <?php endif; ?>
-                    <div class="works-item-pricing__text">
-                        <?php if ($fields['price_works']): ?>
-                        <div>Ремонтные работы: <strong><?php echo $fields['price_works'] ?> руб.</strong></div>
-                        <?php endif; ?>
-                        <?php if ($fields['price_material']): ?>
-                        <div>Черновые материалы с доставкой: <strong><?php echo $fields['price_material'] ?> руб.</strong></div>
-                        <?php endif; ?>
-                    </div>
                 </div>
                 <div class="works-item-more">
                     <a href="<?php echo get_the_permalink($item->ID) ?>" class="landing-button landing-button--secondary works-item-pricing__button">

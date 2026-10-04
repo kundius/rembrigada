@@ -10,11 +10,10 @@ if (empty($quiz) || empty($quiz['steps'])) {
     return;
 }
 $steps = $quiz['steps'];
-$uid = 'q' . wp_unique_id();
 $goal = isset($quiz['goal']) ? $quiz['goal'] : '';
 $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'Отправить';
 ?>
-<section class="landing-quiz" id="quiz-<?php echo esc_attr($uid); ?>">
+<section class="landing-quiz" id="quiz">
   <div class="container container_medium">
     <?php if (!empty($quiz['title'])): ?>
     <h2 class="landing-quiz__title">

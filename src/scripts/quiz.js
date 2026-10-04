@@ -15,14 +15,6 @@ import forEach from "lodash/forEach";
 
 const stripTags = (s) => String(s == null ? "" : s).replace(/<[^>]*>/g, "").trim();
 
-const escapeHtml = (s) =>
-  String(s == null ? "" : s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-
 function collectStepScreens(container) {
   const screens = Array.from(container.querySelectorAll("[data-quiz-screen]"));
   const byKey = {};
@@ -165,8 +157,8 @@ function questionText(screen) {
 }
 
 function buildResult(history, byKey) {
-  // HTML для письма (CF7, html-тип): вопрос курсивом, после вопроса <br>,
-  // после ответа <br><br>, без двоеточий и разделителей.
+  // Плейн-текст для письма: вопрос, перенос, ответ, пустая строка.
+  // Без двоеточий, разделителей и HTML.
   const parts = [];
   history.forEach((key) => {
     const screen = byKey[key];
@@ -176,8 +168,8 @@ function buildResult(history, byKey) {
     const sel = selectedOptions(screen);
     if (!sel.length) return;
     parts.push(
-      "<i>" + escapeHtml(questionText(screen)) + "</i><br>" +
-      escapeHtml(sel.map((s) => s.text).join(", ")) + "<br><br>"
+      questionText(screen) + "\n" +
+      sel.map((s) => s.text).join(", ") + "\n\n"
     );
   });
   return parts.join("");

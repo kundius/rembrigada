@@ -7,7 +7,7 @@
         <div class="landing-decision__title"><?php echo $decision['title'] ?></div>
         <?php endif; ?>
         <?php if (!empty($decision['description'])): ?>
-        <div class="landing-decision__description"><?php echo $decision['description'] ?></div>
+        <div class="landing-decision__description rich-text"><?php echo $decision['description'] ?></div>
         <?php endif; ?>
         <?php if (!empty($decision['button']['text'])): ?>
         <div class="landing-decision__request">

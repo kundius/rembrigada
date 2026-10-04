@@ -23,7 +23,7 @@
           <div class="easy-work-item__title"><?php echo $item['title'] ?></div>
           <?php endif; ?>
           <?php if (!empty($item['description'])): ?>
-          <div class="easy-work-item__description"><?php echo $item['description'] ?></div>
+          <div class="easy-work-item__description rich-text"><?php echo $item['description'] ?></div>
           <?php endif; ?>
           <?php if (!empty($item['button']['text'])): ?>
           <div class="easy-work-item__request">

@@ -9,7 +9,7 @@
       <div class="about-team-item">
         <div class="about-team-item__body">
           <div class="about-team-item__title"><?php echo $item['title'] ?></div>
-          <div class="about-team-item__description"><?php echo $item['description'] ?></div>
+          <div class="about-team-item__description rich-text"><?php echo $item['description'] ?></div>
         </div>
         <div class="about-team-item__image">
           <?php if ($image = $item['image']): ?>

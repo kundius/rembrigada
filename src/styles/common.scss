@@ -677,6 +677,9 @@ a.btn-plus--arrow,
   font-weight: 700;
   line-height: 1.2;
   margin-top: 0;
+  span {
+    color: #d52437;
+  }
   @media (max-width: $breakpoint-small-max) {
     font-size: 36px;
   }

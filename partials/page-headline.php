@@ -7,9 +7,16 @@
             <div class="page-bg-headline__before-title"><?php echo $headline['before-title'] ?></div>
             <?php endif; ?>
 
-            <h1 class="page-bg-headline__title">
-                <?php echo (!empty($headline['title']) ? $headline['title'] : get_the_title()) ?>
-            </h1>
+            <div class="page-bg-headline__title-group<?php echo !empty($headline['subtitle']) ? ' page-bg-headline__title-group_has-sub' : ''; ?>">
+                <h1 class="page-bg-headline__title">
+                    <?php echo (!empty($headline['title']) ? $headline['title'] : get_the_title()) ?>
+                </h1>
+                <?php if (!empty($headline['subtitle'])): ?>
+                <div class="page-bg-headline__title-sub">
+                    <?php echo $headline['subtitle'] ?>
+                </div>
+                <?php endif; ?>
+            </div>
 
             <?php if (!empty($headline['after-title']['text'])): ?>
             <div class="page-bg-headline__after-title<?php if (!empty($headline['after-title']['line'])): ?> page-bg-headline__after-title_line<?php endif; ?>">

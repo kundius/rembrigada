@@ -664,6 +664,28 @@ a.btn-plus--arrow,
   }
 }
 
+.page-bg-headline__title-group {
+}
+
+.page-bg-headline__title-group_has-sub .page-bg-headline__title {
+  margin-bottom: 0;
+}
+
+.page-bg-headline__title-sub {
+  color: #677897;
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin-top: 0;
+  @media (max-width: $breakpoint-small-max) {
+    font-size: 36px;
+  }
+  @media (max-width: $breakpoint-xsmall-max) {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+
 .page-bg-headline__after-title {
   font-size: 36px;
   color: rgb(100, 107, 121);

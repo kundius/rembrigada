@@ -7,9 +7,9 @@
             <div class="page-bg-headline__before-title"><?php echo $headline['before-title'] ?></div>
             <?php endif; ?>
 
-            <h1 class="page-bg-headline__title">
+            <div class="page-bg-headline__title">
                 <?php echo (!empty($headline['title']) ? $headline['title'] : get_the_title()) ?>
-            </h1>
+            </div>
 
             <?php if (!empty($headline['after-title']['text'])): ?>
             <div class="page-bg-headline__after-title<?php if (!empty($headline['after-title']['line'])): ?> page-bg-headline__after-title_line<?php endif; ?>">

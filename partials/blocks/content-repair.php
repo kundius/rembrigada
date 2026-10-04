@@ -36,7 +36,7 @@ if (empty($list)) {
             </a>
             <?php endif; ?>
           </div>
-          <div class="content-repair-item__description"><?php echo isset($item['description']) ? wp_kses_post($item['description']) : ''; ?></div>
+          <div class="content-repair-item__description rich-text"><?php echo isset($item['description']) ? wp_kses_post($item['description']) : ''; ?></div>
           <div class="content-repair-item__price"><?php echo isset($item['price']) ? wp_kses_post($item['price']) : ''; ?></div>
           <?php if (!empty($item['button']['text'])): ?>
           <a href="<?php echo esc_url(!empty($item['button']['link']) ? $item['button']['link'] : '#'); ?>" class="content-repair-item__button">

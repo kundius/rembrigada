@@ -428,19 +428,14 @@
 
 .works-item-pricing {
   background: #e8e8e8;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 24px;
   margin-top: 16px;
   margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   line-height: 1;
-  padding-left: 10px;
-  padding-right: 10px;
   @media (max-width: $breakpoint-xsmall-max) {
-    padding-top: 12px;
-    padding-bottom: 12px;
     margin-top: 12px;
     margin-bottom: 12px;
   }

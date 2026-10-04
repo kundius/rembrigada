@@ -59,7 +59,7 @@
                 <?php endif; ?>
                 <div class="works-item-pricing">
                     <?php if (!empty($fields['price_desc'])): ?>
-                        <div class="works-item-pricing__desc"><?php echo $fields['price_desc'] ?></div>
+                        <div class="works-item-pricing__desc rich-text"><?php echo $fields['price_desc'] ?></div>
                     <?php else: ?>
                         <?php if ($fields['price_works'] || $fields['price_material']): ?>
                             <div class="works-item-pricing__title">Стоимость:</div>

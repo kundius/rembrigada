@@ -1612,6 +1612,37 @@ a.btn-plus--arrow,
   }
 }
 
+// Вывод WYSIWYG-редакторов: отступы только по сове «* + *».
+// Использование: обернуть вывод в <div class="rich-text">…</div>.
+.rich-text > :first-child {
+  margin-top: 0;
+}
+
+.rich-text > * + * {
+  margin-top: 12px;
+}
+
+// Внутри .content гасим его потомков (0-1-1) с запасом (0-2-1);
+// порядок важен: сова идёт после обнулений.
+.content .rich-text > :first-child,
+.content .rich-text p,
+.content .rich-text ul,
+.content .rich-text ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.content .rich-text > * + * {
+  margin-top: 12px;
+}
+
+@media (max-width: $breakpoint-xsmall-max) {
+  .rich-text > * + *,
+  .content .rich-text > * + * {
+    margin-top: 8px;
+  }
+}
+
 .list-reasons {
   counter-reset: list;
   padding: 23px 32px 21px;

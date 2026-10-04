@@ -72,7 +72,7 @@ $projects = new WP_Query(array(
             <?php endif; ?>
             <div class="works-item-pricing">
                 <?php if ($price_desc = get_field('price_desc')): ?>
-                    <div class="works-item-pricing__desc"><?php echo $price_desc ?></div>
+                    <div class="works-item-pricing__desc rich-text"><?php echo $price_desc ?></div>
                 <?php else: ?>
                     <?php if (get_field('price_works') || get_field('price_material')): ?>
                         <div class="works-item-pricing__title">Стоимость:</div>

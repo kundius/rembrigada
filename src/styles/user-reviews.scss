@@ -62,7 +62,7 @@
     border-radius: 12px;
   }
   &:nth-child(even)::before {
-    background: #e4e4e4;
+    background: #f0f2f6;
   }
   @media (max-width: $breakpoint-small-max) {
     &::before {

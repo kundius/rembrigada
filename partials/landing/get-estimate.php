@@ -24,7 +24,7 @@
             </div>
             <?php endif; ?>
             <?php if (!empty($get_estimate['expert']['description'])): ?>
-            <div class="get-estimate-expert__description">
+            <div class="get-estimate-expert__description rich-text">
               <?php echo $get_estimate['expert']['description'] ?>
             </div>
             <?php endif; ?>

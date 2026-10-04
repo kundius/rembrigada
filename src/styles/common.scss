@@ -3626,6 +3626,9 @@ ul.sitemap > li > ul > li > ul > li > a {
   font-weight: bold;
   line-height: 1;
   margin: 0 0 8px;
+  &._active {
+    color: #fff;
+  }
 }
 
 .content-price__contents {

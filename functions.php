@@ -853,89 +853,17 @@ function callback_block_assets() {
 		filemtime(dirname(__FILE__) . '/blocks/static-blocks.css')
 	);
 
-	wp_enqueue_script(
- 		'block-callback-script',
-		get_template_directory_uri() . '/blocks/callback.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/callback.js')
-	);
 
-	wp_enqueue_style(
-		'block-callback-style',
-		get_template_directory_uri() . '/blocks/callback.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/callback.css')
-	);
 
-	wp_enqueue_script(
- 		'block-calculation-script',
-		get_template_directory_uri() . '/blocks/calculation.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/calculation.js')
-	);
 
-	wp_enqueue_style(
-		'block-calculation-style',
-		get_template_directory_uri() . '/blocks/calculation.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/calculation.css')
-	);
 
-	wp_enqueue_script(
- 		'block-calculator-script',
-		get_template_directory_uri() . '/blocks/calculator.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/calculator.js')
-	);
 
-	wp_enqueue_style(
-		'block-calculator-style',
-		get_template_directory_uri() . '/blocks/calculator.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/calculator.css')
-	);
 
-	wp_enqueue_script(
- 		'block-timing-table-script',
-		get_template_directory_uri() . '/blocks/timing-table.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/timing-table.js')
-	);
 
-	wp_enqueue_style(
-		'block-timing-table-style',
-		get_template_directory_uri() . '/blocks/timing-table.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/timing-table.css')
-	);
 
-	wp_enqueue_script(
- 		'block-cost-table-script',
-		get_template_directory_uri() . '/blocks/cost-table.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/cost-table.js')
-	);
 
-	wp_enqueue_style(
-		'block-cost-table-style',
-		get_template_directory_uri() . '/blocks/cost-table.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/cost-table.css')
-	);
 
-	wp_enqueue_script(
- 		'block-stages-table-script',
-		get_template_directory_uri() . '/blocks/stages-table.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/stages-table.js')
-	);
 
-	wp_enqueue_style(
-		'block-stages-table-style',
-		get_template_directory_uri() . '/blocks/stages-table.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/stages-table.css')
-	);
 
 
 

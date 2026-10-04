@@ -25,12 +25,18 @@
 		{ name: 'landing/problems', title: 'Возьмем на себя все проблемы', keywords: [ 'problems' ], path: 'partials/landing/problems' },
 		{ name: 'landing/readiness', title: 'Готовы приступить к ремонту', keywords: [ 'readiness' ], path: 'partials/landing/readiness' },
 		{ name: 'landing/services', title: 'Наши услуги', keywords: [ 'services' ], path: 'partials/landing/services' },
+		{ name: 'form/calculation', title: 'Рассчитать предварительную стоимость', keywords: [ 'calculation' ], path: 'partials/content-calculation', icon: 'calculator' },
+		{ name: 'form/calculator', title: 'Калькулятор', keywords: [ 'calculator' ], path: 'partials/content-calculator', icon: 'admin-tools' },
+		{ name: 'form/callback', title: 'Заказать обратный звонок', keywords: [ 'callback' ], path: 'partials/content-callback', icon: 'phone' },
+		{ name: 'form/cost-table', title: 'Таблица стоимости', keywords: [ 'cost-table' ], path: 'partials/content-cost-table', icon: 'money' },
+		{ name: 'form/stages-table', title: 'Таблица этапов', keywords: [ 'stages-table' ], path: 'partials/content-stages-table', icon: 'list-view' },
+		{ name: 'form/timing-table', title: 'Таблица сроков', keywords: [ 'timing-table' ], path: 'partials/content-timing-table', icon: 'clock' },
 	];
 
 	STATIC_BLOCKS.forEach( function( config ) {
 		registerBlockType( config.name, {
 			title: config.title,
-			icon: 'embed-generic',
+			icon: config.icon || 'embed-generic',
 			category: 'widgets',
 			keywords: config.keywords,
 

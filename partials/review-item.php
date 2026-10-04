@@ -146,7 +146,7 @@ $reply_avatar = function_exists('rembrigada_get_option') ? rembrigada_get_option
         <?php endif; ?>
       </div>
     </div>
-    <div class="user-reviews-item__text"><?php echo wpautop(esc_html($reply_content)); ?></div>
+    <div class="user-reviews-item__text rich-text"><?php echo wpautop(esc_html($reply_content)); ?></div>
     <?php if ($reply_gallery_ids): ?>
     <div class="user-reviews-item__gallery">
       <?php foreach ($reply_gallery_ids as $attachment_id): ?>

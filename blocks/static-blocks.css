@@ -1,0 +1,31 @@
+/* Превью статических блоков в редакторе (см. static-blocks.js).
+   Заменяет удалённые blocks/landing/*.css и blocks/content/*.css
+   (кроме reviews.css — у отзывов своя реализация). */
+
+[class*="wp-block-landing-"],
+[class*="wp-block-content-"] {
+	background: #6d6e8a;
+	padding: 40px;
+	color: #ffffff;
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+}
+
+[class*="wp-block-landing-"]::before,
+[class*="wp-block-content-"]::before {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+[class*="wp-block-landing-"]::before {
+	content: 'Лендинг блок';
+}
+
+[class*="wp-block-content-"]::before {
+	content: 'Контент блок';
+}

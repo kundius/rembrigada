@@ -502,8 +502,9 @@ document.querySelectorAll(".js-form").forEach(function (form) {
             form.classList.add("_validation-mail_sent");
             notifier.success(response.message);
             if (typeof ym !== "undefined" && form.dataset.ymGoal) {
-              console.log("ym goal 31338108 " + form.dataset.ymGoal);
-              ym(31338108, "reachGoal", form.dataset.ymGoal);
+              const ymId = window.rembrigadaYmId || 31338108;
+              console.log("ym goal " + ymId + " " + form.dataset.ymGoal);
+              ym(ymId, "reachGoal", form.dataset.ymGoal);
             }
             setTimeout(() => {
               form.classList.remove("_validation-mail_sent");

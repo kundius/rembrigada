@@ -25,7 +25,7 @@ $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'От
     <div class="quiz" data-quiz<?php if (!empty($quiz['disabled'])): ?> data-quiz-disabled="<?php echo esc_attr(implode(',', $quiz['disabled'])); ?>"<?php endif; ?>>
       <div class="quiz-steps" data-quiz-steps aria-hidden="true"></div>
 
-      <form action="/wp-json/contact-form-7/v1/contact-forms/4295/feedback" method="post" class="quiz-layout js-form" data-quiz-form data-ym-goal="<?php echo esc_attr($goal); ?>">
+      <form action="/wp-json/contact-form-7/v1/contact-forms/<?php echo (int) REMBRIGADA_QUIZ_FORM_ID; ?>/feedback" method="post" class="quiz-layout js-form" data-quiz-form data-ym-goal="<?php echo esc_attr($goal); ?>">
         <input type="hidden" name="referrer" value="<?php echo esc_attr(get_the_title()); ?>">
         <input type="hidden" name="quiz_result" value="" data-quiz-result>
 
@@ -135,7 +135,7 @@ $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'От
                       <label class="quiz-feedback__rules">
                         <input type="checkbox" name="rules" value="1" class="form-checkbox">
                         <span></span>
-                        Прочитал(-а) <a href="https://rembrigada116.ru/polzovatelskoe-soglashenie" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="https://rembrigada116.ru/privacy-policy" target="_blank">Политикой обработки персональных данных</a>
+                        Прочитал(-а) <a href="<?php echo esc_url(get_permalink(REMBRIGADA_PAGE_AGREEMENT)); ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php echo esc_url(get_permalink(REMBRIGADA_PAGE_PRIVACY)); ?>" target="_blank">Политикой обработки персональных данных</a>
                       </label>
                     </span>
                   </div>

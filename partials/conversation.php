@@ -85,7 +85,7 @@ $messengers_desc = implode(', ', $messengers_desc);
                         class="conversion__item-btn conversion__item-btn--max" 
                         target="_blank" 
                         title="Написать в MAX"
-                        onclick="ym(31338108,'reachGoal','MAX_LINK'); return true;">
+                        onclick="ym(<?php echo REMBRIGADA_YM_ID ?>,'reachGoal','MAX_LINK'); return true;">
                       <span class="icon icon-max"></span>
                     </a>
                     <?php endif; ?>
@@ -94,7 +94,7 @@ $messengers_desc = implode(', ', $messengers_desc);
                         class="conversion__item-btn conversion__item-btn--vk" 
                         target="_blank" 
                         title="Написать в VK"
-                        onclick="ym(31338108,'reachGoal','VK_LINK'); return true;">
+                        onclick="ym(<?php echo REMBRIGADA_YM_ID ?>,'reachGoal','VK_LINK'); return true;">
                       <span class="icon icon-vk"></span>
                     </a>
                     <?php endif; ?>
@@ -103,7 +103,7 @@ $messengers_desc = implode(', ', $messengers_desc);
                         class="conversion__item-btn conversion__item-btn--telegram" 
                         target="_blank" 
                         title="Написать в Телеграм"
-                        onclick="ym(31338108,'reachGoal','TELEGRAM_LINK'); return true;">
+                        onclick="ym(<?php echo REMBRIGADA_YM_ID ?>,'reachGoal','TELEGRAM_LINK'); return true;">
                       <span class="icon icon-telegram"></span>
                     </a>
                     <?php endif; ?>
@@ -112,7 +112,7 @@ $messengers_desc = implode(', ', $messengers_desc);
                         class="conversion__item-btn conversion__item-btn--whatsapp" 
                         target="_blank" 
                         title="Написать в WhatsApp"
-                        onclick="ym(31338108,'reachGoal','WHATSAPP_LINK'); return true;">
+                        onclick="ym(<?php echo REMBRIGADA_YM_ID ?>,'reachGoal','WHATSAPP_LINK'); return true;">
                       <span class="icon icon-whatsapp"></span>
                     </a>
                     <?php endif; ?>

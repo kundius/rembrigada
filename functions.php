@@ -1,4 +1,10 @@
 <?php
+// Сквозные константы темы: меняются в одном месте.
+if (!defined('REMBRIGADA_YM_ID')) define('REMBRIGADA_YM_ID', 31338108);
+if (!defined('REMBRIGADA_QUIZ_FORM_ID')) define('REMBRIGADA_QUIZ_FORM_ID', 4295);
+if (!defined('REMBRIGADA_PAGE_AGREEMENT')) define('REMBRIGADA_PAGE_AGREEMENT', 231);
+if (!defined('REMBRIGADA_PAGE_PRIVACY')) define('REMBRIGADA_PAGE_PRIVACY', 3);
+
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
 
@@ -288,7 +294,7 @@ add_shortcode('sitemap', function($atts) {
 	$output .= '<div class="sitemap-rules">';
 	$output .= '<div class="sitemap-rules__grid">';
 	$output .= '<div class="sitemap-rules__cell">';
-	$output .= '<a href="' . get_the_permalink(231) . '">Пользовательское соглашение</a>';
+	$output .= '<a href="' . get_the_permalink(REMBRIGADA_PAGE_AGREEMENT) . '">Пользовательское соглашение</a>';
 	$output .= '</div>';
 	$output .= '<div class="sitemap-rules__cell">';
 	$output .= '<a href="' . get_the_permalink(3) . '">Политика конфиденциальности и обработка персональных данных</a>';
@@ -387,7 +393,7 @@ add_shortcode('service-info', function($atts) {
 	$output .= '<label class="services-section-info__form-rules">';
 	$output .= '<input type="checkbox" name="rules" value="1" class="form-checkbox" />';
 	$output .= '<span></span>';
-	$output .= 'Прочитал(-а) <a href="' . get_permalink(231) . '" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="' . get_permalink(3) . '" target="_blank">Политикой обработки персональных данных</a>';
+	$output .= 'Прочитал(-а) <a href="' . get_permalink(REMBRIGADA_PAGE_AGREEMENT) . '" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="' . get_permalink(REMBRIGADA_PAGE_PRIVACY) . '" target="_blank">Политикой обработки персональных данных</a>';
 	$output .= '</label>';
 	$output .= '</div>';
 	$output .= '</form>';
@@ -832,6 +838,21 @@ function callback_block_assets() {
 		filemtime(dirname(__FILE__) . '/blocks/block-card.css')
 	);
 
+	// Статические блоки-обёртки (blocks/static-blocks.js): 18 шт., reviews отдельно.
+	wp_enqueue_script(
+ 		'block-static-blocks-script',
+		get_template_directory_uri() . '/blocks/static-blocks.js',
+		array('wp-blocks', 'wp-element'),
+		filemtime(dirname(__FILE__) . '/blocks/static-blocks.js')
+	);
+
+	wp_enqueue_style(
+		'block-static-blocks-style',
+		get_template_directory_uri() . '/blocks/static-blocks.css',
+		array('wp-edit-blocks'),
+		filemtime(dirname(__FILE__) . '/blocks/static-blocks.css')
+	);
+
 	wp_enqueue_script(
  		'block-callback-script',
 		get_template_directory_uri() . '/blocks/callback.js',
@@ -916,103 +937,19 @@ function callback_block_assets() {
 		filemtime(dirname(__FILE__) . '/blocks/stages-table.css')
 	);
 
-	wp_enqueue_script(
- 		'block-repair-types-script',
-		get_template_directory_uri() . '/blocks/content/repair-types.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/content/repair-types.js')
-	);
 
-	wp_enqueue_style(
-		'block-repair-types-style',
-		get_template_directory_uri() . '/blocks/content/repair-types.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/content/repair-types.css')
-	);
 
-	wp_enqueue_script(
- 		'block-scheme-script',
-		get_template_directory_uri() . '/blocks/content/scheme.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/content/scheme.js')
-	);
 
-	wp_enqueue_style(
-		'block-scheme-style',
-		get_template_directory_uri() . '/blocks/content/scheme.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/content/scheme.css')
-	);
 
-	wp_enqueue_script(
- 		'block-content-services-script',
-		get_template_directory_uri() . '/blocks/content/services.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/content/services.js')
-	);
 
-	wp_enqueue_style(
-		'block-content-services-style',
-		get_template_directory_uri() . '/blocks/content/services.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/content/services.css')
-	);
 
-	wp_enqueue_script(
- 		'block-content-projects-script',
-		get_template_directory_uri() . '/blocks/content/projects.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/content/projects.js')
-	);
 
-	wp_enqueue_style(
-		'block-content-projects-style',
-		get_template_directory_uri() . '/blocks/content/projects.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/content/projects.css')
-	);
 
-	wp_enqueue_script(
- 		'block-landing-services-script',
-		get_template_directory_uri() . '/blocks/landing/services.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/services.js')
-	);
 
-	wp_enqueue_style(
-		'block-landing-services-style',
-		get_template_directory_uri() . '/blocks/landing/services.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/services.css')
-	);
 
-	wp_enqueue_script(
- 		'block-landing-contacts-script',
-		get_template_directory_uri() . '/blocks/landing/contacts.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/contacts.js')
-	);
 
-	wp_enqueue_style(
-		'block-landing-contacts-style',
-		get_template_directory_uri() . '/blocks/landing/contacts.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/contacts.css')
-	);
 
-	wp_enqueue_script(
- 		'block-about-team-script',
-		get_template_directory_uri() . '/blocks/landing/about-team.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/about-team.js')
-	);
 
-	wp_enqueue_style(
-		'block-about-team-style',
-		get_template_directory_uri() . '/blocks/landing/about-team.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/about-team.css')
-	);
 
 	wp_enqueue_script(
  		'block-reviews-script',
@@ -1028,159 +965,27 @@ function callback_block_assets() {
 		filemtime(dirname(__FILE__) . '/blocks/landing/reviews.css')
 	);
 
-	wp_enqueue_script(
- 		'block-advantages-script',
-		get_template_directory_uri() . '/blocks/landing/advantages.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/advantages.js')
-	);
 
-	wp_enqueue_style(
-		'block-advantages-style',
-		get_template_directory_uri() . '/blocks/landing/advantages.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/advantages.css')
-	);
 
-	wp_enqueue_script(
- 		'block-readiness-script',
-		get_template_directory_uri() . '/blocks/landing/readiness.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/readiness.js')
-	);
 
-	wp_enqueue_style(
-		'block-readiness-style',
-		get_template_directory_uri() . '/blocks/landing/readiness.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/readiness.css')
-	);
 
-	wp_enqueue_script(
- 		'block-problems-script',
-		get_template_directory_uri() . '/blocks/landing/problems.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/problems.js')
-	);
 
-	wp_enqueue_style(
-		'block-problems-style',
-		get_template_directory_uri() . '/blocks/landing/problems.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/problems.css')
-	);
 
-	wp_enqueue_script(
- 		'block-measurement-script',
-		get_template_directory_uri() . '/blocks/landing/measurement.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/measurement.js')
-	);
 
-	wp_enqueue_style(
-		'block-measurement-style',
-		get_template_directory_uri() . '/blocks/landing/measurement.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/measurement.css')
-	);
 
-	wp_enqueue_script(
- 		'block-get-estimate-script',
-		get_template_directory_uri() . '/blocks/landing/get-estimate.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/get-estimate.js')
-	);
 
-	wp_enqueue_style(
-		'block-get-estimate-style',
-		get_template_directory_uri() . '/blocks/landing/get-estimate.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/get-estimate.css')
-	);
 
-	wp_enqueue_script(
- 		'block-faq-script',
-		get_template_directory_uri() . '/blocks/landing/faq.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/faq.js')
-	);
 
-	wp_enqueue_style(
-		'block-faq-style',
-		get_template_directory_uri() . '/blocks/landing/faq.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/faq.css')
-	);
 
-	wp_enqueue_script(
- 		'block-decision-script',
-		get_template_directory_uri() . '/blocks/landing/decision.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/decision.js')
-	);
 
-	wp_enqueue_style(
-		'block-decision-style',
-		get_template_directory_uri() . '/blocks/landing/decision.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/decision.css')
-	);
 
-	wp_enqueue_script(
- 		'block-easy-work-script',
-		get_template_directory_uri() . '/blocks/landing/easy-work.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/easy-work.js')
-	);
 
-	wp_enqueue_style(
-		'block-easy-work-style',
-		get_template_directory_uri() . '/blocks/landing/easy-work.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/easy-work.css')
-	);
 
-	wp_enqueue_script(
- 		'block-like-work-script',
-		get_template_directory_uri() . '/blocks/landing/like-work.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/like-work.js')
-	);
 
-	wp_enqueue_style(
-		'block-like-work-style',
-		get_template_directory_uri() . '/blocks/landing/like-work.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/landing/like-work.css')
-	);
 
-	wp_enqueue_script(
- 		'block-works-script',
-		get_template_directory_uri() . '/blocks/content/works.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/content/works.js')
-	);
 
-	wp_enqueue_style(
-		'block-works-style',
-		get_template_directory_uri() . '/blocks/content/works.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/content/works.css')
-	);
 
-	wp_enqueue_script(
- 		'block-masters-script',
-		get_template_directory_uri() . '/blocks/content/masters.js',
-		array('wp-blocks', 'wp-element'),
-		filemtime(dirname(__FILE__) . '/blocks/content/masters.js')
-	);
 
-	wp_enqueue_style(
-		'block-masters-style',
-		get_template_directory_uri() . '/blocks/content/masters.css',
-		array('wp-edit-blocks'),
-		filemtime(dirname(__FILE__) . '/blocks/content/masters.css')
-	);
 
 
 }

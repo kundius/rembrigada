@@ -115,7 +115,7 @@ function sendReviewForm(form) {
 
         const goal = form.dataset.reviewFormGoal;
         if (goal && typeof ym !== "undefined") {
-          ym(31338108, "reachGoal", goal);
+          ym(window.rembrigadaYmId || 31338108, "reachGoal", goal);
         }
       }
       done();

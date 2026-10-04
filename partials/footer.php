@@ -207,6 +207,7 @@
 
 <?php get_template_part('partials/conversation'); ?>
 
+<script>window.rembrigadaYmId = <?php echo (int) REMBRIGADA_YM_ID; ?>;</script>
 <script src="<?php echo get_bloginfo('template_url') ?>/dist/scripts/scripts.js"></script>
 
 <?php wp_footer() ?>

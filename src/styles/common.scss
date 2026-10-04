@@ -80,6 +80,12 @@ body {
   font-size: 18px;
 }
 
+button,
+input[type="button"],
+input[type="submit"] {
+  font-family: inherit;
+}
+
 img {
   -o-object-fit: contain;
   object-fit: contain;

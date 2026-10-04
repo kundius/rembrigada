@@ -44,15 +44,8 @@ $finish_button = !empty($quiz['finish_button']) ? $quiz['finish_button'] : 'От
                     <div class="quiz-form__title">
                       <div class="quiz-form__title-marker" data-quiz-marker><?php echo esc_html((string) ($si + 1)); ?></div>
                       <div class="quiz-form__title-content">
-                        <div class="quiz-form__title-group">
-                          <div class="quiz-form__title-text">
-                            <?php echo wp_kses_post($step['question']); ?>
-                          </div>
-                          <?php if (!empty($step['subtitle'])): ?>
-                          <div class="quiz-form__title-sub">
-                            <?php echo wp_kses_post($step['subtitle']); ?>
-                          </div>
-                          <?php endif; ?>
+                        <div class="quiz-form__title-text">
+                          <?php echo wp_kses_post($step['question']); ?>
                         </div>
                         <?php if (!empty($step['description'])): ?>
                         <div class="quiz-form__title-desc">

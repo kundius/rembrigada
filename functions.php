@@ -648,7 +648,6 @@ function rembrigada_normalize_quiz_steps($raw_steps) {
         $steps[] = array(
             'key' => $key,
             'question' => isset($row['question']) ? (string) $row['question'] : '',
-            'subtitle' => isset($row['subtitle']) ? (string) $row['subtitle'] : '',
             'description' => isset($row['description']) ? (string) $row['description'] : '',
             'image' => $image_url,
             'type' => $type,

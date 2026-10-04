@@ -2,9 +2,9 @@
     <div class="content-price">
         <div class="content-price__tabs">
             <?php foreach($list as $key => $row): ?>
-            <div class="content-price__tab">
+            <h3 class="content-price__tab">
                 <?php echo $row['title'] ?>
-            </div>
+            </h3>
             <?php endforeach; ?>
         </div>
         <div class="content-price__contents">

@@ -7,7 +7,7 @@
     </div>
     <?php endif; ?>
     <?php if (!empty($readiness['description'])): ?>
-    <div class="landing-readiness__description">
+    <div class="landing-readiness__description rich-text">
       <?php echo $readiness['description'] ?>
     </div>
     <?php endif; ?>

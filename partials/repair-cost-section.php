@@ -2,7 +2,7 @@
 <div class="repair-cost-section" style="background-image: url('<?php echo $background['url'] ?>')">
     <div class="container container_medium">
         <div class="repair-cost-section__title"><?php the_field('cost_title') ?></div>
-        <div class="repair-cost-section__desc"><?php the_field('cost_desc') ?></div>
+        <div class="repair-cost-section__desc rich-text"><?php the_field('cost_desc') ?></div>
         <?php if ($list = get_field('cost_list')): ?>
         <div class="repair-cost-section__list">
             <?php foreach ($list as $item): ?>

@@ -25,7 +25,7 @@
       </div>
 
       <?php if (!empty($global_faq['description'])): ?>
-      <div class="landing-faq__description"><?php echo $global_faq['description'] ?></div>
+      <div class="landing-faq__description rich-text"><?php echo $global_faq['description'] ?></div>
       <?php endif; ?>
 
       <?php if (!empty($global_faq['button']['text'])): ?>

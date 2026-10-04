@@ -23,7 +23,7 @@
     </div>
 
     <?php if (!empty($faq['description'])): ?>
-    <div class="landing-faq__description"><?php echo $faq['description'] ?></div>
+    <div class="landing-faq__description rich-text"><?php echo $faq['description'] ?></div>
     <?php endif; ?>
 
     <?php if (!empty($faq['button']['text'])): ?>

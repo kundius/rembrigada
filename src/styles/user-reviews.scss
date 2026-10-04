@@ -51,7 +51,7 @@
 
 .user-reviews-list__item {
   position: relative;
-  &:nth-child(odd)::before {
+  &::before {
     content: '';
     position: absolute;
     top: -24px;
@@ -61,8 +61,11 @@
     background: #f4f4f4;
     border-radius: 12px;
   }
+  &:nth-child(even)::before {
+    background: #e4e4e4;
+  }
   @media (max-width: $breakpoint-small-max) {
-    &:nth-child(odd)::before {
+    &::before {
       top: -8px;
       bottom: -8px;
       left: -12px;

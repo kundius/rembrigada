@@ -3618,6 +3618,16 @@ ul.sitemap > li > ul > li > ul > li > a {
   }
 }
 
+// Таб — h3: перебиваем .content h3 (0-1-1) с запасом (0-2-0),
+// значения = до-h3 дизайн, действуют на всех брейкпоинтах.
+.content .content-price__tab {
+  color: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 8px;
+}
+
 .content-price__contents {
   width: 80%;
   @media (max-width: $breakpoint-xsmall-max) {

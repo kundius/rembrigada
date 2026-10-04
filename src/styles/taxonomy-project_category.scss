@@ -484,6 +484,12 @@
   }
 }
 
+// Гасим .content p (0-1-1) с запасом: отступы только по сове.
+.content .works-item-pricing__desc p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 a.works-item-pricing__button,
 .works-item-pricing__button {
   font-size: 14px;

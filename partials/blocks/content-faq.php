@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="faq-item__answer">
-            <div class="faq-item__answer-content">
+            <div class="faq-item__answer-content rich-text">
               <?php echo $item['answer'] ?>
             </div>
           </div>

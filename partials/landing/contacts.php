@@ -47,28 +47,22 @@
                         <input type="text" name="your-name" value="" class="form-input" placeholder="Имя" />
                     </div>
                     <div class="contacts-form__row">
-                        <span class="wpcf7-form-control-wrap your-email">
-                            <input type="email" name="your-email" value="" class="form-input" placeholder="E-mail" />
-                        </span>
-                    </div>
-                    <div class="contacts-form__row">
                         <span class="wpcf7-form-control-wrap your-phone">
                             <input type="tel" name="your-phone" value="" class="form-input" placeholder="Телефон">
                         </span>
                     </div>
                     <div class="contacts-form__row">
-                        <textarea name="message" class="form-textarea" placeholder="Текст сообщения" style="height: 100%;"></textarea>
-                    </div>
-                    <div class="contacts-form__row">
-                        <label class="contacts-form__rules">
-                            <input type="checkbox" name="rules" value="1" class="form-checkbox" />
-                            <span></span>
-                            Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
-                        </label>
-                    </div>
-                    <div class="contacts-form__row">
                         <input type="hidden" name="referrer" value="<?php the_title() ?>">
                         <button type="submit" class="form-submit"><span></span><span>Отправить</span></button>
+                    </div>
+                    <div class="contacts-form__row">
+                        <span class="wpcf7-form-control-wrap rules">
+                            <label class="contacts-form__rules">
+                                <input type="checkbox" name="rules" value="1" class="form-checkbox" />
+                                <span></span>
+                                Прочитал(-а) <a href="<?php the_permalink(231) ?>" target="_blank">Пользовательское соглашение</a> и соглашаюсь с <a href="<?php the_permalink(3) ?>" target="_blank">Политикой обработки персональных данных</a>
+                            </label>
+                        </span>
                     </div>
                 </form>
             </div>

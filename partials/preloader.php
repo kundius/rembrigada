@@ -63,7 +63,6 @@
     color: #babab8;
     font-size: 20px;
     font-weight: 700;
-    text-transform: uppercase;
     line-height: 1;
     margin-bottom: 3px;
     letter-spacing: 0.25px;

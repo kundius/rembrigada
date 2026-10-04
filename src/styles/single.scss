@@ -15,7 +15,6 @@
     font-size: 130px;
     font-weight: 700;
     line-height: 1;
-    text-transform: uppercase;
     letter-spacing: -2.38px;
     float: left;
     position: relative;
@@ -52,7 +51,6 @@
     font-size: 48px;
     font-weight: 700;
     line-height: 60px;
-    text-transform: uppercase;
     letter-spacing: 0.48px;
     overflow: hidden;
     span {
@@ -79,7 +77,6 @@
     color: #afbcce;
     letter-spacing: 0.01em;
     opacity: .2;
-    text-transform: uppercase;
     @media (max-width: $breakpoint-medium-max) {
         display: none;
     }
@@ -144,7 +141,6 @@
     align-items: center;
     font-size: 12px;
     letter-spacing: 0.025em;
-    text-transform: uppercase;
     text-decoration: none;
     color: #b6b6b6;
     flex-grow: 8;
@@ -327,7 +323,6 @@
         color: #afafaf;
         font-size: 12px;
         font-weight: 300;
-        text-transform: uppercase;
         letter-spacing: 7.1px;
         width: auto;
         height: 34px;
@@ -557,7 +552,6 @@
     font-size: 14px;
     font-weight: bold;
     line-height: 18px;
-    text-transform: uppercase;
     color: #000;
 }
 
@@ -601,7 +595,6 @@
         font-size: 24px;
         font-weight: bold;
         letter-spacing: 0.005em;
-        text-transform: uppercase;
         color: #999999;
         padding-bottom: 25px;
         border-bottom: 1px solid #e7e7e7;
@@ -785,7 +778,6 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 21.6px;
-    text-transform: uppercase;
     letter-spacing: .8px;
     border: 3px solid #d52437;
     line-height: 50px;

@@ -136,7 +136,6 @@ a.btn-arrow,
   font-weight: 700;
   line-height: 44px;
   border-radius: 24px;
-  text-transform: uppercase;
   letter-spacing: 0.4px;
   padding-left: 32px;
   padding-right: 70px;
@@ -198,7 +197,6 @@ a.btn-plus,
   font-weight: 700;
   line-height: 44px;
   border-radius: 24px;
-  text-transform: uppercase;
   letter-spacing: 0.4px;
   padding-left: 32px;
   padding-right: 70px;
@@ -300,7 +298,6 @@ a.btn-plus--arrow,
   font-weight: 700;
   line-height: 44px;
   border-radius: 24px;
-  text-transform: uppercase;
   letter-spacing: 0.4px;
   padding-left: 32px;
   padding-right: 70px;
@@ -774,7 +771,6 @@ a.btn-plus--arrow,
   font-size: 24px;
   color: rgb(43, 46, 52);
   font-weight: bold;
-  text-transform: uppercase;
   line-height: 1.083;
   letter-spacing: -0.05em;
   @media (max-width: $breakpoint-medium-max) {
@@ -1004,7 +1000,6 @@ a.btn-plus--arrow,
   font-size: 12px;
   font-weight: 300;
   line-height: 34px;
-  text-transform: uppercase;
   letter-spacing: 7.1px;
   width: auto;
   height: 34px;
@@ -1795,7 +1790,6 @@ a.btn-plus--arrow,
     color: #ffffff;
     font-size: 22px;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.95px;
     text-align: center;
     padding: 0 3px;
@@ -1875,7 +1869,6 @@ a.btn-plus--arrow,
     font-size: 18px;
     font-weight: 700;
     line-height: 1;
-    text-transform: uppercase;
     letter-spacing: 0.78px;
     display: block;
     text-decoration: none;
@@ -2329,7 +2322,6 @@ a.btn-plus--arrow,
   color: #ffffff;
   font-size: 1.111em; //20px
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0 10px;
   line-height: 2.1em; //42px
@@ -2499,7 +2491,6 @@ a.btn-plus--arrow,
   color: #ffffff;
   font-size: 20px;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0 10px;
   line-height: 42px;
@@ -2816,7 +2807,6 @@ a.btn-plus--arrow,
   color: #ffffff;
   font-size: 24px;
   font-weight: 700;
-  text-transform: uppercase;
   text-align: center;
   margin-bottom: 15px;
   @media (max-width: $breakpoint-medium-max) {
@@ -2970,7 +2960,6 @@ a.btn-plus--arrow,
   color: #ffffff;
   line-height: 53px;
   text-decoration: none;
-  text-transform: uppercase;
   white-space: nowrap;
   position: absolute;
   left: 50%;
@@ -3019,7 +3008,6 @@ a.btn-plus--arrow,
   font-size: 30px;
   line-height: 1;
   letter-spacing: 0.01em;
-  text-transform: uppercase;
   color: #333333;
   font-weight: bold;
   @media (max-width: $breakpoint-small-max) {
@@ -3133,7 +3121,6 @@ a.btn-plus--arrow,
   text-align: center;
   font-size: 12px;
   line-height: 1;
-  text-transform: uppercase;
   color: #505050;
   min-height: 36px;
   display: flex;
@@ -3176,7 +3163,6 @@ a.btn-plus--arrow,
   font-size: 28px;
   line-height: 1;
   letter-spacing: 0.01em;
-  // text-transform: uppercase;
   color: #333333;
   font-weight: bold;
   text-align: center;
@@ -3304,7 +3290,6 @@ a.btn-plus--arrow,
     letter-spacing: 0.045em;
     font-weight: bold;
     font-size: 20px;
-    text-transform: uppercase;
     margin-left: 10px;
     line-height: 1.5;
     @media (max-width: $breakpoint-small-max) {
@@ -3363,7 +3348,6 @@ ul.sitemap > li > a {
   color: #333333;
   font-size: 22px;
   font-weight: 700;
-  text-transform: uppercase;
   line-height: 1;
   display: inline-block;
   text-decoration: none;
@@ -3450,7 +3434,6 @@ ul.sitemap > li > ul > li > a {
   color: #333333;
   font-size: 18px;
   line-height: 1;
-  text-transform: uppercase;
   text-decoration: none;
   padding: 6px 12px;
   display: inline-block;
@@ -3548,7 +3531,6 @@ ul.sitemap > li > ul > li > ul > li > a {
     font-size: 18px;
     font-weight: 700;
     line-height: 1;
-    text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.89px;
     display: flex;
@@ -3627,7 +3609,6 @@ ul.sitemap > li > ul > li > ul > li > a {
   padding: 10px;
   line-height: 1;
   font-weight: bold;
-  text-transform: uppercase;
   font-size: 14px;
   cursor: pointer;
   &._active {

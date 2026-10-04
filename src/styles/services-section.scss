@@ -386,7 +386,6 @@
     line-height: 1.09;
     position: relative;
     font-weight: bold;
-    text-transform: uppercase;
     &::before {
         content: '';
         position: absolute;
@@ -540,7 +539,6 @@ a.services-calculation__works {
     color: #ffffff;
     line-height: 53px;
     text-decoration: none;
-    text-transform: uppercase;
     white-space: nowrap;
     position: absolute;
     left: 50%;
@@ -597,7 +595,6 @@ a.services-calculation__works {
     font-size: 30px;
     line-height: 1;
     letter-spacing: 0.01em;
-    text-transform: uppercase;
     color: #333333;
     font-weight: bold;
     @media (max-width: $breakpoint-small-max) {
@@ -706,7 +703,6 @@ a.services-calculation__works {
     font-size: 36px;
     font-weight: 700;
     line-height: 1;
-    text-transform: uppercase;
     display: block;
     position: relative;
     text-decoration: none;
@@ -882,7 +878,6 @@ a.services-section-info__item {
     color: #333333 !important;
     font-size: 24px;
     font-weight: 400;
-    text-transform: uppercase;
     line-height: 1;
     padding: 12px 12px 12px 45px;
     padding-right: 0;
@@ -1136,7 +1131,6 @@ a.services-section-info__item {
         color: #ffffff;
         font-size: 22px;
         font-weight: 700;
-        text-transform: uppercase;
         letter-spacing: 0.95px;
         text-align: center;
         padding: 0 3px;
@@ -1223,7 +1217,6 @@ a.services-section-info__item {
         font-size: 18px;
         font-weight: 700;
         line-height: 1;
-        text-transform: uppercase;
         letter-spacing: 0.78px;
     }
 

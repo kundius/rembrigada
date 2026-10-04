@@ -480,20 +480,17 @@
             color: #ffffff;
             font-size: 24px;
             font-weight: 600;
-            text-transform: uppercase;
         }
         &:nth-child(2) {
             color: #afafaf;
             font-size: 24px;
             font-weight: 400;
-            text-transform: uppercase;
             margin: 0 2px;
         }
         &:nth-child(3) {
             color: #afafaf;
             font-size: 16px;
             font-weight: 400;
-            text-transform: uppercase;
             padding-top: 4px;
         }
     }
@@ -589,7 +586,6 @@
 .project-modal-details__title {
     font-size: 22px;
     color: #2a2c2f;
-    text-transform: uppercase;
     line-height: 1;
     font-weight: bold;
     margin-bottom: 35px;
@@ -614,7 +610,6 @@
 .project-modal__title {
     font-size: 22px;
     color: #2a2c2f;
-    text-transform: uppercase;
     line-height: 1;
     font-weight: bold;
 }

@@ -141,7 +141,6 @@
   font-size: 26px;
   line-height: 1.15;
   letter-spacing: 0.01em;
-  text-transform: uppercase;
   @media (max-width: $breakpoint-xsmall-max) {
     font-size: 20px;
   }
@@ -195,7 +194,6 @@
     margin-top: 0;
     font-size: 12px;
     letter-spacing: 0.025em;
-    text-transform: uppercase;
     color: #b6b6b6;
     transform: rotate(-90deg);
     a {

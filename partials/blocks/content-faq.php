@@ -11,9 +11,9 @@
         <?php foreach ($faq['items'] as $item): ?>
         <div class="faq-item">
           <div class="faq-item__question">
-            <div class="faq-item__question-content">
+            <h3 class="faq-item__question-content">
               <?php echo $item['question'] ?>
-            </div>
+            </h3>
           </div>
           <div class="faq-item__answer">
             <div class="faq-item__answer-content rich-text">

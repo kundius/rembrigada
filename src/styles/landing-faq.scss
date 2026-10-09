@@ -112,6 +112,13 @@
   color: #333;
   position: relative;
   z-index: 2;
+  .content & {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+  }
   @media (max-width: $breakpoint-xsmall-max) {
     padding-left: 58px;
   }
